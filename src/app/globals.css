@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f3f6fb;
+  --background-2: #e9eefc;
+  --foreground: #101423;
+  --muted: #6b7280;
+  --card: rgba(255, 255, 255, 0.72);
+  --card-border: rgba(255, 255, 255, 0.55);
+  --card-solid: #ffffff;
+
+  --primary: #12b981;
+  --primary-2: #0ea5b7;
+  --accent: #fb7185;
+  --accent-2: #8b5cf6;
+  --warn: #f59e0b;
+
+  --ring-track: rgba(16, 20, 35, 0.08);
+
+  --shadow-color: 220 40% 40%;
+}
+
+:root[data-theme="dark"],
+:root.dark {
+  --background: #0a0e1a;
+  --background-2: #10162a;
+  --foreground: #eef1f8;
+  --muted: #9aa4bd;
+  --card: rgba(24, 29, 48, 0.6);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --card-solid: #131a2e;
+
+  --ring-track: rgba(255, 255, 255, 0.08);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --background: #0a0e1a;
+    --background-2: #10162a;
+    --foreground: #eef1f8;
+    --muted: #9aa4bd;
+    --card: rgba(24, 29, 48, 0.6);
+    --card-border: rgba(255, 255, 255, 0.08);
+    --card-solid: #131a2e;
+    --ring-track: rgba(255, 255, 255, 0.08);
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-2: var(--primary-2);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-muted: var(--muted);
+  --font-sans: var(--font-display);
+}
+
+* {
+  border-color: var(--card-border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: radial-gradient(1200px 800px at 10% -10%, var(--background-2), transparent),
+    radial-gradient(1000px 700px at 110% 10%, rgba(18, 185, 129, 0.08), transparent),
+    var(--background);
+  color: var(--foreground);
+  font-family: var(--font-display), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  min-height: 100vh;
+}
+
+@layer components {
+  .glass-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    box-shadow: 0 8px 30px -12px hsl(var(--shadow-color) / 0.25);
+    border-radius: 1.25rem;
+  }
+
+  .solid-card {
+    background: var(--card-solid);
+    border: 1px solid var(--card-border);
+    box-shadow: 0 8px 30px -12px hsl(var(--shadow-color) / 0.18);
+    border-radius: 1.25rem;
+  }
+
+  .gradient-primary {
+    background-image: linear-gradient(135deg, var(--primary), var(--primary-2));
+  }
+
+  .gradient-accent {
+    background-image: linear-gradient(135deg, var(--accent), var(--accent-2));
+  }
+
+  .gradient-text {
+    background-image: linear-gradient(135deg, var(--primary), var(--primary-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 text-sm font-semibold text-white transition-transform active:scale-[0.97];
+    background-image: linear-gradient(135deg, var(--primary), var(--primary-2));
+    box-shadow: 0 10px 25px -10px rgba(18, 185, 129, 0.55);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl border px-5 py-3 text-sm font-semibold transition-transform active:scale-[0.97];
+    border-color: var(--card-border);
+    background: var(--card);
+    color: var(--foreground);
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-colors;
+    border-color: var(--card-border);
+    background: var(--card);
+  }
+
+  .chip-active {
+    color: white;
+    border-color: transparent;
+    background-image: linear-gradient(135deg, var(--primary), var(--primary-2));
+  }
+
+  .input-field {
+    @apply w-full rounded-xl border bg-transparent px-4 py-3 text-sm outline-none transition-colors;
+    border-color: var(--card-border);
+  }
+  .input-field:focus {
+    border-color: var(--primary);
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+@media print {
+  nav, header, .no-print {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+  }
+}
