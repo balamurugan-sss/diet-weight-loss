@@ -1,5 +1,6 @@
 "use client";
 
+import { useMemo } from "react";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import type { DailyLogEntry, LoggedFood } from "@/types";
@@ -45,7 +46,6 @@ function emptyLog(date: string): DailyLogEntry {
 interface TrackerState {
   logs: Record<string, DailyLogEntry>;
   waterStreak: number;
-  getLog: (date: string) => DailyLogEntry;
   upsertLog: (date: string, partial: Partial<DailyLogEntry>) => void;
   logFood: (date: string, food: LoggedFood) => void;
   removeFood: (date: string, foodId: string) => void;
@@ -58,7 +58,6 @@ export const useTrackerStore = create<TrackerState>()(
     (set, get) => ({
       logs: {},
       waterStreak: 0,
-      getLog: (date) => get().logs[date] ?? emptyLog(date),
       upsertLog: (date, partial) => {
         const current = get().logs[date] ?? emptyLog(date);
         set({ logs: { ...get().logs, [date]: { ...current, ...partial } } });
@@ -123,3 +122,8 @@ export const useTrackerStore = create<TrackerState>()(
     { name: "fitfusion-tracker" }
   )
 );
+
+export function useDailyLog(date: string): DailyLogEntry {
+  const raw = useTrackerStore((s) => s.logs[date]);
+  return useMemo(() => raw ?? emptyLog(date), [raw, date]);
+}
