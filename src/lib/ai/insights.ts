@@ -64,6 +64,43 @@ export function generateRecoveryTip(healthConditions: UserProfile["healthConditi
   return "Prioritize 7-8 hours of sleep tonight and a 5-minute stretch routine to help muscles recover.";
 }
 
+export function generateMealImprovementTip(log: DailyLogEntry, calc: CalculationResult): string {
+  const fiberEstimate = log.loggedFoods.length; // proxy: no fiber tracked per-log yet
+  const proteinGap = calc.proteinG - log.proteinG;
+  const carbsPct = log.caloriesConsumed > 0 ? (log.carbsG * 4) / log.caloriesConsumed : 0;
+
+  if (log.caloriesConsumed === 0) {
+    return "No meals logged yet today — try to log each meal as you eat for the most useful improvement tips.";
+  }
+  if (proteinGap > calc.proteinG * 0.3) {
+    return `You're ${proteinGap}g short of your ${calc.proteinG}g protein target so far. Swap a refined-carb snack for a protein one (paneer, curd, eggs, or a protein shake) to close the gap.`;
+  }
+  if (carbsPct > 0.6) {
+    return "Carbs are dominating today's intake. Try adding a vegetable side or salad to your next meal to bring more fiber and balance into the plate.";
+  }
+  if (fiberEstimate < 2) {
+    return "Add one more fiber-rich food today (oats, dal, leafy greens, or fruit) to help with satiety and digestion.";
+  }
+  return "Your meals are well balanced today — keep the protein and fiber consistent across all meals, not just one.";
+}
+
+export function generateWorkoutSuggestion(
+  profile: UserProfile,
+  log: DailyLogEntry,
+  todayFocus?: string
+): string {
+  if (log.workoutCompleted) {
+    return `Nice work finishing today's session${todayFocus ? ` (${todayFocus})` : ""}. Prioritize protein in your next meal to support recovery.`;
+  }
+  if (profile.healthConditions.includes("knee-pain")) {
+    return "Haven't trained yet today — a 20-30 minute walk or a swim is a safe, knee-friendly way to stay active.";
+  }
+  if (profile.fitnessLevel === "beginner") {
+    return "Haven't trained yet today — even a short 15-minute bodyweight session (squats, push-ups, plank) counts. Consistency matters more than intensity right now.";
+  }
+  return `You haven't logged today's workout yet${todayFocus ? ` — ${todayFocus} is on your plan` : ""}. Try to fit it in before the day ends.`;
+}
+
 export function generateWeeklySummary(logs: DailyLogEntry[], calc: CalculationResult): string {
   const daysLogged = logs.filter((l) => l.caloriesConsumed > 0).length;
   if (daysLogged === 0) {

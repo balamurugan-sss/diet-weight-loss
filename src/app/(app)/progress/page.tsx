@@ -1,12 +1,15 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis, CartesianGrid } from "recharts";
-import { TrendingDown, Target, Scale } from "lucide-react";
+import { TrendingDown, Target, Scale, Lock } from "lucide-react";
 import { useUserStore } from "@/lib/store/userStore";
 import { useTrackerStore } from "@/lib/store/trackerStore";
 import { buildWeightSeries, type ProgressPoint, type ProgressRange } from "@/lib/progress";
 import { cn } from "@/lib/utils";
+
+const PREMIUM_RANGES: ProgressRange[] = ["yearly"];
 
 const RANGE_OPTIONS: { value: ProgressRange; label: string }[] = [
   { value: "daily", label: "Daily" },
@@ -17,12 +20,22 @@ const RANGE_OPTIONS: { value: ProgressRange; label: string }[] = [
 
 export default function ProgressPage() {
   const profile = useUserStore((s) => s.profile);
+  const isPremium = useUserStore((s) => s.isPremium);
   const logs = useTrackerStore((s) => s.logs);
   const [range, setRange] = useState<ProgressRange>("daily");
+  const router = useRouter();
 
   const series = useMemo(() => (profile ? buildWeightSeries(profile, logs, range) : []), [profile, logs, range]);
 
   if (!profile) return null;
+
+  function selectRange(value: ProgressRange) {
+    if (PREMIUM_RANGES.includes(value) && !isPremium) {
+      router.push("/premium");
+      return;
+    }
+    setRange(value);
+  }
 
   const startWeight = series[0]?.weightKg ?? profile.weightKg;
   const currentWeight = series[series.length - 1]?.weightKg ?? profile.weightKg;
@@ -42,12 +55,19 @@ export default function ProgressPage() {
         <SummaryStat icon={Target} label="Target" value={`${profile.targetWeightKg}kg`} />
       </div>
 
-      <div className="flex gap-2">
-        {RANGE_OPTIONS.map((opt) => (
-          <button key={opt.value} onClick={() => setRange(opt.value)} className={cn("chip", range === opt.value && "chip-active")}>
-            {opt.label}
-          </button>
-        ))}
+      <div className="flex flex-wrap items-center gap-2">
+        {RANGE_OPTIONS.map((opt) => {
+          const locked = PREMIUM_RANGES.includes(opt.value) && !isPremium;
+          return (
+            <button
+              key={opt.value}
+              onClick={() => selectRange(opt.value)}
+              className={cn("chip", range === opt.value && "chip-active", locked && "opacity-60")}
+            >
+              {locked && <Lock size={11} />} {opt.label}
+            </button>
+          );
+        })}
       </div>
 
       <ChartCard title="Weight Trend" unit="kg" data={series} dataKey="weightKg" />

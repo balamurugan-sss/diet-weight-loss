@@ -1,11 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { Sparkles, X, Plus } from "lucide-react";
+import Link from "next/link";
+import { Sparkles, X, Plus, Crown } from "lucide-react";
 import type { MealSlot, MealTag, Recipe } from "@/types";
 import { generateRecipeSuggestions } from "@/lib/ai/recipeGenerator";
 import { MealCard } from "@/components/meals/MealCard";
+import { useUserStore } from "@/lib/store/userStore";
 import { cn } from "@/lib/utils";
+
+const FREE_RESULT_LIMIT = 3;
+const PREMIUM_RESULT_LIMIT = 8;
 
 const SLOT_OPTIONS: { value: MealSlot; label: string }[] = [
   { value: "breakfast", label: "Breakfast" },
@@ -25,11 +30,13 @@ const TAG_OPTIONS: { value: MealTag; label: string }[] = [
 ];
 
 export default function RecipeGeneratorPage() {
+  const isPremium = useUserStore((s) => s.isPremium);
   const [ingredientInput, setIngredientInput] = useState("");
   const [ingredients, setIngredients] = useState<string[]>([]);
   const [slot, setSlot] = useState<MealSlot | undefined>(undefined);
   const [tags, setTags] = useState<MealTag[]>([]);
   const [results, setResults] = useState<Recipe[] | null>(null);
+  const [totalMatches, setTotalMatches] = useState(0);
 
   function addIngredient() {
     const value = ingredientInput.trim();
@@ -44,7 +51,9 @@ export default function RecipeGeneratorPage() {
   }
 
   function generate() {
-    setResults(generateRecipeSuggestions({ ingredients, slot, tags }));
+    const all = generateRecipeSuggestions({ ingredients, slot, tags }, PREMIUM_RESULT_LIMIT);
+    setTotalMatches(all.length);
+    setResults(isPremium ? all : all.slice(0, FREE_RESULT_LIMIT));
   }
 
   return (
@@ -122,13 +131,21 @@ export default function RecipeGeneratorPage() {
       {results && (
         <div className="glass-card p-6">
           <h2 className="mb-4 font-semibold">
-            {results.length > 0 ? `${results.length} recipes found` : "No matches — try fewer filters"}
+            {results.length > 0 ? `${results.length} of ${totalMatches} recipes shown` : "No matches — try fewer filters"}
           </h2>
           <div className="flex flex-col gap-3">
             {results.map((recipe) => (
               <MealCard key={recipe.id} slot={recipe.slot} recipe={recipe} />
             ))}
           </div>
+          {!isPremium && totalMatches > FREE_RESULT_LIMIT && (
+            <Link href="/premium" className="mt-4 flex items-center justify-between rounded-xl border p-4 text-sm" style={{ borderColor: "var(--card-border)" }}>
+              <span className="flex items-center gap-2" style={{ color: "var(--accent-2)" }}>
+                <Crown size={14} /> {totalMatches - FREE_RESULT_LIMIT} more matches with Premium
+              </span>
+              <span className="font-semibold" style={{ color: "var(--primary-2)" }}>Upgrade</span>
+            </Link>
+          )}
         </div>
       )}
     </div>
