@@ -1,4 +1,4 @@
-import { Exercise, MuscleGroup } from "@/types";
+import { Exercise } from "@/types";
 
 export const EXERCISES: Exercise[] = [
   {

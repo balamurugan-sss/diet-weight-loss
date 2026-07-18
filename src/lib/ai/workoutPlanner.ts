@@ -56,7 +56,7 @@ export function generateWeeklyWorkoutPlan(profile: UserProfile): WeeklyWorkoutPl
   const template = hasKneePain ? KNEE_FRIENDLY_SPLIT : STANDARD_SPLIT;
   const exercisesPerDay = EXERCISES_PER_DAY[profile.fitnessLevel];
 
-  let pool = EXERCISES.filter((ex) => {
+  const pool = EXERCISES.filter((ex) => {
     if (ex.suitableFor !== "both" && !ex.suitableFor.includes(profile.gender)) return false;
     if (hasKneePain && !ex.kneeFriendly) return false;
     if (hasBackPain && /deadlift/i.test(ex.name)) return false;
