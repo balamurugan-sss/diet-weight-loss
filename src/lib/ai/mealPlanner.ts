@@ -64,9 +64,10 @@ function pickForSlot(
   slot: MealSlot,
   profile: UserProfile,
   targetCalories: number,
-  usedIds: Set<string>
+  usedIds: Set<string>,
+  recipePool: Recipe[]
 ): Recipe | undefined {
-  const compatible = RECIPES.filter((r) => r.slot === slot && isDietCompatible(r, profile));
+  const compatible = recipePool.filter((r) => r.slot === slot && isDietCompatible(r, profile));
   if (compatible.length === 0) return undefined;
 
   const fresh = compatible.filter((r) => !usedIds.has(r.id));
@@ -82,9 +83,14 @@ function pickForSlot(
   return choice;
 }
 
-export function generateWeeklyMealPlan(profile: UserProfile, calc: CalculationResult): WeeklyMealPlan {
+export function generateWeeklyMealPlan(
+  profile: UserProfile,
+  calc: CalculationResult,
+  extraRecipes: Recipe[] = []
+): WeeklyMealPlan {
   const usedIds = new Set<string>();
   const includeBedtimeDrink = !profile.healthConditions.includes("diabetes");
+  const recipePool = extraRecipes.length > 0 ? [...RECIPES, ...extraRecipes] : RECIPES;
 
   const days: DayMealPlan[] = DAYS.map((day) => {
     const meals: DayMealPlan["meals"] = {};
@@ -92,7 +98,7 @@ export function generateWeeklyMealPlan(profile: UserProfile, calc: CalculationRe
     (Object.keys(SLOT_CALORIE_SHARE) as MealSlot[]).forEach((slot) => {
       if (slot === "bedtimeDrink" && !includeBedtimeDrink) return;
       const target = calc.dailyCalories * SLOT_CALORIE_SHARE[slot];
-      const recipe = pickForSlot(slot, profile, target, usedIds);
+      const recipe = pickForSlot(slot, profile, target, usedIds, recipePool);
       if (recipe) meals[slot] = recipe;
     });
 

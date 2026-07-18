@@ -24,10 +24,11 @@ function ingredientMatchScore(recipe: Recipe, ingredients: string[]): number {
   return matches;
 }
 
-export function generateRecipeSuggestions(input: RecipeGeneratorInput, limit = 8): Recipe[] {
+export function generateRecipeSuggestions(input: RecipeGeneratorInput, limit = 8, extraRecipes: Recipe[] = []): Recipe[] {
   const { ingredients, slot, tags = [] } = input;
+  const recipePool = extraRecipes.length > 0 ? [...RECIPES, ...extraRecipes] : RECIPES;
 
-  const scored = RECIPES.map((recipe) => {
+  const scored = recipePool.map((recipe) => {
     if (slot && recipe.slot !== slot) return { recipe, score: -1 };
 
     const ingredientScore = ingredientMatchScore(recipe, ingredients) * 4;

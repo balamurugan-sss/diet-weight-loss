@@ -5,6 +5,7 @@ import Link from "next/link";
 import { RefreshCw, ShoppingCart, Sparkles } from "lucide-react";
 import { useUserStore } from "@/lib/store/userStore";
 import { usePlanStore } from "@/lib/store/planStore";
+import { useAdminStore } from "@/lib/store/adminStore";
 import { generateWeeklyMealPlan, totalDayCalories, totalDayMacros } from "@/lib/ai/mealPlanner";
 import { generateShoppingList } from "@/lib/ai/shoppingList";
 import { MealCard } from "@/components/meals/MealCard";
@@ -20,19 +21,20 @@ export default function MealsPage() {
   const mealPlan = usePlanStore((s) => s.mealPlan);
   const setMealPlan = usePlanStore((s) => s.setMealPlan);
   const setShoppingList = usePlanStore((s) => s.setShoppingList);
+  const customRecipes = useAdminStore((s) => s.customRecipes);
   const [activeDay, setActiveDay] = useState(0);
 
   useEffect(() => {
     if (profile && calc && !mealPlan) {
-      setMealPlan(generateWeeklyMealPlan(profile, calc));
+      setMealPlan(generateWeeklyMealPlan(profile, calc, customRecipes));
     }
-  }, [profile, calc, mealPlan, setMealPlan]);
+  }, [profile, calc, mealPlan, setMealPlan, customRecipes]);
 
   if (!profile || !calc) return null;
 
   function regenerate() {
     if (!profile || !calc) return;
-    setMealPlan(generateWeeklyMealPlan(profile, calc));
+    setMealPlan(generateWeeklyMealPlan(profile, calc, customRecipes));
     setActiveDay(0);
   }
 

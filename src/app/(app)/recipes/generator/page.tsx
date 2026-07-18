@@ -7,6 +7,7 @@ import type { MealSlot, MealTag, Recipe } from "@/types";
 import { generateRecipeSuggestions } from "@/lib/ai/recipeGenerator";
 import { MealCard } from "@/components/meals/MealCard";
 import { useUserStore } from "@/lib/store/userStore";
+import { useAdminStore } from "@/lib/store/adminStore";
 import { cn } from "@/lib/utils";
 
 const FREE_RESULT_LIMIT = 3;
@@ -31,6 +32,7 @@ const TAG_OPTIONS: { value: MealTag; label: string }[] = [
 
 export default function RecipeGeneratorPage() {
   const isPremium = useUserStore((s) => s.isPremium);
+  const customRecipes = useAdminStore((s) => s.customRecipes);
   const [ingredientInput, setIngredientInput] = useState("");
   const [ingredients, setIngredients] = useState<string[]>([]);
   const [slot, setSlot] = useState<MealSlot | undefined>(undefined);
@@ -51,7 +53,7 @@ export default function RecipeGeneratorPage() {
   }
 
   function generate() {
-    const all = generateRecipeSuggestions({ ingredients, slot, tags }, PREMIUM_RESULT_LIMIT);
+    const all = generateRecipeSuggestions({ ingredients, slot, tags }, PREMIUM_RESULT_LIMIT, customRecipes);
     setTotalMatches(all.length);
     setResults(isPremium ? all : all.slice(0, FREE_RESULT_LIMIT));
   }

@@ -8,6 +8,7 @@ import { FoodCard } from "@/components/food/FoodCard";
 import { VoiceSearchButton } from "@/components/food/VoiceSearchButton";
 import { ImageRecognitionButton } from "@/components/food/ImageRecognitionButton";
 import { BarcodeScannerModal } from "@/components/food/BarcodeScannerModal";
+import { useAdminStore } from "@/lib/store/adminStore";
 import { cn } from "@/lib/utils";
 
 const CATEGORY_OPTIONS: { value: FoodItem["category"] | "all"; label: string }[] = [
@@ -23,14 +24,16 @@ export default function FoodSearchPage() {
   const [category, setCategory] = useState<FoodItem["category"] | "all">("all");
   const [scannerOpen, setScannerOpen] = useState(false);
   const [scannedFood, setScannedFood] = useState<FoodItem | null>(null);
+  const customFoods = useAdminStore((s) => s.customFoods);
+  const allFoods = useMemo(() => [...FOODS, ...customFoods], [customFoods]);
 
   const results = useMemo(() => {
-    return FOODS.filter((f) => {
+    return allFoods.filter((f) => {
       const matchesCategory = category === "all" || f.category === category;
       const matchesQuery = query.trim().length === 0 || f.name.toLowerCase().includes(query.trim().toLowerCase());
       return matchesCategory && matchesQuery;
     });
-  }, [query, category]);
+  }, [query, category, allFoods]);
 
   return (
     <div className="mx-auto flex max-w-3xl flex-col gap-5">
