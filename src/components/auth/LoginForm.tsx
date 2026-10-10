@@ -16,7 +16,7 @@ export function LoginForm() {
     <form action={action} className="space-y-4">
       <label className="block">
         <span className="mb-1.5 block text-sm font-semibold">{t("auth.email")}</span>
-        <input name="email" type="email" autoComplete="email" required className={inputClass} />
+        <input name="email" type="email" autoComplete="email" required defaultValue={state?.email} key={state?.email} className={inputClass} />
       </label>
       <label className="block">
         <span className="mb-1.5 block text-sm font-semibold">{t("auth.password")}</span>

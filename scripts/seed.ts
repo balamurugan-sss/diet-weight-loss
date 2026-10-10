@@ -84,6 +84,20 @@ async function seedDemo() {
     for (const m of d.meals)
       for (const [position, c] of m.components.entries())
         await db.insert(schema.mealPlanItems).values({ id: randomUUID(), planId, dayIndex: d.dayIndex, slot: m.slot, position, recipeId: c.recipeId, portion: c.portion, swaps: [] });
+  // A week of logged meals so progress charts have something to show.
+  const byId = new Map(recipes.map((r) => [r.id, r]));
+  for (let back = 1; back <= 6; back++) {
+    const day = days[back % days.length];
+    const date = iso(new Date(today.getTime() - back * 86400000));
+    for (const m of day.meals.slice(0, back % 3 === 0 ? 3 : 4))
+      for (const c of m.components) {
+        const r = byId.get(c.recipeId)!;
+        await db.insert(schema.mealLogs).values({
+          id: randomUUID(), userId: id, date, slot: m.slot, recipeId: r.id, planItemId: null, title: r.title, portion: c.portion,
+          kcal: r.kcal * c.portion, proteinG: r.proteinG * c.portion, carbsG: r.carbsG * c.portion, netCarbsG: r.netCarbsG * c.portion, fatG: r.fatG * c.portion, fibreG: r.fibreG * c.portion,
+        });
+      }
+  }
   console.log(`✓ demo account: ${DEMO_EMAIL} / ${password}`);
 }
 

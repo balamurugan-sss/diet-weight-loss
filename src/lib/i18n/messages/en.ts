@@ -428,7 +428,7 @@ export const en = {
   "cook.imagePremium": "Step pictures are a Premium feature.",
   "cook.audio.device": "Device voice",
   "cook.audio.cloud": "Natural voice",
-  "cook.audio.noVoice": "Your device doesn't have a {lang} voice installed.",
+  "cook.audio.noVoice": "No {lang} voice is installed on this device.",
   "cook.audio.noTranslation": "This recipe hasn't been translated into {lang} yet.",
   "cook.audio.useEnglish": "Narrate in English instead",
   "cook.audio.readOnly": "Just show the text",

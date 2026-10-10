@@ -20,10 +20,9 @@ export async function generateMetadata({ params }: PageProps<"/recipes/[slug]">)
 }
 
 export default async function RecipePage({ params }: PageProps<"/recipes/[slug]">) {
-  const { profile } = await requireOnboarded();
+  const { user, profile } = await requireOnboarded();
   const { t, info } = await getI18n();
   const { slug } = await params;
-  const { user } = await requireOnboarded();
   const detail = await getRecipeDetail(slug, info.contentLang, user.id);
   if (!detail) notFound();
   const { recipe } = detail;
@@ -122,7 +121,7 @@ export default async function RecipePage({ params }: PageProps<"/recipes/[slug]"
         <Card>
           <h2 className="mb-1 text-lg font-semibold">{t("recipe.method")}</h2>
           {loc.lang !== "en" && loc.status !== "reviewed" && <p className="mb-2 text-xs text-muted">{t(loc.status === "machine" ? "cook.audio.machine" : "cook.audio.draft")}</p>}
-          {info.contentLang !== "en" && loc.lang === "en" && <p className="mb-2 text-xs text-muted">{t("cook.audio.noTranslation", { lang: languageInfo(info.code).name })}</p>}
+          {info.contentLang !== "en" && loc.lang === "en" && <p className="mb-2 text-xs text-muted">{t("cook.audio.noTranslation", { lang: languageInfo(info.code).nativeName })}</p>}
           <ol className="mt-3 space-y-4">
             {loc.steps.map((s) => (
               <li key={s.stepIndex} className="flex gap-3">

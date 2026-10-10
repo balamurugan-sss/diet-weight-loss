@@ -13,7 +13,7 @@ import { db, schema } from "@/server/db/client";
 import { LANG_COOKIE } from "@/server/i18n";
 import { clientIp, rateLimit, resetRateLimit } from "@/server/rateLimit";
 
-export type FormState = { error?: string; ok?: boolean } | undefined;
+export type FormState = { error?: string; ok?: boolean; email?: string } | undefined;
 
 export async function startAsGuest() {
   const existing = await getCurrentUser();
@@ -35,18 +35,18 @@ const Credentials = z.object({
 
 export async function logIn(_prev: FormState, form: FormData): Promise<FormState> {
   const parsed = Credentials.safeParse({ email: form.get("email"), password: form.get("password") });
-  if (!parsed.success) return { error: "auth.invalid" };
+  if (!parsed.success) return { error: "auth.invalid", email: String(form.get("email") ?? "").slice(0, 200) };
   const { email, password } = parsed.data;
   const ip = await clientIp();
   const okIp = await rateLimit(`login-ip:${ip}`, 20, 900);
   const okEmail = await rateLimit(`login-email:${email}`, 8, 900);
-  if (!okIp || !okEmail) return { error: "auth.rateLimited" };
+  if (!okIp || !okEmail) return { error: "auth.rateLimited", email };
   const [user] = await db.select().from(schema.users).where(eq(schema.users.email, email)).limit(1);
   // Always run a hash comparison so response time doesn't reveal whether the email exists.
   const valid = user?.passwordHash
     ? await verifyPassword(password, user.passwordHash)
     : (await verifyPassword(password, "scrypt$16384$8$1$AAAAAAAAAAAAAAAAAAAAAA$" + "A".repeat(86)), false);
-  if (!user || !valid) return { error: "auth.invalid" };
+  if (!user || !valid) return { error: "auth.invalid", email };
   await resetRateLimit(`login-email:${email}`);
   await db.update(schema.users).set({ lastActiveAt: new Date() }).where(eq(schema.users.id, user.id));
   await createSession(user.id);

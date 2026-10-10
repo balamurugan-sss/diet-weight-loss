@@ -1,7 +1,7 @@
 "use server";
 
 import { randomUUID } from "node:crypto";
-import { eq } from "drizzle-orm";
+import { and, eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
 import { requireOnboarded } from "@/server/auth/dal";
@@ -34,7 +34,7 @@ export async function finishCooking(recipeId: string, planItemId: string | null,
   await db
     .update(schema.cookingSessions)
     .set({ finishedAt: new Date(), updatedAt: new Date() })
-    .where(eq(schema.cookingSessions.userId, user.id));
+    .where(and(eq(schema.cookingSessions.userId, user.id), eq(schema.cookingSessions.recipeId, recipeId)));
   if (planItemId) {
     const row = await ownedItem(user.id, planItemId);
     if (row && !row.item.completedAt) {

@@ -88,7 +88,7 @@ export default async function ProgressPage() {
           <p className="mb-3 text-sm text-muted">
             {t("targets.daily")}: {targets.kcal} kcal
           </p>
-          <CaloriesChart data={week} target={targets.kcal} label={t("progress.calories")} />
+          {logged.length ? <CaloriesChart data={week} target={targets.kcal} label={t("progress.calories")} /> : <p className="card-sand py-10 text-center text-muted">{t("progress.noData")}</p>}
         </Card>
         <Card>
           <h2 className="mb-3 text-lg font-semibold">{t("progress.adherence")}</h2>
@@ -118,7 +118,7 @@ export default async function ProgressPage() {
       {!user.isPremium && (
         <Card className="flex flex-wrap items-center gap-3">
           <Lock className="size-5 text-forest" aria-hidden />
-          <div className="flex-1">
+          <div className="min-w-[12rem] flex-1">
             <p className="font-semibold">{t("progress.advanced")}</p>
             <p className="text-sm text-muted">{t("progress.advancedPremium")}</p>
           </div>

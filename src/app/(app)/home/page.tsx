@@ -148,7 +148,7 @@ export default async function HomePage() {
           </span>
           <span className="flex-1">
             <span className="block font-semibold">{t("nav.shopping")}</span>
-            <span className="text-sm text-muted">{t("shop.forRecipes", { n: plan ? 7 : 0 }).replace(/\d+/, "7-day")}</span>
+            <span className="text-sm text-muted">{plan ? t("planner.days", { n: plan.days }) : t("shop.noPlan")}</span>
           </span>
           <ArrowRight className="size-5 text-muted" aria-hidden />
         </Link>

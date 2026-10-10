@@ -49,6 +49,7 @@ export default async function CookPage({ params, searchParams }: PageProps<"/coo
       recipe={{ id: recipe.id, slug: recipe.slug, title: recipe.title, servings: recipe.servings, palette: recipe.palette }}
       steps={steps.map((s) => ({ stepIndex: s.stepIndex, title: s.title, kind: s.kind, timerSec: s.timerSec, tempC: s.tempC, heat: s.heat }))}
       narrations={narrations}
+      titles={Object.fromEntries(translations.filter((tr) => narrations[tr.lang]).map((tr) => [tr.lang, tr.title]))}
       lines={lineViews(detail)}
       stepImages={detail.stepImages}
       initial={{

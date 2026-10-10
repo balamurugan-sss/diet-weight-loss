@@ -46,6 +46,7 @@ export type CookingModeProps = {
   recipe: { id: string; slug: string; title: string; servings: number; palette: string[] };
   steps: CookStep[];
   narrations: Record<string, Narration>;
+  titles: Record<string, string>;
   lines: IngredientLineView[];
   stepImages: Record<number, ImageRef>;
   initial: { stepIndex: number; completed: number[]; servings: number };
@@ -220,7 +221,7 @@ export function CookingMode(p: CookingModeProps) {
   }
 
   const labels = { ai: t("recipe.illustration"), photo: t("recipe.verifiedPhoto"), placeholder: t("recipe.illustrationPlaceholder") };
-  const prefLangName = languageInfo(preferred).name;
+  const prefLangName = languageInfo(preferred).nativeName;
   const mins = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
 
   if (finished) {
@@ -265,7 +266,7 @@ export function CookingMode(p: CookingModeProps) {
           <X className="size-6" />
         </button>
         <div className="min-w-0 flex-1">
-          <p className="truncate text-sm font-semibold">{p.recipe.title}</p>
+          <p className="truncate text-sm font-semibold">{(narrKey && p.titles[narrKey]) || p.recipe.title}</p>
           <p className="text-xs text-muted">{t("cook.step", { n: i + 1, total })}</p>
         </div>
         <span className={cn("hidden items-center gap-1 rounded-full px-2 py-1 text-[11px] font-semibold sm:inline-flex", wakeActive ? "bg-lime-100 text-forest-700" : "bg-sand text-muted")}>
@@ -455,12 +456,12 @@ export function CookingMode(p: CookingModeProps) {
                 </div>
                 <p className="mt-2 text-xs text-muted">
                   {languageInfo(narrKey === "en" ? (preferred === "en-IN" ? "en-IN" : "en") : narrKey).nativeName} ·{" "}
-                  {audioMode === "cloud" ? t("cook.audio.cloud") : deviceVoice ? `${t("cook.audio.device")} (${deviceVoice.name})` : t("cook.audio.noVoice", { lang: languageInfo(narrKey).name })}
+                  {audioMode === "cloud" ? t("cook.audio.cloud") : deviceVoice ? `${t("cook.audio.device")} (${deviceVoice.name})` : t("cook.audio.noVoice", { lang: languageInfo(narrKey).nativeName })}
                   {voiceCmd && (voice.supported ? (voice.listening ? ` · ${t("cook.listening")}` : "") : ` · ${t("cook.voiceUnsupported")}`)}
                 </p>
                 {audioError && (
                   <div className="mt-2 rounded-xl bg-amber-100 px-3 py-2 text-sm text-[#6d4704]">
-                    <p>{t(audioError as MessageKey, { lang: languageInfo(narrKey).name })}</p>
+                    <p>{t(audioError as MessageKey, { lang: languageInfo(narrKey).nativeName })}</p>
                     {audioError === "cook.audio.noVoice" && (
                       <div className="mt-2 flex flex-wrap gap-2">
                         {p.premium && p.configured.tts && (

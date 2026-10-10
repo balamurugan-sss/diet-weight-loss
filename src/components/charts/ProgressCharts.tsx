@@ -27,13 +27,14 @@ export function WeightChart({ data, goal, label }: { data: { date: string; weigh
 }
 
 export function CaloriesChart({ data, target, label }: { data: { date: string; kcal: number }[]; target: number; label: string }) {
+  const top = Math.ceil(Math.max(target * 1.15, ...data.map((d) => d.kcal)) / 250) * 250;
   return (
     <div className="h-52 w-full" role="img" aria-label={label}>
       <ResponsiveContainer>
         <BarChart data={data} margin={{ top: 8, right: 12, bottom: 0, left: 0 }}>
           <CartesianGrid vertical={false} stroke="var(--color-line)" />
           <XAxis dataKey="date" tickFormatter={(d) => new Date(d + "T00:00:00Z").toLocaleDateString("en-IN", { weekday: "short", timeZone: "UTC" })} tickLine={false} axisLine={false} tick={axisTick} />
-          <YAxis tickLine={false} axisLine={false} tick={axisTick} width={40} />
+          <YAxis domain={[0, top]} tickLine={false} axisLine={false} tick={axisTick} width={40} />
           <ReferenceLine y={target} stroke="var(--color-forest)" strokeDasharray="4 4" strokeWidth={1.5} />
           <Tooltip contentStyle={tooltipStyle} labelFormatter={(d) => short(String(d))} formatter={(v) => [`${v} kcal`, ""]} cursor={{ fill: "var(--color-sand)" }} />
           <Bar dataKey="kcal" fill="var(--color-lime-600)" radius={[4, 4, 0, 0]} maxBarSize={36} isAnimationActive={false} />
