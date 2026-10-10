@@ -1,4 +1,4 @@
-import { ArrowLeft, Info, Moon } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle2, Info, Moon } from "lucide-react";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { StatStrip } from "@/components/brand/Brand";
@@ -14,7 +14,8 @@ import type { Prescription } from "@/lib/workouts/types";
 import { requireOnboarded } from "@/server/auth/dal";
 import { getI18n } from "@/server/i18n";
 import { latestWeight } from "@/server/services/progress";
-import { getActiveProgram, programDay } from "@/server/services/workouts";
+import { canStartDay, getActiveProgram, getSession, programDay, programProgress } from "@/server/services/workouts";
+import { buttonClass } from "@/components/ui/Button";
 
 export const metadata = { title: "Workout day" };
 
@@ -26,7 +27,9 @@ export default async function WorkoutDayPage({ params }: PageProps<"/workouts/da
   const day = Number.isInteger(index) ? programDay(program, index) : null;
   if (!day) notFound();
   const { t } = await getI18n();
-  const kg = (await latestWeight(user.id))?.weightKg ?? profile.weightKg ?? 70;
+  const [weight, session, prog] = await Promise.all([latestWeight(user.id), getSession(program.id, index), programProgress(program)]);
+  const kg = weight?.weightKg ?? profile.weightKg ?? 70;
+  const startable = day.kind !== "rest" && (session != null || canStartDay(program, prog, index));
   const est = estimateDay(day, kg);
   const original = program.days[index];
   const isSwapped = (p: Prescription) => [...original.warmup, ...original.main, ...original.cooldown].find((o) => o.slot === p.slot)?.exerciseId !== p.exerciseId;
@@ -114,6 +117,22 @@ export default async function WorkoutDayPage({ params }: PageProps<"/workouts/da
               <h2 className="text-lg font-semibold">{t("wk.cooldown")}</h2>
               <ul className="divide-y divide-line">{day.cooldown.map((p) => row(p, true))}</ul>
             </Card>
+          )}
+
+          {startable && (
+            <div className="sticky bottom-24 z-20 lg:bottom-6">
+              <Link href={`/workouts/session/${index}`} className={buttonClass("lime", "xl", "w-full shadow-[var(--shadow-lift)]")}>
+                {session?.status === "completed" ? (
+                  <>
+                    <CheckCircle2 className="size-5" aria-hidden /> {t("wk.cal.completed")}
+                  </>
+                ) : (
+                  <>
+                    {session ? t("wk.continue") : t("wk.start")} <ArrowRight className="size-5" aria-hidden />
+                  </>
+                )}
+              </Link>
+            </div>
           )}
         </>
       )}

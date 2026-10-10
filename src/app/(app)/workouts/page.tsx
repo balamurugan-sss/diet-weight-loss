@@ -124,9 +124,14 @@ export default async function WorkoutsPage() {
                 </div>
               ))}
             </dl>
-            <Link href={`/workouts/day/${pos}`} className="mt-4 inline-flex h-14 items-center justify-center gap-2 rounded-2xl bg-[#0c0c0b] px-6 text-[17px] font-bold text-[#d4f23f] hover:opacity-90 sm:mt-auto">
-              {session?.status === "in_progress" ? t("wk.continue") : t("wk.preview")} <ArrowRight className="size-5" aria-hidden />
-            </Link>
+            <div className="mt-4 flex gap-2 sm:mt-auto">
+              <Link href={`/workouts/session/${pos}`} className="inline-flex h-14 flex-1 items-center justify-center gap-2 rounded-2xl bg-[#0c0c0b] px-6 text-[17px] font-bold text-[#d4f23f] hover:opacity-90">
+                {session?.status === "in_progress" ? t("wk.continue") : t("wk.start")} <ArrowRight className="size-5" aria-hidden />
+              </Link>
+              <Link href={`/workouts/day/${pos}`} className="inline-flex h-14 items-center justify-center rounded-2xl border-2 border-[#0c0c0b]/25 px-4 text-[15px] font-bold hover:bg-[#0c0c0b]/5">
+                {t("wk.preview")}
+              </Link>
+            </div>
           </div>
           {lead && <ExerciseMedia exercise={lead} className="hidden rounded-[1.15rem] bg-[#0c0c0b] text-white sm:block" />}
         </section>
@@ -158,8 +163,8 @@ export default async function WorkoutsPage() {
           </div>
           <div className="mt-4 flex flex-wrap gap-2">
             {day.kind === "recovery" && (
-              <LinkButton href={`/workouts/day/${pos}`} size="md">
-                {t("wk.preview")}
+              <LinkButton href={`/workouts/session/${pos}`} size="md">
+                {t("wk.start")}
               </LinkButton>
             )}
             {nextWorkout > 0 && (

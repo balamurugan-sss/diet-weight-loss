@@ -1,10 +1,12 @@
 import "server-only";
 import { randomUUID } from "node:crypto";
-import { and, desc, eq, inArray } from "drizzle-orm";
+import { and, desc, eq, inArray, ne } from "drizzle-orm";
 import { profileAge } from "@/lib/profile/health";
 import { applySwaps, availableEquipment, generateProgram, type ProgramInput, type SelectionContext } from "@/lib/workouts/generator";
-import { replayProgram, type Completion } from "@/lib/workouts/progress";
-import type { DaysPerWeek, ProgramDay, WorkoutProfileInput } from "@/lib/workouts/types";
+import { estimatePrescriptions, type LoggedSet } from "@/lib/workouts/load";
+import { replayProgram, type Completion, type ProgramProgress } from "@/lib/workouts/progress";
+import type { DaysPerWeek, Prescription, ProgramDay, WorkoutGoal, WorkoutProfileInput } from "@/lib/workouts/types";
+import { workoutAddBack } from "@/lib/workouts/fuel";
 import type { Profile } from "@/server/auth/dal";
 import { db, schema } from "@/server/db/client";
 import { todayISO } from "@/server/time";
@@ -159,3 +161,121 @@ export async function sessionsFor(programId: string, dayIndexes: number[]) {
     .from(schema.workoutSessions)
     .where(and(eq(schema.workoutSessions.programId, programId), inArray(schema.workoutSessions.dayIndex, dayIndexes)));
 }
+
+// ─── Sessions ───────────────────────────────────────────────────────────────
+
+export type WorkoutSet = typeof schema.workoutSets.$inferSelect;
+
+/**
+ * A day can be started when it is the current day, or a later day reached only
+ * by skipping rest / recovery days ("train anyway"). Workout days are never skipped.
+ */
+export function canStartDay(program: WorkoutProgram, prog: ProgramProgress, dayIndex: number) {
+  if (dayIndex < prog.position || dayIndex >= program.days.length) return false;
+  return program.days.slice(prog.position, dayIndex).every((d) => d.kind !== "workout");
+}
+
+export async function getSession(programId: string, dayIndex: number) {
+  const [row] = await db
+    .select()
+    .from(schema.workoutSessions)
+    .where(and(eq(schema.workoutSessions.programId, programId), eq(schema.workoutSessions.dayIndex, dayIndex)));
+  return row ?? null;
+}
+
+export async function getOwnedSession(userId: string, sessionId: string) {
+  const [row] = await db
+    .select()
+    .from(schema.workoutSessions)
+    .where(and(eq(schema.workoutSessions.id, sessionId), eq(schema.workoutSessions.userId, userId)));
+  return row ?? null;
+}
+
+export async function startSession(userId: string, program: WorkoutProgram, dayIndex: number) {
+  const kind = program.days[dayIndex].kind === "recovery" ? "recovery" : "workout";
+  await db
+    .insert(schema.workoutSessions)
+    .values({ id: randomUUID(), userId, programId: program.id, dayIndex, date: todayISO(), kind, status: "in_progress", startedAt: new Date() })
+    .onConflictDoNothing();
+  return (await getSession(program.id, dayIndex))!;
+}
+
+export async function sessionSets(sessionId: string) {
+  return db.select().from(schema.workoutSets).where(eq(schema.workoutSets.sessionId, sessionId));
+}
+
+/** Sets from the most recent completed session that included each exercise. */
+export async function previousSets(userId: string, exerciseIds: string[], excludeSessionId: string) {
+  const out = new Map<string, LoggedSet[]>();
+  if (!exerciseIds.length) return out;
+  const rows = await db
+    .select({ set: schema.workoutSets, finishedAt: schema.workoutSessions.finishedAt })
+    .from(schema.workoutSets)
+    .innerJoin(schema.workoutSessions, eq(schema.workoutSessions.id, schema.workoutSets.sessionId))
+    .where(
+      and(
+        eq(schema.workoutSessions.userId, userId),
+        eq(schema.workoutSessions.status, "completed"),
+        ne(schema.workoutSessions.id, excludeSessionId),
+        inArray(schema.workoutSets.exerciseId, exerciseIds),
+      ),
+    )
+    .orderBy(desc(schema.workoutSessions.finishedAt), schema.workoutSets.setIndex);
+  const sessionFor = new Map<string, string>();
+  for (const { set } of rows) {
+    const first = sessionFor.get(set.exerciseId);
+    if (first && first !== set.sessionId) continue;
+    sessionFor.set(set.exerciseId, set.sessionId);
+    const list = out.get(set.exerciseId) ?? [];
+    list.push({ reps: set.reps, seconds: set.seconds, weightKg: set.weightKg, done: set.done });
+    out.set(set.exerciseId, list);
+  }
+  return out;
+}
+
+export async function logSet(sessionId: string, v: { slot: number; setIndex: number; exerciseId: string; reps: number | null; seconds: number | null; weightKg: number | null; done: boolean }) {
+  const values = { ...v, completedAt: v.done ? new Date() : null };
+  await db
+    .insert(schema.workoutSets)
+    .values({ sessionId, ...values })
+    .onConflictDoUpdate({ target: [schema.workoutSets.sessionId, schema.workoutSets.slot, schema.workoutSets.setIndex], set: values });
+}
+
+export type SessionSummary = { durationSec: number; kcal: number; netKcal: number; exercisesDone: number; exercisesTotal: number; addBackKcal: number };
+
+/**
+ * Energy for what was actually done: warm-up and cool-down plus the completed
+ * sets of each exercise, scaled towards the real elapsed time (within ±50%).
+ */
+export function summarise(day: ProgramDay, sets: Pick<WorkoutSet, "slot" | "done">[], durationSec: number, weightKg: number, goal: WorkoutGoal): SessionSummary {
+  const doneBySlot = new Map<number, number>();
+  for (const st of sets) if (st.done) doneBySlot.set(st.slot, (doneBySlot.get(st.slot) ?? 0) + 1);
+  const isRecovery = day.kind === "recovery";
+  const main: Prescription[] = day.main
+    .map((m) => ({ ...m, sets: isRecovery ? m.sets : Math.min(m.sets, doneBySlot.get(m.slot) ?? 0) }))
+    .filter((m) => m.sets > 0);
+  const exercisesDone = main.length;
+  const e = estimatePrescriptions([...day.warmup, ...main, ...day.cooldown], weightKg);
+  const planned = e.minutes * 60;
+  const scale = planned > 0 && durationSec > 0 ? Math.min(1.5, Math.max(0.5, durationSec / planned)) : 1;
+  const kcal = Math.round(e.kcal * scale);
+  const netKcal = Math.round(e.netKcal * scale);
+  return { durationSec, kcal, netKcal, exercisesDone, exercisesTotal: day.main.length, addBackKcal: workoutAddBack(netKcal, goal) };
+}
+
+export async function finishSession(session: WorkoutSession, summary: SessionSummary) {
+  await db
+    .update(schema.workoutSessions)
+    .set({
+      status: "completed",
+      date: todayISO(),
+      finishedAt: new Date(),
+      durationSec: summary.durationSec,
+      kcal: summary.kcal,
+      netKcal: summary.netKcal,
+      exercisesDone: summary.exercisesDone,
+    })
+    .where(eq(schema.workoutSessions.id, session.id));
+}
+
+export { bodyWeight };
