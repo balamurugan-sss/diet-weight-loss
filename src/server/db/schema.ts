@@ -454,6 +454,8 @@ export const mealLogs = sqliteTable(
     netCarbsG: real("net_carbs_g").notNull(),
     fatG: real("fat_g").notNull(),
     fibreG: real("fibre_g").notNull(),
+    /** Local "HH:MM" set in Edit my day; null = when it was logged. */
+    time: text("time"),
     createdAt: createdAt(),
   },
   (t) => [index("meal_logs_user_date_idx").on(t.userId, t.date)],
@@ -556,7 +558,8 @@ export const workoutPrograms = sqliteTable(
     days: json<ProgramDay[]>("days").notNull(),
     // "<dayIndex>:<slot>" → exerciseId for one day, "*:<exerciseId>" → exerciseId everywhere.
     swaps: json<Record<string, string>>("swaps").notNull().default({}),
-    status: text("status", { enum: ["active", "archived", "completed"] }).notNull(),
+    // "side" = a guide program followed alongside the main one ("Add to my day").
+    status: text("status", { enum: ["active", "side", "archived", "completed"] }).notNull(),
     createdAt: createdAt(),
   },
   (t) => [index("workout_programs_user_idx").on(t.userId, t.status)],
@@ -623,6 +626,8 @@ export const cardioLogs = sqliteTable(
     // Where the entry came from; imported entries carry the source's id so re-imports don't duplicate.
     source: text("source", { enum: ["manual", "apple_health", "fitbit_export", "google_fit_export", "google_health"] }).notNull().default("manual"),
     externalId: text("external_id"),
+    /** Local "HH:MM" set in Edit my day; null = when it was logged (manual) or unknown (imported). */
+    time: text("time"),
     createdAt: createdAt(),
   },
   (t) => [index("cardio_user_date_idx").on(t.userId, t.date), uniqueIndex("cardio_external_uq").on(t.userId, t.source, t.externalId)],

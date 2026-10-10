@@ -21,7 +21,7 @@ const num = (v: string, int = true) => {
 const field =
   "h-11 w-16 rounded-lg border border-line bg-surface px-2 text-center text-[17px] font-bold tabular outline-none focus:border-forest focus:ring-2 focus:ring-forest/20";
 
-export function SessionEditor({ sessionId, title, dayIndex, durationMin, exercises }: { sessionId: string; title: string; dayIndex: number; durationMin: number; exercises: EditorExercise[] }) {
+export function SessionEditor({ sessionId, title, dayIndex, query = "", durationMin, exercises }: { sessionId: string; title: string; dayIndex: number; query?: string; durationMin: number; exercises: EditorExercise[] }) {
   const { t } = useI18n();
   const router = useRouter();
   const [list, setList] = useState(exercises);
@@ -47,7 +47,7 @@ export function SessionEditor({ sessionId, title, dayIndex, durationMin, exercis
   return (
     <main className="mx-auto min-h-dvh max-w-xl px-4 pt-5 pb-32">
       <header className="mb-5 flex items-center gap-3">
-        <Link href={`/workouts/session/${dayIndex}`} className="grid size-11 shrink-0 place-items-center rounded-lg border border-line bg-surface" aria-label={t("common.back")}>
+        <Link href={`/workouts/session/${dayIndex}${query}`} className="grid size-11 shrink-0 place-items-center rounded-lg border border-line bg-surface" aria-label={t("common.back")}>
           <ArrowLeft className="size-5" aria-hidden />
         </Link>
         <div className="min-w-0">

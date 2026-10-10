@@ -4,21 +4,22 @@ import { getExercise } from "@/lib/workouts/exercises";
 import { formatDose } from "@/lib/workouts/format";
 import { requireOnboarded } from "@/server/auth/dal";
 import { getI18n } from "@/server/i18n";
-import { getActiveProgram, getSession, programDay, sessionSets } from "@/server/services/workouts";
+import { getSession, programDay, programForRequest, sessionSets } from "@/server/services/workouts";
 import { dayTitle } from "@/lib/workouts/label";
 
 export const metadata = { title: "Edit workout" };
 
 /** "Edit what I did": correct reps, weights, extra or skipped sets and the duration of a finished workout. */
-export default async function EditSessionPage({ params }: PageProps<"/workouts/session/[index]/edit">) {
+export default async function EditSessionPage({ params, searchParams }: PageProps<"/workouts/session/[index]/edit">) {
   const { user } = await requireOnboarded();
-  const program = await getActiveProgram(user.id);
+  const program = await programForRequest(user.id, (await searchParams).p);
   if (!program) redirect("/workouts");
   const index = Number((await params).index);
   const day = Number.isInteger(index) ? programDay(program, index) : null;
   const session = day ? await getSession(program.id, index) : null;
   if (!day || !session) notFound();
-  if (session.status !== "completed") redirect(`/workouts/session/${index}`);
+  const q = program.status === "side" ? `?p=${program.id}` : "";
+  if (session.status !== "completed") redirect(`/workouts/session/${index}${q}`);
   const { t } = await getI18n();
   const sets = await sessionSets(session.id);
 
@@ -44,6 +45,7 @@ export default async function EditSessionPage({ params }: PageProps<"/workouts/s
       sessionId={session.id}
       title={dayTitle(day, t)}
       dayIndex={index}
+      query={q}
       durationMin={Math.max(1, Math.round((session.durationSec ?? 0) / 60))}
       exercises={exercises}
     />

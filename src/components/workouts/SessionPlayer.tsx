@@ -24,6 +24,7 @@ const key = (slot: number, setIndex: number) => `${slot}:${setIndex}`;
 
 export function SessionPlayer({
   dayIndex,
+  programId = null,
   totalDays,
   day,
   title,
@@ -38,6 +39,8 @@ export function SessionPlayer({
 }: {
   videos?: Record<string, string>;
   dayIndex: number;
+  /** An alongside ("Add to my day") program; null for the main one. */
+  programId?: string | null;
   totalDays: number;
   day: ProgramDay;
   title: string;
@@ -77,7 +80,7 @@ export function SessionPlayer({
   useEffect(() => {
     if (sessionId || completed) return;
     let cancelled = false;
-    void startSessionAction(dayIndex).then((res) => {
+    void startSessionAction(dayIndex, programId).then((res) => {
       if (cancelled) return;
       if (res.ok) setSessionId(res.sessionId);
       else setError(t("wk.s.cannotStart"));
@@ -85,7 +88,7 @@ export function SessionPlayer({
     return () => {
       cancelled = true;
     };
-  }, [sessionId, completed, dayIndex, t]);
+  }, [sessionId, completed, dayIndex, programId, t]);
 
   // Active time, kept per session in this browser so a reload or a later resume doesn't count the gap.
   const [elapsed, setElapsed] = useState(0);
@@ -196,7 +199,7 @@ export function SessionPlayer({
     });
   };
 
-  if (summary) return <Summary summary={summary} title={title} recovery={day.kind === "recovery"} goal={goal} fuel={fuel} dayIndex={dayIndex} />;
+  if (summary) return <Summary summary={summary} title={title} recovery={day.kind === "recovery"} goal={goal} fuel={fuel} dayIndex={dayIndex} query={programId ? `?p=${programId}` : ""} />;
 
   const next = steps[i + 1];
   const nextEx = next ? exercises[next.p.exerciseId] : null;
@@ -214,7 +217,7 @@ export function SessionPlayer({
       {/* Top bar */}
       <header className="sticky top-0 z-30 border-b border-line bg-ivory/95 px-4 pt-3 pb-2.5 backdrop-blur">
         <div className="flex items-center gap-3">
-          <Link href={`/workouts/day/${dayIndex}`} className="grid size-10 place-items-center rounded-full border border-line bg-surface" aria-label={t("wk.s.leave")}>
+          <Link href={`/workouts/day/${dayIndex}${programId ? `?p=${programId}` : ""}`} className="grid size-10 place-items-center rounded-full border border-line bg-surface" aria-label={t("wk.s.leave")}>
             <X className="size-5" aria-hidden />
           </Link>
           <div className="min-w-0 flex-1">
@@ -456,6 +459,7 @@ function Summary({
   goal,
   fuel,
   dayIndex,
+  query,
 }: {
   summary: SessionSummary;
   title: string;
@@ -463,6 +467,7 @@ function Summary({
   goal: WorkoutGoal;
   fuel: { id: string; title: string; detail: string }[];
   dayIndex: number;
+  query: string;
 }) {
   const { t } = useI18n();
   return (
@@ -523,7 +528,7 @@ function Summary({
 
       <p className="text-sm text-muted">{t("wk.s.estimateNote")}</p>
       {!recovery && (
-        <Link href={`/workouts/session/${dayIndex}/edit`} className={buttonClass("outline", "lg", "w-full")}>
+        <Link href={`/workouts/session/${dayIndex}/edit${query}`} className={buttonClass("outline", "lg", "w-full")}>
           <PencilLine className="size-5" aria-hidden /> {t("today.edit.cta")}
         </Link>
       )}

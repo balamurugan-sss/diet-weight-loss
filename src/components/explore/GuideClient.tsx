@@ -1,13 +1,13 @@
 "use client";
 
-import { Play, Printer } from "lucide-react";
+import { CalendarPlus, Play, Printer } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState, useTransition } from "react";
 import { useI18n } from "@/components/i18n/I18nProvider";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
 import type { GuideBlock } from "@/lib/guides/types";
-import { startGuideProgramAction } from "@/server/actions/workouts";
+import { addSideProgramAction, endSideProgramAction, startGuideProgramAction } from "@/server/actions/workouts";
 
 export function PrintButton({ label }: { label: string }) {
   return (
@@ -90,5 +90,47 @@ export function Quiz({ block }: { block: Extract<GuideBlock, { kind: "quiz" }> }
         <p className="text-sm text-muted">{t("explore.answerAll", { n: block.questions.length })}</p>
       )}
     </div>
+  );
+}
+
+/** "Add to my day": follow this program alongside the main one; both show on My program. */
+export function AddToDayButton({ programId, sideId }: { programId: string; sideId: string | null }) {
+  const { t } = useI18n();
+  const router = useRouter();
+  const [pending, start] = useTransition();
+  if (sideId)
+    return (
+      <div className="no-print flex flex-wrap items-center gap-2 rounded-md bg-sand p-3">
+        <p className="flex-1 text-sm font-semibold text-ink-2">{t("explore.alongside")}</p>
+        <Button
+          variant="outline"
+          size="sm"
+          disabled={pending}
+          onClick={() =>
+            start(async () => {
+              await endSideProgramAction(sideId);
+              router.refresh();
+            })
+          }
+        >
+          {t("explore.stopAlongside")}
+        </Button>
+      </div>
+    );
+  return (
+    <Button
+      variant="outline"
+      size="xl"
+      className="no-print w-full justify-between"
+      disabled={pending}
+      onClick={() =>
+        start(async () => {
+          const res = await addSideProgramAction(programId);
+          if (res.ok) router.push("/home");
+        })
+      }
+    >
+      {t("explore.addToDay")} <CalendarPlus className="size-5" aria-hidden />
+    </Button>
   );
 }

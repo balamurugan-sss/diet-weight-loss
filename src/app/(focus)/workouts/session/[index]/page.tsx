@@ -15,7 +15,7 @@ import { approvedVideos } from "@/server/services/exerciseMedia";
 import {
   bodyWeight,
   canStartDay,
-  getActiveProgram,
+  programForRequest,
   getSession,
   previousSets,
   programDay,
@@ -26,9 +26,9 @@ import {
 
 export const metadata = { title: "Workout" };
 
-export default async function SessionPage({ params }: PageProps<"/workouts/session/[index]">) {
+export default async function SessionPage({ params, searchParams }: PageProps<"/workouts/session/[index]">) {
   const { user, profile } = await requireOnboarded();
-  const program = await getActiveProgram(user.id);
+  const program = await programForRequest(user.id, (await searchParams).p);
   if (!program) redirect("/workouts");
   const index = Number((await params).index);
   const day = Number.isInteger(index) ? programDay(program, index) : null;
@@ -98,6 +98,7 @@ export default async function SessionPage({ params }: PageProps<"/workouts/sessi
       goal={program.goal}
       fuel={fuel.map((f) => ({ id: f.id, title: f.title, detail: f.detail }))}
       videos={videos}
+      programId={program.status === "side" ? program.id : null}
     />
   );
 }

@@ -4,7 +4,7 @@ import { cn } from "@/lib/cn";
 import type { MessageKey } from "@/lib/i18n/messages/en";
 import type { TFunc } from "@/lib/i18n/t";
 import { QUICK_SLOT } from "@/lib/today/quickFoods";
-import { toMinutes, type TimelineItem } from "@/lib/today/timeline";
+import { dayTotals, toMinutes, type FoodMacros, type TimelineItem } from "@/lib/today/timeline";
 import { RemoveLogButton } from "./RemoveLogButton";
 
 const QUICK = new Set<string>(Object.values(QUICK_SLOT));
@@ -17,9 +17,15 @@ function iconFor(item: TimelineItem) {
   return item.slot === QUICK_SLOT.morning ? CupSoda : Utensils;
 }
 
+/** "429 kcal · P 28 g · C 10 g · F 30 g · Fibre 3 g" */
+export function macroLine(m: FoodMacros, t: TFunc) {
+  return `${m.kcal} kcal · ${t("day.p")} ${m.proteinG} g · ${t("day.c")} ${m.carbsG} g · ${t("day.f")} ${m.fatG} g · ${t("day.fibre")} ${m.fibreG} g`;
+}
+
 /** The day's activity line: time on the left, what happened on the right, with a "now" marker. */
 export function DayTimeline({ items, now, t }: { items: TimelineItem[]; now: string; t: TFunc }) {
   const nowMin = toMinutes(now);
+  const totals = dayTotals(items);
   const nowAt = items.findIndex((i) => i.time != null && toMinutes(i.time) > nowMin);
   const hm = (min: number) => t("health.hm", { h: Math.floor(min / 60), m: min % 60 });
 
@@ -42,7 +48,7 @@ export function DayTimeline({ items, now, t }: { items: TimelineItem[]; now: str
         break;
       case "food":
         title = item.title;
-        detail = `${t(`slot.${item.slot}` as MessageKey)} · ${item.kcal} kcal${item.proteinG >= 3 ? ` · ${item.proteinG} g ${t("macro.protein").toLowerCase()}` : ""}`;
+        detail = `${t(`slot.${item.slot}` as MessageKey)} · ${macroLine(item, t)}`;
         if (QUICK.has(item.slot)) action = <RemoveLogButton logId={item.logId} label={t("today.tl.remove", { what: item.title })} />;
         break;
       case "workout_plan":
@@ -50,7 +56,7 @@ export function DayTimeline({ items, now, t }: { items: TimelineItem[]; now: str
         detail = t("today.tl.planDetail");
         break;
       case "workout":
-        title = item.recovery ? t("wk.recoveryDay") : item.status === "completed" ? t("today.tl.workoutDone") : t("today.tl.workoutNow");
+        title = item.label ?? (item.recovery ? t("wk.recoveryDay") : item.status === "completed" ? t("today.tl.workoutDone") : t("today.tl.workoutNow"));
         detail =
           item.status === "completed"
             ? [item.end ? `${item.time}–${item.end}` : null, item.minutes != null ? t("wk.minutes", { n: item.minutes }) : null, item.kcal != null ? t("wk.kcal", { n: item.kcal }) : null]
@@ -60,12 +66,12 @@ export function DayTimeline({ items, now, t }: { items: TimelineItem[]; now: str
         action =
           item.status === "completed" ? (
             !item.recovery && (
-              <Link href={`/workouts/session/${item.dayIndex}/edit`} className="inline-flex h-9 items-center gap-1 rounded-lg px-2.5 text-sm font-semibold text-forest hover:bg-forest-50">
+              <Link href={`/workouts/session/${item.dayIndex}/edit${item.query}`} className="inline-flex h-9 items-center gap-1 rounded-lg px-2.5 text-sm font-semibold text-forest hover:bg-forest-50">
                 <PencilLine className="size-4" aria-hidden /> {t("today.tl.edit")}
               </Link>
             )
           ) : (
-            <Link href={`/workouts/session/${item.dayIndex}`} className="inline-flex h-9 items-center gap-1 rounded-lg bg-lime px-2.5 text-sm font-bold text-white">
+            <Link href={`/workouts/session/${item.dayIndex}${item.query}`} className="inline-flex h-9 items-center gap-1 rounded-lg bg-lime px-2.5 text-sm font-bold text-white">
               <Play className="size-4" aria-hidden /> {t("today.tl.resume")}
             </Link>
           );
@@ -92,7 +98,11 @@ export function DayTimeline({ items, now, t }: { items: TimelineItem[]; now: str
         <h2 id="tl-title" className="text-[1.35rem]">
           {t("today.tl.title")}
         </h2>
-        <span className="text-sm text-muted">{t("today.tl.count", { n: items.length })}</span>
+        {items.length > 0 && (
+          <Link href="/home/day" className="inline-flex min-h-10 items-center gap-1.5 rounded-md px-2.5 text-sm font-semibold text-lime hover:bg-sand">
+            <PencilLine className="size-4" aria-hidden /> {t("day.edit")}
+          </Link>
+        )}
       </div>
       {items.length === 0 ? (
         <p className="text-[15px] text-muted">{t("today.tl.empty")}</p>
@@ -116,6 +126,11 @@ export function DayTimeline({ items, now, t }: { items: TimelineItem[]; now: str
           ))}
           {nowAt === -1 && marker}
         </ol>
+      )}
+      {totals.kcal > 0 && (
+        <p className="mt-3 border-t border-line pt-3 text-sm text-ink-2 tabular">
+          <span className="font-bold text-charcoal">{t("day.total")}</span> · {macroLine(totals, t)}
+        </p>
       )}
     </section>
   );

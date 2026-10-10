@@ -1,6 +1,9 @@
-import { ArrowRight, Headset, SlidersHorizontal } from "lucide-react";
+import { CheckCircle2, Headset, Moon, Play, SlidersHorizontal } from "lucide-react";
 import Link from "next/link";
+import { DayTracker } from "@/components/me/DayTracker";
 import { WeekStrip, type StripDay } from "@/components/program/WeekStrip";
+import { ExerciseFigure } from "@/components/workouts/ExerciseFigure";
+import { goalsFor } from "@/lib/today/goals";
 import { WorkoutHero, type HeroAction } from "@/components/program/WorkoutHero";
 import { CheckIns } from "@/components/today/CheckIns";
 import { DayTimeline } from "@/components/today/DayTimeline";
@@ -15,7 +18,7 @@ import type { ProgramDay } from "@/lib/workouts/types";
 import { requireOnboarded } from "@/server/auth/dal";
 import { getI18n } from "@/server/i18n";
 import { approvedVideos } from "@/server/services/exerciseMedia";
-import { intakeForDate } from "@/server/services/progress";
+import { intakeForDate, waterFor } from "@/server/services/progress";
 import { targetsForProfile } from "@/server/services/targets";
 import { todayOverview } from "@/server/services/today";
 import { bodyWeight, getActiveProgram, programDay, programProgress, trainingContext } from "@/server/services/workouts";
@@ -48,7 +51,13 @@ export default async function MyProgramPage({ searchParams }: PageProps<"/home">
   ]);
   const targets = training?.adjusted ?? targetsForProfile(profile)!;
   const proteinLeft = Math.max(0, targets.proteinG - intake.proteinG);
-  const [o, prog] = await Promise.all([todayOverview(user.id, profile, proteinLeft), program ? programProgress(program, [sunday, addDays(sunday, 6)]) : null]);
+  const [o, prog, water] = await Promise.all([
+    todayOverview(user.id, profile, proteinLeft),
+    program ? programProgress(program, [sunday, addDays(sunday, 6)]) : null,
+    waterFor(user.id, today),
+  ]);
+  // Alongside programs ("Add to my day"): this week's calendar for each, for the strip and the cards.
+  const sideWeeks = await Promise.all(o.side.map((x) => programProgress(x.program, [sunday, addDays(sunday, 6)])));
 
   const dow = new Intl.DateTimeFormat(locale, { weekday: "narrow", timeZone: "UTC" });
   const strip: StripDay[] = Array.from({ length: 7 }, (_, i) => {
@@ -62,6 +71,11 @@ export default async function MyProgramPage({ searchParams }: PageProps<"/home">
       selected: date === picked,
       workout: cell?.kind === "workout",
       done: cell?.status === "completed",
+      extra: sideWeeks.some((w) => w.cells.some((c) => c.date === date && c.status === "completed"))
+        ? "done"
+        : sideWeeks.some((w) => w.cells.some((c) => c.date === date && c.kind === "workout" && c.status !== "missed"))
+          ? "planned"
+          : null,
     };
   });
 
@@ -147,19 +161,61 @@ export default async function MyProgramPage({ searchParams }: PageProps<"/home">
         </>
       )}
 
-      <section>
-        <h2 className="mb-3 text-[1.5rem] font-extrabold">{t("program.perks")}</h2>
-        <Link
-          href="/explore"
-          className="relative flex min-h-28 items-center justify-between overflow-hidden border border-line bg-surface px-5 [clip-path:polygon(0_0,92%_0,100%_22%,100%_100%,8%_100%,0_78%)] hover:border-lime/60"
-        >
-          <span className="pointer-events-none absolute -left-6 h-40 w-24 -skew-x-[20deg] bg-lime/80" aria-hidden />
-          <span className="pointer-events-none absolute left-16 h-40 w-3 -skew-x-[20deg] bg-lime/50" aria-hidden />
-          <span className="relative ml-auto flex items-center gap-2 text-right text-[1.35rem] font-bold text-lime">
-            {t("program.guides")} <ArrowRight className="size-6" aria-hidden />
-          </span>
-        </Link>
-      </section>
+      {o.side.length > 0 && (
+        <section className="space-y-2">
+          <h2 className="text-[1.3rem] font-extrabold">{t("program.alsoToday")}</h2>
+          <ul className="space-y-2">
+            {o.side.map((x, n) => {
+              const c = isToday ? null : sideWeeks[n].cells.find((cc) => cc.date === picked);
+              const di = isToday ? x.dayIndex : (c?.dayIndex ?? null);
+              const d = di != null ? programDay(x.program, di) : null;
+              const doneHere = isToday ? x.session?.status === "completed" : c?.status === "completed";
+              const q = `?p=${x.program.id}`;
+              const href = d && d.kind !== "rest" && di != null ? (isToday && !doneHere ? `/workouts/session/${di}${q}` : `/workouts/day/${di}${q}`) : null;
+              const est = d && d.kind !== "rest" ? estimateDay(d, kg) : null;
+              return (
+                <li key={x.program.id} className="flex items-center gap-3 rounded-md bg-surface p-3">
+                  <span className="grid size-12 shrink-0 place-items-center rounded-sm bg-sand">
+                    {d && d.kind !== "rest" ? (
+                      <ExerciseFigure pattern={getExercise(d.main[0]?.exerciseId ?? d.warmup[0].exerciseId).pattern} label="" animate={false} className="size-10" />
+                    ) : (
+                      <Moon className="size-5 text-muted" aria-hidden />
+                    )}
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block truncate text-xs font-bold tracking-wide text-[var(--color-tag)] uppercase">{x.program.name}</span>
+                    <span className="block truncate font-semibold">
+                      {d ? (d.kind === "rest" ? t("wk.restDay") : `${t("wk.dayN", { n: (di ?? 0) + 1 })} · ${dayTitle(d, t)}`) : t("wk.finished")}
+                    </span>
+                    {est && <span className="block text-sm text-muted tabular">{t("wk.minutes", { n: est.minutes })}</span>}
+                  </span>
+                  {doneHere ? (
+                    <span className="inline-flex items-center gap-1 rounded-sm bg-[var(--color-tag)] px-2 py-1 text-xs font-bold text-white">
+                      <CheckCircle2 className="size-3.5" aria-hidden /> {t("program.done")}
+                    </span>
+                  ) : href ? (
+                    <Link href={href} className="inline-flex min-h-11 items-center gap-1.5 rounded-md bg-lime px-3 text-sm font-bold text-on-accent">
+                      <Play className="size-4" aria-hidden /> {isToday ? t("program.startShort") : t("program.view")}
+                    </Link>
+                  ) : null}
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      )}
+
+      <DayTracker
+        t={t}
+        goals={goalsFor(profile)}
+        steps={o.health.today?.steps ?? null}
+        activeKcal={o.health.today?.activeKcal ?? (training?.burnedKcal || null)}
+        sleepMin={o.health.latest?.sleepMinutes ?? null}
+        waterMl={water}
+        waterGoalMl={targets.waterMl}
+        intake={{ kcal: intake.kcal, proteinG: intake.proteinG, carbsG: intake.carbsG, fatG: intake.fatG, fibreG: intake.fibreG }}
+        targets={{ kcal: targets.kcal, proteinG: targets.proteinG, carbsG: targets.carbsG, fatG: targets.fatG, fibreG: targets.fibreG }}
+      />
     </div>
   );
 }

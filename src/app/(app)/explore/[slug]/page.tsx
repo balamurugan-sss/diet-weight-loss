@@ -3,12 +3,13 @@ import { notFound } from "next/navigation";
 import { Tags } from "@/components/brand/Brand";
 import { GuideArt } from "@/components/explore/GuideCard";
 import { GuideBody } from "@/components/explore/GuideBody";
-import { PrintButton, StartProgramButton } from "@/components/explore/GuideClient";
+import { AddToDayButton, PrintButton, StartProgramButton } from "@/components/explore/GuideClient";
+import { ProgramPreview } from "@/components/explore/ProgramPreview";
 import { TopBar } from "@/components/ui/TopBar";
-import { getGuide, getProgramTemplate, GUIDES } from "@/lib/guides";
+import { getGuide, getProgramTemplate, GUIDES, templateDays } from "@/lib/guides";
 import { requireOnboarded } from "@/server/auth/dal";
 import { getI18n } from "@/server/i18n";
-import { getActiveProgram } from "@/server/services/workouts";
+import { bodyWeight, getActiveProgram, getSidePrograms } from "@/server/services/workouts";
 
 export function generateStaticParams() {
   return GUIDES.map((g) => ({ slug: g.slug }));
@@ -22,11 +23,13 @@ export async function generateMetadata({ params }: PageProps<"/explore/[slug]">)
 export default async function GuidePage({ params }: PageProps<"/explore/[slug]">) {
   const guide = getGuide((await params).slug);
   if (!guide) notFound();
-  const { user } = await requireOnboarded();
+  const { user, profile } = await requireOnboarded();
   const { t } = await getI18n();
   const tpl = guide.programId ? getProgramTemplate(guide.programId) : null;
-  const active = tpl ? await getActiveProgram(user.id) : null;
+  const [active, sides, kg] = tpl ? await Promise.all([getActiveProgram(user.id), getSidePrograms(user.id), bodyWeight(user.id, profile)]) : [null, [], 70];
   const following = !!(tpl && active?.split === "guide" && active.name === tpl.name);
+  const side = tpl ? (sides.find((p) => p.name === tpl.name) ?? null) : null;
+  const days = tpl ? templateDays(tpl, kg) : [];
   const workouts = tpl?.days.filter((d) => d.kind === "workout").length ?? 0;
 
   return (
@@ -55,8 +58,19 @@ export default async function GuidePage({ params }: PageProps<"/explore/[slug]">
         <div className="no-print flex flex-wrap gap-2">
           <PrintButton label={t("explore.print")} />
         </div>
-        {tpl && <StartProgramButton programId={tpl.id} active={following} />}
+        {tpl && (
+          <div className="space-y-2">
+            {!following && <AddToDayButton programId={tpl.id} sideId={side?.id ?? null} />}
+            <StartProgramButton programId={tpl.id} active={following} />
+          </div>
+        )}
       </header>
+
+      {tpl && (
+        <div className="mb-8">
+          <ProgramPreview days={days} t={t} />
+        </div>
+      )}
 
       <GuideBody sections={guide.sections} />
 

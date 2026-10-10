@@ -10,7 +10,7 @@ import { db, schema } from "@/server/db/client";
 import { clockAt, todayISO } from "@/server/time";
 import { cardioBetween } from "./cardio";
 import { getGoogleConnection, healthDaysBetween } from "./health";
-import { getActiveProgram, programDay, programProgress } from "./workouts";
+import { getActiveProgram, getSidePrograms, programDay, programProgress } from "./workouts";
 
 export type DayEventKind = (typeof schema.dayEvents.$inferSelect)["kind"];
 
@@ -34,7 +34,7 @@ export async function setDayEvent(userId: string, date: string, kind: DayEventKi
 export async function todayOverview(userId: string, profile: Profile, proteinLeftG: number) {
   const date = todayISO();
   const now = clockAt();
-  const [events, health, meals, program, sessions, cardio, google] = await Promise.all([
+  const [events, health, meals, program, sessions, cardio, google, sides] = await Promise.all([
     dayEventsFor(userId, date),
     healthDaysBetween(userId, addDays(date, -21), date),
     db.select().from(schema.mealLogs).where(and(eq(schema.mealLogs.userId, userId), eq(schema.mealLogs.date, date))),
@@ -43,10 +43,10 @@ export async function todayOverview(userId: string, profile: Profile, proteinLef
       .select()
       .from(schema.workoutSessions)
       .where(and(eq(schema.workoutSessions.userId, userId), eq(schema.workoutSessions.date, date)))
-      .orderBy(desc(schema.workoutSessions.startedAt))
-      .limit(1),
+      .orderBy(desc(schema.workoutSessions.startedAt)),
     cardioBetween(userId, date, date),
     getGoogleConnection(userId),
+    getSidePrograms(userId),
   ]);
 
   const healthToday = health.find((d) => d.date === date) ?? null;
@@ -56,36 +56,49 @@ export async function todayOverview(userId: string, profile: Profile, proteinLef
 
   const prog = program ? await programProgress(program) : null;
   const plannedDay = program && prog && !prog.finished ? programDay(program, prog.position) : null;
-  const session = sessions[0] ?? null;
-  const sessionDay = session && program && session.programId === program.id ? programDay(program, session.dayIndex) : null;
+  // The main program's session drives the workout card and prompts; alongside programs only add to the day line.
+  const session = (program && sessions.find((x) => x.programId === program.id)) || null;
+  const sessionDay = session && program ? programDay(program, session.dayIndex) : null;
+  const sideById = new Map(sides.map((p) => [p.id, p]));
 
   const foods = meals
-    .map((m) => ({ time: clockAt(m.createdAt), slot: m.slot, title: m.title, kcal: Math.round(m.kcal), proteinG: Math.round(m.proteinG), logId: m.id }))
+    .map((m) => ({
+      time: m.time ?? clockAt(m.createdAt),
+      slot: m.slot,
+      title: m.title,
+      kcal: Math.round(m.kcal),
+      proteinG: Math.round(m.proteinG),
+      carbsG: Math.round(m.carbsG),
+      fatG: Math.round(m.fatG),
+      fibreG: Math.round(m.fibreG),
+      logId: m.id,
+    }))
     .sort((a, b) => a.time.localeCompare(b.time));
-  const wake = events.wake
-    ? { time: events.wake, source: "you" as const }
-    : healthToday?.wakeTime
-      ? { time: healthToday.wakeTime, source: "device" as const }
-      : null;
+  // A watch wake-up later than now (e.g. a stale value just after midnight) isn't shown.
+  const deviceWake = healthToday?.wakeTime && healthToday.wakeTime <= now ? healthToday.wakeTime : null;
+  const wake = events.wake ? { time: events.wake, source: "you" as const } : deviceWake ? { time: deviceWake, source: "device" as const } : null;
 
   const timeline = buildTimeline({
     wake,
     sleep: healthToday ? { minutes: healthToday.sleepMinutes, start: healthToday.sleepStart } : null,
     foods,
     workoutPlan: events.workout_plan ?? null,
-    session: session
-      ? {
-          start: clockAt(session.startedAt),
-          end: session.finishedAt ? clockAt(session.finishedAt) : null,
-          status: session.status,
-          dayIndex: session.dayIndex,
-          recovery: session.kind === "recovery",
-          durationSec: session.durationSec,
-          kcal: session.kcal,
-        }
-      : null,
+    sessions: sessions
+      .filter((x) => x.programId === program?.id || sideById.has(x.programId))
+      .map((x) => ({
+        id: x.id,
+        start: clockAt(x.startedAt),
+        end: x.finishedAt ? clockAt(x.finishedAt) : null,
+        status: x.status,
+        dayIndex: x.dayIndex,
+        recovery: x.kind === "recovery",
+        durationSec: x.durationSec,
+        kcal: x.kcal,
+        label: sideById.get(x.programId)?.name ?? null,
+        query: sideById.has(x.programId) ? `?p=${x.programId}` : "",
+      })),
     // Manually logged cardio has a real time; imported sessions are shown without one.
-    cardio: cardio.map((c) => ({ time: c.source === "manual" ? clockAt(c.createdAt) : null, activity: c.activity, minutes: c.minutes, kcal: c.kcal, id: c.id })),
+    cardio: cardio.map((c) => ({ time: c.time ?? (c.source === "manual" ? clockAt(c.createdAt) : null), activity: c.activity, minutes: c.minutes, kcal: c.kcal, id: c.id })),
   });
 
   const lastFood = foods.filter((f) => f.slot !== QUICK_SLOT.morning || f.kcal >= 50).at(-1)?.time ?? null;
@@ -104,13 +117,24 @@ export async function todayOverview(userId: string, profile: Profile, proteinLef
     proteinLeftG,
   });
 
+  // Alongside programs: where each one is today and whether today's session is done.
+  const side = await Promise.all(
+    sides.map(async (p) => {
+      const pr = await programProgress(p);
+      const sess = sessions.find((x) => x.programId === p.id) ?? null;
+      const index = sess?.dayIndex ?? (pr.finished ? null : pr.position);
+      return { program: p, progress: pr, dayIndex: index, day: index != null ? programDay(p, index) : null, session: sess };
+    }),
+  );
+
   return {
     date,
     now,
     events,
+    side,
     timeline,
     prompts,
-    deviceWake: healthToday?.wakeTime ?? null,
+    deviceWake,
     workout: {
       program: program ? { id: program.id } : null,
       position: prog?.position ?? null,

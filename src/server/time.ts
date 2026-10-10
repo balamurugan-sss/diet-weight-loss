@@ -28,3 +28,17 @@ export function hourNow() {
 export function clockAt(d = new Date()) {
   return new Intl.DateTimeFormat("en-GB", { timeZone: TZ, hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(d);
 }
+
+/** The instant of local "HH:MM" on a calendar date in the app's time zone. */
+export function zonedInstant(dateISO: string, hhmm: string) {
+  const [h, m] = hhmm.split(":").map(Number);
+  const guess = Date.UTC(Number(dateISO.slice(0, 4)), Number(dateISO.slice(5, 7)) - 1, Number(dateISO.slice(8, 10)), h, m);
+  // How far the zone is from UTC at that moment: format the guess in the zone and compare.
+  const parts = Object.fromEntries(
+    new Intl.DateTimeFormat("en-US", { timeZone: TZ, hourCycle: "h23", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit" })
+      .formatToParts(new Date(guess))
+      .map((p) => [p.type, p.value]),
+  );
+  const asZone = Date.UTC(Number(parts.year), Number(parts.month) - 1, Number(parts.day), Number(parts.hour) % 24, Number(parts.minute));
+  return new Date(guess - (asZone - guess));
+}

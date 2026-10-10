@@ -1,9 +1,10 @@
-import { ChartLine, Droplets, Flame, Footprints, Moon, PlusCircle, Settings, Zap } from "lucide-react";
+import { ChartLine, Droplets, Flame, PlusCircle, Settings } from "lucide-react";
 import Link from "next/link";
+import { DayTracker } from "@/components/me/DayTracker";
 import { WaterButton, WeightTrack } from "@/components/me/MeControls";
 import { BodyPanel } from "@/components/today/BodyPanel";
 import { cn } from "@/lib/cn";
-import { goalsFor, pct } from "@/lib/today/goals";
+import { goalsFor } from "@/lib/today/goals";
 import { requireOnboarded } from "@/server/auth/dal";
 import { getI18n } from "@/server/i18n";
 import { firstWeight, intakeForDate, latestWeight, waterFor } from "@/server/services/progress";
@@ -44,13 +45,6 @@ export default async function MePage() {
   // Active calories: the watch's figure when it records one, otherwise what Movewell logged (workouts + cardio).
   const activeKcal = h?.activeKcal ?? (training?.burnedKcal || null);
   const sleep = o.health.latest?.sleepMinutes ?? null;
-  const hm = (min: number) => t("health.hm", { h: Math.floor(min / 60), m: min % 60 });
-  const trackers = [
-    { icon: Footprints, label: t("health.steps"), value: h?.steps != null ? h.steps.toLocaleString("en-IN") : "—", goal: goals.steps.toLocaleString("en-IN"), p: pct(h?.steps ?? null, goals.steps) },
-    { icon: Zap, label: t("me.activeKcal"), value: activeKcal != null ? `${activeKcal}` : "—", goal: `${goals.activeKcal} kcal`, p: pct(activeKcal, goals.activeKcal) },
-    { icon: Moon, label: t("health.sleep"), value: sleep != null ? hm(sleep) : "—", goal: hm(goals.sleepMin), p: pct(sleep, goals.sleepMin) },
-    { icon: Droplets, label: t("me.water"), value: `${(water / 1000).toFixed(1)} l`, goal: `${(targets.waterMl / 1000).toFixed(1)} l`, p: pct(water, targets.waterMl) },
-  ];
   const row = "flex items-center gap-4 rounded-md bg-surface p-4";
 
   return (
@@ -131,28 +125,17 @@ export default async function MePage() {
       </section>
 
       <section className="space-y-2">
-        <div className="flex items-baseline justify-between">
-          <h2 className="text-[1.35rem] font-bold">{t("me.tracker")}</h2>
-          <Link href="/me/goals" className="font-semibold text-lime">
-            {t("me.setGoals")}
-          </Link>
-        </div>
-        <ul className="no-scrollbar -mx-4 flex gap-2 overflow-x-auto px-4 sm:mx-0 sm:grid sm:grid-cols-4 sm:px-0">
-          {trackers.map(({ icon: Icon, label, value, goal, p }) => (
-            <li key={label} className="w-40 shrink-0 rounded-md bg-surface p-4 sm:w-auto">
-              <p className="flex items-center gap-1.5 text-sm font-bold">
-                <Icon className="size-4 text-lime" aria-hidden /> {label}
-              </p>
-              <p className="mt-2 text-[1.4rem] font-extrabold tabular">{value}</p>
-              <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-sand-2" aria-hidden>
-                <span className="block h-full bg-lime" style={{ width: `${p}%` }} />
-              </div>
-              <p className="mt-1.5 text-xs text-muted tabular">
-                {t("me.ofGoal", { goal })} · {p}%
-              </p>
-            </li>
-          ))}
-        </ul>
+        <DayTracker
+          t={t}
+          goals={goals}
+          steps={h?.steps ?? null}
+          activeKcal={activeKcal}
+          sleepMin={sleep}
+          waterMl={water}
+          waterGoalMl={targets.waterMl}
+          intake={{ kcal: intake.kcal, proteinG: intake.proteinG, carbsG: intake.carbsG, fatG: intake.fatG, fibreG: intake.fibreG }}
+          targets={{ kcal: targets.kcal, proteinG: targets.proteinG, carbsG: targets.carbsG, fatG: targets.fatG, fibreG: targets.fibreG }}
+        />
         {!o.health.connected.any && (
           <Link href="/me/sync/google" className="flex items-center gap-3 rounded-md bg-surface p-4 hover:bg-sand">
             <PlusCircle className="size-6 text-lime" aria-hidden />

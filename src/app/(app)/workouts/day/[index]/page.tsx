@@ -13,15 +13,15 @@ import type { Prescription } from "@/lib/workouts/types";
 import { requireOnboarded } from "@/server/auth/dal";
 import { getI18n } from "@/server/i18n";
 import { latestWeight } from "@/server/services/progress";
-import { canStartDay, getActiveProgram, getSession, programDay, programProgress } from "@/server/services/workouts";
+import { canStartDay, getSession, programDay, programForRequest, programProgress } from "@/server/services/workouts";
 import { buttonClass } from "@/components/ui/Button";
 import { dayTitle } from "@/lib/workouts/label";
 
 export const metadata = { title: "Workout day" };
 
-export default async function WorkoutDayPage({ params }: PageProps<"/workouts/day/[index]">) {
+export default async function WorkoutDayPage({ params, searchParams }: PageProps<"/workouts/day/[index]">) {
   const { user, profile } = await requireOnboarded();
-  const program = await getActiveProgram(user.id);
+  const program = await programForRequest(user.id, (await searchParams).p);
   if (!program) redirect("/workouts");
   const index = Number((await params).index);
   const day = Number.isInteger(index) ? programDay(program, index) : null;
@@ -121,7 +121,7 @@ export default async function WorkoutDayPage({ params }: PageProps<"/workouts/da
 
           {startable && (
             <div className="sticky bottom-24 z-20 lg:bottom-6">
-              <Link href={`/workouts/session/${index}`} className={buttonClass("lime", "xl", "w-full shadow-[var(--shadow-lift)]")}>
+              <Link href={`/workouts/session/${index}${program.status === "side" ? `?p=${program.id}` : ""}`} className={buttonClass("lime", "xl", "w-full shadow-[var(--shadow-lift)]")}>
                 {session?.status === "completed" ? (
                   <>
                     <CheckCircle2 className="size-5" aria-hidden /> {t("wk.cal.completed")}

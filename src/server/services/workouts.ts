@@ -1,6 +1,6 @@
 import "server-only";
 import { randomUUID } from "node:crypto";
-import { and, desc, eq, inArray, ne, sql } from "drizzle-orm";
+import { and, desc, eq, inArray, ne, or, sql } from "drizzle-orm";
 import { profileAge } from "@/lib/profile/health";
 import { applySwaps, availableEquipment, generateProgram, rhythmForWeekdays, type ProgramInput, type SelectionContext } from "@/lib/workouts/generator";
 import { getProgramTemplate, templateDays } from "@/lib/guides";
@@ -56,6 +56,24 @@ export async function getActiveProgram(userId: string) {
     .orderBy(desc(schema.workoutPrograms.createdAt))
     .limit(1);
   return row ?? null;
+}
+
+/** Guide programs followed alongside the main one ("Add to my day"), oldest first. */
+export async function getSidePrograms(userId: string) {
+  return db
+    .select()
+    .from(schema.workoutPrograms)
+    .where(and(eq(schema.workoutPrograms.userId, userId), eq(schema.workoutPrograms.status, "side")))
+    .orderBy(schema.workoutPrograms.createdAt);
+}
+
+/** The program a session / day URL refers to: `?p=<id>` for an alongside program, otherwise the main one. */
+export async function programForRequest(userId: string, p: unknown) {
+  if (typeof p === "string" && /^[\w-]{1,64}$/.test(p)) {
+    const row = await getOwnedProgram(userId, p);
+    if (row && (row.status === "side" || row.status === "active")) return row;
+  }
+  return getActiveProgram(userId);
 }
 
 export async function getOwnedProgram(userId: string, programId: string) {
@@ -317,12 +335,11 @@ export async function trainingContext(userId: string, profile: Profile, date = t
   if (!base) return null;
   const program = await getActiveProgram(userId);
   const [done, cardio, prog, weightKg] = await Promise.all([
-    program
-      ? db
-          .select()
-          .from(schema.workoutSessions)
-          .where(and(eq(schema.workoutSessions.userId, userId), eq(schema.workoutSessions.date, date), eq(schema.workoutSessions.status, "completed")))
-      : [],
+    // Every completed session today counts, including programs followed alongside the main one.
+    db
+      .select()
+      .from(schema.workoutSessions)
+      .where(and(eq(schema.workoutSessions.userId, userId), eq(schema.workoutSessions.date, date), eq(schema.workoutSessions.status, "completed"))),
     cardioBetween(userId, date, date),
     program ? programProgress(program, [date, date], date) : null,
     bodyWeight(userId, profile),
@@ -332,7 +349,7 @@ export async function trainingContext(userId: string, profile: Profile, date = t
   const burnedKcal = done.reduce((n, x) => n + (x.kcal ?? 0), 0) + cardio.reduce((n, c) => n + c.kcal, 0);
   const burnedNetKcal = done.reduce((n, x) => n + (x.netKcal ?? 0), 0) + cardio.reduce((n, c) => n + c.netKcal, 0);
   const trainingDay = done.length > 0 || plannedKind === "workout" || cardioMinutes >= 20;
-  if (!program && cardio.length === 0) {
+  if (!program && cardio.length === 0 && done.length === 0) {
     return { base, adjusted: null, program: null, trainingDay: false, plannedKind: null, burnedKcal: 0, burnedNetKcal: 0, sessionsToday: 0, cardioMinutes: 0 };
   }
   const age = profileAge(profile) ?? 30;
@@ -404,10 +421,16 @@ export async function startGuideProgram(userId: string, profile: Profile, progra
   const days = templateDays(tpl, kg);
   const id = randomUUID();
   await db.batch([
+    // The old main program — and this guide, if it was being followed alongside — are archived.
     db
       .update(schema.workoutPrograms)
       .set({ status: "archived" })
-      .where(and(eq(schema.workoutPrograms.userId, userId), eq(schema.workoutPrograms.status, "active"))),
+      .where(
+        and(
+          eq(schema.workoutPrograms.userId, userId),
+          or(eq(schema.workoutPrograms.status, "active"), and(eq(schema.workoutPrograms.status, "side"), eq(schema.workoutPrograms.name, tpl.name))),
+        ),
+      ),
     db.insert(schema.workoutPrograms).values({
       id,
       userId,
@@ -423,4 +446,37 @@ export async function startGuideProgram(userId: string, profile: Profile, progra
     }),
   ]);
   return id;
+}
+
+/** "Add to my day": follow a guide program alongside the main one, from today. Adding it again is a no-op. */
+export async function addSideProgram(userId: string, profile: Profile, programId: string) {
+  const tpl = getProgramTemplate(programId);
+  if (!tpl) return null;
+  const existing = (await getSidePrograms(userId)).find((p) => p.name === tpl.name);
+  if (existing) return existing.id;
+  const kg = await bodyWeight(userId, profile);
+  const days = templateDays(tpl, kg);
+  const id = randomUUID();
+  await db.insert(schema.workoutPrograms).values({
+    id,
+    userId,
+    name: tpl.name,
+    split: "guide",
+    location: "home",
+    level: tpl.level,
+    goal: "fit",
+    daysPerWeek: Math.max(1, days.slice(0, 7).filter((d) => d.kind === "workout").length),
+    startDate: todayISO(),
+    days,
+    status: "side",
+  });
+  return id;
+}
+
+/** Stop following an alongside program (its sessions stay in history). */
+export async function endSideProgram(userId: string, programId: string) {
+  await db
+    .update(schema.workoutPrograms)
+    .set({ status: "archived" })
+    .where(and(eq(schema.workoutPrograms.id, programId), eq(schema.workoutPrograms.userId, userId), eq(schema.workoutPrograms.status, "side")));
 }

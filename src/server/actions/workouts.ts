@@ -13,7 +13,9 @@ import {
   bodyWeight,
   canStartDay,
   finishSession,
-  getActiveProgram,
+  programForRequest,
+  addSideProgram,
+  endSideProgram,
   getOwnedProgram,
   getOwnedSession,
   getSession,
@@ -100,10 +102,10 @@ export async function swapExerciseAction(ref: unknown, input: unknown): Promise<
 
 // ─── Sessions ───────────────────────────────────────────────────────────────
 
-export async function startSessionAction(dayIndex: number): Promise<{ ok: true; sessionId: string } | { ok: false; error: string }> {
+export async function startSessionAction(dayIndex: number, programId?: string | null): Promise<{ ok: true; sessionId: string } | { ok: false; error: string }> {
   if (!Number.isInteger(dayIndex)) return { ok: false, error: "common.error" };
   const { user } = await requireOnboarded();
-  const program = await getActiveProgram(user.id);
+  const program = await programForRequest(user.id, programId);
   if (!program) return { ok: false, error: "common.error" };
   const existing = await getSession(program.id, dayIndex);
   if (existing) return { ok: true, sessionId: existing.id };
@@ -220,6 +222,25 @@ export async function startGuideProgramAction(programId: unknown): Promise<Actio
   if (!id.success) return { ok: false, error: "common.error" };
   const { user, profile } = await requireOnboarded();
   if (!(await startGuideProgram(user.id, profile, id.data))) return { ok: false, error: "common.error" };
+  revalidatePath("/", "layout");
+  return { ok: true };
+}
+
+/** Explore → a program guide → "Add to my day": follow it alongside the main program. */
+export async function addSideProgramAction(programId: unknown): Promise<ActionResult> {
+  const id = z.string().min(1).max(80).safeParse(programId);
+  if (!id.success) return { ok: false, error: "common.error" };
+  const { user, profile } = await requireOnboarded();
+  if (!(await addSideProgram(user.id, profile, id.data))) return { ok: false, error: "common.error" };
+  revalidatePath("/", "layout");
+  return { ok: true };
+}
+
+export async function endSideProgramAction(programId: unknown): Promise<ActionResult> {
+  const id = z.string().min(1).max(64).safeParse(programId);
+  if (!id.success) return { ok: false, error: "common.error" };
+  const { user } = await requireOnboarded();
+  await endSideProgram(user.id, id.data);
   revalidatePath("/", "layout");
   return { ok: true };
 }
