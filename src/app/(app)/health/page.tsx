@@ -12,7 +12,7 @@ import { requireOnboarded } from "@/server/auth/dal";
 import { getI18n } from "@/server/i18n";
 import { googleHealthConfigured } from "@/server/providers/googleHealth";
 import { getGoogleConnection, healthDaysBetween } from "@/server/services/health";
-import { todayISO } from "@/server/time";
+import { APP_TIMEZONE, todayISO } from "@/server/time";
 
 export const metadata = { title: "Health data" };
 
@@ -146,7 +146,7 @@ export default async function HealthPage({ searchParams }: PageProps<"/health">)
         <GoogleHealthCard
           configured={googleHealthConfigured()}
           connected={!!conn}
-          lastSync={conn?.lastSyncAt ? new Intl.DateTimeFormat(locale, { dateStyle: "medium", timeStyle: "short", timeZone: "Asia/Kolkata" }).format(conn.lastSyncAt) : null}
+          lastSync={conn?.lastSyncAt ? new Intl.DateTimeFormat(locale, { dateStyle: "medium", timeStyle: "short", timeZone: APP_TIMEZONE }).format(conn.lastSyncAt) : null}
           lastError={conn?.lastError ?? null}
           status={status}
         />

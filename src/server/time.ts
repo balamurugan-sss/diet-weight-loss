@@ -3,6 +3,8 @@
  * the user's day; override with APP_TIMEZONE.
  */
 const TZ = process.env.APP_TIMEZONE || "Asia/Kolkata";
+/** The app's time zone, for formatting instants on the server. */
+export const APP_TIMEZONE = TZ;
 
 export function todayISO(d = new Date()) {
   return new Intl.DateTimeFormat("en-CA", { timeZone: TZ, year: "numeric", month: "2-digit", day: "2-digit" }).format(d);

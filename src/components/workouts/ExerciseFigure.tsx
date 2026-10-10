@@ -231,7 +231,7 @@ export function ExerciseFigure({ pattern, label, className, animate = true }: { 
   );
 
   return (
-    <svg viewBox="0 0 120 112" role="img" aria-label={label} className={cn("text-charcoal", className)}>
+    <svg viewBox="0 0 120 112" {...(label ? { role: "img", "aria-label": label } : { "aria-hidden": true })} className={cn("text-charcoal", className)}>
       <ellipse cx="60" cy="108" rx="46" ry="3.5" className="fill-lime/25" />
       {spec.prop === "mat" && <rect x="4" y="105" width="112" height="4" rx="2" className="fill-lime/60" />}
       {spec.prop === "bar" && <rect x="34" y="4" width="52" height="4" rx="2" className="fill-lime" />}

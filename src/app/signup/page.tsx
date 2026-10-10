@@ -17,7 +17,7 @@ export default async function SignUpPage() {
       <div className="mx-auto flex min-h-dvh max-w-md flex-col justify-center px-5 py-10">
         <Link href="/" className="mb-8 flex items-center gap-2.5">
           <LogoMark />
-          <span className="font-display text-2xl font-extrabold tracking-tight uppercase">{t("app.name")}</span>
+          <span className="font-display text-2xl font-extrabold">{t("app.name")}</span>
         </Link>
         <div className="card p-6">
           <h1 className="text-2xl font-semibold">{t("auth.signupTitle")}</h1>

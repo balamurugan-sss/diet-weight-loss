@@ -10,6 +10,7 @@ import { requireOnboarded } from "@/server/auth/dal";
 import { getI18n } from "@/server/i18n";
 import { googleHealthConfigured } from "@/server/providers/googleHealth";
 import { getGoogleConnection } from "@/server/services/health";
+import { APP_TIMEZONE } from "@/server/time";
 
 export const metadata = { title: "Sync health data" };
 
@@ -77,7 +78,7 @@ export default async function SyncPage({ params, searchParams }: PageProps<"/me/
           <GoogleHealthCard
             configured={configured}
             connected
-            lastSync={conn.lastSyncAt ? new Intl.DateTimeFormat(locale, { dateStyle: "medium", timeStyle: "short" }).format(conn.lastSyncAt) : null}
+            lastSync={conn.lastSyncAt ? new Intl.DateTimeFormat(locale, { dateStyle: "medium", timeStyle: "short", timeZone: APP_TIMEZONE }).format(conn.lastSyncAt) : null}
             lastError={conn.lastError ?? null}
             status={status}
           />

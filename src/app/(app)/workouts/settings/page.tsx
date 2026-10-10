@@ -6,7 +6,9 @@ import { ExerciseFigure } from "@/components/workouts/ExerciseFigure";
 import type { MessageKey } from "@/lib/i18n/messages/en";
 import { requireOnboarded } from "@/server/auth/dal";
 import { getI18n } from "@/server/i18n";
-import { getActiveProgram, getWorkoutProfile } from "@/server/services/workouts";
+import { addDays } from "@/lib/workouts/progress";
+import { getActiveProgram, getWorkoutProfile, programProgress } from "@/server/services/workouts";
+import { todayISO } from "@/server/time";
 
 export const metadata = { title: "Program settings" };
 
@@ -19,13 +21,12 @@ export default async function ProgramSettingsPage() {
   // 2026-10-04 is a Sunday: label the circles S M T W T F S.
   const dow = new Intl.DateTimeFormat(locale, { weekday: "narrow", timeZone: "UTC" });
   const labels = Array.from({ length: 7 }, (_, d) => dow.format(new Date(Date.UTC(2026, 9, 4 + d))));
-  const startDow = program ? new Date(program.startDate + "T00:00:00Z").getUTCDay() : 0;
-  // Without chosen weekdays, show where the standard rhythm's training days fall this week.
+  // Without chosen weekdays, show the weekdays this week's calendar trains on (same as the My program strip).
+  const sunday = addDays(todayISO(), -new Date(todayISO() + "T00:00:00Z").getUTCDay());
+  const week = program && !wp?.weekdays?.length ? await programProgress(program, [sunday, addDays(sunday, 6)]) : null;
   const current = wp?.weekdays?.length
     ? wp.weekdays
-    : program
-      ? program.days.slice(0, 7).flatMap((d, i) => (d.kind === "workout" ? [(startDow + i) % 7] : []))
-      : [];
+    : (week?.cells.filter((c) => c.kind === "workout").map((c) => new Date(c.date + "T00:00:00Z").getUTCDay()) ?? []);
 
   const equipment = !wp
     ? null

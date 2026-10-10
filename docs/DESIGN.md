@@ -35,7 +35,7 @@ The colour variables mirror the CSS custom properties in `src/app/globals.css`:
 | `bg`, `surface`, `sand`, `sand2`, `line` | `bg-ivory` (page), `bg-surface`, `bg-sand`, `bg-sand-2`, `border-line` |
 | `text`, `text2`, `muted` | `text-charcoal`, `text-ink-2`, `text-muted` |
 | `accent`, `onAccent`, `accentSoft` | `text-forest` / `bg-forest`, `text-on-accent`, `bg-forest-50` |
-| `limeStrong`, `limeCard`, `ink` | `bg-lime`, `bg-lime-100`, dark text on lime |
+| `limeStrong`, `limeCard`, `ink` | `bg-lime` (now orange `#ff5a1f`), `bg-lime-100`, white text on the accent |
 | `water` / `waterSoft`, `amberInk` / `amberSoft`, `terracotta` | `water` / `water-100`, `amber-ink` / `amber-100`, `terracotta` (cardio, recovery, warnings) |
 | `protein`, `carbs`, `fat` | macro bars |
 
@@ -43,8 +43,9 @@ On Figma's Starter plan a collection can only have one mode, so there are two
 collections, **Thali colors / Dark** and **Thali colors / Light**, with the same variable
 names. On a paid plan they can be merged into one collection with Dark and Light modes.
 
-Type: Outfit (display and headings) and Plus Jakarta Sans (body and labels), as
-loaded by `next/font` in `src/app/layout.tsx`.
+The Figma file still shows the earlier lime theme and its fonts (Outfit, Plus Jakarta
+Sans). The app now uses Inter for everything, loaded by `next/font` in
+`src/app/layout.tsx`, and the orange palette described at the top of this page.
 
 ## Exercise media
 

@@ -33,10 +33,10 @@ export default async function Landing({ searchParams }: PageProps<"/">) {
   return (
     <I18nProvider lang={lang} messages={messages} transliteration={transliteration}>
       <div className="mx-auto max-w-6xl px-4 pb-16 sm:px-6">
-        <header className="flex items-center justify-between py-5">
+        <header className="flex items-center justify-between gap-3 py-5">
           <span className="flex items-center gap-2.5">
             <LogoMark />
-            <span className="font-display text-[1.7rem] font-extrabold tracking-wide uppercase">{t("app.name")}</span>
+            <span className="font-display text-2xl font-extrabold">{t("app.name")}</span>
           </span>
           <LanguageSwitcher current={lang} label={t("settings.language")} />
         </header>
