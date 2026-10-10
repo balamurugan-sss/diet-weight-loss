@@ -68,6 +68,7 @@ colour-blind safety in both themes.
 - [Nutrition methods](docs/NUTRITION_METHODS.md) — equations, net carbs, keto rules, safety rules
 - [Recipe pipeline](docs/RECIPE_PIPELINE.md) — authoring format, validation, import, translations, growing to 1,000+
 - [Workouts](docs/WORKOUTS.md) — program rules, missed days, energy, food link · [sample plans](docs/WORKOUT_SAMPLES.md)
+- [Design file](docs/DESIGN.md) — Figma screens (dark + light), colour variables, components
 - [Deployment](docs/DEPLOYMENT.md) — environment variables, Docker, Vercel + Turso, cron jobs
 
 ## Honest limitations
