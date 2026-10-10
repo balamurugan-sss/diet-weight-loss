@@ -12,6 +12,7 @@ export async function GET() {
     .from(schema.users)
     .where(eq(schema.users.id, id));
   const plans = await db.select().from(schema.mealPlans).where(eq(schema.mealPlans.userId, id));
+  const workoutSessions = await db.select().from(schema.workoutSessions).where(eq(schema.workoutSessions.userId, id));
   const data = {
     exportedAt: new Date().toISOString(),
     user,
@@ -23,6 +24,12 @@ export async function GET() {
     waterLogs: await db.select().from(schema.waterLogs).where(eq(schema.waterLogs.userId, id)),
     favourites: await db.select().from(schema.favourites).where(eq(schema.favourites.userId, id)),
     cookingSessions: await db.select().from(schema.cookingSessions).where(eq(schema.cookingSessions.userId, id)),
+    workoutProfile: (await db.select().from(schema.workoutProfiles).where(eq(schema.workoutProfiles.userId, id)))[0] ?? null,
+    workoutPrograms: await db.select().from(schema.workoutPrograms).where(eq(schema.workoutPrograms.userId, id)),
+    workoutSessions,
+    workoutSets: workoutSessions.length
+      ? await db.select().from(schema.workoutSets).where(inArray(schema.workoutSets.sessionId, workoutSessions.map((s) => s.id)))
+      : [],
   };
   return new Response(JSON.stringify(data, null, 2), {
     headers: {

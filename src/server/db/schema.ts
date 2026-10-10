@@ -9,6 +9,7 @@ import {
   text,
   uniqueIndex,
 } from "drizzle-orm/sqlite-core";
+import type { HomeEquipment, ProgramDay } from "../../lib/workouts/types";
 
 const createdAt = () =>
   integer("created_at", { mode: "timestamp_ms" })
@@ -513,6 +514,91 @@ export const cookingSessions = sqliteTable(
     updatedAt: integer("updated_at", { mode: "timestamp_ms" }).notNull(),
   },
   (t) => [primaryKey({ columns: [t.userId, t.recipeId] })],
+);
+
+// ─── Workouts ────────────────────────────────────────────────────────────────
+
+export const workoutProfiles = sqliteTable("workout_profiles", {
+  userId: text("user_id")
+    .primaryKey()
+    .references(() => users.id, { onDelete: "cascade" }),
+  location: text("location", { enum: ["home", "gym", "mix"] }).notNull(),
+  level: text("level", { enum: ["beginner", "intermediate", "advanced"] }).notNull(),
+  goal: text("goal", { enum: ["lose", "gain", "fit"] }).notNull(),
+  daysPerWeek: integer("days_per_week").notNull(),
+  equipment: json<HomeEquipment[]>("equipment").notNull().default([]),
+  doctorAckAt: integer("doctor_ack_at", { mode: "timestamp_ms" }).notNull(),
+  createdAt: createdAt(),
+  updatedAt: integer("updated_at", { mode: "timestamp_ms" }),
+});
+
+export const workoutPrograms = sqliteTable(
+  "workout_programs",
+  {
+    id: text("id").primaryKey(),
+    userId: text("user_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    name: text("name").notNull(),
+    split: text("split").notNull(),
+    location: text("location", { enum: ["home", "gym", "mix"] }).notNull(),
+    level: text("level", { enum: ["beginner", "intermediate", "advanced"] }).notNull(),
+    goal: text("goal", { enum: ["lose", "gain", "fit"] }).notNull(),
+    daysPerWeek: integer("days_per_week").notNull(),
+    startDate: text("start_date").notNull(),
+    // Snapshot of the generated program so later library changes never alter it.
+    days: json<ProgramDay[]>("days").notNull(),
+    // "<dayIndex>:<slot>" → exerciseId for one day, "*:<exerciseId>" → exerciseId everywhere.
+    swaps: json<Record<string, string>>("swaps").notNull().default({}),
+    status: text("status", { enum: ["active", "archived", "completed"] }).notNull(),
+    createdAt: createdAt(),
+  },
+  (t) => [index("workout_programs_user_idx").on(t.userId, t.status)],
+);
+
+export const workoutSessions = sqliteTable(
+  "workout_sessions",
+  {
+    id: text("id").primaryKey(),
+    userId: text("user_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    programId: text("program_id")
+      .notNull()
+      .references(() => workoutPrograms.id, { onDelete: "cascade" }),
+    dayIndex: integer("day_index").notNull(),
+    date: text("date").notNull(),
+    kind: text("kind", { enum: ["workout", "recovery"] }).notNull(),
+    status: text("status", { enum: ["in_progress", "completed"] }).notNull(),
+    startedAt: integer("started_at", { mode: "timestamp_ms" }).notNull(),
+    finishedAt: integer("finished_at", { mode: "timestamp_ms" }),
+    durationSec: integer("duration_sec"),
+    kcal: integer("kcal"),
+    netKcal: integer("net_kcal"),
+    exercisesDone: integer("exercises_done"),
+  },
+  (t) => [
+    index("workout_sessions_user_date_idx").on(t.userId, t.date),
+    uniqueIndex("workout_sessions_program_day_uq").on(t.programId, t.dayIndex),
+  ],
+);
+
+export const workoutSets = sqliteTable(
+  "workout_sets",
+  {
+    sessionId: text("session_id")
+      .notNull()
+      .references(() => workoutSessions.id, { onDelete: "cascade" }),
+    slot: integer("slot").notNull(),
+    setIndex: integer("set_index").notNull(),
+    exerciseId: text("exercise_id").notNull(),
+    reps: integer("reps"),
+    seconds: integer("seconds"),
+    weightKg: real("weight_kg"),
+    done: integer("done", { mode: "boolean" }).notNull().default(false),
+    completedAt: integer("completed_at", { mode: "timestamp_ms" }),
+  },
+  (t) => [primaryKey({ columns: [t.sessionId, t.slot, t.setIndex] }), index("workout_sets_exercise_idx").on(t.exerciseId)],
 );
 
 // ─── Quotas, rate limits, billing ────────────────────────────────────────────
