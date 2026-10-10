@@ -6635,6 +6635,1489 @@
       "tags": [
         "kid_friendly"
       ]
+    },
+    {
+      "id": "thengai-chutney",
+      "title": "Coconut Chutney",
+      "description": "The essential tiffin chutney: fresh coconut ground with roasted gram, green chilli and ginger, finished with a mustard, urad dal and curry leaf tempering in coconut oil.",
+      "cuisine": "tamil_nadu",
+      "mealTypes": [
+        "breakfast",
+        "dinner"
+      ],
+      "course": "accompaniment",
+      "servings": 4,
+      "prepMin": 10,
+      "cookMin": 3,
+      "difficulty": "easy",
+      "equipment": [
+        "mixer_grinder",
+        "kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "coconut_grated",
+          "g": 100,
+          "measure": "1¼ cups"
+        },
+        {
+          "ref": "roasted_gram",
+          "g": 20,
+          "measure": "2 tbsp"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 6,
+          "measure": "2 chillies"
+        },
+        {
+          "ref": "ginger",
+          "g": 5,
+          "measure": "½-inch piece"
+        },
+        {
+          "ref": "salt",
+          "g": 3,
+          "toTaste": true
+        },
+        {
+          "ref": "water",
+          "g": 120,
+          "measure": "½ cup"
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 5,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "mustard_seeds",
+          "g": 2
+        },
+        {
+          "ref": "urad_dal",
+          "g": 2,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "dried_red_chilli",
+          "g": 0.6,
+          "measure": "1 chilli"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 1
+        }
+      ],
+      "steps": [
+        {
+          "title": "Gather the chutney ingredients",
+          "kind": "prep",
+          "text": "Put the grated coconut, roasted gram, green chillies, ginger and salt into a mixer jar.",
+          "uses": [
+            "coconut_grated",
+            "roasted_gram",
+            "green_chilli",
+            "ginger",
+            "salt"
+          ],
+          "visual": "Snowy grated coconut, pale yellow roasted gram, two green chillies and a piece of ginger inside a steel mixer jar"
+        },
+        {
+          "title": "Grind smooth",
+          "kind": "prep",
+          "text": "Add the water a little at a time and grind to a smooth, thick chutney that just drops from a spoon. Scrape into a bowl.",
+          "uses": [
+            "water"
+          ],
+          "visual": "Smooth, thick, creamy white coconut chutney in a steel bowl with green chilli flecks",
+          "equipment": [
+            "mixer_grinder"
+          ]
+        },
+        {
+          "title": "Temper",
+          "kind": "cook",
+          "text": "Heat the coconut oil in a small kadai. Add the mustard seeds; when they pop add urad dal, red chilli and curry leaves and fry until the dal is golden.",
+          "uses": [
+            "coconut_oil",
+            "mustard_seeds",
+            "urad_dal",
+            "dried_red_chilli",
+            "curry_leaves"
+          ],
+          "visual": "Popping mustard seeds, golden urad dal, a red chilli and curry leaves in coconut oil in a small black kadai",
+          "heat": "medium"
+        },
+        {
+          "title": "Finish and serve",
+          "kind": "serve",
+          "text": "Pour the tempering over the chutney. Serve with idli, dosa, adai, pongal or paniyaram.",
+          "uses": [],
+          "visual": "White coconut chutney in a small steel bowl topped with popped mustard seeds, curry leaves and a red chilli, beside a dosa"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "roasted_gram",
+          "with": "peanuts",
+          "ratio": 1,
+          "note": "Roasted peanuts can replace roasted gram; or skip it for a lower-carb chutney."
+        },
+        {
+          "ref": "green_chilli",
+          "with": "dried_red_chilli",
+          "ratio": 0.5,
+          "note": "Red chillies give a pink-tinged, smokier chutney."
+        }
+      ],
+      "storage": "Refrigerate up to 1 day; coconut chutney turns sour quickly at room temperature.",
+      "reheating": "Serve cold or at room temperature; do not heat.",
+      "tags": []
+    },
+    {
+      "id": "thakkali-chutney",
+      "title": "Tomato Chutney",
+      "description": "A tangy, spicy tomato chutney of ripe tomatoes and onion cooked down with red chillies, garlic and roasted urad and chana dal, then ground and tempered.",
+      "cuisine": "tamil_nadu",
+      "mealTypes": [
+        "breakfast",
+        "dinner"
+      ],
+      "course": "accompaniment",
+      "servings": 4,
+      "prepMin": 10,
+      "cookMin": 15,
+      "difficulty": "easy",
+      "equipment": [
+        "kadai",
+        "mixer_grinder"
+      ],
+      "ingredients": [
+        {
+          "ref": "groundnut_oil",
+          "g": 12,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "urad_dal",
+          "g": 6,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "chana_dal",
+          "g": 6,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "dried_red_chilli",
+          "g": 3,
+          "measure": "5 chillies"
+        },
+        {
+          "ref": "garlic",
+          "g": 8,
+          "measure": "2–3 cloves"
+        },
+        {
+          "ref": "onion",
+          "g": 60,
+          "measure": "½ medium",
+          "prep": "chopped"
+        },
+        {
+          "ref": "tomato",
+          "g": 300,
+          "measure": "3 medium",
+          "prep": "chopped"
+        },
+        {
+          "ref": "tamarind",
+          "g": 3,
+          "measure": "small piece",
+          "optional": true
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true
+        },
+        {
+          "ref": "mustard_seeds",
+          "g": 2
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 1
+        },
+        {
+          "ref": "hing",
+          "g": 0.3
+        }
+      ],
+      "steps": [
+        {
+          "title": "Roast the dals and chillies",
+          "kind": "cook",
+          "text": "Heat 2 teaspoons of the oil in a kadai on medium-low heat. Fry the urad dal, chana dal and red chillies until the dals are golden, about 2 minutes.",
+          "uses": [
+            "groundnut_oil",
+            "urad_dal",
+            "chana_dal",
+            "dried_red_chilli"
+          ],
+          "visual": "Golden urad and chana dal with dark red chillies frying in a little oil in a black iron kadai",
+          "timerMin": 2,
+          "heat": "medium"
+        },
+        {
+          "title": "Cook onion and garlic",
+          "kind": "cook",
+          "text": "Add the garlic and onion and sauté for 3 minutes until the onion is soft.",
+          "uses": [
+            "garlic",
+            "onion"
+          ],
+          "visual": "Softened chopped onion and garlic cloves with the roasted dals and chillies in the black iron kadai",
+          "timerMin": 3,
+          "heat": "medium"
+        },
+        {
+          "title": "Cook down the tomatoes",
+          "kind": "cook",
+          "text": "Add the tomatoes, tamarind if using, and salt. Cook for 7 to 8 minutes, stirring, until the tomatoes collapse into a thick, jammy mass.",
+          "uses": [
+            "tomato",
+            "tamarind",
+            "salt"
+          ],
+          "visual": "Collapsed, jammy red tomatoes cooked down with onion and chillies in the black iron kadai",
+          "timerMin": 8,
+          "heat": "medium"
+        },
+        {
+          "title": "Cool and grind",
+          "kind": "prep",
+          "text": "Cool the mixture completely and grind it to a slightly coarse chutney without adding water.",
+          "uses": [],
+          "visual": "Thick, coarse, deep orange-red chutney in a mixer jar",
+          "equipment": [
+            "mixer_grinder"
+          ]
+        },
+        {
+          "title": "Temper",
+          "kind": "cook",
+          "text": "Heat the remaining oil in the kadai, pop the mustard seeds, add curry leaves and hing and pour over the chutney.",
+          "uses": [
+            "mustard_seeds",
+            "curry_leaves",
+            "hing"
+          ],
+          "visual": "Sizzling mustard seeds and curry leaves in the black iron kadai being poured over the red chutney"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve with idli, dosa, egg dosa, adai or paniyaram.",
+          "uses": [],
+          "visual": "A small steel bowl of glossy red tomato chutney topped with mustard seeds and curry leaves beside soft idlis"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "dried_red_chilli",
+          "with": "kashmiri_chilli",
+          "ratio": 0.6,
+          "note": "Kashmiri chilli powder gives a brighter colour with less heat for children."
+        },
+        {
+          "ref": "hing",
+          "note": "Use gluten-free hing if needed."
+        }
+      ],
+      "storage": "Refrigerate up to 4 days.",
+      "reheating": "Serve at room temperature.",
+      "tags": []
+    },
+    {
+      "id": "pudina-thogayal",
+      "title": "Pudina Thogayal",
+      "description": "A thick, coarse mint thogayal ground with roasted urad dal, red chillies, tamarind and coconut. Mixed into hot rice with gingelly oil or served with dosa.",
+      "cuisine": "tamil_nadu",
+      "mealTypes": [
+        "breakfast",
+        "lunch",
+        "dinner"
+      ],
+      "course": "accompaniment",
+      "servings": 4,
+      "prepMin": 10,
+      "cookMin": 8,
+      "difficulty": "easy",
+      "equipment": [
+        "kadai",
+        "mixer_grinder"
+      ],
+      "ingredients": [
+        {
+          "ref": "sesame_oil",
+          "g": 8,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "urad_dal",
+          "g": 15,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "dried_red_chilli",
+          "g": 2.4,
+          "measure": "4 chillies"
+        },
+        {
+          "ref": "hing",
+          "g": 0.3
+        },
+        {
+          "ref": "mint",
+          "g": 50,
+          "measure": "2½ cups leaves",
+          "prep": "washed, leaves only"
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 10,
+          "measure": "½ cup"
+        },
+        {
+          "ref": "tamarind",
+          "g": 5,
+          "measure": "small piece"
+        },
+        {
+          "ref": "coconut_grated",
+          "g": 20,
+          "measure": "3 tbsp"
+        },
+        {
+          "ref": "salt",
+          "g": 3,
+          "toTaste": true
+        },
+        {
+          "ref": "water",
+          "g": 30
+        }
+      ],
+      "steps": [
+        {
+          "title": "Roast the urad dal",
+          "kind": "cook",
+          "text": "Heat the gingelly oil in a kadai on low heat. Fry the urad dal and red chillies until the dal is deep golden, about 2 minutes, then add the hing.",
+          "uses": [
+            "sesame_oil",
+            "urad_dal",
+            "dried_red_chilli",
+            "hing"
+          ],
+          "visual": "Deep golden urad dal and dark red chillies frying in gingelly oil in a black iron kadai",
+          "timerMin": 2,
+          "heat": "low"
+        },
+        {
+          "title": "Wilt the mint",
+          "kind": "cook",
+          "text": "Add the mint and coriander leaves and sauté for 2 minutes until just wilted. Add the tamarind and coconut and stir for a minute. Turn off the heat and cool.",
+          "uses": [
+            "mint",
+            "coriander_leaves",
+            "tamarind",
+            "coconut_grated"
+          ],
+          "visual": "Wilted dark green mint and coriander leaves with coconut and a piece of tamarind among the golden dal in the black iron kadai",
+          "timerMin": 3,
+          "heat": "medium"
+        },
+        {
+          "title": "Grind coarsely",
+          "kind": "prep",
+          "text": "Grind the cooled mixture with the salt and just enough water to a thick, coarse paste — thogayal should be thicker than chutney.",
+          "uses": [
+            "salt",
+            "water"
+          ],
+          "visual": "Thick, coarse, dark green thogayal with visible bits of dal in a mixer jar",
+          "equipment": [
+            "mixer_grinder"
+          ]
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve with hot rice and a drizzle of gingelly oil, or with dosa, idli and curd rice.",
+          "uses": [],
+          "visual": "A small mound of thick, dark green pudina thogayal on a banana leaf next to hot rice with a drizzle of oil"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "coconut_grated",
+          "note": "Leave out the coconut for a longer-keeping thogayal (up to 5 days)."
+        },
+        {
+          "ref": "urad_dal",
+          "with": "chana_dal",
+          "ratio": 1,
+          "note": "Chana dal gives a nuttier, slightly sweeter thogayal."
+        }
+      ],
+      "storage": "Refrigerate up to 3 days.",
+      "reheating": "Serve at room temperature.",
+      "tags": []
+    },
+    {
+      "id": "peerkangai-thogayal",
+      "title": "Peerkangai Thogayal (Ridge Gourd Thogayal)",
+      "description": "Ridge gourd sautéed with garlic and ground with roasted urad dal, red chillies and tamarind into a thick, mildly sweet and spicy thogayal.",
+      "cuisine": "tamil_nadu",
+      "mealTypes": [
+        "breakfast",
+        "lunch",
+        "dinner"
+      ],
+      "course": "accompaniment",
+      "servings": 4,
+      "prepMin": 10,
+      "cookMin": 12,
+      "difficulty": "easy",
+      "equipment": [
+        "kadai",
+        "mixer_grinder",
+        "knife_board"
+      ],
+      "ingredients": [
+        {
+          "ref": "ridge_gourd",
+          "g": 250,
+          "measure": "1 medium",
+          "prep": "ridges scraped, chopped"
+        },
+        {
+          "ref": "groundnut_oil",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "urad_dal",
+          "g": 15,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "dried_red_chilli",
+          "g": 2.4,
+          "measure": "4 chillies"
+        },
+        {
+          "ref": "hing",
+          "g": 0.3
+        },
+        {
+          "ref": "garlic",
+          "g": 6,
+          "measure": "2 cloves"
+        },
+        {
+          "ref": "tamarind",
+          "g": 6,
+          "measure": "small piece"
+        },
+        {
+          "ref": "salt",
+          "g": 3,
+          "toTaste": true
+        },
+        {
+          "ref": "mustard_seeds",
+          "g": 2
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 1
+        }
+      ],
+      "steps": [
+        {
+          "title": "Prepare the ridge gourd",
+          "kind": "prep",
+          "text": "Wash the ridge gourd, scrape off just the hard ridges with a peeler and chop into small pieces. Taste a sliver — discard it if bitter.",
+          "uses": [
+            "ridge_gourd"
+          ],
+          "visual": "Chopped pale green ridge gourd pieces on a wooden board, scraped ridges in a small pile beside"
+        },
+        {
+          "title": "Roast dal and chillies",
+          "kind": "cook",
+          "text": "Heat 1 teaspoon of the oil in a kadai on low heat. Fry the urad dal and red chillies until the dal is golden, then add the hing and lift out.",
+          "uses": [
+            "groundnut_oil",
+            "urad_dal",
+            "dried_red_chilli",
+            "hing"
+          ],
+          "visual": "Golden urad dal and red chillies in a little oil in a black iron kadai",
+          "timerMin": 2,
+          "heat": "low"
+        },
+        {
+          "title": "Sauté the ridge gourd",
+          "kind": "cook",
+          "text": "In the same kadai sauté the garlic for 30 seconds, then add the ridge gourd and tamarind. Cook uncovered on medium heat for 7 to 8 minutes until soft and most of the water has evaporated. Cool.",
+          "uses": [
+            "garlic",
+            "tamarind"
+          ],
+          "visual": "Soft, translucent ridge gourd pieces with garlic and a piece of tamarind in the black iron kadai, little liquid left",
+          "timerMin": 8,
+          "heat": "medium"
+        },
+        {
+          "title": "Grind",
+          "kind": "prep",
+          "text": "First grind the roasted dal and chillies coarsely, then add the cooked ridge gourd and salt and pulse to a thick, slightly coarse thogayal. No water is needed.",
+          "uses": [
+            "salt"
+          ],
+          "visual": "Thick, coarse olive-green thogayal flecked with red chilli in a mixer jar",
+          "equipment": [
+            "mixer_grinder"
+          ]
+        },
+        {
+          "title": "Temper",
+          "kind": "cook",
+          "text": "Heat the remaining oil in the kadai, pop the mustard seeds, add curry leaves and pour over the thogayal.",
+          "uses": [
+            "mustard_seeds",
+            "curry_leaves"
+          ],
+          "visual": "Popping mustard seeds and curry leaves in the black iron kadai being poured over the green thogayal",
+          "heat": "medium"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve with hot rice and ghee, curd rice, or dosa.",
+          "uses": [],
+          "visual": "A small steel bowl of olive-green peerkangai thogayal topped with mustard seeds and curry leaves beside curd rice"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "ridge_gourd",
+          "with": "bottle_gourd",
+          "ratio": 1,
+          "note": "Bottle gourd makes a similar mild thogayal."
+        },
+        {
+          "ref": "garlic",
+          "note": "Skip the garlic for a no-onion-garlic version; add a little extra hing."
+        }
+      ],
+      "storage": "Refrigerate up to 2 days.",
+      "reheating": "Serve at room temperature.",
+      "tags": []
+    },
+    {
+      "id": "kara-chutney",
+      "title": "Kara Chutney",
+      "description": "Fiery Chettinad-style red chutney of shallots, dried red chillies, garlic, a little tomato and tamarind cooked in gingelly oil — the perfect partner for paniyaram and idli.",
+      "cuisine": "tamil_nadu",
+      "region": "Chettinad",
+      "mealTypes": [
+        "breakfast",
+        "dinner"
+      ],
+      "course": "accompaniment",
+      "servings": 4,
+      "prepMin": 10,
+      "cookMin": 12,
+      "difficulty": "easy",
+      "equipment": [
+        "kadai",
+        "mixer_grinder"
+      ],
+      "ingredients": [
+        {
+          "ref": "sesame_oil",
+          "g": 15,
+          "measure": "1 tbsp + 1 tsp"
+        },
+        {
+          "ref": "dried_red_chilli",
+          "g": 4,
+          "measure": "7 chillies"
+        },
+        {
+          "ref": "shallots",
+          "g": 150,
+          "measure": "15 shallots",
+          "prep": "peeled"
+        },
+        {
+          "ref": "garlic",
+          "g": 10,
+          "measure": "3 cloves"
+        },
+        {
+          "ref": "tomato",
+          "g": 60,
+          "measure": "1 small",
+          "prep": "chopped"
+        },
+        {
+          "ref": "tamarind",
+          "g": 5,
+          "measure": "small piece"
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true
+        },
+        {
+          "ref": "mustard_seeds",
+          "g": 2
+        },
+        {
+          "ref": "urad_dal",
+          "g": 3,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 1
+        },
+        {
+          "ref": "hing",
+          "g": 0.3
+        }
+      ],
+      "steps": [
+        {
+          "title": "Fry the chillies",
+          "kind": "cook",
+          "text": "Heat 2 teaspoons of the gingelly oil in a kadai on low heat. Fry the dried red chillies for 30 seconds until they puff and darken slightly.",
+          "uses": [
+            "sesame_oil",
+            "dried_red_chilli"
+          ],
+          "visual": "Puffed, glossy dark red chillies in gingelly oil in a black iron kadai",
+          "heat": "low"
+        },
+        {
+          "title": "Sauté shallots and garlic",
+          "kind": "cook",
+          "text": "Add the shallots and garlic and sauté on medium heat for 5 minutes until soft and lightly browned.",
+          "uses": [
+            "shallots",
+            "garlic"
+          ],
+          "visual": "Soft, golden-edged whole shallots and garlic cloves with the red chillies in the black iron kadai",
+          "timerMin": 5,
+          "heat": "medium"
+        },
+        {
+          "title": "Add tomato and tamarind",
+          "kind": "cook",
+          "text": "Add the tomato, tamarind and salt and cook for 3 to 4 minutes until the tomato is soft. Cool completely.",
+          "uses": [
+            "tomato",
+            "tamarind",
+            "salt"
+          ],
+          "visual": "Soft tomato pieces and tamarind among the shallots and chillies in the black iron kadai",
+          "timerMin": 4,
+          "heat": "medium"
+        },
+        {
+          "title": "Grind",
+          "kind": "prep",
+          "text": "Grind to a smooth, thick paste with 2 to 3 tablespoons of water.",
+          "uses": [],
+          "visual": "A thick, smooth, brick-red chutney in a mixer jar",
+          "equipment": [
+            "mixer_grinder"
+          ]
+        },
+        {
+          "title": "Temper",
+          "kind": "cook",
+          "text": "Heat the remaining oil in the kadai, pop the mustard seeds, then add urad dal, curry leaves and hing. Add the ground chutney and cook for 2 minutes on low heat until it darkens slightly and the oil rises.",
+          "uses": [
+            "mustard_seeds",
+            "urad_dal",
+            "curry_leaves",
+            "hing"
+          ],
+          "visual": "Deep red chutney bubbling gently in the black iron kadai with oil glistening at the edges and mustard seeds on top",
+          "timerMin": 2,
+          "heat": "low"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve with kuzhi paniyaram, idli, dosa or adai. A little goes a long way.",
+          "uses": [],
+          "visual": "A small stone bowl of glossy deep red kara chutney with curry leaves on top beside golden kuzhi paniyarams"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "shallots",
+          "with": "onion",
+          "ratio": 1,
+          "note": "Onion works but shallots give the classic sweetness and colour."
+        },
+        {
+          "ref": "dried_red_chilli",
+          "with": "kashmiri_chilli",
+          "ratio": 0.6,
+          "note": "Use Kashmiri chilli powder for colour with less heat."
+        }
+      ],
+      "storage": "Refrigerate up to 4 days.",
+      "reheating": "Serve at room temperature.",
+      "tags": []
+    },
+    {
+      "id": "murungai-keerai-poriyal",
+      "title": "Murungai Keerai Poriyal",
+      "description": "Drumstick (moringa) leaves stir-fried with shallots, a little soaked moong dal and red chilli, finished with fresh coconut. Earthy, slightly bitter and full of flavour.",
+      "cuisine": "tamil_nadu",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "side",
+      "servings": 3,
+      "prepMin": 35,
+      "cookMin": 12,
+      "difficulty": "easy",
+      "equipment": [
+        "kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "drumstick_leaves",
+          "g": 150,
+          "measure": "about 7 cups loose leaves",
+          "prep": "stripped from stems, washed"
+        },
+        {
+          "ref": "moong_dal",
+          "g": 25,
+          "measure": "2 tbsp"
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 8,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "mustard_seeds",
+          "g": 2
+        },
+        {
+          "ref": "urad_dal",
+          "g": 3,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "dried_red_chilli",
+          "g": 1.2,
+          "measure": "2 chillies",
+          "prep": "broken"
+        },
+        {
+          "ref": "shallots",
+          "g": 50,
+          "measure": "5 shallots",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "turmeric",
+          "g": 0.3
+        },
+        {
+          "ref": "salt",
+          "g": 3,
+          "toTaste": true
+        },
+        {
+          "ref": "water",
+          "g": 60
+        },
+        {
+          "ref": "coconut_grated",
+          "g": 25,
+          "measure": "4 tbsp"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Strip and soak",
+          "kind": "prep",
+          "text": "Strip the tiny drumstick leaves from their stems, discarding any yellow leaves. Wash in plenty of water and drain. Soak the moong dal in water for 30 minutes.",
+          "uses": [
+            "drumstick_leaves",
+            "moong_dal"
+          ],
+          "visual": "A heap of tiny bright green moringa leaves in a colander beside a small bowl of soaking yellow moong dal, bare stems on the board",
+          "timerMin": 30
+        },
+        {
+          "title": "Temper",
+          "kind": "cook",
+          "text": "Heat the coconut oil in a kadai. Add mustard seeds; when they pop add urad dal and red chillies and fry until golden.",
+          "uses": [
+            "coconut_oil",
+            "mustard_seeds",
+            "urad_dal",
+            "dried_red_chilli"
+          ],
+          "visual": "Popping mustard seeds, golden urad dal and red chilli pieces in coconut oil in a black iron kadai",
+          "heat": "medium"
+        },
+        {
+          "title": "Sauté shallots and dal",
+          "kind": "cook",
+          "text": "Add the shallots and sauté for 2 minutes. Add the drained moong dal and turmeric and stir for a minute.",
+          "uses": [
+            "shallots",
+            "turmeric"
+          ],
+          "visual": "Soft pink shallots and soaked yellow moong dal with the tempering in the black iron kadai",
+          "timerMin": 3,
+          "heat": "medium"
+        },
+        {
+          "title": "Cook the leaves",
+          "kind": "cook",
+          "text": "Add the drumstick leaves, salt and water. Cover and cook on low heat for 5 to 6 minutes, stirring once, until the leaves are tender and the dal is cooked but still holds its shape.",
+          "uses": [
+            "salt",
+            "water"
+          ],
+          "visual": "Wilted dark green moringa leaves with yellow dal in the covered black iron kadai, steam escaping as the lid lifts",
+          "timerMin": 6,
+          "heat": "low"
+        },
+        {
+          "title": "Add coconut",
+          "kind": "cook",
+          "text": "Uncover, cook off any remaining water and toss in the grated coconut.",
+          "uses": [
+            "coconut_grated"
+          ],
+          "visual": "White grated coconut being folded into the dark green moringa leaves in the black iron kadai"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve warm with rice and sambar or rasam.",
+          "uses": [],
+          "visual": "A steel bowl of dark green murungai keerai poriyal flecked with coconut, yellow dal and red chilli beside rasam and rice"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "drumstick_leaves",
+          "with": "amaranth_leaves",
+          "ratio": 1.5,
+          "note": "Any keerai can be made the same way; amaranth needs a little more volume."
+        },
+        {
+          "ref": "moong_dal",
+          "note": "Skip the dal for a lighter, lower-carb poriyal."
+        }
+      ],
+      "storage": "Best eaten the same day.",
+      "reheating": "Warm briefly in a pan.",
+      "tags": []
+    },
+    {
+      "id": "poosanikai-mor-kootu",
+      "title": "Ash Gourd Mor Kootu",
+      "description": "Soft ash gourd and moong dal in a mild, creamy curd and coconut–green chilli–cumin sauce, finished with a coconut-oil tempering. A cooling kootu for hot days.",
+      "cuisine": "tamil_nadu",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "side",
+      "servings": 3,
+      "prepMin": 15,
+      "cookMin": 25,
+      "difficulty": "easy",
+      "equipment": [
+        "saucepan",
+        "mixer_grinder",
+        "kadai",
+        "knife_board"
+      ],
+      "ingredients": [
+        {
+          "ref": "moong_dal",
+          "g": 30,
+          "measure": "2 tbsp"
+        },
+        {
+          "ref": "water",
+          "g": 350
+        },
+        {
+          "ref": "turmeric",
+          "g": 0.5
+        },
+        {
+          "ref": "ash_gourd",
+          "g": 300,
+          "prep": "peeled, ¾-inch cubes"
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true
+        },
+        {
+          "ref": "coconut_grated",
+          "g": 40,
+          "measure": "½ cup"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "measure": "1–2 chillies"
+        },
+        {
+          "ref": "cumin_seeds",
+          "g": 2
+        },
+        {
+          "ref": "curd",
+          "g": 150,
+          "measure": "⅔ cup",
+          "prep": "whisked"
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 8,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "mustard_seeds",
+          "g": 2
+        },
+        {
+          "ref": "dried_red_chilli",
+          "g": 0.6,
+          "measure": "1 chilli"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 2
+        }
+      ],
+      "steps": [
+        {
+          "title": "Cook the dal",
+          "kind": "cook",
+          "text": "Simmer the moong dal with 1 cup of water and the turmeric in a saucepan for 12 minutes until soft.",
+          "uses": [
+            "moong_dal",
+            "water",
+            "turmeric"
+          ],
+          "visual": "Soft yellow moong dal simmering in a steel saucepan",
+          "timerMin": 12,
+          "heat": "medium"
+        },
+        {
+          "title": "Cook the ash gourd",
+          "kind": "cook",
+          "text": "Add the ash gourd cubes, salt and ½ cup of water. Cover and cook for 7 to 8 minutes until the ash gourd turns translucent and soft.",
+          "uses": [
+            "ash_gourd",
+            "salt"
+          ],
+          "visual": "Translucent, pale green ash gourd cubes in yellow dal in the covered steel saucepan",
+          "timerMin": 8,
+          "heat": "medium"
+        },
+        {
+          "title": "Grind the coconut paste",
+          "kind": "prep",
+          "text": "Grind the coconut, green chilli and cumin with 3 tablespoons of water to a smooth paste.",
+          "uses": [
+            "coconut_grated",
+            "green_chilli",
+            "cumin_seeds"
+          ],
+          "visual": "Smooth, creamy white coconut and green chilli paste in a small mixer jar",
+          "equipment": [
+            "mixer_grinder"
+          ]
+        },
+        {
+          "title": "Simmer with the paste",
+          "kind": "cook",
+          "text": "Stir the coconut paste into the saucepan and simmer for 3 minutes. Turn the heat to the lowest setting.",
+          "uses": [],
+          "visual": "Thick, pale kootu with ash gourd cubes gently bubbling in the steel saucepan",
+          "timerMin": 3,
+          "heat": "low"
+        },
+        {
+          "title": "Add the curd",
+          "kind": "cook",
+          "text": "Take the pan off the heat for a minute, then stir in the whisked curd. Return to very low heat and warm for 1 minute, stirring — don't let it boil or the curd will split.",
+          "uses": [
+            "curd"
+          ],
+          "visual": "Creamy white mor kootu with ash gourd cubes in the steel saucepan, curd stirred through smoothly",
+          "timerMin": 1,
+          "heat": "low"
+        },
+        {
+          "title": "Temper",
+          "kind": "cook",
+          "text": "Heat the coconut oil in a small kadai, pop the mustard seeds, add the red chilli and curry leaves and pour over the kootu.",
+          "uses": [
+            "coconut_oil",
+            "mustard_seeds",
+            "dried_red_chilli",
+            "curry_leaves"
+          ],
+          "visual": "Popping mustard seeds, a red chilli and curry leaves in coconut oil being poured over the creamy kootu",
+          "heat": "medium"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve warm or at room temperature with rice and a spicy poriyal or fish fry.",
+          "uses": [],
+          "visual": "A steel bowl of creamy white ash gourd mor kootu topped with mustard seeds, curry leaves and a red chilli, rice beside"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "ash_gourd",
+          "with": "chow_chow",
+          "ratio": 1,
+          "note": "Chow chow makes an equally classic mor kootu."
+        },
+        {
+          "ref": "curd",
+          "with": "coconut_milk",
+          "ratio": 0.5,
+          "note": "For a dairy-free version, finish with thick coconut milk and a squeeze of lemon instead of curd."
+        }
+      ],
+      "storage": "Refrigerate up to 1 day.",
+      "reheating": "Warm on very low heat without boiling.",
+      "tags": []
+    },
+    {
+      "id": "chettinad-kara-kuzhi-paniyaram",
+      "title": "Chettinad Kara Kuzhi Paniyaram",
+      "description": "Savoury rice and urad dal dumplings from Chettinad, made with fermented batter and a tempering of shallots, green chilli, ginger and coconut, cooked crisp in a paniyaram pan.",
+      "cuisine": "tamil_nadu",
+      "region": "Chettinad",
+      "mealTypes": [
+        "breakfast",
+        "snack"
+      ],
+      "course": "base",
+      "servings": 3,
+      "prepMin": 25,
+      "cookMin": 25,
+      "restMin": 720,
+      "difficulty": "medium",
+      "equipment": [
+        "mixing_bowl",
+        "mixer_grinder",
+        "kadai",
+        "non_stick_pan"
+      ],
+      "ingredients": [
+        {
+          "ref": "idli_rice",
+          "g": 150,
+          "measure": "¾ cup"
+        },
+        {
+          "ref": "urad_dal",
+          "g": 40,
+          "measure": "3 tbsp"
+        },
+        {
+          "ref": "fenugreek_seeds",
+          "g": 1,
+          "measure": "¼ tsp"
+        },
+        {
+          "ref": "water",
+          "g": 250
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true
+        },
+        {
+          "ref": "sesame_oil",
+          "g": 20,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "mustard_seeds",
+          "g": 2
+        },
+        {
+          "ref": "chana_dal",
+          "g": 5,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 3,
+          "prep": "chopped"
+        },
+        {
+          "ref": "shallots",
+          "g": 60,
+          "measure": "6 shallots",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "ginger",
+          "g": 6,
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "coconut_grated",
+          "g": 20,
+          "measure": "3 tbsp",
+          "prep": "or tiny coconut bits"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Soak rice and dal",
+          "kind": "prep",
+          "text": "Wash the rice and soak it for 4 hours. Separately soak the urad dal with the fenugreek seeds for the same time.",
+          "uses": [
+            "idli_rice",
+            "urad_dal",
+            "fenugreek_seeds"
+          ],
+          "visual": "Two steel bowls, one with parboiled rice and one with urad dal and fenugreek seeds, both soaking in water",
+          "timerMin": 240
+        },
+        {
+          "title": "Grind the batter",
+          "kind": "prep",
+          "text": "Grind the urad dal until fluffy, then the rice until slightly grainy. Mix both with the salt and enough water to make a thick batter, thicker than idli batter.",
+          "uses": [
+            "water",
+            "salt"
+          ],
+          "visual": "Thick, off-white batter with a fine grainy texture in a large steel mixing bowl",
+          "equipment": [
+            "mixer_grinder"
+          ]
+        },
+        {
+          "title": "Ferment",
+          "kind": "rest",
+          "text": "Cover and ferment in a warm place for 8 hours or overnight until risen and slightly sour.",
+          "uses": [],
+          "visual": "The steel bowl of batter risen with bubbles on the surface",
+          "timerMin": 480
+        },
+        {
+          "title": "Make the tempering",
+          "kind": "cook",
+          "text": "Heat 2 teaspoons of the oil in a small kadai. Pop the mustard seeds, then add chana dal and fry until golden. Add curry leaves, shallots, green chilli and ginger and sauté for 2 minutes. Stir in the coconut.",
+          "uses": [
+            "sesame_oil",
+            "mustard_seeds",
+            "chana_dal",
+            "curry_leaves",
+            "shallots",
+            "green_chilli",
+            "ginger",
+            "coconut_grated"
+          ],
+          "visual": "Soft chopped shallots, green chilli, ginger, golden chana dal, curry leaves and white coconut in a small black kadai",
+          "timerMin": 3,
+          "heat": "medium"
+        },
+        {
+          "title": "Mix into the batter",
+          "kind": "prep",
+          "text": "Stir the tempering into the fermented batter.",
+          "uses": [],
+          "visual": "Off-white batter in the steel bowl speckled with shallots, curry leaves, mustard seeds and coconut"
+        },
+        {
+          "title": "Fill the paniyaram pan",
+          "kind": "cook",
+          "text": "Heat a paniyaram (kuzhi) pan over medium heat and add a few drops of oil to each cavity. Fill each cavity three-quarters full with batter.",
+          "uses": [],
+          "visual": "A black paniyaram pan with each round cavity filled with speckled batter, oil sizzling at the edges",
+          "heat": "medium",
+          "equipment": [
+            "non_stick_pan"
+          ]
+        },
+        {
+          "title": "Cook and turn",
+          "kind": "cook",
+          "text": "Cover and cook for 3 minutes until the bottoms are golden. Turn each paniyaram with a skewer, add a drop more oil and cook for 2 minutes until golden all over. Repeat with the remaining batter.",
+          "uses": [],
+          "visual": "Golden, round paniyarams being turned with a wooden skewer in the black paniyaram pan, crisp golden shells showing",
+          "timerMin": 5,
+          "heat": "medium"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve hot, about seven per person, with kara chutney, coconut chutney or tomato chutney.",
+          "uses": [],
+          "visual": "A pile of golden, crisp kuzhi paniyarams on a banana leaf with bowls of red kara chutney and white coconut chutney"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "idli_rice",
+          "with": "foxtail_millet",
+          "ratio": 1,
+          "note": "Swap half or all of the rice for foxtail millet for a millet paniyaram."
+        },
+        {
+          "ref": "sesame_oil",
+          "with": "groundnut_oil",
+          "ratio": 1,
+          "note": "Any neutral oil works."
+        }
+      ],
+      "storage": "Fermented batter keeps 2 days refrigerated; cooked paniyarams are best fresh.",
+      "reheating": "Re-crisp in the paniyaram pan or an air fryer at 170°C for 3 minutes.",
+      "tags": [
+        "kid_friendly"
+      ]
+    },
+    {
+      "id": "karuveppilai-kozhi-varuval",
+      "title": "Karuveppilai Chicken (Curry Leaf Chicken)",
+      "description": "Boneless chicken roasted dry with a fragrant ground paste of fresh curry leaves, black pepper, fennel, cumin and garlic, finished with lemon. Deep green, peppery and aromatic.",
+      "cuisine": "tamil_nadu",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 3,
+      "prepMin": 20,
+      "cookMin": 25,
+      "restMin": 20,
+      "difficulty": "medium",
+      "equipment": [
+        "kadai",
+        "mixer_grinder",
+        "mixing_bowl"
+      ],
+      "ingredients": [
+        {
+          "ref": "curry_leaves",
+          "g": 25,
+          "measure": "1½ packed cups"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 5,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "fennel_seeds",
+          "g": 3,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "cumin_seeds",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "coriander_seeds",
+          "g": 4,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "dried_red_chilli",
+          "g": 1.2,
+          "measure": "2 chillies"
+        },
+        {
+          "ref": "garlic",
+          "g": 12,
+          "measure": "4 cloves"
+        },
+        {
+          "ref": "ginger",
+          "g": 10,
+          "measure": "1-inch piece"
+        },
+        {
+          "ref": "chicken_thigh",
+          "g": 500,
+          "prep": "boneless, 1½-inch pieces"
+        },
+        {
+          "ref": "turmeric",
+          "g": 0.5
+        },
+        {
+          "ref": "salt",
+          "g": 5,
+          "toTaste": true
+        },
+        {
+          "ref": "groundnut_oil",
+          "g": 20,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "shallots",
+          "g": 80,
+          "measure": "8 shallots",
+          "prep": "sliced"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 10,
+          "measure": "2 tsp"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Roast the spices and leaves",
+          "kind": "cook",
+          "text": "Dry-roast the pepper, fennel, cumin, coriander seeds and red chillies in a kadai on low heat for 2 minutes. Add three-quarters of the curry leaves and roast for 1 more minute until they turn crisp and dark green.",
+          "uses": [
+            "curry_leaves",
+            "black_pepper",
+            "fennel_seeds",
+            "cumin_seeds",
+            "coriander_seeds",
+            "dried_red_chilli"
+          ],
+          "visual": "Crisp, dark green curry leaves with peppercorns, fennel, cumin, coriander seeds and red chillies roasting in a dry black iron kadai",
+          "timerMin": 3,
+          "heat": "low"
+        },
+        {
+          "title": "Grind the curry leaf paste",
+          "kind": "prep",
+          "text": "Cool, then grind the roasted mixture with the garlic, ginger and 3 tablespoons of water to a thick, coarse green paste.",
+          "uses": [
+            "garlic",
+            "ginger"
+          ],
+          "visual": "A thick, dark green, coarse curry leaf and pepper paste in a mixer jar",
+          "equipment": [
+            "mixer_grinder"
+          ]
+        },
+        {
+          "title": "Marinate the chicken",
+          "kind": "rest",
+          "text": "Toss the chicken with the curry leaf paste, turmeric and salt in a bowl. Marinate for 20 minutes.",
+          "uses": [
+            "chicken_thigh",
+            "turmeric",
+            "salt"
+          ],
+          "visual": "Boneless chicken pieces coated in a dark green paste in a steel mixing bowl",
+          "timerMin": 20
+        },
+        {
+          "title": "Fry the shallots",
+          "kind": "cook",
+          "text": "Heat the oil in the same kadai on medium heat. Add the remaining curry leaves and the shallots and sauté for 5 minutes until golden.",
+          "uses": [
+            "groundnut_oil",
+            "shallots"
+          ],
+          "visual": "Golden sliced shallots and fresh curry leaves sizzling in oil in the black iron kadai",
+          "timerMin": 5,
+          "heat": "medium"
+        },
+        {
+          "title": "Cook the chicken",
+          "kind": "cook",
+          "text": "Add the marinated chicken and stir-fry on high heat for 3 minutes to sear. Lower the heat, cover and cook for 8 minutes, stirring once, until the chicken is cooked through.",
+          "uses": [],
+          "visual": "Green-coated chicken pieces searing with shallots in the black iron kadai, juices starting to release",
+          "timerMin": 11,
+          "heat": "medium"
+        },
+        {
+          "title": "Roast dry",
+          "kind": "cook",
+          "text": "Uncover and roast on medium-high heat for 5 to 6 minutes, stirring often, until the chicken is dry, dark green-brown and the masala clings to every piece.",
+          "uses": [],
+          "visual": "Dry, dark green-brown chicken pieces with crisp curry leaves and caramelised shallots in the black iron kadai",
+          "timerMin": 6,
+          "heat": "high"
+        },
+        {
+          "title": "Finish with lemon and serve",
+          "kind": "serve",
+          "text": "Turn off the heat, squeeze over the lemon juice and toss. Serve hot with rasam and rice, chapati, or a salad and kootu.",
+          "uses": [
+            "lemon_juice"
+          ],
+          "visual": "Dark green curry leaf chicken heaped in a brass bowl with crisp curry leaves on top and a lemon wedge, rasam alongside"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "chicken_thigh",
+          "with": "chicken_breast",
+          "ratio": 1,
+          "note": "Breast is leaner; reduce the covered cooking time to 6 minutes so it stays juicy."
+        },
+        {
+          "ref": "groundnut_oil",
+          "with": "coconut_oil",
+          "ratio": 1,
+          "note": "Coconut oil pairs well with the curry leaf flavour."
+        }
+      ],
+      "storage": "Refrigerate up to 3 days.",
+      "reheating": "Reheat in a hot pan with a splash of water.",
+      "tags": [
+        "meal_prep"
+      ]
     }
   ]
 }

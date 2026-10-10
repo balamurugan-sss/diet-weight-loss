@@ -183,6 +183,7 @@ export const recipes = sqliteTable(
     storage: text("storage"),
     reheating: text("reheating"),
     allergens: json<string[]>("allergens").notNull(),
+    avoidTags: json<string[]>("avoid_tags").notNull().default([]),
     servingGrams: real("serving_grams").notNull(),
     kcal: real("kcal").notNull(),
     proteinG: real("protein_g").notNull(),
@@ -416,6 +417,7 @@ export const mealPlanItems = sqliteTable(
       .references(() => mealPlans.id, { onDelete: "cascade" }),
     dayIndex: integer("day_index").notNull(),
     slot: text("slot").notNull(),
+    position: integer("position").notNull().default(0),
     recipeId: text("recipe_id")
       .notNull()
       .references(() => recipes.id),

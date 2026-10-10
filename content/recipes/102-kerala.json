@@ -3696,6 +3696,4454 @@
       "storage": "Refrigerate for up to 2 days.",
       "reheating": "Reheat in a hot pan for 2 minutes.",
       "tags": []
+    },
+    {
+      "id": "chemmeen-roast",
+      "title": "Chemmeen Roast (Kerala Prawn Roast)",
+      "description": "Prawns roasted in coconut oil with shallots, ginger, garlic, tomato and Kashmiri chilli, soured with a piece of kudampuli until the masala clings to every prawn.",
+      "cuisine": "kerala",
+      "region": "Central Travancore",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 3,
+      "prepMin": 20,
+      "cookMin": 25,
+      "difficulty": "medium",
+      "equipment": [
+        "kadai",
+        "mixing_bowl"
+      ],
+      "ingredients": [
+        {
+          "ref": "prawns",
+          "g": 400,
+          "prep": "cleaned and deveined"
+        },
+        {
+          "ref": "turmeric",
+          "g": 0.5,
+          "measure": "a pinch"
+        },
+        {
+          "ref": "kudampuli",
+          "g": 5,
+          "measure": "1 piece",
+          "prep": "soaked in ¼ cup warm water"
+        },
+        {
+          "ref": "water",
+          "g": 60
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 20,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 4,
+          "measure": "3 sprigs"
+        },
+        {
+          "ref": "shallots",
+          "g": 100,
+          "measure": "12",
+          "prep": "sliced"
+        },
+        {
+          "ref": "ginger",
+          "g": 10,
+          "measure": "1 inch",
+          "prep": "julienned"
+        },
+        {
+          "ref": "garlic",
+          "g": 12,
+          "measure": "4 cloves",
+          "prep": "sliced"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "measure": "2",
+          "prep": "slit"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 10,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "coriander_powder",
+          "g": 5,
+          "measure": "2½ tsp"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 3,
+          "measure": "1 tsp",
+          "prep": "crushed"
+        },
+        {
+          "ref": "tomato",
+          "g": 80,
+          "measure": "1 small",
+          "prep": "chopped"
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Marinate the prawns",
+          "kind": "prep",
+          "text": "Toss the cleaned prawns with turmeric, a teaspoon of the Kashmiri chilli and a pinch of salt. Set aside for 10 minutes while you prepare the rest. Soak the kudampuli in the water.",
+          "uses": [
+            "prawns",
+            "turmeric",
+            "kudampuli",
+            "water"
+          ],
+          "visual": "Cleaned prawns lightly coated in red-orange spice in a steel bowl, a piece of dark kudampuli soaking in a small cup beside it",
+          "timerMin": 10
+        },
+        {
+          "title": "Sauté the aromatics",
+          "kind": "cook",
+          "text": "Heat the coconut oil in a heavy kadai on medium heat. Add curry leaves, then the shallots, ginger, garlic and green chillies. Sauté for 6 to 7 minutes until the shallots are golden.",
+          "uses": [
+            "coconut_oil",
+            "curry_leaves",
+            "shallots",
+            "ginger",
+            "garlic",
+            "green_chilli"
+          ],
+          "visual": "Golden sliced shallots, ginger and garlic with green chillies and curry leaves in coconut oil in a black iron kadai",
+          "timerMin": 7,
+          "heat": "medium"
+        },
+        {
+          "title": "Add spices and tomato",
+          "kind": "cook",
+          "text": "Lower the heat, add the remaining Kashmiri chilli, coriander powder and half the pepper and stir for 1 minute. Add the tomato and salt and cook for 4 to 5 minutes until mushy and the oil separates.",
+          "uses": [
+            "kashmiri_chilli",
+            "coriander_powder",
+            "black_pepper",
+            "tomato",
+            "salt"
+          ],
+          "visual": "Thick, deep red masala of shallots and tomato in the iron kadai with red oil at the edges",
+          "timerMin": 5,
+          "heat": "low"
+        },
+        {
+          "title": "Add kudampuli",
+          "kind": "cook",
+          "text": "Add the kudampuli with its soaking water and simmer for 2 minutes.",
+          "uses": [],
+          "visual": "Red masala bubbling in the kadai with a dark kudampuli piece in it",
+          "timerMin": 2,
+          "heat": "medium"
+        },
+        {
+          "title": "Roast the prawns",
+          "kind": "cook",
+          "text": "Add the prawns and cook on medium-high heat, stirring, for 6 to 8 minutes until they curl, turn pink and the masala is thick and dry. Don't overcook or they turn rubbery.",
+          "uses": [],
+          "visual": "Curled pink prawns coated in thick, dark red masala with curry leaves in the iron kadai",
+          "timerMin": 7,
+          "heat": "high"
+        },
+        {
+          "title": "Finish with pepper",
+          "kind": "cook",
+          "text": "Sprinkle the remaining pepper, toss for 30 seconds and turn off the heat.",
+          "uses": [],
+          "visual": "Glossy prawn roast flecked with crushed black pepper in the iron kadai"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve hot with matta rice and a moru curry, or with appam. Pair with cabbage thoran for a low-carb plate.",
+          "uses": [],
+          "visual": "Chemmeen roast heaped in a clay dish, curled prawns in dark red masala with curry leaves, beside a scoop of matta rice"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "kudampuli",
+          "with": "lemon_juice",
+          "ratio": 2,
+          "note": "Squeeze in a little lemon juice at the end if you don't have kudampuli."
+        },
+        {
+          "ref": "prawns",
+          "with": "basa",
+          "ratio": 1,
+          "note": "Firm white fish cubes work for a shellfish-free version; roast gently."
+        }
+      ],
+      "storage": "Refrigerate for up to 2 days.",
+      "reheating": "Reheat briefly in a hot pan — just until warm, so the prawns stay tender.",
+      "tags": []
+    },
+    {
+      "id": "koonthal-roast",
+      "title": "Koonthal Roast (Kerala Squid Roast)",
+      "description": "Squid rings simmered tender, then roasted with onions, ginger, garlic, crushed pepper and fennel in coconut oil until dark, spicy and dry.",
+      "cuisine": "kerala",
+      "region": "Malabar",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 3,
+      "prepMin": 20,
+      "cookMin": 30,
+      "difficulty": "medium",
+      "equipment": [
+        "kadai",
+        "saucepan"
+      ],
+      "ingredients": [
+        {
+          "ref": "squid",
+          "g": 450,
+          "prep": "cleaned, cut into rings"
+        },
+        {
+          "ref": "turmeric",
+          "g": 0.5,
+          "measure": "a pinch"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 4,
+          "measure": "1½ tsp",
+          "prep": "coarsely crushed"
+        },
+        {
+          "ref": "water",
+          "g": 100
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 20,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "fennel_seeds",
+          "g": 2,
+          "measure": "1 tsp",
+          "prep": "crushed"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 4,
+          "measure": "3 sprigs"
+        },
+        {
+          "ref": "onion",
+          "g": 150,
+          "measure": "1 large",
+          "prep": "thinly sliced"
+        },
+        {
+          "ref": "ginger",
+          "g": 10,
+          "measure": "1 inch",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "garlic",
+          "g": 10,
+          "measure": "3–4 cloves",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "measure": "2",
+          "prep": "slit"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 6,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "chilli_powder",
+          "g": 4,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "coriander_powder",
+          "g": 6,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "garam_masala",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Precook the squid",
+          "kind": "cook",
+          "text": "Put the squid rings in a saucepan with turmeric, half the crushed pepper, salt and the water. Cover and simmer on low heat for 10 minutes until tender. Keep the cooking liquid.",
+          "uses": [
+            "squid",
+            "turmeric",
+            "black_pepper",
+            "salt",
+            "water"
+          ],
+          "visual": "White squid rings tinged yellow, simmering in a little peppery liquid in a steel saucepan",
+          "timerMin": 10,
+          "heat": "low"
+        },
+        {
+          "title": "Sauté the onions",
+          "kind": "cook",
+          "text": "Heat the coconut oil in a heavy kadai. Add fennel and curry leaves, then the onion, and cook on medium heat for 8 to 10 minutes until well browned. Add ginger, garlic and green chillies and sauté 2 minutes.",
+          "uses": [
+            "coconut_oil",
+            "fennel_seeds",
+            "curry_leaves",
+            "onion",
+            "ginger",
+            "garlic",
+            "green_chilli"
+          ],
+          "visual": "Well-browned sliced onions with ginger, garlic, green chillies and curry leaves in coconut oil in a black iron kadai",
+          "timerMin": 12,
+          "heat": "medium"
+        },
+        {
+          "title": "Add the spice powders",
+          "kind": "cook",
+          "text": "Lower the heat, add Kashmiri chilli, chilli powder, coriander powder and garam masala with 2 tablespoons of the squid liquid. Stir for 2 minutes until the masala darkens.",
+          "uses": [
+            "kashmiri_chilli",
+            "chilli_powder",
+            "coriander_powder",
+            "garam_masala"
+          ],
+          "visual": "Dark red-brown masala clinging to the onions in the iron kadai",
+          "timerMin": 2,
+          "heat": "low"
+        },
+        {
+          "title": "Roast the squid",
+          "kind": "cook",
+          "text": "Add the squid with the rest of its liquid. Cook on medium heat, stirring, for 8 to 10 minutes until the liquid is gone and the masala coats the rings.",
+          "uses": [],
+          "visual": "Squid rings coated in thick, dark masala in the iron kadai, almost dry",
+          "timerMin": 10,
+          "heat": "medium"
+        },
+        {
+          "title": "Finish with pepper",
+          "kind": "cook",
+          "text": "Add the remaining crushed pepper and roast for 2 more minutes until dark and slightly crisp at the edges.",
+          "uses": [],
+          "visual": "Dark, dry squid roast with flecks of black pepper and crisp curry leaves in the iron kadai",
+          "timerMin": 2,
+          "heat": "medium"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve hot with rice and a light curry, or on its own as a starter.",
+          "uses": [],
+          "visual": "Koonthal roast piled on a banana leaf, dark spiced squid rings with curry leaves and onion bits, a lemon wedge beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "squid",
+          "with": "prawns",
+          "ratio": 1,
+          "note": "Prawns don't need precooking — add them straight to the masala for 6 minutes."
+        },
+        {
+          "ref": "onion",
+          "with": "shallots",
+          "ratio": 0.8,
+          "note": "Shallots give a sweeter, more traditional finish."
+        }
+      ],
+      "storage": "Refrigerate for up to 2 days.",
+      "reheating": "Reheat quickly in a hot pan for 1 to 2 minutes.",
+      "tags": []
+    },
+    {
+      "id": "kerala-fish-moilee",
+      "title": "Fish Moilee (Meen Molee)",
+      "description": "Seer fish gently poached in a mild, pale yellow coconut milk gravy with onion, ginger, green chilli and tomato — Kochi's elegant, barely spicy fish stew.",
+      "cuisine": "kerala",
+      "region": "Kochi",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 3,
+      "prepMin": 20,
+      "cookMin": 25,
+      "difficulty": "medium",
+      "equipment": [
+        "kadai|non_stick_pan"
+      ],
+      "ingredients": [
+        {
+          "ref": "seer_fish",
+          "g": 400,
+          "prep": "cut into 2-inch steaks"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "black_pepper",
+          "g": 2,
+          "measure": "¾ tsp",
+          "prep": "ground"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "mustard_seeds",
+          "g": 1,
+          "measure": "¼ tsp"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 3,
+          "measure": "2 sprigs"
+        },
+        {
+          "ref": "onion",
+          "g": 150,
+          "measure": "1 large",
+          "prep": "thinly sliced"
+        },
+        {
+          "ref": "ginger",
+          "g": 12,
+          "measure": "1 inch",
+          "prep": "julienned"
+        },
+        {
+          "ref": "garlic",
+          "g": 8,
+          "measure": "3 cloves",
+          "prep": "sliced"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 6,
+          "measure": "3",
+          "prep": "slit"
+        },
+        {
+          "ref": "coconut_milk",
+          "g": 250,
+          "measure": "1 cup"
+        },
+        {
+          "ref": "water",
+          "g": 120
+        },
+        {
+          "ref": "tomato",
+          "g": 80,
+          "measure": "1 small",
+          "prep": "sliced into rounds"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Marinate the fish",
+          "kind": "prep",
+          "text": "Rub the fish steaks with half the turmeric, the pepper, lemon juice and salt. Leave for 15 minutes.",
+          "uses": [
+            "seer_fish",
+            "turmeric",
+            "black_pepper",
+            "lemon_juice",
+            "salt"
+          ],
+          "visual": "Seer-fish steaks rubbed with pale yellow turmeric and black pepper on a steel plate",
+          "timerMin": 15
+        },
+        {
+          "title": "Sear lightly",
+          "kind": "cook",
+          "text": "Heat half the coconut oil in a wide pan and sear the fish for 1 minute per side on medium heat, just to firm it — it should not brown deeply. Lift out.",
+          "uses": [
+            "coconut_oil"
+          ],
+          "visual": "Fish steaks lightly seared, pale golden at the edges, in a wide pan",
+          "timerMin": 2,
+          "heat": "medium"
+        },
+        {
+          "title": "Soften the onions",
+          "kind": "cook",
+          "text": "Add the remaining oil, splutter the mustard seeds and add curry leaves. Add the onion, ginger, garlic and green chillies and sauté for 5 minutes until soft and translucent but not coloured. Stir in the rest of the turmeric.",
+          "uses": [
+            "mustard_seeds",
+            "curry_leaves",
+            "onion",
+            "ginger",
+            "garlic",
+            "green_chilli"
+          ],
+          "visual": "Soft, pale translucent onions with ginger, green chillies and curry leaves in the wide pan, a light yellow tint from turmeric",
+          "timerMin": 5,
+          "heat": "medium"
+        },
+        {
+          "title": "Add thin coconut milk",
+          "kind": "cook",
+          "text": "Mix 100 g of the coconut milk with the water and pour it in. Bring to a gentle simmer for 3 minutes.",
+          "uses": [
+            "coconut_milk",
+            "water"
+          ],
+          "visual": "Thin, pale yellow coconut milk gently simmering over the onions in the wide pan",
+          "timerMin": 3,
+          "heat": "medium"
+        },
+        {
+          "title": "Poach the fish",
+          "kind": "cook",
+          "text": "Slide in the fish in a single layer and lay the tomato slices on top. Simmer on low for 6 to 8 minutes, swirling the pan instead of stirring, until the fish is cooked.",
+          "uses": [
+            "tomato"
+          ],
+          "visual": "Fish steaks in pale yellow coconut gravy with tomato rounds on top in the wide pan",
+          "timerMin": 8,
+          "heat": "low"
+        },
+        {
+          "title": "Add thick milk",
+          "kind": "cook",
+          "text": "Pour in the remaining thick coconut milk, swirl and heat for 1 to 2 minutes until just steaming. Do not boil.",
+          "uses": [],
+          "visual": "Creamy, glossy moilee with fish and tomato slices, curry leaves floating, steam rising",
+          "timerMin": 2,
+          "heat": "low"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve warm with appam or plain rice.",
+          "uses": [],
+          "visual": "Fish moilee in a white shallow bowl, pale yellow coconut gravy with fish steaks, tomato rounds, green chillies and curry leaves, appam beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "seer_fish",
+          "with": "pomfret",
+          "ratio": 1,
+          "note": "Pomfret or pearl spot (karimeen) is also traditional; basa is a budget option."
+        },
+        {
+          "ref": "coconut_milk",
+          "with": "milk",
+          "ratio": 1,
+          "note": "Not traditional, but toned milk makes a lighter moilee — add it off the heat."
+        }
+      ],
+      "storage": "Refrigerate for up to 2 days.",
+      "reheating": "Warm very gently on low heat without stirring.",
+      "tags": []
+    },
+    {
+      "id": "pomfret-pollichathu",
+      "title": "Pomfret Pollichathu (Fish in Banana Leaf, Tawa-Cooked)",
+      "description": "Whole pomfret marinated, pan-fried, then wrapped in banana leaf with a thick shallot–tomato masala and cooked on a tawa until the leaf chars — Kerala's karimeen-style pollichathu.",
+      "cuisine": "kerala",
+      "region": "Kuttanad",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 2,
+      "prepMin": 25,
+      "cookMin": 30,
+      "restMin": 15,
+      "difficulty": "hard",
+      "equipment": [
+        "tawa",
+        "kadai",
+        "mixing_bowl"
+      ],
+      "ingredients": [
+        {
+          "ref": "pomfret",
+          "g": 500,
+          "measure": "2 whole fish",
+          "prep": "cleaned, scored on both sides"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 6,
+          "measure": "2 tsp",
+          "group": "marinade"
+        },
+        {
+          "ref": "turmeric",
+          "g": 0.5,
+          "measure": "a pinch"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 2,
+          "measure": "¾ tsp"
+        },
+        {
+          "ref": "ginger_garlic_paste",
+          "g": 8,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 20,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 3,
+          "measure": "2 sprigs"
+        },
+        {
+          "ref": "shallots",
+          "g": 80,
+          "measure": "10",
+          "prep": "sliced"
+        },
+        {
+          "ref": "ginger",
+          "g": 6,
+          "measure": "½ inch",
+          "prep": "chopped"
+        },
+        {
+          "ref": "garlic",
+          "g": 8,
+          "measure": "3 cloves",
+          "prep": "chopped"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "measure": "2",
+          "prep": "chopped"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 6,
+          "measure": "2 tsp",
+          "group": "masala"
+        },
+        {
+          "ref": "coriander_powder",
+          "g": 4,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "tomato",
+          "g": 80,
+          "measure": "1 small",
+          "prep": "chopped"
+        },
+        {
+          "ref": "coconut_milk",
+          "g": 60,
+          "measure": "¼ cup"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Marinate the fish",
+          "kind": "prep",
+          "text": "Score the pomfret 3 times on each side. Mix the marinade Kashmiri chilli, turmeric, pepper, ginger-garlic paste, lemon juice and salt to a paste and rub it into the cuts. Rest 15 minutes. Wilt two large pieces of banana leaf over a flame so they fold without tearing.",
+          "uses": [
+            "pomfret",
+            "kashmiri_chilli",
+            "turmeric",
+            "black_pepper",
+            "ginger_garlic_paste",
+            "lemon_juice",
+            "salt"
+          ],
+          "visual": "Two whole scored pomfrets coated in red marinade on a steel plate, two glossy wilted banana leaves beside them",
+          "timerMin": 15
+        },
+        {
+          "title": "Pan-fry the fish",
+          "kind": "cook",
+          "text": "Heat half the coconut oil on a tawa and fry the fish for 2 to 3 minutes per side on medium heat until half cooked and lightly crisp. Lift out.",
+          "uses": [
+            "coconut_oil"
+          ],
+          "visual": "Two pomfrets half-fried to a red-gold crust on a black iron tawa",
+          "timerMin": 5,
+          "heat": "medium"
+        },
+        {
+          "title": "Make the masala",
+          "kind": "cook",
+          "text": "In a kadai, heat the remaining oil, add curry leaves, shallots, ginger, garlic and green chilli and sauté 5 minutes until golden. Add the masala Kashmiri chilli and coriander powder, then the tomato, and cook 4 minutes until thick. Stir in the coconut milk and cook until it is a thick paste.",
+          "uses": [
+            "curry_leaves",
+            "shallots",
+            "ginger",
+            "garlic",
+            "green_chilli",
+            "coriander_powder",
+            "tomato",
+            "coconut_milk"
+          ],
+          "visual": "A thick, dark red shallot-tomato masala with curry leaves in a black kadai",
+          "timerMin": 10,
+          "heat": "medium"
+        },
+        {
+          "title": "Wrap in banana leaf",
+          "kind": "assemble",
+          "text": "Spread a spoon of masala in the middle of each banana leaf, lay a fish on it and cover with more masala. Fold the leaf into a parcel and tie with string or a strip of leaf.",
+          "uses": [],
+          "visual": "A pomfret covered in red masala on an open banana leaf, a second parcel already folded and tied beside it"
+        },
+        {
+          "title": "Cook on the tawa",
+          "kind": "cook",
+          "text": "Place the parcels on the tawa over low heat, cover with a lid and cook for 6 to 8 minutes per side, until the leaf is charred in patches and smells smoky.",
+          "uses": [],
+          "visual": "Two banana-leaf parcels on the black tawa, leaves blistered and charred in brown patches",
+          "timerMin": 15,
+          "heat": "low",
+          "equipment": [
+            "tawa"
+          ]
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve the parcels unopened at the table so the aroma is released when you open them. Eat with matta rice or with a salad for a low-carb meal.",
+          "uses": [],
+          "visual": "An opened charred banana-leaf parcel revealing a whole pomfret in thick red masala, curry leaves on top, a lemon wedge beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "pomfret",
+          "with": "seer_fish",
+          "ratio": 0.9,
+          "note": "Use thick seer fish steaks if whole pomfret isn't available; pearl spot (karimeen) is the classic."
+        },
+        {
+          "ref": "coconut_milk",
+          "note": "Leave out the coconut milk for a drier, lighter masala."
+        }
+      ],
+      "storage": "Best eaten fresh. Refrigerate leftovers in the leaf for up to 1 day.",
+      "reheating": "Rewarm the parcel on a covered tawa on low heat for 4 minutes per side.",
+      "tags": [
+        "festive"
+      ]
+    },
+    {
+      "id": "mathi-fry",
+      "title": "Mathi Fry (Kerala Sardine Fry)",
+      "description": "Sardines rubbed with a fiery Kashmiri chilli–pepper–ginger-garlic paste and shallow-fried in coconut oil with curry leaves until crisp. Cheap, quick and much loved.",
+      "cuisine": "kerala",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 3,
+      "prepMin": 15,
+      "cookMin": 15,
+      "restMin": 20,
+      "difficulty": "easy",
+      "equipment": [
+        "tawa|non_stick_pan",
+        "mixing_bowl"
+      ],
+      "ingredients": [
+        {
+          "ref": "sardine",
+          "g": 400,
+          "measure": "10 sardines",
+          "prep": "cleaned, scored"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 10,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "chilli_powder",
+          "g": 2,
+          "measure": "¾ tsp"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "black_pepper",
+          "g": 3,
+          "measure": "1 tsp",
+          "prep": "ground"
+        },
+        {
+          "ref": "ginger_garlic_paste",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "rice_flour",
+          "g": 8,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 25,
+          "measure": "2 tbsp"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 4,
+          "measure": "3 sprigs"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Clean the sardines",
+          "kind": "prep",
+          "text": "Scale and gut the sardines, cut off the heads if you like, wash and pat dry. Make two diagonal slits on each side.",
+          "uses": [
+            "sardine"
+          ],
+          "visual": "Ten cleaned silver sardines with diagonal slits laid on a wooden board"
+        },
+        {
+          "title": "Make the masala paste",
+          "kind": "prep",
+          "text": "Mix the Kashmiri chilli, chilli powder, turmeric, pepper, ginger-garlic paste, lemon juice, rice flour and salt with a spoon of water to a thick paste.",
+          "uses": [
+            "kashmiri_chilli",
+            "chilli_powder",
+            "turmeric",
+            "black_pepper",
+            "ginger_garlic_paste",
+            "lemon_juice",
+            "rice_flour",
+            "salt"
+          ],
+          "visual": "A thick, glossy brick-red masala paste in a small steel bowl"
+        },
+        {
+          "title": "Marinate",
+          "kind": "rest",
+          "text": "Rub the paste all over the sardines and into the slits. Leave for 20 minutes, or up to 2 hours in the fridge.",
+          "uses": [],
+          "visual": "Sardines thickly coated in red masala paste on a steel plate",
+          "timerMin": 20
+        },
+        {
+          "title": "Shallow fry",
+          "kind": "cook",
+          "text": "Heat the coconut oil on a tawa over medium heat. Lay the sardines in a single layer with half the curry leaves around them and fry for 4 to 5 minutes per side until crisp and dark red.",
+          "uses": [
+            "coconut_oil",
+            "curry_leaves"
+          ],
+          "visual": "Red-coated sardines sizzling in coconut oil on a black iron tawa, curry leaves crackling around them",
+          "timerMin": 10,
+          "heat": "medium"
+        },
+        {
+          "title": "Crisp the curry leaves",
+          "kind": "cook",
+          "text": "Add the rest of the curry leaves to the oil in the last minute so they fry crisp and scatter them over the fish.",
+          "uses": [],
+          "visual": "Crisp, dark red sardines with fried curry leaves on the tawa"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve hot with rice and a moru curry, or with a cucumber and onion salad for a lower-carb plate.",
+          "uses": [],
+          "visual": "Crisp fried sardines on a banana leaf topped with fried curry leaves, lemon wedges and sliced onion beside them"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "rice_flour",
+          "note": "Leave out the rice flour for a slightly softer crust with fewer carbs."
+        },
+        {
+          "ref": "sardine",
+          "with": "mackerel",
+          "ratio": 1,
+          "note": "Mackerel works the same way; fry 1 to 2 minutes longer per side."
+        }
+      ],
+      "storage": "Best eaten hot. Refrigerate up to 1 day.",
+      "reheating": "Reheat on a hot tawa or in an air fryer at 180°C for 4 minutes.",
+      "tags": []
+    },
+    {
+      "id": "mathi-mulakittathu",
+      "title": "Mathi Mulakittathu (Red Sardine Curry)",
+      "description": "Sardines simmered in a fiery red kudampuli gravy with shallots, ginger, garlic, tomato and a pinch of roasted fenugreek — no coconut, just coconut oil and chilli.",
+      "cuisine": "kerala",
+      "region": "Kottayam",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 4,
+      "prepMin": 20,
+      "cookMin": 25,
+      "difficulty": "easy",
+      "equipment": [
+        "kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "sardine",
+          "g": 500,
+          "measure": "12 sardines",
+          "prep": "cleaned"
+        },
+        {
+          "ref": "kudampuli",
+          "g": 10,
+          "measure": "2 pieces",
+          "prep": "soaked in ½ cup warm water"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 15,
+          "measure": "2 tbsp"
+        },
+        {
+          "ref": "coriander_powder",
+          "g": 6,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "fenugreek_seeds",
+          "g": 1,
+          "measure": "¼ tsp",
+          "prep": "dry-roasted and powdered"
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 20,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 4,
+          "measure": "3 sprigs"
+        },
+        {
+          "ref": "shallots",
+          "g": 80,
+          "measure": "10",
+          "prep": "sliced"
+        },
+        {
+          "ref": "ginger",
+          "g": 10,
+          "measure": "1 inch",
+          "prep": "chopped"
+        },
+        {
+          "ref": "garlic",
+          "g": 15,
+          "measure": "5 cloves",
+          "prep": "chopped"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "measure": "2",
+          "prep": "slit"
+        },
+        {
+          "ref": "tomato",
+          "g": 80,
+          "measure": "1 small",
+          "prep": "chopped"
+        },
+        {
+          "ref": "water",
+          "g": 300
+        },
+        {
+          "ref": "salt",
+          "g": 5,
+          "toTaste": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Clean and soak",
+          "kind": "prep",
+          "text": "Clean and wash the sardines and drain. Soak the kudampuli in warm water for 10 minutes.",
+          "uses": [
+            "sardine",
+            "kudampuli"
+          ],
+          "visual": "Cleaned silver sardines in a colander, dark kudampuli soaking in a small bowl beside them",
+          "timerMin": 10
+        },
+        {
+          "title": "Make the chilli paste",
+          "kind": "prep",
+          "text": "Mix the Kashmiri chilli, coriander powder, turmeric and fenugreek powder with 3 tablespoons of water to a smooth paste.",
+          "uses": [
+            "kashmiri_chilli",
+            "coriander_powder",
+            "turmeric",
+            "fenugreek_seeds"
+          ],
+          "visual": "A thick, deep red spice paste in a small steel bowl"
+        },
+        {
+          "title": "Sauté aromatics",
+          "kind": "cook",
+          "text": "Heat the coconut oil in a clay pot or kadai. Add curry leaves, shallots, ginger, garlic and green chillies and sauté on medium heat for 5 minutes until golden.",
+          "uses": [
+            "coconut_oil",
+            "curry_leaves",
+            "shallots",
+            "ginger",
+            "garlic",
+            "green_chilli"
+          ],
+          "visual": "Golden shallots, ginger and garlic with curry leaves in coconut oil in a clay pot (meenchatti)",
+          "timerMin": 5,
+          "heat": "medium"
+        },
+        {
+          "title": "Cook paste and tomato",
+          "kind": "cook",
+          "text": "Lower the heat, add the chilli paste and cook for 2 to 3 minutes until the oil separates. Add the tomato and cook 3 minutes until soft.",
+          "uses": [
+            "tomato"
+          ],
+          "visual": "Deep red masala with softened tomato in the clay pot, red oil at the edges",
+          "timerMin": 6,
+          "heat": "low"
+        },
+        {
+          "title": "Add water and kudampuli",
+          "kind": "cook",
+          "text": "Add the water, kudampuli with its soaking water and salt. Bring to a boil.",
+          "uses": [
+            "water",
+            "salt"
+          ],
+          "visual": "Thin, bright red gravy boiling in the clay pot with kudampuli pieces floating",
+          "heat": "medium"
+        },
+        {
+          "title": "Simmer the sardines",
+          "kind": "cook",
+          "text": "Lay the sardines in the gravy, swirl the pot to cover them and simmer on low heat for 10 minutes without stirring until the gravy thickens.",
+          "uses": [],
+          "visual": "Sardines submerged in thick red gravy in the clay pot, coconut oil pooling on top",
+          "timerMin": 10,
+          "heat": "low"
+        },
+        {
+          "title": "Rest and serve",
+          "kind": "serve",
+          "text": "Rest for 15 minutes, or ideally a few hours, before serving with matta rice or kappa.",
+          "uses": [],
+          "visual": "Mathi mulakittathu in the clay pot, sardines in glossy red gravy with curry leaves, a plate of matta rice beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "sardine",
+          "with": "mackerel",
+          "ratio": 1,
+          "note": "Mackerel works equally well in this curry."
+        },
+        {
+          "ref": "kudampuli",
+          "with": "tamarind",
+          "ratio": 1,
+          "note": "A small ball of tamarind can replace kudampuli; it adds a few more carbs."
+        }
+      ],
+      "storage": "Keeps 3 days in the fridge; it tastes better the next day.",
+      "reheating": "Warm gently on low heat without stirring.",
+      "tags": [
+        "meal_prep"
+      ]
+    },
+    {
+      "id": "ayala-fry",
+      "title": "Ayala Varuthathu (Kerala Mackerel Fry)",
+      "description": "Whole mackerel marinated in a freshly crushed paste of shallots, ginger, garlic, fennel and Kashmiri chilli, then pan-fried in coconut oil until crusty.",
+      "cuisine": "kerala",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 3,
+      "prepMin": 20,
+      "cookMin": 15,
+      "restMin": 30,
+      "difficulty": "easy",
+      "equipment": [
+        "tawa|non_stick_pan",
+        "mixer_grinder|knife_board"
+      ],
+      "ingredients": [
+        {
+          "ref": "mackerel",
+          "g": 480,
+          "measure": "4 fish",
+          "prep": "cleaned, scored"
+        },
+        {
+          "ref": "shallots",
+          "g": 40,
+          "measure": "5"
+        },
+        {
+          "ref": "ginger",
+          "g": 8,
+          "measure": "¾ inch"
+        },
+        {
+          "ref": "garlic",
+          "g": 10,
+          "measure": "3–4 cloves"
+        },
+        {
+          "ref": "fennel_seeds",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 10,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 3,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 25,
+          "measure": "2 tbsp"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 4,
+          "measure": "3 sprigs"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Clean the mackerel",
+          "kind": "prep",
+          "text": "Clean the mackerel, wash and pat dry. Make 2 or 3 deep slits on each side.",
+          "uses": [
+            "mackerel"
+          ],
+          "visual": "Four cleaned mackerel with deep slits on a wooden board"
+        },
+        {
+          "title": "Crush the paste",
+          "kind": "prep",
+          "text": "Crush the shallots, ginger, garlic and fennel to a coarse paste in a mixer or mortar. Mix in the Kashmiri chilli, pepper, turmeric, lemon juice and salt.",
+          "uses": [
+            "shallots",
+            "ginger",
+            "garlic",
+            "fennel_seeds",
+            "kashmiri_chilli",
+            "black_pepper",
+            "turmeric",
+            "lemon_juice",
+            "salt"
+          ],
+          "visual": "A coarse, deep red paste of crushed shallots, ginger and garlic with fennel seeds visible, in a stone mortar"
+        },
+        {
+          "title": "Marinate",
+          "kind": "rest",
+          "text": "Rub the paste deep into the slits and all over the fish. Leave for 30 minutes.",
+          "uses": [],
+          "visual": "Mackerel thickly coated in coarse red paste on a steel plate",
+          "timerMin": 30
+        },
+        {
+          "title": "Pan-fry",
+          "kind": "cook",
+          "text": "Heat the coconut oil on a tawa over medium heat. Lay the fish down with the curry leaves around and fry for 5 to 6 minutes per side, without moving them too often, until a dark crust forms and the fish is cooked through.",
+          "uses": [
+            "coconut_oil",
+            "curry_leaves"
+          ],
+          "visual": "Mackerel with a dark red crust frying in coconut oil on a black iron tawa, curry leaves crisping around them",
+          "timerMin": 12,
+          "heat": "medium"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve hot with rice and a curry, or with a raw onion and tomato salad.",
+          "uses": [],
+          "visual": "Crusty fried mackerel with fried shallot bits and curry leaves on a banana leaf, lemon wedges beside"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "mackerel",
+          "with": "sardine",
+          "ratio": 1,
+          "note": "Sardines fry faster — about 4 minutes a side."
+        },
+        {
+          "ref": "lemon_juice",
+          "with": "vinegar",
+          "ratio": 1,
+          "note": "A teaspoon of vinegar is a common alternative."
+        }
+      ],
+      "storage": "Best eaten fresh; refrigerate up to 1 day.",
+      "reheating": "Reheat on a hot tawa or in an air fryer at 180°C for 4 minutes.",
+      "tags": []
+    },
+    {
+      "id": "ayala-thenga-aracha-curry",
+      "title": "Ayala Thenga Aracha Curry (Mackerel in Ground Coconut Gravy)",
+      "description": "Mackerel simmered in a smooth, orange gravy of ground coconut, shallots and chilli, soured with kudampuli and finished with a coconut-oil tempering.",
+      "cuisine": "kerala",
+      "region": "Malabar",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 4,
+      "prepMin": 20,
+      "cookMin": 25,
+      "difficulty": "medium",
+      "equipment": [
+        "kadai",
+        "mixer_grinder"
+      ],
+      "ingredients": [
+        {
+          "ref": "mackerel",
+          "g": 480,
+          "measure": "4 fish",
+          "prep": "cleaned, cut into 2 pieces each"
+        },
+        {
+          "ref": "kudampuli",
+          "g": 10,
+          "measure": "2 pieces",
+          "prep": "soaked in ½ cup warm water"
+        },
+        {
+          "ref": "coconut_grated",
+          "g": 100,
+          "measure": "1¼ cups"
+        },
+        {
+          "ref": "shallots",
+          "g": 50,
+          "measure": "6"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 8,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "coriander_powder",
+          "g": 6,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "water",
+          "g": 400
+        },
+        {
+          "ref": "ginger",
+          "g": 10,
+          "measure": "1 inch",
+          "prep": "julienned"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 6,
+          "measure": "3",
+          "prep": "slit"
+        },
+        {
+          "ref": "salt",
+          "g": 5,
+          "toTaste": true
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "mustard_seeds",
+          "g": 2,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "fenugreek_seeds",
+          "g": 1,
+          "measure": "¼ tsp"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 4,
+          "measure": "3 sprigs"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Prepare fish and kudampuli",
+          "kind": "prep",
+          "text": "Clean the mackerel and cut each into 2 pieces. Soak the kudampuli in warm water for 10 minutes.",
+          "uses": [
+            "mackerel",
+            "kudampuli"
+          ],
+          "visual": "Mackerel pieces in a steel bowl and dark kudampuli soaking in a small cup",
+          "timerMin": 10
+        },
+        {
+          "title": "Grind the coconut",
+          "kind": "prep",
+          "text": "Grind the coconut with 2 of the shallots, Kashmiri chilli, coriander powder, turmeric and ½ cup of the water to a very smooth paste.",
+          "uses": [
+            "coconut_grated",
+            "shallots",
+            "kashmiri_chilli",
+            "coriander_powder",
+            "turmeric"
+          ],
+          "visual": "A smooth, bright orange coconut-chilli paste in a mixer jar",
+          "equipment": [
+            "mixer_grinder"
+          ]
+        },
+        {
+          "title": "Simmer the gravy",
+          "kind": "cook",
+          "text": "In a clay pot or kadai, combine the coconut paste, remaining water, ginger, green chillies, kudampuli with its water and salt. Bring to a gentle boil on medium heat and simmer 5 minutes.",
+          "uses": [
+            "water",
+            "ginger",
+            "green_chilli",
+            "salt"
+          ],
+          "visual": "Smooth orange coconut gravy gently bubbling in a clay pot with green chillies and kudampuli",
+          "timerMin": 5,
+          "heat": "medium"
+        },
+        {
+          "title": "Cook the fish",
+          "kind": "cook",
+          "text": "Add the mackerel pieces, swirl to cover and simmer on low heat for 10 minutes without stirring until the fish is cooked and the gravy coats a spoon.",
+          "uses": [],
+          "visual": "Mackerel pieces in thick orange coconut gravy in the clay pot",
+          "timerMin": 10,
+          "heat": "low"
+        },
+        {
+          "title": "Temper",
+          "kind": "cook",
+          "text": "Heat the coconut oil in a small pan, splutter mustard seeds, add fenugreek, the remaining shallots (sliced) and curry leaves and fry until the shallots are golden. Pour over the curry.",
+          "uses": [
+            "coconut_oil",
+            "mustard_seeds",
+            "fenugreek_seeds",
+            "curry_leaves"
+          ],
+          "visual": "Golden shallot, mustard and curry leaf tempering being poured over the orange fish curry",
+          "heat": "medium"
+        },
+        {
+          "title": "Rest and serve",
+          "kind": "serve",
+          "text": "Cover and rest for 15 minutes before serving with matta rice or kappa puzhukku.",
+          "uses": [],
+          "visual": "Ayala curry in the clay pot, mackerel pieces in creamy orange gravy topped with fried shallots and curry leaves, matta rice beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "kudampuli",
+          "with": "raw_mango",
+          "note": "Use about 60 g of sliced raw mango instead — a classic Malabar variation."
+        },
+        {
+          "ref": "mackerel",
+          "with": "sardine",
+          "ratio": 1,
+          "note": "Sardines are equally good in this coconut gravy."
+        }
+      ],
+      "storage": "Refrigerate for up to 2 days.",
+      "reheating": "Warm on low heat, swirling the pot rather than stirring.",
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "chemmeen-manga-curry",
+      "title": "Chemmeen Manga Curry (Prawns with Raw Mango in Coconut Milk)",
+      "description": "Prawns and tart raw mango simmered in a coconut milk gravy with shallots, ginger and Kashmiri chilli — a coastal Kerala classic that balances sour, spicy and creamy.",
+      "cuisine": "kerala",
+      "region": "Alappuzha",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 4,
+      "prepMin": 20,
+      "cookMin": 25,
+      "difficulty": "easy",
+      "equipment": [
+        "kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "prawns",
+          "g": 400,
+          "prep": "cleaned and deveined"
+        },
+        {
+          "ref": "raw_mango",
+          "g": 150,
+          "measure": "1 small",
+          "prep": "peeled, cut into thin strips"
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "mustard_seeds",
+          "g": 2,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 4,
+          "measure": "3 sprigs"
+        },
+        {
+          "ref": "shallots",
+          "g": 40,
+          "measure": "5",
+          "prep": "sliced"
+        },
+        {
+          "ref": "ginger",
+          "g": 10,
+          "measure": "1 inch",
+          "prep": "julienned"
+        },
+        {
+          "ref": "garlic",
+          "g": 6,
+          "measure": "2 cloves",
+          "prep": "sliced"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "measure": "2",
+          "prep": "slit"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 6,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "coriander_powder",
+          "g": 4,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "coconut_milk",
+          "g": 200,
+          "measure": "¾ cup + 1 tbsp"
+        },
+        {
+          "ref": "water",
+          "g": 150
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Prepare prawns and mango",
+          "kind": "prep",
+          "text": "Clean and devein the prawns. Peel the raw mango and cut it into thin strips. Make thin coconut milk by mixing 80 g of the coconut milk with the water; keep the rest thick.",
+          "uses": [
+            "prawns",
+            "raw_mango",
+            "coconut_milk",
+            "water"
+          ],
+          "visual": "Cleaned prawns in a bowl, pale green raw mango strips on a board, and two bowls of thin and thick coconut milk"
+        },
+        {
+          "title": "Temper and sauté",
+          "kind": "cook",
+          "text": "Heat the coconut oil in a clay pot or kadai. Splutter mustard seeds, add curry leaves, shallots, ginger, garlic and green chillies and sauté for 4 minutes until soft.",
+          "uses": [
+            "coconut_oil",
+            "mustard_seeds",
+            "curry_leaves",
+            "shallots",
+            "ginger",
+            "garlic",
+            "green_chilli"
+          ],
+          "visual": "Soft shallots, ginger and green chillies with mustard seeds and curry leaves in coconut oil in a clay pot",
+          "timerMin": 4,
+          "heat": "medium"
+        },
+        {
+          "title": "Add the spices",
+          "kind": "cook",
+          "text": "Lower the heat, add Kashmiri chilli, coriander powder and turmeric and stir for 1 minute with a splash of water so they don't burn.",
+          "uses": [
+            "kashmiri_chilli",
+            "coriander_powder",
+            "turmeric"
+          ],
+          "visual": "A red-orange spice paste coating the shallots in the clay pot",
+          "timerMin": 1,
+          "heat": "low"
+        },
+        {
+          "title": "Cook the mango",
+          "kind": "cook",
+          "text": "Pour in the thin coconut milk, add the mango and salt and simmer for 5 minutes until the mango softens.",
+          "uses": [
+            "salt"
+          ],
+          "visual": "Raw mango strips simmering in a thin orange coconut gravy in the clay pot",
+          "timerMin": 5,
+          "heat": "medium"
+        },
+        {
+          "title": "Add the prawns",
+          "kind": "cook",
+          "text": "Add the prawns and simmer for 5 to 6 minutes until they curl and turn pink.",
+          "uses": [],
+          "visual": "Pink curled prawns and mango strips in orange gravy in the clay pot",
+          "timerMin": 6,
+          "heat": "medium"
+        },
+        {
+          "title": "Finish with thick milk",
+          "kind": "cook",
+          "text": "Lower the heat, pour in the thick coconut milk and warm for 2 minutes without boiling.",
+          "uses": [],
+          "visual": "Creamy orange prawn and mango curry in the clay pot, curry leaves on the surface",
+          "timerMin": 2,
+          "heat": "low"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve with matta rice or appam.",
+          "uses": [],
+          "visual": "Chemmeen manga curry in a clay bowl, pink prawns and pale mango strips in creamy orange gravy, matta rice beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "raw_mango",
+          "with": "kudampuli",
+          "ratio": 0.07,
+          "note": "Out of mango season, use 2 pieces of soaked kudampuli instead."
+        },
+        {
+          "ref": "prawns",
+          "with": "seer_fish",
+          "ratio": 1,
+          "note": "Fish pieces make an equally classic meen manga curry."
+        }
+      ],
+      "storage": "Refrigerate for up to 2 days.",
+      "reheating": "Warm gently on low heat until just hot.",
+      "tags": []
+    },
+    {
+      "id": "puttu-kadala-curry",
+      "title": "Puttu and Kadala Curry",
+      "description": "Kerala's classic breakfast: steamed cylinders of rice flour layered with fresh coconut, served with a black chickpea curry in an onion–tomato masala. Filling, fibre-rich and best shared.",
+      "cuisine": "kerala",
+      "mealTypes": [
+        "breakfast",
+        "dinner"
+      ],
+      "course": "complete",
+      "servings": 3,
+      "prepMin": 20,
+      "cookMin": 40,
+      "restMin": 480,
+      "difficulty": "medium",
+      "equipment": [
+        "pressure_cooker|saucepan",
+        "steamer",
+        "kadai",
+        "mixing_bowl"
+      ],
+      "ingredients": [
+        {
+          "ref": "kala_chana",
+          "g": 120,
+          "measure": "⅔ cup",
+          "prep": "soaked overnight",
+          "group": "kadala curry"
+        },
+        {
+          "ref": "water",
+          "g": 600
+        },
+        {
+          "ref": "turmeric",
+          "g": 0.5,
+          "measure": "a pinch"
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "mustard_seeds",
+          "g": 2,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 3,
+          "measure": "2 sprigs"
+        },
+        {
+          "ref": "onion",
+          "g": 100,
+          "measure": "1 medium",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "ginger",
+          "g": 6,
+          "measure": "½ inch",
+          "prep": "chopped"
+        },
+        {
+          "ref": "garlic",
+          "g": 6,
+          "measure": "2 cloves",
+          "prep": "chopped"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 3,
+          "measure": "1",
+          "prep": "slit"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 4,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "coriander_powder",
+          "g": 6,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "garam_masala",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "tomato",
+          "g": 60,
+          "measure": "1 small",
+          "prep": "chopped"
+        },
+        {
+          "ref": "rice_flour",
+          "g": 150,
+          "measure": "1 cup",
+          "prep": "roasted puttu podi",
+          "group": "puttu"
+        },
+        {
+          "ref": "coconut_grated",
+          "g": 60,
+          "measure": "¾ cup",
+          "group": "puttu"
+        },
+        {
+          "ref": "salt",
+          "g": 5,
+          "toTaste": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Soak the chana",
+          "kind": "prep",
+          "text": "Rinse the black chickpeas and soak them in plenty of water overnight, at least 8 hours.",
+          "uses": [
+            "kala_chana"
+          ],
+          "visual": "Plump, soaked black chickpeas in a steel bowl of water",
+          "timerMin": 480
+        },
+        {
+          "title": "Pressure cook the chana",
+          "kind": "cook",
+          "text": "Drain and pressure cook the chana with 2 cups of the water, turmeric and salt for 6 to 7 whistles, about 25 minutes, until soft enough to crush between your fingers. Keep the cooking water.",
+          "uses": [
+            "turmeric",
+            "salt",
+            "water"
+          ],
+          "visual": "Soft cooked black chickpeas in their dark cooking liquid in an open pressure cooker",
+          "timerMin": 25,
+          "heat": "medium",
+          "equipment": [
+            "pressure_cooker|saucepan"
+          ]
+        },
+        {
+          "title": "Moisten the puttu flour",
+          "kind": "prep",
+          "text": "In a wide bowl, sprinkle about ½ cup of the water and a pinch of salt over the rice flour a little at a time, rubbing with your fingertips until it looks like damp breadcrumbs and holds together when pressed but crumbles again. Rest 10 minutes.",
+          "uses": [
+            "rice_flour"
+          ],
+          "visual": "Damp, crumbly rice flour like coarse breadcrumbs in a wide steel bowl, a fistful pressed into a clump",
+          "timerMin": 10
+        },
+        {
+          "title": "Make the curry base",
+          "kind": "cook",
+          "text": "Heat the coconut oil in a kadai, splutter mustard seeds and add curry leaves. Add the onion, ginger, garlic and green chilli and sauté for 6 minutes until golden. Stir in the Kashmiri chilli, coriander powder and garam masala for 1 minute, then add the tomato and cook until soft.",
+          "uses": [
+            "coconut_oil",
+            "mustard_seeds",
+            "curry_leaves",
+            "onion",
+            "ginger",
+            "garlic",
+            "green_chilli",
+            "kashmiri_chilli",
+            "coriander_powder",
+            "garam_masala",
+            "tomato"
+          ],
+          "visual": "Golden onion-tomato masala with curry leaves and mustard seeds in a black kadai",
+          "timerMin": 10,
+          "heat": "medium"
+        },
+        {
+          "title": "Simmer the kadala curry",
+          "kind": "cook",
+          "text": "Add the chana with its cooking water, mash a few chickpeas against the side to thicken, and simmer for 10 minutes until the gravy is thick.",
+          "uses": [],
+          "visual": "Dark brown kadala curry simmering in the kadai, some chickpeas mashed into a thick gravy",
+          "timerMin": 10,
+          "heat": "low"
+        },
+        {
+          "title": "Fill the puttu maker",
+          "kind": "assemble",
+          "text": "Bring water to a boil in the puttu pot. Put a spoon of coconut into the puttu tube, then a layer of flour, and repeat, ending with coconut.",
+          "uses": [
+            "coconut_grated"
+          ],
+          "visual": "A steel puttu tube being filled with alternating layers of white grated coconut and damp rice flour"
+        },
+        {
+          "title": "Steam the puttu",
+          "kind": "cook",
+          "text": "Fit the tube on the pot and steam for 6 to 8 minutes, until steam flows steadily out of the top lid. Push the puttu out with the rod.",
+          "uses": [],
+          "visual": "A cylinder of steamed puttu with white coconut bands being pushed out of the steel tube onto a plate, steam rising",
+          "timerMin": 8,
+          "heat": "high",
+          "equipment": [
+            "steamer"
+          ]
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve the puttu hot with the kadala curry, breaking the puttu and mixing it with the gravy. One cylinder and a cup of curry make a filling breakfast.",
+          "uses": [],
+          "visual": "A cylinder of white puttu with coconut layers on a steel plate beside a bowl of dark kadala curry, curry leaves on top"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "rice_flour",
+          "with": "ragi_flour",
+          "ratio": 1,
+          "note": "Ragi puttu is a higher-fibre swap; moisten with slightly less water."
+        },
+        {
+          "ref": "kala_chana",
+          "with": "green_moong",
+          "ratio": 1,
+          "note": "Cherupayar (green moong) curry is another classic pairing and needs only 4 hours of soaking."
+        }
+      ],
+      "storage": "Kadala curry keeps 3 days in the fridge. Puttu is best fresh.",
+      "reheating": "Re-steam puttu for 3 minutes; warm the curry with a splash of water.",
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "ragi-puttu",
+      "title": "Ragi Puttu (Steamed Finger Millet and Coconut)",
+      "description": "Steamed finger-millet flour layered with fresh coconut — a nutty, earthy take on Kerala puttu that pairs well with kadala curry, egg roast or a banana.",
+      "cuisine": "kerala",
+      "mealTypes": [
+        "breakfast",
+        "dinner"
+      ],
+      "course": "base",
+      "servings": 3,
+      "prepMin": 15,
+      "cookMin": 10,
+      "difficulty": "easy",
+      "equipment": [
+        "steamer",
+        "mixing_bowl",
+        "tawa"
+      ],
+      "ingredients": [
+        {
+          "ref": "ragi_flour",
+          "g": 150,
+          "measure": "1¼ cups"
+        },
+        {
+          "ref": "salt",
+          "g": 2,
+          "toTaste": true
+        },
+        {
+          "ref": "water",
+          "g": 110
+        },
+        {
+          "ref": "coconut_grated",
+          "g": 60,
+          "measure": "¾ cup"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Roast the flour",
+          "kind": "cook",
+          "text": "Dry roast the ragi flour on a tawa over low heat for 4 to 5 minutes, stirring, until it smells nutty. Cool completely.",
+          "uses": [
+            "ragi_flour"
+          ],
+          "visual": "Brown ragi flour being stirred on a black tawa, slightly darker and fragrant",
+          "timerMin": 5,
+          "heat": "low"
+        },
+        {
+          "title": "Moisten the flour",
+          "kind": "prep",
+          "text": "Mix the salt into the water. Sprinkle it over the ragi flour a little at a time, rubbing with your fingertips, until it is damp and crumbly and holds its shape when pressed. Pulse briefly in a mixer to break up lumps if needed. Rest 10 minutes.",
+          "uses": [
+            "salt",
+            "water"
+          ],
+          "visual": "Damp, crumbly brown ragi flour in a steel bowl, a pressed clump holding its shape",
+          "timerMin": 10
+        },
+        {
+          "title": "Layer the puttu",
+          "kind": "assemble",
+          "text": "Bring water to a boil in the puttu pot. Layer coconut and ragi flour alternately in the puttu tube, starting and ending with coconut.",
+          "uses": [
+            "coconut_grated"
+          ],
+          "visual": "A steel puttu tube being filled with alternating bands of white coconut and dark brown ragi flour"
+        },
+        {
+          "title": "Steam",
+          "kind": "cook",
+          "text": "Steam for 6 to 8 minutes, until steam flows out of the top. Push the puttu out onto a plate.",
+          "uses": [],
+          "visual": "A dark brown ragi puttu cylinder with white coconut bands sliding out of the steel tube, steam rising",
+          "timerMin": 8,
+          "heat": "high",
+          "equipment": [
+            "steamer"
+          ]
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve hot with kadala curry, cherupayar curry or egg roast. For a sweet breakfast, eat with a small banana.",
+          "uses": [],
+          "visual": "A cylinder of brown ragi puttu with white coconut layers on a banana leaf beside a bowl of kadala curry"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "coconut_grated",
+          "with": "desiccated_coconut",
+          "ratio": 0.5,
+          "note": "Moisten desiccated coconut with a spoon of water before layering."
+        }
+      ],
+      "storage": "Best fresh; refrigerate up to 1 day.",
+      "reheating": "Re-steam for 3 to 4 minutes.",
+      "tags": []
+    },
+    {
+      "id": "varutharacha-kadala-curry",
+      "title": "Varutharacha Kadala Curry (Black Chickpeas in Roasted Coconut)",
+      "description": "Black chickpeas simmered in a dark, aromatic gravy of coconut and shallots roasted with coriander, fennel, pepper and whole spices — the richer, festive kadala curry.",
+      "cuisine": "kerala",
+      "mealTypes": [
+        "breakfast",
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 4,
+      "prepMin": 20,
+      "cookMin": 45,
+      "restMin": 480,
+      "difficulty": "medium",
+      "equipment": [
+        "pressure_cooker|saucepan",
+        "kadai",
+        "mixer_grinder"
+      ],
+      "ingredients": [
+        {
+          "ref": "kala_chana",
+          "g": 160,
+          "measure": "¾ cup + 1 tbsp",
+          "prep": "soaked overnight"
+        },
+        {
+          "ref": "water",
+          "g": 700
+        },
+        {
+          "ref": "turmeric",
+          "g": 0.5,
+          "measure": "a pinch"
+        },
+        {
+          "ref": "salt",
+          "g": 5,
+          "toTaste": true
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "coconut_grated",
+          "g": 60,
+          "measure": "¾ cup"
+        },
+        {
+          "ref": "shallots",
+          "g": 20,
+          "measure": "3"
+        },
+        {
+          "ref": "fennel_seeds",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 1,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "cinnamon",
+          "g": 0.5,
+          "measure": "½-inch stick"
+        },
+        {
+          "ref": "cloves",
+          "g": 0.2,
+          "measure": "2"
+        },
+        {
+          "ref": "coriander_powder",
+          "g": 8,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 6,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "mustard_seeds",
+          "g": 2,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 3,
+          "measure": "2 sprigs"
+        },
+        {
+          "ref": "onion",
+          "g": 120,
+          "measure": "1 large",
+          "prep": "sliced"
+        },
+        {
+          "ref": "ginger",
+          "g": 8,
+          "measure": "¾ inch",
+          "prep": "chopped"
+        },
+        {
+          "ref": "garlic",
+          "g": 8,
+          "measure": "3 cloves",
+          "prep": "chopped"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 3,
+          "measure": "1",
+          "prep": "slit"
+        },
+        {
+          "ref": "tomato",
+          "g": 60,
+          "measure": "1 small",
+          "prep": "chopped"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Soak and cook the chana",
+          "kind": "cook",
+          "text": "Soak the chana overnight. Drain and pressure cook with 2½ cups of the water, turmeric and salt for 6 to 7 whistles, about 25 minutes, until soft.",
+          "uses": [
+            "kala_chana",
+            "water",
+            "turmeric",
+            "salt"
+          ],
+          "visual": "Soft black chickpeas in dark cooking liquid in an open pressure cooker",
+          "timerMin": 25,
+          "heat": "medium",
+          "equipment": [
+            "pressure_cooker|saucepan"
+          ]
+        },
+        {
+          "title": "Roast the coconut",
+          "kind": "cook",
+          "text": "In a kadai with 1 teaspoon of the coconut oil, roast the coconut, shallots, fennel, pepper, cinnamon and cloves on medium-low heat, stirring constantly, for 8 to 10 minutes until deep brown. Turn off the heat and stir in the coriander powder and Kashmiri chilli.",
+          "uses": [
+            "coconut_oil",
+            "coconut_grated",
+            "shallots",
+            "fennel_seeds",
+            "black_pepper",
+            "cinnamon",
+            "cloves",
+            "coriander_powder",
+            "kashmiri_chilli"
+          ],
+          "visual": "Deep brown roasted coconut with shallots and whole spices dusted with red chilli in a black kadai",
+          "timerMin": 10,
+          "heat": "low"
+        },
+        {
+          "title": "Grind",
+          "kind": "prep",
+          "text": "Cool and grind the roasted mixture with ½ cup water to a smooth, dark paste.",
+          "uses": [],
+          "visual": "A smooth, dark brown roasted coconut paste in a mixer jar",
+          "equipment": [
+            "mixer_grinder"
+          ]
+        },
+        {
+          "title": "Make the onion base",
+          "kind": "cook",
+          "text": "Heat the remaining coconut oil in the kadai, splutter mustard seeds, add curry leaves, onion, ginger, garlic and green chilli and sauté for 6 minutes until golden. Add the tomato and cook 3 minutes.",
+          "uses": [
+            "mustard_seeds",
+            "curry_leaves",
+            "onion",
+            "ginger",
+            "garlic",
+            "green_chilli",
+            "tomato"
+          ],
+          "visual": "Golden onions and soft tomato with curry leaves and mustard seeds in the black kadai",
+          "timerMin": 9,
+          "heat": "medium"
+        },
+        {
+          "title": "Simmer together",
+          "kind": "cook",
+          "text": "Add the cooked chana with its liquid and the roasted paste. Simmer on low heat for 10 to 12 minutes until the gravy is thick and dark.",
+          "uses": [],
+          "visual": "Black chickpeas in a thick, dark brown coconut gravy simmering in the kadai",
+          "timerMin": 12,
+          "heat": "low"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve with puttu, appam or chapati. For lunch, serve with rice and a thoran.",
+          "uses": [],
+          "visual": "Dark varutharacha kadala curry in a clay bowl, chickpeas glistening, curry leaves on top, puttu beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "kala_chana",
+          "with": "kabuli_chana",
+          "ratio": 1,
+          "note": "White chickpeas work too, though the black ones are traditional."
+        }
+      ],
+      "storage": "Keeps 3 days in the fridge.",
+      "reheating": "Warm with a splash of water, stirring.",
+      "tags": [
+        "meal_prep",
+        "festive"
+      ]
+    },
+    {
+      "id": "kerala-palappam",
+      "title": "Palappam (Lacy Fermented Rice Appam)",
+      "description": "Bowl-shaped Kerala rice pancakes with crisp lacy edges and a soft, spongy centre, made from a naturally fermented batter of rice, coconut and a cooked rice-flour 'kappi'.",
+      "cuisine": "kerala",
+      "region": "Central Travancore",
+      "mealTypes": [
+        "breakfast",
+        "dinner"
+      ],
+      "course": "base",
+      "servings": 5,
+      "prepMin": 20,
+      "cookMin": 30,
+      "restMin": 600,
+      "difficulty": "medium",
+      "equipment": [
+        "mixer_grinder",
+        "mixing_bowl",
+        "saucepan",
+        "kadai|non_stick_pan"
+      ],
+      "ingredients": [
+        {
+          "ref": "rice",
+          "g": 300,
+          "measure": "1½ cups",
+          "prep": "raw, soaked 5 hours"
+        },
+        {
+          "ref": "water",
+          "g": 400
+        },
+        {
+          "ref": "rice_flour",
+          "g": 20,
+          "measure": "2 tbsp",
+          "prep": "for the kappi"
+        },
+        {
+          "ref": "coconut_grated",
+          "g": 100,
+          "measure": "1¼ cups"
+        },
+        {
+          "ref": "sugar",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 5,
+          "measure": "1 tsp",
+          "prep": "for greasing"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Soak the rice",
+          "kind": "prep",
+          "text": "Wash the raw rice 3 times and soak it in plenty of water for 5 hours.",
+          "uses": [
+            "rice"
+          ],
+          "visual": "White raw rice soaking in a steel bowl of water",
+          "timerMin": 300
+        },
+        {
+          "title": "Cook the kappi",
+          "kind": "cook",
+          "text": "Whisk the rice flour into ½ cup of the water in a small saucepan and cook on low heat, stirring, for 2 to 3 minutes until it becomes a thick, glossy, translucent paste. Cool.",
+          "uses": [
+            "rice_flour",
+            "water"
+          ],
+          "visual": "A thick, glossy translucent rice-flour paste in a small saucepan with a whisk",
+          "timerMin": 3,
+          "heat": "low"
+        },
+        {
+          "title": "Grind the batter",
+          "kind": "prep",
+          "text": "Drain the rice and grind it with the coconut, the cooled kappi and about 1¼ cups of the water to a very smooth, pourable batter, like thin pancake batter.",
+          "uses": [
+            "coconut_grated"
+          ],
+          "visual": "A smooth, creamy white batter being poured from a mixer jar into a large steel bowl"
+        },
+        {
+          "title": "Ferment",
+          "kind": "rest",
+          "text": "Stir in the sugar, cover and leave in a warm place for 8 to 10 hours, until the batter has risen, is full of bubbles and smells pleasantly sour. In a cool kitchen it may take up to 12 hours.",
+          "uses": [
+            "sugar"
+          ],
+          "visual": "The same steel bowl of batter, risen and covered in small bubbles, a lid set aside",
+          "timerMin": 600
+        },
+        {
+          "title": "Season the batter",
+          "kind": "prep",
+          "text": "Gently stir in the salt without knocking out all the air. The batter should flow easily; add a spoon of water if it is too thick.",
+          "uses": [
+            "salt"
+          ],
+          "visual": "Bubbly, pourable appam batter being stirred gently with a ladle"
+        },
+        {
+          "title": "Cook the appams",
+          "kind": "cook",
+          "text": "Heat an appachatti (small round-bottomed pan) on medium heat and wipe it with a little coconut oil. Pour in a ladle of batter, lift the pan and swirl once so the batter coats the sides thinly. Cover and cook for 2 minutes until the centre is spongy and set and the edges are crisp and golden.",
+          "uses": [
+            "coconut_oil"
+          ],
+          "visual": "A bowl-shaped appam in a black appachatti, lacy golden edges climbing the sides and a thick white spongy centre",
+          "timerMin": 2,
+          "heat": "medium",
+          "equipment": [
+            "kadai|non_stick_pan"
+          ]
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Lift the appams out with a spatula and serve hot with stew, egg roast or kadala curry. Two appams make a serving.",
+          "uses": [],
+          "visual": "Two lacy white appams with golden edges on a plate beside a bowl of creamy vegetable stew"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "sugar",
+          "with": "jaggery",
+          "ratio": 1,
+          "note": "A spoon of jaggery feeds the fermentation the same way; the appams turn slightly beige."
+        },
+        {
+          "ref": "rice_flour",
+          "with": "rice",
+          "ratio": 1.5,
+          "note": "Instead of kappi, grind a handful of cooked rice with the batter — a common shortcut."
+        }
+      ],
+      "storage": "Fermented batter keeps 2 days in the fridge. Cooked appams are best fresh.",
+      "reheating": "Steam leftover appams for 2 minutes to soften them.",
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "kerala-vegetable-stew",
+      "title": "Kerala Vegetable Stew (Ishtu)",
+      "description": "Potato, carrot, beans and peas gently simmered in coconut milk with whole spices, ginger and green chillies. Mild, creamy and the classic partner for appam.",
+      "cuisine": "kerala",
+      "mealTypes": [
+        "breakfast",
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 4,
+      "prepMin": 15,
+      "cookMin": 25,
+      "difficulty": "easy",
+      "equipment": [
+        "saucepan|kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "potato",
+          "g": 200,
+          "measure": "1 large",
+          "prep": "1-inch cubes"
+        },
+        {
+          "ref": "carrot",
+          "g": 100,
+          "measure": "1 large",
+          "prep": "1-inch pieces"
+        },
+        {
+          "ref": "french_beans",
+          "g": 80,
+          "prep": "1-inch pieces"
+        },
+        {
+          "ref": "green_peas",
+          "g": 60,
+          "measure": "½ cup"
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "cinnamon",
+          "g": 1,
+          "measure": "1-inch stick"
+        },
+        {
+          "ref": "cloves",
+          "g": 0.4,
+          "measure": "4"
+        },
+        {
+          "ref": "cardamom",
+          "g": 0.9,
+          "measure": "3 pods"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 2,
+          "measure": "1 tsp",
+          "prep": "lightly crushed"
+        },
+        {
+          "ref": "onion",
+          "g": 120,
+          "measure": "1 medium",
+          "prep": "thinly sliced"
+        },
+        {
+          "ref": "ginger",
+          "g": 12,
+          "measure": "1 inch",
+          "prep": "julienned"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 6,
+          "measure": "3",
+          "prep": "slit"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 4,
+          "measure": "3 sprigs"
+        },
+        {
+          "ref": "coconut_milk",
+          "g": 300,
+          "measure": "1¼ cups"
+        },
+        {
+          "ref": "water",
+          "g": 250
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Cut the vegetables",
+          "kind": "prep",
+          "text": "Cube the potato and cut the carrot and beans into 1-inch pieces. Slice the onion, julienne the ginger and slit the chillies. Mix 100 g of the coconut milk with the water for thin milk; keep the rest thick.",
+          "uses": [
+            "potato",
+            "carrot",
+            "french_beans",
+            "onion",
+            "ginger",
+            "green_chilli",
+            "coconut_milk",
+            "water"
+          ],
+          "visual": "Cubed potato, carrot and beans with sliced onion and ginger on a board, two bowls of thin and thick coconut milk beside"
+        },
+        {
+          "title": "Bloom the spices",
+          "kind": "cook",
+          "text": "Heat the coconut oil in a saucepan. Add cinnamon, cloves, cardamom and pepper and stir for 30 seconds.",
+          "uses": [
+            "coconut_oil",
+            "cinnamon",
+            "cloves",
+            "cardamom",
+            "black_pepper"
+          ],
+          "visual": "Whole cinnamon, cloves, cardamom pods and cracked pepper sizzling in coconut oil in a saucepan",
+          "heat": "medium"
+        },
+        {
+          "title": "Soften the onions",
+          "kind": "cook",
+          "text": "Add the onion, ginger, green chillies and curry leaves and sauté for 4 minutes until soft and translucent but not browned.",
+          "uses": [
+            "curry_leaves"
+          ],
+          "visual": "Pale, soft onions with ginger, green chillies and curry leaves among the whole spices in the saucepan",
+          "timerMin": 4,
+          "heat": "medium"
+        },
+        {
+          "title": "Simmer the vegetables",
+          "kind": "cook",
+          "text": "Add the potato, carrot, beans, peas, salt and thin coconut milk. Cover and simmer on low heat for 12 to 15 minutes until the vegetables are tender.",
+          "uses": [
+            "green_peas",
+            "salt"
+          ],
+          "visual": "Potato, carrot, beans and peas simmering in thin coconut milk in the covered saucepan",
+          "timerMin": 15,
+          "heat": "low"
+        },
+        {
+          "title": "Add thick coconut milk",
+          "kind": "cook",
+          "text": "Lightly mash a few potato pieces to thicken, then pour in the thick coconut milk and warm for 2 minutes without boiling.",
+          "uses": [],
+          "visual": "Creamy ivory stew with colourful vegetables in the saucepan, a few potato pieces mashed into the gravy",
+          "timerMin": 2,
+          "heat": "low"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve warm with appam, idiyappam or chapati.",
+          "uses": [],
+          "visual": "Vegetable stew in a white bowl, creamy gravy with orange carrot, green beans and peas and curry leaves, appam beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "potato",
+          "with": "cauliflower",
+          "ratio": 1,
+          "note": "Cauliflower florets make a lower-carb stew; add them with the beans."
+        },
+        {
+          "ref": "green_peas",
+          "with": "french_beans",
+          "ratio": 1,
+          "note": "Use more beans instead of peas to trim carbs."
+        }
+      ],
+      "storage": "Refrigerate for up to 2 days.",
+      "reheating": "Warm gently on low heat without boiling.",
+      "tags": [
+        "family",
+        "kid_friendly"
+      ]
+    },
+    {
+      "id": "cherupayar-curry",
+      "title": "Cherupayar Curry (Green Moong in Coconut Gravy)",
+      "description": "Whole green moong cooked soft and simmered in a coconut–cumin–garlic gravy, finished with shallots fried in coconut oil. A simple, protein-rich Kerala curry for puttu or rice.",
+      "cuisine": "kerala",
+      "mealTypes": [
+        "breakfast",
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 4,
+      "prepMin": 15,
+      "cookMin": 30,
+      "restMin": 240,
+      "difficulty": "easy",
+      "equipment": [
+        "pressure_cooker|saucepan",
+        "kadai",
+        "mixer_grinder"
+      ],
+      "ingredients": [
+        {
+          "ref": "green_moong",
+          "g": 150,
+          "measure": "¾ cup",
+          "prep": "soaked 4 hours"
+        },
+        {
+          "ref": "water",
+          "g": 700
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "chilli_powder",
+          "g": 3,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 5,
+          "toTaste": true
+        },
+        {
+          "ref": "coconut_grated",
+          "g": 60,
+          "measure": "¾ cup"
+        },
+        {
+          "ref": "cumin_seeds",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "garlic",
+          "g": 6,
+          "measure": "2 cloves"
+        },
+        {
+          "ref": "shallots",
+          "g": 40,
+          "measure": "5",
+          "prep": "2 for grinding, rest sliced"
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 12,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "mustard_seeds",
+          "g": 2,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "dried_red_chilli",
+          "g": 1.2,
+          "measure": "2"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 3,
+          "measure": "2 sprigs"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Soak the moong",
+          "kind": "prep",
+          "text": "Rinse the green moong and soak it in water for 4 hours.",
+          "uses": [
+            "green_moong"
+          ],
+          "visual": "Plump soaked green moong beans in a steel bowl of water",
+          "timerMin": 240
+        },
+        {
+          "title": "Pressure cook",
+          "kind": "cook",
+          "text": "Drain and pressure cook the moong with 2 cups of the water, turmeric, chilli powder and salt for 3 whistles, about 10 minutes, until soft but mostly whole.",
+          "uses": [
+            "water",
+            "turmeric",
+            "chilli_powder",
+            "salt"
+          ],
+          "visual": "Soft cooked green moong in a yellowish broth in an open pressure cooker",
+          "timerMin": 10,
+          "heat": "medium",
+          "equipment": [
+            "pressure_cooker|saucepan"
+          ]
+        },
+        {
+          "title": "Grind the coconut",
+          "kind": "prep",
+          "text": "Grind the coconut with the cumin, garlic, 2 of the shallots and ½ cup water to a smooth paste.",
+          "uses": [
+            "coconut_grated",
+            "cumin_seeds",
+            "garlic",
+            "shallots"
+          ],
+          "visual": "Smooth white coconut-cumin paste in a mixer jar",
+          "equipment": [
+            "mixer_grinder"
+          ]
+        },
+        {
+          "title": "Simmer",
+          "kind": "cook",
+          "text": "Transfer the moong to a kadai, add the coconut paste and the remaining water and simmer for 6 to 8 minutes until creamy and slightly thick.",
+          "uses": [],
+          "visual": "Green moong in a creamy pale yellow coconut gravy simmering in a kadai",
+          "timerMin": 8,
+          "heat": "low"
+        },
+        {
+          "title": "Temper",
+          "kind": "cook",
+          "text": "Heat the coconut oil in a small pan, splutter mustard seeds, add the dried red chillies, sliced shallots and curry leaves and fry until the shallots are golden. Pour over the curry.",
+          "uses": [
+            "coconut_oil",
+            "mustard_seeds",
+            "dried_red_chilli",
+            "curry_leaves"
+          ],
+          "visual": "Golden fried shallots, red chillies and curry leaves in coconut oil being poured over the green moong curry",
+          "heat": "medium"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve with puttu, chapati or matta rice.",
+          "uses": [],
+          "visual": "Cherupayar curry in a clay bowl, green beans in creamy gravy topped with golden shallots and curry leaves, puttu beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "green_moong",
+          "with": "moong_sprouts",
+          "ratio": 2.5,
+          "note": "Sprouted moong cooks in 8 minutes in a pan — no pressure cooker needed."
+        }
+      ],
+      "storage": "Refrigerate for up to 3 days.",
+      "reheating": "Warm with a splash of water.",
+      "tags": [
+        "meal_prep"
+      ]
+    },
+    {
+      "id": "kappa-puzhukku",
+      "title": "Kappa Puzhukku (Mashed Tapioca with Coconut)",
+      "description": "Boiled tapioca mashed with a crushed coconut, shallot, garlic and green chilli mix and tempered in coconut oil. Starchy and hearty — traditionally eaten with fish curry, so keep the portion modest.",
+      "cuisine": "kerala",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "base",
+      "servings": 4,
+      "prepMin": 20,
+      "cookMin": 30,
+      "difficulty": "easy",
+      "equipment": [
+        "saucepan",
+        "kadai",
+        "mixer_grinder|knife_board"
+      ],
+      "ingredients": [
+        {
+          "ref": "tapioca",
+          "g": 600,
+          "measure": "2 medium roots, peeled",
+          "prep": "peeled, 1½-inch pieces"
+        },
+        {
+          "ref": "water",
+          "g": 1000
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "salt",
+          "g": 6,
+          "toTaste": true
+        },
+        {
+          "ref": "coconut_grated",
+          "g": 60,
+          "measure": "¾ cup"
+        },
+        {
+          "ref": "shallots",
+          "g": 30,
+          "measure": "4"
+        },
+        {
+          "ref": "garlic",
+          "g": 6,
+          "measure": "2 cloves"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "measure": "2"
+        },
+        {
+          "ref": "cumin_seeds",
+          "g": 1,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "mustard_seeds",
+          "g": 2,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "dried_red_chilli",
+          "g": 1.2,
+          "measure": "2"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 4,
+          "measure": "3 sprigs"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Peel the tapioca",
+          "kind": "prep",
+          "text": "Cut the tapioca into 4-inch lengths, slit the thick bark and peel it off with the pink inner skin. Remove the woody central fibre and cut into 1½-inch pieces. Wash well.",
+          "uses": [
+            "tapioca"
+          ],
+          "visual": "Peeled white tapioca pieces in a bowl of water, curls of brown and pink peel on the board beside"
+        },
+        {
+          "title": "Boil and drain",
+          "kind": "cook",
+          "text": "Boil the tapioca in the water for 10 minutes, then drain and discard the water. Add fresh water to cover with the turmeric and salt and cook another 10 minutes until very soft. Drain well.",
+          "uses": [
+            "water",
+            "turmeric",
+            "salt"
+          ],
+          "visual": "Soft, yellow-tinged tapioca pieces in a colander, steam rising",
+          "timerMin": 20,
+          "heat": "high"
+        },
+        {
+          "title": "Crush the coconut mix",
+          "kind": "prep",
+          "text": "Pulse the coconut, shallots, garlic, green chillies and cumin in a mixer without water to a coarse crumble.",
+          "uses": [
+            "coconut_grated",
+            "shallots",
+            "garlic",
+            "green_chilli",
+            "cumin_seeds"
+          ],
+          "visual": "Coarse, moist coconut crumble with green chilli and shallot bits in a mixer jar"
+        },
+        {
+          "title": "Mash with coconut",
+          "kind": "cook",
+          "text": "Return the tapioca to the pan, add the coconut mix and mash roughly with a spoon over low heat for 3 to 4 minutes so the coconut cooks and everything comes together.",
+          "uses": [],
+          "visual": "Roughly mashed yellow tapioca mixed with white coconut crumble in the saucepan",
+          "timerMin": 4,
+          "heat": "low"
+        },
+        {
+          "title": "Temper",
+          "kind": "cook",
+          "text": "Heat the coconut oil in a small pan, splutter mustard seeds, add the dried red chillies and curry leaves and pour over the puzhukku. Mix well.",
+          "uses": [
+            "coconut_oil",
+            "mustard_seeds",
+            "dried_red_chilli",
+            "curry_leaves"
+          ],
+          "visual": "Mustard seeds, red chillies and curry leaves in sizzling coconut oil being poured over the mashed tapioca"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve warm with mathi curry, fish fry or chammanthi. Treat it as the starch of the meal — about one cup — rather than eating it alongside rice.",
+          "uses": [],
+          "visual": "A mound of yellow kappa puzhukku on a banana leaf flecked with coconut and curry leaves, beside a clay pot of red sardine curry"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "tapioca",
+          "with": "elephant_yam",
+          "ratio": 1,
+          "note": "Chena (yam) puzhukku is made the same way and is a little lower in carbs."
+        }
+      ],
+      "storage": "Refrigerate for up to 2 days.",
+      "reheating": "Warm in a pan with a sprinkle of water.",
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "matta-kanji-payar",
+      "title": "Matta Kanji and Payar (Red Rice Gruel with Green Moong)",
+      "description": "Kerala's homely one-bowl meal: soft matta rice kanji eaten with green moong tossed with coconut, shallots and green chilli. Light on the stomach and very filling.",
+      "cuisine": "kerala",
+      "mealTypes": [
+        "breakfast",
+        "lunch",
+        "dinner"
+      ],
+      "course": "complete",
+      "servings": 3,
+      "prepMin": 15,
+      "cookMin": 40,
+      "restMin": 240,
+      "difficulty": "easy",
+      "equipment": [
+        "pressure_cooker|saucepan",
+        "kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "matta_rice",
+          "g": 150,
+          "measure": "¾ cup",
+          "prep": "washed, soaked 30 minutes"
+        },
+        {
+          "ref": "water",
+          "g": 1500
+        },
+        {
+          "ref": "salt",
+          "g": 5,
+          "toTaste": true
+        },
+        {
+          "ref": "green_moong",
+          "g": 60,
+          "measure": "⅓ cup",
+          "prep": "soaked 4 hours"
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 8,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "mustard_seeds",
+          "g": 2,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 2,
+          "measure": "1 sprig"
+        },
+        {
+          "ref": "shallots",
+          "g": 20,
+          "measure": "3",
+          "prep": "sliced"
+        },
+        {
+          "ref": "garlic",
+          "g": 4,
+          "measure": "1 clove",
+          "prep": "crushed"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 3,
+          "measure": "1",
+          "prep": "chopped"
+        },
+        {
+          "ref": "coconut_grated",
+          "g": 30,
+          "measure": "6 tbsp"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Soak",
+          "kind": "prep",
+          "text": "Soak the green moong for 4 hours. Wash the matta rice and soak it for 30 minutes.",
+          "uses": [
+            "green_moong",
+            "matta_rice"
+          ],
+          "visual": "Two steel bowls, one with soaked green moong and one with reddish matta rice in water",
+          "timerMin": 240
+        },
+        {
+          "title": "Cook the kanji",
+          "kind": "cook",
+          "text": "Pressure cook the rice with 5 cups of the water and a pinch of salt for 6 to 7 whistles, about 25 minutes, then simmer open for a few minutes until the grains are very soft and the kanji is thick but flowing. In a pot, simmer for 45 minutes.",
+          "uses": [
+            "water",
+            "salt"
+          ],
+          "visual": "Soft, swollen red rice grains in thick white kanji water in an open pressure cooker",
+          "timerMin": 25,
+          "heat": "medium",
+          "equipment": [
+            "pressure_cooker|saucepan"
+          ]
+        },
+        {
+          "title": "Cook the moong",
+          "kind": "cook",
+          "text": "Cook the soaked moong in 1 cup of the water with a pinch of salt for 10 to 12 minutes in a saucepan until soft but whole. Drain any extra water into the kanji.",
+          "uses": [],
+          "visual": "Soft whole green moong in a small saucepan, almost dry",
+          "timerMin": 12,
+          "heat": "medium"
+        },
+        {
+          "title": "Season the payar",
+          "kind": "cook",
+          "text": "Heat the coconut oil in a kadai, splutter mustard seeds, add curry leaves, shallots, garlic and green chilli and sauté for 2 minutes. Add the moong and coconut and toss for 2 minutes until dry.",
+          "uses": [
+            "coconut_oil",
+            "mustard_seeds",
+            "curry_leaves",
+            "shallots",
+            "garlic",
+            "green_chilli",
+            "coconut_grated"
+          ],
+          "visual": "Green moong tossed with grated coconut, shallots and curry leaves in a black kadai",
+          "timerMin": 4,
+          "heat": "medium"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Ladle the hot kanji into bowls, add salt to taste and serve the payar on the side. Add a spoon of chammanthi or a pickle if you like.",
+          "uses": [],
+          "visual": "A deep bowl of steaming red-rice kanji beside a small mound of green moong payar with coconut, served with a ladle on a banana leaf"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "matta_rice",
+          "with": "brown_rice",
+          "ratio": 1,
+          "note": "Brown rice is the closest swap if matta rice isn't available."
+        }
+      ],
+      "storage": "Kanji thickens as it stands; refrigerate for up to 1 day.",
+      "reheating": "Thin with hot water and bring to a boil.",
+      "tags": []
+    },
+    {
+      "id": "pavakka-theeyal",
+      "title": "Pavakka Theeyal (Bitter Gourd in Roasted Coconut Gravy)",
+      "description": "Bitter gourd and shallots simmered in a dark, tangy tamarind gravy thickened with coconut roasted with coriander and dried chillies until almost black, balanced with a touch of jaggery.",
+      "cuisine": "kerala",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 4,
+      "prepMin": 20,
+      "cookMin": 35,
+      "difficulty": "medium",
+      "equipment": [
+        "kadai",
+        "mixer_grinder"
+      ],
+      "ingredients": [
+        {
+          "ref": "bitter_gourd",
+          "g": 250,
+          "measure": "2 medium",
+          "prep": "thinly sliced, seeds removed"
+        },
+        {
+          "ref": "shallots",
+          "g": 60,
+          "measure": "8",
+          "prep": "halved"
+        },
+        {
+          "ref": "coconut_grated",
+          "g": 100,
+          "measure": "1¼ cups"
+        },
+        {
+          "ref": "coriander_seeds",
+          "g": 8,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "dried_red_chilli",
+          "g": 3,
+          "measure": "5"
+        },
+        {
+          "ref": "fenugreek_seeds",
+          "g": 1,
+          "measure": "¼ tsp"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "tamarind",
+          "g": 20,
+          "measure": "1 lime-sized ball",
+          "prep": "soaked in 1 cup warm water"
+        },
+        {
+          "ref": "water",
+          "g": 400
+        },
+        {
+          "ref": "jaggery",
+          "g": 5,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 20,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "mustard_seeds",
+          "g": 2,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 3,
+          "measure": "2 sprigs"
+        },
+        {
+          "ref": "salt",
+          "g": 5,
+          "toTaste": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Prepare the bitter gourd",
+          "kind": "prep",
+          "text": "Slice the bitter gourd into thin rounds and remove the seeds. Rub with a little salt and leave 10 minutes, then squeeze out the juice to reduce bitterness. Soak the tamarind.",
+          "uses": [
+            "bitter_gourd",
+            "tamarind"
+          ],
+          "visual": "Thin green bitter gourd rounds in a bowl, salted and releasing juice, tamarind soaking in a cup beside",
+          "timerMin": 10
+        },
+        {
+          "title": "Roast the coconut",
+          "kind": "cook",
+          "text": "In a dry kadai on medium-low heat, roast the coconut with the coriander seeds, dried red chillies and fenugreek, stirring constantly, for 10 to 12 minutes until the coconut is a very dark, even brown and the oil starts to show. Don't let it burn.",
+          "uses": [
+            "coconut_grated",
+            "coriander_seeds",
+            "dried_red_chilli",
+            "fenugreek_seeds"
+          ],
+          "visual": "Very dark brown roasted coconut with coriander seeds and red chillies in a black kadai, glistening with its own oil",
+          "timerMin": 12,
+          "heat": "low"
+        },
+        {
+          "title": "Grind to a paste",
+          "kind": "prep",
+          "text": "Cool, add the turmeric and grind with ½ cup water to a very smooth, almost black paste.",
+          "uses": [
+            "turmeric"
+          ],
+          "visual": "A smooth, nearly black coconut paste in a mixer jar",
+          "equipment": [
+            "mixer_grinder"
+          ]
+        },
+        {
+          "title": "Fry the vegetables",
+          "kind": "cook",
+          "text": "Heat 1 tablespoon of the coconut oil in the kadai and fry the bitter gourd and shallots on medium heat for 6 to 8 minutes until the gourd is browned at the edges.",
+          "uses": [
+            "coconut_oil",
+            "shallots"
+          ],
+          "visual": "Browned bitter gourd rounds and golden halved shallots frying in coconut oil in the black kadai",
+          "timerMin": 8,
+          "heat": "medium"
+        },
+        {
+          "title": "Simmer in tamarind",
+          "kind": "cook",
+          "text": "Strain in the tamarind water, add the water, salt and jaggery and boil for 5 minutes. Stir in the roasted paste and simmer on low for 8 to 10 minutes until thick and dark.",
+          "uses": [
+            "water",
+            "salt",
+            "jaggery"
+          ],
+          "visual": "Bitter gourd and shallots in a thick, dark brown gravy bubbling in the kadai, oil rising to the top",
+          "timerMin": 15,
+          "heat": "low"
+        },
+        {
+          "title": "Temper",
+          "kind": "cook",
+          "text": "Heat the remaining coconut oil, splutter the mustard seeds, add curry leaves and pour over the theeyal.",
+          "uses": [
+            "mustard_seeds",
+            "curry_leaves"
+          ],
+          "visual": "Mustard seeds and curry leaves crackling in coconut oil poised over the dark theeyal"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Rest for at least 30 minutes — theeyal tastes better as it sits. Serve with rice and a mild thoran or moru curry.",
+          "uses": [],
+          "visual": "Dark brown pavakka theeyal in a clay bowl with bitter gourd rounds, shallots and curry leaves, rice beside it on a banana leaf"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "jaggery",
+          "note": "Leave out the jaggery for a sharper, sugar-free theeyal."
+        },
+        {
+          "ref": "bitter_gourd",
+          "with": "drumstick",
+          "ratio": 1,
+          "note": "Drumstick or brinjal theeyal is made the same way."
+        }
+      ],
+      "storage": "Keeps 4 days in the fridge.",
+      "reheating": "Warm gently with a splash of water.",
+      "tags": [
+        "meal_prep"
+      ]
+    },
+    {
+      "id": "ulli-theeyal",
+      "title": "Ulli Theeyal (Shallots in Roasted Coconut–Tamarind Gravy)",
+      "description": "Whole shallots and garlic cooked in a tangy tamarind gravy darkened with deeply roasted coconut, coriander and chilli — Kerala's most beloved theeyal.",
+      "cuisine": "kerala",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 4,
+      "prepMin": 20,
+      "cookMin": 35,
+      "difficulty": "medium",
+      "equipment": [
+        "kadai",
+        "mixer_grinder"
+      ],
+      "ingredients": [
+        {
+          "ref": "shallots",
+          "g": 250,
+          "measure": "30",
+          "prep": "peeled, whole"
+        },
+        {
+          "ref": "garlic",
+          "g": 15,
+          "measure": "6 cloves",
+          "prep": "peeled"
+        },
+        {
+          "ref": "coconut_grated",
+          "g": 80,
+          "measure": "1 cup"
+        },
+        {
+          "ref": "coriander_seeds",
+          "g": 10,
+          "measure": "2 tbsp"
+        },
+        {
+          "ref": "dried_red_chilli",
+          "g": 4,
+          "measure": "6–7"
+        },
+        {
+          "ref": "fenugreek_seeds",
+          "g": 0.5,
+          "measure": "⅛ tsp"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "tamarind",
+          "g": 15,
+          "measure": "1 small lime-sized ball",
+          "prep": "soaked in 1 cup warm water"
+        },
+        {
+          "ref": "water",
+          "g": 400
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "mustard_seeds",
+          "g": 2,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 4,
+          "measure": "3 sprigs"
+        },
+        {
+          "ref": "salt",
+          "g": 5,
+          "toTaste": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Peel the shallots",
+          "kind": "prep",
+          "text": "Peel the shallots and garlic, leaving them whole. Soak the tamarind in warm water.",
+          "uses": [
+            "shallots",
+            "garlic",
+            "tamarind"
+          ],
+          "visual": "A heap of peeled whole pink shallots and garlic cloves on a board, tamarind soaking in a cup"
+        },
+        {
+          "title": "Roast the coconut",
+          "kind": "cook",
+          "text": "Dry roast the coconut, coriander seeds, dried red chillies and fenugreek in a kadai on medium-low heat for 10 to 12 minutes, stirring constantly, until dark brown and fragrant.",
+          "uses": [
+            "coconut_grated",
+            "coriander_seeds",
+            "dried_red_chilli",
+            "fenugreek_seeds"
+          ],
+          "visual": "Dark brown roasted coconut with coriander seeds and red chillies in a black kadai",
+          "timerMin": 12,
+          "heat": "low"
+        },
+        {
+          "title": "Grind",
+          "kind": "prep",
+          "text": "Cool, add the turmeric and grind with ½ cup water to a smooth, dark paste.",
+          "uses": [
+            "turmeric"
+          ],
+          "visual": "Smooth dark brown roasted coconut paste in a mixer jar",
+          "equipment": [
+            "mixer_grinder"
+          ]
+        },
+        {
+          "title": "Sauté the shallots",
+          "kind": "cook",
+          "text": "Heat 2 teaspoons of the coconut oil in the kadai and sauté the whole shallots and garlic on medium heat for 6 to 8 minutes until golden and slightly soft.",
+          "uses": [
+            "coconut_oil"
+          ],
+          "visual": "Golden whole shallots and garlic cloves sautéing in coconut oil in the black kadai",
+          "timerMin": 8,
+          "heat": "medium"
+        },
+        {
+          "title": "Simmer",
+          "kind": "cook",
+          "text": "Strain in the tamarind water, add the water and salt and simmer for 6 minutes until the shallots are tender. Add the roasted paste and simmer on low for 8 to 10 minutes until thick, dark and glossy.",
+          "uses": [
+            "water",
+            "salt"
+          ],
+          "visual": "Whole shallots in a thick, dark brown, glossy gravy simmering in the kadai",
+          "timerMin": 16,
+          "heat": "low"
+        },
+        {
+          "title": "Temper",
+          "kind": "cook",
+          "text": "Heat the remaining coconut oil, splutter mustard seeds, add curry leaves and pour over the theeyal.",
+          "uses": [
+            "mustard_seeds",
+            "curry_leaves"
+          ],
+          "visual": "Crackling mustard seeds and curry leaves in coconut oil being poured over the shallot theeyal"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Rest for 30 minutes and serve with rice, a thoran and pappadam.",
+          "uses": [],
+          "visual": "Ulli theeyal in a clay pot, glossy whole shallots in dark gravy with curry leaves, matta rice beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "shallots",
+          "with": "onion",
+          "ratio": 1,
+          "note": "Quartered small onions work if shallots are hard to find."
+        }
+      ],
+      "storage": "Keeps 4 days in the fridge; flavour improves overnight.",
+      "reheating": "Warm gently with a splash of water.",
+      "tags": [
+        "meal_prep"
+      ]
+    },
+    {
+      "id": "achinga-payar-mezhukkupuratti",
+      "title": "Achinga Payar Mezhukkupuratti (Long Bean Stir-Fry)",
+      "description": "Long beans cut into short pieces and stir-fried in coconut oil with crushed shallots, garlic and red chilli flakes until blistered — the simplest Kerala side.",
+      "cuisine": "kerala",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "side",
+      "servings": 3,
+      "prepMin": 10,
+      "cookMin": 15,
+      "difficulty": "easy",
+      "equipment": [
+        "kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "long_beans",
+          "g": 300,
+          "prep": "cut into 1-inch pieces"
+        },
+        {
+          "ref": "turmeric",
+          "g": 0.5,
+          "measure": "a pinch"
+        },
+        {
+          "ref": "water",
+          "g": 30
+        },
+        {
+          "ref": "shallots",
+          "g": 40,
+          "measure": "5",
+          "prep": "crushed"
+        },
+        {
+          "ref": "garlic",
+          "g": 8,
+          "measure": "3 cloves",
+          "prep": "crushed"
+        },
+        {
+          "ref": "chilli_flakes",
+          "g": 3,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 12,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 3,
+          "measure": "2 sprigs"
+        },
+        {
+          "ref": "salt",
+          "g": 3,
+          "toTaste": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Cut the beans",
+          "kind": "prep",
+          "text": "Wash the long beans and cut them into 1-inch pieces. Crush the shallots and garlic coarsely with the chilli flakes in a mortar.",
+          "uses": [
+            "long_beans",
+            "shallots",
+            "garlic",
+            "chilli_flakes"
+          ],
+          "visual": "Short pieces of long beans on a board beside a stone mortar with coarsely crushed shallots, garlic and red chilli flakes"
+        },
+        {
+          "title": "Steam the beans",
+          "kind": "cook",
+          "text": "Put the beans in a kadai with turmeric, salt and the water. Cover and cook on medium heat for 5 minutes until just tender.",
+          "uses": [
+            "turmeric",
+            "salt",
+            "water"
+          ],
+          "visual": "Green long bean pieces steaming under a lid in a black kadai",
+          "timerMin": 5,
+          "heat": "medium"
+        },
+        {
+          "title": "Add the crushed mix",
+          "kind": "cook",
+          "text": "Push the beans aside, add the coconut oil to the centre and fry the crushed shallot mixture and curry leaves for 1 minute.",
+          "uses": [
+            "coconut_oil",
+            "curry_leaves"
+          ],
+          "visual": "Crushed shallot, garlic and chilli flakes sizzling in a pool of coconut oil in the middle of the beans in the kadai",
+          "heat": "medium"
+        },
+        {
+          "title": "Stir-fry",
+          "kind": "cook",
+          "text": "Toss everything together and stir-fry on medium-high heat for 5 to 6 minutes until the beans are blistered in spots and coated.",
+          "uses": [],
+          "visual": "Blistered long beans coated in red chilli flakes and fried shallots in the kadai",
+          "timerMin": 6,
+          "heat": "high"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve hot with rice and moru curry, or as a side with chicken curry.",
+          "uses": [],
+          "visual": "Achinga payar mezhukkupuratti heaped on a banana leaf, green beans flecked with red chilli and curry leaves"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "chilli_flakes",
+          "with": "dried_red_chilli",
+          "ratio": 1,
+          "note": "Crush dried red chillies yourself for a fresher flavour."
+        },
+        {
+          "ref": "long_beans",
+          "with": "french_beans",
+          "ratio": 1,
+          "note": "French beans work the same way."
+        }
+      ],
+      "storage": "Refrigerate for up to 2 days.",
+      "reheating": "Warm in a hot pan for 1 minute.",
+      "tags": []
+    },
+    {
+      "id": "kovakka-mezhukkupuratti",
+      "title": "Kovakka Mezhukkupuratti (Ivy Gourd Stir-Fry with Coconut Slivers)",
+      "description": "Ivy gourd slices roasted in coconut oil with shallots, garlic, chilli, pepper and thin coconut slivers until crisp-edged and caramelised.",
+      "cuisine": "kerala",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "side",
+      "servings": 3,
+      "prepMin": 15,
+      "cookMin": 20,
+      "difficulty": "easy",
+      "equipment": [
+        "kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "ivy_gourd",
+          "g": 300,
+          "prep": "sliced lengthwise into thin wedges"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "chilli_powder",
+          "g": 3,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 3,
+          "toTaste": true
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 12,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "mustard_seeds",
+          "g": 2,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "coconut_grated",
+          "g": 20,
+          "measure": "¼ cup",
+          "prep": "thin slivers"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 3,
+          "measure": "2 sprigs"
+        },
+        {
+          "ref": "shallots",
+          "g": 40,
+          "measure": "5",
+          "prep": "sliced"
+        },
+        {
+          "ref": "garlic",
+          "g": 6,
+          "measure": "2 cloves",
+          "prep": "sliced"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 1,
+          "measure": "½ tsp",
+          "prep": "crushed"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Slice the kovakka",
+          "kind": "prep",
+          "text": "Trim the ivy gourd and cut each lengthwise into 4 thin wedges. Toss with turmeric, chilli powder and salt.",
+          "uses": [
+            "ivy_gourd",
+            "turmeric",
+            "chilli_powder",
+            "salt"
+          ],
+          "visual": "Thin green ivy gourd wedges tossed with red chilli and turmeric in a steel bowl"
+        },
+        {
+          "title": "Fry the coconut",
+          "kind": "cook",
+          "text": "Heat the coconut oil in a kadai, splutter mustard seeds, then fry the coconut slivers and curry leaves on medium-low heat for 2 minutes until golden.",
+          "uses": [
+            "coconut_oil",
+            "mustard_seeds",
+            "coconut_grated",
+            "curry_leaves"
+          ],
+          "visual": "Golden coconut slivers, mustard seeds and curry leaves frying in coconut oil in a black kadai",
+          "timerMin": 2,
+          "heat": "low"
+        },
+        {
+          "title": "Add shallots",
+          "kind": "cook",
+          "text": "Add the shallots and garlic and sauté for 2 minutes until soft.",
+          "uses": [
+            "shallots",
+            "garlic"
+          ],
+          "visual": "Sliced shallots and garlic softening with coconut slivers in the kadai",
+          "timerMin": 2,
+          "heat": "medium"
+        },
+        {
+          "title": "Roast the kovakka",
+          "kind": "cook",
+          "text": "Add the ivy gourd and stir-fry uncovered on medium heat for 12 to 15 minutes, stirring every couple of minutes, until tender with browned, slightly crisp edges.",
+          "uses": [],
+          "visual": "Ivy gourd wedges browned and caramelised at the edges with coconut slivers in the kadai",
+          "timerMin": 15,
+          "heat": "medium"
+        },
+        {
+          "title": "Finish and serve",
+          "kind": "serve",
+          "text": "Sprinkle the crushed pepper, toss and serve hot with rice and sambar or moru curry.",
+          "uses": [
+            "black_pepper"
+          ],
+          "visual": "Kovakka mezhukkupuratti in a steel bowl, browned green wedges with golden coconut slivers, curry leaves and pepper"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "coconut_grated",
+          "note": "Skip the coconut slivers for a lighter stir-fry."
+        }
+      ],
+      "storage": "Refrigerate for up to 2 days.",
+      "reheating": "Re-crisp in a hot pan for 2 minutes.",
+      "tags": []
+    },
+    {
+      "id": "thenga-chammanthi",
+      "title": "Thenga Chammanthi (Roasted Chilli Coconut Chutney)",
+      "description": "A coarse, dry Kerala coconut chutney ground with fire-roasted red chillies, shallots, ginger and a little tamarind, finished with a drizzle of raw coconut oil.",
+      "cuisine": "kerala",
+      "mealTypes": [
+        "breakfast",
+        "lunch",
+        "dinner"
+      ],
+      "course": "accompaniment",
+      "servings": 6,
+      "prepMin": 10,
+      "cookMin": 5,
+      "difficulty": "easy",
+      "equipment": [
+        "tawa",
+        "mixer_grinder"
+      ],
+      "ingredients": [
+        {
+          "ref": "dried_red_chilli",
+          "g": 3,
+          "measure": "5"
+        },
+        {
+          "ref": "shallots",
+          "g": 25,
+          "measure": "3"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 2,
+          "measure": "1 sprig"
+        },
+        {
+          "ref": "coconut_grated",
+          "g": 120,
+          "measure": "1½ cups"
+        },
+        {
+          "ref": "ginger",
+          "g": 5,
+          "measure": "½ inch"
+        },
+        {
+          "ref": "tamarind",
+          "g": 4,
+          "measure": "a small piece"
+        },
+        {
+          "ref": "salt",
+          "g": 3,
+          "toTaste": true
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 5,
+          "measure": "1 tsp"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Roast the chillies",
+          "kind": "cook",
+          "text": "Roast the dried red chillies on a dry tawa over low heat for 1 to 2 minutes, turning, until they darken and smell smoky. Add the shallots and curry leaves for the last minute.",
+          "uses": [
+            "dried_red_chilli",
+            "shallots",
+            "curry_leaves"
+          ],
+          "visual": "Darkened dried red chillies, shallots and curry leaves roasting on a black iron tawa",
+          "timerMin": 2,
+          "heat": "low"
+        },
+        {
+          "title": "Grind coarsely",
+          "kind": "prep",
+          "text": "Pulse the roasted chillies with the coconut, shallots, ginger, tamarind and salt in a mixer without water, in short bursts, until it is a coarse, slightly moist crumble that holds when pressed.",
+          "uses": [
+            "coconut_grated",
+            "ginger",
+            "tamarind",
+            "salt"
+          ],
+          "visual": "Coarse, pale orange-red coconut crumble flecked with chilli in an open mixer jar"
+        },
+        {
+          "title": "Shape and finish",
+          "kind": "assemble",
+          "text": "Press the chammanthi into a ball or a mound with your hands and drizzle the raw coconut oil over.",
+          "uses": [
+            "coconut_oil"
+          ],
+          "visual": "A firm orange-red ball of coconut chammanthi glistening with coconut oil on a small plate"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve a spoonful with kanji, kappa, rice, dosa or puttu.",
+          "uses": [],
+          "visual": "A mound of thenga chammanthi on a banana leaf beside a bowl of rice kanji, a roasted red chilli on top"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "tamarind",
+          "with": "raw_mango",
+          "ratio": 4,
+          "note": "A few pieces of raw mango make the classic manga chammanthi."
+        }
+      ],
+      "storage": "Refrigerate for up to 2 days.",
+      "tags": []
+    },
+    {
+      "id": "kerala-inji-curry",
+      "title": "Inji Curry (Sweet-Sour Ginger Tamarind Relish)",
+      "description": "The dark, glossy sadya relish of ginger fried crisp in coconut oil and simmered in tamarind with jaggery and chilli — sweet, sour and hot. A little goes a long way.",
+      "cuisine": "kerala",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "accompaniment",
+      "servings": 8,
+      "prepMin": 15,
+      "cookMin": 25,
+      "difficulty": "easy",
+      "equipment": [
+        "kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "ginger",
+          "g": 100,
+          "measure": "a 4-inch piece",
+          "prep": "peeled, finely chopped"
+        },
+        {
+          "ref": "tamarind",
+          "g": 40,
+          "measure": "a large lime-sized ball",
+          "prep": "soaked in 1½ cups warm water"
+        },
+        {
+          "ref": "water",
+          "g": 400
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 20,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "mustard_seeds",
+          "g": 2,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "fenugreek_seeds",
+          "g": 1,
+          "measure": "¼ tsp"
+        },
+        {
+          "ref": "dried_red_chilli",
+          "g": 1.2,
+          "measure": "2"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 6,
+          "measure": "2",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 3,
+          "measure": "2 sprigs"
+        },
+        {
+          "ref": "chilli_powder",
+          "g": 4,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "hing",
+          "g": 0.5,
+          "measure": "a pinch"
+        },
+        {
+          "ref": "jaggery",
+          "g": 30,
+          "measure": "2 tbsp",
+          "prep": "grated"
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Prepare",
+          "kind": "prep",
+          "text": "Peel and finely chop the ginger. Squeeze the soaked tamarind and strain the liquid, adding the rest of the water.",
+          "uses": [
+            "ginger",
+            "tamarind",
+            "water"
+          ],
+          "visual": "Finely chopped ginger on a board beside a bowl of strained brown tamarind water"
+        },
+        {
+          "title": "Fry the ginger",
+          "kind": "cook",
+          "text": "Heat the coconut oil in a kadai and fry the ginger on medium-low heat for 8 to 10 minutes, stirring often, until golden brown and crisp. Lift out, leaving the oil.",
+          "uses": [
+            "coconut_oil"
+          ],
+          "visual": "Golden brown, crisp chopped ginger frying in coconut oil in a black kadai",
+          "timerMin": 10,
+          "heat": "low"
+        },
+        {
+          "title": "Temper",
+          "kind": "cook",
+          "text": "In the same oil, splutter mustard seeds, then add fenugreek, dried red chillies, green chillies and curry leaves for 30 seconds. Add chilli powder, turmeric and hing and stir for a few seconds.",
+          "uses": [
+            "mustard_seeds",
+            "fenugreek_seeds",
+            "dried_red_chilli",
+            "green_chilli",
+            "curry_leaves",
+            "chilli_powder",
+            "turmeric",
+            "hing"
+          ],
+          "visual": "Mustard seeds, red and green chillies and curry leaves in reddened coconut oil in the kadai",
+          "heat": "medium"
+        },
+        {
+          "title": "Simmer in tamarind",
+          "kind": "cook",
+          "text": "Pour in the tamarind water, add the jaggery, salt and three-quarters of the fried ginger. Simmer on low heat for 12 to 15 minutes until thick, dark and glossy like jam.",
+          "uses": [
+            "jaggery",
+            "salt"
+          ],
+          "visual": "Thick, dark brown, glossy inji curry bubbling in the kadai with bits of ginger throughout",
+          "timerMin": 15,
+          "heat": "low"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Stir in the remaining crisp ginger, cool and serve a teaspoon or two at a time with rice, curd rice or as part of a sadya.",
+          "uses": [],
+          "visual": "A small spoonful of dark, glossy inji curry with crisp ginger bits on a banana leaf"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "hing",
+          "note": "Use gluten-free hing or leave it out for a gluten-free relish."
+        },
+        {
+          "ref": "jaggery",
+          "note": "Halve the jaggery for a sharper, less sweet relish."
+        }
+      ],
+      "storage": "Keeps 2 weeks in a clean glass jar in the fridge.",
+      "tags": [
+        "festive",
+        "meal_prep"
+      ]
+    },
+    {
+      "id": "kumbalanga-thenga-curry",
+      "title": "Kumbalanga Curry (Ash Gourd in Coconut–Cumin Gravy)",
+      "description": "Soft ash gourd simmered in a smooth coconut, cumin and green chilli gravy, finished with a shallot and red-chilli tempering. Light, mild and naturally low in carbs.",
+      "cuisine": "kerala",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 3,
+      "prepMin": 15,
+      "cookMin": 20,
+      "difficulty": "easy",
+      "equipment": [
+        "saucepan",
+        "mixer_grinder"
+      ],
+      "ingredients": [
+        {
+          "ref": "ash_gourd",
+          "g": 400,
+          "prep": "peeled, 1-inch cubes"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "chilli_powder",
+          "g": 1,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "water",
+          "g": 250
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true
+        },
+        {
+          "ref": "coconut_grated",
+          "g": 80,
+          "measure": "1 cup"
+        },
+        {
+          "ref": "cumin_seeds",
+          "g": 1,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "measure": "2"
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 12,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "mustard_seeds",
+          "g": 2,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "dried_red_chilli",
+          "g": 1.2,
+          "measure": "2"
+        },
+        {
+          "ref": "shallots",
+          "g": 20,
+          "measure": "3",
+          "prep": "sliced"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 3,
+          "measure": "2 sprigs"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Cook the ash gourd",
+          "kind": "cook",
+          "text": "Cook the ash gourd cubes in a saucepan with turmeric, chilli powder, salt and the water, covered, on medium heat for 8 to 10 minutes until translucent and soft.",
+          "uses": [
+            "ash_gourd",
+            "turmeric",
+            "chilli_powder",
+            "salt",
+            "water"
+          ],
+          "visual": "Translucent pale ash gourd cubes simmering in yellow-orange water in a steel saucepan",
+          "timerMin": 10,
+          "heat": "medium"
+        },
+        {
+          "title": "Grind the coconut",
+          "kind": "prep",
+          "text": "Grind the coconut, cumin and green chillies with ½ cup water to a very smooth paste.",
+          "uses": [
+            "coconut_grated",
+            "cumin_seeds",
+            "green_chilli"
+          ],
+          "visual": "Smooth white coconut paste with green flecks in a mixer jar",
+          "equipment": [
+            "mixer_grinder"
+          ]
+        },
+        {
+          "title": "Simmer with coconut",
+          "kind": "cook",
+          "text": "Add the paste to the ash gourd and simmer on low heat for 4 to 5 minutes until the gravy thickens slightly. Don't boil hard.",
+          "uses": [],
+          "visual": "Ash gourd cubes in a creamy pale yellow coconut gravy in the saucepan",
+          "timerMin": 5,
+          "heat": "low"
+        },
+        {
+          "title": "Temper",
+          "kind": "cook",
+          "text": "Heat the coconut oil, splutter mustard seeds, add dried red chillies, shallots and curry leaves and fry until the shallots are golden. Pour over the curry.",
+          "uses": [
+            "coconut_oil",
+            "mustard_seeds",
+            "dried_red_chilli",
+            "shallots",
+            "curry_leaves"
+          ],
+          "visual": "Golden shallots, red chillies and curry leaves in coconut oil being poured over the pale yellow curry"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve with matta rice and a fish fry or thoran, or with cauliflower rice for a lighter plate.",
+          "uses": [],
+          "visual": "Kumbalanga curry in a clay bowl, translucent ash gourd in creamy yellow gravy topped with fried shallots and curry leaves"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "ash_gourd",
+          "with": "chow_chow",
+          "ratio": 1,
+          "note": "Chayote (chow chow) works the same way."
+        }
+      ],
+      "storage": "Refrigerate for up to 2 days.",
+      "reheating": "Warm gently on low heat.",
+      "tags": []
+    },
+    {
+      "id": "ragi-thenga-ada",
+      "title": "Ragi Thenga Ada (Savoury Ragi–Coconut Flatbread)",
+      "description": "Soft finger-millet flatbreads mixed with coconut, shallots, green chilli and cumin, pressed thin and cooked on a tawa — a quick Kerala breakfast with chammanthi or curry.",
+      "cuisine": "kerala",
+      "mealTypes": [
+        "breakfast",
+        "dinner"
+      ],
+      "course": "base",
+      "servings": 4,
+      "prepMin": 15,
+      "cookMin": 20,
+      "difficulty": "easy",
+      "equipment": [
+        "mixing_bowl",
+        "tawa"
+      ],
+      "ingredients": [
+        {
+          "ref": "ragi_flour",
+          "g": 150,
+          "measure": "1¼ cups"
+        },
+        {
+          "ref": "coconut_grated",
+          "g": 50,
+          "measure": "⅔ cup"
+        },
+        {
+          "ref": "shallots",
+          "g": 30,
+          "measure": "4",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "measure": "1–2",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 2,
+          "measure": "1 sprig",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "cumin_seeds",
+          "g": 1,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 3,
+          "toTaste": true
+        },
+        {
+          "ref": "water",
+          "g": 160
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 8,
+          "measure": "2 tsp"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Mix the dough",
+          "kind": "prep",
+          "text": "In a bowl, mix the ragi flour, coconut, shallots, green chilli, curry leaves, cumin and salt. Add warm water a little at a time and knead to a soft, slightly sticky dough. Rest 5 minutes.",
+          "uses": [
+            "ragi_flour",
+            "coconut_grated",
+            "shallots",
+            "green_chilli",
+            "curry_leaves",
+            "cumin_seeds",
+            "salt",
+            "water"
+          ],
+          "visual": "A soft, dark brown ragi dough studded with white coconut, pink shallots and green chilli in a steel bowl",
+          "timerMin": 5
+        },
+        {
+          "title": "Divide and press",
+          "kind": "prep",
+          "text": "Divide into 8 balls. With wet fingers, pat each one out thinly on a greased banana leaf or a sheet of oiled parchment to about 5 inches across.",
+          "uses": [],
+          "visual": "A thin round of ragi dough pressed out on a piece of banana leaf, wet fingertips marks visible, more dough balls waiting"
+        },
+        {
+          "title": "Cook on the tawa",
+          "kind": "cook",
+          "text": "Heat a tawa on medium heat and brush with coconut oil. Flip the ada onto the tawa (peel off the leaf after a minute) and cook for 2 minutes per side, with a few drops of oil, until firm with brown spots.",
+          "uses": [
+            "coconut_oil"
+          ],
+          "visual": "A dark brown ragi ada with coconut flecks and browned spots cooking on a black iron tawa",
+          "timerMin": 4,
+          "heat": "medium"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve hot, two adas per person, with thenga chammanthi, egg roast or kadala curry.",
+          "uses": [],
+          "visual": "Two round ragi adas with coconut and shallot flecks on a banana leaf beside a mound of red coconut chammanthi"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "ragi_flour",
+          "with": "jowar_flour",
+          "ratio": 1,
+          "note": "Jowar flour makes a lighter-coloured ada; use slightly more water."
+        }
+      ],
+      "storage": "Best fresh; keep covered for a few hours.",
+      "reheating": "Warm on a tawa for 30 seconds per side.",
+      "tags": []
+    },
+    {
+      "id": "ela-ada-jaggery",
+      "title": "Ela Ada (Steamed Rice Parcels with Coconut and Jaggery)",
+      "description": "Thin rice-flour dough spread on banana leaves, filled with coconut, cardamom and a modest amount of jaggery, folded and steamed. A traditional Kerala tea-time sweet made less sugary.",
+      "cuisine": "kerala",
+      "mealTypes": [
+        "snack",
+        "dessert"
+      ],
+      "course": "dessert",
+      "servings": 6,
+      "prepMin": 25,
+      "cookMin": 20,
+      "difficulty": "medium",
+      "equipment": [
+        "steamer|idli_stand",
+        "mixing_bowl",
+        "saucepan"
+      ],
+      "ingredients": [
+        {
+          "ref": "jaggery",
+          "g": 60,
+          "measure": "4 tbsp",
+          "prep": "grated"
+        },
+        {
+          "ref": "coconut_grated",
+          "g": 100,
+          "measure": "1¼ cups"
+        },
+        {
+          "ref": "cardamom",
+          "g": 0.6,
+          "measure": "2 pods",
+          "prep": "powdered"
+        },
+        {
+          "ref": "rice_flour",
+          "g": 150,
+          "measure": "1 cup"
+        },
+        {
+          "ref": "salt",
+          "g": 1,
+          "measure": "a pinch"
+        },
+        {
+          "ref": "water",
+          "g": 200
+        },
+        {
+          "ref": "ghee",
+          "g": 5,
+          "measure": "1 tsp"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Make the filling",
+          "kind": "cook",
+          "text": "Melt the jaggery with 2 tablespoons of the water in a saucepan on low heat. Add the coconut and cardamom and stir for 4 to 5 minutes until the mixture is moist but no longer runny. Cool.",
+          "uses": [
+            "jaggery",
+            "coconut_grated",
+            "cardamom"
+          ],
+          "visual": "Golden-brown sticky coconut and jaggery filling in a steel saucepan",
+          "timerMin": 5,
+          "heat": "low"
+        },
+        {
+          "title": "Make the dough",
+          "kind": "prep",
+          "text": "Boil the remaining water with the salt and ghee. Pour it over the rice flour in a bowl, stirring with a spoon, then knead when cool enough into a soft, smooth dough that is softer than chapati dough.",
+          "uses": [
+            "rice_flour",
+            "salt",
+            "water",
+            "ghee"
+          ],
+          "visual": "A soft, smooth white rice-flour dough in a steel bowl"
+        },
+        {
+          "title": "Prepare banana leaves",
+          "kind": "prep",
+          "text": "Cut banana leaves into 6 rectangles about 8 × 6 inches and wilt them briefly over a flame so they fold without cracking.",
+          "uses": [],
+          "visual": "Six glossy rectangles of wilted green banana leaf stacked on the counter"
+        },
+        {
+          "title": "Spread and fill",
+          "kind": "assemble",
+          "text": "Place a lemon-sized ball of dough on each leaf and spread it thin with wet fingers. Put 2 tablespoons of filling on one half and fold the leaf over to close, pressing the edges.",
+          "uses": [],
+          "visual": "A thin white layer of rice dough on a banana leaf with a line of brown coconut filling on one half, a folded parcel beside it"
+        },
+        {
+          "title": "Steam",
+          "kind": "cook",
+          "text": "Steam the parcels in a steamer or idli pot for 12 to 15 minutes until the dough turns translucent and doesn't stick when touched.",
+          "uses": [],
+          "visual": "Folded banana-leaf parcels stacked in a steamer, leaves darkened and steam rising",
+          "timerMin": 15,
+          "heat": "high",
+          "equipment": [
+            "steamer|idli_stand"
+          ]
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Cool for 5 minutes and serve warm in the leaf with tea. One ada is a serving.",
+          "uses": [],
+          "visual": "An opened banana-leaf parcel showing a translucent white rice ada with brown coconut-jaggery filling peeking through"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "jaggery",
+          "with": "dates",
+          "ratio": 1,
+          "note": "Chopped dates can sweeten the filling instead, though they are still sugar."
+        },
+        {
+          "ref": "rice_flour",
+          "with": "ragi_flour",
+          "ratio": 1,
+          "note": "Ragi ela ada is a darker, higher-fibre version."
+        }
+      ],
+      "storage": "Keeps 1 day at room temperature or 2 days refrigerated, wrapped in the leaf.",
+      "reheating": "Re-steam for 3 to 4 minutes.",
+      "tags": [
+        "festive"
+      ]
     }
   ]
 }

@@ -6019,8 +6019,8 @@
         },
         {
           "ref": "pumpkin_seeds",
-          "g": 20,
-          "measure": "2½ tbsp"
+          "g": 25,
+          "measure": "3 tbsp"
         },
         {
           "ref": "sunflower_seeds",
@@ -6687,6 +6687,1481 @@
       "storage": "Refrigerate, covered, for up to 3 days (add toppings just before serving).",
       "tags": [
         "meal_prep"
+      ]
+    },
+    {
+      "id": "sugar-free-coconut-ladoo",
+      "title": "Sugar-Free Coconut Ladoo",
+      "description": "Soft, fragrant coconut ladoos cooked with cream, ghee and cardamom and sweetened with erythritol instead of sugar or condensed milk. Two small ladoos make a serving.",
+      "cuisine": "pan_indian",
+      "mealTypes": [
+        "dessert",
+        "snack"
+      ],
+      "course": "dessert",
+      "servings": 6,
+      "prepMin": 5,
+      "cookMin": 12,
+      "difficulty": "easy",
+      "equipment": [
+        "kadai",
+        "mixer_grinder"
+      ],
+      "ingredients": [
+        {
+          "ref": "desiccated_coconut",
+          "g": 120,
+          "measure": "1½ cups"
+        },
+        {
+          "ref": "ghee",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "cream_heavy",
+          "g": 60,
+          "measure": "4 tbsp"
+        },
+        {
+          "ref": "erythritol",
+          "g": 40,
+          "measure": "3½ tbsp",
+          "prep": "powdered"
+        },
+        {
+          "ref": "cardamom",
+          "g": 1,
+          "measure": "4 pods",
+          "prep": "seeds powdered"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Powder the sweetener",
+          "kind": "prep",
+          "text": "Grind the erythritol in a dry mixer jar to a fine powder so the ladoos aren't gritty.",
+          "uses": [
+            "erythritol"
+          ],
+          "visual": "Fine white powdered erythritol in a small dry mixer jar",
+          "equipment": [
+            "mixer_grinder"
+          ]
+        },
+        {
+          "title": "Toast the coconut",
+          "kind": "cook",
+          "text": "Heat the ghee in a kadai over low heat and add the desiccated coconut. Stir for 3 to 4 minutes until fragrant but still white — don't let it brown.",
+          "uses": [
+            "ghee",
+            "desiccated_coconut"
+          ],
+          "visual": "Fragrant white desiccated coconut being stirred in a little ghee in a black kadai",
+          "timerMin": 4,
+          "heat": "low"
+        },
+        {
+          "title": "Cook with cream",
+          "kind": "cook",
+          "text": "Pour in the cream and the powdered erythritol. Stir continuously on low for 5 to 6 minutes until the mixture is moist, comes together and leaves the sides of the pan.",
+          "uses": [
+            "cream_heavy"
+          ],
+          "visual": "A moist, clumping coconut mixture pulling away from the sides of the kadai",
+          "timerMin": 6,
+          "heat": "low"
+        },
+        {
+          "title": "Add cardamom and cool",
+          "kind": "rest",
+          "text": "Stir in the cardamom powder, switch off the heat and let the mixture cool for 5 minutes until warm enough to handle.",
+          "uses": [
+            "cardamom"
+          ],
+          "visual": "The coconut mixture spread on a steel plate to cool, specks of cardamom visible",
+          "timerMin": 5
+        },
+        {
+          "title": "Shape the ladoos",
+          "kind": "assemble",
+          "text": "Grease your palms with a drop of ghee, take a tablespoon of the mixture and press and roll into a firm ball. Make 12 ladoos.",
+          "uses": [],
+          "visual": "Twelve neat white coconut ladoos lined up on a steel plate, a few still being rolled"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Let the ladoos set for 15 minutes, then serve two per person. They firm up further in the fridge.",
+          "uses": [],
+          "visual": "Coconut ladoos arranged on a brass plate, a couple rolled in extra desiccated coconut"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "cream_heavy",
+          "note": "Use thick coconut milk and coconut oil for dairy-free ladoos; cook 2 minutes longer.",
+          "with": "coconut_milk",
+          "ratio": 1
+        },
+        {
+          "ref": "erythritol",
+          "note": "A pinch of pure stevia works, but erythritol gives better body.",
+          "with": "stevia",
+          "ratio": 0.02
+        }
+      ],
+      "storage": "Refrigerate in an airtight box for up to 5 days.",
+      "tags": [
+        "festive",
+        "kid_friendly"
+      ]
+    },
+    {
+      "id": "sugar-free-badam-halwa",
+      "title": "Sugar-Free Badam Halwa",
+      "description": "A glossy, ghee-rich almond halwa made with ground blanched almonds, milk and a little cream, sweetened with erythritol and scented with cardamom. A small festive serving with far fewer carbs than the classic.",
+      "cuisine": "tamil_nadu",
+      "mealTypes": [
+        "dessert"
+      ],
+      "course": "dessert",
+      "servings": 4,
+      "prepMin": 20,
+      "cookMin": 20,
+      "difficulty": "medium",
+      "equipment": [
+        "kadai|non_stick_pan",
+        "mixer_grinder",
+        "saucepan"
+      ],
+      "ingredients": [
+        {
+          "ref": "almonds",
+          "g": 100,
+          "measure": "⅔ cup",
+          "prep": "soaked overnight and peeled"
+        },
+        {
+          "ref": "milk_full",
+          "g": 100,
+          "measure": "⅓ cup + 1 tbsp"
+        },
+        {
+          "ref": "ghee",
+          "g": 20,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "erythritol",
+          "g": 35,
+          "measure": "3 tbsp"
+        },
+        {
+          "ref": "cream_heavy",
+          "g": 30,
+          "measure": "2 tbsp"
+        },
+        {
+          "ref": "cardamom",
+          "g": 0.5,
+          "measure": "2 pods",
+          "prep": "seeds powdered"
+        },
+        {
+          "ref": "pistachios",
+          "g": 6,
+          "measure": "1 tbsp",
+          "prep": "slivered"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Peel the almonds",
+          "kind": "prep",
+          "text": "Soak the almonds overnight (or in hot water for 30 minutes), then slip off the skins.",
+          "uses": [
+            "almonds"
+          ],
+          "visual": "Peeled, creamy-white soaked almonds in a steel bowl with a small pile of brown skins beside it"
+        },
+        {
+          "title": "Grind to a paste",
+          "kind": "prep",
+          "text": "Grind the almonds with the milk to a fine, slightly grainy paste.",
+          "uses": [
+            "milk_full"
+          ],
+          "visual": "A thick, pale ivory almond and milk paste in a mixer jar",
+          "equipment": [
+            "mixer_grinder"
+          ]
+        },
+        {
+          "title": "Cook the paste",
+          "kind": "cook",
+          "text": "Heat a heavy kadai over low heat, add the almond paste and stir constantly for 6 to 8 minutes until it thickens and starts to dry.",
+          "uses": [],
+          "visual": "A thick almond paste being stirred with a flat spatula in a heavy kadai, beginning to clump",
+          "timerMin": 8,
+          "heat": "low",
+          "equipment": [
+            "kadai|non_stick_pan"
+          ]
+        },
+        {
+          "title": "Add ghee and sweetener",
+          "kind": "cook",
+          "text": "Add the ghee a spoon at a time and the erythritol and cream, stirring all the time, for 8 to 10 minutes until the halwa turns glossy, light golden and leaves the sides of the pan.",
+          "uses": [
+            "ghee",
+            "erythritol",
+            "cream_heavy"
+          ],
+          "visual": "Glossy, light golden almond halwa gathering into a soft mass with ghee shining at the edges of the kadai",
+          "timerMin": 10,
+          "heat": "low",
+          "equipment": [
+            "kadai|non_stick_pan"
+          ]
+        },
+        {
+          "title": "Flavour with cardamom",
+          "kind": "cook",
+          "text": "Stir in the cardamom powder and switch off the heat.",
+          "uses": [
+            "cardamom"
+          ],
+          "visual": "Golden badam halwa in the kadai with flecks of cardamom"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve warm in small bowls, garnished with slivered pistachios.",
+          "uses": [
+            "pistachios"
+          ],
+          "visual": "A small brass bowl of glossy golden badam halwa topped with green pistachio slivers"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "milk_full",
+          "note": "Coconut milk with coconut oil instead of ghee makes it dairy-free.",
+          "with": "coconut_milk",
+          "ratio": 1
+        },
+        {
+          "ref": "almonds",
+          "note": "Skip soaking: mix almond flour with the milk into a paste.",
+          "with": "almond_flour",
+          "ratio": 1
+        }
+      ],
+      "storage": "Refrigerate up to 1 week.",
+      "reheating": "Warm for 20 seconds in the microwave or in a pan with a few drops of ghee.",
+      "tags": [
+        "festive"
+      ]
+    },
+    {
+      "id": "cardamom-chocolate-avocado-mousse",
+      "title": "Cardamom Chocolate–Avocado Mousse",
+      "description": "A thick, silky chocolate mousse blended from ripe avocado, cocoa and coconut milk, warmed with cardamom and cinnamon and sweetened with erythritol. No cooking, no sugar.",
+      "cuisine": "pan_indian",
+      "mealTypes": [
+        "dessert"
+      ],
+      "course": "dessert",
+      "servings": 3,
+      "prepMin": 10,
+      "cookMin": 0,
+      "restMin": 30,
+      "difficulty": "easy",
+      "equipment": [
+        "blender|mixer_grinder"
+      ],
+      "ingredients": [
+        {
+          "ref": "avocado",
+          "g": 250,
+          "measure": "2 small avocados",
+          "prep": "ripe, flesh only"
+        },
+        {
+          "ref": "cocoa_powder",
+          "g": 25,
+          "measure": "4½ tbsp"
+        },
+        {
+          "ref": "erythritol",
+          "g": 45,
+          "measure": "4 tbsp",
+          "prep": "powdered"
+        },
+        {
+          "ref": "coconut_milk",
+          "g": 80,
+          "measure": "⅓ cup"
+        },
+        {
+          "ref": "cardamom",
+          "g": 0.5,
+          "measure": "2 pods",
+          "prep": "seeds powdered"
+        },
+        {
+          "ref": "cinnamon",
+          "g": 0.5,
+          "measure": "a pinch"
+        },
+        {
+          "ref": "vanilla_extract",
+          "g": 3,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 0.3,
+          "measure": "a pinch",
+          "toTaste": true
+        },
+        {
+          "ref": "dark_chocolate",
+          "g": 8,
+          "measure": "1 square",
+          "prep": "shaved"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Scoop the avocados",
+          "kind": "prep",
+          "text": "Halve the avocados, remove the stones and scoop the flesh into a blender jar. They should be fully ripe and soft, with no brown spots.",
+          "uses": [
+            "avocado"
+          ],
+          "visual": "Bright green avocado flesh scooped into a blender jar, empty avocado skins beside it",
+          "equipment": [
+            "blender|mixer_grinder"
+          ]
+        },
+        {
+          "title": "Blend until silky",
+          "kind": "prep",
+          "text": "Add the cocoa, powdered erythritol, coconut milk, cardamom, cinnamon, vanilla and salt. Blend for 1 to 2 minutes, scraping down the sides, until completely smooth and glossy.",
+          "uses": [
+            "cocoa_powder",
+            "erythritol",
+            "coconut_milk",
+            "cardamom",
+            "cinnamon",
+            "vanilla_extract",
+            "salt"
+          ],
+          "visual": "A thick, glossy dark-brown chocolate mousse in the blender jar with a spatula scraping the sides",
+          "equipment": [
+            "blender|mixer_grinder"
+          ]
+        },
+        {
+          "title": "Chill",
+          "kind": "rest",
+          "text": "Spoon into three small glasses and refrigerate for 30 minutes to firm up.",
+          "uses": [],
+          "visual": "Three small glasses filled with smooth dark chocolate mousse on a fridge shelf",
+          "timerMin": 30
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Top with shaved dark chocolate and serve chilled.",
+          "uses": [
+            "dark_chocolate"
+          ],
+          "visual": "Three glasses of dark chocolate–avocado mousse topped with chocolate shavings and a pinch of cardamom"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "coconut_milk",
+          "note": "Heavy cream makes it richer.",
+          "with": "cream_heavy",
+          "ratio": 0.7
+        },
+        {
+          "ref": "dark_chocolate",
+          "note": "Top with chopped pistachios instead of chocolate.",
+          "with": "pistachios",
+          "ratio": 1
+        }
+      ],
+      "storage": "Refrigerate, covered, for up to 2 days; press cling film onto the surface to stop browning.",
+      "tags": [
+        "no_cook"
+      ]
+    },
+    {
+      "id": "sugar-free-kalakand-paneer-sweet",
+      "title": "Sugar-Free Kalakand-Style Paneer Sweet",
+      "description": "A quick kalakand made by cooking fresh paneer with cream and erythritol until it sets into soft, grainy milk-cake squares, topped with pistachios and cardamom.",
+      "cuisine": "north_indian",
+      "region": "Rajasthan",
+      "mealTypes": [
+        "dessert"
+      ],
+      "course": "dessert",
+      "servings": 6,
+      "prepMin": 10,
+      "cookMin": 15,
+      "restMin": 120,
+      "difficulty": "easy",
+      "equipment": [
+        "kadai|non_stick_pan"
+      ],
+      "ingredients": [
+        {
+          "ref": "paneer",
+          "g": 250,
+          "prep": "crumbled finely"
+        },
+        {
+          "ref": "cream_heavy",
+          "g": 100,
+          "measure": "7 tbsp"
+        },
+        {
+          "ref": "erythritol",
+          "g": 50,
+          "measure": "4 tbsp",
+          "prep": "powdered"
+        },
+        {
+          "ref": "cardamom",
+          "g": 1,
+          "measure": "4 pods",
+          "prep": "seeds powdered"
+        },
+        {
+          "ref": "ghee",
+          "g": 5,
+          "measure": "1 tsp",
+          "prep": "for greasing"
+        },
+        {
+          "ref": "pistachios",
+          "g": 10,
+          "measure": "1½ tbsp",
+          "prep": "slivered"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Grease the tray",
+          "kind": "prep",
+          "text": "Grease a small steel plate or tin (about 6 inches) with the ghee.",
+          "uses": [
+            "ghee"
+          ],
+          "visual": "A small square steel tin lightly greased with ghee"
+        },
+        {
+          "title": "Crumble the paneer",
+          "kind": "prep",
+          "text": "Crumble the paneer with your fingers or grate it so there are no large lumps.",
+          "uses": [
+            "paneer"
+          ],
+          "visual": "Finely crumbled fresh white paneer in a steel bowl"
+        },
+        {
+          "title": "Cook with cream",
+          "kind": "cook",
+          "text": "Combine the paneer, cream and powdered erythritol in a non-stick kadai over low heat. Stir continuously for 10 to 12 minutes until the mixture thickens, turns grainy and starts leaving the sides of the pan.",
+          "uses": [
+            "cream_heavy",
+            "erythritol"
+          ],
+          "visual": "A thick, grainy, creamy-white paneer mixture pulling away from the sides of a non-stick kadai",
+          "timerMin": 12,
+          "heat": "low",
+          "equipment": [
+            "kadai|non_stick_pan"
+          ]
+        },
+        {
+          "title": "Add cardamom",
+          "kind": "cook",
+          "text": "Stir in the cardamom and cook for 1 more minute.",
+          "uses": [
+            "cardamom"
+          ],
+          "visual": "The kalakand mixture in the kadai flecked with cardamom",
+          "timerMin": 1,
+          "heat": "low",
+          "equipment": [
+            "kadai|non_stick_pan"
+          ]
+        },
+        {
+          "title": "Set the kalakand",
+          "kind": "rest",
+          "text": "Spread the mixture into the greased tin, level it, press the pistachios on top and refrigerate for 2 hours until set.",
+          "uses": [
+            "pistachios"
+          ],
+          "visual": "A levelled layer of white kalakand in the steel tin studded with green pistachio slivers",
+          "timerMin": 120
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Cut into 12 squares and serve two per person, chilled or at room temperature.",
+          "uses": [],
+          "visual": "Squares of grainy white kalakand topped with pistachios arranged on a silver-edged plate"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "erythritol",
+          "note": "A pinch of pure stevia works; the texture will be slightly softer.",
+          "with": "stevia",
+          "ratio": 0.02
+        },
+        {
+          "ref": "cream_heavy",
+          "note": "Full-cream milk works but must be cooked down longer and adds carbs.",
+          "with": "milk_full",
+          "ratio": 1.5
+        }
+      ],
+      "storage": "Refrigerate in an airtight box for up to 4 days.",
+      "tags": [
+        "festive"
+      ]
+    },
+    {
+      "id": "masala-boiled-egg-chaat",
+      "title": "Masala Boiled-Egg Chaat",
+      "description": "Street-style chaat of halved boiled eggs topped with onion, tomato, cucumber, green chilli, chaat masala and lemon, with roasted peanuts in place of sev for crunch.",
+      "cuisine": "pan_indian",
+      "mealTypes": [
+        "snack",
+        "breakfast"
+      ],
+      "course": "snack",
+      "servings": 2,
+      "prepMin": 10,
+      "cookMin": 10,
+      "difficulty": "easy",
+      "equipment": [
+        "saucepan",
+        "knife_board"
+      ],
+      "ingredients": [
+        {
+          "ref": "egg",
+          "g": 200,
+          "measure": "4 eggs"
+        },
+        {
+          "ref": "onion",
+          "g": 30,
+          "measure": "¼ medium",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "tomato",
+          "g": 40,
+          "measure": "½ small",
+          "prep": "deseeded and finely chopped"
+        },
+        {
+          "ref": "cucumber",
+          "g": 50,
+          "measure": "¼ cucumber",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 3,
+          "measure": "1",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 6,
+          "measure": "3 tbsp",
+          "prep": "chopped"
+        },
+        {
+          "ref": "mint",
+          "g": 4,
+          "measure": "2 tbsp leaves",
+          "prep": "chopped"
+        },
+        {
+          "ref": "chaat_masala",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "cumin_powder",
+          "g": 1,
+          "measure": "½ tsp",
+          "prep": "roasted"
+        },
+        {
+          "ref": "chilli_powder",
+          "g": 0.5,
+          "measure": "a pinch"
+        },
+        {
+          "ref": "black_salt",
+          "g": 0.5,
+          "measure": "a pinch"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "mustard_oil",
+          "g": 5,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "peanuts",
+          "g": 15,
+          "measure": "1½ tbsp",
+          "prep": "roasted and lightly crushed"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Boil the eggs",
+          "kind": "cook",
+          "text": "Place the eggs in a saucepan, cover with water and bring to a boil. Simmer for 9 minutes, then transfer to cold water for 5 minutes and peel.",
+          "uses": [
+            "egg"
+          ],
+          "visual": "Four peeled hard-boiled eggs, smooth and white, in a bowl of cold water next to a steel saucepan",
+          "timerMin": 9,
+          "heat": "medium",
+          "equipment": [
+            "saucepan"
+          ]
+        },
+        {
+          "title": "Chop the toppings",
+          "kind": "prep",
+          "text": "Finely chop the onion, tomato, cucumber, green chilli, coriander and mint.",
+          "uses": [
+            "onion",
+            "tomato",
+            "cucumber",
+            "green_chilli",
+            "coriander_leaves",
+            "mint"
+          ],
+          "visual": "Small colourful heaps of chopped onion, red tomato, green cucumber, chilli, coriander and mint on a wooden board"
+        },
+        {
+          "title": "Mix the chaat topping",
+          "kind": "prep",
+          "text": "In a bowl toss the chopped vegetables and herbs with chaat masala, roasted cumin, chilli powder, black salt, lemon juice and mustard oil.",
+          "uses": [
+            "chaat_masala",
+            "cumin_powder",
+            "chilli_powder",
+            "black_salt",
+            "lemon_juice",
+            "mustard_oil"
+          ],
+          "visual": "A tangy, glistening chaat mix of chopped vegetables and herbs dusted with chaat masala in a steel bowl"
+        },
+        {
+          "title": "Assemble",
+          "kind": "assemble",
+          "text": "Halve the eggs lengthwise and arrange cut side up on a plate. Spoon the chaat topping over the eggs.",
+          "uses": [],
+          "visual": "Halved boiled eggs with bright yellow yolks arranged on a plate, topped with spoonfuls of chopped chaat mix"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Scatter the crushed peanuts over and serve immediately so they stay crunchy.",
+          "uses": [
+            "peanuts"
+          ],
+          "visual": "Masala egg chaat on a white plate, eggs piled with colourful topping and crushed roasted peanuts, a lemon wedge on the side"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "peanuts",
+          "note": "Toasted pumpkin seeds for a peanut-free crunch.",
+          "with": "pumpkin_seeds",
+          "ratio": 1
+        },
+        {
+          "ref": "mustard_oil",
+          "note": "Olive oil if you prefer a milder dressing.",
+          "with": "olive_oil",
+          "ratio": 1
+        }
+      ],
+      "storage": "Boiled eggs keep 3 days refrigerated; add the topping just before serving.",
+      "tags": [
+        "kid_friendly"
+      ]
+    },
+    {
+      "id": "masala-roasted-almond-seed-mix",
+      "title": "Masala Roasted Almond & Seed Mix",
+      "description": "Almonds, pumpkin and sunflower seeds and coconut flakes roasted with ghee, curry leaves, chilli and chaat masala. A crunchy, portion-controlled snack — about 30 g per serving.",
+      "cuisine": "pan_indian",
+      "mealTypes": [
+        "snack"
+      ],
+      "course": "snack",
+      "servings": 8,
+      "prepMin": 5,
+      "cookMin": 15,
+      "difficulty": "easy",
+      "equipment": [
+        "kadai|oven"
+      ],
+      "ingredients": [
+        {
+          "ref": "almonds",
+          "g": 120,
+          "measure": "¾ cup"
+        },
+        {
+          "ref": "pumpkin_seeds",
+          "g": 50,
+          "measure": "6 tbsp"
+        },
+        {
+          "ref": "sunflower_seeds",
+          "g": 30,
+          "measure": "3½ tbsp"
+        },
+        {
+          "ref": "desiccated_coconut",
+          "g": 20,
+          "measure": "4 tbsp",
+          "prep": "or coconut flakes"
+        },
+        {
+          "ref": "ghee",
+          "g": 8,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 4,
+          "measure": "3 sprigs"
+        },
+        {
+          "ref": "hing",
+          "g": 0.2,
+          "measure": "a pinch"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 3,
+          "measure": "1¼ tsp"
+        },
+        {
+          "ref": "turmeric",
+          "g": 0.5,
+          "measure": "a pinch"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 1,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "chaat_masala",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 1.5,
+          "toTaste": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Roast the almonds",
+          "kind": "cook",
+          "text": "Dry-roast the almonds in a kadai over medium-low heat for 6 to 7 minutes, stirring often, until they crackle and smell toasty. (Or bake at 160°C for 10 minutes.)",
+          "uses": [
+            "almonds"
+          ],
+          "visual": "Whole almonds turning a shade darker as they roast in a dry black kadai",
+          "timerMin": 7,
+          "heat": "low",
+          "equipment": [
+            "kadai|oven"
+          ]
+        },
+        {
+          "title": "Add seeds and coconut",
+          "kind": "cook",
+          "text": "Add the pumpkin seeds, sunflower seeds and coconut and roast for 3 more minutes until the pumpkin seeds puff and the coconut turns golden. Tip onto a plate.",
+          "uses": [
+            "pumpkin_seeds",
+            "sunflower_seeds",
+            "desiccated_coconut"
+          ],
+          "visual": "Almonds, puffed green pumpkin seeds, sunflower seeds and golden coconut flakes roasting together in the kadai",
+          "timerMin": 3,
+          "heat": "low",
+          "equipment": [
+            "kadai|oven"
+          ]
+        },
+        {
+          "title": "Temper the curry leaves",
+          "kind": "cook",
+          "text": "Heat the ghee in the same kadai over medium heat. Add the curry leaves and fry until crisp, about 30 seconds, then add hing, Kashmiri chilli, turmeric and pepper and switch off the heat.",
+          "uses": [
+            "ghee",
+            "curry_leaves",
+            "hing",
+            "kashmiri_chilli",
+            "turmeric",
+            "black_pepper"
+          ],
+          "visual": "Crisp dark-green curry leaves in red-orange spiced ghee in the kadai",
+          "heat": "medium"
+        },
+        {
+          "title": "Toss and season",
+          "kind": "cook",
+          "text": "Return the nuts and seeds to the kadai and toss well, then sprinkle with chaat masala and salt.",
+          "uses": [
+            "chaat_masala",
+            "salt"
+          ],
+          "visual": "Almonds and seeds coated in red-orange spices with crisp curry leaves throughout, in the kadai"
+        },
+        {
+          "title": "Cool and serve",
+          "kind": "serve",
+          "text": "Spread on a plate to cool completely so it crisps. Serve 30 g (about a small handful) per portion.",
+          "uses": [],
+          "visual": "A small steel katori holding a handful of masala almond and seed mix with crisp curry leaves, a glass jar of the rest behind it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "almonds",
+          "note": "Peanuts make a cheaper mix with similar carbs.",
+          "with": "peanuts",
+          "ratio": 1
+        },
+        {
+          "ref": "hing",
+          "note": "Leave out hing, or use a gluten-free one, to keep the mix gluten-free."
+        }
+      ],
+      "storage": "Store in an airtight jar for up to 2 weeks.",
+      "tags": [
+        "meal_prep"
+      ]
+    },
+    {
+      "id": "kerala-fish-fry-coconut-flour",
+      "title": "Kerala Fish Fry with Coconut-Flour Crust",
+      "description": "Ayala (mackerel) rubbed with a fiery Kerala masala, dipped in egg and a light coconut-flour crust, then shallow-fried in coconut oil with curry leaves until crisp.",
+      "cuisine": "kerala",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 3,
+      "prepMin": 15,
+      "cookMin": 15,
+      "restMin": 20,
+      "difficulty": "medium",
+      "equipment": [
+        "mixing_bowl",
+        "tawa|non_stick_pan",
+        "whisk"
+      ],
+      "ingredients": [
+        {
+          "ref": "mackerel",
+          "g": 450,
+          "measure": "4 mackerel",
+          "prep": "cleaned, scored on both sides"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 8,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "chilli_powder",
+          "g": 2,
+          "measure": "¾ tsp"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1,
+          "measure": "¼ tsp"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "ginger_garlic_paste",
+          "g": 12,
+          "measure": "2½ tsp"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true
+        },
+        {
+          "ref": "egg",
+          "g": 50,
+          "measure": "1 egg"
+        },
+        {
+          "ref": "coconut_flour",
+          "g": 20,
+          "measure": "3 tbsp"
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 30,
+          "measure": "2 tbsp"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 4,
+          "measure": "3 sprigs"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Make the masala",
+          "kind": "prep",
+          "text": "Mix the Kashmiri chilli, chilli powder, turmeric, pepper, ginger-garlic paste, lemon juice and salt into a thick paste — add a teaspoon of water only if needed.",
+          "uses": [
+            "kashmiri_chilli",
+            "chilli_powder",
+            "turmeric",
+            "black_pepper",
+            "ginger_garlic_paste",
+            "lemon_juice",
+            "salt"
+          ],
+          "visual": "A thick, deep red masala paste in a small steel bowl"
+        },
+        {
+          "title": "Marinate the fish",
+          "kind": "rest",
+          "text": "Rub the masala well into the scored mackerel, pushing it into the cuts. Leave for 20 minutes.",
+          "uses": [
+            "mackerel"
+          ],
+          "visual": "Whole scored mackerel coated in deep red masala on a steel plate",
+          "timerMin": 20
+        },
+        {
+          "title": "Coat the fish",
+          "kind": "prep",
+          "text": "Beat the egg in a shallow bowl. Spread the coconut flour on a plate. Dip each fish in egg, then press lightly in the coconut flour to coat both sides thinly.",
+          "uses": [
+            "egg",
+            "coconut_flour"
+          ],
+          "visual": "A red-masala mackerel being pressed into pale coconut flour on a plate, a bowl of beaten egg beside it"
+        },
+        {
+          "title": "Shallow fry",
+          "kind": "cook",
+          "text": "Heat the coconut oil on a tawa over medium heat. Lay the fish in with the curry leaves around them and fry for 4 to 5 minutes per side until crisp and cooked through. Turn only once.",
+          "uses": [
+            "coconut_oil",
+            "curry_leaves"
+          ],
+          "visual": "Mackerel with a crisp, dark red crust frying in coconut oil on a black tawa, curry leaves crackling around them",
+          "timerMin": 10,
+          "heat": "medium",
+          "equipment": [
+            "tawa|non_stick_pan"
+          ]
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Drain briefly on paper and serve hot with the fried curry leaves, sliced onion and lemon.",
+          "uses": [],
+          "visual": "Crisp red Kerala fish fry on a banana leaf topped with fried curry leaves, onion rings and lemon wedges beside"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "mackerel",
+          "note": "Seer fish steaks are meatier and have fewer bones.",
+          "with": "seer_fish",
+          "ratio": 1
+        },
+        {
+          "ref": "coconut_flour",
+          "note": "Almond flour gives a crunchier, nuttier crust.",
+          "with": "almond_flour",
+          "ratio": 1.5
+        },
+        {
+          "ref": "egg",
+          "note": "Skip the egg for a thinner crust — the masala alone holds some coconut flour."
+        }
+      ],
+      "storage": "Best eaten fresh; refrigerate up to 1 day.",
+      "reheating": "Warm in the air fryer at 180°C for 4 minutes or on a hot tawa.",
+      "tags": []
+    },
+    {
+      "id": "chettinad-egg-curry-coconut-milk",
+      "title": "Chettinad Egg Curry in Coconut Milk",
+      "description": "Boiled eggs in a fiery Chettinad gravy of freshly roasted chillies, pepper, fennel and whole spices, mellowed with coconut milk. Rich, aromatic and keto-friendly.",
+      "cuisine": "tamil_nadu",
+      "region": "Chettinad",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 3,
+      "prepMin": 20,
+      "cookMin": 30,
+      "difficulty": "medium",
+      "equipment": [
+        "saucepan",
+        "kadai",
+        "mixer_grinder"
+      ],
+      "ingredients": [
+        {
+          "ref": "egg",
+          "g": 300,
+          "measure": "6 eggs"
+        },
+        {
+          "ref": "dried_red_chilli",
+          "g": 3,
+          "measure": "5 chillies"
+        },
+        {
+          "ref": "coriander_seeds",
+          "g": 6,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 3,
+          "measure": "1¼ tsp"
+        },
+        {
+          "ref": "fennel_seeds",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "cumin_seeds",
+          "g": 1,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "cinnamon",
+          "g": 0.5,
+          "measure": "½-inch stick"
+        },
+        {
+          "ref": "cloves",
+          "g": 0.3,
+          "measure": "3 cloves"
+        },
+        {
+          "ref": "star_anise",
+          "g": 0.5,
+          "measure": "1 star anise"
+        },
+        {
+          "ref": "cardamom",
+          "g": 0.3,
+          "measure": "1 pod"
+        },
+        {
+          "ref": "sesame_oil",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 4,
+          "measure": "3 sprigs"
+        },
+        {
+          "ref": "onion",
+          "g": 60,
+          "measure": "½ medium",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "ginger_garlic_paste",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "tomato",
+          "g": 80,
+          "measure": "1 small",
+          "prep": "chopped"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1,
+          "measure": "¼ tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true
+        },
+        {
+          "ref": "water",
+          "g": 100
+        },
+        {
+          "ref": "coconut_milk",
+          "g": 200,
+          "measure": "¾ cup + 1 tbsp"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Boil the eggs",
+          "kind": "cook",
+          "text": "Cover the eggs with water in a saucepan, bring to a boil and simmer for 9 minutes. Cool in cold water, peel and make 3 shallow slits in each.",
+          "uses": [
+            "egg"
+          ],
+          "visual": "Six peeled boiled eggs with shallow slits on a steel plate beside a saucepan",
+          "timerMin": 9,
+          "heat": "medium",
+          "equipment": [
+            "saucepan"
+          ]
+        },
+        {
+          "title": "Roast the Chettinad masala",
+          "kind": "cook",
+          "text": "Dry-roast the red chillies, coriander seeds, pepper, fennel, cumin, cinnamon, cloves, star anise and cardamom in a kadai over low heat for 2 to 3 minutes until fragrant. Cool and grind to a fine powder.",
+          "uses": [
+            "dried_red_chilli",
+            "coriander_seeds",
+            "black_pepper",
+            "fennel_seeds",
+            "cumin_seeds",
+            "cinnamon",
+            "cloves",
+            "star_anise",
+            "cardamom"
+          ],
+          "visual": "Dark roasted red chillies, coriander seeds, peppercorns, star anise and cinnamon in a dry black kadai, a mixer jar of ground brown masala beside",
+          "timerMin": 3,
+          "heat": "low",
+          "equipment": [
+            "mixer_grinder"
+          ]
+        },
+        {
+          "title": "Sauté onion and tomato",
+          "kind": "cook",
+          "text": "Heat sesame oil in the kadai over medium heat. Add curry leaves, then onion and cook for 5 minutes until golden. Add ginger-garlic paste for 1 minute, then tomato, turmeric and salt; cook until mushy, about 4 minutes.",
+          "uses": [
+            "sesame_oil",
+            "curry_leaves",
+            "onion",
+            "ginger_garlic_paste",
+            "tomato",
+            "turmeric",
+            "salt"
+          ],
+          "visual": "Soft, golden onion and tomato masala with curry leaves in sesame oil in the kadai",
+          "timerMin": 10,
+          "heat": "medium"
+        },
+        {
+          "title": "Cook the spice paste",
+          "kind": "cook",
+          "text": "Add the ground Chettinad masala and stir for 1 minute, then pour in the water and simmer for 5 minutes until thick and the oil rises.",
+          "uses": [
+            "water"
+          ],
+          "visual": "A dark brick-red, thick Chettinad gravy bubbling in the kadai with oil on the surface",
+          "timerMin": 5,
+          "heat": "low"
+        },
+        {
+          "title": "Add coconut milk and eggs",
+          "kind": "cook",
+          "text": "Stir in the coconut milk, add the eggs and simmer gently on low for 5 minutes, spooning gravy over the eggs. Don't boil hard or the coconut milk splits.",
+          "uses": [
+            "coconut_milk"
+          ],
+          "visual": "Halved boiled eggs nestled in a creamy, deep orange-brown coconut gravy in the kadai",
+          "timerMin": 5,
+          "heat": "low"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve hot with coconut-flour dosa or cauliflower rice.",
+          "uses": [],
+          "visual": "Chettinad egg curry in a clay bowl, eggs halved to show yolks in rich brown-orange gravy, curry leaves on top"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "egg",
+          "note": "Make a paneer Chettinad curry; add paneer cubes for the last 3 minutes.",
+          "with": "paneer",
+          "ratio": 0.8
+        },
+        {
+          "ref": "sesame_oil",
+          "note": "Coconut oil works well with the coconut milk.",
+          "with": "coconut_oil",
+          "ratio": 1
+        }
+      ],
+      "storage": "Refrigerate up to 2 days.",
+      "reheating": "Warm on low heat; don't boil.",
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "cheese-stuffed-mushroom-tikka",
+      "title": "Cheese-Stuffed Mushroom Tikka",
+      "description": "Large button mushrooms filled with a cheddar, cream cheese and green chilli stuffing, coated in a tandoori hung-curd marinade and charred in the air fryer or oven.",
+      "cuisine": "north_indian",
+      "mealTypes": [
+        "snack",
+        "dinner"
+      ],
+      "course": "snack",
+      "servings": 2,
+      "prepMin": 20,
+      "cookMin": 12,
+      "restMin": 15,
+      "difficulty": "medium",
+      "equipment": [
+        "mixing_bowl",
+        "air_fryer|oven"
+      ],
+      "ingredients": [
+        {
+          "ref": "mushroom",
+          "g": 220,
+          "measure": "12 large button mushrooms"
+        },
+        {
+          "ref": "cheese_cheddar",
+          "g": 60,
+          "measure": "½ cup",
+          "prep": "grated"
+        },
+        {
+          "ref": "cream_cheese",
+          "g": 20,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 3,
+          "measure": "1",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 5,
+          "measure": "2 tbsp",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 0.5,
+          "measure": "¼ tsp"
+        },
+        {
+          "ref": "hung_curd",
+          "g": 50,
+          "measure": "3 tbsp"
+        },
+        {
+          "ref": "ginger_garlic_paste",
+          "g": 6,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 3,
+          "measure": "1¼ tsp"
+        },
+        {
+          "ref": "turmeric",
+          "g": 0.5,
+          "measure": "a pinch"
+        },
+        {
+          "ref": "garam_masala",
+          "g": 1,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "kasuri_methi",
+          "g": 1,
+          "measure": "½ tbsp"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 5,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "mustard_oil",
+          "g": 12,
+          "measure": "2½ tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 2,
+          "toTaste": true
+        },
+        {
+          "ref": "chaat_masala",
+          "g": 1,
+          "measure": "½ tsp"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Prepare the mushrooms",
+          "kind": "prep",
+          "text": "Wipe the mushrooms clean, twist out the stems and finely chop the stems. Keep the caps whole.",
+          "uses": [
+            "mushroom"
+          ],
+          "visual": "Twelve white mushroom caps hollowed out on a wooden board, a small heap of chopped stems beside them"
+        },
+        {
+          "title": "Make the cheese filling",
+          "kind": "prep",
+          "text": "Mix the chopped stems with grated cheddar, cream cheese, green chilli, coriander and black pepper.",
+          "uses": [
+            "cheese_cheddar",
+            "cream_cheese",
+            "green_chilli",
+            "coriander_leaves",
+            "black_pepper"
+          ],
+          "visual": "A thick cheesy filling flecked with green chilli and coriander in a small bowl"
+        },
+        {
+          "title": "Stuff the caps",
+          "kind": "assemble",
+          "text": "Press a spoonful of filling firmly into each mushroom cap so it is slightly domed.",
+          "uses": [],
+          "visual": "Twelve mushroom caps each filled with a domed mound of cheese filling on a tray"
+        },
+        {
+          "title": "Mix the tikka marinade",
+          "kind": "prep",
+          "text": "In a mixing bowl whisk the hung curd with ginger-garlic paste, Kashmiri chilli, turmeric, garam masala, crushed kasuri methi, lemon juice, mustard oil and salt.",
+          "uses": [
+            "hung_curd",
+            "ginger_garlic_paste",
+            "kashmiri_chilli",
+            "turmeric",
+            "garam_masala",
+            "kasuri_methi",
+            "lemon_juice",
+            "mustard_oil",
+            "salt"
+          ],
+          "visual": "A thick, deep orange tandoori marinade in a steel mixing bowl"
+        },
+        {
+          "title": "Coat and rest",
+          "kind": "rest",
+          "text": "Brush the marinade generously over the outside of each stuffed mushroom, keeping the cheese side mostly clean. Rest for 15 minutes.",
+          "uses": [],
+          "visual": "Stuffed mushrooms coated in orange marinade on the outside, white cheese filling still visible on top",
+          "timerMin": 15
+        },
+        {
+          "title": "Air fry until charred",
+          "kind": "cook",
+          "text": "Arrange the mushrooms filling-side up in the air-fryer basket and cook at 190°C for 10 to 12 minutes until the marinade chars and the cheese bubbles. In an oven, bake at 220°C for 12 to 15 minutes.",
+          "uses": [],
+          "visual": "Charred orange mushroom tikka with bubbling golden cheese on top in an air-fryer basket",
+          "timerMin": 12,
+          "tempC": 190,
+          "equipment": [
+            "air_fryer|oven"
+          ]
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Sprinkle with chaat masala and serve hot with mint chutney.",
+          "uses": [
+            "chaat_masala"
+          ],
+          "visual": "Cheese-stuffed mushroom tikka on a slate board dusted with chaat masala, a small bowl of mint chutney and lemon wedges beside"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "cheese_cheddar",
+          "note": "Grated paneer gives a milder, less melty filling.",
+          "with": "paneer",
+          "ratio": 1
+        },
+        {
+          "ref": "cream_cheese",
+          "note": "Thick hung curd keeps the filling lighter.",
+          "with": "hung_curd",
+          "ratio": 1
+        }
+      ],
+      "storage": "Best eaten fresh.",
+      "reheating": "Warm in the air fryer at 180°C for 3 minutes.",
+      "tags": [
+        "festive"
       ]
     }
   ]

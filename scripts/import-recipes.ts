@@ -84,6 +84,7 @@ export async function importCatalogue(opts: { prune?: boolean; dry?: boolean; qu
       storage: r.storage,
       reheating: r.reheating,
       allergens: r.allergens,
+      avoidTags: r.avoidTags,
       servingGrams: r.servingGrams,
       kcal: r.perServing.kcal,
       proteinG: r.perServing.proteinG,

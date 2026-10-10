@@ -3506,6 +3506,5100 @@
         "family",
         "meal_prep"
       ]
+    },
+    {
+      "id": "tomato-shorba",
+      "title": "Tomato Shorba",
+      "description": "A thin, warming North Indian tomato soup — ripe tomatoes cooked with ginger and garlic, strained silky and tempered in ghee with cumin, bay leaf and cloves, finished with black pepper and coriander.",
+      "cuisine": "north_indian",
+      "mealTypes": [
+        "dinner",
+        "snack"
+      ],
+      "course": "side",
+      "servings": 3,
+      "prepMin": 10,
+      "cookMin": 25,
+      "difficulty": "easy",
+      "equipment": [
+        "saucepan",
+        "blender|mixer_grinder"
+      ],
+      "ingredients": [
+        {
+          "ref": "tomato",
+          "g": 500,
+          "measure": "5 medium",
+          "prep": "roughly chopped"
+        },
+        {
+          "ref": "onion",
+          "g": 40,
+          "measure": "½ small",
+          "prep": "chopped"
+        },
+        {
+          "ref": "garlic",
+          "g": 8,
+          "measure": "2–3 cloves"
+        },
+        {
+          "ref": "ginger",
+          "g": 6,
+          "measure": "½-inch piece"
+        },
+        {
+          "ref": "water",
+          "g": 450
+        },
+        {
+          "ref": "ghee",
+          "g": 8,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "cumin_seeds",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "bay_leaf",
+          "g": 0.5,
+          "measure": "1 leaf"
+        },
+        {
+          "ref": "cloves",
+          "g": 0.3,
+          "measure": "2–3 cloves"
+        },
+        {
+          "ref": "besan",
+          "g": 6,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 1,
+          "measure": "½ tsp",
+          "prep": "freshly crushed"
+        },
+        {
+          "ref": "jaggery",
+          "g": 4,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 3,
+          "toTaste": true
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 6,
+          "prep": "finely chopped"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Cook the tomatoes",
+          "kind": "cook",
+          "text": "Put the tomatoes, onion, garlic and ginger in a saucepan with 1 cup of the water. Cover and cook on medium heat for 12 minutes until the tomatoes are completely soft.",
+          "uses": [
+            "tomato",
+            "onion",
+            "garlic",
+            "ginger",
+            "water"
+          ],
+          "visual": "Soft, collapsed tomato chunks with onion, garlic and ginger simmering in a steel saucepan, the lid just lifted",
+          "timerMin": 12,
+          "heat": "medium"
+        },
+        {
+          "title": "Blend and strain",
+          "kind": "prep",
+          "text": "Cool for 5 minutes, then blend until smooth. Pour through a sieve, pressing with a spoon, to remove the skins and seeds.",
+          "uses": [],
+          "visual": "A bright red tomato purée being pressed through a steel sieve into a bowl, skins and seeds left behind in the mesh",
+          "equipment": [
+            "blender|mixer_grinder"
+          ]
+        },
+        {
+          "title": "Temper the spices",
+          "kind": "cook",
+          "text": "Wipe the saucepan, add the ghee and heat on medium. Add the cumin seeds, bay leaf and cloves and let them sizzle for 30 seconds.",
+          "uses": [
+            "ghee",
+            "cumin_seeds",
+            "bay_leaf",
+            "cloves"
+          ],
+          "visual": "Cumin seeds sizzling with a bay leaf and a few cloves in melted ghee at the bottom of the steel saucepan",
+          "timerMin": 1,
+          "heat": "medium"
+        },
+        {
+          "title": "Roast the besan",
+          "kind": "cook",
+          "text": "Lower the heat, add the besan and stir for about 1 minute until it smells nutty. This gives the shorba a light body.",
+          "uses": [
+            "besan"
+          ],
+          "visual": "A little pale golden besan roasting in the ghee with the whole spices, stirred with a wooden spoon",
+          "timerMin": 1,
+          "heat": "low"
+        },
+        {
+          "title": "Simmer the shorba",
+          "kind": "cook",
+          "text": "Pour in the strained tomato purée and the remaining water, whisking so the besan doesn't lump. Add the pepper, jaggery and salt and simmer on low heat for 8 minutes.",
+          "uses": [
+            "black_pepper",
+            "jaggery",
+            "salt"
+          ],
+          "visual": "A smooth, thin, orange-red shorba gently simmering in the saucepan with the bay leaf floating on top",
+          "timerMin": 8,
+          "heat": "low",
+          "equipment": [
+            "whisk"
+          ]
+        },
+        {
+          "title": "Serve hot",
+          "kind": "serve",
+          "text": "Remove the bay leaf and cloves. Pour into cups or small bowls, sprinkle with coriander and serve piping hot.",
+          "uses": [
+            "coriander_leaves"
+          ],
+          "visual": "Tomato shorba in a glass cup, thin and glossy red, a sprinkle of chopped coriander and cracked pepper on top, steam rising"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "besan",
+          "with": "cornflour",
+          "ratio": 0.7,
+          "note": "Stir in a cornflour slurry at the end instead of roasting besan."
+        },
+        {
+          "ref": "ghee",
+          "with": "butter",
+          "ratio": 1,
+          "note": "Butter gives a richer, restaurant-style finish."
+        },
+        {
+          "ref": "jaggery",
+          "with": "sugar",
+          "ratio": 1,
+          "note": "Any sweetener just balances very sour tomatoes; skip it if the tomatoes are ripe and sweet."
+        }
+      ],
+      "storage": "Keeps 3 days in the fridge or 1 month in the freezer.",
+      "reheating": "Reheat until just simmering, whisking in a splash of water if it has thickened.",
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "palak-spinach-soup",
+      "title": "Palak (Spinach) Soup",
+      "description": "A smooth, bright green spinach soup — palak cooked just briefly with onion, garlic and cumin in butter, blended and finished with milk, pepper and a squeeze of lemon.",
+      "cuisine": "pan_indian",
+      "mealTypes": [
+        "dinner",
+        "snack"
+      ],
+      "course": "side",
+      "servings": 3,
+      "prepMin": 10,
+      "cookMin": 15,
+      "difficulty": "easy",
+      "equipment": [
+        "saucepan",
+        "blender|mixer_grinder"
+      ],
+      "ingredients": [
+        {
+          "ref": "spinach",
+          "g": 300,
+          "measure": "1 large bunch",
+          "prep": "washed, thick stems trimmed, roughly chopped"
+        },
+        {
+          "ref": "onion",
+          "g": 60,
+          "measure": "1 small",
+          "prep": "chopped"
+        },
+        {
+          "ref": "garlic",
+          "g": 10,
+          "measure": "3 cloves",
+          "prep": "chopped"
+        },
+        {
+          "ref": "ginger",
+          "g": 5,
+          "prep": "chopped"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 2,
+          "measure": "½ chilli"
+        },
+        {
+          "ref": "butter",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "cumin_seeds",
+          "g": 1,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "water",
+          "g": 350
+        },
+        {
+          "ref": "salt",
+          "g": 3,
+          "toTaste": true
+        },
+        {
+          "ref": "milk",
+          "g": 150,
+          "measure": "about ⅔ cup"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 1,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 5,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "cream_fresh",
+          "g": 10,
+          "optional": true,
+          "measure": "2 tsp",
+          "prep": "for swirling"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Wash and chop",
+          "kind": "prep",
+          "text": "Wash the spinach in two changes of water to remove grit, then chop roughly. Chop the onion, garlic, ginger and green chilli.",
+          "uses": [
+            "spinach",
+            "onion",
+            "garlic",
+            "ginger",
+            "green_chilli"
+          ],
+          "visual": "A heap of roughly chopped dark green spinach on a wooden board beside chopped onion, garlic, ginger and a green chilli"
+        },
+        {
+          "title": "Sauté the aromatics",
+          "kind": "cook",
+          "text": "Melt the butter in a saucepan over medium heat. Add the cumin seeds, then the onion, garlic, ginger and chilli. Cook for 4 to 5 minutes until the onion is soft but not brown.",
+          "uses": [
+            "butter",
+            "cumin_seeds"
+          ],
+          "visual": "Soft translucent onion with garlic, ginger and cumin seeds in melted butter in a steel saucepan",
+          "timerMin": 5,
+          "heat": "medium"
+        },
+        {
+          "title": "Wilt the spinach",
+          "kind": "cook",
+          "text": "Add the spinach, water and salt. Bring to a boil and cook uncovered for just 3 minutes — longer cooking turns the soup dull and khaki.",
+          "uses": [
+            "water",
+            "salt"
+          ],
+          "visual": "Bright green wilted spinach submerged in bubbling water in the saucepan, still vivid in colour",
+          "timerMin": 3,
+          "heat": "high"
+        },
+        {
+          "title": "Blend smooth",
+          "kind": "prep",
+          "text": "Cool for 5 to 10 minutes, then blend until completely smooth. Blending hot liquid can splash, so fill the jar only halfway.",
+          "uses": [],
+          "visual": "A smooth, vivid green spinach purée in a blender jar, a few bubbles on top",
+          "equipment": [
+            "blender|mixer_grinder"
+          ]
+        },
+        {
+          "title": "Finish with milk",
+          "kind": "cook",
+          "text": "Return the purée to the saucepan, stir in the milk and black pepper and warm on low heat for 2 to 3 minutes. Don't let it boil hard.",
+          "uses": [
+            "milk",
+            "black_pepper"
+          ],
+          "visual": "A creamy, pale-green spinach soup gently steaming in the saucepan with flecks of black pepper",
+          "timerMin": 3,
+          "heat": "low"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Stir in the lemon juice off the heat, ladle into bowls and swirl a little cream on top if you like.",
+          "uses": [
+            "lemon_juice",
+            "cream_fresh"
+          ],
+          "visual": "Bright green palak soup in a white bowl with a thin white swirl of cream and a pinch of black pepper on top"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "milk",
+          "with": "coconut_milk",
+          "ratio": 0.5,
+          "note": "Use 75 ml coconut milk topped up with water for a dairy-free soup."
+        },
+        {
+          "ref": "butter",
+          "with": "olive_oil",
+          "ratio": 1,
+          "note": "Olive oil keeps it vegan along with the coconut milk swap."
+        }
+      ],
+      "storage": "Keeps 2 days in the fridge; the colour dulls slightly.",
+      "reheating": "Warm gently on low heat — boiling turns spinach soup grey.",
+      "tags": [
+        "kid_friendly"
+      ]
+    },
+    {
+      "id": "creamy-mushroom-soup-milk",
+      "title": "Creamy Mushroom Soup with Milk",
+      "description": "Deeply browned button mushrooms simmered into a velvety soup thickened with a little atta and milk rather than cream, then half-blended so it stays chunky.",
+      "cuisine": "continental",
+      "mealTypes": [
+        "dinner"
+      ],
+      "course": "side",
+      "servings": 3,
+      "prepMin": 10,
+      "cookMin": 25,
+      "difficulty": "easy",
+      "equipment": [
+        "saucepan",
+        "whisk",
+        "blender|mixer_grinder"
+      ],
+      "ingredients": [
+        {
+          "ref": "onion",
+          "g": 60,
+          "measure": "1 small",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "garlic",
+          "g": 10,
+          "measure": "3 cloves",
+          "prep": "minced"
+        },
+        {
+          "ref": "mushroom",
+          "g": 300,
+          "measure": "1½ packs",
+          "prep": "sliced"
+        },
+        {
+          "ref": "butter",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "oregano",
+          "g": 1,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 3,
+          "toTaste": true
+        },
+        {
+          "ref": "atta",
+          "g": 12,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "water",
+          "g": 250
+        },
+        {
+          "ref": "milk",
+          "g": 300,
+          "measure": "1¼ cups"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 2,
+          "measure": "1 tsp",
+          "prep": "freshly crushed"
+        },
+        {
+          "ref": "parsley",
+          "g": 5,
+          "prep": "chopped"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Prepare the vegetables",
+          "kind": "prep",
+          "text": "Wipe the mushrooms clean with a damp cloth (don't soak them) and slice. Finely chop the onion and mince the garlic. Set aside a handful of mushroom slices for garnish.",
+          "uses": [
+            "onion",
+            "garlic",
+            "mushroom"
+          ],
+          "visual": "A pile of sliced button mushrooms on a wooden board next to finely chopped onion and minced garlic"
+        },
+        {
+          "title": "Soften onion and garlic",
+          "kind": "cook",
+          "text": "Melt the butter in a saucepan over medium heat. Add the onion and garlic and cook for 3 minutes until soft.",
+          "uses": [
+            "butter"
+          ],
+          "visual": "Softened chopped onion and garlic glistening in melted butter in a steel saucepan",
+          "timerMin": 3,
+          "heat": "medium"
+        },
+        {
+          "title": "Brown the mushrooms",
+          "kind": "cook",
+          "text": "Turn the heat to high, add all the mushrooms, the oregano and a pinch of salt. Cook for 8 minutes, stirring now and then, until the released liquid evaporates and the mushrooms turn golden-brown.",
+          "uses": [
+            "oregano",
+            "salt"
+          ],
+          "visual": "Golden-brown, shrunken mushroom slices in the saucepan with onion, the pan dry with browned bits stuck to the base",
+          "timerMin": 8,
+          "heat": "high"
+        },
+        {
+          "title": "Cook the flour",
+          "kind": "cook",
+          "text": "Lower the heat, sprinkle in the atta and stir for 1 to 2 minutes so it loses its raw taste.",
+          "uses": [
+            "atta"
+          ],
+          "visual": "Browned mushrooms coated in a light dusting of toasted flour in the saucepan",
+          "timerMin": 2,
+          "heat": "low"
+        },
+        {
+          "title": "Add water and milk",
+          "kind": "cook",
+          "text": "Whisk in the water a little at a time, then the milk, scraping the base. Simmer on low heat for 6 to 8 minutes, stirring, until thickened.",
+          "uses": [
+            "water",
+            "milk"
+          ],
+          "visual": "A creamy, light brown soup gently simmering in the saucepan with mushroom slices visible, a whisk resting at the side",
+          "timerMin": 7,
+          "heat": "low",
+          "equipment": [
+            "whisk"
+          ]
+        },
+        {
+          "title": "Half-blend",
+          "kind": "prep",
+          "text": "Blend about half the soup until smooth and stir it back in. This gives a creamy body with chunky pieces.",
+          "uses": [],
+          "visual": "A blender jar of smooth mushroom purée being poured back into the saucepan of chunky soup",
+          "equipment": [
+            "blender|mixer_grinder"
+          ]
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Season with plenty of black pepper and more salt if needed. Ladle into bowls and top with the reserved mushroom slices and parsley.",
+          "uses": [
+            "black_pepper",
+            "parsley"
+          ],
+          "visual": "Creamy mushroom soup in a white bowl topped with browned mushroom slices, chopped parsley and cracked black pepper"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "atta",
+          "with": "cornflour",
+          "ratio": 0.7,
+          "note": "Thicken with a cornflour slurry at the end for a gluten-free soup."
+        },
+        {
+          "ref": "butter",
+          "with": "olive_oil",
+          "ratio": 1,
+          "note": "Olive oil works well; the soup will be a little lighter in flavour."
+        },
+        {
+          "ref": "parsley",
+          "with": "coriander_leaves",
+          "ratio": 1,
+          "note": "Any fresh green herb will do as garnish."
+        }
+      ],
+      "storage": "Keeps 3 days in the fridge.",
+      "reheating": "Reheat on low, stirring, with a splash of milk or water to loosen.",
+      "tags": []
+    },
+    {
+      "id": "masoor-lentil-soup-lemon-cumin",
+      "title": "Red Lentil Soup with Lemon and Cumin",
+      "description": "A Turkish-style masoor dal soup cooked with onion, carrot, tomato and cumin, part-blended until creamy and finished with lots of lemon and fresh mint. Hearty enough for a light meal.",
+      "cuisine": "middle_eastern",
+      "region": "Turkey",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "complete",
+      "servings": 3,
+      "prepMin": 10,
+      "cookMin": 25,
+      "difficulty": "easy",
+      "equipment": [
+        "pressure_cooker|saucepan",
+        "blender|mixer_grinder"
+      ],
+      "ingredients": [
+        {
+          "ref": "masoor_dal",
+          "g": 150,
+          "measure": "¾ cup"
+        },
+        {
+          "ref": "onion",
+          "g": 80,
+          "measure": "1 small",
+          "prep": "chopped"
+        },
+        {
+          "ref": "carrot",
+          "g": 80,
+          "measure": "1 medium",
+          "prep": "diced"
+        },
+        {
+          "ref": "garlic",
+          "g": 10,
+          "measure": "3 cloves",
+          "prep": "chopped"
+        },
+        {
+          "ref": "tomato",
+          "g": 100,
+          "measure": "1 medium",
+          "prep": "chopped"
+        },
+        {
+          "ref": "olive_oil",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "cumin_powder",
+          "g": 3,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 3,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "water",
+          "g": 900
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 20,
+          "measure": "4 tsp"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 1
+        },
+        {
+          "ref": "mint",
+          "g": 4,
+          "prep": "leaves, torn"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Rinse and chop",
+          "kind": "prep",
+          "text": "Rinse the masoor dal in 3 to 4 changes of water until it runs clear. Chop the onion, carrot, garlic and tomato.",
+          "uses": [
+            "masoor_dal",
+            "onion",
+            "carrot",
+            "garlic",
+            "tomato"
+          ],
+          "visual": "Rinsed orange masoor dal in a steel strainer next to chopped onion, diced carrot, garlic and tomato on a wooden board"
+        },
+        {
+          "title": "Sauté the base",
+          "kind": "cook",
+          "text": "Heat the olive oil in a pressure cooker over medium heat. Add the onion, carrot and garlic and cook for 5 minutes until the onion is soft.",
+          "uses": [
+            "olive_oil"
+          ],
+          "visual": "Softened onion, orange carrot dice and garlic sautéing in olive oil at the bottom of an open pressure cooker",
+          "timerMin": 5,
+          "heat": "medium"
+        },
+        {
+          "title": "Add spices and tomato",
+          "kind": "cook",
+          "text": "Stir in the cumin and Kashmiri chilli for 30 seconds, then add the tomato and cook for 2 to 3 minutes until it softens.",
+          "uses": [
+            "cumin_powder",
+            "kashmiri_chilli"
+          ],
+          "visual": "The vegetables now coated in red-orange spice with softened tomato pieces in the pressure cooker",
+          "timerMin": 3,
+          "heat": "medium"
+        },
+        {
+          "title": "Cook the lentils",
+          "kind": "cook",
+          "text": "Add the dal, water and salt. Close and cook on medium heat for 10 minutes (about 3 whistles), then let the pressure drop. In a saucepan, simmer covered for 25 minutes until the lentils fall apart.",
+          "uses": [
+            "water",
+            "salt"
+          ],
+          "visual": "Soft, broken-down orange lentils and vegetables in a thick soupy liquid in the opened pressure cooker",
+          "timerMin": 10,
+          "heat": "medium",
+          "equipment": [
+            "pressure_cooker|saucepan"
+          ]
+        },
+        {
+          "title": "Blend until creamy",
+          "kind": "prep",
+          "text": "Blend the soup until smooth, or blend just half for some texture. Add a splash of hot water if it's thicker than you like.",
+          "uses": [],
+          "visual": "A smooth, creamy, golden-orange lentil soup in a blender jar",
+          "equipment": [
+            "blender|mixer_grinder"
+          ]
+        },
+        {
+          "title": "Finish and serve",
+          "kind": "serve",
+          "text": "Stir in the lemon juice and black pepper. Serve hot in bowls topped with torn mint leaves and an extra wedge of lemon.",
+          "uses": [
+            "lemon_juice",
+            "black_pepper",
+            "mint"
+          ],
+          "visual": "Golden-orange red lentil soup in a deep bowl, flecked with black pepper, torn mint leaves on top and a lemon wedge on the side"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "masoor_dal",
+          "with": "moong_dal",
+          "ratio": 1,
+          "note": "Yellow moong dal gives a paler, equally creamy soup."
+        },
+        {
+          "ref": "olive_oil",
+          "with": "butter",
+          "ratio": 1,
+          "note": "Butter is the traditional choice for the finishing drizzle."
+        },
+        {
+          "ref": "mint",
+          "with": "parsley",
+          "ratio": 1,
+          "note": "Parsley or coriander work as a fresh topping."
+        }
+      ],
+      "storage": "Keeps 4 days in the fridge and freezes well for 1 month.",
+      "reheating": "Reheat with a splash of water, stirring, as it thickens when chilled.",
+      "tags": [
+        "meal_prep",
+        "one_pot",
+        "family"
+      ]
+    },
+    {
+      "id": "minestrone-whole-wheat-pasta",
+      "title": "Minestrone with Whole-Wheat Pasta",
+      "description": "A chunky Italian vegetable soup with carrot, celery, zucchini, beans, tomato and spinach, made hearty with rajma and small whole-wheat pasta, finished with basil and parmesan.",
+      "cuisine": "continental",
+      "region": "Italy",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "complete",
+      "servings": 3,
+      "prepMin": 20,
+      "cookMin": 45,
+      "restMin": 480,
+      "difficulty": "medium",
+      "equipment": [
+        "pressure_cooker",
+        "saucepan|kadai",
+        "knife_board"
+      ],
+      "ingredients": [
+        {
+          "ref": "rajma",
+          "g": 60,
+          "measure": "⅓ cup dry",
+          "prep": "soaked overnight"
+        },
+        {
+          "ref": "water",
+          "g": 1100
+        },
+        {
+          "ref": "onion",
+          "g": 60,
+          "measure": "1 small",
+          "prep": "diced"
+        },
+        {
+          "ref": "garlic",
+          "g": 10,
+          "measure": "3 cloves",
+          "prep": "chopped"
+        },
+        {
+          "ref": "carrot",
+          "g": 80,
+          "measure": "1 medium",
+          "prep": "diced"
+        },
+        {
+          "ref": "celery",
+          "g": 40,
+          "measure": "1 stalk",
+          "prep": "diced"
+        },
+        {
+          "ref": "zucchini",
+          "g": 100,
+          "prep": "diced"
+        },
+        {
+          "ref": "french_beans",
+          "g": 50,
+          "prep": "1-cm pieces"
+        },
+        {
+          "ref": "tomato",
+          "g": 250,
+          "measure": "2–3 medium",
+          "prep": "grated or finely chopped"
+        },
+        {
+          "ref": "olive_oil",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "oregano",
+          "g": 1,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true
+        },
+        {
+          "ref": "whole_wheat_pasta",
+          "g": 80,
+          "measure": "¾ cup",
+          "prep": "small shapes such as macaroni"
+        },
+        {
+          "ref": "spinach",
+          "g": 50,
+          "prep": "shredded"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 1
+        },
+        {
+          "ref": "basil",
+          "g": 6,
+          "prep": "torn"
+        },
+        {
+          "ref": "parmesan",
+          "g": 15,
+          "measure": "3 tbsp",
+          "prep": "grated"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Soak the rajma",
+          "kind": "rest",
+          "text": "Soak the rajma in plenty of water for 8 hours or overnight.",
+          "uses": [
+            "rajma"
+          ],
+          "visual": "Plump, dark red kidney beans soaking in a steel bowl of water",
+          "timerMin": 480
+        },
+        {
+          "title": "Pressure-cook the rajma",
+          "kind": "cook",
+          "text": "Drain the rajma and pressure-cook with 2 cups of the water on medium heat for 20 minutes (about 5 to 6 whistles) until completely soft. Keep the cooking liquid.",
+          "uses": [
+            "water"
+          ],
+          "visual": "Soft cooked rajma in its dark red cooking liquid in an opened pressure cooker",
+          "timerMin": 20,
+          "heat": "medium",
+          "equipment": [
+            "pressure_cooker"
+          ]
+        },
+        {
+          "title": "Dice the vegetables",
+          "kind": "prep",
+          "text": "Dice the onion, carrot, celery and zucchini to a similar small size, chop the garlic, cut the beans and grate the tomatoes.",
+          "uses": [
+            "onion",
+            "garlic",
+            "carrot",
+            "celery",
+            "zucchini",
+            "french_beans",
+            "tomato"
+          ],
+          "visual": "Evenly diced onion, carrot, celery and zucchini, chopped beans and garlic on a wooden board beside a bowl of grated tomato"
+        },
+        {
+          "title": "Cook the soup base",
+          "kind": "cook",
+          "text": "Heat the olive oil in a large saucepan over medium heat. Add the onion, garlic, carrot and celery and cook gently for 6 minutes until softened.",
+          "uses": [
+            "olive_oil"
+          ],
+          "visual": "Softened diced onion, carrot and celery glistening with olive oil in a large steel saucepan",
+          "timerMin": 6,
+          "heat": "medium"
+        },
+        {
+          "title": "Add tomato and vegetables",
+          "kind": "cook",
+          "text": "Add the grated tomato, zucchini, beans, oregano and salt. Cook for 4 minutes, stirring, until the tomato darkens slightly.",
+          "uses": [
+            "oregano",
+            "salt"
+          ],
+          "visual": "Zucchini and bean pieces in a thick, bubbling tomato base with carrot and celery in the saucepan",
+          "timerMin": 4,
+          "heat": "medium"
+        },
+        {
+          "title": "Simmer with the beans",
+          "kind": "cook",
+          "text": "Add the cooked rajma with its liquid and the remaining water. Bring to a boil and simmer for 10 minutes.",
+          "uses": [],
+          "visual": "A brothy red-orange vegetable soup with dark red kidney beans simmering in the saucepan",
+          "timerMin": 10,
+          "heat": "medium"
+        },
+        {
+          "title": "Cook the pasta in the soup",
+          "kind": "cook",
+          "text": "Add the pasta and simmer for 9 to 10 minutes, stirring now and then so it doesn't stick, until tender. Add a splash of water if the soup gets too thick.",
+          "uses": [
+            "whole_wheat_pasta"
+          ],
+          "visual": "Small brown whole-wheat macaroni swelling in the thick vegetable and bean soup, a ladle stirring through",
+          "timerMin": 10,
+          "heat": "medium"
+        },
+        {
+          "title": "Wilt the spinach",
+          "kind": "cook",
+          "text": "Stir in the spinach and black pepper and cook for 1 minute until just wilted. Taste for salt.",
+          "uses": [
+            "spinach",
+            "black_pepper"
+          ],
+          "visual": "Dark green ribbons of spinach just wilting into the chunky minestrone in the saucepan",
+          "timerMin": 1,
+          "heat": "low"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Ladle into deep bowls and top with torn basil and grated parmesan.",
+          "uses": [
+            "basil",
+            "parmesan"
+          ],
+          "visual": "A deep bowl of chunky minestrone with pasta, kidney beans, vegetables and spinach in tomato broth, topped with basil leaves and grated parmesan"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "rajma",
+          "with": "kabuli_chana",
+          "ratio": 1,
+          "note": "Chickpeas work just as well; pressure-cook for about 15 minutes."
+        },
+        {
+          "ref": "whole_wheat_pasta",
+          "with": "foxtail_millet",
+          "ratio": 0.8,
+          "note": "Add rinsed foxtail millet instead of pasta and simmer 15 minutes for a millet minestrone."
+        },
+        {
+          "ref": "parmesan",
+          "with": "cheese_cheddar",
+          "ratio": 1,
+          "note": "Skip cheese altogether for a vegan soup."
+        }
+      ],
+      "storage": "Keeps 3 days in the fridge. The pasta keeps absorbing liquid, so store it thick and loosen when reheating.",
+      "reheating": "Reheat with a splash of water until bubbling.",
+      "tags": [
+        "family",
+        "meal_prep",
+        "one_pot"
+      ]
+    },
+    {
+      "id": "broccoli-almond-soup",
+      "title": "Broccoli–Almond Soup",
+      "description": "A smooth, bright green broccoli soup made creamy with soaked almonds blended in, a little milk and garlic, topped with toasted almond slivers.",
+      "cuisine": "continental",
+      "mealTypes": [
+        "dinner"
+      ],
+      "course": "side",
+      "servings": 3,
+      "prepMin": 10,
+      "cookMin": 18,
+      "restMin": 30,
+      "difficulty": "easy",
+      "equipment": [
+        "saucepan",
+        "blender|mixer_grinder"
+      ],
+      "ingredients": [
+        {
+          "ref": "almonds",
+          "g": 30,
+          "measure": "about 25 almonds"
+        },
+        {
+          "ref": "onion",
+          "g": 60,
+          "measure": "1 small",
+          "prep": "chopped"
+        },
+        {
+          "ref": "garlic",
+          "g": 8,
+          "measure": "2–3 cloves",
+          "prep": "chopped"
+        },
+        {
+          "ref": "broccoli",
+          "g": 350,
+          "measure": "1 medium head",
+          "prep": "florets, stalk peeled and sliced"
+        },
+        {
+          "ref": "olive_oil",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "water",
+          "g": 450
+        },
+        {
+          "ref": "salt",
+          "g": 3,
+          "toTaste": true
+        },
+        {
+          "ref": "milk",
+          "g": 200,
+          "measure": "about ¾ cup"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 1,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 5,
+          "measure": "1 tsp"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Soak the almonds",
+          "kind": "rest",
+          "text": "Soak the almonds in hot water for 30 minutes so they blend smoothly. Set 5 aside for garnish and slice them thinly.",
+          "uses": [
+            "almonds"
+          ],
+          "visual": "Brown almonds soaking in a small steel bowl of hot water, a few sliced almond slivers on a board beside",
+          "timerMin": 30
+        },
+        {
+          "title": "Prepare the vegetables",
+          "kind": "prep",
+          "text": "Chop the onion and garlic. Cut the broccoli into florets; peel the tough skin off the stalk and slice it — the stalk adds flavour.",
+          "uses": [
+            "onion",
+            "garlic",
+            "broccoli"
+          ],
+          "visual": "Green broccoli florets and sliced pale stalk on a wooden board with chopped onion and garlic"
+        },
+        {
+          "title": "Sauté onion and garlic",
+          "kind": "cook",
+          "text": "Heat the olive oil in a saucepan over medium heat and cook the onion and garlic for 3 minutes until soft.",
+          "uses": [
+            "olive_oil"
+          ],
+          "visual": "Soft, translucent onion and garlic in olive oil in a steel saucepan",
+          "timerMin": 3,
+          "heat": "medium"
+        },
+        {
+          "title": "Simmer the broccoli",
+          "kind": "cook",
+          "text": "Add the broccoli, water and salt. Bring to a boil, then simmer uncovered for 7 to 8 minutes until the broccoli is tender but still bright green.",
+          "uses": [
+            "water",
+            "salt"
+          ],
+          "visual": "Bright green broccoli florets simmering in water in the saucepan",
+          "timerMin": 8,
+          "heat": "medium"
+        },
+        {
+          "title": "Blend with almonds",
+          "kind": "prep",
+          "text": "Drain the soaked almonds (except the garnish slivers) and add them to the blender with the broccoli and its liquid. Cool slightly and blend until very smooth.",
+          "uses": [],
+          "visual": "A thick, smooth, pale green broccoli and almond purée in a blender jar",
+          "equipment": [
+            "blender|mixer_grinder"
+          ]
+        },
+        {
+          "title": "Finish with milk",
+          "kind": "cook",
+          "text": "Pour back into the saucepan, stir in the milk and pepper and warm on low heat for 2 minutes without boiling.",
+          "uses": [
+            "milk",
+            "black_pepper"
+          ],
+          "visual": "A creamy green soup steaming gently in the saucepan, black pepper specks on top",
+          "timerMin": 2,
+          "heat": "low"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Stir in the lemon juice, ladle into bowls and top with the almond slivers toasted for a minute on a dry tawa.",
+          "uses": [
+            "lemon_juice"
+          ],
+          "visual": "A bowl of smooth green broccoli–almond soup topped with toasted almond slivers and a crack of black pepper"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "almonds",
+          "with": "cashews",
+          "ratio": 1,
+          "note": "Cashews blend even creamier and need only 15 minutes soaking."
+        },
+        {
+          "ref": "milk",
+          "with": "water",
+          "ratio": 1,
+          "note": "Use water and let the almonds supply the creaminess for a vegan soup."
+        }
+      ],
+      "storage": "Keeps 2 days in the fridge.",
+      "reheating": "Warm gently over low heat, stirring; thin with water if needed.",
+      "tags": []
+    },
+    {
+      "id": "roasted-pumpkin-soup-coconut",
+      "title": "Roasted Pumpkin Soup with Coconut Milk",
+      "description": "Red pumpkin roasted with onion, garlic and cumin until caramelised, then blended with ginger and finished with a little coconut milk and toasted pumpkin seeds.",
+      "cuisine": "continental",
+      "mealTypes": [
+        "dinner",
+        "lunch"
+      ],
+      "course": "side",
+      "servings": 3,
+      "prepMin": 10,
+      "cookMin": 35,
+      "difficulty": "easy",
+      "equipment": [
+        "oven|air_fryer",
+        "baking_tray",
+        "saucepan",
+        "blender|mixer_grinder"
+      ],
+      "ingredients": [
+        {
+          "ref": "pumpkin",
+          "g": 500,
+          "prep": "peeled, deseeded, 1-inch cubes"
+        },
+        {
+          "ref": "onion",
+          "g": 60,
+          "measure": "1 small",
+          "prep": "quartered"
+        },
+        {
+          "ref": "garlic",
+          "g": 10,
+          "measure": "3 cloves",
+          "prep": "whole, peeled"
+        },
+        {
+          "ref": "olive_oil",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "cumin_powder",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 3,
+          "toTaste": true
+        },
+        {
+          "ref": "black_pepper",
+          "g": 1
+        },
+        {
+          "ref": "ginger",
+          "g": 6,
+          "prep": "grated"
+        },
+        {
+          "ref": "water",
+          "g": 400
+        },
+        {
+          "ref": "coconut_milk",
+          "g": 60,
+          "measure": "¼ cup"
+        },
+        {
+          "ref": "pumpkin_seeds",
+          "g": 10,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "chilli_flakes",
+          "g": 0.5,
+          "measure": "a pinch"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Season the pumpkin",
+          "kind": "prep",
+          "text": "Preheat the oven to 200°C. Toss the pumpkin cubes, onion and garlic with the olive oil, cumin, salt and pepper and spread on a baking tray.",
+          "uses": [
+            "pumpkin",
+            "onion",
+            "garlic",
+            "olive_oil",
+            "cumin_powder",
+            "salt",
+            "black_pepper"
+          ],
+          "visual": "Orange pumpkin cubes, onion quarters and whole garlic cloves glossy with oil and dusted with cumin, spread on a metal baking tray",
+          "tempC": 200,
+          "equipment": [
+            "baking_tray"
+          ]
+        },
+        {
+          "title": "Roast until caramelised",
+          "kind": "cook",
+          "text": "Roast at 200°C for 25 minutes, turning once, until the pumpkin is soft and browned at the edges. In an air fryer, cook at 190°C for 18 minutes, shaking halfway.",
+          "uses": [],
+          "visual": "Soft roasted pumpkin cubes with caramelised dark edges, golden onion and garlic on the baking tray",
+          "timerMin": 25,
+          "tempC": 200,
+          "equipment": [
+            "oven|air_fryer"
+          ]
+        },
+        {
+          "title": "Simmer with ginger",
+          "kind": "cook",
+          "text": "Tip the roasted vegetables into a saucepan with the ginger and water. Simmer for 5 minutes.",
+          "uses": [
+            "ginger",
+            "water"
+          ],
+          "visual": "Roasted pumpkin, onion and garlic simmering in water in a steel saucepan with grated ginger",
+          "timerMin": 5,
+          "heat": "medium"
+        },
+        {
+          "title": "Blend until velvety",
+          "kind": "prep",
+          "text": "Cool slightly and blend until completely smooth.",
+          "uses": [],
+          "visual": "A thick, smooth, bright orange pumpkin purée in a blender jar",
+          "equipment": [
+            "blender|mixer_grinder"
+          ]
+        },
+        {
+          "title": "Add coconut milk",
+          "kind": "cook",
+          "text": "Return to the saucepan, stir in most of the coconut milk and warm on low heat for 2 minutes. Add water if it's too thick and check the salt.",
+          "uses": [
+            "coconut_milk"
+          ],
+          "visual": "Velvety orange soup in the saucepan with a ribbon of white coconut milk being stirred in",
+          "timerMin": 2,
+          "heat": "low"
+        },
+        {
+          "title": "Toast the seeds",
+          "kind": "cook",
+          "text": "Toast the pumpkin seeds on a dry tawa over low heat for 2 minutes until they puff and start to pop.",
+          "uses": [
+            "pumpkin_seeds"
+          ],
+          "visual": "Green pumpkin seeds puffing and lightly browning on a black tawa",
+          "timerMin": 2,
+          "heat": "low",
+          "equipment": [
+            "tawa"
+          ]
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Ladle into bowls, swirl in the remaining coconut milk and top with toasted pumpkin seeds and a pinch of chilli flakes.",
+          "uses": [
+            "chilli_flakes"
+          ],
+          "visual": "Bright orange pumpkin soup in a bowl with a white coconut milk swirl, toasted green pumpkin seeds and red chilli flakes on top"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "coconut_milk",
+          "with": "milk",
+          "ratio": 1.5,
+          "note": "Use toned milk for a milder, non-coconut version."
+        },
+        {
+          "ref": "pumpkin",
+          "with": "sweet_potato",
+          "ratio": 1,
+          "note": "Sweet potato makes a thicker, sweeter soup with noticeably more carbs."
+        },
+        {
+          "ref": "pumpkin_seeds",
+          "with": "sunflower_seeds",
+          "ratio": 1,
+          "note": "Sunflower seeds are cheaper and toast the same way."
+        }
+      ],
+      "storage": "Keeps 3 days in the fridge or 1 month in the freezer (freeze before adding coconut milk).",
+      "reheating": "Warm gently on low, stirring; add water to loosen.",
+      "tags": [
+        "kid_friendly",
+        "family"
+      ]
+    },
+    {
+      "id": "cucumber-mint-yogurt-salad",
+      "title": "Cucumber–Mint Yogurt Salad",
+      "description": "A cooling, tzatziki-style salad of salted, squeezed cucumber folded into garlicky hung curd with mint, dill and lemon. Great with grilled chicken, kebabs or falafel.",
+      "cuisine": "mediterranean",
+      "region": "Greece",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "side",
+      "servings": 3,
+      "prepMin": 20,
+      "cookMin": 0,
+      "difficulty": "easy",
+      "equipment": [
+        "knife_board",
+        "mixing_bowl"
+      ],
+      "ingredients": [
+        {
+          "ref": "cucumber",
+          "g": 400,
+          "measure": "2 cucumbers",
+          "prep": "halved lengthways, deseeded, sliced"
+        },
+        {
+          "ref": "salt",
+          "g": 2,
+          "toTaste": true
+        },
+        {
+          "ref": "hung_curd",
+          "g": 120,
+          "measure": "½ cup"
+        },
+        {
+          "ref": "garlic",
+          "g": 3,
+          "measure": "1 small clove",
+          "prep": "grated"
+        },
+        {
+          "ref": "mint",
+          "g": 15,
+          "prep": "leaves, finely chopped"
+        },
+        {
+          "ref": "dill",
+          "g": 4,
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 1
+        },
+        {
+          "ref": "cumin_powder",
+          "g": 1,
+          "measure": "½ tsp",
+          "prep": "roasted"
+        },
+        {
+          "ref": "olive_oil",
+          "g": 5,
+          "measure": "1 tsp"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Salt the cucumber",
+          "kind": "prep",
+          "text": "Halve the cucumbers lengthways, scoop out the seeds with a teaspoon and slice into half-moons. Toss with a pinch of salt in a colander and leave for 10 minutes to draw out water.",
+          "uses": [
+            "cucumber",
+            "salt"
+          ],
+          "visual": "Deseeded cucumber half-moons in a steel colander, beads of water forming on the slices",
+          "timerMin": 10
+        },
+        {
+          "title": "Squeeze dry",
+          "kind": "prep",
+          "text": "Press the cucumber firmly with your hands or wrap in a cloth and squeeze out the liquid, so the yogurt stays thick.",
+          "uses": [],
+          "visual": "A handful of squeezed cucumber slices above the colander, a puddle of drained liquid below"
+        },
+        {
+          "title": "Mix the yogurt dressing",
+          "kind": "prep",
+          "text": "In a mixing bowl stir the hung curd with the garlic, mint, dill, lemon juice, black pepper and roasted cumin until smooth.",
+          "uses": [
+            "hung_curd",
+            "garlic",
+            "mint",
+            "dill",
+            "lemon_juice",
+            "black_pepper",
+            "cumin_powder"
+          ],
+          "visual": "A thick white yogurt dressing flecked with chopped green mint and feathery dill in a steel mixing bowl"
+        },
+        {
+          "title": "Fold in the cucumber",
+          "kind": "assemble",
+          "text": "Fold the squeezed cucumber into the yogurt and taste for salt. Chill for 10 minutes if you have time.",
+          "uses": [],
+          "visual": "Pale green cucumber slices folded through the thick herby yogurt in the steel bowl"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Spoon into a serving bowl and drizzle with the olive oil. Serve chilled as a side.",
+          "uses": [
+            "olive_oil"
+          ],
+          "visual": "Cucumber–mint yogurt salad in a white bowl, a thin golden drizzle of olive oil on top and a few mint leaves"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "hung_curd",
+          "with": "curd",
+          "ratio": 1,
+          "note": "Regular curd makes a looser, raita-like salad."
+        },
+        {
+          "ref": "dill",
+          "with": "mint",
+          "ratio": 1,
+          "note": "Skip dill and simply use more mint."
+        }
+      ],
+      "storage": "Keeps 1 day in the fridge; drain off any liquid before serving.",
+      "tags": [
+        "no_cook"
+      ]
+    },
+    {
+      "id": "mediterranean-chickpea-salad",
+      "title": "Mediterranean Chickpea Salad",
+      "description": "Firm-cooked kabuli chana tossed with cucumber, tomato, red onion, capsicum, olives and parsley in a lemon, cumin and olive oil dressing. A filling make-ahead lunch.",
+      "cuisine": "mediterranean",
+      "mealTypes": [
+        "lunch"
+      ],
+      "course": "complete",
+      "servings": 3,
+      "prepMin": 15,
+      "cookMin": 15,
+      "restMin": 490,
+      "difficulty": "easy",
+      "equipment": [
+        "pressure_cooker",
+        "mixing_bowl",
+        "knife_board"
+      ],
+      "ingredients": [
+        {
+          "ref": "kabuli_chana",
+          "g": 150,
+          "measure": "¾ cup dry",
+          "prep": "soaked overnight"
+        },
+        {
+          "ref": "water",
+          "g": 500
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true
+        },
+        {
+          "ref": "cucumber",
+          "g": 150,
+          "prep": "diced"
+        },
+        {
+          "ref": "tomato",
+          "g": 150,
+          "prep": "diced"
+        },
+        {
+          "ref": "onion",
+          "g": 60,
+          "prep": "red onion if available, finely chopped"
+        },
+        {
+          "ref": "capsicum",
+          "g": 80,
+          "prep": "diced"
+        },
+        {
+          "ref": "olives",
+          "g": 20,
+          "measure": "about 5 olives",
+          "prep": "sliced"
+        },
+        {
+          "ref": "parsley",
+          "g": 15,
+          "prep": "chopped"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 30,
+          "measure": "2 tbsp"
+        },
+        {
+          "ref": "olive_oil",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "cumin_powder",
+          "g": 2,
+          "measure": "1 tsp",
+          "prep": "roasted"
+        },
+        {
+          "ref": "chilli_flakes",
+          "g": 1,
+          "measure": "½ tsp"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Soak the chickpeas",
+          "kind": "rest",
+          "text": "Soak the chickpeas in plenty of water for 8 hours or overnight.",
+          "uses": [
+            "kabuli_chana"
+          ],
+          "visual": "Swollen beige chickpeas soaking in a large steel bowl of water",
+          "timerMin": 480
+        },
+        {
+          "title": "Cook until just tender",
+          "kind": "cook",
+          "text": "Drain and pressure-cook the chickpeas with the water and a pinch of salt on medium heat for 12 minutes (3 to 4 whistles). They should be tender but hold their shape — firmer than for hummus.",
+          "uses": [
+            "water",
+            "salt"
+          ],
+          "visual": "Whole, plump cooked chickpeas holding their shape in the opened pressure cooker",
+          "timerMin": 12,
+          "heat": "medium",
+          "equipment": [
+            "pressure_cooker"
+          ]
+        },
+        {
+          "title": "Drain and cool",
+          "kind": "rest",
+          "text": "Drain well and spread the chickpeas out to cool for 10 minutes.",
+          "uses": [],
+          "visual": "Drained chickpeas spread across a wide steel plate, cooling",
+          "timerMin": 10
+        },
+        {
+          "title": "Chop the vegetables",
+          "kind": "prep",
+          "text": "Dice the cucumber, tomato and capsicum, finely chop the onion, slice the olives and chop the parsley.",
+          "uses": [
+            "cucumber",
+            "tomato",
+            "onion",
+            "capsicum",
+            "olives",
+            "parsley"
+          ],
+          "visual": "Diced cucumber, tomato and capsicum, finely chopped red onion, sliced black olives and chopped parsley on a wooden board"
+        },
+        {
+          "title": "Whisk the dressing",
+          "kind": "prep",
+          "text": "In a large mixing bowl whisk the lemon juice, olive oil, roasted cumin, chilli flakes and a pinch of salt.",
+          "uses": [
+            "lemon_juice",
+            "olive_oil",
+            "cumin_powder",
+            "chilli_flakes"
+          ],
+          "visual": "A golden lemon–olive oil dressing with red chilli flakes and cumin at the bottom of a large steel mixing bowl"
+        },
+        {
+          "title": "Toss together",
+          "kind": "assemble",
+          "text": "Add the chickpeas and chopped vegetables to the dressing and toss well. Rest for 10 minutes so the chickpeas absorb the flavours.",
+          "uses": [],
+          "visual": "Chickpeas tossed with colourful cucumber, tomato, capsicum, onion, olives and parsley in the steel bowl, glistening with dressing",
+          "timerMin": 10
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve at room temperature or chilled, on its own or over a bed of lettuce.",
+          "uses": [],
+          "visual": "Mediterranean chickpea salad heaped in a wide bowl, colourful with red tomato, green cucumber and capsicum, black olives and parsley, a lemon wedge on the side"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "kabuli_chana",
+          "with": "kala_chana",
+          "ratio": 1,
+          "note": "Black chickpeas are cheaper and nuttier; cook 15 minutes."
+        },
+        {
+          "ref": "olives",
+          "with": "feta",
+          "ratio": 1.5,
+          "note": "Crumble 30 g feta over the top instead of olives."
+        },
+        {
+          "ref": "parsley",
+          "with": "coriander_leaves",
+          "ratio": 1,
+          "note": "Coriander and a little mint work well."
+        }
+      ],
+      "storage": "Keeps 3 days in the fridge in an airtight box — good for packed lunches.",
+      "tags": [
+        "meal_prep"
+      ]
+    },
+    {
+      "id": "watermelon-feta-mint-salad",
+      "title": "Watermelon, Feta and Mint Salad",
+      "description": "Chilled watermelon cubes and crunchy cucumber with salty crumbled feta, torn mint, a few slivers of onion and a light lemon–olive oil dressing. A refreshing summer side.",
+      "cuisine": "mediterranean",
+      "mealTypes": [
+        "lunch",
+        "snack"
+      ],
+      "course": "side",
+      "servings": 4,
+      "prepMin": 15,
+      "cookMin": 0,
+      "difficulty": "easy",
+      "equipment": [
+        "knife_board",
+        "mixing_bowl"
+      ],
+      "ingredients": [
+        {
+          "ref": "watermelon",
+          "g": 600,
+          "measure": "about 4 cups cubed",
+          "prep": "chilled, 1-inch cubes, seeds removed"
+        },
+        {
+          "ref": "cucumber",
+          "g": 150,
+          "prep": "cubed"
+        },
+        {
+          "ref": "onion",
+          "g": 30,
+          "prep": "very thinly sliced"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "olive_oil",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 1
+        },
+        {
+          "ref": "salt",
+          "g": 1,
+          "toTaste": true
+        },
+        {
+          "ref": "mint",
+          "g": 10,
+          "prep": "leaves, torn"
+        },
+        {
+          "ref": "feta",
+          "g": 80,
+          "prep": "crumbled"
+        },
+        {
+          "ref": "chaat_masala",
+          "g": 1,
+          "optional": true,
+          "measure": "a pinch"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Cube the watermelon",
+          "kind": "prep",
+          "text": "Cut the chilled watermelon into 1-inch cubes, flicking out the black seeds with the knife tip as you go. Drain off any juice that collects.",
+          "uses": [
+            "watermelon"
+          ],
+          "visual": "Bright pink-red watermelon cubes piled on a wooden board, a slice of green rind set aside"
+        },
+        {
+          "title": "Cut cucumber and onion",
+          "kind": "prep",
+          "text": "Cube the cucumber to match the watermelon. Slice the onion very thinly and soak it in iced water for 5 minutes to soften its bite, then drain.",
+          "uses": [
+            "cucumber",
+            "onion"
+          ],
+          "visual": "Pale green cucumber cubes on the board beside a small bowl of very thin onion slices in iced water",
+          "timerMin": 5
+        },
+        {
+          "title": "Make the dressing",
+          "kind": "prep",
+          "text": "In a large mixing bowl whisk the lemon juice, olive oil, black pepper and a tiny pinch of salt (the feta adds salt later).",
+          "uses": [
+            "lemon_juice",
+            "olive_oil",
+            "black_pepper",
+            "salt"
+          ],
+          "visual": "A small pool of golden lemon and olive oil dressing speckled with black pepper in a large steel mixing bowl"
+        },
+        {
+          "title": "Toss gently",
+          "kind": "assemble",
+          "text": "Add the watermelon, cucumber, onion and most of the mint to the bowl and toss very gently so the watermelon doesn't break.",
+          "uses": [
+            "mint"
+          ],
+          "visual": "Watermelon and cucumber cubes with thin onion slivers and torn green mint lightly coated in dressing in the steel bowl"
+        },
+        {
+          "title": "Top with feta and serve",
+          "kind": "serve",
+          "text": "Spread onto a platter, scatter over the crumbled feta, the remaining mint and a pinch of chaat masala if you like. Serve straight away while cold.",
+          "uses": [
+            "feta",
+            "chaat_masala"
+          ],
+          "visual": "A white platter of pink watermelon and green cucumber cubes topped with white crumbles of feta and fresh mint leaves"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "feta",
+          "with": "paneer",
+          "ratio": 1,
+          "note": "Crumble fresh paneer with an extra pinch of salt for a milder, cheaper version."
+        },
+        {
+          "ref": "mint",
+          "with": "basil",
+          "ratio": 1,
+          "note": "Basil leaves pair beautifully with watermelon too."
+        }
+      ],
+      "storage": "Best eaten within an hour; the watermelon releases juice as it stands.",
+      "tags": [
+        "no_cook",
+        "kid_friendly"
+      ]
+    },
+    {
+      "id": "rajma-burrito-bowl-brown-rice",
+      "title": "Rajma Burrito Bowl with Brown Rice",
+      "description": "Mexican-style bowl of cumin-spiced rajma, lime–coriander brown rice, fresh tomato salsa, corn, crunchy lettuce and a spoonful of hung curd in place of sour cream.",
+      "cuisine": "mexican",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "complete",
+      "servings": 3,
+      "prepMin": 20,
+      "cookMin": 45,
+      "restMin": 480,
+      "difficulty": "medium",
+      "equipment": [
+        "pressure_cooker",
+        "saucepan",
+        "kadai|non_stick_pan",
+        "knife_board",
+        "mixing_bowl"
+      ],
+      "ingredients": [
+        {
+          "ref": "rajma",
+          "g": 120,
+          "measure": "⅔ cup dry",
+          "prep": "soaked overnight",
+          "group": "Beans"
+        },
+        {
+          "ref": "water",
+          "g": 900,
+          "group": "Beans"
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true,
+          "group": "Beans"
+        },
+        {
+          "ref": "sunflower_oil",
+          "g": 10,
+          "measure": "2 tsp",
+          "group": "Beans"
+        },
+        {
+          "ref": "onion",
+          "g": 60,
+          "prep": "finely chopped",
+          "group": "Beans"
+        },
+        {
+          "ref": "garlic",
+          "g": 8,
+          "measure": "2–3 cloves",
+          "prep": "minced",
+          "group": "Beans"
+        },
+        {
+          "ref": "cumin_powder",
+          "g": 3,
+          "measure": "1½ tsp",
+          "group": "Beans"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 3,
+          "measure": "1 tsp",
+          "group": "Beans"
+        },
+        {
+          "ref": "oregano",
+          "g": 1,
+          "measure": "1 tsp",
+          "group": "Beans"
+        },
+        {
+          "ref": "brown_rice",
+          "g": 120,
+          "measure": "⅔ cup",
+          "prep": "rinsed and soaked 20 minutes",
+          "group": "Rice"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 15,
+          "measure": "1 tbsp",
+          "group": "Rice"
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 10,
+          "prep": "chopped",
+          "group": "Rice"
+        },
+        {
+          "ref": "tomato",
+          "g": 150,
+          "prep": "finely diced",
+          "group": "Salsa"
+        },
+        {
+          "ref": "onion",
+          "g": 40,
+          "prep": "finely diced",
+          "group": "Salsa"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "prep": "finely chopped",
+          "group": "Salsa"
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 10,
+          "prep": "chopped",
+          "group": "Salsa"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 10,
+          "measure": "2 tsp",
+          "group": "Salsa"
+        },
+        {
+          "ref": "lettuce",
+          "g": 80,
+          "prep": "shredded",
+          "group": "Toppings"
+        },
+        {
+          "ref": "sweet_corn",
+          "g": 80,
+          "measure": "½ cup",
+          "group": "Toppings"
+        },
+        {
+          "ref": "hung_curd",
+          "g": 75,
+          "group": "Toppings"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Soak the rajma",
+          "kind": "rest",
+          "text": "Soak the rajma in plenty of water for 8 hours or overnight.",
+          "uses": [
+            "rajma"
+          ],
+          "visual": "Dark red kidney beans swollen in a steel bowl of soaking water",
+          "timerMin": 480
+        },
+        {
+          "title": "Pressure-cook the rajma",
+          "kind": "cook",
+          "text": "Drain and pressure-cook the rajma with 2 cups of water and a pinch of salt on medium heat for 25 minutes (about 6 whistles) until creamy inside. Keep the cooking liquid.",
+          "uses": [
+            "water",
+            "salt"
+          ],
+          "visual": "Soft cooked rajma in dark red cooking liquid in an opened pressure cooker",
+          "timerMin": 25,
+          "heat": "medium",
+          "equipment": [
+            "pressure_cooker"
+          ]
+        },
+        {
+          "title": "Cook the brown rice",
+          "kind": "cook",
+          "text": "Drain the soaked rice and put it in a saucepan with 300 ml water and a pinch of salt. Bring to a boil, cover and cook on low heat for 30 minutes, then rest covered for 5 minutes.",
+          "uses": [
+            "brown_rice"
+          ],
+          "visual": "Fluffy cooked brown rice in a steel saucepan, lid tilted, steam rising",
+          "timerMin": 30,
+          "heat": "low",
+          "equipment": [
+            "saucepan"
+          ]
+        },
+        {
+          "title": "Make the spiced beans",
+          "kind": "cook",
+          "text": "Heat the oil in a kadai on medium heat. Cook the onion for 4 minutes, add the garlic, cumin, Kashmiri chilli and oregano for 30 seconds, then add the rajma with half a cup of its liquid. Mash a few beans and simmer for 5 minutes until thick.",
+          "uses": [
+            "sunflower_oil",
+            "onion",
+            "garlic",
+            "cumin_powder",
+            "kashmiri_chilli",
+            "oregano"
+          ],
+          "visual": "Thick, spiced red-brown rajma with some beans mashed, simmering in a black kadai with softened onion",
+          "timerMin": 5,
+          "heat": "medium"
+        },
+        {
+          "title": "Make the salsa",
+          "kind": "prep",
+          "text": "Mix the diced tomato, onion, green chilli, coriander and lemon juice with a pinch of salt in a small bowl.",
+          "uses": [
+            "tomato",
+            "onion",
+            "green_chilli",
+            "coriander_leaves",
+            "lemon_juice"
+          ],
+          "visual": "A small bowl of fresh salsa with bright red tomato dice, white onion, green chilli and coriander"
+        },
+        {
+          "title": "Flavour the rice",
+          "kind": "prep",
+          "text": "Fluff the rice with a fork and fold in the lemon juice and chopped coriander.",
+          "uses": [],
+          "visual": "Brown rice flecked with green coriander being fluffed with a fork in the saucepan"
+        },
+        {
+          "title": "Prepare the toppings",
+          "kind": "prep",
+          "text": "Shred the lettuce. Boil the corn for 3 minutes, or warm it in a pan, then drain.",
+          "uses": [
+            "lettuce",
+            "sweet_corn"
+          ],
+          "visual": "A heap of shredded green lettuce and a bowl of bright yellow corn kernels on the counter"
+        },
+        {
+          "title": "Build the bowls",
+          "kind": "assemble",
+          "text": "Divide the rice between three bowls. Add the beans, salsa, corn and lettuce in sections and top each with a spoonful of hung curd.",
+          "uses": [
+            "hung_curd"
+          ],
+          "visual": "Three bowls with sections of coriander rice, spiced rajma, red salsa, yellow corn and green lettuce, a dollop of white hung curd in the centre"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve right away with extra lemon wedges on the side.",
+          "uses": [],
+          "visual": "A finished rajma burrito bowl seen from above, colourful sections of rice, beans, salsa, corn and lettuce with white curd, a lemon wedge on the rim"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "brown_rice",
+          "with": "cauliflower",
+          "ratio": 2.5,
+          "note": "Use 300 g riced cauliflower, stir-fried 4 minutes, for a lower-carb bowl."
+        },
+        {
+          "ref": "hung_curd",
+          "with": "avocado",
+          "ratio": 1,
+          "note": "Top with sliced avocado or a spoon of guacamole for a vegan bowl."
+        },
+        {
+          "ref": "rajma",
+          "with": "kala_chana",
+          "ratio": 1,
+          "note": "Black chickpeas work well with the same spices."
+        }
+      ],
+      "storage": "Keep beans, rice and salsa in separate boxes in the fridge for up to 3 days; add lettuce and curd fresh.",
+      "reheating": "Reheat beans and rice until piping hot; add the salsa and toppings cold.",
+      "tags": [
+        "meal_prep",
+        "family"
+      ]
+    },
+    {
+      "id": "mexican-chicken-lettuce-wraps",
+      "title": "Mexican-Spiced Chicken Lettuce Wraps",
+      "description": "Crisp lettuce cups filled with juicy chicken mince cooked with capsicum, tomato, cumin, chilli and oregano, finished with lime and topped with cool hung curd.",
+      "cuisine": "mexican",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "complete",
+      "servings": 2,
+      "prepMin": 15,
+      "cookMin": 15,
+      "difficulty": "easy",
+      "equipment": [
+        "kadai|non_stick_pan",
+        "knife_board",
+        "mixing_bowl"
+      ],
+      "ingredients": [
+        {
+          "ref": "lettuce",
+          "g": 120,
+          "measure": "8 large leaves",
+          "prep": "iceberg, separated"
+        },
+        {
+          "ref": "sunflower_oil",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "onion",
+          "g": 60,
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "garlic",
+          "g": 8,
+          "measure": "2–3 cloves",
+          "prep": "minced"
+        },
+        {
+          "ref": "capsicum",
+          "g": 80,
+          "prep": "finely diced"
+        },
+        {
+          "ref": "chicken_mince",
+          "g": 300
+        },
+        {
+          "ref": "salt",
+          "g": 3,
+          "toTaste": true
+        },
+        {
+          "ref": "cumin_powder",
+          "g": 3,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 4,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "oregano",
+          "g": 1,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 1
+        },
+        {
+          "ref": "tomato",
+          "g": 100,
+          "measure": "1 medium",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 8,
+          "prep": "chopped"
+        },
+        {
+          "ref": "hung_curd",
+          "g": 60
+        }
+      ],
+      "steps": [
+        {
+          "title": "Crisp the lettuce cups",
+          "kind": "prep",
+          "text": "Gently separate 8 large lettuce leaves, soak them in iced water for 10 minutes to crisp, then drain and pat dry.",
+          "uses": [
+            "lettuce"
+          ],
+          "visual": "Whole, cupped iceberg lettuce leaves floating in a large bowl of iced water",
+          "timerMin": 10
+        },
+        {
+          "title": "Sauté the vegetables",
+          "kind": "cook",
+          "text": "Heat the oil in a kadai over medium heat. Cook the onion, garlic and capsicum for 4 minutes until softened.",
+          "uses": [
+            "sunflower_oil",
+            "onion",
+            "garlic",
+            "capsicum"
+          ],
+          "visual": "Softened chopped onion and green capsicum with minced garlic in a little oil in a black kadai",
+          "timerMin": 4,
+          "heat": "medium"
+        },
+        {
+          "title": "Brown the chicken",
+          "kind": "cook",
+          "text": "Add the chicken mince and salt, raise the heat and cook for 6 to 7 minutes, breaking it up with a spatula, until no pink remains and it starts to brown.",
+          "uses": [
+            "chicken_mince",
+            "salt"
+          ],
+          "visual": "Crumbly, lightly browned chicken mince mixed with capsicum and onion in the kadai",
+          "timerMin": 7,
+          "heat": "high"
+        },
+        {
+          "title": "Spice it up",
+          "kind": "cook",
+          "text": "Stir in the cumin, Kashmiri chilli, oregano and black pepper, then the tomato. Cook for 3 minutes until the tomato breaks down and the mixture is moist but not saucy.",
+          "uses": [
+            "cumin_powder",
+            "kashmiri_chilli",
+            "oregano",
+            "black_pepper",
+            "tomato"
+          ],
+          "visual": "Red-spiced chicken mince with softened tomato and capsicum, moist but with no liquid pooling, in the kadai",
+          "timerMin": 3,
+          "heat": "medium"
+        },
+        {
+          "title": "Finish with lime and herbs",
+          "kind": "cook",
+          "text": "Turn off the heat and stir in the lemon juice and half the coriander. Taste for salt.",
+          "uses": [
+            "lemon_juice",
+            "coriander_leaves"
+          ],
+          "visual": "Spiced chicken mince flecked with fresh green coriander in the kadai, a squeezed lemon half beside"
+        },
+        {
+          "title": "Fill the cups",
+          "kind": "assemble",
+          "text": "Spoon the warm chicken into the lettuce cups and top each with a small spoonful of hung curd.",
+          "uses": [
+            "hung_curd"
+          ],
+          "visual": "Crisp lettuce cups filled with red-spiced chicken mince, each topped with a dab of white hung curd, laid on a board"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Scatter with the remaining coriander and serve immediately — fold and eat with your hands.",
+          "uses": [],
+          "visual": "Eight lettuce wraps on a white platter, spiced chicken filling, white curd and green coriander on top, lemon wedges alongside"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "chicken_mince",
+          "with": "soy_chunks",
+          "ratio": 0.3,
+          "note": "Soak 90 g soya chunks in hot water, squeeze dry, pulse to mince and cook the same way for a vegetarian filling."
+        },
+        {
+          "ref": "hung_curd",
+          "with": "avocado",
+          "ratio": 1,
+          "note": "Top with mashed avocado or guacamole instead."
+        },
+        {
+          "ref": "lettuce",
+          "with": "cabbage",
+          "ratio": 1,
+          "note": "Blanched cabbage leaves make sturdier wraps if lettuce is unavailable."
+        }
+      ],
+      "storage": "Keep the cooked filling in the fridge for up to 2 days; wash and store the lettuce separately.",
+      "reheating": "Reheat the filling in a pan until hot, then fill fresh lettuce cups.",
+      "tags": [
+        "kid_friendly"
+      ]
+    },
+    {
+      "id": "guacamole-tomato-coriander",
+      "title": "Guacamole with Tomato and Coriander",
+      "description": "Chunky avocado dip mashed with lime, finely chopped onion, green chilli, tomato and coriander. Serve with vegetable sticks or spoon onto bowls and wraps.",
+      "cuisine": "mexican",
+      "mealTypes": [
+        "snack"
+      ],
+      "course": "accompaniment",
+      "servings": 4,
+      "prepMin": 10,
+      "cookMin": 0,
+      "difficulty": "easy",
+      "equipment": [
+        "mixing_bowl",
+        "knife_board"
+      ],
+      "ingredients": [
+        {
+          "ref": "avocado",
+          "g": 300,
+          "measure": "2 ripe avocados",
+          "prep": "flesh only"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 20,
+          "measure": "4 tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 2,
+          "toTaste": true
+        },
+        {
+          "ref": "onion",
+          "g": 40,
+          "prep": "very finely chopped"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "measure": "1 chilli",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "tomato",
+          "g": 80,
+          "measure": "1 small",
+          "prep": "deseeded and diced"
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 10,
+          "prep": "chopped"
+        },
+        {
+          "ref": "cumin_powder",
+          "g": 1,
+          "measure": "½ tsp",
+          "prep": "roasted"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Scoop the avocados",
+          "kind": "prep",
+          "text": "Choose avocados that yield to gentle pressure. Halve them, remove the stone and scoop the flesh into a mixing bowl.",
+          "uses": [
+            "avocado"
+          ],
+          "visual": "Halved avocados with green flesh being scooped with a spoon into a steel mixing bowl, the stones set aside"
+        },
+        {
+          "title": "Mash with lime and salt",
+          "kind": "prep",
+          "text": "Add the lemon juice and salt and mash with a fork, leaving it slightly chunky.",
+          "uses": [
+            "lemon_juice",
+            "salt"
+          ],
+          "visual": "Chunky mashed avocado in the steel bowl, a fork resting in it, bright green and glossy"
+        },
+        {
+          "title": "Chop the add-ins",
+          "kind": "prep",
+          "text": "Very finely chop the onion and green chilli, dice the deseeded tomato and chop the coriander.",
+          "uses": [
+            "onion",
+            "green_chilli",
+            "tomato",
+            "coriander_leaves"
+          ],
+          "visual": "Tiny dice of onion and red tomato, finely chopped green chilli and coriander on a wooden board"
+        },
+        {
+          "title": "Fold together",
+          "kind": "assemble",
+          "text": "Fold the chopped vegetables and roasted cumin into the avocado. Taste and add more lemon or salt as needed.",
+          "uses": [
+            "cumin_powder"
+          ],
+          "visual": "Green guacamole studded with red tomato, white onion and coriander being folded with a spoon in the steel bowl"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve right away with carrot and cucumber sticks, or as a topping for burrito bowls and lettuce wraps.",
+          "uses": [],
+          "visual": "Chunky guacamole in a small bowl topped with a few coriander leaves, surrounded by carrot and cucumber sticks"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "onion",
+          "with": "spring_onion",
+          "ratio": 1,
+          "note": "Spring onion gives a milder flavour."
+        },
+        {
+          "ref": "lemon_juice",
+          "with": "vinegar",
+          "ratio": 0.5,
+          "note": "A little vinegar works in a pinch, but fresh lime or lemon tastes best."
+        }
+      ],
+      "storage": "Press cling film directly onto the surface and refrigerate for up to 1 day; the top may darken slightly — just stir it in.",
+      "tags": [
+        "no_cook"
+      ]
+    },
+    {
+      "id": "salmon-lemon-butter-greens",
+      "title": "Pan-Seared Salmon with Lemon Butter and Greens",
+      "description": "Crisp-skinned salmon fillets with a garlicky lemon–butter and dill sauce, served on quickly cooked broccoli and wilted spinach.",
+      "cuisine": "continental",
+      "mealTypes": [
+        "dinner",
+        "lunch"
+      ],
+      "course": "complete",
+      "servings": 2,
+      "prepMin": 10,
+      "cookMin": 15,
+      "difficulty": "medium",
+      "equipment": [
+        "non_stick_pan",
+        "knife_board"
+      ],
+      "ingredients": [
+        {
+          "ref": "salmon",
+          "g": 300,
+          "measure": "2 skin-on fillets"
+        },
+        {
+          "ref": "salt",
+          "g": 3,
+          "toTaste": true
+        },
+        {
+          "ref": "black_pepper",
+          "g": 1
+        },
+        {
+          "ref": "olive_oil",
+          "g": 8,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "broccoli",
+          "g": 150,
+          "prep": "small florets"
+        },
+        {
+          "ref": "garlic",
+          "g": 10,
+          "measure": "3 cloves",
+          "prep": "sliced"
+        },
+        {
+          "ref": "spinach",
+          "g": 150,
+          "measure": "1 small bunch",
+          "prep": "washed and dried"
+        },
+        {
+          "ref": "butter",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 20,
+          "measure": "4 tsp"
+        },
+        {
+          "ref": "dill",
+          "g": 3,
+          "prep": "chopped"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Dry and season the salmon",
+          "kind": "prep",
+          "text": "Pat the salmon very dry with kitchen paper, especially the skin. Season both sides with salt and pepper and leave at room temperature for 10 minutes.",
+          "uses": [
+            "salmon",
+            "salt",
+            "black_pepper"
+          ],
+          "visual": "Two pink salmon fillets, skin side up, on a plate, patted dry and sprinkled with salt and cracked pepper",
+          "timerMin": 10
+        },
+        {
+          "title": "Sear skin-side down",
+          "kind": "cook",
+          "text": "Heat the olive oil in a non-stick pan over medium-high heat. Lay the salmon in skin-side down, press gently for 10 seconds, then cook without moving for 4 to 5 minutes until the skin is crisp and the flesh is opaque two-thirds of the way up.",
+          "uses": [
+            "olive_oil"
+          ],
+          "visual": "Salmon fillets skin-side down in a black non-stick pan, the sides turning pale opaque from the bottom up, oil sizzling",
+          "timerMin": 5,
+          "heat": "high"
+        },
+        {
+          "title": "Flip and finish",
+          "kind": "cook",
+          "text": "Flip the fillets and cook for 1 to 2 minutes more until just cooked in the centre. Move to a plate, skin up.",
+          "uses": [],
+          "visual": "Seared salmon fillets on a plate showing golden crisp skin on top and a pink, just-cooked edge",
+          "timerMin": 2,
+          "heat": "medium"
+        },
+        {
+          "title": "Cook the broccoli",
+          "kind": "cook",
+          "text": "In the same pan, add the broccoli and 2 tablespoons of water, cover and cook on medium heat for 3 minutes until bright green and tender-crisp.",
+          "uses": [
+            "broccoli"
+          ],
+          "visual": "Bright green broccoli florets steaming in the pan with the lid just lifted",
+          "timerMin": 3,
+          "heat": "medium"
+        },
+        {
+          "title": "Wilt the spinach",
+          "kind": "cook",
+          "text": "Add the garlic and spinach and toss for 1 to 2 minutes until the spinach just wilts. Season lightly and divide between two plates.",
+          "uses": [
+            "garlic",
+            "spinach"
+          ],
+          "visual": "Wilted dark green spinach and broccoli with golden garlic slices in the pan",
+          "timerMin": 2,
+          "heat": "medium"
+        },
+        {
+          "title": "Make the lemon butter",
+          "kind": "cook",
+          "text": "Lower the heat, add the butter to the empty pan and let it melt and foam. Off the heat, stir in the lemon juice and dill.",
+          "uses": [
+            "butter",
+            "lemon_juice",
+            "dill"
+          ],
+          "visual": "Foaming golden lemon butter flecked with chopped green dill in the pan",
+          "timerMin": 1,
+          "heat": "low"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Set the salmon on the greens and spoon over the lemon butter. Serve straight away.",
+          "uses": [],
+          "visual": "A crisp-skinned salmon fillet on a bed of wilted spinach and broccoli, glossy lemon–dill butter spooned over, a lemon wedge on the plate"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "salmon",
+          "with": "seer_fish",
+          "ratio": 1,
+          "note": "Seer fish steaks are cheaper and widely available; cook 3 to 4 minutes per side."
+        },
+        {
+          "ref": "butter",
+          "with": "ghee",
+          "ratio": 1,
+          "note": "Ghee gives a nutty finish and doesn't burn as easily."
+        },
+        {
+          "ref": "dill",
+          "with": "parsley",
+          "ratio": 1,
+          "note": "Parsley or coriander work if dill (suva) isn't available."
+        }
+      ],
+      "storage": "Best eaten fresh; leftover salmon keeps 1 day in the fridge.",
+      "reheating": "Warm gently in a low oven or flake cold into a salad — high heat dries salmon out.",
+      "tags": []
+    },
+    {
+      "id": "tuna-corn-cucumber-salad",
+      "title": "Tuna, Corn and Cucumber Salad",
+      "description": "Flaked canned tuna mixed with crunchy celery, cucumber, onion and sweet corn in a light hung-curd and mustard dressing, served over crisp lettuce.",
+      "cuisine": "continental",
+      "mealTypes": [
+        "lunch"
+      ],
+      "course": "complete",
+      "servings": 2,
+      "prepMin": 15,
+      "cookMin": 3,
+      "difficulty": "easy",
+      "equipment": [
+        "saucepan",
+        "mixing_bowl",
+        "knife_board"
+      ],
+      "ingredients": [
+        {
+          "ref": "tuna_canned",
+          "g": 185,
+          "measure": "1 can, drained"
+        },
+        {
+          "ref": "sweet_corn",
+          "g": 60,
+          "measure": "⅓ cup"
+        },
+        {
+          "ref": "onion",
+          "g": 40,
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "celery",
+          "g": 40,
+          "measure": "1 stalk",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "cucumber",
+          "g": 120,
+          "prep": "diced"
+        },
+        {
+          "ref": "hung_curd",
+          "g": 80
+        },
+        {
+          "ref": "mayonnaise",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "mustard_sauce",
+          "g": 8,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 1
+        },
+        {
+          "ref": "salt",
+          "g": 1,
+          "toTaste": true
+        },
+        {
+          "ref": "lettuce",
+          "g": 100,
+          "prep": "torn"
+        },
+        {
+          "ref": "olive_oil",
+          "g": 8,
+          "measure": "2 tsp"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Flake the tuna",
+          "kind": "prep",
+          "text": "Drain the tuna well, pressing out the water, and flake it into a mixing bowl with a fork.",
+          "uses": [
+            "tuna_canned"
+          ],
+          "visual": "Flaked pale pink tuna in a steel mixing bowl, an open drained can beside it"
+        },
+        {
+          "title": "Cook the corn",
+          "kind": "cook",
+          "text": "Boil the corn in a small saucepan of water for 3 minutes, drain and cool.",
+          "uses": [
+            "sweet_corn"
+          ],
+          "visual": "Bright yellow corn kernels draining in a small steel strainer",
+          "timerMin": 3,
+          "heat": "high"
+        },
+        {
+          "title": "Chop the vegetables",
+          "kind": "prep",
+          "text": "Finely chop the onion and celery and dice the cucumber.",
+          "uses": [
+            "onion",
+            "celery",
+            "cucumber"
+          ],
+          "visual": "Finely chopped onion, pale green celery and cucumber dice on a wooden board"
+        },
+        {
+          "title": "Make the dressing",
+          "kind": "prep",
+          "text": "In a small bowl stir together the hung curd, mayonnaise, mustard sauce, lemon juice, black pepper and a pinch of salt.",
+          "uses": [
+            "hung_curd",
+            "mayonnaise",
+            "mustard_sauce",
+            "lemon_juice",
+            "black_pepper",
+            "salt"
+          ],
+          "visual": "A small bowl of thick, creamy pale-yellow mustard yogurt dressing with pepper flecks"
+        },
+        {
+          "title": "Fold the tuna salad",
+          "kind": "assemble",
+          "text": "Add the corn, chopped vegetables and dressing to the tuna and fold gently until combined.",
+          "uses": [],
+          "visual": "Creamy tuna salad with yellow corn, cucumber, celery and onion folded through in the steel bowl"
+        },
+        {
+          "title": "Dress the leaves",
+          "kind": "assemble",
+          "text": "Toss the lettuce with the olive oil and a pinch of salt and divide between two plates.",
+          "uses": [
+            "lettuce",
+            "olive_oil"
+          ],
+          "visual": "Glossy torn lettuce leaves arranged on two white plates"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Pile the tuna salad onto the lettuce and serve chilled.",
+          "uses": [],
+          "visual": "A mound of creamy tuna, corn and cucumber salad on a bed of green lettuce, cracked pepper on top"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "mayonnaise",
+          "with": "hung_curd",
+          "ratio": 1,
+          "note": "Use all hung curd for a lighter, egg-free dressing."
+        },
+        {
+          "ref": "celery",
+          "with": "capsicum",
+          "ratio": 1,
+          "note": "Finely diced capsicum gives the same crunch."
+        },
+        {
+          "ref": "tuna_canned",
+          "with": "chicken_breast",
+          "ratio": 1,
+          "note": "Use poached, shredded chicken breast instead of tuna."
+        }
+      ],
+      "storage": "Keeps 1 day in the fridge; keep the lettuce separate.",
+      "tags": []
+    },
+    {
+      "id": "baked-chicken-meatballs-tomato-sauce",
+      "title": "Baked Chicken Meatballs in Tomato Sauce",
+      "description": "Tender chicken meatballs bound with oats, egg, parsley and parmesan, baked instead of fried and simmered in a garlicky fresh tomato and basil sauce.",
+      "cuisine": "continental",
+      "region": "Italy",
+      "mealTypes": [
+        "dinner",
+        "lunch"
+      ],
+      "course": "main",
+      "servings": 3,
+      "prepMin": 20,
+      "cookMin": 35,
+      "difficulty": "medium",
+      "equipment": [
+        "oven|air_fryer",
+        "baking_tray",
+        "mixing_bowl",
+        "saucepan|kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "chicken_mince",
+          "g": 400,
+          "group": "Meatballs"
+        },
+        {
+          "ref": "egg",
+          "g": 50,
+          "measure": "1 egg",
+          "group": "Meatballs"
+        },
+        {
+          "ref": "oats",
+          "g": 30,
+          "measure": "6 tbsp",
+          "prep": "pulsed to a coarse flour",
+          "group": "Meatballs"
+        },
+        {
+          "ref": "onion",
+          "g": 40,
+          "prep": "grated and squeezed",
+          "group": "Meatballs"
+        },
+        {
+          "ref": "garlic",
+          "g": 6,
+          "measure": "2 cloves",
+          "prep": "grated",
+          "group": "Meatballs"
+        },
+        {
+          "ref": "parsley",
+          "g": 10,
+          "prep": "finely chopped",
+          "group": "Meatballs"
+        },
+        {
+          "ref": "oregano",
+          "g": 2,
+          "measure": "2 tsp",
+          "group": "Meatballs"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 1,
+          "group": "Meatballs"
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true,
+          "group": "Meatballs"
+        },
+        {
+          "ref": "parmesan",
+          "g": 15,
+          "measure": "3 tbsp",
+          "prep": "grated",
+          "group": "Meatballs"
+        },
+        {
+          "ref": "olive_oil",
+          "g": 15,
+          "measure": "1 tbsp",
+          "group": "Sauce"
+        },
+        {
+          "ref": "garlic",
+          "g": 8,
+          "measure": "3 cloves",
+          "prep": "sliced",
+          "group": "Sauce"
+        },
+        {
+          "ref": "onion",
+          "g": 40,
+          "prep": "finely chopped",
+          "group": "Sauce"
+        },
+        {
+          "ref": "tomato",
+          "g": 450,
+          "measure": "4–5 medium",
+          "prep": "puréed",
+          "group": "Sauce"
+        },
+        {
+          "ref": "chilli_flakes",
+          "g": 1,
+          "measure": "½ tsp",
+          "group": "Sauce"
+        },
+        {
+          "ref": "basil",
+          "g": 6,
+          "prep": "torn",
+          "group": "Sauce"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Mix the meatballs",
+          "kind": "prep",
+          "text": "Preheat the oven to 200°C. In a mixing bowl combine the chicken mince, egg, oat flour, grated onion, grated garlic, parsley, half the oregano, pepper, salt and parmesan. Mix with your hands until just combined — overmixing makes them dense.",
+          "uses": [
+            "chicken_mince",
+            "egg",
+            "oats",
+            "onion",
+            "garlic",
+            "parsley",
+            "oregano",
+            "black_pepper",
+            "salt",
+            "parmesan"
+          ],
+          "visual": "Pale pink chicken mince mixture speckled with green parsley, oats and grated parmesan in a steel mixing bowl",
+          "tempC": 200,
+          "equipment": [
+            "oven|air_fryer"
+          ]
+        },
+        {
+          "title": "Shape the meatballs",
+          "kind": "assemble",
+          "text": "Brush a baking tray with 1 teaspoon of the olive oil. With wet hands, roll the mixture into 18 walnut-sized balls and space them out on the tray.",
+          "uses": [
+            "olive_oil"
+          ],
+          "visual": "Eighteen evenly rolled raw chicken meatballs lined up on an oiled baking tray",
+          "equipment": [
+            "baking_tray"
+          ]
+        },
+        {
+          "title": "Bake the meatballs",
+          "kind": "cook",
+          "text": "Bake at 200°C for 15 to 18 minutes until golden and firm. In an air fryer, cook at 190°C for 12 minutes, shaking halfway.",
+          "uses": [],
+          "visual": "Golden-brown baked chicken meatballs on the baking tray, lightly crisp on top",
+          "timerMin": 16,
+          "tempC": 200,
+          "equipment": [
+            "oven|air_fryer"
+          ]
+        },
+        {
+          "title": "Start the sauce",
+          "kind": "cook",
+          "text": "Meanwhile heat the remaining olive oil in a wide saucepan over medium heat. Cook the chopped onion and sliced garlic for 4 minutes until soft.",
+          "uses": [
+            "onion",
+            "garlic"
+          ],
+          "visual": "Softened chopped onion and sliced garlic glistening in olive oil in a wide steel saucepan",
+          "timerMin": 4,
+          "heat": "medium"
+        },
+        {
+          "title": "Simmer the tomatoes",
+          "kind": "cook",
+          "text": "Add the puréed tomato, chilli flakes, the remaining oregano and a pinch of salt. Simmer for 10 minutes, stirring, until thickened.",
+          "uses": [
+            "tomato",
+            "chilli_flakes"
+          ],
+          "visual": "A thick, bubbling bright red tomato sauce in the saucepan with flecks of chilli and oregano",
+          "timerMin": 10,
+          "heat": "medium"
+        },
+        {
+          "title": "Simmer meatballs in sauce",
+          "kind": "cook",
+          "text": "Add the baked meatballs to the sauce, turn to coat and simmer on low heat for 5 minutes so they soak up the flavour.",
+          "uses": [],
+          "visual": "Golden chicken meatballs nestled in thick red tomato sauce in the saucepan, gently bubbling",
+          "timerMin": 5,
+          "heat": "low"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Scatter with torn basil and serve with whole-wheat pasta, zucchini noodles or a slice of whole-wheat toast.",
+          "uses": [
+            "basil"
+          ],
+          "visual": "Chicken meatballs in red tomato sauce in a shallow bowl, topped with torn green basil leaves"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "oats",
+          "with": "whole_wheat_bread",
+          "ratio": 1.5,
+          "note": "Use 1½ slices of bread soaked in water and squeezed instead of oats."
+        },
+        {
+          "ref": "chicken_mince",
+          "with": "mutton_mince",
+          "ratio": 1,
+          "note": "Mutton mince makes richer meatballs; bake 2 to 3 minutes longer."
+        },
+        {
+          "ref": "basil",
+          "with": "parsley",
+          "ratio": 1,
+          "note": "Parsley works as a garnish if basil isn't available."
+        }
+      ],
+      "storage": "Refrigerate meatballs in sauce for up to 3 days, or freeze for 1 month.",
+      "reheating": "Reheat gently in a covered pan with a splash of water until piping hot.",
+      "tags": [
+        "family",
+        "meal_prep",
+        "kid_friendly"
+      ]
+    },
+    {
+      "id": "whole-wheat-pasta-arrabbiata",
+      "title": "Whole-Wheat Pasta Arrabbiata",
+      "description": "Whole-wheat penne in a fiery, garlicky fresh-tomato sauce with chilli flakes and olive oil, finished with basil and a little parmesan.",
+      "cuisine": "continental",
+      "region": "Italy",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "complete",
+      "servings": 2,
+      "prepMin": 10,
+      "cookMin": 25,
+      "difficulty": "easy",
+      "equipment": [
+        "saucepan",
+        "kadai|non_stick_pan"
+      ],
+      "ingredients": [
+        {
+          "ref": "tomato",
+          "g": 500,
+          "measure": "5 medium",
+          "prep": "grated, skins discarded"
+        },
+        {
+          "ref": "olive_oil",
+          "g": 18,
+          "measure": "4 tsp"
+        },
+        {
+          "ref": "garlic",
+          "g": 15,
+          "measure": "5 cloves",
+          "prep": "thinly sliced"
+        },
+        {
+          "ref": "chilli_flakes",
+          "g": 3,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "oregano",
+          "g": 1,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 6,
+          "toTaste": true
+        },
+        {
+          "ref": "water",
+          "g": 1500
+        },
+        {
+          "ref": "whole_wheat_pasta",
+          "g": 160,
+          "measure": "1¾ cups penne"
+        },
+        {
+          "ref": "basil",
+          "g": 8,
+          "prep": "torn"
+        },
+        {
+          "ref": "parmesan",
+          "g": 15,
+          "measure": "3 tbsp",
+          "prep": "grated"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Grate the tomatoes",
+          "kind": "prep",
+          "text": "Halve the tomatoes and grate the cut side on a box grater into a bowl until only the skin is left in your hand. Discard the skins.",
+          "uses": [
+            "tomato"
+          ],
+          "visual": "A bowl of fresh grated tomato pulp with a box grater beside it and a few flat tomato skins discarded on the board"
+        },
+        {
+          "title": "Make the chilli-garlic oil",
+          "kind": "cook",
+          "text": "Heat the olive oil in a kadai or wide pan over low heat. Add the garlic and chilli flakes and cook gently for 2 minutes until the garlic is pale gold and the oil turns orange.",
+          "uses": [
+            "olive_oil",
+            "garlic",
+            "chilli_flakes"
+          ],
+          "visual": "Pale golden garlic slices and red chilli flakes in orange-tinted olive oil in a wide black pan",
+          "timerMin": 2,
+          "heat": "low"
+        },
+        {
+          "title": "Simmer the sauce",
+          "kind": "cook",
+          "text": "Add the grated tomato, oregano and a pinch of salt. Simmer on medium heat for 12 to 15 minutes, stirring, until thick and glossy.",
+          "uses": [
+            "oregano"
+          ],
+          "visual": "A thick, glossy deep-red arrabbiata sauce bubbling in the wide pan, garlic slices visible",
+          "timerMin": 15,
+          "heat": "medium"
+        },
+        {
+          "title": "Boil the pasta",
+          "kind": "cook",
+          "text": "Meanwhile bring the water to a rolling boil in a large saucepan with the remaining salt. Cook the pasta for 10 to 11 minutes (or as the pack says) until just tender. Save half a cup of the pasta water, then drain.",
+          "uses": [
+            "water",
+            "salt",
+            "whole_wheat_pasta"
+          ],
+          "visual": "Brown whole-wheat penne tumbling in a large saucepan of rolling boiling water",
+          "timerMin": 11,
+          "heat": "high",
+          "equipment": [
+            "saucepan"
+          ]
+        },
+        {
+          "title": "Toss pasta and sauce",
+          "kind": "cook",
+          "text": "Add the drained pasta to the sauce with a splash of the pasta water and toss over medium heat for 1 to 2 minutes until the sauce clings to every piece.",
+          "uses": [],
+          "visual": "Penne coated in glossy red arrabbiata sauce being tossed in the wide pan",
+          "timerMin": 2,
+          "heat": "medium"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Divide between two plates, scatter with torn basil and grated parmesan and serve hot.",
+          "uses": [
+            "basil",
+            "parmesan"
+          ],
+          "visual": "A plate of whole-wheat penne arrabbiata with red sauce, fresh basil leaves and a dusting of grated parmesan"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "whole_wheat_pasta",
+          "with": "zucchini",
+          "ratio": 2.5,
+          "note": "Toss the sauce with 400 g zucchini noodles for a lighter, lower-carb version."
+        },
+        {
+          "ref": "parmesan",
+          "with": "cheese_cheddar",
+          "ratio": 1,
+          "note": "Leave the cheese out for a vegan plate."
+        },
+        {
+          "ref": "chilli_flakes",
+          "with": "dried_red_chilli",
+          "ratio": 1,
+          "note": "Crush 3 to 4 dried red chillies instead of using flakes."
+        }
+      ],
+      "storage": "The sauce keeps 4 days in the fridge; cooked pasta is best eaten fresh.",
+      "reheating": "Reheat sauced pasta in a pan with a splash of water.",
+      "tags": [
+        "kid_friendly"
+      ]
+    },
+    {
+      "id": "egg-salad-lettuce-wraps",
+      "title": "Egg Salad Lettuce Wraps",
+      "description": "Chopped boiled eggs folded into a tangy hung curd and mustard dressing with spring onion, celery and dill, spooned into crisp lettuce leaves with tomato.",
+      "cuisine": "continental",
+      "mealTypes": [
+        "breakfast",
+        "lunch"
+      ],
+      "course": "complete",
+      "servings": 2,
+      "prepMin": 15,
+      "cookMin": 12,
+      "difficulty": "easy",
+      "equipment": [
+        "saucepan",
+        "mixing_bowl",
+        "knife_board"
+      ],
+      "ingredients": [
+        {
+          "ref": "egg",
+          "g": 300,
+          "measure": "6 eggs"
+        },
+        {
+          "ref": "water",
+          "g": 1000
+        },
+        {
+          "ref": "spring_onion",
+          "g": 20,
+          "measure": "1 stalk",
+          "prep": "finely sliced"
+        },
+        {
+          "ref": "celery",
+          "g": 30,
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "dill",
+          "g": 4,
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "hung_curd",
+          "g": 60
+        },
+        {
+          "ref": "mustard_sauce",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 5,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 1
+        },
+        {
+          "ref": "salt",
+          "g": 2,
+          "toTaste": true
+        },
+        {
+          "ref": "lettuce",
+          "g": 100,
+          "measure": "6–8 leaves"
+        },
+        {
+          "ref": "tomato",
+          "g": 80,
+          "prep": "thinly sliced"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 1,
+          "measure": "a pinch"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Boil the eggs",
+          "kind": "cook",
+          "text": "Put the eggs in a saucepan, cover with cold water and bring to a boil. Lower the heat and simmer for 10 minutes for firm yolks.",
+          "uses": [
+            "egg",
+            "water"
+          ],
+          "visual": "Six white eggs simmering in a steel saucepan of gently bubbling water",
+          "timerMin": 10,
+          "heat": "medium"
+        },
+        {
+          "title": "Cool and peel",
+          "kind": "prep",
+          "text": "Move the eggs to a bowl of cold water for 5 minutes, then crack and peel them. Chop roughly.",
+          "uses": [],
+          "visual": "Peeled boiled eggs roughly chopped on a wooden board, firm yellow yolks showing, shells in a small heap"
+        },
+        {
+          "title": "Chop the herbs",
+          "kind": "prep",
+          "text": "Finely slice the spring onion and chop the celery and dill.",
+          "uses": [
+            "spring_onion",
+            "celery",
+            "dill"
+          ],
+          "visual": "Finely sliced spring onion, chopped pale green celery and feathery dill in small heaps on the board"
+        },
+        {
+          "title": "Mix the egg salad",
+          "kind": "prep",
+          "text": "In a mixing bowl stir the hung curd, mustard sauce, lemon juice, pepper and salt. Fold in the chopped eggs, spring onion, celery and dill.",
+          "uses": [
+            "hung_curd",
+            "mustard_sauce",
+            "lemon_juice",
+            "black_pepper",
+            "salt"
+          ],
+          "visual": "Chunky egg salad with white and yellow egg pieces, green spring onion and dill bound in a creamy dressing in a steel bowl"
+        },
+        {
+          "title": "Prepare the leaves",
+          "kind": "prep",
+          "text": "Wash and dry the lettuce leaves and slice the tomato thinly.",
+          "uses": [
+            "lettuce",
+            "tomato"
+          ],
+          "visual": "Crisp, cupped lettuce leaves laid out on a platter beside thin red tomato slices"
+        },
+        {
+          "title": "Fill the wraps",
+          "kind": "assemble",
+          "text": "Lay a tomato slice in each lettuce leaf, spoon in the egg salad and dust with a pinch of Kashmiri chilli.",
+          "uses": [
+            "kashmiri_chilli"
+          ],
+          "visual": "Lettuce cups each holding a tomato slice and a mound of creamy egg salad, dusted with red chilli"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve straight away, folding each leaf around the filling to eat.",
+          "uses": [],
+          "visual": "Egg salad lettuce wraps arranged on a white platter, creamy filling with red chilli dust and green herbs peeking out"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "celery",
+          "with": "cucumber",
+          "ratio": 1,
+          "note": "Finely diced cucumber gives a similar crunch."
+        },
+        {
+          "ref": "dill",
+          "with": "coriander_leaves",
+          "ratio": 1,
+          "note": "Coriander gives an Indian-leaning flavour."
+        },
+        {
+          "ref": "hung_curd",
+          "with": "mayonnaise",
+          "ratio": 0.5,
+          "note": "Use half the amount of mayonnaise for a richer, classic egg salad."
+        }
+      ],
+      "storage": "The egg salad keeps 2 days in the fridge; fill the lettuce just before eating.",
+      "tags": [
+        "meal_prep"
+      ]
+    },
+    {
+      "id": "thai-peanut-chicken-vegetables",
+      "title": "Thai-Style Peanut Chicken with Vegetables",
+      "description": "Seared chicken thigh strips and crunchy red pepper, broccoli and carrot tossed in a creamy peanut, coconut milk, lime and ginger sauce, topped with crushed peanuts.",
+      "cuisine": "east_asian",
+      "region": "Thailand",
+      "mealTypes": [
+        "dinner",
+        "lunch"
+      ],
+      "course": "main",
+      "servings": 3,
+      "prepMin": 20,
+      "cookMin": 15,
+      "difficulty": "easy",
+      "equipment": [
+        "kadai|non_stick_pan",
+        "mixing_bowl",
+        "knife_board"
+      ],
+      "ingredients": [
+        {
+          "ref": "chicken_thigh",
+          "g": 350,
+          "prep": "thin strips"
+        },
+        {
+          "ref": "soy_sauce",
+          "g": 20,
+          "measure": "1 tbsp + 1 tsp"
+        },
+        {
+          "ref": "garlic",
+          "g": 10,
+          "measure": "3 cloves",
+          "prep": "grated"
+        },
+        {
+          "ref": "peanut_butter",
+          "g": 30,
+          "measure": "2 tbsp"
+        },
+        {
+          "ref": "coconut_milk",
+          "g": 60,
+          "measure": "¼ cup"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "honey",
+          "g": 6,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "chilli_flakes",
+          "g": 1,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "ginger",
+          "g": 10,
+          "measure": "1-inch piece",
+          "prep": "grated"
+        },
+        {
+          "ref": "water",
+          "g": 40
+        },
+        {
+          "ref": "bell_pepper_red",
+          "g": 100,
+          "prep": "strips"
+        },
+        {
+          "ref": "broccoli",
+          "g": 100,
+          "prep": "small florets"
+        },
+        {
+          "ref": "carrot",
+          "g": 60,
+          "prep": "thin batons"
+        },
+        {
+          "ref": "spring_onion",
+          "g": 20,
+          "measure": "1 stalk",
+          "prep": "sliced"
+        },
+        {
+          "ref": "sunflower_oil",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "peanuts",
+          "g": 15,
+          "measure": "1½ tbsp",
+          "prep": "roasted and crushed"
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 6,
+          "prep": "chopped"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Marinate the chicken",
+          "kind": "prep",
+          "text": "Toss the chicken strips with 1 teaspoon of the soy sauce and half the garlic and leave for 10 minutes.",
+          "uses": [
+            "chicken_thigh",
+            "soy_sauce",
+            "garlic"
+          ],
+          "visual": "Thin chicken thigh strips glossy with soy sauce and grated garlic in a steel mixing bowl",
+          "timerMin": 10
+        },
+        {
+          "title": "Whisk the peanut sauce",
+          "kind": "prep",
+          "text": "In a bowl whisk the peanut butter, coconut milk, the remaining soy sauce and garlic, lemon juice, honey, chilli flakes, ginger and water until smooth and pourable.",
+          "uses": [
+            "peanut_butter",
+            "coconut_milk",
+            "lemon_juice",
+            "honey",
+            "chilli_flakes",
+            "ginger",
+            "water"
+          ],
+          "visual": "A smooth, creamy tan peanut sauce with red chilli flecks in a small bowl, a whisk resting in it"
+        },
+        {
+          "title": "Cut the vegetables",
+          "kind": "prep",
+          "text": "Cut the pepper into strips, the broccoli into small florets and the carrot into thin batons. Slice the spring onion.",
+          "uses": [
+            "bell_pepper_red",
+            "broccoli",
+            "carrot",
+            "spring_onion"
+          ],
+          "visual": "Red pepper strips, small broccoli florets, orange carrot batons and sliced spring onion on a wooden board"
+        },
+        {
+          "title": "Sear the chicken",
+          "kind": "cook",
+          "text": "Heat the oil in a kadai over high heat. Add the chicken in a single layer and cook for 5 to 6 minutes, turning, until browned and cooked through. Lift out.",
+          "uses": [
+            "sunflower_oil"
+          ],
+          "visual": "Browned chicken strips sizzling in a black kadai, edges caramelised",
+          "timerMin": 6,
+          "heat": "high"
+        },
+        {
+          "title": "Stir-fry the vegetables",
+          "kind": "cook",
+          "text": "In the same kadai, stir-fry the broccoli and carrot with 2 tablespoons of water for 2 minutes, then add the pepper and spring onion whites for 1 minute more.",
+          "uses": [],
+          "visual": "Bright green broccoli, orange carrot and red pepper strips tossed in the steaming kadai",
+          "timerMin": 3,
+          "heat": "high"
+        },
+        {
+          "title": "Simmer in peanut sauce",
+          "kind": "cook",
+          "text": "Return the chicken, pour in the peanut sauce and simmer on medium heat for 2 minutes, stirring, until thick and coating everything. Loosen with a splash of water if needed.",
+          "uses": [],
+          "visual": "Chicken and colourful vegetables coated in a thick, glossy tan peanut sauce bubbling in the kadai",
+          "timerMin": 2,
+          "heat": "medium"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Top with crushed peanuts, spring onion greens and coriander. Serve with brown rice or cauliflower rice.",
+          "uses": [
+            "peanuts",
+            "coriander_leaves"
+          ],
+          "visual": "Peanut chicken with vegetables in a white bowl, scattered with crushed peanuts, spring onion and coriander, a lime wedge on the side"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "chicken_thigh",
+          "with": "tofu",
+          "ratio": 1,
+          "note": "Use pressed firm tofu, pan-fried until golden, for a vegetarian version."
+        },
+        {
+          "ref": "honey",
+          "with": "jaggery",
+          "ratio": 1,
+          "note": "A little grated jaggery gives the same gentle sweetness."
+        },
+        {
+          "ref": "coconut_milk",
+          "with": "milk",
+          "ratio": 1,
+          "note": "Toned milk works if you don't have coconut milk; the sauce will be lighter."
+        }
+      ],
+      "storage": "Keeps 2 days in the fridge.",
+      "reheating": "Reheat in a pan with a splash of water — the peanut sauce thickens as it cools.",
+      "tags": [
+        "kid_friendly"
+      ]
+    },
+    {
+      "id": "japanese-rolled-egg-vegetable-omelette",
+      "title": "Japanese-Style Rolled Egg and Vegetable Omelette",
+      "description": "A tamagoyaki-inspired omelette built in thin layers and rolled into a log, lightly sweet-savoury with soy and flecked with carrot, spinach and spring onion.",
+      "cuisine": "east_asian",
+      "region": "Japan",
+      "mealTypes": [
+        "breakfast",
+        "lunch"
+      ],
+      "course": "complete",
+      "servings": 2,
+      "prepMin": 10,
+      "cookMin": 12,
+      "difficulty": "medium",
+      "equipment": [
+        "non_stick_pan",
+        "mixing_bowl",
+        "whisk"
+      ],
+      "ingredients": [
+        {
+          "ref": "spring_onion",
+          "g": 15,
+          "measure": "1 stalk",
+          "prep": "finely sliced"
+        },
+        {
+          "ref": "carrot",
+          "g": 40,
+          "prep": "finely grated"
+        },
+        {
+          "ref": "spinach",
+          "g": 40,
+          "prep": "finely shredded"
+        },
+        {
+          "ref": "egg",
+          "g": 300,
+          "measure": "6 eggs"
+        },
+        {
+          "ref": "soy_sauce",
+          "g": 6,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "sugar",
+          "g": 4,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "water",
+          "g": 30,
+          "measure": "2 tbsp"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 0.5,
+          "measure": "a pinch"
+        },
+        {
+          "ref": "sesame_oil",
+          "g": 8,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "sesame_seeds",
+          "g": 3,
+          "measure": "1 tsp"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Prep the vegetables",
+          "kind": "prep",
+          "text": "Finely slice the spring onion, grate the carrot and shred the spinach very thinly so they don't tear the egg layers.",
+          "uses": [
+            "spring_onion",
+            "carrot",
+            "spinach"
+          ],
+          "visual": "Small heaps of finely sliced spring onion, grated orange carrot and thinly shredded spinach on a wooden board"
+        },
+        {
+          "title": "Whisk the eggs",
+          "kind": "prep",
+          "text": "Whisk the eggs with the soy sauce, sugar, water and pepper until the whites and yolks are fully combined but not frothy.",
+          "uses": [
+            "egg",
+            "soy_sauce",
+            "sugar",
+            "water",
+            "black_pepper"
+          ],
+          "visual": "A smooth, evenly yellow egg mixture in a steel mixing bowl with a whisk resting against the rim",
+          "equipment": [
+            "whisk"
+          ]
+        },
+        {
+          "title": "Fold in the vegetables",
+          "kind": "prep",
+          "text": "Stir the vegetables into the egg mixture.",
+          "uses": [],
+          "visual": "Yellow egg mixture speckled with orange carrot, green spinach and spring onion in the steel bowl"
+        },
+        {
+          "title": "Cook the first layer",
+          "kind": "cook",
+          "text": "Heat a non-stick pan over medium-low heat and brush with a little sesame oil. Pour in about a quarter of the egg, tilt to coat thinly and cook for about 1 minute until almost set. Roll it up from one side towards you into a loose log.",
+          "uses": [
+            "sesame_oil"
+          ],
+          "visual": "A thin, nearly set layer of vegetable-flecked egg in a non-stick pan being rolled into a log with a spatula",
+          "timerMin": 1,
+          "heat": "low"
+        },
+        {
+          "title": "Build up the layers",
+          "kind": "cook",
+          "text": "Push the log to the far side, brush the pan with oil and pour in another quarter of the egg, lifting the log so egg flows underneath. When almost set, roll the log back over the new layer. Repeat until all the egg is used, about 6 minutes in all.",
+          "uses": [],
+          "visual": "A thick, layered golden egg roll in the pan with a fresh thin sheet of egg spread out in front of it, ready to be rolled",
+          "timerMin": 6,
+          "heat": "low"
+        },
+        {
+          "title": "Rest and shape",
+          "kind": "rest",
+          "text": "Turn the roll out onto a board, press it gently into a neat rectangle with a clean cloth and rest for 2 minutes so the layers set.",
+          "uses": [],
+          "visual": "A neat golden rectangular egg roll resting on a wooden board, a cloth folded beside it",
+          "timerMin": 2
+        },
+        {
+          "title": "Slice and serve",
+          "kind": "serve",
+          "text": "Slice into 2-cm pieces to show the layers, sprinkle with sesame seeds and serve warm or at room temperature.",
+          "uses": [
+            "sesame_seeds"
+          ],
+          "visual": "Thick slices of rolled omelette showing spiral layers flecked with carrot and spinach, sprinkled with sesame seeds on a white plate"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "sesame_oil",
+          "with": "sunflower_oil",
+          "ratio": 1,
+          "note": "Any neutral oil works for greasing the pan."
+        },
+        {
+          "ref": "sugar",
+          "with": "stevia",
+          "ratio": 0.1,
+          "note": "A tiny pinch of stevia keeps the slight sweetness without sugar — or simply leave it out."
+        }
+      ],
+      "storage": "Keeps 1 day in the fridge; good cold in lunch boxes.",
+      "reheating": "Eat at room temperature or warm for 20 seconds in the microwave.",
+      "tags": [
+        "kid_friendly"
+      ]
+    },
+    {
+      "id": "korean-style-spicy-glazed-tofu",
+      "title": "Korean-Style Spicy Glazed Tofu",
+      "description": "Crisp pan-fried tofu slabs coated in a sticky, garlicky chilli glaze — Kashmiri chilli stands in for gochugaru — with sesame and spring onion.",
+      "cuisine": "east_asian",
+      "region": "Korea",
+      "mealTypes": [
+        "dinner",
+        "lunch"
+      ],
+      "course": "main",
+      "servings": 2,
+      "prepMin": 20,
+      "cookMin": 15,
+      "difficulty": "easy",
+      "equipment": [
+        "non_stick_pan",
+        "mixing_bowl",
+        "knife_board"
+      ],
+      "ingredients": [
+        {
+          "ref": "tofu",
+          "g": 300,
+          "measure": "1½ blocks",
+          "prep": "pressed, cut into 1-cm slabs"
+        },
+        {
+          "ref": "garlic",
+          "g": 10,
+          "measure": "3 cloves",
+          "prep": "minced"
+        },
+        {
+          "ref": "ginger",
+          "g": 6,
+          "prep": "grated"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 6,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "chilli_flakes",
+          "g": 1,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "soy_sauce",
+          "g": 20,
+          "measure": "1 tbsp + 1 tsp"
+        },
+        {
+          "ref": "honey",
+          "g": 10,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "vinegar",
+          "g": 5,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "water",
+          "g": 60
+        },
+        {
+          "ref": "cornflour",
+          "g": 8,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "sunflower_oil",
+          "g": 12,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "onion",
+          "g": 60,
+          "prep": "thinly sliced"
+        },
+        {
+          "ref": "sesame_oil",
+          "g": 5,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "sesame_seeds",
+          "g": 4,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "spring_onion",
+          "g": 25,
+          "measure": "2 stalks",
+          "prep": "sliced on the diagonal"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Press the tofu",
+          "kind": "prep",
+          "text": "Wrap the tofu in a kitchen towel and press under a heavy pan for 15 minutes, then cut into 1-cm slabs.",
+          "uses": [
+            "tofu"
+          ],
+          "visual": "Pressed tofu cut into neat rectangular slabs on a wooden board, a damp kitchen towel beside them",
+          "timerMin": 15
+        },
+        {
+          "title": "Mix the chilli glaze",
+          "kind": "prep",
+          "text": "In a small bowl stir together the garlic, ginger, Kashmiri chilli, chilli flakes, soy sauce, honey, vinegar and water.",
+          "uses": [
+            "garlic",
+            "ginger",
+            "kashmiri_chilli",
+            "chilli_flakes",
+            "soy_sauce",
+            "honey",
+            "vinegar",
+            "water"
+          ],
+          "visual": "A small bowl of thin, brick-red chilli glaze with flecks of garlic and ginger"
+        },
+        {
+          "title": "Dust the tofu",
+          "kind": "prep",
+          "text": "Dust the tofu slabs on all sides with the cornflour, tapping off the excess.",
+          "uses": [
+            "cornflour"
+          ],
+          "visual": "Tofu slabs lightly coated in white cornflour on a steel plate"
+        },
+        {
+          "title": "Pan-fry until crisp",
+          "kind": "cook",
+          "text": "Heat the oil in a non-stick pan over medium-high heat. Fry the tofu for 3 to 4 minutes per side until golden and crisp. Lift onto a plate.",
+          "uses": [
+            "sunflower_oil"
+          ],
+          "visual": "Golden, crisp tofu slabs in a wide black non-stick pan, a few flipped to show the browned side",
+          "timerMin": 8,
+          "heat": "high"
+        },
+        {
+          "title": "Soften the onion",
+          "kind": "cook",
+          "text": "Add the onion to the same pan and cook for 2 minutes on medium heat until just soft.",
+          "uses": [
+            "onion"
+          ],
+          "visual": "Thinly sliced onion softening in the pan with a little leftover oil",
+          "timerMin": 2,
+          "heat": "medium"
+        },
+        {
+          "title": "Glaze the tofu",
+          "kind": "cook",
+          "text": "Pour in the chilli glaze and let it bubble for 1 to 2 minutes until sticky. Return the tofu, add the sesame oil and toss gently until every slab is coated.",
+          "uses": [
+            "sesame_oil"
+          ],
+          "visual": "Crisp tofu slabs and onion coated in a glossy, sticky red chilli glaze in the pan",
+          "timerMin": 2,
+          "heat": "medium"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Sprinkle with sesame seeds and spring onion and serve hot with brown rice or a crunchy slaw.",
+          "uses": [
+            "sesame_seeds",
+            "spring_onion"
+          ],
+          "visual": "Glossy red glazed tofu slabs on a white plate scattered with sesame seeds and diagonal slices of spring onion"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "honey",
+          "with": "sugar",
+          "ratio": 1,
+          "note": "Use sugar to keep the dish vegan."
+        },
+        {
+          "ref": "tofu",
+          "with": "paneer",
+          "ratio": 1,
+          "note": "Paneer slabs work well; no pressing needed."
+        }
+      ],
+      "storage": "Keeps 2 days in the fridge; the coating softens.",
+      "reheating": "Reheat in a hot pan for 2 minutes.",
+      "tags": []
+    },
+    {
+      "id": "rajma-corn-salsa-salad",
+      "title": "Rajma and Corn Salsa Salad",
+      "description": "A Mexican-style bean salad of firm-cooked rajma and tawa-charred corn with tomato, onion, capsicum, green chilli and coriander in a lime–cumin dressing.",
+      "cuisine": "mexican",
+      "mealTypes": [
+        "lunch"
+      ],
+      "course": "complete",
+      "servings": 3,
+      "prepMin": 15,
+      "cookMin": 25,
+      "restMin": 495,
+      "difficulty": "easy",
+      "equipment": [
+        "pressure_cooker",
+        "tawa",
+        "mixing_bowl",
+        "knife_board"
+      ],
+      "ingredients": [
+        {
+          "ref": "rajma",
+          "g": 150,
+          "measure": "¾ cup dry",
+          "prep": "soaked overnight"
+        },
+        {
+          "ref": "water",
+          "g": 600
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true
+        },
+        {
+          "ref": "sweet_corn",
+          "g": 120,
+          "measure": "¾ cup"
+        },
+        {
+          "ref": "tomato",
+          "g": 150,
+          "prep": "diced"
+        },
+        {
+          "ref": "onion",
+          "g": 60,
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "capsicum",
+          "g": 80,
+          "prep": "diced"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 15,
+          "prep": "chopped"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 30,
+          "measure": "2 tbsp"
+        },
+        {
+          "ref": "olive_oil",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "cumin_powder",
+          "g": 2,
+          "measure": "1 tsp",
+          "prep": "roasted"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 1,
+          "measure": "½ tsp"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Soak the rajma",
+          "kind": "rest",
+          "text": "Soak the rajma in plenty of water for 8 hours or overnight.",
+          "uses": [
+            "rajma"
+          ],
+          "visual": "Dark red kidney beans plump after soaking in a steel bowl of water",
+          "timerMin": 480
+        },
+        {
+          "title": "Cook the rajma firm",
+          "kind": "cook",
+          "text": "Drain and pressure-cook with the water and a pinch of salt on medium heat for 18 minutes (about 5 whistles). The beans should be cooked through but still whole — check one by pressing.",
+          "uses": [
+            "water",
+            "salt"
+          ],
+          "visual": "Whole, glossy cooked kidney beans holding their shape in the opened pressure cooker",
+          "timerMin": 18,
+          "heat": "medium",
+          "equipment": [
+            "pressure_cooker"
+          ]
+        },
+        {
+          "title": "Drain and cool",
+          "kind": "rest",
+          "text": "Drain the beans and spread them out to cool for 15 minutes.",
+          "uses": [],
+          "visual": "Drained red kidney beans spread over a wide steel plate to cool",
+          "timerMin": 15
+        },
+        {
+          "title": "Char the corn",
+          "kind": "cook",
+          "text": "Heat a dry tawa over high heat and toast the corn for 4 to 5 minutes, stirring now and then, until spotted with brown — like a roadside bhutta.",
+          "uses": [
+            "sweet_corn"
+          ],
+          "visual": "Yellow corn kernels with dark charred spots on a hot black tawa",
+          "timerMin": 5,
+          "heat": "high",
+          "equipment": [
+            "tawa"
+          ]
+        },
+        {
+          "title": "Chop the salsa vegetables",
+          "kind": "prep",
+          "text": "Dice the tomato and capsicum, finely chop the onion and green chilli, and chop the coriander.",
+          "uses": [
+            "tomato",
+            "onion",
+            "capsicum",
+            "green_chilli",
+            "coriander_leaves"
+          ],
+          "visual": "Diced red tomato and green capsicum, chopped onion, green chilli and coriander in piles on a wooden board"
+        },
+        {
+          "title": "Make the dressing",
+          "kind": "prep",
+          "text": "In a large mixing bowl whisk the lemon juice, olive oil, roasted cumin, Kashmiri chilli and a pinch of salt.",
+          "uses": [
+            "lemon_juice",
+            "olive_oil",
+            "cumin_powder",
+            "kashmiri_chilli"
+          ],
+          "visual": "A reddish-gold lime, cumin and chilli dressing at the bottom of a large steel mixing bowl"
+        },
+        {
+          "title": "Toss the salad",
+          "kind": "assemble",
+          "text": "Add the rajma, charred corn and chopped vegetables and toss well. Rest for 10 minutes so the beans soak up the dressing.",
+          "uses": [],
+          "visual": "Red kidney beans, charred yellow corn, tomato, capsicum, onion and coriander tossed together in the steel bowl",
+          "timerMin": 10
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve at room temperature on its own, with lettuce leaves, or topped with a spoon of guacamole.",
+          "uses": [],
+          "visual": "A colourful rajma and corn salsa salad heaped in a shallow bowl, red beans and yellow corn with green coriander, a lemon wedge alongside"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "rajma",
+          "with": "kala_chana",
+          "ratio": 1,
+          "note": "Black chickpeas make a nuttier, cheaper salad."
+        },
+        {
+          "ref": "olive_oil",
+          "with": "sunflower_oil",
+          "ratio": 1,
+          "note": "Any neutral oil works in the dressing."
+        }
+      ],
+      "storage": "Keeps 3 days in the fridge — add the coriander fresh if making ahead.",
+      "tags": [
+        "meal_prep"
+      ]
+    },
+    {
+      "id": "baba-ganoush-smoky-brinjal-dip",
+      "title": "Baba Ganoush (Smoky Brinjal Dip)",
+      "description": "Large brinjal charred directly over the gas flame as for bharta, then mashed with tahini, garlic, lemon and cumin into a silky, smoky Levantine dip.",
+      "cuisine": "middle_eastern",
+      "region": "Levant",
+      "mealTypes": [
+        "snack"
+      ],
+      "course": "accompaniment",
+      "servings": 4,
+      "prepMin": 10,
+      "cookMin": 20,
+      "restMin": 10,
+      "difficulty": "easy",
+      "equipment": [
+        "stove|oven",
+        "mixing_bowl",
+        "knife_board"
+      ],
+      "ingredients": [
+        {
+          "ref": "brinjal",
+          "g": 500,
+          "measure": "1 large bharta brinjal"
+        },
+        {
+          "ref": "tahini",
+          "g": 30,
+          "measure": "2 tbsp"
+        },
+        {
+          "ref": "garlic",
+          "g": 6,
+          "measure": "2 small cloves",
+          "prep": "grated"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 25,
+          "measure": "5 tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 2,
+          "toTaste": true
+        },
+        {
+          "ref": "cumin_powder",
+          "g": 1,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "olive_oil",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "parsley",
+          "g": 5,
+          "prep": "chopped"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 0.5,
+          "measure": "a pinch"
+        },
+        {
+          "ref": "pomegranate",
+          "g": 20,
+          "optional": true,
+          "measure": "2 tbsp"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Prick the brinjal",
+          "kind": "prep",
+          "text": "Wash and dry the brinjal and prick it all over with a fork so it doesn't burst while charring.",
+          "uses": [
+            "brinjal"
+          ],
+          "visual": "A large, glossy purple bharta brinjal on a board with tiny fork holes across its skin"
+        },
+        {
+          "title": "Char over the flame",
+          "kind": "cook",
+          "text": "Place the brinjal directly on a gas flame over high heat and roast for 15 to 20 minutes, turning with tongs, until the skin is black and the whole brinjal has collapsed. Without a gas stove, roast in the oven at 220°C for 35 to 40 minutes.",
+          "uses": [],
+          "visual": "A blackened, blistered, collapsed brinjal sitting directly on a gas burner flame, wisps of smoke rising",
+          "timerMin": 18,
+          "heat": "high",
+          "equipment": [
+            "stove|oven"
+          ]
+        },
+        {
+          "title": "Steam, peel and drain",
+          "kind": "rest",
+          "text": "Put the hot brinjal in a covered bowl for 10 minutes so the skin loosens. Peel off the charred skin, then let the flesh drain in a sieve for a few minutes to remove bitter juices.",
+          "uses": [],
+          "visual": "Soft, smoky golden-brown brinjal flesh draining in a steel sieve, flakes of charred skin on a plate beside",
+          "timerMin": 10
+        },
+        {
+          "title": "Mash with tahini",
+          "kind": "prep",
+          "text": "Chop the flesh roughly and mash in a mixing bowl with the tahini, garlic, lemon juice, salt and cumin until creamy but still a little textured.",
+          "uses": [
+            "tahini",
+            "garlic",
+            "lemon_juice",
+            "salt",
+            "cumin_powder"
+          ],
+          "visual": "A creamy, pale smoky-beige brinjal and tahini dip being mashed with a fork in a steel mixing bowl"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Spread in a shallow bowl, drizzle with olive oil and top with parsley, a pinch of Kashmiri chilli and pomegranate arils if you have them. Serve with vegetable sticks or whole-wheat toast.",
+          "uses": [
+            "olive_oil",
+            "parsley",
+            "kashmiri_chilli",
+            "pomegranate"
+          ],
+          "visual": "Smoky baba ganoush in a shallow bowl with a golden olive oil drizzle, green parsley, a dusting of red chilli and ruby pomegranate arils"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "tahini",
+          "with": "hung_curd",
+          "ratio": 2,
+          "note": "Use 60 g hung curd instead of tahini for a lighter, tangier dip."
+        },
+        {
+          "ref": "parsley",
+          "with": "coriander_leaves",
+          "ratio": 1,
+          "note": "Coriander or mint make a good garnish."
+        }
+      ],
+      "storage": "Keeps 3 days in the fridge in an airtight box.",
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "moroccan-chickpea-vegetable-stew",
+      "title": "Moroccan-Spiced Chickpea and Vegetable Stew",
+      "description": "A warming one-pot stew of chickpeas, sweet potato, carrot and zucchini in a tomato base spiced with cumin, coriander, cinnamon and chilli, with a few raisins for sweetness.",
+      "cuisine": "middle_eastern",
+      "region": "North Africa",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "complete",
+      "servings": 3,
+      "prepMin": 20,
+      "cookMin": 40,
+      "restMin": 480,
+      "difficulty": "easy",
+      "equipment": [
+        "pressure_cooker",
+        "kadai|saucepan",
+        "knife_board"
+      ],
+      "ingredients": [
+        {
+          "ref": "kabuli_chana",
+          "g": 120,
+          "measure": "⅔ cup dry",
+          "prep": "soaked overnight"
+        },
+        {
+          "ref": "water",
+          "g": 700
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true
+        },
+        {
+          "ref": "onion",
+          "g": 80,
+          "measure": "1 small",
+          "prep": "chopped"
+        },
+        {
+          "ref": "garlic",
+          "g": 10,
+          "measure": "3 cloves",
+          "prep": "chopped"
+        },
+        {
+          "ref": "ginger",
+          "g": 8,
+          "prep": "grated"
+        },
+        {
+          "ref": "tomato",
+          "g": 200,
+          "measure": "2 medium",
+          "prep": "chopped"
+        },
+        {
+          "ref": "carrot",
+          "g": 100,
+          "prep": "thick rounds"
+        },
+        {
+          "ref": "sweet_potato",
+          "g": 150,
+          "measure": "1 medium",
+          "prep": "1-inch cubes"
+        },
+        {
+          "ref": "zucchini",
+          "g": 150,
+          "prep": "chunks"
+        },
+        {
+          "ref": "olive_oil",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "cumin_powder",
+          "g": 3,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "coriander_powder",
+          "g": 3,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "cinnamon",
+          "g": 1,
+          "measure": "1-inch stick"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 3,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "raisins",
+          "g": 15,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 8,
+          "prep": "chopped"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Soak the chickpeas",
+          "kind": "rest",
+          "text": "Soak the chickpeas in plenty of water for 8 hours or overnight.",
+          "uses": [
+            "kabuli_chana"
+          ],
+          "visual": "Swollen beige chickpeas soaking in a large steel bowl of water",
+          "timerMin": 480
+        },
+        {
+          "title": "Pressure-cook the chickpeas",
+          "kind": "cook",
+          "text": "Drain and pressure-cook with 2 cups of the water and a pinch of salt on medium heat for 15 minutes (about 4 whistles) until tender. Keep the cooking liquid.",
+          "uses": [
+            "water",
+            "salt"
+          ],
+          "visual": "Tender cooked chickpeas in their cooking liquid in an opened pressure cooker",
+          "timerMin": 15,
+          "heat": "medium",
+          "equipment": [
+            "pressure_cooker"
+          ]
+        },
+        {
+          "title": "Chop the vegetables",
+          "kind": "prep",
+          "text": "Chop the onion, garlic and tomatoes, grate the ginger, cut the carrot into thick rounds, the sweet potato into cubes and the zucchini into chunks.",
+          "uses": [
+            "onion",
+            "garlic",
+            "ginger",
+            "tomato",
+            "carrot",
+            "sweet_potato",
+            "zucchini"
+          ],
+          "visual": "Chopped onion, garlic, grated ginger, chopped tomato, carrot rounds, orange sweet potato cubes and zucchini chunks on a wooden board"
+        },
+        {
+          "title": "Sauté the aromatics",
+          "kind": "cook",
+          "text": "Heat the olive oil in a heavy kadai over medium heat. Cook the onion, garlic and ginger for 5 minutes until soft and lightly golden.",
+          "uses": [
+            "olive_oil"
+          ],
+          "visual": "Softened golden onion, garlic and ginger in olive oil in a heavy black kadai",
+          "timerMin": 5,
+          "heat": "medium"
+        },
+        {
+          "title": "Bloom the spices",
+          "kind": "cook",
+          "text": "Lower the heat and add the cumin, coriander powder, cinnamon, Kashmiri chilli and turmeric. Stir for 1 minute until fragrant.",
+          "uses": [
+            "cumin_powder",
+            "coriander_powder",
+            "cinnamon",
+            "kashmiri_chilli",
+            "turmeric"
+          ],
+          "visual": "Onions coated in rust-red and golden spices with a cinnamon stick in the kadai",
+          "timerMin": 1,
+          "heat": "low"
+        },
+        {
+          "title": "Cook the tomatoes",
+          "kind": "cook",
+          "text": "Add the tomatoes and cook for 4 minutes until they soften into a thick sauce.",
+          "uses": [],
+          "visual": "A thick, spiced red tomato base bubbling in the kadai",
+          "timerMin": 4,
+          "heat": "medium"
+        },
+        {
+          "title": "Simmer the root vegetables",
+          "kind": "cook",
+          "text": "Add the carrot, sweet potato and raisins, then the chickpeas with their liquid and the remaining water. Cover and simmer for 12 minutes until the sweet potato is almost tender.",
+          "uses": [
+            "raisins"
+          ],
+          "visual": "Chickpeas, carrot rounds, sweet potato cubes and plump raisins simmering in a brothy red stew in the covered kadai, lid ajar",
+          "timerMin": 12,
+          "heat": "medium"
+        },
+        {
+          "title": "Add the zucchini",
+          "kind": "cook",
+          "text": "Stir in the zucchini and simmer uncovered for 6 minutes until tender and the stew has thickened. Taste for salt.",
+          "uses": [],
+          "visual": "A thick, chunky orange-red stew with chickpeas, sweet potato, carrot and green zucchini in the kadai",
+          "timerMin": 6,
+          "heat": "medium"
+        },
+        {
+          "title": "Finish and serve",
+          "kind": "serve",
+          "text": "Remove the cinnamon stick, stir in the lemon juice and top with coriander. Serve hot on its own or with a little quinoa.",
+          "uses": [
+            "lemon_juice",
+            "coriander_leaves"
+          ],
+          "visual": "Moroccan chickpea and vegetable stew in a deep earthenware bowl, chunky with sweet potato, carrot and zucchini, topped with fresh coriander"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "sweet_potato",
+          "with": "pumpkin",
+          "ratio": 1,
+          "note": "Red pumpkin makes a lighter, lower-carb stew; add it with the zucchini."
+        },
+        {
+          "ref": "raisins",
+          "with": "dates",
+          "ratio": 1,
+          "note": "Chopped dates give the same gentle sweetness — or leave them out."
+        },
+        {
+          "ref": "kabuli_chana",
+          "with": "rajma",
+          "ratio": 1,
+          "note": "Kidney beans work too; cook them 20 to 25 minutes."
+        }
+      ],
+      "storage": "Keeps 4 days in the fridge and freezes well for 1 month.",
+      "reheating": "Reheat in a pan with a splash of water until bubbling.",
+      "tags": [
+        "one_pot",
+        "meal_prep",
+        "family"
+      ]
+    },
+    {
+      "id": "chicken-kebabs-garlic-yogurt",
+      "title": "Middle-Eastern Chicken Kebabs with Garlic Yogurt",
+      "description": "Lemon, garlic and warm-spice marinated chicken skewers with capsicum and onion, grilled until charred and served with a cool garlic–mint yogurt.",
+      "cuisine": "middle_eastern",
+      "mealTypes": [
+        "dinner",
+        "lunch"
+      ],
+      "course": "main",
+      "servings": 3,
+      "prepMin": 20,
+      "cookMin": 14,
+      "restMin": 60,
+      "difficulty": "easy",
+      "equipment": [
+        "mixing_bowl",
+        "skewers",
+        "grill|air_fryer|tawa"
+      ],
+      "ingredients": [
+        {
+          "ref": "chicken_breast",
+          "g": 450,
+          "prep": "1½-inch cubes",
+          "group": "Kebabs"
+        },
+        {
+          "ref": "olive_oil",
+          "g": 12,
+          "measure": "1 tbsp",
+          "group": "Kebabs"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 20,
+          "measure": "4 tsp",
+          "group": "Kebabs"
+        },
+        {
+          "ref": "garlic",
+          "g": 10,
+          "measure": "3 cloves",
+          "prep": "grated",
+          "group": "Kebabs"
+        },
+        {
+          "ref": "cumin_powder",
+          "g": 2,
+          "measure": "1 tsp",
+          "group": "Kebabs"
+        },
+        {
+          "ref": "coriander_powder",
+          "g": 2,
+          "measure": "1 tsp",
+          "group": "Kebabs"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 3,
+          "measure": "1 tsp",
+          "group": "Kebabs"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 1,
+          "group": "Kebabs"
+        },
+        {
+          "ref": "oregano",
+          "g": 1,
+          "measure": "1 tsp",
+          "group": "Kebabs"
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true,
+          "group": "Kebabs"
+        },
+        {
+          "ref": "capsicum",
+          "g": 100,
+          "prep": "1½-inch squares",
+          "group": "Kebabs"
+        },
+        {
+          "ref": "onion",
+          "g": 80,
+          "prep": "cut into petals",
+          "group": "Kebabs"
+        },
+        {
+          "ref": "hung_curd",
+          "g": 150,
+          "group": "Garlic yogurt"
+        },
+        {
+          "ref": "garlic",
+          "g": 3,
+          "measure": "1 small clove",
+          "prep": "grated",
+          "group": "Garlic yogurt"
+        },
+        {
+          "ref": "mint",
+          "g": 6,
+          "prep": "finely chopped",
+          "group": "Garlic yogurt"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 5,
+          "measure": "1 tsp",
+          "group": "Garlic yogurt"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Marinate the chicken",
+          "kind": "prep",
+          "text": "In a mixing bowl combine the olive oil, lemon juice, garlic, cumin, coriander powder, Kashmiri chilli, pepper, oregano and salt. Add the chicken cubes and mix well.",
+          "uses": [
+            "chicken_breast",
+            "olive_oil",
+            "lemon_juice",
+            "garlic",
+            "cumin_powder",
+            "coriander_powder",
+            "kashmiri_chilli",
+            "black_pepper",
+            "oregano",
+            "salt"
+          ],
+          "visual": "Chicken cubes coated in a glossy orange-red spiced lemon and garlic marinade in a steel mixing bowl"
+        },
+        {
+          "title": "Rest to marinate",
+          "kind": "rest",
+          "text": "Cover and refrigerate for 1 hour, or up to 6 hours. If using wooden skewers, soak them in water now.",
+          "uses": [],
+          "visual": "The covered steel bowl of marinated chicken on a fridge shelf, wooden skewers soaking in a tray of water beside it",
+          "timerMin": 60
+        },
+        {
+          "title": "Cut the vegetables",
+          "kind": "prep",
+          "text": "Cut the capsicum into squares and separate the onion into petals about the size of the chicken cubes.",
+          "uses": [
+            "capsicum",
+            "onion"
+          ],
+          "visual": "Green capsicum squares and onion petals in two piles on a wooden board"
+        },
+        {
+          "title": "Thread the skewers",
+          "kind": "assemble",
+          "text": "Thread the chicken onto skewers, alternating with capsicum and onion. Leave a little space between pieces so they char evenly.",
+          "uses": [],
+          "visual": "Six skewers threaded with orange marinated chicken, green capsicum and white onion petals on a tray",
+          "equipment": [
+            "skewers"
+          ]
+        },
+        {
+          "title": "Grill until charred",
+          "kind": "cook",
+          "text": "Air fry at 200°C for 12 to 14 minutes, turning halfway, or cook on a hot grill pan or tawa over medium-high heat for 12 minutes, turning every 3 minutes, until charred at the edges and cooked through.",
+          "uses": [],
+          "visual": "Chicken kebab skewers with charred edges and blistered capsicum on a hot ridged grill pan",
+          "timerMin": 13,
+          "tempC": 200,
+          "heat": "high",
+          "equipment": [
+            "grill|air_fryer|tawa"
+          ]
+        },
+        {
+          "title": "Make the garlic yogurt",
+          "kind": "prep",
+          "text": "Stir the hung curd with the grated garlic, mint, lemon juice and a pinch of salt until smooth.",
+          "uses": [
+            "hung_curd",
+            "garlic",
+            "mint",
+            "lemon_juice"
+          ],
+          "visual": "A bowl of thick white garlic yogurt flecked with chopped green mint"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve the kebabs hot with the garlic yogurt, alongside tabbouleh, a cucumber salad or a small portion of brown rice.",
+          "uses": [],
+          "visual": "Charred chicken kebabs on a platter beside a bowl of minty garlic yogurt, a green salad and lemon wedges"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "chicken_breast",
+          "with": "paneer",
+          "ratio": 0.8,
+          "note": "Paneer cubes need just 8 to 10 minutes and a 30-minute marinade."
+        },
+        {
+          "ref": "chicken_breast",
+          "with": "chicken_thigh",
+          "ratio": 1,
+          "note": "Thigh stays juicier on the grill."
+        },
+        {
+          "ref": "hung_curd",
+          "with": "curd",
+          "ratio": 1,
+          "note": "Use regular curd for a runnier sauce."
+        }
+      ],
+      "storage": "Refrigerate cooked kebabs for up to 3 days; the yogurt keeps 2 days.",
+      "reheating": "Reheat in the air fryer at 180°C for 4 minutes or in a hot pan.",
+      "tags": [
+        "family",
+        "meal_prep"
+      ]
+    },
+    {
+      "id": "caprese-tomato-mozzarella-salad",
+      "title": "Caprese-Style Tomato and Mozzarella Salad",
+      "description": "Thick slices of ripe tomato and soft mozzarella layered with fresh basil and finished with olive oil, a splash of vinegar and cracked black pepper. Ready in ten minutes.",
+      "cuisine": "mediterranean",
+      "region": "Italy",
+      "mealTypes": [
+        "lunch",
+        "snack"
+      ],
+      "course": "side",
+      "servings": 3,
+      "prepMin": 10,
+      "cookMin": 0,
+      "difficulty": "easy",
+      "equipment": [
+        "knife_board"
+      ],
+      "ingredients": [
+        {
+          "ref": "tomato",
+          "g": 350,
+          "measure": "3–4 ripe tomatoes",
+          "prep": "1-cm slices"
+        },
+        {
+          "ref": "salt",
+          "g": 1,
+          "toTaste": true
+        },
+        {
+          "ref": "mozzarella",
+          "g": 150,
+          "prep": "fresh, 1-cm slices"
+        },
+        {
+          "ref": "basil",
+          "g": 10,
+          "measure": "about 20 leaves"
+        },
+        {
+          "ref": "olive_oil",
+          "g": 12,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "vinegar",
+          "g": 5,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 1
+        }
+      ],
+      "steps": [
+        {
+          "title": "Slice and salt the tomatoes",
+          "kind": "prep",
+          "text": "Slice the tomatoes 1 cm thick, sprinkle lightly with salt and leave for 5 minutes so they release a little juice and taste sweeter.",
+          "uses": [
+            "tomato",
+            "salt"
+          ],
+          "visual": "Thick red tomato slices laid out on a wooden board with a light sprinkle of salt glistening on top",
+          "timerMin": 5
+        },
+        {
+          "title": "Slice the mozzarella",
+          "kind": "prep",
+          "text": "Pat the mozzarella dry and cut it into slices the same thickness as the tomato.",
+          "uses": [
+            "mozzarella"
+          ],
+          "visual": "Soft white mozzarella slices on the board beside the tomato slices"
+        },
+        {
+          "title": "Layer with basil",
+          "kind": "assemble",
+          "text": "On a platter, arrange the tomato and mozzarella slices in overlapping alternating rows, tucking a basil leaf between each.",
+          "uses": [
+            "basil"
+          ],
+          "visual": "Overlapping rows of red tomato and white mozzarella slices with bright green basil leaves tucked between them on a white platter"
+        },
+        {
+          "title": "Dress",
+          "kind": "assemble",
+          "text": "Drizzle the olive oil and vinegar over the platter and finish with plenty of cracked black pepper.",
+          "uses": [
+            "olive_oil",
+            "vinegar",
+            "black_pepper"
+          ],
+          "visual": "The tomato–mozzarella platter glistening with a golden drizzle of olive oil and specks of black pepper"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve straight away at room temperature, alongside grilled chicken, soup or whole-wheat toast.",
+          "uses": [],
+          "visual": "A caprese-style platter of alternating tomato and mozzarella slices with basil, olive oil and pepper, a small bowl of soup beside"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "mozzarella",
+          "with": "paneer",
+          "ratio": 1,
+          "note": "Soft, fresh malai paneer slices make a milder, more affordable version."
+        },
+        {
+          "ref": "vinegar",
+          "with": "lemon_juice",
+          "ratio": 1,
+          "note": "A squeeze of lemon works in place of vinegar."
+        }
+      ],
+      "storage": "Best eaten fresh; don't refrigerate the assembled salad, as cold tomatoes turn mealy.",
+      "tags": [
+        "no_cook"
+      ]
+    },
+    {
+      "id": "asian-cabbage-carrot-slaw",
+      "title": "Asian-Style Cabbage and Carrot Slaw",
+      "description": "Finely shredded cabbage, carrot and red pepper tossed in a tangy soy, vinegar, ginger and sesame dressing, topped with crushed roasted peanuts and sesame seeds.",
+      "cuisine": "east_asian",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "side",
+      "servings": 4,
+      "prepMin": 20,
+      "cookMin": 0,
+      "restMin": 10,
+      "difficulty": "easy",
+      "equipment": [
+        "knife_board",
+        "mixing_bowl",
+        "whisk"
+      ],
+      "ingredients": [
+        {
+          "ref": "cabbage",
+          "g": 300,
+          "measure": "¼ medium cabbage",
+          "prep": "very finely shredded"
+        },
+        {
+          "ref": "carrot",
+          "g": 120,
+          "measure": "2 small",
+          "prep": "julienned"
+        },
+        {
+          "ref": "bell_pepper_red",
+          "g": 80,
+          "prep": "thin strips"
+        },
+        {
+          "ref": "spring_onion",
+          "g": 30,
+          "measure": "2 stalks",
+          "prep": "thinly sliced"
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 10,
+          "prep": "chopped"
+        },
+        {
+          "ref": "soy_sauce",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "vinegar",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "honey",
+          "g": 8,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "sesame_oil",
+          "g": 8,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "ginger",
+          "g": 5,
+          "prep": "finely grated"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 3,
+          "measure": "1 chilli",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "peanuts",
+          "g": 25,
+          "measure": "2½ tbsp",
+          "prep": "roasted, crushed"
+        },
+        {
+          "ref": "sesame_seeds",
+          "g": 5,
+          "measure": "1½ tsp",
+          "prep": "toasted"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Shred the vegetables",
+          "kind": "prep",
+          "text": "Shred the cabbage as finely as you can, julienne the carrot, cut the pepper into thin strips and slice the spring onion. Chop the coriander.",
+          "uses": [
+            "cabbage",
+            "carrot",
+            "bell_pepper_red",
+            "spring_onion",
+            "coriander_leaves"
+          ],
+          "visual": "Fine pale-green cabbage shreds, orange carrot matchsticks, red pepper strips, sliced spring onion and chopped coriander on a wooden board"
+        },
+        {
+          "title": "Whisk the dressing",
+          "kind": "prep",
+          "text": "In a large mixing bowl whisk the soy sauce, vinegar, lemon juice, honey, sesame oil, ginger and green chilli until the honey dissolves.",
+          "uses": [
+            "soy_sauce",
+            "vinegar",
+            "lemon_juice",
+            "honey",
+            "sesame_oil",
+            "ginger",
+            "green_chilli"
+          ],
+          "visual": "A thin, glossy brown dressing with flecks of grated ginger and green chilli in a large steel mixing bowl, a whisk beside",
+          "equipment": [
+            "whisk"
+          ]
+        },
+        {
+          "title": "Toss the slaw",
+          "kind": "assemble",
+          "text": "Add all the shredded vegetables and herbs to the bowl and toss thoroughly with your hands or tongs so every strand is coated.",
+          "uses": [],
+          "visual": "Colourful shredded cabbage, carrot and red pepper glistening with dressing being tossed with tongs in the steel bowl"
+        },
+        {
+          "title": "Rest briefly",
+          "kind": "rest",
+          "text": "Leave the slaw for 10 minutes so the cabbage softens slightly and absorbs the dressing.",
+          "uses": [],
+          "visual": "The dressed slaw resting in the steel bowl, the cabbage slightly wilted and shiny",
+          "timerMin": 10
+        },
+        {
+          "title": "Top and serve",
+          "kind": "serve",
+          "text": "Pile into a serving bowl and scatter with crushed peanuts and sesame seeds just before serving so they stay crunchy.",
+          "uses": [
+            "peanuts",
+            "sesame_seeds"
+          ],
+          "visual": "A heaped bowl of bright Asian slaw — pale green cabbage, orange carrot and red pepper — topped with crushed peanuts and white sesame seeds"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "honey",
+          "with": "sugar",
+          "ratio": 1,
+          "note": "Use sugar to keep the slaw vegan."
+        },
+        {
+          "ref": "peanuts",
+          "with": "cashews",
+          "ratio": 1,
+          "note": "Roasted cashews work for a peanut-free slaw."
+        },
+        {
+          "ref": "bell_pepper_red",
+          "with": "capsicum",
+          "ratio": 1,
+          "note": "Green capsicum is cheaper and just as crunchy."
+        }
+      ],
+      "storage": "Undressed shredded vegetables keep 2 days in the fridge; dressed slaw is best within a few hours.",
+      "tags": [
+        "no_cook",
+        "meal_prep"
+      ]
     }
   ]
 }

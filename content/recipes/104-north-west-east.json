@@ -4532,7 +4532,7 @@
         "dinner"
       ],
       "course": "accompaniment",
-      "servings": 3,
+      "servings": 2,
       "prepMin": 10,
       "cookMin": 0,
       "difficulty": "easy",
@@ -4837,6 +4837,3650 @@
       "storage": "Refrigerate up to 2 days.",
       "reheating": "Warm in a pan with a splash of water.",
       "tags": []
+    },
+    {
+      "id": "maharashtrian-kanda-poha",
+      "title": "Kanda Poha",
+      "description": "Maharashtra's favourite breakfast: thick poha softened and tossed with onion, peanuts, mustard seeds, curry leaves and turmeric, finished with lemon, coriander and fresh coconut.",
+      "cuisine": "west_indian",
+      "region": "Maharashtra",
+      "mealTypes": [
+        "breakfast",
+        "snack"
+      ],
+      "course": "complete",
+      "servings": 2,
+      "prepMin": 10,
+      "cookMin": 12,
+      "difficulty": "easy",
+      "equipment": [
+        "mixing_bowl",
+        "kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "poha",
+          "g": 120,
+          "measure": "1⅓ cups",
+          "prep": "thick variety"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "salt",
+          "g": 3,
+          "toTaste": true
+        },
+        {
+          "ref": "sugar",
+          "g": 3,
+          "measure": "¾ tsp"
+        },
+        {
+          "ref": "sunflower_oil",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "peanuts",
+          "g": 20,
+          "measure": "2 tbsp"
+        },
+        {
+          "ref": "mustard_seeds",
+          "g": 2,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 2,
+          "measure": "1 sprig"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "measure": "1–2",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "onion",
+          "g": 80,
+          "measure": "1 small",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 6,
+          "prep": "chopped"
+        },
+        {
+          "ref": "coconut_grated",
+          "g": 10,
+          "measure": "2 tbsp"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Rinse the poha",
+          "kind": "prep",
+          "text": "Put the poha in a sieve and rinse under running water for 15 to 20 seconds, tossing, until just soft. Drain well and leave for 5 minutes. Sprinkle over the turmeric, salt and sugar and fluff gently with your fingers.",
+          "uses": [
+            "poha",
+            "turmeric",
+            "salt",
+            "sugar"
+          ],
+          "visual": "Softened, fluffy thick poha flakes tinged pale yellow with turmeric in a steel mixing bowl, separate and not mushy",
+          "timerMin": 5
+        },
+        {
+          "title": "Fry the peanuts",
+          "kind": "cook",
+          "text": "Heat the oil in a kadai over medium heat. Fry the peanuts for 2 minutes until crunchy and lightly browned, then lift them out.",
+          "uses": [
+            "sunflower_oil",
+            "peanuts"
+          ],
+          "visual": "Golden, crunchy peanuts sizzling in a little oil in a black iron kadai",
+          "timerMin": 2,
+          "heat": "medium"
+        },
+        {
+          "title": "Temper and cook onion",
+          "kind": "cook",
+          "text": "In the same oil, add the mustard seeds. When they splutter, add the curry leaves and green chilli, then the onion. Cook for 3 minutes until the onion is soft and translucent but not browned.",
+          "uses": [
+            "mustard_seeds",
+            "curry_leaves",
+            "green_chilli",
+            "onion"
+          ],
+          "visual": "Translucent chopped onion with spluttered mustard seeds, curry leaves and green chilli in the iron kadai",
+          "timerMin": 3,
+          "heat": "medium"
+        },
+        {
+          "title": "Toss in the poha",
+          "kind": "cook",
+          "text": "Add the poha and toss gently until evenly yellow. Lower the heat, cover and steam for 2 minutes so it turns soft and warm. Stir in most of the fried peanuts.",
+          "uses": [],
+          "visual": "Fluffy yellow poha tossed with onion, curry leaves and peanuts in the iron kadai, steam rising",
+          "timerMin": 2,
+          "heat": "low"
+        },
+        {
+          "title": "Finish with lemon",
+          "kind": "cook",
+          "text": "Turn off the heat, squeeze over the lemon juice and fold in most of the coriander.",
+          "uses": [
+            "lemon_juice",
+            "coriander_leaves"
+          ],
+          "visual": "Yellow poha flecked with green coriander in the kadai, a squeezed lemon half resting on the rim"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve hot topped with the remaining peanuts, coriander and the fresh coconut, with a cup of chai.",
+          "uses": [
+            "coconut_grated"
+          ],
+          "visual": "Kanda poha on a steel plate topped with white grated coconut, coriander and peanuts, a lemon wedge and a glass of chai beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "peanuts",
+          "with": "cashews",
+          "ratio": 1,
+          "note": "Use cashews for a peanut-free poha."
+        },
+        {
+          "ref": "onion",
+          "with": "potato",
+          "ratio": 1,
+          "note": "Make batata poha with a small diced potato cooked before adding the poha."
+        }
+      ],
+      "storage": "Best eaten fresh; poha hardens as it cools.",
+      "reheating": "Sprinkle with a little water and microwave for 1 minute or steam in a covered pan.",
+      "tags": [
+        "kid_friendly"
+      ]
+    },
+    {
+      "id": "vegetable-rava-upma-maharashtrian",
+      "title": "Vegetable Rava Upma",
+      "description": "Roasted semolina cooked with carrot, beans and peas in a mustard-seed, curry-leaf and ginger tempering. Soft, savoury and ready in 20 minutes — a staple breakfast across Maharashtra.",
+      "cuisine": "west_indian",
+      "region": "Maharashtra",
+      "mealTypes": [
+        "breakfast"
+      ],
+      "course": "complete",
+      "servings": 2,
+      "prepMin": 10,
+      "cookMin": 15,
+      "difficulty": "easy",
+      "equipment": [
+        "knife_board",
+        "kadai",
+        "saucepan"
+      ],
+      "ingredients": [
+        {
+          "ref": "rava",
+          "g": 100,
+          "measure": "⅔ cup"
+        },
+        {
+          "ref": "sunflower_oil",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "ghee",
+          "g": 5,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "mustard_seeds",
+          "g": 2,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "urad_dal",
+          "g": 4,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "chana_dal",
+          "g": 4,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 2,
+          "measure": "1 sprig"
+        },
+        {
+          "ref": "ginger",
+          "g": 5,
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "prep": "slit"
+        },
+        {
+          "ref": "onion",
+          "g": 60,
+          "measure": "½ medium",
+          "prep": "chopped"
+        },
+        {
+          "ref": "carrot",
+          "g": 50,
+          "measure": "1 small",
+          "prep": "finely diced"
+        },
+        {
+          "ref": "french_beans",
+          "g": 40,
+          "measure": "6 beans",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "green_peas",
+          "g": 40,
+          "measure": "¼ cup"
+        },
+        {
+          "ref": "water",
+          "g": 300
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 5,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 5,
+          "prep": "chopped"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Roast the rava",
+          "kind": "cook",
+          "text": "Dry-roast the rava in a kadai on medium-low heat for 5 to 6 minutes, stirring constantly, until it smells nutty and looks a shade darker. Tip it onto a plate.",
+          "uses": [
+            "rava"
+          ],
+          "visual": "Pale golden, dry-roasted semolina being stirred in a black iron kadai",
+          "timerMin": 6,
+          "heat": "low"
+        },
+        {
+          "title": "Temper the spices",
+          "kind": "cook",
+          "text": "Heat the oil and ghee in the same kadai. Add the mustard seeds; when they splutter add the urad dal and chana dal and fry until golden. Add the curry leaves, ginger and green chilli.",
+          "uses": [
+            "sunflower_oil",
+            "ghee",
+            "mustard_seeds",
+            "urad_dal",
+            "chana_dal",
+            "curry_leaves",
+            "ginger",
+            "green_chilli"
+          ],
+          "visual": "Golden urad and chana dal with spluttering mustard seeds, curry leaves, ginger and slit green chilli in oil in the iron kadai",
+          "heat": "medium"
+        },
+        {
+          "title": "Cook the vegetables",
+          "kind": "cook",
+          "text": "Add the onion and cook for 2 minutes until soft. Add the carrot, beans and peas and sauté for 3 minutes.",
+          "uses": [
+            "onion",
+            "carrot",
+            "french_beans",
+            "green_peas"
+          ],
+          "visual": "Diced orange carrot, green beans, peas and soft onion with the tempering in the iron kadai",
+          "timerMin": 5,
+          "heat": "medium"
+        },
+        {
+          "title": "Boil the water",
+          "kind": "cook",
+          "text": "Pour in the water, add salt and bring to a rolling boil. Cover and simmer for 2 minutes so the vegetables soften.",
+          "uses": [
+            "water",
+            "salt"
+          ],
+          "visual": "Water at a rolling boil with vegetables and curry leaves floating in the iron kadai",
+          "timerMin": 2,
+          "heat": "high"
+        },
+        {
+          "title": "Stir in the rava",
+          "kind": "cook",
+          "text": "Lower the heat and add the roasted rava in a thin stream with one hand, stirring constantly with the other so no lumps form. Cover and cook on the lowest heat for 2 to 3 minutes until fluffy.",
+          "uses": [],
+          "visual": "Thick, fluffy upma with carrot, peas and beans studded through it in the iron kadai, a spatula stirring",
+          "timerMin": 3,
+          "heat": "low"
+        },
+        {
+          "title": "Finish and serve",
+          "kind": "serve",
+          "text": "Squeeze over the lemon juice, fold in the coriander and serve hot with coconut chutney or a cup of tea.",
+          "uses": [
+            "lemon_juice",
+            "coriander_leaves"
+          ],
+          "visual": "Vegetable upma mounded on a steel plate, flecks of carrot, peas and curry leaves, coriander on top, a lemon wedge beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "rava",
+          "with": "oats",
+          "ratio": 1,
+          "note": "Make oats upma with rolled oats; use only 200 ml water and cook 2 minutes."
+        },
+        {
+          "ref": "ghee",
+          "with": "sunflower_oil",
+          "ratio": 1,
+          "note": "Use all oil for a vegan upma."
+        }
+      ],
+      "storage": "Best fresh; refrigerate up to 1 day.",
+      "reheating": "Sprinkle with water and microwave for 1 minute, or steam in a covered pan.",
+      "tags": [
+        "kid_friendly"
+      ]
+    },
+    {
+      "id": "gujarati-khaman-dhokla",
+      "title": "Khaman Dhokla",
+      "description": "Spongy, steamed Gujarati gram-flour cakes, lightly sweet and tangy, with a mustard-seed, curry-leaf and green-chilli tempering poured over. Leavened with lemon and soda, so no fermenting.",
+      "cuisine": "west_indian",
+      "region": "Gujarat",
+      "mealTypes": [
+        "breakfast",
+        "snack"
+      ],
+      "course": "snack",
+      "servings": 4,
+      "prepMin": 15,
+      "cookMin": 20,
+      "restMin": 10,
+      "difficulty": "medium",
+      "equipment": [
+        "mixing_bowl",
+        "whisk",
+        "steamer|pressure_cooker"
+      ],
+      "ingredients": [
+        {
+          "ref": "besan",
+          "g": 150,
+          "measure": "1⅔ cups",
+          "prep": "sifted"
+        },
+        {
+          "ref": "ginger",
+          "g": 6,
+          "prep": "grated"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 6,
+          "measure": "2",
+          "prep": "1 crushed to paste, 1 slit"
+        },
+        {
+          "ref": "turmeric",
+          "g": 0.5
+        },
+        {
+          "ref": "sugar",
+          "g": 15,
+          "measure": "1 tbsp + 1 tsp",
+          "prep": "divided"
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "water",
+          "g": 240
+        },
+        {
+          "ref": "baking_soda",
+          "g": 4,
+          "measure": "¾ tsp"
+        },
+        {
+          "ref": "sunflower_oil",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "mustard_seeds",
+          "g": 2,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "hing",
+          "g": 0.2,
+          "measure": "1 pinch"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 2,
+          "measure": "1 sprig"
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 5,
+          "prep": "chopped"
+        },
+        {
+          "ref": "coconut_grated",
+          "g": 10,
+          "measure": "2 tbsp"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Set up the steamer",
+          "kind": "prep",
+          "text": "Pour 2 inches of water into a steamer or pressure cooker (without the whistle) and bring it to a boil. Grease a 7-inch round tin.",
+          "uses": [],
+          "visual": "A steel steamer pot with water starting to boil and an empty greased round steel tin waiting beside it",
+          "equipment": [
+            "steamer|pressure_cooker"
+          ]
+        },
+        {
+          "title": "Make the batter",
+          "kind": "prep",
+          "text": "In a bowl, whisk the besan with the ginger, crushed green chilli, turmeric, 1 tablespoon sugar, salt, lemon juice and about 180 ml water into a smooth, thick but pourable batter. Whisk for 2 minutes to add air, then rest for 10 minutes.",
+          "uses": [
+            "besan",
+            "ginger",
+            "green_chilli",
+            "turmeric",
+            "sugar",
+            "salt",
+            "lemon_juice",
+            "water"
+          ],
+          "visual": "A smooth, thick pale-yellow besan batter in a steel mixing bowl with a whisk lifted out, ribbons falling back",
+          "timerMin": 10,
+          "equipment": [
+            "whisk"
+          ]
+        },
+        {
+          "title": "Activate and pour",
+          "kind": "prep",
+          "text": "Just before steaming, sprinkle the baking soda over the batter with 1 teaspoon of water and whisk briskly in one direction for a few seconds — it will turn frothy and double. Pour straight into the greased tin.",
+          "uses": [
+            "baking_soda"
+          ],
+          "visual": "Light, frothy, aerated yellow batter being poured from the steel bowl into the greased round tin",
+          "equipment": [
+            "whisk"
+          ]
+        },
+        {
+          "title": "Steam the dhokla",
+          "kind": "cook",
+          "text": "Place the tin in the steamer, cover and steam on medium-high heat for 15 to 18 minutes until a toothpick comes out clean. Don't open the lid for the first 12 minutes.",
+          "uses": [],
+          "visual": "A risen, spongy, bright yellow dhokla in the round tin inside the open steamer, steam curling up",
+          "timerMin": 17,
+          "heat": "medium",
+          "equipment": [
+            "steamer|pressure_cooker"
+          ]
+        },
+        {
+          "title": "Make the tempering",
+          "kind": "cook",
+          "text": "Heat the oil in a small pan. Add the mustard seeds; when they splutter add the hing, curry leaves and slit green chilli. Pour in the remaining 60 ml water and 1 teaspoon sugar and bring to a boil, then turn off the heat.",
+          "uses": [
+            "sunflower_oil",
+            "mustard_seeds",
+            "hing",
+            "curry_leaves"
+          ],
+          "visual": "Spluttering mustard seeds, curry leaves and a slit green chilli in a small pan of bubbling sweet tempering water",
+          "heat": "medium"
+        },
+        {
+          "title": "Soak with tempering",
+          "kind": "assemble",
+          "text": "Let the dhokla cool for 5 minutes, cut into squares in the tin, and spoon the hot tempering evenly over so it soaks in.",
+          "uses": [],
+          "visual": "Yellow dhokla squares in the tin glistening with tempering, mustard seeds and curry leaves scattered over the top"
+        },
+        {
+          "title": "Garnish and serve",
+          "kind": "serve",
+          "text": "Sprinkle with coriander and grated coconut and serve with green chutney.",
+          "uses": [
+            "coriander_leaves",
+            "coconut_grated"
+          ],
+          "visual": "Spongy khaman dhokla squares on a steel plate topped with grated coconut, coriander, mustard seeds and curry leaves, green chutney on the side"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "sugar",
+          "with": "stevia",
+          "ratio": 0.05,
+          "note": "A pinch of stevia keeps the sweet-sour balance without added sugar."
+        },
+        {
+          "ref": "lemon_juice",
+          "with": "vinegar",
+          "ratio": 0.8,
+          "note": "Vinegar also activates the soda if you're out of lemons."
+        }
+      ],
+      "storage": "Keeps 2 days refrigerated in a covered box.",
+      "reheating": "Sprinkle with water and steam or microwave for 30 seconds to soften.",
+      "tags": [
+        "kid_friendly",
+        "festive"
+      ]
+    },
+    {
+      "id": "puneri-sprouted-moong-misal",
+      "title": "Sprouted Moong Misal",
+      "description": "A spicy Maharashtrian misal of sprouted moong in a fiery coconut-onion rassa, topped with crunchy peanuts, raw onion, coriander and lemon — no farsan needed. Serve with pav or roti.",
+      "cuisine": "west_indian",
+      "region": "Maharashtra",
+      "mealTypes": [
+        "breakfast",
+        "lunch"
+      ],
+      "course": "complete",
+      "servings": 2,
+      "prepMin": 15,
+      "cookMin": 30,
+      "difficulty": "medium",
+      "equipment": [
+        "kadai",
+        "mixer_grinder",
+        "saucepan"
+      ],
+      "ingredients": [
+        {
+          "ref": "moong_sprouts",
+          "g": 300,
+          "measure": "3 cups"
+        },
+        {
+          "ref": "water",
+          "g": 500
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "salt",
+          "g": 5,
+          "toTaste": true
+        },
+        {
+          "ref": "desiccated_coconut",
+          "g": 15,
+          "measure": "3 tbsp"
+        },
+        {
+          "ref": "onion",
+          "g": 150,
+          "measure": "1 large",
+          "prep": "two-thirds sliced, one-third finely chopped"
+        },
+        {
+          "ref": "ginger_garlic_paste",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "sunflower_oil",
+          "g": 20,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "mustard_seeds",
+          "g": 2,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "hing",
+          "g": 0.2,
+          "measure": "1 pinch"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 2,
+          "measure": "1 sprig"
+        },
+        {
+          "ref": "tomato",
+          "g": 100,
+          "measure": "1 medium",
+          "prep": "chopped"
+        },
+        {
+          "ref": "chilli_powder",
+          "g": 4,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "garam_masala",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "peanuts",
+          "g": 20,
+          "measure": "2 tbsp",
+          "prep": "roasted"
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 6,
+          "prep": "chopped"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 10,
+          "measure": "2 tsp"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Cook the sprouts",
+          "kind": "cook",
+          "text": "Simmer the moong sprouts in a saucepan with 200 ml of the water, the turmeric and a little salt for 8 to 10 minutes until tender but still holding their shape. Set aside with their water.",
+          "uses": [
+            "moong_sprouts",
+            "water",
+            "turmeric",
+            "salt"
+          ],
+          "visual": "Sprouted green moong with tiny white tails simmering in yellow-tinged water in a steel saucepan",
+          "timerMin": 10,
+          "heat": "medium"
+        },
+        {
+          "title": "Roast the masala",
+          "kind": "cook",
+          "text": "Dry-roast the desiccated coconut in a kadai on low heat until golden brown, 2 minutes. Add 1 teaspoon of the oil and the sliced onion and roast for 6 to 7 minutes until deep brown. Cool and grind with the ginger-garlic paste and a little water to a smooth paste.",
+          "uses": [
+            "desiccated_coconut",
+            "onion",
+            "ginger_garlic_paste"
+          ],
+          "visual": "Deep brown roasted coconut and onion being ground into a dark, smooth masala paste in a mixer jar",
+          "timerMin": 9,
+          "heat": "low",
+          "equipment": [
+            "mixer_grinder"
+          ]
+        },
+        {
+          "title": "Temper and cook tomato",
+          "kind": "cook",
+          "text": "Heat the remaining oil in the kadai. Add the mustard seeds, hing and curry leaves, then the tomato. Cook for 3 minutes until soft, then add the chilli powder and garam masala.",
+          "uses": [
+            "sunflower_oil",
+            "mustard_seeds",
+            "hing",
+            "curry_leaves",
+            "tomato",
+            "chilli_powder",
+            "garam_masala"
+          ],
+          "visual": "Soft tomato in a deep red, spiced oil with curry leaves and mustard seeds in the iron kadai",
+          "timerMin": 3,
+          "heat": "medium"
+        },
+        {
+          "title": "Make the rassa",
+          "kind": "cook",
+          "text": "Add the ground masala and fry for 3 minutes until the oil rises to the top. Pour in the remaining water and simmer for 8 minutes into a thin, fiery red rassa with a layer of red oil (tarri) on top. Season with salt.",
+          "uses": [],
+          "visual": "A thin, fiery red rassa simmering in the iron kadai with a layer of bright red oil floating on the surface",
+          "timerMin": 11,
+          "heat": "medium"
+        },
+        {
+          "title": "Add the sprouts",
+          "kind": "cook",
+          "text": "Spoon about a third of the rassa into a bowl to serve on the side. Add the cooked sprouts and their water to the kadai and simmer for 3 minutes.",
+          "uses": [],
+          "visual": "Green moong sprouts bobbing in the spicy red rassa in the iron kadai",
+          "timerMin": 3,
+          "heat": "low"
+        },
+        {
+          "title": "Top and serve",
+          "kind": "serve",
+          "text": "Ladle the misal into bowls and top with the chopped raw onion, roasted peanuts, coriander and a squeeze of lemon. Serve with the extra rassa and pav or roti.",
+          "uses": [
+            "peanuts",
+            "coriander_leaves",
+            "lemon_juice"
+          ],
+          "visual": "Misal in a deep steel bowl topped with chopped raw onion, roasted peanuts and coriander, red oil glistening, a lemon wedge, a bowl of extra rassa and pav beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "desiccated_coconut",
+          "with": "coconut_grated",
+          "ratio": 2,
+          "note": "Fresh coconut works too — roast it a little longer until brown."
+        },
+        {
+          "ref": "peanuts",
+          "with": "roasted_gram",
+          "ratio": 1,
+          "note": "Roasted gram adds crunch for a peanut-free topping."
+        }
+      ],
+      "storage": "Refrigerate the rassa and sprouts up to 2 days; add toppings only when serving.",
+      "reheating": "Reheat until bubbling, then add fresh onion, coriander and lemon.",
+      "tags": []
+    },
+    {
+      "id": "goan-mackerel-fish-curry",
+      "title": "Goan Fish Curry (Bangda Xitt Curry)",
+      "description": "Goa's everyday fish curry: mackerel simmered in a smooth coconut masala ground with Kashmiri chillies, coriander and tamarind. Tangy, coral-red and meant for a plate of rice.",
+      "cuisine": "west_indian",
+      "region": "Goa",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 4,
+      "prepMin": 20,
+      "cookMin": 25,
+      "difficulty": "medium",
+      "equipment": [
+        "knife_board",
+        "mixer_grinder",
+        "kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "mackerel",
+          "g": 500,
+          "measure": "4 medium fish",
+          "prep": "cleaned, cut in half"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "salt",
+          "g": 6,
+          "toTaste": true
+        },
+        {
+          "ref": "coconut_grated",
+          "g": 100,
+          "measure": "1¼ cups"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 8,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "dried_red_chilli",
+          "g": 4,
+          "measure": "6"
+        },
+        {
+          "ref": "coriander_seeds",
+          "g": 5,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "cumin_seeds",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 1,
+          "measure": "6 peppercorns"
+        },
+        {
+          "ref": "garlic",
+          "g": 8,
+          "measure": "2 cloves"
+        },
+        {
+          "ref": "ginger",
+          "g": 6,
+          "measure": "½-inch piece"
+        },
+        {
+          "ref": "tamarind",
+          "g": 10,
+          "measure": "1 small ball",
+          "prep": "soaked in ¼ cup warm water"
+        },
+        {
+          "ref": "water",
+          "g": 450
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "onion",
+          "g": 60,
+          "measure": "½ medium",
+          "prep": "thinly sliced"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 3,
+          "measure": "1",
+          "prep": "slit"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Season the fish",
+          "kind": "prep",
+          "text": "Wash the cleaned mackerel, cut each fish in half and rub with the turmeric and half the salt. Set aside while you make the masala.",
+          "uses": [
+            "mackerel",
+            "turmeric",
+            "salt"
+          ],
+          "visual": "Cleaned mackerel pieces rubbed with yellow turmeric on a steel plate"
+        },
+        {
+          "title": "Grind the coconut masala",
+          "kind": "prep",
+          "text": "Grind the coconut, Kashmiri chilli, dried red chillies, coriander seeds, cumin, peppercorns, garlic, ginger and the tamarind with its soaking water into a very smooth paste, adding a little more water as needed.",
+          "uses": [
+            "coconut_grated",
+            "kashmiri_chilli",
+            "dried_red_chilli",
+            "coriander_seeds",
+            "cumin_seeds",
+            "black_pepper",
+            "garlic",
+            "ginger",
+            "tamarind"
+          ],
+          "visual": "A mixer jar holding a silky, coral-red coconut and chilli masala paste",
+          "equipment": [
+            "mixer_grinder"
+          ]
+        },
+        {
+          "title": "Soften the onion",
+          "kind": "cook",
+          "text": "Heat the coconut oil in a kadai or clay pot over medium heat. Add the onion and green chilli and sauté for 3 to 4 minutes until soft and translucent.",
+          "uses": [
+            "coconut_oil",
+            "onion",
+            "green_chilli"
+          ],
+          "visual": "Soft, translucent sliced onion with a slit green chilli in coconut oil in a clay pot",
+          "timerMin": 4,
+          "heat": "medium"
+        },
+        {
+          "title": "Simmer the curry",
+          "kind": "cook",
+          "text": "Add the ground masala and cook for 2 minutes. Pour in the water, add the remaining salt and bring to a gentle boil. Simmer for 6 to 8 minutes until slightly thickened.",
+          "uses": [
+            "water"
+          ],
+          "visual": "A smooth, coral-red coconut curry gently bubbling in the clay pot, a sheen of coconut oil on top",
+          "timerMin": 8,
+          "heat": "medium"
+        },
+        {
+          "title": "Cook the fish",
+          "kind": "cook",
+          "text": "Slide in the mackerel pieces and swirl the pot rather than stirring so they don't break. Simmer on low for 7 to 8 minutes until the fish is cooked through.",
+          "uses": [],
+          "visual": "Mackerel pieces submerged in the coral-red coconut curry in the clay pot, gently simmering",
+          "timerMin": 8,
+          "heat": "low"
+        },
+        {
+          "title": "Rest and serve",
+          "kind": "serve",
+          "text": "Turn off the heat and rest the curry for 10 minutes so the flavours settle. Serve with steamed rice and a vegetable side.",
+          "uses": [],
+          "visual": "Goan fish curry in a clay pot, coral-red gravy with mackerel pieces, beside a plate of steamed rice and a lime wedge"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "mackerel",
+          "with": "pomfret",
+          "ratio": 1,
+          "note": "Pomfret or kingfish (seer) are classic choices for a festive version."
+        },
+        {
+          "ref": "tamarind",
+          "with": "lemon_juice",
+          "ratio": 2,
+          "note": "Add lemon juice at the end if you don't have tamarind; it's slightly lower in carbs."
+        }
+      ],
+      "storage": "Refrigerate up to 2 days; the flavour improves overnight.",
+      "reheating": "Warm gently on low heat without stirring.",
+      "tags": [
+        "meal_prep"
+      ]
+    },
+    {
+      "id": "goan-chicken-cafreal",
+      "title": "Goan Chicken Cafreal",
+      "description": "Chicken marinated in a vivid green paste of coriander, green chilli, garlic, ginger, whole spices and vinegar, then pan-cooked until the masala clings. A Goan bar-and-home classic.",
+      "cuisine": "west_indian",
+      "region": "Goa",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 4,
+      "prepMin": 20,
+      "cookMin": 35,
+      "restMin": 120,
+      "difficulty": "medium",
+      "equipment": [
+        "mixer_grinder",
+        "mixing_bowl",
+        "kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "chicken_curry_cut",
+          "g": 800
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 60,
+          "measure": "1 large bunch",
+          "prep": "with tender stems"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 15,
+          "measure": "5"
+        },
+        {
+          "ref": "garlic",
+          "g": 20,
+          "measure": "6 cloves"
+        },
+        {
+          "ref": "ginger",
+          "g": 15,
+          "measure": "1½-inch piece"
+        },
+        {
+          "ref": "cumin_seeds",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 2,
+          "measure": "12 peppercorns"
+        },
+        {
+          "ref": "cloves",
+          "g": 0.4,
+          "measure": "4"
+        },
+        {
+          "ref": "cinnamon",
+          "g": 1,
+          "measure": "1-inch stick"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "vinegar",
+          "g": 20,
+          "measure": "4 tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 7,
+          "toTaste": true
+        },
+        {
+          "ref": "sunflower_oil",
+          "g": 20,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "onion",
+          "g": 80,
+          "measure": "1 small",
+          "prep": "thinly sliced"
+        },
+        {
+          "ref": "water",
+          "g": 80
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 10,
+          "measure": "2 tsp"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Grind the green masala",
+          "kind": "prep",
+          "text": "Grind the coriander, green chillies, garlic, ginger, cumin, peppercorns, cloves, cinnamon and turmeric with the vinegar into a smooth, bright green paste. Add a spoon of water only if needed.",
+          "uses": [
+            "coriander_leaves",
+            "green_chilli",
+            "garlic",
+            "ginger",
+            "cumin_seeds",
+            "black_pepper",
+            "cloves",
+            "cinnamon",
+            "turmeric",
+            "vinegar"
+          ],
+          "visual": "A mixer jar filled with a thick, vivid green coriander and chilli paste",
+          "equipment": [
+            "mixer_grinder"
+          ]
+        },
+        {
+          "title": "Marinate the chicken",
+          "kind": "prep",
+          "text": "Make a few slashes in the larger chicken pieces. Coat them thoroughly with the green masala and salt, cover and refrigerate for 2 hours, or overnight.",
+          "uses": [
+            "chicken_curry_cut",
+            "salt"
+          ],
+          "visual": "Chicken pieces thickly coated in bright green masala in a steel mixing bowl",
+          "timerMin": 120
+        },
+        {
+          "title": "Brown the onion",
+          "kind": "cook",
+          "text": "Heat the oil in a wide kadai. Fry the onion on medium heat for 5 minutes until golden.",
+          "uses": [
+            "sunflower_oil",
+            "onion"
+          ],
+          "visual": "Golden sliced onion in oil in a wide black iron kadai",
+          "timerMin": 5,
+          "heat": "medium"
+        },
+        {
+          "title": "Sear the chicken",
+          "kind": "cook",
+          "text": "Add the chicken pieces, shaking off the extra marinade (keep it). Sear for 5 minutes on medium-high, turning, until lightly browned.",
+          "uses": [],
+          "visual": "Green-coated chicken pieces searing among golden onions in the iron kadai, patches of brown appearing",
+          "timerMin": 5,
+          "heat": "high"
+        },
+        {
+          "title": "Cook covered",
+          "kind": "cook",
+          "text": "Add the leftover marinade and the water. Cover and cook on low heat for 20 minutes, turning the pieces once, until the chicken is cooked through.",
+          "uses": [
+            "water"
+          ],
+          "visual": "Chicken simmering in a thick green masala in the covered iron kadai, lid slightly ajar with steam escaping",
+          "timerMin": 20,
+          "heat": "low"
+        },
+        {
+          "title": "Dry out the masala",
+          "kind": "cook",
+          "text": "Uncover and cook on medium-high heat for 4 to 5 minutes, turning the pieces, until the masala thickens and clings to the chicken. Squeeze over the lemon juice.",
+          "uses": [
+            "lemon_juice"
+          ],
+          "visual": "Chicken pieces coated in a thick, dark green masala clinging to them, edges browned, in the open iron kadai",
+          "timerMin": 5,
+          "heat": "high"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve hot with a green salad, lemon wedges and Goan bread or a small portion of rice.",
+          "uses": [],
+          "visual": "Chicken cafreal on a white platter, deep green and glossy with browned edges, onion rings and lemon wedges beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "chicken_curry_cut",
+          "with": "chicken_thigh",
+          "ratio": 0.8,
+          "note": "Boneless thighs cook in 12 minutes covered."
+        },
+        {
+          "ref": "vinegar",
+          "with": "lemon_juice",
+          "ratio": 1,
+          "note": "Lemon juice gives a fresher, less sharp sourness."
+        }
+      ],
+      "storage": "Refrigerate up to 3 days.",
+      "reheating": "Reheat in a pan with a splash of water, or in the air fryer at 180°C for 5 minutes.",
+      "tags": [
+        "meal_prep",
+        "festive"
+      ]
+    },
+    {
+      "id": "goan-prawn-xacuti",
+      "title": "Goan Prawn Xacuti-Style Curry",
+      "description": "Prawns in a deep brown xacuti masala of slow-roasted coconut, onion and whole spices including star anise, pepper and cloves — warm, complex and only gently hot.",
+      "cuisine": "west_indian",
+      "region": "Goa",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 3,
+      "prepMin": 20,
+      "cookMin": 30,
+      "difficulty": "medium",
+      "equipment": [
+        "kadai",
+        "mixer_grinder"
+      ],
+      "ingredients": [
+        {
+          "ref": "prawns",
+          "g": 400,
+          "prep": "peeled and deveined"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "salt",
+          "g": 5,
+          "toTaste": true
+        },
+        {
+          "ref": "coconut_grated",
+          "g": 80,
+          "measure": "1 cup"
+        },
+        {
+          "ref": "onion",
+          "g": 100,
+          "measure": "1 medium",
+          "prep": "half sliced, half finely chopped"
+        },
+        {
+          "ref": "dried_red_chilli",
+          "g": 5,
+          "measure": "7–8"
+        },
+        {
+          "ref": "coriander_seeds",
+          "g": 6,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "cumin_seeds",
+          "g": 1.5,
+          "measure": "¾ tsp"
+        },
+        {
+          "ref": "fennel_seeds",
+          "g": 1,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 1,
+          "measure": "6 peppercorns"
+        },
+        {
+          "ref": "cloves",
+          "g": 0.3,
+          "measure": "3"
+        },
+        {
+          "ref": "cinnamon",
+          "g": 1,
+          "measure": "1-inch stick"
+        },
+        {
+          "ref": "star_anise",
+          "g": 0.5,
+          "measure": "1"
+        },
+        {
+          "ref": "garlic",
+          "g": 8,
+          "measure": "2 cloves"
+        },
+        {
+          "ref": "tamarind",
+          "g": 6,
+          "prep": "soaked in 2 tbsp warm water"
+        },
+        {
+          "ref": "water",
+          "g": 300
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 15,
+          "measure": "1 tbsp"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Season the prawns",
+          "kind": "prep",
+          "text": "Rinse the prawns, pat dry and toss with the turmeric and a pinch of salt. Refrigerate while you prepare the masala.",
+          "uses": [
+            "prawns",
+            "turmeric",
+            "salt"
+          ],
+          "visual": "Peeled, deveined prawns tossed with yellow turmeric in a steel bowl"
+        },
+        {
+          "title": "Roast the coconut and onion",
+          "kind": "cook",
+          "text": "Dry-roast the grated coconut with the sliced onion in a kadai on low heat, stirring constantly, for 10 to 12 minutes until both are an even deep brown. Don't rush this — it gives xacuti its colour and flavour.",
+          "uses": [
+            "coconut_grated",
+            "onion"
+          ],
+          "visual": "Evenly deep-brown roasted grated coconut and sliced onion in a black iron kadai",
+          "timerMin": 12,
+          "heat": "low"
+        },
+        {
+          "title": "Toast the whole spices",
+          "kind": "cook",
+          "text": "Add the dried red chillies, coriander seeds, cumin, fennel, peppercorns, cloves, cinnamon and star anise to the kadai and roast for 1 to 2 minutes until fragrant.",
+          "uses": [
+            "dried_red_chilli",
+            "coriander_seeds",
+            "cumin_seeds",
+            "fennel_seeds",
+            "black_pepper",
+            "cloves",
+            "cinnamon",
+            "star_anise"
+          ],
+          "visual": "Whole red chillies, coriander seeds, star anise, cinnamon and cloves toasted among the brown coconut in the iron kadai",
+          "timerMin": 2,
+          "heat": "low"
+        },
+        {
+          "title": "Grind the xacuti masala",
+          "kind": "prep",
+          "text": "Cool slightly, then grind the roasted mixture with the garlic, tamarind and its water and about 100 ml of the water to a smooth, thick paste.",
+          "uses": [
+            "garlic",
+            "tamarind"
+          ],
+          "visual": "A thick, dark chocolate-brown xacuti paste in a mixer jar",
+          "equipment": [
+            "mixer_grinder"
+          ]
+        },
+        {
+          "title": "Cook the masala",
+          "kind": "cook",
+          "text": "Heat the coconut oil in the kadai and sauté the chopped onion for 4 minutes until golden. Add the ground masala and fry for 3 minutes, stirring, until fragrant. Add the remaining water and salt and simmer for 5 minutes.",
+          "uses": [
+            "coconut_oil",
+            "water"
+          ],
+          "visual": "A thick, dark brown xacuti gravy simmering in the iron kadai with golden onion bits",
+          "timerMin": 12,
+          "heat": "medium"
+        },
+        {
+          "title": "Add the prawns",
+          "kind": "cook",
+          "text": "Add the prawns and simmer for 4 to 5 minutes, just until they curl and turn pink. Overcooking makes them rubbery.",
+          "uses": [],
+          "visual": "Pink, curled prawns in a thick, glossy dark brown gravy in the iron kadai",
+          "timerMin": 5,
+          "heat": "low"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Rest for 5 minutes and serve with steamed rice or Goan poi bread.",
+          "uses": [],
+          "visual": "Prawn xacuti in a terracotta bowl, pink prawns in rich brown gravy, a plate of rice and a wedge of lime beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "prawns",
+          "with": "chicken_curry_cut",
+          "ratio": 1.5,
+          "note": "Chicken xacuti is the classic version — simmer chicken for 25 minutes covered."
+        },
+        {
+          "ref": "tamarind",
+          "with": "lemon_juice",
+          "ratio": 2,
+          "note": "Lemon juice at the end works if you don't have tamarind."
+        }
+      ],
+      "storage": "Refrigerate up to 2 days.",
+      "reheating": "Warm gently on low heat just until hot so the prawns stay tender.",
+      "tags": [
+        "festive"
+      ]
+    },
+    {
+      "id": "gujarati-khatti-meethi-tuvar-dal",
+      "title": "Gujarati Tuvar Dal",
+      "description": "Thin, sweet-sour Gujarati dal with toor dal, tomato, jaggery and lemon, studded with peanuts and tempered with mustard, cloves and cinnamon. The everyday dal of a Gujarati thali.",
+      "cuisine": "west_indian",
+      "region": "Gujarat",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 4,
+      "prepMin": 10,
+      "cookMin": 30,
+      "restMin": 30,
+      "difficulty": "easy",
+      "equipment": [
+        "mixing_bowl",
+        "pressure_cooker|saucepan",
+        "whisk",
+        "kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "toor_dal",
+          "g": 150,
+          "measure": "¾ cup"
+        },
+        {
+          "ref": "peanuts",
+          "g": 15,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "water",
+          "g": 800
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "tomato",
+          "g": 100,
+          "measure": "1 medium",
+          "prep": "chopped"
+        },
+        {
+          "ref": "ginger",
+          "g": 6,
+          "prep": "grated"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "prep": "slit"
+        },
+        {
+          "ref": "jaggery",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "salt",
+          "g": 5,
+          "toTaste": true
+        },
+        {
+          "ref": "chilli_powder",
+          "g": 1,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "ghee",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "mustard_seeds",
+          "g": 2,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "cumin_seeds",
+          "g": 1,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "fenugreek_seeds",
+          "g": 0.5,
+          "measure": "a few seeds"
+        },
+        {
+          "ref": "cloves",
+          "g": 0.3,
+          "measure": "3"
+        },
+        {
+          "ref": "cinnamon",
+          "g": 1,
+          "measure": "1-inch stick"
+        },
+        {
+          "ref": "dried_red_chilli",
+          "g": 1,
+          "measure": "1"
+        },
+        {
+          "ref": "hing",
+          "g": 0.2,
+          "measure": "1 pinch"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 2,
+          "measure": "1 sprig"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 5,
+          "prep": "chopped"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Soak dal and peanuts",
+          "kind": "rest",
+          "text": "Rinse the toor dal well and soak it with the peanuts for 30 minutes. This helps it cook evenly and softens the peanuts.",
+          "uses": [
+            "toor_dal",
+            "peanuts"
+          ],
+          "visual": "Yellow toor dal and pink-skinned peanuts soaking together in a steel mixing bowl",
+          "timerMin": 30
+        },
+        {
+          "title": "Pressure-cook",
+          "kind": "cook",
+          "text": "Drain and pressure-cook the dal and peanuts with 450 ml of the water and the turmeric for 4 whistles (about 14 minutes). Let the pressure drop.",
+          "uses": [
+            "water",
+            "turmeric"
+          ],
+          "visual": "Toor dal and peanuts covered with water and a pinch of turmeric in an open steel pressure cooker",
+          "timerMin": 14,
+          "heat": "medium",
+          "equipment": [
+            "pressure_cooker|saucepan"
+          ]
+        },
+        {
+          "title": "Whisk and season",
+          "kind": "cook",
+          "text": "Whisk the dal smooth and add the remaining water so it's quite thin. Add the tomato, ginger, green chilli, jaggery, salt and chilli powder and simmer for 10 minutes.",
+          "uses": [
+            "tomato",
+            "ginger",
+            "green_chilli",
+            "jaggery",
+            "salt",
+            "chilli_powder"
+          ],
+          "visual": "Thin, smooth golden dal with tomato pieces, green chilli and whole peanuts simmering in the open pressure cooker",
+          "timerMin": 10,
+          "heat": "medium",
+          "equipment": [
+            "whisk"
+          ]
+        },
+        {
+          "title": "Make the tempering",
+          "kind": "cook",
+          "text": "Heat the ghee in a small kadai. Add mustard seeds; when they splutter add cumin, fenugreek, cloves, cinnamon, dried red chilli, hing and curry leaves for a few seconds.",
+          "uses": [
+            "ghee",
+            "mustard_seeds",
+            "cumin_seeds",
+            "fenugreek_seeds",
+            "cloves",
+            "cinnamon",
+            "dried_red_chilli",
+            "hing",
+            "curry_leaves"
+          ],
+          "visual": "Spluttering mustard seeds, cloves, a cinnamon stick, a dried red chilli and curry leaves in ghee in a small iron kadai",
+          "heat": "medium"
+        },
+        {
+          "title": "Pour and finish",
+          "kind": "cook",
+          "text": "Pour the tempering into the dal, add the lemon juice and simmer for 2 minutes. Taste — it should be gently sweet, sour and spicy in balance.",
+          "uses": [
+            "lemon_juice"
+          ],
+          "visual": "The sizzling tempering hitting the golden dal, curry leaves and cloves floating on top",
+          "timerMin": 2,
+          "heat": "low"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Garnish with coriander and serve with steamed rice, rotli and a dry shaak.",
+          "uses": [
+            "coriander_leaves"
+          ],
+          "visual": "Gujarati dal in a steel katori with peanuts, curry leaves and coriander on top, part of a thali with rice and rotli"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "jaggery",
+          "with": "stevia",
+          "ratio": 0.05,
+          "note": "Use a pinch of stevia to keep the khatta-meetha taste without added sugar."
+        },
+        {
+          "ref": "lemon_juice",
+          "with": "kudampuli",
+          "ratio": 0.5,
+          "note": "Kokum is traditional; a piece of kudampuli soaked in the dal gives similar sourness."
+        }
+      ],
+      "storage": "Refrigerate up to 3 days.",
+      "reheating": "Reheat with a splash of water until bubbling.",
+      "tags": [
+        "family",
+        "meal_prep"
+      ]
+    },
+    {
+      "id": "gujarati-cabbage-sambharo",
+      "title": "Gujarati Cabbage Sambharo",
+      "description": "A quick, crunchy Gujarati warm salad-stir-fry of shredded cabbage, carrot and capsicum tossed in a mustard-seed and curry-leaf tempering with a touch of sugar and lemon.",
+      "cuisine": "west_indian",
+      "region": "Gujarat",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "side",
+      "servings": 3,
+      "prepMin": 10,
+      "cookMin": 6,
+      "difficulty": "easy",
+      "equipment": [
+        "knife_board",
+        "kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "cabbage",
+          "g": 300,
+          "measure": "¼ medium head",
+          "prep": "finely shredded"
+        },
+        {
+          "ref": "carrot",
+          "g": 80,
+          "measure": "1 medium",
+          "prep": "julienned"
+        },
+        {
+          "ref": "capsicum",
+          "g": 80,
+          "measure": "½ large",
+          "prep": "thinly sliced"
+        },
+        {
+          "ref": "sunflower_oil",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "mustard_seeds",
+          "g": 2,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "hing",
+          "g": 0.2,
+          "measure": "1 pinch"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 2,
+          "measure": "1 sprig"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "prep": "slit"
+        },
+        {
+          "ref": "turmeric",
+          "g": 0.5
+        },
+        {
+          "ref": "salt",
+          "g": 3,
+          "toTaste": true
+        },
+        {
+          "ref": "sugar",
+          "g": 3,
+          "measure": "¾ tsp"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 4,
+          "prep": "chopped"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Shred the vegetables",
+          "kind": "prep",
+          "text": "Finely shred the cabbage, julienne the carrot and slice the capsicum thinly so they cook in seconds.",
+          "uses": [
+            "cabbage",
+            "carrot",
+            "capsicum"
+          ],
+          "visual": "Fine shreds of pale green cabbage, orange carrot matchsticks and thin green capsicum strips on a wooden board"
+        },
+        {
+          "title": "Temper the spices",
+          "kind": "cook",
+          "text": "Heat the oil in a wide kadai over medium-high heat. Add mustard seeds; when they splutter add hing, curry leaves and green chilli.",
+          "uses": [
+            "sunflower_oil",
+            "mustard_seeds",
+            "hing",
+            "curry_leaves",
+            "green_chilli"
+          ],
+          "visual": "Spluttering mustard seeds, curry leaves and slit green chillies in hot oil in a wide black iron kadai",
+          "heat": "high"
+        },
+        {
+          "title": "Toss on high heat",
+          "kind": "cook",
+          "text": "Add all the vegetables with the turmeric, salt and sugar. Toss on high heat for 2 to 3 minutes — they should wilt slightly but stay crunchy.",
+          "uses": [
+            "turmeric",
+            "salt",
+            "sugar"
+          ],
+          "visual": "Shredded cabbage, carrot and capsicum tossed with mustard seeds and curry leaves, lightly yellow and just wilted, in the iron kadai",
+          "timerMin": 3,
+          "heat": "high"
+        },
+        {
+          "title": "Finish with lemon",
+          "kind": "cook",
+          "text": "Turn off the heat and toss with the lemon juice and coriander.",
+          "uses": [
+            "lemon_juice",
+            "coriander_leaves"
+          ],
+          "visual": "Glistening, crunchy sambharo with fresh coriander in the kadai, a squeezed lemon beside it"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve warm or at room temperature as part of a Gujarati thali, or alongside dhokla or thepla.",
+          "uses": [],
+          "visual": "Cabbage sambharo in a small steel bowl, bright orange, green and pale yellow shreds with curry leaves, beside theplas"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "sugar",
+          "with": "stevia",
+          "ratio": 0.05,
+          "note": "Skip the sugar or use a pinch of stevia."
+        },
+        {
+          "ref": "capsicum",
+          "with": "bell_pepper_red",
+          "ratio": 1,
+          "note": "Red or yellow peppers make it more colourful."
+        }
+      ],
+      "storage": "Refrigerate up to 1 day; it softens over time.",
+      "reheating": "Serve at room temperature or toss in a hot pan for 30 seconds.",
+      "tags": [
+        "kid_friendly"
+      ]
+    },
+    {
+      "id": "maharashtrian-bharli-vangi",
+      "title": "Bharli Vangi (Stuffed Brinjal)",
+      "description": "Small brinjals stuffed with a roasted peanut, coconut and sesame masala, sweet-sour with jaggery and tamarind, and slow-cooked until meltingly soft — a Maharashtrian festive favourite.",
+      "cuisine": "west_indian",
+      "region": "Maharashtra",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 3,
+      "prepMin": 25,
+      "cookMin": 30,
+      "difficulty": "medium",
+      "equipment": [
+        "kadai",
+        "mixer_grinder",
+        "knife_board"
+      ],
+      "ingredients": [
+        {
+          "ref": "peanuts",
+          "g": 30,
+          "measure": "3 tbsp"
+        },
+        {
+          "ref": "desiccated_coconut",
+          "g": 20,
+          "measure": "4 tbsp"
+        },
+        {
+          "ref": "sesame_seeds",
+          "g": 8,
+          "measure": "2½ tsp"
+        },
+        {
+          "ref": "onion",
+          "g": 80,
+          "measure": "1 small",
+          "prep": "sliced"
+        },
+        {
+          "ref": "garlic",
+          "g": 6,
+          "measure": "2 cloves"
+        },
+        {
+          "ref": "chilli_powder",
+          "g": 4,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "coriander_powder",
+          "g": 4,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "garam_masala",
+          "g": 4,
+          "measure": "2 tsp",
+          "prep": "or goda masala"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "jaggery",
+          "g": 6,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "tamarind",
+          "g": 6,
+          "prep": "soaked in 2 tbsp water"
+        },
+        {
+          "ref": "salt",
+          "g": 5,
+          "toTaste": true
+        },
+        {
+          "ref": "brinjal",
+          "g": 400,
+          "measure": "8 small round brinjals"
+        },
+        {
+          "ref": "sunflower_oil",
+          "g": 20,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "mustard_seeds",
+          "g": 2,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "hing",
+          "g": 0.2,
+          "measure": "1 pinch"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 2,
+          "measure": "1 sprig"
+        },
+        {
+          "ref": "water",
+          "g": 150
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 6,
+          "prep": "chopped"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Roast the stuffing base",
+          "kind": "cook",
+          "text": "Dry-roast the peanuts in a kadai on medium-low heat for 3 minutes, then add the desiccated coconut and sesame seeds and roast for 2 minutes until golden. Tip out. Add 1 teaspoon of the oil and roast the onion for 5 minutes until browned.",
+          "uses": [
+            "peanuts",
+            "desiccated_coconut",
+            "sesame_seeds",
+            "onion"
+          ],
+          "visual": "Golden roasted peanuts, coconut and sesame seeds on a plate beside browned sliced onion in a black iron kadai",
+          "timerMin": 10,
+          "heat": "low"
+        },
+        {
+          "title": "Grind the stuffing",
+          "kind": "prep",
+          "text": "Grind the roasted mixture with the garlic, chilli powder, coriander powder, garam masala, turmeric, jaggery, tamarind and salt into a coarse, thick paste, using only a spoon of water.",
+          "uses": [
+            "garlic",
+            "chilli_powder",
+            "coriander_powder",
+            "garam_masala",
+            "turmeric",
+            "jaggery",
+            "tamarind",
+            "salt"
+          ],
+          "visual": "A coarse, thick, reddish-brown peanut and coconut stuffing paste in a mixer jar",
+          "equipment": [
+            "mixer_grinder"
+          ]
+        },
+        {
+          "title": "Slit and stuff the brinjals",
+          "kind": "prep",
+          "text": "Keep the stems on. Make two cross slits from the bottom of each brinjal, stopping short of the stem so it stays whole. Soak in salted water for 5 minutes, drain, then press the stuffing generously into the slits. Keep the leftover stuffing.",
+          "uses": [
+            "brinjal"
+          ],
+          "visual": "Small purple brinjals slit into quarters and packed with reddish-brown masala, arranged on a wooden board",
+          "timerMin": 5
+        },
+        {
+          "title": "Temper and arrange",
+          "kind": "cook",
+          "text": "Heat the remaining oil in the kadai. Add mustard seeds, hing and curry leaves. Arrange the stuffed brinjals in a single layer and cook for 4 minutes, turning gently, so they sear on all sides.",
+          "uses": [
+            "sunflower_oil",
+            "mustard_seeds",
+            "hing",
+            "curry_leaves"
+          ],
+          "visual": "Stuffed brinjals in a single layer searing in the iron kadai with mustard seeds and curry leaves",
+          "timerMin": 4,
+          "heat": "medium"
+        },
+        {
+          "title": "Simmer until soft",
+          "kind": "cook",
+          "text": "Mix the leftover stuffing with the water and pour it around the brinjals. Cover and cook on low heat for 15 to 18 minutes, turning once, until the brinjals are completely soft and the gravy is thick.",
+          "uses": [
+            "water"
+          ],
+          "visual": "Soft, glossy stuffed brinjals in a thick, reddish-brown peanut gravy in the covered iron kadai, lid lifted to show steam",
+          "timerMin": 18,
+          "heat": "low"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Garnish with coriander and serve with jowar or bajra bhakri, or phulka.",
+          "uses": [
+            "coriander_leaves"
+          ],
+          "visual": "Bharli vangi in a steel serving dish, whole stuffed brinjals in thick brown gravy with coriander, a jowar bhakri beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "peanuts",
+          "with": "cashews",
+          "ratio": 1,
+          "note": "Use cashews for a peanut-free stuffing."
+        },
+        {
+          "ref": "jaggery",
+          "with": "stevia",
+          "ratio": 0.05,
+          "note": "A pinch of stevia or simply leave out the jaggery."
+        }
+      ],
+      "storage": "Refrigerate up to 2 days.",
+      "reheating": "Warm gently, covered, with a spoon of water.",
+      "tags": [
+        "festive"
+      ]
+    },
+    {
+      "id": "kolhapuri-egg-curry",
+      "title": "Kolhapuri Egg Curry",
+      "description": "Boiled eggs in a fiery Kolhapuri-style gravy of browned onion, dry coconut, sesame and whole spices with plenty of red chilli. Bold, hot and very much a Kolhapur dish.",
+      "cuisine": "west_indian",
+      "region": "Kolhapur",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 3,
+      "prepMin": 15,
+      "cookMin": 35,
+      "difficulty": "medium",
+      "equipment": [
+        "saucepan",
+        "kadai",
+        "mixer_grinder"
+      ],
+      "ingredients": [
+        {
+          "ref": "egg",
+          "g": 300,
+          "measure": "6 eggs"
+        },
+        {
+          "ref": "desiccated_coconut",
+          "g": 20,
+          "measure": "4 tbsp"
+        },
+        {
+          "ref": "sesame_seeds",
+          "g": 5,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "dried_red_chilli",
+          "g": 3,
+          "measure": "5"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 1,
+          "measure": "6 peppercorns"
+        },
+        {
+          "ref": "cumin_seeds",
+          "g": 1,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "onion",
+          "g": 150,
+          "measure": "1 large",
+          "prep": "half sliced, half finely chopped"
+        },
+        {
+          "ref": "sunflower_oil",
+          "g": 20,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "ginger_garlic_paste",
+          "g": 12,
+          "measure": "2½ tsp"
+        },
+        {
+          "ref": "tomato",
+          "g": 120,
+          "measure": "1 large",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "chilli_powder",
+          "g": 6,
+          "measure": "2½ tsp"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 4,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "coriander_powder",
+          "g": 4,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "garam_masala",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 5,
+          "toTaste": true
+        },
+        {
+          "ref": "water",
+          "g": 300
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 5,
+          "prep": "chopped"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Boil the eggs",
+          "kind": "cook",
+          "text": "Cover the eggs with water in a saucepan, bring to a boil and cook for 10 minutes. Cool in cold water, peel and make 2 or 3 shallow slits in each.",
+          "uses": [
+            "egg"
+          ],
+          "visual": "Six peeled, white hard-boiled eggs with shallow slits on a steel plate, a saucepan of water behind",
+          "timerMin": 10,
+          "heat": "high"
+        },
+        {
+          "title": "Roast the Kolhapuri masala",
+          "kind": "cook",
+          "text": "In a dry kadai on low heat, roast the coconut, sesame, dried red chillies, peppercorns and cumin for 2 to 3 minutes until fragrant and golden. Add 1 teaspoon of the oil and the sliced onion and roast for 6 minutes until dark brown.",
+          "uses": [
+            "desiccated_coconut",
+            "sesame_seeds",
+            "dried_red_chilli",
+            "black_pepper",
+            "cumin_seeds",
+            "onion"
+          ],
+          "visual": "Dark brown roasted onion, golden coconut, sesame and whole red chillies in a black iron kadai",
+          "timerMin": 9,
+          "heat": "low"
+        },
+        {
+          "title": "Grind the masala",
+          "kind": "prep",
+          "text": "Cool the roasted mixture and grind with about 100 ml of the water to a smooth, dark paste.",
+          "uses": [],
+          "visual": "A smooth, dark reddish-brown Kolhapuri masala paste in a mixer jar",
+          "equipment": [
+            "mixer_grinder"
+          ]
+        },
+        {
+          "title": "Fry the eggs",
+          "kind": "cook",
+          "text": "Heat the remaining oil in the kadai. Add the eggs with a pinch of turmeric and chilli powder and fry for 2 minutes, rolling them, until lightly blistered. Lift out.",
+          "uses": [
+            "sunflower_oil",
+            "turmeric",
+            "chilli_powder"
+          ],
+          "visual": "Boiled eggs with a blistered, orange-red spiced skin rolling in hot oil in the iron kadai",
+          "timerMin": 2,
+          "heat": "medium"
+        },
+        {
+          "title": "Cook the gravy base",
+          "kind": "cook",
+          "text": "In the same oil, sauté the chopped onion for 4 minutes until golden. Add the ginger-garlic paste for 1 minute, then the tomato, chilli powder, Kashmiri chilli, coriander powder and salt, and cook for 4 minutes until soft.",
+          "uses": [
+            "ginger_garlic_paste",
+            "tomato",
+            "kashmiri_chilli",
+            "coriander_powder",
+            "salt"
+          ],
+          "visual": "A deep red, oily onion-tomato masala in the iron kadai",
+          "timerMin": 9,
+          "heat": "medium"
+        },
+        {
+          "title": "Simmer with the eggs",
+          "kind": "cook",
+          "text": "Add the ground masala and fry for 2 minutes. Pour in the remaining water, bring to a boil and add the eggs. Simmer on low for 8 minutes until the gravy is thick with a layer of red oil on top. Stir in the garam masala.",
+          "uses": [
+            "water",
+            "garam_masala"
+          ],
+          "visual": "Whole blistered eggs in a thick, fiery red-brown gravy with red oil floating on top in the iron kadai",
+          "timerMin": 10,
+          "heat": "low"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Garnish with coriander and serve hot with bhakri, phulka or rice, with sliced onion and lemon to cool things down.",
+          "uses": [
+            "coriander_leaves"
+          ],
+          "visual": "Kolhapuri egg curry in a steel bowl, halved eggs showing yellow yolks in deep red gravy, topped with coriander, onion slices and lemon beside"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "chilli_powder",
+          "with": "kashmiri_chilli",
+          "ratio": 1,
+          "note": "Swap some hot chilli powder for Kashmiri chilli for colour without as much heat."
+        },
+        {
+          "ref": "desiccated_coconut",
+          "with": "coconut_grated",
+          "ratio": 2,
+          "note": "Fresh coconut works — roast until browned."
+        }
+      ],
+      "storage": "Refrigerate up to 2 days.",
+      "reheating": "Reheat gently with a splash of water.",
+      "tags": []
+    },
+    {
+      "id": "bengali-rui-macher-jhol",
+      "title": "Bengali Macher Jhol (Rohu Fish Curry)",
+      "description": "The light, everyday Bengali fish curry: turmeric-rubbed rohu seared in mustard oil, then simmered with potato wedges in a thin, gingery tomato jhol tempered with kalo jeere.",
+      "cuisine": "east_indian",
+      "region": "Bengal",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 4,
+      "prepMin": 15,
+      "cookMin": 30,
+      "difficulty": "medium",
+      "equipment": [
+        "knife_board",
+        "kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "rohu",
+          "g": 500,
+          "measure": "6 steaks"
+        },
+        {
+          "ref": "turmeric",
+          "g": 2,
+          "measure": "¾ tsp",
+          "prep": "divided"
+        },
+        {
+          "ref": "salt",
+          "g": 6,
+          "toTaste": true
+        },
+        {
+          "ref": "mustard_oil",
+          "g": 25,
+          "measure": "2 tbsp"
+        },
+        {
+          "ref": "potato",
+          "g": 150,
+          "measure": "1 medium",
+          "prep": "cut into long wedges"
+        },
+        {
+          "ref": "nigella_seeds",
+          "g": 1,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 6,
+          "measure": "2",
+          "prep": "slit"
+        },
+        {
+          "ref": "ginger",
+          "g": 10,
+          "measure": "1-inch piece",
+          "prep": "ground to a paste"
+        },
+        {
+          "ref": "tomato",
+          "g": 80,
+          "measure": "1 small",
+          "prep": "chopped"
+        },
+        {
+          "ref": "cumin_powder",
+          "g": 3,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "coriander_powder",
+          "g": 3,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 3,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "water",
+          "g": 400
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 5,
+          "prep": "chopped"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Rub the fish",
+          "kind": "prep",
+          "text": "Wash the rohu steaks and pat dry. Rub with half the turmeric and a little salt and leave for 10 minutes.",
+          "uses": [
+            "rohu",
+            "turmeric",
+            "salt"
+          ],
+          "visual": "Rohu fish steaks rubbed bright yellow with turmeric and salt on a steel plate",
+          "timerMin": 10
+        },
+        {
+          "title": "Sear the fish",
+          "kind": "cook",
+          "text": "Heat the mustard oil in a kadai until it smokes lightly, then lower the heat a little. Fry the fish in batches for 2 to 3 minutes per side until golden. Lift out.",
+          "uses": [
+            "mustard_oil"
+          ],
+          "visual": "Golden-crusted, turmeric-yellow rohu steaks frying in mustard oil in a black iron kadai",
+          "timerMin": 6,
+          "heat": "medium"
+        },
+        {
+          "title": "Fry the potatoes",
+          "kind": "cook",
+          "text": "In the same oil, fry the potato wedges with a pinch of turmeric for 4 minutes until lightly golden. Lift out.",
+          "uses": [
+            "potato"
+          ],
+          "visual": "Long potato wedges turning golden in the same oil in the iron kadai, fried fish on a plate beside",
+          "timerMin": 4,
+          "heat": "medium"
+        },
+        {
+          "title": "Temper and add masala",
+          "kind": "cook",
+          "text": "Add the nigella seeds and green chillies to the oil. When the seeds crackle, add the ginger paste, tomato, cumin powder, coriander powder, Kashmiri chilli and the remaining turmeric with 2 tablespoons of water. Cook for 4 minutes until the oil separates.",
+          "uses": [
+            "nigella_seeds",
+            "green_chilli",
+            "ginger",
+            "tomato",
+            "cumin_powder",
+            "coriander_powder",
+            "kashmiri_chilli"
+          ],
+          "visual": "A loose orange-red masala with crackled black nigella seeds and slit green chillies in the iron kadai",
+          "timerMin": 4,
+          "heat": "medium"
+        },
+        {
+          "title": "Simmer the potatoes",
+          "kind": "cook",
+          "text": "Return the potatoes, pour in the water and add salt. Cover and simmer for 10 minutes until the potatoes are almost tender.",
+          "uses": [
+            "water"
+          ],
+          "visual": "Potato wedges simmering in a thin, golden-orange jhol in the iron kadai",
+          "timerMin": 10,
+          "heat": "medium"
+        },
+        {
+          "title": "Add the fish",
+          "kind": "cook",
+          "text": "Slide in the fried fish and simmer gently for 5 minutes, spooning the jhol over the pieces rather than stirring, so they stay whole.",
+          "uses": [],
+          "visual": "Golden rohu steaks and potato wedges in a thin orange jhol with green chillies, gently bubbling in the iron kadai",
+          "timerMin": 5,
+          "heat": "low"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Sprinkle with coriander and serve hot with steamed rice and a squeeze of gondhoraj or ordinary lime.",
+          "uses": [
+            "coriander_leaves"
+          ],
+          "visual": "Macher jhol in a white bowl with fish steaks, potato wedges and coriander in a thin orange gravy, a mound of rice and a lime wedge beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "rohu",
+          "with": "basa",
+          "ratio": 1,
+          "note": "Any firm fish works — sear basa for only 1 minute per side."
+        },
+        {
+          "ref": "potato",
+          "with": "cauliflower",
+          "ratio": 1,
+          "note": "Winter jhol often uses cauliflower; it also lowers the carbs."
+        }
+      ],
+      "storage": "Refrigerate up to 2 days.",
+      "reheating": "Warm gently on low heat, covered.",
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "bengali-shorshe-maach",
+      "title": "Shorshe Maach (Bengali Mustard Fish)",
+      "description": "Fish in a sharp, creamy paste of freshly ground mustard seeds and green chilli, finished with raw mustard oil. Pungent, simple and quintessentially Bengali.",
+      "cuisine": "east_indian",
+      "region": "Bengal",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 3,
+      "prepMin": 30,
+      "cookMin": 15,
+      "difficulty": "medium",
+      "equipment": [
+        "mixing_bowl",
+        "mixer_grinder",
+        "kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "mustard_seeds",
+          "g": 25,
+          "measure": "2½ tbsp",
+          "prep": "mix of yellow and black"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 8,
+          "measure": "3",
+          "prep": "1 for the paste, 2 slit"
+        },
+        {
+          "ref": "salt",
+          "g": 5,
+          "toTaste": true
+        },
+        {
+          "ref": "water",
+          "g": 200
+        },
+        {
+          "ref": "basa",
+          "g": 450,
+          "measure": "3 fillets",
+          "prep": "cut into large pieces"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "mustard_oil",
+          "g": 20,
+          "measure": "1½ tbsp",
+          "prep": "plus 1 tsp raw to finish"
+        },
+        {
+          "ref": "nigella_seeds",
+          "g": 1,
+          "measure": "½ tsp"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Soak the mustard seeds",
+          "kind": "rest",
+          "text": "Soak the mustard seeds in warm water for 20 minutes. This softens them and reduces bitterness.",
+          "uses": [
+            "mustard_seeds"
+          ],
+          "visual": "Black and yellow mustard seeds soaking in a small steel bowl of warm water",
+          "timerMin": 20
+        },
+        {
+          "title": "Grind the shorshe paste",
+          "kind": "prep",
+          "text": "Drain and grind the mustard seeds with one green chilli, a pinch of salt and 3 tablespoons of water in short bursts to a smooth, pale yellow paste. Don't grind continuously — heat turns it bitter. Mix in 100 ml of the water.",
+          "uses": [
+            "green_chilli",
+            "salt",
+            "water"
+          ],
+          "visual": "A smooth, creamy pale-yellow mustard paste in a small mixer jar, a few black seed specks visible",
+          "equipment": [
+            "mixer_grinder"
+          ]
+        },
+        {
+          "title": "Season the fish",
+          "kind": "prep",
+          "text": "Rub the fish pieces with the turmeric and a little salt.",
+          "uses": [
+            "basa",
+            "turmeric"
+          ],
+          "visual": "Large white fish pieces rubbed yellow with turmeric in a steel mixing bowl"
+        },
+        {
+          "title": "Temper in mustard oil",
+          "kind": "cook",
+          "text": "Heat the mustard oil in a kadai until it smokes lightly, then lower the heat. Add the nigella seeds and slit green chillies and let them crackle for a few seconds.",
+          "uses": [
+            "mustard_oil",
+            "nigella_seeds"
+          ],
+          "visual": "Black nigella seeds and slit green chillies crackling in golden mustard oil in a black iron kadai",
+          "heat": "medium"
+        },
+        {
+          "title": "Simmer in the paste",
+          "kind": "cook",
+          "text": "Pour in the mustard paste and the remaining water and bring to a gentle simmer. Lay the fish in a single layer, cover and cook on low for 8 to 10 minutes until the fish flakes easily. Shake the pan instead of stirring.",
+          "uses": [],
+          "visual": "Yellow-tinged fish pieces in a creamy mustard-yellow gravy with green chillies in the covered iron kadai, lid slightly lifted",
+          "timerMin": 10,
+          "heat": "low"
+        },
+        {
+          "title": "Finish and serve",
+          "kind": "serve",
+          "text": "Drizzle a teaspoon of raw mustard oil over the top and serve with steamed rice.",
+          "uses": [],
+          "visual": "Shorshe maach in a white bowl, fish pieces under a glossy mustard-yellow gravy with slit green chillies and a sheen of mustard oil, steamed rice beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "basa",
+          "with": "rohu",
+          "ratio": 1,
+          "note": "Rohu or hilsa are traditional; sear the steaks lightly first."
+        },
+        {
+          "ref": "mustard_seeds",
+          "with": "mustard_sauce",
+          "ratio": 1.5,
+          "note": "In a pinch, a smooth mustard sauce with a little water saves soaking and grinding, though the flavour is milder."
+        }
+      ],
+      "storage": "Refrigerate up to 1 day; mustard paste can turn bitter if kept longer.",
+      "reheating": "Warm gently on low heat, covered.",
+      "tags": []
+    },
+    {
+      "id": "bengali-cholar-dal-narkel",
+      "title": "Cholar Dal with Coconut",
+      "description": "Bengal's festive chana dal, slightly sweet and fragrant with whole garam masala, bay leaf and ghee, studded with golden fried coconut bits and a few raisins. The classic partner for luchi.",
+      "cuisine": "east_indian",
+      "region": "Bengal",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 4,
+      "prepMin": 10,
+      "cookMin": 35,
+      "restMin": 60,
+      "difficulty": "easy",
+      "equipment": [
+        "mixing_bowl",
+        "pressure_cooker|saucepan",
+        "kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "chana_dal",
+          "g": 150,
+          "measure": "¾ cup"
+        },
+        {
+          "ref": "water",
+          "g": 600
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "salt",
+          "g": 5,
+          "toTaste": true
+        },
+        {
+          "ref": "ghee",
+          "g": 12,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "coconut_grated",
+          "g": 30,
+          "measure": "3 tbsp",
+          "prep": "fresh coconut cut into tiny bits"
+        },
+        {
+          "ref": "bay_leaf",
+          "g": 0.4,
+          "measure": "2 leaves"
+        },
+        {
+          "ref": "cumin_seeds",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "dried_red_chilli",
+          "g": 1,
+          "measure": "2"
+        },
+        {
+          "ref": "cinnamon",
+          "g": 1,
+          "measure": "1-inch stick"
+        },
+        {
+          "ref": "cardamom",
+          "g": 0.6,
+          "measure": "2 pods"
+        },
+        {
+          "ref": "cloves",
+          "g": 0.2,
+          "measure": "2"
+        },
+        {
+          "ref": "ginger",
+          "g": 8,
+          "prep": "ground to a paste"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 3,
+          "measure": "1",
+          "prep": "slit"
+        },
+        {
+          "ref": "sugar",
+          "g": 6,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "raisins",
+          "g": 8,
+          "measure": "1 tbsp"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Soak and cook the dal",
+          "kind": "cook",
+          "text": "Soak the chana dal for 1 hour, then drain and pressure-cook with the water, turmeric and salt for 2 whistles (about 8 minutes). The grains should be soft but still whole, not mushy.",
+          "uses": [
+            "chana_dal",
+            "water",
+            "turmeric",
+            "salt"
+          ],
+          "visual": "Soaked golden chana dal with water and turmeric in an open steel pressure cooker",
+          "timerMin": 8,
+          "heat": "medium",
+          "equipment": [
+            "pressure_cooker|saucepan"
+          ]
+        },
+        {
+          "title": "Fry the coconut",
+          "kind": "cook",
+          "text": "Heat the ghee in a kadai over medium heat and fry the coconut bits for 2 to 3 minutes until golden. Lift them out with a slotted spoon.",
+          "uses": [
+            "ghee",
+            "coconut_grated"
+          ],
+          "visual": "Tiny cubes of fresh coconut turning golden in ghee in a black iron kadai",
+          "timerMin": 3,
+          "heat": "medium"
+        },
+        {
+          "title": "Temper the whole spices",
+          "kind": "cook",
+          "text": "In the same ghee, add the bay leaves, cumin, dried red chillies, cinnamon, cardamom and cloves and fry for 30 seconds until fragrant. Add the ginger paste and green chilli and stir for 1 minute.",
+          "uses": [
+            "bay_leaf",
+            "cumin_seeds",
+            "dried_red_chilli",
+            "cinnamon",
+            "cardamom",
+            "cloves",
+            "ginger",
+            "green_chilli"
+          ],
+          "visual": "Bay leaves, a cinnamon stick, cardamom, cloves and dried red chillies sizzling in ghee with ginger paste in the iron kadai",
+          "timerMin": 1,
+          "heat": "medium"
+        },
+        {
+          "title": "Simmer the dal",
+          "kind": "cook",
+          "text": "Pour in the cooked dal, add the sugar, raisins and most of the fried coconut. Simmer for 6 to 8 minutes until thick enough to coat a spoon.",
+          "uses": [
+            "sugar",
+            "raisins"
+          ],
+          "visual": "Thick golden-yellow chana dal with plump raisins and golden coconut bits bubbling in the iron kadai",
+          "timerMin": 8,
+          "heat": "low"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Top with the remaining coconut and serve with luchi, phulka or steamed rice.",
+          "uses": [],
+          "visual": "Cholar dal in a brass bowl topped with golden coconut bits and raisins, a bay leaf on top, beside a plate of phulkas"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "sugar",
+          "with": "stevia",
+          "ratio": 0.05,
+          "note": "Leave out the sugar and raisins, or use a pinch of stevia, for a less sweet dal."
+        },
+        {
+          "ref": "ghee",
+          "with": "mustard_oil",
+          "ratio": 1,
+          "note": "Use mustard oil for a vegan everyday version."
+        }
+      ],
+      "storage": "Refrigerate up to 3 days.",
+      "reheating": "Reheat with a splash of water; it thickens on standing.",
+      "tags": [
+        "festive",
+        "family"
+      ]
+    },
+    {
+      "id": "air-fryer-begun-bhaja",
+      "title": "Begun Bhaja (Air Fryer)",
+      "description": "Thick rounds of brinjal rubbed with turmeric, chilli and salt and air-fried with a brush of mustard oil until creamy inside and golden outside — Bengal's favourite bhaja, without the deep-frying.",
+      "cuisine": "east_indian",
+      "region": "Bengal",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "side",
+      "servings": 3,
+      "prepMin": 15,
+      "cookMin": 15,
+      "difficulty": "easy",
+      "equipment": [
+        "knife_board",
+        "mixing_bowl",
+        "air_fryer|oven|non_stick_pan"
+      ],
+      "ingredients": [
+        {
+          "ref": "brinjal",
+          "g": 400,
+          "measure": "1 large round brinjal",
+          "prep": "cut into ½-inch rounds"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "chilli_powder",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "sugar",
+          "g": 1,
+          "measure": "¼ tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true
+        },
+        {
+          "ref": "mustard_oil",
+          "g": 12,
+          "measure": "2½ tsp"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Slice the brinjal",
+          "kind": "prep",
+          "text": "Cut the brinjal into even ½-inch rounds so they cook through without burning.",
+          "uses": [
+            "brinjal"
+          ],
+          "visual": "Even, thick rounds of purple-skinned brinjal laid out on a wooden board"
+        },
+        {
+          "title": "Rub with spices",
+          "kind": "prep",
+          "text": "Mix the turmeric, chilli powder, sugar and salt and rub it over both sides of each slice. Leave for 10 minutes — the salt draws out moisture.",
+          "uses": [
+            "turmeric",
+            "chilli_powder",
+            "sugar",
+            "salt"
+          ],
+          "visual": "Brinjal rounds rubbed yellow-orange with turmeric and chilli, beads of moisture on the surface, in a wide steel bowl",
+          "timerMin": 10
+        },
+        {
+          "title": "Brush with mustard oil",
+          "kind": "prep",
+          "text": "Pat off excess moisture and brush both sides of each slice with mustard oil.",
+          "uses": [
+            "mustard_oil"
+          ],
+          "visual": "Spice-rubbed brinjal rounds glistening with a thin coat of mustard oil, a pastry brush beside them"
+        },
+        {
+          "title": "Air fry until golden",
+          "kind": "cook",
+          "text": "Arrange in a single layer in the air-fryer basket and cook at 190°C for 12 to 14 minutes, turning halfway, until golden and soft right through. In an oven, bake at 220°C for 18 minutes; on a pan, cook over medium heat for 4 minutes per side.",
+          "uses": [],
+          "visual": "Golden-brown brinjal rounds with crisp edges in a single layer in an open air-fryer basket",
+          "timerMin": 13,
+          "tempC": 190,
+          "equipment": [
+            "air_fryer|oven|non_stick_pan"
+          ]
+        },
+        {
+          "title": "Serve hot",
+          "kind": "serve",
+          "text": "Serve straight away with steamed rice and dal, the way a Bengali meal begins.",
+          "uses": [],
+          "visual": "Golden begun bhaja rounds on a white plate beside a mound of rice and a bowl of yellow dal"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "mustard_oil",
+          "with": "sunflower_oil",
+          "ratio": 1,
+          "note": "Neutral oil works if you prefer a milder taste."
+        }
+      ],
+      "storage": "Best eaten fresh.",
+      "reheating": "Re-crisp in the air fryer at 180°C for 2 to 3 minutes.",
+      "tags": [
+        "kid_friendly"
+      ]
+    },
+    {
+      "id": "bengali-shukto",
+      "title": "Shukto",
+      "description": "A gently bitter-sweet Bengali mixed-vegetable dish of bitter gourd, raw banana, sweet potato, brinjal, drumstick and radish in a light milk and mustard-ginger sauce, traditionally the first course of a Bengali lunch.",
+      "cuisine": "east_indian",
+      "region": "Bengal",
+      "mealTypes": [
+        "lunch"
+      ],
+      "course": "side",
+      "servings": 4,
+      "prepMin": 25,
+      "cookMin": 30,
+      "difficulty": "medium",
+      "equipment": [
+        "knife_board",
+        "mixer_grinder",
+        "kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "bitter_gourd",
+          "g": 60,
+          "measure": "½ small",
+          "prep": "thinly sliced"
+        },
+        {
+          "ref": "raw_banana",
+          "g": 80,
+          "measure": "½",
+          "prep": "peeled, cut into 2-inch batons"
+        },
+        {
+          "ref": "sweet_potato",
+          "g": 80,
+          "measure": "½ small",
+          "prep": "cut into batons"
+        },
+        {
+          "ref": "brinjal",
+          "g": 100,
+          "measure": "1 small",
+          "prep": "cut into batons"
+        },
+        {
+          "ref": "drumstick",
+          "g": 60,
+          "measure": "1½",
+          "prep": "cut into 2-inch pieces"
+        },
+        {
+          "ref": "radish",
+          "g": 60,
+          "measure": "½ small",
+          "prep": "cut into batons"
+        },
+        {
+          "ref": "mustard_seeds",
+          "g": 10,
+          "measure": "1 tbsp",
+          "prep": "soaked 15 minutes"
+        },
+        {
+          "ref": "ginger",
+          "g": 10,
+          "measure": "1-inch piece"
+        },
+        {
+          "ref": "mustard_oil",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "ghee",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "panch_phoron",
+          "g": 3,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "bay_leaf",
+          "g": 0.4,
+          "measure": "2 leaves"
+        },
+        {
+          "ref": "turmeric",
+          "g": 0.5
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true
+        },
+        {
+          "ref": "water",
+          "g": 150
+        },
+        {
+          "ref": "milk",
+          "g": 150,
+          "measure": "⅔ cup"
+        },
+        {
+          "ref": "sugar",
+          "g": 5,
+          "measure": "1 tsp"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Cut the vegetables",
+          "kind": "prep",
+          "text": "Cut the raw banana, sweet potato, brinjal and radish into 2-inch batons, the drumstick into 2-inch pieces and slice the bitter gourd thinly. Keep the raw banana in water so it doesn't darken.",
+          "uses": [
+            "bitter_gourd",
+            "raw_banana",
+            "sweet_potato",
+            "brinjal",
+            "drumstick",
+            "radish"
+          ],
+          "visual": "Neat piles of thin bitter gourd slices, green raw banana batons, orange sweet potato, purple-skinned brinjal, drumstick pieces and white radish batons on a large wooden board"
+        },
+        {
+          "title": "Grind mustard and ginger",
+          "kind": "prep",
+          "text": "Drain the soaked mustard seeds and grind with the ginger and 3 tablespoons of water to a smooth paste, in short bursts so it doesn't turn bitter.",
+          "uses": [
+            "mustard_seeds",
+            "ginger"
+          ],
+          "visual": "A small mixer jar with a smooth pale yellow mustard and ginger paste",
+          "equipment": [
+            "mixer_grinder"
+          ]
+        },
+        {
+          "title": "Fry the bitter gourd",
+          "kind": "cook",
+          "text": "Heat the mustard oil in a kadai and fry the bitter gourd slices for 3 minutes until lightly browned. Lift out and keep aside.",
+          "uses": [
+            "mustard_oil"
+          ],
+          "visual": "Thin bitter gourd slices turning golden-brown in mustard oil in a black iron kadai",
+          "timerMin": 3,
+          "heat": "medium"
+        },
+        {
+          "title": "Temper and sauté vegetables",
+          "kind": "cook",
+          "text": "Add the ghee to the kadai with the panch phoron and bay leaves. When the seeds crackle, add the raw banana, sweet potato, drumstick and radish with the turmeric and salt and sauté for 4 minutes. Add the brinjal and sauté 2 minutes more.",
+          "uses": [
+            "ghee",
+            "panch_phoron",
+            "bay_leaf",
+            "turmeric",
+            "salt"
+          ],
+          "visual": "Batons of raw banana, sweet potato, radish, drumstick and brinjal tossed with crackled panch phoron and bay leaves in the iron kadai",
+          "timerMin": 6,
+          "heat": "medium"
+        },
+        {
+          "title": "Simmer with the paste",
+          "kind": "cook",
+          "text": "Stir in the mustard-ginger paste and water. Cover and simmer on low heat for 10 to 12 minutes until the vegetables are just tender but holding their shape.",
+          "uses": [
+            "water"
+          ],
+          "visual": "Mixed vegetable batons simmering in a thin, pale yellow mustard sauce in the covered iron kadai, steam escaping",
+          "timerMin": 12,
+          "heat": "low"
+        },
+        {
+          "title": "Add milk and bitter gourd",
+          "kind": "cook",
+          "text": "Pour in the milk, add the sugar and the fried bitter gourd and simmer uncovered for 4 minutes until the sauce is creamy and lightly thickened. Stir gently so the vegetables don't break.",
+          "uses": [
+            "milk",
+            "sugar"
+          ],
+          "visual": "Vegetables in a creamy, ivory-white milk and mustard sauce with dark bitter gourd slices on top in the iron kadai",
+          "timerMin": 4,
+          "heat": "low"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Rest for 5 minutes and serve warm with steamed rice as the first course of a Bengali meal.",
+          "uses": [],
+          "visual": "Shukto in a white bowl, colourful vegetable batons in a creamy pale sauce with a bay leaf, beside a mound of steamed rice"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "milk",
+          "with": "coconut_milk",
+          "ratio": 0.6,
+          "note": "Use thin coconut milk and skip the ghee for a vegan shukto."
+        },
+        {
+          "ref": "raw_banana",
+          "with": "ash_gourd",
+          "ratio": 1,
+          "note": "Ash gourd lowers the carbs and suits the light sauce."
+        }
+      ],
+      "storage": "Refrigerate up to 2 days.",
+      "reheating": "Warm gently on low heat with a splash of milk; don't boil.",
+      "tags": [
+        "festive"
+      ]
+    },
+    {
+      "id": "odia-dalma",
+      "title": "Odia Dalma",
+      "description": "Odisha's beloved dal-and-vegetable stew: toor dal simmered with pumpkin, raw banana, brinjal and drumstick, tempered with panch phoron and finished with roasted cumin-chilli powder and coconut.",
+      "cuisine": "east_indian",
+      "region": "Odisha",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 4,
+      "prepMin": 20,
+      "cookMin": 30,
+      "difficulty": "easy",
+      "equipment": [
+        "knife_board",
+        "pressure_cooker|saucepan",
+        "kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "cumin_seeds",
+          "g": 3,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "dried_red_chilli",
+          "g": 3,
+          "measure": "4",
+          "prep": "2 for roasting, 2 for tempering"
+        },
+        {
+          "ref": "toor_dal",
+          "g": 120,
+          "measure": "⅔ cup",
+          "prep": "rinsed and soaked 20 minutes"
+        },
+        {
+          "ref": "pumpkin",
+          "g": 100,
+          "measure": "1 cup cubes",
+          "prep": "1-inch cubes"
+        },
+        {
+          "ref": "raw_banana",
+          "g": 80,
+          "measure": "½",
+          "prep": "peeled, cubed"
+        },
+        {
+          "ref": "brinjal",
+          "g": 80,
+          "measure": "1 small",
+          "prep": "cubed"
+        },
+        {
+          "ref": "drumstick",
+          "g": 50,
+          "measure": "1",
+          "prep": "2-inch pieces"
+        },
+        {
+          "ref": "ginger",
+          "g": 6,
+          "prep": "grated"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "salt",
+          "g": 5,
+          "toTaste": true
+        },
+        {
+          "ref": "water",
+          "g": 700
+        },
+        {
+          "ref": "ghee",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "panch_phoron",
+          "g": 3,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "bay_leaf",
+          "g": 0.4,
+          "measure": "2 leaves"
+        },
+        {
+          "ref": "coconut_grated",
+          "g": 20,
+          "measure": "3 tbsp"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Make bhaja masala",
+          "kind": "cook",
+          "text": "Dry-roast the cumin seeds and 2 dried red chillies in a kadai on low heat for 2 minutes until the cumin darkens and smells smoky. Cool and crush to a coarse powder.",
+          "uses": [
+            "cumin_seeds",
+            "dried_red_chilli"
+          ],
+          "visual": "Dark-roasted cumin seeds and two blackened dried red chillies in a small dry iron kadai, a little crushed powder in a katori beside",
+          "timerMin": 2,
+          "heat": "low"
+        },
+        {
+          "title": "Cut the vegetables",
+          "kind": "prep",
+          "text": "Cut the pumpkin, raw banana and brinjal into 1-inch cubes and the drumstick into 2-inch pieces.",
+          "uses": [
+            "pumpkin",
+            "raw_banana",
+            "brinjal",
+            "drumstick"
+          ],
+          "visual": "Orange pumpkin cubes, green raw banana cubes, purple brinjal cubes and drumstick pieces on a wooden board"
+        },
+        {
+          "title": "Cook dal with vegetables",
+          "kind": "cook",
+          "text": "Put the drained toor dal, all the vegetables, ginger, turmeric, salt and water in a pressure cooker. Cook for 2 whistles (about 8 minutes) so the dal is soft but the vegetables keep their shape. In a saucepan, simmer the dal for 20 minutes first, then add the vegetables for 12 minutes.",
+          "uses": [
+            "toor_dal",
+            "ginger",
+            "turmeric",
+            "salt",
+            "water"
+          ],
+          "visual": "Toor dal with pumpkin, raw banana, brinjal and drumstick under yellow-tinged water in an open steel pressure cooker",
+          "timerMin": 8,
+          "heat": "medium",
+          "equipment": [
+            "pressure_cooker|saucepan"
+          ]
+        },
+        {
+          "title": "Temper with panch phoron",
+          "kind": "cook",
+          "text": "Heat the ghee in the kadai. Add the panch phoron, remaining dried red chillies and bay leaves and let them crackle for 20 seconds. Pour the tempering into the dalma.",
+          "uses": [
+            "ghee",
+            "panch_phoron",
+            "bay_leaf"
+          ],
+          "visual": "Crackling panch phoron seeds, dried red chillies and bay leaves in ghee being poured over the dal in the pressure cooker",
+          "heat": "medium"
+        },
+        {
+          "title": "Simmer and season",
+          "kind": "cook",
+          "text": "Simmer the dalma for 3 minutes, stirring gently. Stir in half the roasted cumin-chilli powder.",
+          "uses": [],
+          "visual": "Thick golden dalma with chunks of orange pumpkin and drumstick, flecked with dark roasted spice, bubbling in the open pressure cooker",
+          "timerMin": 3,
+          "heat": "low"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve hot with steamed rice, topped with the grated coconut and the remaining bhaja masala.",
+          "uses": [
+            "coconut_grated"
+          ],
+          "visual": "Odia dalma in a bell-metal bowl topped with white grated coconut and a dusting of roasted cumin-chilli powder, steamed rice beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "raw_banana",
+          "with": "bottle_gourd",
+          "ratio": 1,
+          "note": "Bottle gourd or papaya keep it lighter in carbs."
+        },
+        {
+          "ref": "ghee",
+          "with": "mustard_oil",
+          "ratio": 1,
+          "note": "Mustard oil makes it vegan."
+        }
+      ],
+      "storage": "Refrigerate up to 2 days.",
+      "reheating": "Reheat with a splash of water.",
+      "tags": [
+        "family",
+        "one_pot"
+      ]
+    },
+    {
+      "id": "kolkata-chicken-rezala-lighter",
+      "title": "Chicken Rezala (Lighter, Kolkata Style)",
+      "description": "Kolkata's pale, fragrant Mughlai curry: chicken in a yoghurt, onion and cashew gravy with whole spices, white pepper notes and dried red chillies. Made with milk and modest ghee instead of heavy cream.",
+      "cuisine": "east_indian",
+      "region": "Kolkata",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 4,
+      "prepMin": 20,
+      "cookMin": 40,
+      "restMin": 60,
+      "difficulty": "medium",
+      "equipment": [
+        "mixing_bowl",
+        "mixer_grinder",
+        "kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "chicken_curry_cut",
+          "g": 750
+        },
+        {
+          "ref": "curd",
+          "g": 150,
+          "measure": "⅔ cup",
+          "prep": "whisked"
+        },
+        {
+          "ref": "ginger_garlic_paste",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "salt",
+          "g": 6,
+          "toTaste": true
+        },
+        {
+          "ref": "onion",
+          "g": 150,
+          "measure": "1 large",
+          "prep": "roughly chopped"
+        },
+        {
+          "ref": "cashews",
+          "g": 20,
+          "measure": "12 cashews",
+          "prep": "soaked 15 minutes"
+        },
+        {
+          "ref": "water",
+          "g": 150
+        },
+        {
+          "ref": "ghee",
+          "g": 20,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "bay_leaf",
+          "g": 0.4,
+          "measure": "2 leaves"
+        },
+        {
+          "ref": "cardamom",
+          "g": 1,
+          "measure": "3 pods"
+        },
+        {
+          "ref": "cloves",
+          "g": 0.3,
+          "measure": "3"
+        },
+        {
+          "ref": "cinnamon",
+          "g": 1,
+          "measure": "1-inch stick"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 1,
+          "measure": "½ tsp",
+          "prep": "finely ground"
+        },
+        {
+          "ref": "dried_red_chilli",
+          "g": 2,
+          "measure": "3"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 6,
+          "measure": "2",
+          "prep": "slit"
+        },
+        {
+          "ref": "sugar",
+          "g": 3,
+          "measure": "¾ tsp"
+        },
+        {
+          "ref": "milk",
+          "g": 100,
+          "measure": "6½ tbsp"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Marinate the chicken",
+          "kind": "prep",
+          "text": "Mix the chicken with the curd, ginger-garlic paste and salt. Cover and refrigerate for 1 hour.",
+          "uses": [
+            "chicken_curry_cut",
+            "curd",
+            "ginger_garlic_paste",
+            "salt"
+          ],
+          "visual": "Chicken pieces coated in a creamy white yoghurt marinade in a steel mixing bowl",
+          "timerMin": 60
+        },
+        {
+          "title": "Make onion-cashew paste",
+          "kind": "prep",
+          "text": "Boil the onion in 100 ml of the water for 5 minutes until soft, then grind it with the drained cashews to a smooth, pale paste. Boiling instead of frying keeps the rezala white.",
+          "uses": [
+            "onion",
+            "cashews",
+            "water"
+          ],
+          "visual": "A smooth, ivory-coloured onion and cashew paste in a mixer jar",
+          "timerMin": 5,
+          "equipment": [
+            "mixer_grinder"
+          ]
+        },
+        {
+          "title": "Temper whole spices",
+          "kind": "cook",
+          "text": "Heat the ghee in a heavy kadai over medium heat. Add the bay leaves, cardamom, cloves, cinnamon and dried red chillies and fry for 30 seconds until fragrant.",
+          "uses": [
+            "ghee",
+            "bay_leaf",
+            "cardamom",
+            "cloves",
+            "cinnamon",
+            "dried_red_chilli"
+          ],
+          "visual": "Whole cardamom, cloves, cinnamon, bay leaves and dried red chillies sizzling in ghee in a heavy iron kadai",
+          "heat": "medium"
+        },
+        {
+          "title": "Cook the paste",
+          "kind": "cook",
+          "text": "Add the onion-cashew paste and cook on low heat for 4 minutes, stirring, until it no longer smells raw. Don't let it brown.",
+          "uses": [],
+          "visual": "Pale, creamy onion-cashew paste bubbling gently with whole spices in the iron kadai",
+          "timerMin": 4,
+          "heat": "low"
+        },
+        {
+          "title": "Add the chicken",
+          "kind": "cook",
+          "text": "Add the chicken with all its marinade and cook on medium heat for 5 minutes, stirring. Add the ground pepper, green chillies, sugar and the remaining water. Cover and cook on low for 20 minutes until tender.",
+          "uses": [
+            "black_pepper",
+            "green_chilli",
+            "sugar"
+          ],
+          "visual": "Chicken pieces in a pale, creamy gravy with slit green chillies in the covered iron kadai, lid lifted to show steam",
+          "timerMin": 25,
+          "heat": "low"
+        },
+        {
+          "title": "Finish with milk",
+          "kind": "cook",
+          "text": "Stir in the milk and simmer uncovered for 4 minutes until the gravy is creamy and coats the chicken. Check the salt.",
+          "uses": [
+            "milk"
+          ],
+          "visual": "Chicken in a smooth, ivory-white rezala gravy with red chillies and green chillies floating on top in the iron kadai",
+          "timerMin": 4,
+          "heat": "low"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Rest for 5 minutes and serve with phulka, paratha or a small portion of pulao.",
+          "uses": [],
+          "visual": "Chicken rezala in a white ceramic bowl, pale creamy gravy with whole dried red chillies and green chillies on top, phulkas beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "cashews",
+          "with": "almonds",
+          "ratio": 1,
+          "note": "Blanched almonds give a similar body."
+        },
+        {
+          "ref": "chicken_curry_cut",
+          "with": "mutton",
+          "ratio": 1,
+          "note": "Mutton rezala is the original; pressure-cook for 20 minutes after adding the meat."
+        }
+      ],
+      "storage": "Refrigerate up to 3 days.",
+      "reheating": "Warm gently on low heat with a splash of milk; don't boil hard or the yoghurt may split.",
+      "tags": [
+        "festive"
+      ]
+    },
+    {
+      "id": "bengali-bhapa-doi-low-sugar",
+      "title": "Bhapa Doi (Low-Sugar Steamed Yoghurt)",
+      "description": "Bengal's silky steamed yoghurt pudding, set with thick hung curd and milk, scented with cardamom and sweetened lightly with a little sugar instead of a whole tin of condensed milk.",
+      "cuisine": "east_indian",
+      "region": "Bengal",
+      "mealTypes": [
+        "dessert"
+      ],
+      "course": "dessert",
+      "servings": 4,
+      "prepMin": 10,
+      "cookMin": 25,
+      "restMin": 120,
+      "difficulty": "easy",
+      "equipment": [
+        "mixing_bowl",
+        "whisk",
+        "steamer|oven"
+      ],
+      "ingredients": [
+        {
+          "ref": "hung_curd",
+          "g": 300,
+          "measure": "1¼ cups"
+        },
+        {
+          "ref": "milk_full",
+          "g": 100,
+          "measure": "6½ tbsp"
+        },
+        {
+          "ref": "sugar",
+          "g": 30,
+          "measure": "2½ tbsp"
+        },
+        {
+          "ref": "cardamom",
+          "g": 0.6,
+          "measure": "2 pods",
+          "prep": "seeds crushed"
+        },
+        {
+          "ref": "pistachios",
+          "g": 8,
+          "measure": "1 tbsp",
+          "prep": "slivered"
+        },
+        {
+          "ref": "water",
+          "g": 500
+        }
+      ],
+      "steps": [
+        {
+          "title": "Whisk the custard",
+          "kind": "prep",
+          "text": "Whisk the hung curd, milk, sugar and crushed cardamom in a bowl for 2 minutes until completely smooth and the sugar has dissolved.",
+          "uses": [
+            "hung_curd",
+            "milk_full",
+            "sugar",
+            "cardamom"
+          ],
+          "visual": "A smooth, thick, creamy white yoghurt mixture in a steel mixing bowl with a whisk and a few crushed cardamom seeds on top",
+          "equipment": [
+            "whisk"
+          ]
+        },
+        {
+          "title": "Fill the moulds",
+          "kind": "assemble",
+          "text": "Pour the mixture into four small steel bowls or ramekins and cover each tightly with foil so no water drips in.",
+          "uses": [],
+          "visual": "Four small steel bowls filled with smooth white yoghurt mixture, two already covered with foil"
+        },
+        {
+          "title": "Steam gently",
+          "kind": "cook",
+          "text": "Bring the water to a simmer in a steamer and steam the bowls on low heat for 20 to 25 minutes until set but still slightly wobbly in the centre. In an oven, bake in a water bath at 160°C for 25 to 30 minutes.",
+          "uses": [
+            "water"
+          ],
+          "visual": "Foil-covered steel bowls sitting in a steamer basket over gently simmering water, wisps of steam rising",
+          "timerMin": 25,
+          "heat": "low",
+          "equipment": [
+            "steamer|oven"
+          ]
+        },
+        {
+          "title": "Cool and chill",
+          "kind": "rest",
+          "text": "Let the bowls cool to room temperature, then refrigerate for at least 2 hours until firm and cold.",
+          "uses": [],
+          "visual": "Uncovered bowls of set, pale ivory steamed yoghurt with a smooth top, cooling on a rack",
+          "timerMin": 120
+        },
+        {
+          "title": "Garnish and serve",
+          "kind": "serve",
+          "text": "Top with slivered pistachios and serve chilled in the bowls, or run a knife around the edge and turn out onto plates.",
+          "uses": [
+            "pistachios"
+          ],
+          "visual": "A small bowl of silky bhapa doi with a smooth ivory top sprinkled with green pistachio slivers, a spoon beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "sugar",
+          "with": "stevia",
+          "ratio": 0.05,
+          "note": "Use stevia to taste for a sugar-free version; the texture stays the same."
+        },
+        {
+          "ref": "sugar",
+          "with": "jaggery",
+          "ratio": 1,
+          "note": "Use nolen gur (date-palm jaggery) or regular jaggery for a winter-style bhapa doi."
+        }
+      ],
+      "storage": "Refrigerate covered up to 3 days.",
+      "tags": [
+        "festive",
+        "kid_friendly"
+      ]
     }
   ]
 }

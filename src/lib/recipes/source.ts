@@ -114,6 +114,7 @@ export type CompiledRecipe = {
   storage: string | null;
   reheating: string | null;
   allergens: string[];
+  avoidTags: string[];
   servingGrams: number;
   perServing: Nutrients;
   costPerServingInr: number;
@@ -247,6 +248,7 @@ export function compileRecipe(
   if (errors.length) return { ok: false, id: r.id, errors };
 
   const allergens = [...new Set(r.ingredients.flatMap((l) => ingredientMap.get(l.ref)!.allergens))].sort();
+  const avoidTags = [...new Set(requiredIngs.flatMap((i) => i.avoidTags))].sort();
   const costPerServingInr = Math.round(recipeCost(lines, lookup) / r.servings);
   const totalMin = r.prepMin + r.cookMin;
 
@@ -314,6 +316,7 @@ export function compileRecipe(
       storage: r.storage ?? null,
       reheating: r.reheating ?? null,
       allergens,
+      avoidTags,
       servingGrams,
       perServing,
       costPerServingInr,
