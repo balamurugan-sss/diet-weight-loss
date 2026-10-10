@@ -1,0 +1,394 @@
+{
+  "batch": "000-exemplars",
+  "source": "original",
+  "author": "In-house recipe development",
+  "license": "Proprietary — original recipes written for this app",
+  "recipes": [
+    {
+      "id": "air-fryer-paneer-tikka",
+      "title": "Paneer Tikka (Air Fryer, Oven or Pan)",
+      "description": "Smoky, tangy paneer and vegetable skewers in a hung-curd tandoori marinade. Kept keto-friendly by going light on onion and using thick hung curd.",
+      "cuisine": "north_indian",
+      "region": "Punjab",
+      "mealTypes": ["snack", "dinner"],
+      "servings": 2,
+      "prepMin": 15,
+      "cookMin": 12,
+      "restMin": 30,
+      "difficulty": "easy",
+      "equipment": ["mixing_bowl", "skewers", "air_fryer|oven|non_stick_pan"],
+      "ingredients": [
+        { "ref": "paneer", "g": 250, "prep": "cut into 1½-inch cubes" },
+        { "ref": "capsicum", "g": 100, "prep": "cut into 1½-inch squares" },
+        { "ref": "onion", "g": 50, "prep": "cut into petals" },
+        { "ref": "hung_curd", "g": 60 },
+        { "ref": "ginger_garlic_paste", "g": 8 },
+        { "ref": "kashmiri_chilli", "g": 4 },
+        { "ref": "turmeric", "g": 1 },
+        { "ref": "tandoori_masala", "g": 4 },
+        { "ref": "kasuri_methi", "g": 1, "prep": "crushed between palms" },
+        { "ref": "lemon_juice", "g": 10 },
+        { "ref": "mustard_oil", "g": 10 },
+        { "ref": "salt", "g": 3, "toTaste": true },
+        { "ref": "chaat_masala", "g": 1 }
+      ],
+      "steps": [
+        {
+          "title": "Measure everything",
+          "kind": "prep",
+          "text": "Set out the paneer, capsicum, onion, hung curd and all the spices. Measuring first keeps the marinade balanced.",
+          "uses": ["paneer", "capsicum", "onion", "hung_curd", "ginger_garlic_paste", "kashmiri_chilli", "turmeric", "tandoori_masala", "kasuri_methi", "lemon_juice", "mustard_oil", "salt", "chaat_masala"],
+          "visual": "A whole block of paneer, one green capsicum and half an onion on a wooden board, beside a steel bowl of thick white hung curd and small steel katoris of red chilli powder, turmeric, tandoori masala, kasuri methi, ginger-garlic paste, half a lemon, a little mustard oil and salt"
+        },
+        {
+          "title": "Cut paneer and vegetables",
+          "kind": "prep",
+          "text": "Cut the paneer into 1½-inch cubes. Cut the capsicum into squares of the same size and separate the onion into petals so everything cooks evenly.",
+          "uses": ["paneer", "capsicum", "onion"],
+          "visual": "Paneer cut into neat even cubes, capsicum squares and onion petals arranged in three piles on the wooden board, knife resting beside them"
+        },
+        {
+          "title": "Mix the marinade",
+          "kind": "prep",
+          "text": "In a large bowl whisk the hung curd with ginger-garlic paste, Kashmiri chilli, turmeric, tandoori masala, crushed kasuri methi, lemon juice, mustard oil and salt until smooth and thick.",
+          "uses": ["hung_curd", "ginger_garlic_paste", "kashmiri_chilli", "turmeric", "tandoori_masala", "kasuri_methi", "lemon_juice", "mustard_oil", "salt"],
+          "visual": "A wide steel mixing bowl holding a thick, smooth, deep orange-red yoghurt marinade being stirred with a spoon; empty spice katoris pushed to the side"
+        },
+        {
+          "title": "Coat the paneer",
+          "kind": "prep",
+          "text": "Add the paneer cubes, capsicum and onion to the marinade. Fold gently with your hands or a spatula so every piece is coated without breaking the paneer.",
+          "uses": ["paneer", "capsicum", "onion"],
+          "visual": "Paneer cubes, capsicum squares and onion petals fully coated in the orange-red marinade inside the same steel bowl"
+        },
+        {
+          "title": "Rest to marinate",
+          "kind": "rest",
+          "text": "Cover the bowl and leave it in the fridge for at least 30 minutes so the flavours soak in. You can marinate up to 8 hours ahead.",
+          "uses": [],
+          "visual": "The same steel bowl of coated paneer and vegetables covered with a plate, sitting on a fridge shelf",
+          "timerMin": 30
+        },
+        {
+          "title": "Thread the skewers",
+          "kind": "assemble",
+          "text": "Thread paneer, capsicum and onion alternately onto skewers. If using wooden skewers, soak them in water for 10 minutes first so they don't burn.",
+          "uses": ["paneer", "capsicum", "onion"],
+          "visual": "Four skewers threaded with alternating marinated paneer cubes, capsicum squares and onion petals laid on a tray, the empty marinade bowl behind",
+          "equipment": ["skewers"]
+        },
+        {
+          "title": "Cook until charred",
+          "kind": "cook",
+          "text": "Air fry at 200°C for 12 minutes, turning halfway, until the edges char. In an oven, grill at 220°C for 15 to 18 minutes. On a pan, cook over medium-high heat with a few drops of oil, turning every 2 minutes.",
+          "uses": [],
+          "visual": "Paneer tikka skewers inside an open air-fryer basket, edges lightly charred and blistered, marinade turned deep red-brown",
+          "timerMin": 12,
+          "tempC": 200,
+          "heat": "high",
+          "equipment": ["air_fryer|oven|non_stick_pan"]
+        },
+        {
+          "title": "Finish and serve",
+          "kind": "serve",
+          "text": "Sprinkle chaat masala over the hot tikka and serve straight away with a squeeze of lemon. Pair with a cucumber salad to keep the meal low-carb.",
+          "uses": ["chaat_masala"],
+          "visual": "Charred paneer tikka with capsicum and onion pushed off the skewers onto a white plate, dusted with chaat masala, a lemon wedge on the side",
+          "equipment": []
+        }
+      ],
+      "substitutions": [
+        { "ref": "paneer", "with": "tofu", "ratio": 1, "note": "Use firm tofu, pressed dry, to make it vegan; swap hung curd for thick coconut yoghurt." },
+        { "ref": "mustard_oil", "with": "groundnut_oil", "ratio": 1, "note": "Any neutral oil works; mustard oil just adds the classic pungency." },
+        { "ref": "hung_curd", "with": "curd", "ratio": 1, "note": "Strain regular curd in a muslin cloth for 2 hours — wet curd makes the marinade slide off." }
+      ],
+      "storage": "Refrigerate cooked tikka in an airtight box for up to 2 days. Raw marinated paneer keeps 24 hours in the fridge.",
+      "reheating": "Reheat in the air fryer at 180°C for 3 minutes or on a hot pan; microwaving makes paneer rubbery.",
+      "tags": ["kid_friendly"]
+    },
+    {
+      "id": "kottayam-meen-curry-kudampuli",
+      "title": "Kottayam Fish Curry with Kudampuli",
+      "description": "Kerala's fiery red fish curry, soured with kudampuli and finished in coconut oil — no coconut milk, naturally low in carbs, and even better the next day.",
+      "cuisine": "kerala",
+      "region": "Kottayam",
+      "mealTypes": ["lunch", "dinner"],
+      "servings": 3,
+      "prepMin": 15,
+      "cookMin": 25,
+      "restMin": 0,
+      "difficulty": "medium",
+      "equipment": ["kadai"],
+      "ingredients": [
+        { "ref": "seer_fish", "g": 450, "prep": "cut into 2-inch steaks" },
+        { "ref": "kudampuli", "g": 10, "measure": "2 pieces", "prep": "soaked in ½ cup warm water" },
+        { "ref": "coconut_oil", "g": 20 },
+        { "ref": "mustard_seeds", "g": 2 },
+        { "ref": "fenugreek_seeds", "g": 1 },
+        { "ref": "shallots", "g": 60, "prep": "thinly sliced" },
+        { "ref": "ginger", "g": 10, "prep": "julienned" },
+        { "ref": "garlic", "g": 12, "prep": "sliced" },
+        { "ref": "green_chilli", "g": 6, "prep": "slit" },
+        { "ref": "curry_leaves", "g": 3 },
+        { "ref": "kashmiri_chilli", "g": 12 },
+        { "ref": "chilli_powder", "g": 3 },
+        { "ref": "turmeric", "g": 1 },
+        { "ref": "water", "g": 360 },
+        { "ref": "salt", "g": 5, "toTaste": true }
+      ],
+      "steps": [
+        {
+          "title": "Soak the kudampuli",
+          "kind": "prep",
+          "text": "Rinse the kudampuli and soak it in half a cup of warm water for 10 minutes. Keep the soaking water — it carries the sourness.",
+          "uses": ["kudampuli"],
+          "visual": "Two dark, leathery pieces of kudampuli soaking in a small steel bowl of warm water on a granite counter",
+          "timerMin": 10
+        },
+        {
+          "title": "Prepare the fish and aromatics",
+          "kind": "prep",
+          "text": "Wash the fish steaks and pat them dry. Slice the shallots and garlic, julienne the ginger and slit the green chillies.",
+          "uses": ["seer_fish", "shallots", "garlic", "ginger", "green_chilli"],
+          "visual": "Clean seer-fish steaks on a plate next to sliced shallots, garlic slivers, ginger matchsticks and slit green chillies on a wooden board"
+        },
+        {
+          "title": "Make the chilli paste",
+          "kind": "prep",
+          "text": "Mix the Kashmiri chilli powder, chilli powder and turmeric with 3 tablespoons of water into a thick, smooth paste.",
+          "uses": ["kashmiri_chilli", "chilli_powder", "turmeric"],
+          "visual": "A small bowl of thick, glossy brick-red chilli and turmeric paste with a spoon resting in it"
+        },
+        {
+          "title": "Temper in coconut oil",
+          "kind": "cook",
+          "text": "Heat the coconut oil in a kadai or clay pot over medium heat. Add mustard seeds; when they splutter add fenugreek seeds and curry leaves for a few seconds.",
+          "uses": ["coconut_oil", "mustard_seeds", "fenugreek_seeds", "curry_leaves"],
+          "visual": "Mustard seeds popping in shimmering coconut oil in a black kadai, curry leaves crackling and a few fenugreek seeds turning golden",
+          "heat": "medium"
+        },
+        {
+          "title": "Sauté the aromatics",
+          "kind": "cook",
+          "text": "Add the shallots, ginger, garlic and green chillies. Sauté for 4 to 5 minutes until the shallots turn soft and golden.",
+          "uses": ["shallots", "ginger", "garlic", "green_chilli"],
+          "visual": "Golden, softened shallots with ginger, garlic and green chillies sizzling among curry leaves in the same black kadai",
+          "timerMin": 5,
+          "heat": "medium"
+        },
+        {
+          "title": "Cook the chilli paste",
+          "kind": "cook",
+          "text": "Lower the heat, add the chilli paste and stir for 2 to 3 minutes until the raw smell goes and oil starts to separate at the edges.",
+          "uses": [],
+          "visual": "Deep red masala in the kadai with coconut oil glistening at the edges, shallots coated in the paste",
+          "timerMin": 3,
+          "heat": "low"
+        },
+        {
+          "title": "Add water and kudampuli",
+          "kind": "cook",
+          "text": "Pour in the water along with the kudampuli and its soaking water. Add salt and bring to a gentle boil.",
+          "uses": ["water", "salt"],
+          "visual": "Thin, bright red curry gently bubbling in the kadai with dark kudampuli pieces floating in it",
+          "heat": "medium"
+        },
+        {
+          "title": "Simmer the fish",
+          "kind": "cook",
+          "text": "Slide in the fish steaks in a single layer. Don't stir — swirl the pot instead so the fish stays whole. Simmer on low for 10 to 12 minutes until the fish is cooked through and the curry thickens.",
+          "uses": ["seer_fish"],
+          "visual": "Seer-fish steaks submerged in a thickened red curry in the kadai, coconut oil pooling on top, curry leaves scattered",
+          "timerMin": 12,
+          "heat": "low"
+        },
+        {
+          "title": "Rest and serve",
+          "kind": "serve",
+          "text": "Turn off the heat and let the curry rest for at least 15 minutes before serving. Serve with matta rice for a balanced meal, or with cauliflower rice to keep it low-carb.",
+          "uses": [],
+          "visual": "Kottayam fish curry served in a traditional clay pot, glossy red gravy with fish steaks and curry leaves, a banana leaf beneath"
+        }
+      ],
+      "substitutions": [
+        { "ref": "seer_fish", "with": "mackerel", "ratio": 1, "note": "Mackerel or sardines are cheaper and richer in omega-3; reduce simmering to 8 minutes." },
+        { "ref": "kudampuli", "with": "tamarind", "ratio": 1, "note": "Use a small lemon-sized ball of tamarind if kudampuli isn't available — it adds a few more carbs." }
+      ],
+      "storage": "Keeps 3 days in the fridge; the flavour deepens overnight.",
+      "reheating": "Warm gently on low heat without stirring until just simmering.",
+      "tags": ["meal_prep"]
+    },
+    {
+      "id": "chettinad-chicken-pepper-fry",
+      "title": "Chettinad Chicken Pepper Fry",
+      "description": "Dry, peppery chicken from Tamil Nadu's Chettinad region, roasted with freshly crushed black pepper, fennel and curry leaves.",
+      "cuisine": "tamil_nadu",
+      "region": "Chettinad",
+      "mealTypes": ["lunch", "dinner"],
+      "servings": 3,
+      "prepMin": 15,
+      "cookMin": 30,
+      "difficulty": "medium",
+      "equipment": ["kadai", "mixer_grinder|knife_board"],
+      "ingredients": [
+        { "ref": "chicken_curry_cut", "g": 600 },
+        { "ref": "curd", "g": 30 },
+        { "ref": "turmeric", "g": 1 },
+        { "ref": "black_pepper", "g": 8, "prep": "coarsely crushed" },
+        { "ref": "fennel_seeds", "g": 3 },
+        { "ref": "cumin_seeds", "g": 2 },
+        { "ref": "sesame_oil", "g": 20 },
+        { "ref": "cinnamon", "g": 1 },
+        { "ref": "shallots", "g": 80, "prep": "sliced" },
+        { "ref": "ginger_garlic_paste", "g": 15 },
+        { "ref": "green_chilli", "g": 6, "prep": "slit" },
+        { "ref": "curry_leaves", "g": 4 },
+        { "ref": "tomato", "g": 60, "prep": "chopped" },
+        { "ref": "chilli_powder", "g": 3 },
+        { "ref": "coriander_powder", "g": 4 },
+        { "ref": "salt", "g": 5, "toTaste": true },
+        { "ref": "coriander_leaves", "g": 5, "prep": "chopped" }
+      ],
+      "steps": [
+        {
+          "title": "Marinate the chicken",
+          "kind": "prep",
+          "text": "Wash and drain the chicken. Rub it with curd, turmeric and half the salt and set aside for 15 minutes.",
+          "uses": ["chicken_curry_cut", "curd", "turmeric", "salt"],
+          "visual": "Bone-in chicken pieces in a steel bowl coated in a thin layer of curd and turmeric, a pinch of salt on top",
+          "timerMin": 15
+        },
+        {
+          "title": "Crush the pepper masala",
+          "kind": "prep",
+          "text": "Dry roast the black pepper, fennel and cumin for 1 minute until fragrant, then coarsely crush them in a mixer or mortar — not to a fine powder.",
+          "uses": ["black_pepper", "fennel_seeds", "cumin_seeds"],
+          "visual": "Coarsely crushed black pepper, fennel and cumin in a stone mortar, a few whole peppercorns still visible",
+          "heat": "low"
+        },
+        {
+          "title": "Sauté shallots and curry leaves",
+          "kind": "cook",
+          "text": "Heat sesame oil in a heavy kadai. Add cinnamon and curry leaves, then the shallots and green chillies. Sauté until the shallots are golden, about 5 minutes.",
+          "uses": ["sesame_oil", "cinnamon", "curry_leaves", "shallots", "green_chilli"],
+          "visual": "Golden sliced shallots, slit green chillies and crackling curry leaves with a piece of cinnamon in a black iron kadai",
+          "timerMin": 5,
+          "heat": "medium"
+        },
+        {
+          "title": "Add ginger-garlic and tomato",
+          "kind": "cook",
+          "text": "Stir in the ginger-garlic paste for a minute, then add the tomato, chilli powder and coriander powder. Cook until the tomato breaks down into a thick masala.",
+          "uses": ["ginger_garlic_paste", "tomato", "chilli_powder", "coriander_powder"],
+          "visual": "Thick reddish-brown masala with softened tomato and shallots in the iron kadai, oil glistening at the edges",
+          "timerMin": 4,
+          "heat": "medium"
+        },
+        {
+          "title": "Cook the chicken",
+          "kind": "cook",
+          "text": "Add the marinated chicken and the remaining salt. Toss well, cover and cook on low heat for 15 minutes, stirring now and then. The chicken releases its own juices — add a splash of water only if it sticks.",
+          "uses": ["chicken_curry_cut"],
+          "visual": "Chicken pieces coated in the masala, simmering in their own juices in the covered iron kadai with the lid slightly ajar",
+          "timerMin": 15,
+          "heat": "low"
+        },
+        {
+          "title": "Roast with pepper",
+          "kind": "cook",
+          "text": "Uncover, add the crushed pepper masala and roast on medium-high heat for 5 to 7 minutes, stirring often, until the chicken is dry, dark and coated.",
+          "uses": [],
+          "visual": "Dark, dry-roasted chicken pieces flecked with coarse black pepper and curry leaves in the iron kadai",
+          "timerMin": 6,
+          "heat": "high"
+        },
+        {
+          "title": "Garnish and serve",
+          "kind": "serve",
+          "text": "Scatter chopped coriander over the pepper chicken and serve hot with a vegetable poriyal and a small portion of rice, or with cucumber raita for a low-carb plate.",
+          "uses": ["coriander_leaves"],
+          "visual": "Chettinad pepper chicken heaped in a brass bowl, garnished with fresh coriander and fried curry leaves, a banana leaf and a cabbage poriyal beside it"
+        }
+      ],
+      "substitutions": [
+        { "ref": "chicken_curry_cut", "with": "chicken_thigh", "ratio": 0.8, "note": "Boneless thigh cooks faster (10 minutes covered) and has no bone weight." },
+        { "ref": "sesame_oil", "with": "coconut_oil", "ratio": 1, "note": "Coconut oil gives a Kerala-style finish." },
+        { "ref": "curd", "with": "lemon_juice", "ratio": 0.5, "note": "Use lemon juice for a dairy-free marinade." }
+      ],
+      "storage": "Refrigerate up to 3 days.",
+      "reheating": "Reheat in a pan over medium heat with a teaspoon of water.",
+      "tags": ["meal_prep", "family"]
+    },
+    {
+      "id": "cauliflower-coconut-rice",
+      "title": "Coconut Cauliflower Rice",
+      "description": "A South Indian–style tempered cauliflower 'rice' with coconut, curry leaves and cashew — a light, low-carb base for sambar, fish curry or chicken fry.",
+      "cuisine": "tamil_nadu",
+      "mealTypes": ["lunch", "dinner"],
+      "servings": 2,
+      "prepMin": 10,
+      "cookMin": 8,
+      "difficulty": "easy",
+      "equipment": ["kadai", "mixer_grinder|knife_board"],
+      "ingredients": [
+        { "ref": "cauliflower", "g": 400, "measure": "1 small head", "prep": "florets" },
+        { "ref": "coconut_oil", "g": 10 },
+        { "ref": "mustard_seeds", "g": 2 },
+        { "ref": "urad_dal", "g": 4 },
+        { "ref": "cashews", "g": 8 },
+        { "ref": "curry_leaves", "g": 2 },
+        { "ref": "green_chilli", "g": 3, "prep": "slit" },
+        { "ref": "ginger", "g": 5, "prep": "finely chopped" },
+        { "ref": "coconut_grated", "g": 25 },
+        { "ref": "salt", "g": 2, "toTaste": true },
+        { "ref": "lemon_juice", "g": 5 }
+      ],
+      "steps": [
+        {
+          "title": "Rice the cauliflower",
+          "kind": "prep",
+          "text": "Pulse the cauliflower florets in a mixer jar in short bursts until they look like grains of rice. Don't over-blend into a paste. You can also grate them on a box grater.",
+          "uses": ["cauliflower"],
+          "visual": "Cauliflower florets in a mixer jar beside a steel plate of freshly riced cauliflower that looks like rice grains"
+        },
+        {
+          "title": "Temper the spices",
+          "kind": "cook",
+          "text": "Heat coconut oil in a kadai. Add mustard seeds; once they splutter add urad dal and cashews and fry until golden, then add curry leaves, green chilli and ginger.",
+          "uses": ["coconut_oil", "mustard_seeds", "urad_dal", "cashews", "curry_leaves", "green_chilli", "ginger"],
+          "visual": "Golden urad dal and cashews with spluttering mustard seeds, curry leaves, green chilli and chopped ginger in coconut oil in a kadai",
+          "heat": "medium"
+        },
+        {
+          "title": "Stir-fry the cauliflower",
+          "kind": "cook",
+          "text": "Add the riced cauliflower and salt. Stir-fry on medium-high heat for 4 to 5 minutes without covering, so it stays fluffy rather than mushy.",
+          "uses": ["salt"],
+          "visual": "Riced cauliflower tossed with the tempering in the kadai, turning slightly translucent, flecks of mustard and curry leaves throughout",
+          "timerMin": 5,
+          "heat": "high"
+        },
+        {
+          "title": "Add coconut and lemon",
+          "kind": "cook",
+          "text": "Turn off the heat, fold in the grated coconut and squeeze over the lemon juice.",
+          "uses": ["coconut_grated", "lemon_juice"],
+          "visual": "Fresh white grated coconut being folded into the cauliflower rice in the kadai"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve warm as a rice replacement with sambar, fish curry or pepper chicken.",
+          "uses": [],
+          "visual": "Fluffy coconut cauliflower rice in a steel bowl with golden cashews and curry leaves on top, a small bowl of fish curry beside it"
+        }
+      ],
+      "substitutions": [
+        { "ref": "cashews", "with": "peanuts", "ratio": 1, "note": "Peanuts are cheaper and similar in carbs; skip both for a nut-free version." }
+      ],
+      "storage": "Best fresh. Raw riced cauliflower keeps 2 days refrigerated.",
+      "reheating": "Stir-fry for 1 minute in a hot pan.",
+      "tags": []
+    }
+  ]
+}
