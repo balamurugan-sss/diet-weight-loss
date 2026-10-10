@@ -171,3 +171,35 @@ export async function getRecipeDetail(slug: string, lang: string, userId: string
   };
 }
 export type RecipeDetail = NonNullable<Awaited<ReturnType<typeof getRecipeDetail>>>;
+
+export function lineViews(detail: RecipeDetail) {
+  return detail.lines.map(({ line, ing }) => ({
+    ingredientId: ing.id,
+    name: ing.name,
+    nameTa: ing.nameTa,
+    nameMl: ing.nameMl,
+    grams: line.grams,
+    measureText: line.measureText,
+    prepNote: line.prepNote,
+    optional: line.optional,
+    toTaste: line.toTaste,
+    category: ing.category,
+    unitWeights: ing.unitWeights,
+    densityGPerMl: ing.densityGPerMl,
+    hiddenCarbNote: ing.hiddenCarbNote,
+    allergens: ing.allergens,
+  }));
+}
+
+/** Steps in the requested language when a translation exists, else the validated original. */
+export function localisedSteps(detail: RecipeDetail) {
+  const tr = detail.translation;
+  const usable = tr && tr.steps.length === detail.steps.length;
+  return {
+    lang: usable ? tr.lang : "en",
+    status: usable ? tr.status : null,
+    stale: usable ? tr.contentHash !== detail.recipe.contentHash : false,
+    title: usable ? tr.title : detail.recipe.title,
+    steps: detail.steps.map((s, i) => ({ ...s, text: usable ? tr.steps[i] : s.text })),
+  };
+}

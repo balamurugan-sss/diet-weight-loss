@@ -102,7 +102,8 @@ function courseMatches(role: Role, r: PlannerRecipe) {
 }
 
 function mealTypeOk(slot: string, role: Role, r: PlannerRecipe) {
-  if (role === "base" || role === "accompaniment" || role === "side" || role === "drink") return true;
+  if (role === "base" && slot === "breakfast") return r.mealTypes.includes("breakfast");
+  if (role === "accompaniment" || role === "side" || role === "drink" || role === "base") return true;
   if (slot === "breakfast") return r.mealTypes.includes("breakfast");
   if (slot === "lunch" || slot === "dinner") return r.mealTypes.includes("lunch") || r.mealTypes.includes("dinner");
   return true;
@@ -214,7 +215,7 @@ function candidateScore(r: PlannerRecipe, role: Role, slot: string, ctx: Ctx, da
   let s = ctx.rand() * 1.2;
   if (p.cuisines.length && p.cuisines.includes(r.cuisine)) s += 1.2;
   else if (p.cuisines.length && p.cuisines.some((c) => cuisineFamily(c) === cuisineFamily(r.cuisine))) s += 0.5;
-  if (p.style === "high_protein" && r.kcal > 0) s += ((r.proteinG * 4) / r.kcal) * 3;
+  if (r.kcal > 0 && role !== "accompaniment") s += ((r.proteinG * 4) / r.kcal) * (p.style === "high_protein" ? 4 : 2.5);
   if (p.style === "low_carb" || p.style === "keto") s -= r.netCarbsG / 25;
   if (role !== "base" && role !== "accompaniment") {
     if (usedToday.has(r.id)) s -= 10;
@@ -286,7 +287,7 @@ export function composeMeal(
     }
     const meal = { slot, components: chosen.map((r, i) => ({ recipeId: r.id, portion: portions[i] })) };
     if (!best || err < best.err) best = { meal, err };
-    if (err < 0.06) break;
+    if (err < 0.04) break;
   }
   return best?.meal ?? null;
 }

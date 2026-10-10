@@ -32,7 +32,7 @@ export function roundGrams(g: number): number {
   return Math.round(g / 10) * 10;
 }
 
-type MeasureIngredient = Pick<Ingredient, "unitWeights" | "densityGPerMl" | "category">;
+type MeasureIngredient = Pick<Ingredient, "unitWeights" | "densityGPerMl"> & { category: string };
 
 export function metricText(ing: MeasureIngredient, grams: number): string {
   if (ing.densityGPerMl) return `${roundGrams(grams / ing.densityGPerMl)} ml`;
@@ -52,7 +52,7 @@ export function kitchenText(ing: MeasureIngredient, grams: number): string | nul
     if (/ \(/.test(label)) return label.replace(/^(\S+)/, "$1s");
     return label + "s";
   };
-  if (u.piece && (PIECE_FIRST.has(ing.category) || !u.tsp) && grams >= u.piece * 0.25) {
+  if (u.piece && (PIECE_FIRST.has(ing.category) || !u.tsp) && grams >= u.piece * 0.25 && grams / u.piece <= 12) {
     const n = friendlyNumber(grams / u.piece);
     return `${n} ${pl(n, u.pieceLabel ?? "piece")}`;
   }
@@ -62,7 +62,7 @@ export function kitchenText(ing: MeasureIngredient, grams: number): string | nul
     if (grams < u.tsp * 0.125) return "a pinch";
     return `${friendlyNumber(grams / u.tsp)} tsp`;
   }
-  if (u.piece && grams >= u.piece * 0.25) {
+  if (u.piece && grams >= u.piece * 0.25 && grams / u.piece <= 12) {
     const n = friendlyNumber(grams / u.piece);
     return `${n} ${pl(n, u.pieceLabel ?? "piece")}`;
   }

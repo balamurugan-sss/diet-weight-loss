@@ -123,7 +123,7 @@ export default async function HomePage() {
               const lead = s.items.find((i) => i.course !== "base" && i.course !== "accompaniment") ?? s.items[0];
               const done = s.items.every((i) => i.completed);
               return (
-                <li key={s.slot}>
+                <li key={s.slot} className="min-w-0">
                   <Link href={`/recipes/${lead.slug}`} className="card flex items-center gap-3 p-3 transition-shadow hover:shadow-[var(--shadow-lift)]">
                     <RecipeVisual recipeId={lead.recipeId} palette={lead.palette} image={lead.image} alt={lead.title} labels={labels} showLabel={false} className="size-16 shrink-0 rounded-2xl" />
                     <div className="min-w-0 flex-1">
