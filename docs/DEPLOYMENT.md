@@ -36,7 +36,8 @@ Vercel functions have a **read-only filesystem**, so the local SQLite fallback
    turso db show thali --url          # → libsql://thali-<org>.turso.io
    turso db tokens create thali       # → auth token
    ```
-2. In **Vercel → Project → Settings → Environment Variables**, add for Production (and Preview):
+2. In **Vercel → Project → Settings → Environment Variables**, add for Production (and Preview)
+   (or connect Turso from Vercel → Storage; its `TURSO_DATABASE_URL` / `TURSO_AUTH_TOKEN` are picked up too):
    `DATABASE_URL` = the `libsql://…` URL, `DATABASE_AUTH_TOKEN` = the token,
    `APP_URL` = your site URL (e.g. `https://thali.vercel.app`). Optional keys as in the table above.
 3. **Redeploy** (Deployments → ⋯ → Redeploy). Vercel runs the `vercel-build` script, which runs

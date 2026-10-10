@@ -7,7 +7,7 @@
  */
 // The database modules are imported only after the settings are checked, so a
 // misconfiguration produces the explanation below rather than a stack trace.
-const databaseUrl = () => process.env.DATABASE_URL || "file:./.data/app.db";
+const databaseUrl = () => process.env.DATABASE_URL || process.env.TURSO_DATABASE_URL || "file:./.data/app.db";
 
 function fail(lines: string[]): never {
   console.error(["", "✗ Deployment database is not configured", ...lines.map((l) => `  ${l}`), ""].join("\n"));
@@ -17,7 +17,7 @@ function fail(lines: string[]): never {
 async function main() {
   const url = databaseUrl();
   const serverless = !!process.env.VERCEL;
-  if (serverless && !process.env.DATABASE_URL) {
+  if (serverless && !process.env.DATABASE_URL && !process.env.TURSO_DATABASE_URL) {
     fail([
       "DATABASE_URL is not set. Vercel functions have a read-only filesystem, so the local SQLite",
       "fallback (file:./.data/app.db) cannot work there.",
@@ -30,7 +30,7 @@ async function main() {
   if (serverless && url.startsWith("file:")) {
     fail([`DATABASE_URL is a local file (${url}). On Vercel use a Turso libsql:// URL (see docs/DEPLOYMENT.md).`]);
   }
-  if (url.startsWith("libsql://") && !process.env.DATABASE_AUTH_TOKEN) {
+  if (url.startsWith("libsql://") && !process.env.DATABASE_AUTH_TOKEN && !process.env.TURSO_AUTH_TOKEN) {
     console.warn("⚠ DATABASE_AUTH_TOKEN is empty — Turso usually requires one.");
   }
 

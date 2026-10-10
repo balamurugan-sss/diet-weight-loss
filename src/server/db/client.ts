@@ -7,8 +7,13 @@ export type DB = LibSQLDatabase<typeof schema>;
 
 const globalForDb = globalThis as unknown as { __libsql?: Client; __db?: DB };
 
+// TURSO_* are the names set by Vercel's Turso integration.
 export function databaseUrl() {
-  return process.env.DATABASE_URL || "file:./.data/app.db";
+  return process.env.DATABASE_URL || process.env.TURSO_DATABASE_URL || "file:./.data/app.db";
+}
+
+export function databaseAuthToken() {
+  return process.env.DATABASE_AUTH_TOKEN || process.env.TURSO_AUTH_TOKEN || undefined;
 }
 
 const MISCONFIGURED =
@@ -27,7 +32,7 @@ function makeClient(): Client {
   if (databaseUrl().startsWith("file:./.data")) mkdirSync(".data", { recursive: true });
   const client = createClient({
     url: databaseUrl(),
-    authToken: process.env.DATABASE_AUTH_TOKEN || undefined,
+    authToken: databaseAuthToken(),
   });
   // SQLite leaves FK enforcement off per connection; cascades depend on it.
   void client.execute("PRAGMA foreign_keys = ON").catch(() => {});
