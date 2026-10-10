@@ -1,4 +1,4 @@
-import { Lock, Scale, Target, TrendingDown } from "lucide-react";
+import { ArrowRight, Lock, Scale, Target, TrendingDown, Watch } from "lucide-react";
 import { CaloriesChart, StrengthChart, WeightChart, WorkoutsChart } from "@/components/charts/ProgressCharts";
 import Link from "next/link";
 import { cn } from "@/lib/cn";
@@ -182,6 +182,17 @@ export default async function ProgressPage({ searchParams }: PageProps<"/progres
           )}
         </Card>
       </div>
+
+      <Link href="/health" className="card flex items-center gap-3 p-4 transition-shadow hover:shadow-[var(--shadow-lift)]">
+        <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-water-100 text-water">
+          <Watch className="size-6" aria-hidden />
+        </span>
+        <span className="flex-1">
+          <span className="block font-semibold">{t("health.title")}</span>
+          <span className="text-sm text-muted">{t("health.google.title")}</span>
+        </span>
+        <ArrowRight className="size-5 text-muted" aria-hidden />
+      </Link>
 
       <div className="grid gap-5 sm:grid-cols-2">
         <WeightQuickLog current={latest?.weightKg ?? profile.weightKg} />

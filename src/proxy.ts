@@ -1,6 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 
-const PROTECTED = ["/home", "/planner", "/recipes", "/cook", "/progress", "/profile", "/shopping", "/settings", "/subscription", "/targets", "/onboarding", "/workouts"];
+const PROTECTED = ["/home", "/planner", "/recipes", "/cook", "/progress", "/profile", "/shopping", "/settings", "/subscription", "/targets", "/onboarding", "/workouts", "/health"];
 
 // Optimistic check only (cookie presence). Every page and action re-verifies
 // the session against the database in the data access layer.

@@ -18,6 +18,7 @@ import { favouriteRecipes } from "@/server/services/recipes";
 import { targetsForProfile } from "@/server/services/targets";
 import { trainingContext } from "@/server/services/workouts";
 import { TodayWorkoutCard } from "@/components/workouts/TodayWorkoutCard";
+import { HealthSummaryCard } from "@/components/health/HealthSummaryCard";
 import { hourNow, todayISO } from "@/server/time";
 
 export const metadata = { title: "Home" };
@@ -93,6 +94,7 @@ export default async function HomePage() {
       ) : null}
 
       <TodayWorkoutCard userId={user.id} profile={profile} t={t} keto={targets.style === "keto"} />
+      <HealthSummaryCard userId={user.id} t={t} />
 
       <div className="grid gap-5 lg:grid-cols-[1.2fr_1fr]">
         <Card>

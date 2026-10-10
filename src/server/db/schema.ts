@@ -637,6 +637,44 @@ export const shareLinks = sqliteTable(
   (t) => [index("share_links_user_idx").on(t.userId)],
 );
 
+// ─── Health data (wearables / phone exports) ────────────────────────────────
+
+export const healthDays = sqliteTable(
+  "health_days",
+  {
+    userId: text("user_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    date: text("date").notNull(),
+    source: text("source", { enum: ["apple_health", "fitbit_export", "google_health", "manual"] }).notNull(),
+    steps: integer("steps"),
+    activeMinutes: integer("active_minutes"),
+    restingHr: integer("resting_hr"),
+    sleepMinutes: integer("sleep_minutes"),
+    updatedAt: integer("updated_at", { mode: "timestamp_ms" }).notNull(),
+  },
+  (t) => [primaryKey({ columns: [t.userId, t.date, t.source] })],
+);
+
+/** OAuth connections. Tokens are AES-256-GCM encrypted with HEALTH_TOKEN_KEY; never stored in plain text. */
+export const healthConnections = sqliteTable(
+  "health_connections",
+  {
+    userId: text("user_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    provider: text("provider", { enum: ["google_health"] }).notNull(),
+    accessToken: text("access_token").notNull(),
+    refreshToken: text("refresh_token"),
+    expiresAt: integer("expires_at", { mode: "timestamp_ms" }).notNull(),
+    scope: text("scope").notNull(),
+    connectedAt: integer("connected_at", { mode: "timestamp_ms" }).notNull(),
+    lastSyncAt: integer("last_sync_at", { mode: "timestamp_ms" }),
+    lastError: text("last_error"),
+  },
+  (t) => [primaryKey({ columns: [t.userId, t.provider] })],
+);
+
 // ─── Quotas, rate limits, billing ────────────────────────────────────────────
 
 export const usageCounters = sqliteTable(

@@ -28,6 +28,12 @@ export async function GET() {
     workoutPrograms: await db.select().from(schema.workoutPrograms).where(eq(schema.workoutPrograms.userId, id)),
     workoutSessions,
     cardioLogs: await db.select().from(schema.cardioLogs).where(eq(schema.cardioLogs.userId, id)),
+    healthDays: await db.select().from(schema.healthDays).where(eq(schema.healthDays.userId, id)),
+    // Connection metadata only — OAuth tokens are secrets and never exported.
+    healthConnections: await db
+      .select({ provider: schema.healthConnections.provider, scope: schema.healthConnections.scope, connectedAt: schema.healthConnections.connectedAt, lastSyncAt: schema.healthConnections.lastSyncAt })
+      .from(schema.healthConnections)
+      .where(eq(schema.healthConnections.userId, id)),
     workoutSets: workoutSessions.length
       ? await db.select().from(schema.workoutSets).where(inArray(schema.workoutSets.sessionId, workoutSessions.map((s) => s.id)))
       : [],

@@ -80,3 +80,21 @@ export function StrengthChart({ data, label }: { data: { date: string; e1rm: num
     </div>
   );
 }
+
+export function StepsChart({ data, goal, label }: { data: { date: string; steps: number }[]; goal: number; label: string }) {
+  const top = Math.ceil(Math.max(goal * 1.2, ...data.map((d) => d.steps)) / 2000) * 2000;
+  return (
+    <div className="h-48 w-full" role="img" aria-label={label}>
+      <ResponsiveContainer>
+        <BarChart data={data} margin={{ top: 8, right: 12, bottom: 0, left: 0 }}>
+          <CartesianGrid vertical={false} stroke="var(--color-line)" />
+          <XAxis dataKey="date" tickFormatter={short} tickLine={false} axisLine={false} tick={axisTick} minTickGap={16} />
+          <YAxis domain={[0, top]} tickLine={false} axisLine={false} tick={axisTick} width={44} tickFormatter={(v) => (v >= 1000 ? `${v / 1000}k` : String(v))} />
+          <ReferenceLine y={goal} stroke="var(--color-forest)" strokeDasharray="4 4" strokeWidth={1.5} />
+          <Tooltip contentStyle={tooltipStyle} labelFormatter={(d) => short(String(d))} formatter={(v) => [Number(v).toLocaleString("en-IN"), ""]} cursor={{ fill: "var(--color-sand)" }} />
+          <Bar dataKey="steps" fill="var(--color-water)" radius={[4, 4, 0, 0]} maxBarSize={28} isAnimationActive={false} />
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
+  );
+}
