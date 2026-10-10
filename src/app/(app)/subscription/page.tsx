@@ -32,7 +32,7 @@ export default async function SubscriptionPage({ searchParams }: PageProps<"/sub
   const usage = await usageToday(user.id);
   const { success } = await searchParams;
   const tier = user.isPremium ? "premium" : "free";
-  const cell = (v: boolean | string) => (v === true ? <Check className="mx-auto size-5 text-forest" aria-label="Included" /> : v === false ? <Minus className="mx-auto size-5 text-muted" aria-label="Not included" /> : <span className="text-sm">{v}</span>);
+  const cell = (v: boolean | string) => (v === true ? <Check className="mx-auto size-5 text-forest" aria-label="Included" /> : v === false ? <Minus className="mx-auto size-5 text-muted" aria-label="Not included" /> : <span className="text-xs sm:text-sm">{v}</span>);
   return (
     <div className="space-y-5">
       <PageHeader title={t("sub.title")} subtitle={t("sub.current", { plan: user.isPremium ? t("common.premium") : t("common.free") })} />
@@ -50,19 +50,19 @@ export default async function SubscriptionPage({ searchParams }: PageProps<"/sub
           </div>
         </Card>
       </div>
-      <Card className="overflow-x-auto p-0">
-        <table className="w-full min-w-[34rem] text-left">
+      <Card className="p-0">
+        <table className="w-full table-fixed text-left">
           <thead>
             <tr className="border-b border-line text-sm">
-              <th className="p-3 font-semibold" scope="col"></th>
-              <th className="p-3 text-center font-semibold" scope="col">{t("common.free")}</th>
-              <th className="p-3 text-center font-semibold" scope="col">{t("common.premium")}</th>
+              <th className="p-3 font-semibold" scope="col"><span className="sr-only">Feature</span></th>
+              <th className="w-24 p-3 text-center font-semibold sm:w-40" scope="col">{t("common.free")}</th>
+              <th className="w-24 p-3 text-center font-semibold sm:w-40" scope="col">{t("common.premium")}</th>
             </tr>
           </thead>
           <tbody>
             {FEATURES.map((f) => (
               <tr key={f.label} className="border-b border-line last:border-0">
-                <th scope="row" className="p-3 text-[15px] font-medium">{f.label}</th>
+                <th scope="row" className="p-3 text-sm font-medium sm:text-[15px]">{f.label}</th>
                 <td className="p-3 text-center">{cell(f.free)}</td>
                 <td className="p-3 text-center">{cell(f.premium)}</td>
               </tr>

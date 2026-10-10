@@ -1,107 +1,73 @@
-# FitFusion AI
+# Thali — AI Indian Diet Planner, Keto Coach & Visual Cooking Assistant
 
-A mobile-first AI weight-loss coaching app: personalized calorie/macro targets, an
-AI-generated weekly meal plan with full recipes, an AI-generated weekly workout plan,
-daily/water/habit tracking, progress charts, a shopping list, an AI chat coach, food
-search (with voice/barcode/image entry points), reports, a premium/paywall scaffold,
-and a lightweight admin/content panel.
+A mobile-first web app for Indian users who want to lose weight on familiar food:
+personalised calorie and macro targets with safety screening, 7/14/30-day meal plans
+built from a validated catalogue of Indian and international recipes, keto and
+low-carb options checked carb-by-carb, a hands-free visual cooking mode with
+narration in English, Tamil and Malayalam, shopping lists, and progress tracking.
 
-## Stack
+> General wellness guidance and estimates — not medical advice or diagnosis.
 
-Next.js 16 (App Router, Turbopack) · React 19 · TypeScript · Tailwind CSS v4 ·
-Framer Motion · Zustand · Recharts · next-themes
-
-## Getting started
+## Quick start
 
 ```bash
 npm install
-npm run dev
+npm run db:seed -- --demo   # migrations + recipe catalogue + a demo account (prints its password)
+npm run dev                 # http://localhost:3000
 ```
 
-Open http://localhost:3000, click **Get Started**, and complete onboarding — a
-profile is required before any other page is reachable (enforced by `ProfileGate`).
+No API keys are needed to run the app. Without keys, AI image generation, natural
+voices, machine translation and payments are shown as unavailable (never faked); the
+cooking assistant uses the device's built-in voices instead.
 
 ```bash
-npm run lint       # eslint
-npx tsc --noEmit   # typecheck
-npm run build      # production build
+npm test                 # unit tests: nutrition, safety, scaling, planner, shopping, prompts
+npm run test:e2e         # Playwright golden path (onboard → plan → swap → cook → log)
+npm run lint && npm run typecheck && npm run build
+npm run recipes:validate -- --table   # validate the catalogue and print per-serving nutrition
 ```
 
-## Architecture — read this before assuming it's "just a demo"
+## What's in the box
 
-This is a **local-first, single-device app**: there is no backend server, database,
-or user auth system. Your profile, daily logs, generated meal/workout plans, and
-shopping list live in the browser via `localStorage` (Zustand's `persist` middleware).
-Clearing site data resets the app; there is no multi-device sync.
-
-This was a deliberate call, not a shortcut taken silently — the environment this app
-was built in had no `DATABASE_URL`, `OPENAI_API_KEY`, `STRIPE_SECRET_KEY`, or any other
-credential configured, and standing up a real Postgres + Prisma + NextAuth backend
-with no database to point it at would have produced dead scaffolding rather than a
-working app. Every *feature* in the product spec is real and functional; what's
-architecturally simplified is *where the data lives*.
-
-If you want to evolve this into a real multi-user product, the natural next step is:
-add Prisma + Postgres, replace the Zustand stores' persistence with API calls to
-route handlers backed by that DB, and add NextAuth for real accounts. The
-UI/business-logic layer (`src/lib/ai/*`, `src/lib/calculations.ts`, all the page
-components) doesn't need to change to support that — only the persistence layer does.
-
-### What's genuinely real vs. gated behind an API key
-
-| Feature | Status |
+| Area | Status |
 |---|---|
-| BMI/BMR/TDEE/macro/water/steps/target-date calculations | Real, deterministic math (`src/lib/calculations.ts`) |
-| Weekly meal plan generator | Real rule-based scoring engine over a 60-recipe DB, diet/cuisine/health-condition aware (`src/lib/ai/mealPlanner.ts`) |
-| Weekly workout plan generator | Real rule-based engine over an 85-exercise DB, home/gym/level/knee-pain-friendly aware (`src/lib/ai/workoutPlanner.ts`) |
-| AI Recipe Generator | Real ingredient/tag matching & scoring over the recipe DB |
-| AI Chat Coach | Real rule-based intent engine (`src/lib/ai/chatCoach.ts`) answering the product spec's example questions. `/api/chat` calls OpenAI's `gpt-4o-mini` instead **if `OPENAI_API_KEY` is set** in the server environment; otherwise it falls back to the rule-based engine — the app is fully functional either way |
-| Food image recognition | Calls GPT-4o vision via `/api/food-vision` **only if `OPENAI_API_KEY` is set**; shows a clear "not configured" message otherwise (never fakes a result) |
-| Barcode scanner | Real camera decode via `@zxing/browser` + a real lookup against the public [Open Food Facts](https://world.openfoodfacts.org) API (no key required) — not tested end-to-end in the sandboxed dev environment this was built in, since its network egress policy blocks arbitrary external hosts; will work for real users on real networks |
-| Voice search | Real browser `SpeechRecognition` Web API, no key needed |
-| Stripe checkout | `/api/checkout` creates a real Stripe Checkout Session **if `STRIPE_SECRET_KEY` is set**; otherwise returns a clear setup message. A labeled "dev only" toggle lets you simulate a premium account locally to test gating without a real payment |
-| Premium gating | Real (if modest): Recipe Generator caps results to 3 for free vs 8 for premium; the Progress page's "Yearly" range requires premium |
-| Admin panel | Manages what's actually real for a single-device app: DB size stats, custom recipes/foods (which genuinely feed into the meal planner / recipe generator / food search), the current workout plan, local blog posts/FAQs, and a read-only view of the chat coach's intents. It does **not** pretend to manage a multi-user table — there isn't one |
-| Push notifications | Real browser `Notification` permission request + toggleable reminder preferences. Persistent background scheduling would need a service worker, which is out of scope for a `localStorage`-backed app |
-| PDF export | `window.print()` with a print stylesheet (Shopping List, Reports) — a real PDF, produced by the browser's own print-to-PDF, not a third-party PDF library |
+| Onboarding (9 steps, skippable optional steps, editable later) | ✅ |
+| BMI with WHO **and** Asian-Indian categories, limitations, under-18 handling | ✅ |
+| Mifflin–St Jeor BMR/TDEE, calorie range, macros, fibre, water guideline, ranged projection | ✅ |
+| Safety screening (pregnancy, diabetes medication, kidney/liver/gallbladder, eating-disorder history, under-18, underweight) | ✅ blocks unsafe plan styles and deficits, explains why |
+| Recipe catalogue | ✅ **321 validated recipes**, 218 ingredients, repeatable import pipeline for 1,000+ |
+| Nutrition, keto/low-carb/high-protein tags, allergens, cost | ✅ computed from ingredient grams, never declared |
+| Meal planner: 7/14/30 days, Indian meal composition, swaps, ingredient swaps, portions, regenerate day, favourites, daily validation | ✅ |
+| Recipe search, 16 categories, filters, sort, pagination, favourites, recently viewed | ✅ |
+| Cooking mode: step images, timers with spoken alerts, narration, speed, language, voice commands, wake lock, servings & units, resume | ✅ |
+| AI finished-dish and step images with continuity, cached per recipe/step, regenerate | ✅ needs `OPENAI_API_KEY` |
+| Natural-voice narration (Tamil, Malayalam, Indian English) | ✅ needs `SARVAM_API_KEY` or `GOOGLE_TTS_API_KEY`; device voices work without |
+| UI in English, Tamil, Malayalam (+ optional Latin transliteration) | ✅ translations are AI-drafted — native-speaker review recommended |
+| Shopping list: merged, scaled, practical quantities, ₹ cost, pantry, hidden-carb warnings | ✅ |
+| Progress dashboard, water, weight, adherence (no streaks or shaming) | ✅ |
+| Auth (guest-first, email/password), privacy export, account deletion | ✅ |
+| Free/Premium tiers with visible quotas; Stripe checkout, portal, webhook | ✅ needs Stripe keys; dev-only toggle otherwise |
 
-### Environment variables (all optional — the app works with none of them set)
+## Documentation
 
-```
-OPENAI_API_KEY=       # enables real AI chat replies + food image recognition
-STRIPE_SECRET_KEY=    # enables real Stripe Checkout sessions
-```
+- [Architecture](docs/ARCHITECTURE.md) — stack, data model, request flow, security
+- [API contracts](docs/API.md) — route handlers and server actions
+- [Nutrition methods](docs/NUTRITION_METHODS.md) — equations, net carbs, keto rules, safety rules
+- [Recipe pipeline](docs/RECIPE_PIPELINE.md) — authoring format, validation, import, translations, growing to 1,000+
+- [Deployment](docs/DEPLOYMENT.md) — environment variables, Docker, Vercel + Turso, cron jobs
 
-## Project structure
+## Honest limitations
 
-```
-src/
-  app/
-    page.tsx                 landing page
-    onboarding/               multi-step signup wizard
-    (app)/                    route group sharing the app shell (sidebar/topbar/bottom nav)
-      dashboard/  meals/  recipes/[id]/  recipes/generator/  workouts/
-      tracker/  progress/  shopping-list/  chat/  food-search/
-      insights/  notifications/  reports/  premium/  admin/  settings/  more/
-    api/
-      chat/route.ts           OpenAI-or-rule-based chat
-      food-vision/route.ts    OpenAI vision-or-503
-      checkout/route.ts       Stripe-or-503
-  components/                 UI, feature, and layout components
-  lib/
-    calculations.ts           BMI/BMR/TDEE/macro engine
-    ai/                       meal planner, workout planner, recipe generator, chat coach, insights, shopping list
-    data/                     seeded recipes (60), exercises (85), foods (82), quotes, onboarding options
-    store/                    zustand stores (user, tracker, plan, chat, settings, admin) — all localStorage-persisted
-    progress.ts / reports.ts  chart/report data shaping
-  types/index.ts               shared domain types
-```
-
-## Known limitation (not a bug)
-
-Requesting an unknown `/recipes/[id]` renders the correct "not found" UI but with an
-HTTP 200 status (with a `noindex` meta tag). This is documented Next.js App Router
-streaming behavior — response headers (and therefore the status code) are sent before
-`notFound()` runs deeper in the tree. Given this is a local-first app with no SEO/
-analytics dependency on that status code, it was left as-is rather than adding a
-proxy-layer existence check purely to change a status code a user never sees.
+- **Nutrition values are estimates.** Ingredient values were transcribed from IFCT 2017,
+  USDA FoodData Central and typical labels and are marked `reference_estimate` until
+  verified against the source tables; recipe totals are computed from them.
+- **Children and teenagers:** the app does not compute BMI-for-age percentiles (it would
+  need WHO/IAP reference tables, which are not bundled). Under-18s see an explanation and
+  are offered balanced maintenance plans only, with a referral to a paediatrician.
+- **Translations** of the UI and of 50+ recipes are AI-drafted and labelled
+  "awaiting native-speaker review" in the app; machine translations created on demand are
+  labelled as machine-translated.
+- **AI images** are clearly labelled as AI illustrations. Until a key is configured, recipes
+  show a labelled, generated placeholder illustration rather than a photo.
+- The catalogue ships with 321 recipes; reaching 1,000+ means adding more batches through
+  the same validated pipeline (see the recipe pipeline doc) — the app does not pad the count.

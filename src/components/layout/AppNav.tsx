@@ -37,7 +37,7 @@ export function BottomNav() {
                 >
                   <Icon className={cook ? "size-5" : "size-[22px]"} strokeWidth={active ? 2.4 : 2} aria-hidden />
                 </span>
-                <span className="max-w-full truncate px-0.5">{t(key)}</span>
+                <span className="line-clamp-2 max-w-full px-0.5 text-center break-words">{t(key)}</span>
               </Link>
             </li>
           );

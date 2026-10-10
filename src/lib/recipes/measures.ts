@@ -41,20 +41,33 @@ export function metricText(ing: MeasureIngredient, grams: number): string {
 
 const PIECE_FIRST = new Set(["vegetables", "fruits", "eggs"]);
 
+function pluralWord(w: string) {
+  if (/leaf$/.test(w)) return w.replace(/leaf$/, "leaves");
+  if (/(s|sh|ch|x)$/.test(w)) return w + "es";
+  return w + "s";
+}
+
+/** "1 medium onion" / "2 medium onions" / "2 lemons (juiced)". Fractions ≤ 1 stay singular. */
+export function pluralLabel(n: number, label: string) {
+  if (n <= 1) return label;
+  const paren = label.indexOf(" (");
+  if (paren > 0) {
+    const head = label.slice(0, paren).split(" ");
+    head[head.length - 1] = pluralWord(head[head.length - 1]);
+    return head.join(" ") + label.slice(paren);
+  }
+  const words = label.split(" ");
+  words[words.length - 1] = pluralWord(words[words.length - 1]);
+  return words.join(" ");
+}
+
 /** Familiar Indian kitchen measure (cups/spoons/pieces), or null if none fits. */
 export function kitchenText(ing: MeasureIngredient, grams: number): string | null {
   const u = ing.unitWeights;
-  const pl = (n: string, label: string) => {
-    const one = n === "1" || n === "½" || n === "¼" || n === "⅓" || n === "¾" || n === "⅔";
-    if (one) return label;
-    if (/(leaf)$/.test(label)) return label.replace(/leaf$/, "leaves");
-    if (/(sh|ch|s|x)$/.test(label)) return label + "es";
-    if (/ \(/.test(label)) return label.replace(/^(\S+)/, "$1s");
-    return label + "s";
-  };
+  const pl = (_n: string, label: string, count: number) => pluralLabel(count, label);
   if (u.piece && (PIECE_FIRST.has(ing.category) || !u.tsp) && grams >= u.piece * 0.25 && grams / u.piece <= 12) {
     const n = friendlyNumber(grams / u.piece);
-    return `${n} ${pl(n, u.pieceLabel ?? "piece")}`;
+    return `${n} ${pl(n, u.pieceLabel ?? "piece", grams / u.piece)}`;
   }
   if (u.cup && grams >= u.cup * 0.25) return `${friendlyNumber(grams / u.cup)} cup`;
   if (u.tbsp && grams >= u.tbsp * 0.75) return `${friendlyNumber(grams / u.tbsp)} tbsp`;
@@ -64,7 +77,7 @@ export function kitchenText(ing: MeasureIngredient, grams: number): string | nul
   }
   if (u.piece && grams >= u.piece * 0.25 && grams / u.piece <= 12) {
     const n = friendlyNumber(grams / u.piece);
-    return `${n} ${pl(n, u.pieceLabel ?? "piece")}`;
+    return `${n} ${pl(n, u.pieceLabel ?? "piece", grams / u.piece)}`;
   }
   return null;
 }

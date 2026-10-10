@@ -110,8 +110,9 @@ export function ShoppingList({
                       <p className="font-medium">{r.name}</p>
                       <p className="truncate text-xs text-muted">{r.recipes.slice(0, 3).join(", ")}{r.recipes.length > 3 ? ` +${r.recipes.length - 3}` : ""}</p>
                     </div>
-                    <div className="text-right">
+                    <div className="max-w-[40%] shrink-0 text-right">
                       <p className="font-semibold tabular">{r.quantity}</p>
+                      {r.hint && <p className="text-xs text-ink-2">{r.hint}</p>}
                       <p className="text-xs text-muted tabular">
                         {r.buy ? `${r.buy} · ` : ""}₹{r.costInr}
                       </p>

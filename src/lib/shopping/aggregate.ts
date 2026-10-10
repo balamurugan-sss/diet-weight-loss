@@ -1,4 +1,4 @@
-import { friendlyNumber } from "@/lib/recipes/measures";
+import { friendlyNumber, pluralLabel } from "@/lib/recipes/measures";
 import type { Ingredient } from "@/lib/recipes/types";
 
 export type ShopSection = "vegetables" | "fruits" | "meat" | "seafood" | "dairy" | "pantry" | "spices";
@@ -38,6 +38,7 @@ export type ShopRow = {
   section: ShopSection;
   grams: number;
   quantity: string;
+  hint: string | null;
   buy: string | null;
   costInr: number;
   pantryStaple: boolean;
@@ -58,13 +59,13 @@ function roundUp(x: number, step: number) {
   return Math.ceil(x / step - 1e-9) * step;
 }
 
-export function practicalQuantity(ing: ShopIngredient, grams: number): { quantity: string; buy: string | null } {
+export function practicalQuantity(ing: ShopIngredient, grams: number): { quantity: string; buy: string | null; hint?: string | null } {
   const u = ing.unitWeights;
   if (ing.shopUnit === "piece" && u.piece) {
     const count = Math.max(1, Math.ceil(grams / u.piece - 0.05));
     const label = u.pieceLabel ?? "piece";
     const buy = ing.shopPack ? `${Math.ceil(count / ing.shopPack)} × pack of ${ing.shopPack}` : null;
-    return { quantity: `${count} ${count === 1 ? label : label.replace(/^(\S+)/, "$1s").replace(/ss\b/, "s")}`, buy };
+    return { quantity: `${count} ${pluralLabel(count, label)}`, buy };
   }
   if (ing.shopUnit === "ml" || ing.densityGPerMl) {
     const ml = grams / (ing.densityGPerMl ?? 1);
@@ -74,8 +75,11 @@ export function practicalQuantity(ing: ShopIngredient, grams: number): { quantit
   const step = grams < 50 ? 5 : grams < 500 ? 50 : 100;
   const g = roundUp(grams, step);
   const shown = g >= 1000 ? `${(g / 1000).toFixed(g % 1000 === 0 ? 0 : 1)} kg` : `${g} g`;
-  const pieces = u.piece && (ing.category === "vegetables" || ing.category === "fruits") && grams / u.piece <= 30 ? ` (≈ ${friendlyNumber(grams / u.piece)} ${u.pieceLabel ?? "pc"})` : "";
-  return { quantity: shown + pieces, buy: ing.shopPack ? `${Math.ceil(grams / ing.shopPack)} × ${ing.shopPack} g` : null };
+  const hint =
+    u.piece && (ing.category === "vegetables" || ing.category === "fruits") && grams / u.piece <= 30 && grams / u.piece >= 0.25
+      ? `≈ ${friendlyNumber(grams / u.piece)} ${pluralLabel(grams / u.piece, u.pieceLabel ?? "piece")}`
+      : null;
+  return { quantity: shown, hint, buy: ing.shopPack ? `${Math.ceil(grams / ing.shopPack)} × ${ing.shopPack} g` : null };
 }
 
 export function aggregateShopping(
@@ -104,13 +108,14 @@ export function aggregateShopping(
   for (const [id, t] of totals) {
     const ing = ingredients.get(id);
     if (!ing) continue;
-    const { quantity, buy } = practicalQuantity(ing, t.grams);
+    const { quantity, buy, hint } = practicalQuantity(ing, t.grams);
     rows.push({
       ingredientId: id,
       name: ing.name,
       section: SECTION[ing.category] ?? "pantry",
       grams: Math.round(t.grams),
       quantity,
+      hint: hint ?? null,
       buy,
       costInr: Math.round((t.grams * ing.costPerKgInr) / 1000),
       pantryStaple: ing.pantryStaple,

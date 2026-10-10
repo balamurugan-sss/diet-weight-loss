@@ -1,12 +1,22 @@
 {
-  "name": "diet-weight-loss",
+  "name": "thali-diet-planner",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "predev": "tsx scripts/seed.ts --quiet",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint src scripts tests",
+    "typecheck": "next typegen && tsc --noEmit",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "tsx scripts/migrate.ts",
+    "db:seed": "tsx scripts/seed.ts",
+    "recipes:validate": "tsx scripts/validate-recipes.ts",
+    "recipes:import": "tsx scripts/import-recipes.ts",
+    "db:prune": "tsx scripts/prune.ts"
   },
   "dependencies": {
     "@libsql/client": "^0.18.0",
