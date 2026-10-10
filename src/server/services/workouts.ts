@@ -14,6 +14,7 @@ import type { Profile } from "@/server/auth/dal";
 import { db, schema } from "@/server/db/client";
 import { todayISO } from "@/server/time";
 import { latestWeight } from "./progress";
+import { cardioBetween } from "./cardio";
 import { targetsForProfile } from "./targets";
 
 export type WorkoutProfile = typeof schema.workoutProfiles.$inferSelect;
@@ -294,29 +295,36 @@ export async function trainingContext(userId: string, profile: Profile, date = t
   const base = targetsForProfile(profile);
   if (!base) return null;
   const program = await getActiveProgram(userId);
-  if (!program) return { base, adjusted: null, program: null, trainingDay: false, plannedKind: null, burnedKcal: 0, burnedNetKcal: 0, sessionsToday: 0 };
-  const [done, prog, weightKg] = await Promise.all([
-    db
-      .select()
-      .from(schema.workoutSessions)
-      .where(and(eq(schema.workoutSessions.userId, userId), eq(schema.workoutSessions.date, date), eq(schema.workoutSessions.status, "completed"))),
-    programProgress(program, [date, date], date),
+  const [done, cardio, prog, weightKg] = await Promise.all([
+    program
+      ? db
+          .select()
+          .from(schema.workoutSessions)
+          .where(and(eq(schema.workoutSessions.userId, userId), eq(schema.workoutSessions.date, date), eq(schema.workoutSessions.status, "completed")))
+      : [],
+    cardioBetween(userId, date, date),
+    program ? programProgress(program, [date, date], date) : null,
     bodyWeight(userId, profile),
   ]);
-  const plannedKind = prog.cells[0]?.kind ?? null;
-  const burnedKcal = done.reduce((n, x) => n + (x.kcal ?? 0), 0);
-  const burnedNetKcal = done.reduce((n, x) => n + (x.netKcal ?? 0), 0);
-  const trainingDay = done.length > 0 || plannedKind === "workout";
+  const plannedKind = prog?.cells[0]?.kind ?? null;
+  const cardioMinutes = cardio.reduce((n, c) => n + c.minutes, 0);
+  const burnedKcal = done.reduce((n, x) => n + (x.kcal ?? 0), 0) + cardio.reduce((n, c) => n + c.kcal, 0);
+  const burnedNetKcal = done.reduce((n, x) => n + (x.netKcal ?? 0), 0) + cardio.reduce((n, c) => n + c.netKcal, 0);
+  const trainingDay = done.length > 0 || plannedKind === "workout" || cardioMinutes >= 20;
+  if (!program && cardio.length === 0) {
+    return { base, adjusted: null, program: null, trainingDay: false, plannedKind: null, burnedKcal: 0, burnedNetKcal: 0, sessionsToday: 0, cardioMinutes: 0 };
+  }
   const age = profileAge(profile) ?? 30;
   const referenceWeightKg = base.bmi > 25 && profile.heightCm ? weightForBmi(25, profile.heightCm) : weightKg;
   const adjusted = trainingDayTargets(base, {
-    workoutGoal: program.goal,
+    // Without a workout program, the food goal decides how much of the burn comes back.
+    workoutGoal: program?.goal ?? (base.goal === "lose" ? "lose" : "fit"),
     trainingDay,
     burnedNetKcal,
     referenceWeightKg,
     allowExtraProtein: age >= 18 && !(profile.conditions ?? []).includes("kidney"),
   });
-  return { base, adjusted, program, trainingDay, plannedKind, burnedKcal, burnedNetKcal, sessionsToday: done.length };
+  return { base, adjusted, program, trainingDay, plannedKind, burnedKcal, burnedNetKcal, sessionsToday: done.length, cardioMinutes };
 }
 
 // ─── Progress charts ────────────────────────────────────────────────────────

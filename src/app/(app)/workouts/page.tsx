@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle2, Flame, Footprints, ListChecks, Moon, Settings2, Stethoscope, Trophy } from "lucide-react";
+import { ArrowRight, CalendarDays, CheckCircle2, Flame, Footprints, HeartPulse, ListChecks, Moon, Settings2, Stethoscope, Trophy } from "lucide-react";
 import Link from "next/link";
 import { ArrowCircle, Squiggle, TwoTone } from "@/components/brand/Brand";
 import { buttonClass, LinkButton } from "@/components/ui/Button";
@@ -6,6 +6,9 @@ import { Card, SectionTitle } from "@/components/ui/Card";
 import { ExerciseMedia } from "@/components/workouts/ExerciseMedia";
 import { PlanSwitch } from "@/components/workouts/PlanSwitch";
 import { WeekCalendar } from "@/components/workouts/WeekCalendar";
+import { CardioLogButton } from "@/components/workouts/CardioLogButton";
+import { moderateEquivalentMinutes, WHO_WEEKLY_MODERATE_MIN } from "@/lib/workouts/cardio";
+import { cardioBetween } from "@/server/services/cardio";
 import { cn } from "@/lib/cn";
 import type { MessageKey } from "@/lib/i18n/messages/en";
 import type { TFunc } from "@/lib/i18n/t";
@@ -50,7 +53,12 @@ export default async function WorkoutsPage() {
 
   const today = todayISO();
   const monday = weekStart(today);
-  const [prog, weight] = await Promise.all([programProgress(program, [monday, addDays(monday, 6)], today), latestWeight(user.id)]);
+  const [prog, weight, weekCardio] = await Promise.all([
+    programProgress(program, [monday, addDays(monday, 6)], today),
+    latestWeight(user.id),
+    cardioBetween(user.id, monday, addDays(monday, 6)),
+  ]);
+  const activeMinutes = moderateEquivalentMinutes(weekCardio);
   const kg = weight?.weightKg ?? profile.weightKg ?? 70;
   const pos = prog.position;
   const day = prog.finished ? null : programDay(program, pos);
@@ -208,9 +216,43 @@ export default async function WorkoutsPage() {
         <p className="mt-2 text-sm text-muted">{t("wk.streakHelp")}</p>
       </Card>
 
+      {/* Cardio / active minutes */}
+      <Card>
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="flex items-center gap-2 text-sm font-semibold text-muted">
+              <HeartPulse className="size-4 text-water" aria-hidden /> {t("cardio.week")}
+            </p>
+            <p className="font-display text-3xl font-bold tabular">
+              {activeMinutes} <span className="text-lg font-semibold text-muted">/ {WHO_WEEKLY_MODERATE_MIN} {t("common.min")}</span>
+            </p>
+          </div>
+          <CardioLogButton date={today} maxDate={today} weightKg={kg} variant="outline" />
+        </div>
+        <div
+          className="mt-3 h-3 overflow-hidden rounded-full bg-sand-2"
+          role="progressbar"
+          aria-valuemin={0}
+          aria-valuemax={WHO_WEEKLY_MODERATE_MIN}
+          aria-valuenow={Math.min(activeMinutes, WHO_WEEKLY_MODERATE_MIN)}
+          aria-label={t("cardio.week")}
+        >
+          <div className="h-full rounded-full bg-water" style={{ width: `${Math.min(100, (activeMinutes / WHO_WEEKLY_MODERATE_MIN) * 100)}%` }} />
+        </div>
+        <p className="mt-2 text-sm text-muted">{t("cardio.weekHelp")}</p>
+      </Card>
+
       {/* This week */}
       <section>
-        <SectionTitle>{t("wk.thisWeek")}</SectionTitle>
+        <SectionTitle
+          action={
+            <Link href="/workouts/calendar" className="inline-flex items-center gap-1 text-sm font-semibold text-forest">
+              <CalendarDays className="size-4" aria-hidden /> {t("cal.open")}
+            </Link>
+          }
+        >
+          {t("wk.thisWeek")}
+        </SectionTitle>
         <Card className="p-3 sm:p-4">
           <WeekCalendar
             cells={prog.cells}

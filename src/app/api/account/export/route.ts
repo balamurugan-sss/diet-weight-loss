@@ -27,6 +27,7 @@ export async function GET() {
     workoutProfile: (await db.select().from(schema.workoutProfiles).where(eq(schema.workoutProfiles.userId, id)))[0] ?? null,
     workoutPrograms: await db.select().from(schema.workoutPrograms).where(eq(schema.workoutPrograms.userId, id)),
     workoutSessions,
+    cardioLogs: await db.select().from(schema.cardioLogs).where(eq(schema.cardioLogs.userId, id)),
     workoutSets: workoutSessions.length
       ? await db.select().from(schema.workoutSets).where(inArray(schema.workoutSets.sessionId, workoutSessions.map((s) => s.id)))
       : [],

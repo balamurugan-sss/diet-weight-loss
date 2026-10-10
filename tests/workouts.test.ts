@@ -328,3 +328,35 @@ describe("food-planner link", () => {
     expect(fuelIdeas("eggitarian", { when: "pre" }).map((f) => f.id)).toContain("idli_sambar");
   });
 });
+
+describe("cardio", () => {
+  it("uses Compendium METs by intensity", async () => {
+    const { cardioEnergy, cardioMet, CARDIO_ACTIVITY_IDS } = await import("@/lib/workouts/cardio");
+    for (const a of CARDIO_ACTIVITY_IDS) {
+      expect(cardioMet(a, "light")).toBeLessThan(cardioMet(a, "moderate"));
+      expect(cardioMet(a, "moderate")).toBeLessThan(cardioMet(a, "vigorous"));
+    }
+    // Brisk walk 4.3 MET, 70 kg, 30 min ≈ 158 kcal gross, 121 net.
+    expect(cardioEnergy("walk", "moderate", 30, 70)).toEqual({ kcal: 158, netKcal: 121 });
+  });
+
+  it("counts vigorous minutes double towards the WHO 150-minute goal", async () => {
+    const { moderateEquivalentMinutes } = await import("@/lib/workouts/cardio");
+    expect(
+      moderateEquivalentMinutes([
+        { minutes: 30, intensity: "moderate" },
+        { minutes: 20, intensity: "vigorous" },
+        { minutes: 40, intensity: "light" },
+      ]),
+    ).toBe(70);
+  });
+
+  it("maps program days to calendar day types", async () => {
+    const { dayTypeForFocus } = await import("@/lib/workouts/cardio");
+    expect(dayTypeForFocus("upper", "workout")).toBe("strength");
+    expect(dayTypeForFocus("hiit", "workout")).toBe("cardio");
+    expect(dayTypeForFocus("cardio_core", "workout")).toBe("cardio");
+    expect(dayTypeForFocus("recovery", "recovery")).toBe("recovery");
+    expect(dayTypeForFocus("rest", "rest")).toBe("rest");
+  });
+});

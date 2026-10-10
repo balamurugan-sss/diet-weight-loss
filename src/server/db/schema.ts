@@ -601,6 +601,27 @@ export const workoutSets = sqliteTable(
   (t) => [primaryKey({ columns: [t.sessionId, t.slot, t.setIndex] }), index("workout_sets_exercise_idx").on(t.exerciseId)],
 );
 
+export const cardioLogs = sqliteTable(
+  "cardio_logs",
+  {
+    id: text("id").primaryKey(),
+    userId: text("user_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    date: text("date").notNull(),
+    activity: text("activity").notNull(),
+    intensity: text("intensity", { enum: ["light", "moderate", "vigorous"] }).notNull(),
+    minutes: integer("minutes").notNull(),
+    kcal: integer("kcal").notNull(),
+    netKcal: integer("net_kcal").notNull(),
+    // Where the entry came from; imported entries carry the source's id so re-imports don't duplicate.
+    source: text("source", { enum: ["manual", "apple_health", "fitbit_export", "google_health"] }).notNull().default("manual"),
+    externalId: text("external_id"),
+    createdAt: createdAt(),
+  },
+  (t) => [index("cardio_user_date_idx").on(t.userId, t.date), uniqueIndex("cardio_external_uq").on(t.userId, t.source, t.externalId)],
+);
+
 // ─── Quotas, rate limits, billing ────────────────────────────────────────────
 
 export const usageCounters = sqliteTable(
