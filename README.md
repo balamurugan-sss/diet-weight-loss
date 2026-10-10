@@ -35,7 +35,7 @@ npm run recipes:validate -- --table   # validate the catalogue and print per-ser
 | BMI with WHO **and** Asian-Indian categories, limitations, under-18 handling | ✅ |
 | Mifflin–St Jeor BMR/TDEE, calorie range, macros, fibre, water guideline, ranged projection | ✅ |
 | Safety screening (pregnancy, diabetes medication, kidney/liver/gallbladder, eating-disorder history, under-18, underweight) | ✅ blocks unsafe plan styles and deficits, explains why |
-| Recipe catalogue | ✅ **321 validated recipes**, 218 ingredients, repeatable import pipeline for 1,000+ |
+| Recipe catalogue | ✅ **329 validated recipes**, 223 ingredients, repeatable import pipeline for 1,000+ |
 | Nutrition, keto/low-carb/high-protein tags, allergens, cost | ✅ computed from ingredient grams, never declared |
 | Meal planner: 7/14/30 days, Indian meal composition, swaps, ingredient swaps, portions, regenerate day, favourites, daily validation | ✅ |
 | Recipe search, 16 categories, filters, sort, pagination, favourites, recently viewed | ✅ |
@@ -77,5 +77,5 @@ colour-blind safety in both themes.
   labelled as machine-translated.
 - **AI images** are clearly labelled as AI illustrations. Until a key is configured, recipes
   show a labelled, generated placeholder illustration rather than a photo.
-- The catalogue ships with 321 recipes; reaching 1,000+ means adding more batches through
+- The catalogue ships with 329 recipes; reaching 1,000+ means adding more batches through
   the same validated pipeline (see the recipe pipeline doc) — the app does not pad the count.

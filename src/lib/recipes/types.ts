@@ -113,6 +113,7 @@ export const CUISINES = [
   "west_indian",
   "east_indian",
   "pan_indian",
+  "south_asian",
   "indo_chinese",
   "mediterranean",
   "continental",
@@ -129,6 +130,7 @@ export const INDIAN: Cuisine[] = [
   "west_indian",
   "east_indian",
   "pan_indian",
+  "south_asian",
   "indo_chinese",
 ];
 

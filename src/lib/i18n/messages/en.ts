@@ -210,6 +210,7 @@ export const en = {
   "cuisine.west_indian": "West Indian",
   "cuisine.east_indian": "East Indian",
   "cuisine.pan_indian": "Pan-Indian",
+  "cuisine.south_asian": "South Asian (Sri Lanka, Pakistan, Nepal)",
   "cuisine.indo_chinese": "Indo-Chinese",
   "cuisine.mediterranean": "Mediterranean",
   "cuisine.continental": "Continental",

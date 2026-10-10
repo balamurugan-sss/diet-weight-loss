@@ -111,7 +111,7 @@ function mealTypeOk(slot: string, role: Role, r: PlannerRecipe) {
 
 export function cuisineFamily(c: string) {
   if ((SOUTH_INDIAN as string[]).includes(c)) return "south";
-  if (c === "pan_indian") return "any_indian";
+  if (c === "pan_indian" || c === "south_asian") return "any_indian";
   if ((INDIAN as string[]).includes(c)) return "north";
   return "intl";
 }

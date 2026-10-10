@@ -212,6 +212,7 @@ export const ta: Partial<Messages> = {
   "cuisine.west_indian": "மேற்கு இந்திய",
   "cuisine.east_indian": "கிழக்கு இந்திய",
   "cuisine.pan_indian": "அனைத்திந்திய",
+  "cuisine.south_asian": "தெற்காசிய",
   "cuisine.indo_chinese": "இந்தோ-சைனீஸ்",
   "cuisine.mediterranean": "மத்தியதரைக் கடல்",
   "cuisine.continental": "கான்டினென்டல்",

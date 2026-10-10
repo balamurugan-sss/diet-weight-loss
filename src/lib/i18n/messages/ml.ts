@@ -212,6 +212,7 @@ export const ml: Partial<Messages> = {
   "cuisine.west_indian": "പശ്ചിമേന്ത്യൻ",
   "cuisine.east_indian": "കിഴക്കേ ഇന്ത്യൻ",
   "cuisine.pan_indian": "പാൻ-ഇന്ത്യൻ",
+  "cuisine.south_asian": "ദക്ഷിണേഷ്യൻ",
   "cuisine.indo_chinese": "ഇൻഡോ-ചൈനീസ്",
   "cuisine.mediterranean": "മെഡിറ്ററേനിയൻ",
   "cuisine.continental": "കോണ്ടിനെന്റൽ",
