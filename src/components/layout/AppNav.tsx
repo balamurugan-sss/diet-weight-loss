@@ -5,7 +5,7 @@ import { LogoMark } from "@/components/brand/Brand";
 import { usePathname } from "next/navigation";
 import { useI18n } from "@/components/i18n/I18nProvider";
 import { cn } from "@/lib/cn";
-import { NAV_ITEMS } from "./nav";
+import { isNavActive, NAV_ITEMS } from "./nav";
 
 export function BottomNav() {
   const path = usePathname();
@@ -16,8 +16,9 @@ export function BottomNav() {
       className="no-print fixed inset-x-0 bottom-0 z-40 border-t border-line bg-surface/95 pb-[env(safe-area-inset-bottom)] backdrop-blur lg:hidden"
     >
       <ul className="mx-auto grid max-w-lg grid-cols-6">
-        {NAV_ITEMS.map(({ href, key, icon: Icon }) => {
-          const active = path === href || path.startsWith(href + "/");
+        {NAV_ITEMS.map((item) => {
+          const { href, key, icon: Icon } = item;
+          const active = isNavActive(item, path);
           const cook = href === "/cook";
           return (
             <li key={href}>
@@ -58,8 +59,9 @@ export function SideNav({ footer }: { footer?: React.ReactNode }) {
         <span className="font-display text-2xl font-extrabold tracking-tight">{t("app.name")}</span>
       </Link>
       <ul className="space-y-1">
-        {NAV_ITEMS.map(({ href, key, icon: Icon }) => {
-          const active = path === href || path.startsWith(href + "/");
+        {NAV_ITEMS.map((item) => {
+          const { href, key, icon: Icon } = item;
+          const active = isNavActive(item, path);
           return (
             <li key={href}>
               <Link

@@ -5,7 +5,7 @@ export const ml: Partial<Messages> = {
   "app.tagline": "നിങ്ങളുടെ ലക്ഷ്യങ്ങൾക്ക് ചേരുന്ന ഇന്ത്യൻ ഭക്ഷണം",
 
   "nav.home": "ഹോം",
-  "nav.planner": "മീൽ പ്ലാൻ",
+  "nav.planner": "പ്ലാൻ",
   "nav.recipes": "റെസിപ്പികൾ",
   "nav.cook": "പാചകം",
   "nav.progress": "പുരോഗതി",

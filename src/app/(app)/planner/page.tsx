@@ -5,6 +5,7 @@ import { DayTotals } from "@/components/planner/DayTotals";
 import { MealSlot } from "@/components/planner/MealSlot";
 import { FavouritePlanButton, RegenerateDayButton } from "@/components/planner/PlanControls";
 import { buttonClass } from "@/components/ui/Button";
+import { PlanSwitch } from "@/components/workouts/PlanSwitch";
 import { cn } from "@/lib/cn";
 import { requireOnboarded } from "@/server/auth/dal";
 import { getI18n } from "@/server/i18n";
@@ -29,6 +30,7 @@ export default async function PlannerPage({ searchParams }: PageProps<"/planner"
 
   return (
     <div className="space-y-5">
+      <PlanSwitch active="meals" labels={{ meals: t("plan.meals"), workouts: t("plan.workouts"), switch: t("plan.switch") }} />
       <header className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <h1 className="text-[1.7rem] leading-tight font-semibold sm:text-3xl">{t("planner.title")}</h1>

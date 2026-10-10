@@ -115,7 +115,7 @@ export default async function HomePage() {
           <SectionTitle
             action={
               <Link href="/planner" className="inline-flex items-center gap-1 text-sm font-semibold text-forest">
-                {t("nav.planner")} <ArrowRight className="size-4" aria-hidden />
+                {t("planner.title")} <ArrowRight className="size-4" aria-hidden />
               </Link>
             }
           >
