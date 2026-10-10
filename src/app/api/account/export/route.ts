@@ -1,0 +1,34 @@
+import { eq, inArray } from "drizzle-orm";
+import { getCurrentUser } from "@/server/auth/dal";
+import { db, schema } from "@/server/db/client";
+
+/** Everything we store about the signed-in user, as a downloadable JSON file. */
+export async function GET() {
+  const current = await getCurrentUser();
+  if (!current) return new Response("Unauthorized", { status: 401 });
+  const id = current.user.id;
+  const [user] = await db
+    .select({ id: schema.users.id, email: schema.users.email, displayName: schema.users.displayName, plan: schema.users.plan, createdAt: schema.users.createdAt })
+    .from(schema.users)
+    .where(eq(schema.users.id, id));
+  const plans = await db.select().from(schema.mealPlans).where(eq(schema.mealPlans.userId, id));
+  const data = {
+    exportedAt: new Date().toISOString(),
+    user,
+    profile: current.profile,
+    mealPlans: plans,
+    mealPlanItems: plans.length ? await db.select().from(schema.mealPlanItems).where(inArray(schema.mealPlanItems.planId, plans.map((p) => p.id))) : [],
+    mealLogs: await db.select().from(schema.mealLogs).where(eq(schema.mealLogs.userId, id)),
+    weightLogs: await db.select().from(schema.weightLogs).where(eq(schema.weightLogs.userId, id)),
+    waterLogs: await db.select().from(schema.waterLogs).where(eq(schema.waterLogs.userId, id)),
+    favourites: await db.select().from(schema.favourites).where(eq(schema.favourites.userId, id)),
+    cookingSessions: await db.select().from(schema.cookingSessions).where(eq(schema.cookingSessions.userId, id)),
+  };
+  return new Response(JSON.stringify(data, null, 2), {
+    headers: {
+      "Content-Type": "application/json",
+      "Content-Disposition": `attachment; filename="thali-data-${new Date().toISOString().slice(0, 10)}.json"`,
+      "Cache-Control": "no-store",
+    },
+  });
+}

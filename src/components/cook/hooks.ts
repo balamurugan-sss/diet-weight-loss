@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
 
 /** Keeps the screen awake while cooking, re-acquiring after tab switches. */
 export function useWakeLock(enabled: boolean) {
@@ -86,12 +86,20 @@ export function useTimer(onDone: (durationSec: number) => void) {
   return { running: endsAt !== null, remaining: endsAt ? Math.max(0, Math.ceil((endsAt - now) / 1000)) : 0, duration, start, stop, add };
 }
 
+type RecognitionCtor = new () => Recognition;
+const recognitionCtor = (): RecognitionCtor | undefined => {
+  const W = window as unknown as { SpeechRecognition?: RecognitionCtor; webkitSpeechRecognition?: RecognitionCtor };
+  return W.SpeechRecognition ?? W.webkitSpeechRecognition;
+};
+const noopSubscribe = () => () => {};
+
 type Recognition = {
   lang: string;
   continuous: boolean;
   interimResults: boolean;
   onresult: ((e: { results: ArrayLike<ArrayLike<{ transcript: string }> & { isFinal: boolean }>; resultIndex: number }) => void) | null;
   onend: (() => void) | null;
+  onstart: (() => void) | null;
   onerror: ((e: { error: string }) => void) | null;
   start: () => void;
   stop: () => void;
@@ -113,20 +121,15 @@ export function matchCommand(transcript: string): keyof typeof COMMANDS | null {
 
 /** Hands-free navigation using the browser's speech recognition, where supported. */
 export function useVoiceCommands(enabled: boolean, lang: string, onCommand: (c: string) => void) {
-  const [supported, setSupported] = useState(true);
+  const supported = useSyncExternalStore(noopSubscribe, () => !!recognitionCtor(), () => true);
   const [listening, setListening] = useState(false);
   const handler = useRef(onCommand);
   useEffect(() => {
     handler.current = onCommand;
   }, [onCommand]);
   useEffect(() => {
-    const W = window as unknown as { SpeechRecognition?: new () => Recognition; webkitSpeechRecognition?: new () => Recognition };
-    const Ctor = W.SpeechRecognition ?? W.webkitSpeechRecognition;
-    if (!Ctor) {
-      setSupported(false);
-      return;
-    }
-    if (!enabled) return;
+    const Ctor = recognitionCtor();
+    if (!Ctor || !enabled) return;
     let stopped = false;
     const rec = new Ctor();
     rec.lang = lang;
@@ -138,6 +141,7 @@ export function useVoiceCommands(enabled: boolean, lang: string, onCommand: (c: 
         if (cmd) handler.current(cmd);
       }
     };
+    rec.onstart = () => setListening(true);
     rec.onerror = (e) => {
       if (e.error === "not-allowed" || e.error === "service-not-allowed") {
         stopped = true;
@@ -155,13 +159,13 @@ export function useVoiceCommands(enabled: boolean, lang: string, onCommand: (c: 
     };
     try {
       rec.start();
-      setListening(true);
     } catch {
-      setListening(false);
+      /* already started or blocked; onerror reports permission problems */
     }
     return () => {
       stopped = true;
       rec.stop();
+      setListening(false);
     };
   }, [enabled, lang]);
   return { supported, listening };
