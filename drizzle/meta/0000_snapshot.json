@@ -1,7 +1,7 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "d33ddce8-c4b0-4ee7-89ed-3e5ac419da4a",
+  "id": "34c31105-901c-44a9-b6af-e10ec845f14a",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "audio_assets": {
@@ -425,6 +425,21 @@
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false
+        },
+        "diet_class": {
+          "name": "diet_class",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "avoid_tags": {
+          "name": "avoid_tags",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "'[]'"
         },
         "kcal": {
           "name": "kcal",
@@ -1000,6 +1015,14 @@
         },
         "allergies": {
           "name": "allergies",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "'[]'"
+        },
+        "avoid_foods": {
+          "name": "avoid_foods",
           "type": "text",
           "primaryKey": false,
           "notNull": true,
@@ -1766,6 +1789,13 @@
         },
         "meal_types": {
           "name": "meal_types",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "course": {
+          "name": "course",
           "type": "text",
           "primaryKey": false,
           "notNull": true,

@@ -10,6 +10,7 @@ import {
 } from "./nutrition";
 import {
   BASIC_EQUIPMENT,
+  COURSES,
   CUISINES,
   EDITORIAL_TAGS,
   EQUIPMENT,
@@ -59,6 +60,7 @@ export const SourceRecipe = z.object({
   cuisine: z.enum(CUISINES),
   region: z.string().max(40).optional(),
   mealTypes: z.array(z.enum(MEAL_TYPES)).min(1),
+  course: z.enum(COURSES),
   servings: z.number().int().min(1).max(12),
   prepMin: z.number().int().min(0).max(240),
   cookMin: z.number().int().min(0).max(480),
@@ -100,6 +102,7 @@ export type CompiledRecipe = {
   cuisine: string;
   region: string | null;
   mealTypes: string[];
+  course: (typeof COURSES)[number];
   dietType: DietType;
   tags: string[];
   servings: number;
@@ -299,6 +302,7 @@ export function compileRecipe(
       cuisine: r.cuisine,
       region: r.region ?? null,
       mealTypes: r.mealTypes,
+      course: r.course,
       dietType,
       tags: [...tags].sort(),
       servings: r.servings,

@@ -1,0 +1,3701 @@
+{
+  "batch": "102-kerala",
+  "source": "original",
+  "author": "In-house recipe development",
+  "license": "Proprietary — original recipes written for this app",
+  "recipes": [
+    {
+      "id": "kerala-avial",
+      "title": "Avial (Mixed Vegetables in Coconut and Curd)",
+      "description": "The sadya favourite: batons of yam, raw banana, drumstick and garden vegetables folded into a coarse coconut–green chilli paste, soured with curd and finished with raw coconut oil and curry leaves.",
+      "cuisine": "kerala",
+      "region": "Travancore",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "side",
+      "servings": 4,
+      "prepMin": 25,
+      "cookMin": 20,
+      "restMin": 5,
+      "difficulty": "medium",
+      "equipment": [
+        "kadai",
+        "mixer_grinder"
+      ],
+      "ingredients": [
+        {
+          "ref": "elephant_yam",
+          "g": 120,
+          "prep": "peeled, cut into 2-inch batons"
+        },
+        {
+          "ref": "raw_banana",
+          "g": 120,
+          "measure": "1 small",
+          "prep": "peeled, cut into batons"
+        },
+        {
+          "ref": "drumstick",
+          "g": 80,
+          "measure": "2 drumsticks",
+          "prep": "cut into 2-inch pieces"
+        },
+        {
+          "ref": "carrot",
+          "g": 80,
+          "measure": "1 large",
+          "prep": "cut into batons"
+        },
+        {
+          "ref": "french_beans",
+          "g": 80,
+          "prep": "cut into 2-inch lengths"
+        },
+        {
+          "ref": "snake_gourd",
+          "g": 100,
+          "prep": "deseeded, cut into batons"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "water",
+          "g": 120
+        },
+        {
+          "ref": "coconut_grated",
+          "g": 80,
+          "measure": "1 cup"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 6,
+          "measure": "2"
+        },
+        {
+          "ref": "cumin_seeds",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "shallots",
+          "g": 20,
+          "measure": "2–3"
+        },
+        {
+          "ref": "curd",
+          "g": 100,
+          "measure": "½ cup",
+          "prep": "slightly sour, whisked"
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 12,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 3,
+          "measure": "2 sprigs"
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Cut the vegetables",
+          "kind": "prep",
+          "text": "Peel the yam and raw banana and cut all the vegetables into batons about 2 inches long and the thickness of a finger. Keeping them the same size is what makes avial look and cook right. Drop the raw banana into water so it doesn't darken.",
+          "uses": [
+            "elephant_yam",
+            "raw_banana",
+            "drumstick",
+            "carrot",
+            "french_beans",
+            "snake_gourd"
+          ],
+          "visual": "Neat piles of 2-inch batons of yam, raw banana, carrot, snake gourd, beans and drumstick pieces on a wooden board, the banana batons in a small bowl of water"
+        },
+        {
+          "title": "Crush the coconut",
+          "kind": "prep",
+          "text": "Pulse the grated coconut, green chillies, cumin and shallots in a mixer without water, or with just a tablespoon, to a coarse, moist paste. It should not be smooth.",
+          "uses": [
+            "coconut_grated",
+            "green_chilli",
+            "cumin_seeds",
+            "shallots"
+          ],
+          "visual": "Coarsely ground white coconut paste flecked with green chilli in an open mixer jar",
+          "equipment": [
+            "mixer_grinder"
+          ]
+        },
+        {
+          "title": "Cook the firm vegetables",
+          "kind": "cook",
+          "text": "Put the yam, raw banana, drumstick and carrot in a wide clay pot or kadai with the turmeric, salt and water. Cover and cook on medium heat for 8 minutes until half done.",
+          "uses": [
+            "turmeric",
+            "salt",
+            "water"
+          ],
+          "visual": "Yellow-tinged batons of yam, raw banana, carrot and drumstick in a little water in a wide clay pot (manchatti), steam rising",
+          "timerMin": 8,
+          "heat": "medium"
+        },
+        {
+          "title": "Add the tender vegetables",
+          "kind": "cook",
+          "text": "Add the beans and snake gourd, stir gently from the bottom so the pieces don't break, cover and cook for another 5 minutes until everything is just tender and most of the water has gone.",
+          "uses": [],
+          "visual": "All the vegetable batons together in the same clay pot, tender but holding their shape, only a little liquid at the bottom",
+          "timerMin": 5,
+          "heat": "medium"
+        },
+        {
+          "title": "Fold in the coconut",
+          "kind": "cook",
+          "text": "Add the coconut paste and fold it through gently. Cook uncovered for 2 to 3 minutes on low heat so the raw taste of the coconut goes and the mixture looks moist but not wet.",
+          "uses": [],
+          "visual": "Vegetable batons coated with coarse white coconut paste in the same clay pot",
+          "timerMin": 3,
+          "heat": "low"
+        },
+        {
+          "title": "Stir in the curd",
+          "kind": "cook",
+          "text": "Turn off the heat and stir in the whisked curd. Do not boil after this or the curd will split. Taste and adjust salt.",
+          "uses": [
+            "curd"
+          ],
+          "visual": "Creamy, pale avial in the clay pot, curd making the coconut coating glossy and thick"
+        },
+        {
+          "title": "Finish with coconut oil",
+          "kind": "rest",
+          "text": "Drizzle the raw coconut oil over the top, crush the curry leaves in your hand and scatter them over. Cover and leave for 5 minutes so the aroma sets.",
+          "uses": [
+            "coconut_oil",
+            "curry_leaves"
+          ],
+          "visual": "Raw coconut oil glistening on top of the avial in the clay pot with torn green curry leaves scattered over, lid half on",
+          "timerMin": 5
+        },
+        {
+          "title": "Mix and serve",
+          "kind": "serve",
+          "text": "Give it one gentle mix and serve warm with matta rice and a curry, or alongside fish curry. Avial is a side, so keep the portion to about one cup.",
+          "uses": [],
+          "visual": "A mound of colourful avial on a banana leaf beside a scoop of red matta rice, curry leaves and coconut oil sheen visible"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "raw_banana",
+          "with": "ash_gourd",
+          "ratio": 1,
+          "note": "Swap the starchy raw banana and yam for ash gourd or more beans to make the avial lower in carbs."
+        },
+        {
+          "ref": "curd",
+          "with": "tamarind",
+          "ratio": 0.1,
+          "note": "For a vegan avial, sour it with a little tamarind or raw mango instead of curd."
+        }
+      ],
+      "storage": "Best eaten the same day. Refrigerate for up to 1 day.",
+      "reheating": "Warm gently on low heat without boiling so the curd doesn't split.",
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "kerala-cabbage-thoran",
+      "title": "Cabbage Thoran",
+      "description": "Finely shredded cabbage stir-fried with mustard, urad dal and a crushed coconut–garlic–green chilli mix. A quick everyday Kerala side that's light and naturally low in carbs.",
+      "cuisine": "kerala",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "side",
+      "servings": 4,
+      "prepMin": 15,
+      "cookMin": 10,
+      "difficulty": "easy",
+      "equipment": [
+        "kadai",
+        "mixer_grinder|knife_board"
+      ],
+      "ingredients": [
+        {
+          "ref": "cabbage",
+          "g": 400,
+          "measure": "½ medium cabbage",
+          "prep": "very finely shredded"
+        },
+        {
+          "ref": "coconut_grated",
+          "g": 60,
+          "measure": "¾ cup"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 6,
+          "measure": "2"
+        },
+        {
+          "ref": "garlic",
+          "g": 6,
+          "measure": "2 cloves"
+        },
+        {
+          "ref": "cumin_seeds",
+          "g": 1,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 12,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "mustard_seeds",
+          "g": 2,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "urad_dal",
+          "g": 4,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "dried_red_chilli",
+          "g": 1.2,
+          "measure": "2"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 2,
+          "measure": "1 sprig"
+        },
+        {
+          "ref": "salt",
+          "g": 3,
+          "toTaste": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Shred the cabbage",
+          "kind": "prep",
+          "text": "Remove the core and shred the cabbage as finely as you can, then chop across the shreds once so the pieces are short. Fine cutting is what makes a good thoran.",
+          "uses": [
+            "cabbage"
+          ],
+          "visual": "A heap of very finely shredded pale green cabbage on a wooden board beside a knife"
+        },
+        {
+          "title": "Crush the coconut mix",
+          "kind": "prep",
+          "text": "Pulse the coconut, green chillies, garlic, cumin and turmeric in a mixer for a few seconds without water, just until crushed and mixed. You can also rub them together by hand.",
+          "uses": [
+            "coconut_grated",
+            "green_chilli",
+            "garlic",
+            "cumin_seeds",
+            "turmeric"
+          ],
+          "visual": "Coarsely crushed pale yellow coconut with green chilli and garlic bits in a small bowl"
+        },
+        {
+          "title": "Temper the spices",
+          "kind": "cook",
+          "text": "Heat the coconut oil in a kadai on medium heat. Add mustard seeds; when they pop, add urad dal, dried red chillies and curry leaves and fry until the dal turns golden, about 30 seconds.",
+          "uses": [
+            "coconut_oil",
+            "mustard_seeds",
+            "urad_dal",
+            "dried_red_chilli",
+            "curry_leaves"
+          ],
+          "visual": "Spluttering mustard seeds, golden urad dal, two dried red chillies and crackling curry leaves in coconut oil in a black iron kadai",
+          "heat": "medium"
+        },
+        {
+          "title": "Add cabbage and coconut",
+          "kind": "cook",
+          "text": "Add the cabbage, the crushed coconut mix and salt. Toss well, make a small well in the centre, cover and cook on low heat for 4 minutes so it steams in its own moisture.",
+          "uses": [
+            "salt"
+          ],
+          "visual": "Shredded cabbage tossed with yellow coconut mix in the same iron kadai, a lid resting on top",
+          "timerMin": 4,
+          "heat": "low"
+        },
+        {
+          "title": "Dry it out",
+          "kind": "cook",
+          "text": "Uncover and stir-fry on medium heat for 2 to 3 minutes until the cabbage is just tender, still bright, and there's no liquid left.",
+          "uses": [],
+          "visual": "Fluffy, dry cabbage thoran with flecks of coconut, mustard seeds and red chilli in the iron kadai",
+          "timerMin": 3,
+          "heat": "medium"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve warm with rice, sambar or fish curry, or eat a generous bowl with an egg roast for a low-carb plate.",
+          "uses": [],
+          "visual": "Cabbage thoran heaped in a small steel bowl, coconut flakes and curry leaves visible, on a banana leaf"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "garlic",
+          "note": "Leave out the garlic for a no-onion-garlic version; add a pinch of hing to the tempering instead."
+        },
+        {
+          "ref": "coconut_grated",
+          "with": "desiccated_coconut",
+          "ratio": 0.5,
+          "note": "Use half the amount of desiccated coconut, sprinkled with a little water, if fresh isn't available."
+        }
+      ],
+      "storage": "Refrigerate in a covered box for up to 2 days.",
+      "reheating": "Stir-fry in a hot pan for a minute; avoid the microwave, which makes it soggy.",
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "kerala-beans-thoran",
+      "title": "Beans Thoran",
+      "description": "Finely chopped French beans tossed with coconut, shallots and green chilli, with a few grains of raw rice in the tempering for crunch the way Kerala homes make it.",
+      "cuisine": "kerala",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "side",
+      "servings": 4,
+      "prepMin": 15,
+      "cookMin": 12,
+      "difficulty": "easy",
+      "equipment": [
+        "kadai",
+        "knife_board"
+      ],
+      "ingredients": [
+        {
+          "ref": "french_beans",
+          "g": 350,
+          "prep": "very finely chopped"
+        },
+        {
+          "ref": "shallots",
+          "g": 40,
+          "measure": "4–5",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "measure": "1–2",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "garlic",
+          "g": 4,
+          "measure": "1 clove",
+          "prep": "crushed"
+        },
+        {
+          "ref": "coconut_grated",
+          "g": 60,
+          "measure": "¾ cup"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 12,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "mustard_seeds",
+          "g": 2,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "rice",
+          "g": 5,
+          "measure": "1 tsp",
+          "prep": "raw"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 2,
+          "measure": "1 sprig"
+        },
+        {
+          "ref": "water",
+          "g": 30
+        },
+        {
+          "ref": "salt",
+          "g": 3,
+          "toTaste": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Chop the beans",
+          "kind": "prep",
+          "text": "Top and tail the beans and chop them very finely, about 3 mm. Chop the shallots, green chilli and crush the garlic.",
+          "uses": [
+            "french_beans",
+            "shallots",
+            "green_chilli",
+            "garlic"
+          ],
+          "visual": "A pile of finely chopped green beans beside small heaps of chopped shallots, green chilli and crushed garlic on a wooden board"
+        },
+        {
+          "title": "Mix the coconut",
+          "kind": "prep",
+          "text": "In a bowl, rub the grated coconut with the turmeric, half the shallots, the green chilli and garlic using your fingers so the coconut takes on the flavours.",
+          "uses": [
+            "coconut_grated",
+            "turmeric"
+          ],
+          "visual": "Yellow-tinted grated coconut mixed with chopped shallot and green chilli in a small steel bowl"
+        },
+        {
+          "title": "Temper",
+          "kind": "cook",
+          "text": "Heat the coconut oil in a kadai over medium heat. Add mustard seeds; when they pop, add the raw rice and fry until it puffs slightly and turns golden, then add curry leaves and the rest of the shallots and sauté for 1 minute.",
+          "uses": [
+            "coconut_oil",
+            "mustard_seeds",
+            "rice",
+            "curry_leaves"
+          ],
+          "visual": "Mustard seeds, golden rice grains, curry leaves and chopped shallots sizzling in coconut oil in a black kadai",
+          "heat": "medium"
+        },
+        {
+          "title": "Steam the beans",
+          "kind": "cook",
+          "text": "Add the beans, salt and water. Stir, cover and cook on low heat for 6 minutes until tender but still green.",
+          "uses": [
+            "salt",
+            "water"
+          ],
+          "visual": "Bright green chopped beans in the same kadai with a lid, a little steam escaping",
+          "timerMin": 6,
+          "heat": "low"
+        },
+        {
+          "title": "Add the coconut",
+          "kind": "cook",
+          "text": "Make a well in the centre, add the coconut mixture, cover it with the beans and leave for 1 minute. Then toss everything together on medium heat for 2 minutes until dry.",
+          "uses": [],
+          "visual": "Green beans tossed with yellow coconut in the kadai, dry and fluffy, mustard seeds and curry leaves scattered",
+          "timerMin": 3,
+          "heat": "medium"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve warm with rice and sambar or with chapati and a curry.",
+          "uses": [],
+          "visual": "Beans thoran in a white bowl, green and yellow with white coconut flecks, a curry leaf on top"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "french_beans",
+          "with": "long_beans",
+          "ratio": 1,
+          "note": "Long beans (achinga payar) work the same way and are often cheaper in Kerala markets."
+        },
+        {
+          "ref": "rice",
+          "with": "urad_dal",
+          "ratio": 1,
+          "note": "Use urad dal in the tempering if you prefer; skip both to keep it grain-free."
+        }
+      ],
+      "storage": "Refrigerate for up to 2 days.",
+      "reheating": "Warm in a pan for a minute or two.",
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "kerala-beetroot-thoran",
+      "title": "Beetroot Thoran",
+      "description": "Sweet, ruby-red beetroot stir-fried with coconut, shallots, ginger and green chilli. A colourful sadya-style side that kids usually like.",
+      "cuisine": "kerala",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "side",
+      "servings": 4,
+      "prepMin": 15,
+      "cookMin": 15,
+      "difficulty": "easy",
+      "equipment": [
+        "kadai",
+        "knife_board"
+      ],
+      "ingredients": [
+        {
+          "ref": "beetroot",
+          "g": 350,
+          "measure": "3 medium",
+          "prep": "peeled, finely chopped or grated"
+        },
+        {
+          "ref": "shallots",
+          "g": 30,
+          "measure": "3–4",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "ginger",
+          "g": 5,
+          "measure": "½ inch",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "measure": "1–2",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "coconut_grated",
+          "g": 50,
+          "measure": "⅔ cup"
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 12,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "mustard_seeds",
+          "g": 2,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "urad_dal",
+          "g": 4,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 2,
+          "measure": "1 sprig"
+        },
+        {
+          "ref": "water",
+          "g": 40
+        },
+        {
+          "ref": "salt",
+          "g": 3,
+          "toTaste": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Chop the beetroot",
+          "kind": "prep",
+          "text": "Peel the beetroot and chop it very finely or grate it on the large holes of a grater. Finely chop the shallots, ginger and green chilli.",
+          "uses": [
+            "beetroot",
+            "shallots",
+            "ginger",
+            "green_chilli"
+          ],
+          "visual": "Finely chopped deep red beetroot on a stained wooden board beside small heaps of shallots, ginger and green chilli"
+        },
+        {
+          "title": "Temper",
+          "kind": "cook",
+          "text": "Heat the coconut oil in a kadai on medium heat. Add mustard seeds, and when they pop add urad dal and curry leaves. Fry until the dal is golden.",
+          "uses": [
+            "coconut_oil",
+            "mustard_seeds",
+            "urad_dal",
+            "curry_leaves"
+          ],
+          "visual": "Mustard seeds popping with golden urad dal and curry leaves in coconut oil in a black kadai",
+          "heat": "medium"
+        },
+        {
+          "title": "Sauté the aromatics",
+          "kind": "cook",
+          "text": "Add the shallots, ginger and green chilli and sauté for 2 minutes until the shallots soften.",
+          "uses": [],
+          "visual": "Soft, translucent shallots with ginger and green chilli in the tempering in the same kadai",
+          "timerMin": 2,
+          "heat": "medium"
+        },
+        {
+          "title": "Cook the beetroot",
+          "kind": "cook",
+          "text": "Add the beetroot, salt and water. Stir, cover and cook on low heat for 8 to 10 minutes, stirring once or twice, until tender.",
+          "uses": [
+            "salt",
+            "water"
+          ],
+          "visual": "Glossy ruby-red beetroot pieces in the kadai with the lid half off, soft and steaming",
+          "timerMin": 10,
+          "heat": "low"
+        },
+        {
+          "title": "Add coconut",
+          "kind": "cook",
+          "text": "Stir in the grated coconut and cook uncovered for 2 minutes until the mixture is dry and the coconut turns pink.",
+          "uses": [
+            "coconut_grated"
+          ],
+          "visual": "Beetroot thoran in the kadai with grated coconut tinted pink, dry and fluffy",
+          "timerMin": 2,
+          "heat": "medium"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve warm with rice, dal or a fish curry.",
+          "uses": [],
+          "visual": "Bright magenta beetroot thoran in a steel bowl on a banana leaf, curry leaves and mustard seeds visible"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "beetroot",
+          "with": "carrot",
+          "ratio": 1,
+          "note": "Carrot thoran is made exactly the same way; or mix half beetroot, half carrot."
+        }
+      ],
+      "storage": "Refrigerate for up to 2 days.",
+      "reheating": "Warm in a pan for a minute.",
+      "tags": [
+        "kid_friendly"
+      ]
+    },
+    {
+      "id": "muringayila-thoran",
+      "title": "Muringayila Thoran (Drumstick Leaf Stir-Fry)",
+      "description": "Tender moringa leaves stir-fried with coconut, shallots, garlic and dried red chilli — a slightly bitter, deeply savoury Kerala greens side with good protein for a leafy vegetable.",
+      "cuisine": "kerala",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "side",
+      "servings": 3,
+      "prepMin": 20,
+      "cookMin": 10,
+      "difficulty": "easy",
+      "equipment": [
+        "kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "drumstick_leaves",
+          "g": 120,
+          "measure": "6 cups, loosely packed",
+          "prep": "stripped from stems, washed"
+        },
+        {
+          "ref": "shallots",
+          "g": 40,
+          "measure": "5",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "garlic",
+          "g": 8,
+          "measure": "2–3 cloves",
+          "prep": "crushed"
+        },
+        {
+          "ref": "coconut_grated",
+          "g": 50,
+          "measure": "⅔ cup"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "mustard_seeds",
+          "g": 2,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "dried_red_chilli",
+          "g": 1.8,
+          "measure": "3",
+          "prep": "broken"
+        },
+        {
+          "ref": "salt",
+          "g": 2,
+          "toTaste": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Strip the leaves",
+          "kind": "prep",
+          "text": "Run your fingers down each stem to strip off the small leaves, discarding the thick stalks. Wash in a large bowl of water, lift out and drain well.",
+          "uses": [
+            "drumstick_leaves"
+          ],
+          "visual": "A heap of small, bright green moringa leaflets in a colander, a pile of bare stems to the side"
+        },
+        {
+          "title": "Prepare the coconut",
+          "kind": "prep",
+          "text": "Mix the grated coconut with the turmeric, a pinch of salt and half the crushed garlic in a bowl.",
+          "uses": [
+            "coconut_grated",
+            "turmeric",
+            "garlic"
+          ],
+          "visual": "Yellow-tinged grated coconut with crushed garlic in a small steel bowl"
+        },
+        {
+          "title": "Temper",
+          "kind": "cook",
+          "text": "Heat the coconut oil in a kadai on medium heat. Add mustard seeds, let them pop, then add dried red chillies, the shallots and remaining garlic. Sauté for 2 minutes until the shallots are soft.",
+          "uses": [
+            "coconut_oil",
+            "mustard_seeds",
+            "dried_red_chilli",
+            "shallots"
+          ],
+          "visual": "Chopped shallots, garlic and broken red chillies sizzling with mustard seeds in coconut oil in a black kadai",
+          "timerMin": 2,
+          "heat": "medium"
+        },
+        {
+          "title": "Wilt the leaves",
+          "kind": "cook",
+          "text": "Add the drumstick leaves and salt. Stir for 3 to 4 minutes on medium heat until they wilt and darken; sprinkle a spoon of water only if they stick.",
+          "uses": [
+            "salt"
+          ],
+          "visual": "Wilted dark green moringa leaves reduced to a third of their volume in the same kadai",
+          "timerMin": 4,
+          "heat": "medium"
+        },
+        {
+          "title": "Add the coconut",
+          "kind": "cook",
+          "text": "Add the coconut mixture and stir-fry for 2 minutes until well combined and dry.",
+          "uses": [],
+          "visual": "Dark green moringa leaves flecked with yellow-white coconut in the kadai, dry and loose",
+          "timerMin": 2,
+          "heat": "medium"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve warm with rice and moru curry or with kanji.",
+          "uses": [],
+          "visual": "Muringayila thoran mounded on a banana leaf, deep green with coconut flecks and a red chilli on top"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "drumstick_leaves",
+          "with": "amaranth_leaves",
+          "ratio": 1.5,
+          "note": "Red or green cheera (amaranth) makes an equally traditional thoran; use more since it shrinks."
+        }
+      ],
+      "storage": "Best fresh; refrigerate for up to 1 day.",
+      "reheating": "Warm briefly in a pan.",
+      "tags": []
+    },
+    {
+      "id": "kerala-olan",
+      "title": "Olan (Ash Gourd and Pumpkin in Coconut Milk)",
+      "description": "The gentlest dish on a sadya leaf: ash gourd and pumpkin simmered with green chillies in thin coconut milk, finished with thick milk, raw coconut oil and curry leaves.",
+      "cuisine": "kerala",
+      "region": "Travancore",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "side",
+      "servings": 4,
+      "prepMin": 15,
+      "cookMin": 15,
+      "difficulty": "easy",
+      "equipment": [
+        "saucepan"
+      ],
+      "ingredients": [
+        {
+          "ref": "ash_gourd",
+          "g": 400,
+          "prep": "peeled, thin 1-inch squares"
+        },
+        {
+          "ref": "pumpkin",
+          "g": 100,
+          "prep": "peeled, thin 1-inch squares"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 6,
+          "measure": "3",
+          "prep": "slit"
+        },
+        {
+          "ref": "coconut_milk",
+          "g": 160,
+          "measure": "⅔ cup"
+        },
+        {
+          "ref": "water",
+          "g": 200
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 3,
+          "measure": "2 sprigs"
+        },
+        {
+          "ref": "salt",
+          "g": 3,
+          "toTaste": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Slice the gourds",
+          "kind": "prep",
+          "text": "Peel the ash gourd and pumpkin, remove the seeds and cut into thin, flat 1-inch squares about 5 mm thick. Slit the green chillies.",
+          "uses": [
+            "ash_gourd",
+            "pumpkin",
+            "green_chilli"
+          ],
+          "visual": "Thin translucent white squares of ash gourd and orange pumpkin squares on a board with slit green chillies"
+        },
+        {
+          "title": "Make thin coconut milk",
+          "kind": "prep",
+          "text": "Mix half the coconut milk with the water to make thin milk. Keep the remaining coconut milk aside as thick milk.",
+          "uses": [
+            "coconut_milk",
+            "water"
+          ],
+          "visual": "Two steel bowls, one of thin, watery coconut milk and one of thick, creamy coconut milk"
+        },
+        {
+          "title": "Simmer the vegetables",
+          "kind": "cook",
+          "text": "Put the ash gourd, pumpkin, green chillies and salt in a saucepan with the thin coconut milk. Simmer uncovered on medium-low heat for 10 to 12 minutes until the ash gourd is translucent and soft.",
+          "uses": [
+            "salt"
+          ],
+          "visual": "Translucent ash gourd and orange pumpkin squares with green chillies simmering in thin white coconut milk in a saucepan",
+          "timerMin": 12,
+          "heat": "medium"
+        },
+        {
+          "title": "Add thick coconut milk",
+          "kind": "cook",
+          "text": "Lower the heat and pour in the thick coconut milk. Warm for 1 to 2 minutes just until it steams — don't let it boil hard or it can split.",
+          "uses": [],
+          "visual": "Creamy white olan in the saucepan, pumpkin and green chilli showing through the thick coconut milk",
+          "timerMin": 2,
+          "heat": "low"
+        },
+        {
+          "title": "Finish and serve",
+          "kind": "serve",
+          "text": "Turn off the heat, drizzle raw coconut oil over and add the curry leaves. Cover for a few minutes, then serve with rice alongside a spicier curry.",
+          "uses": [
+            "coconut_oil",
+            "curry_leaves"
+          ],
+          "visual": "Olan in a white bowl, milky gravy with translucent ash gourd, orange pumpkin, green chillies, curry leaves and a sheen of coconut oil"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "pumpkin",
+          "with": "ash_gourd",
+          "ratio": 1,
+          "note": "Use only ash gourd for the lightest, lowest-carb olan."
+        },
+        {
+          "ref": "coconut_milk",
+          "with": "milk",
+          "ratio": 1,
+          "note": "Not traditional, but toned milk makes a lighter, lower-fat version; add it off the heat."
+        }
+      ],
+      "storage": "Refrigerate for up to 2 days.",
+      "reheating": "Warm gently on low heat; do not boil.",
+      "tags": [
+        "kid_friendly"
+      ]
+    },
+    {
+      "id": "mathanga-erissery",
+      "title": "Mathanga Erissery (Pumpkin and Toor Dal with Roasted Coconut)",
+      "description": "Sweet pumpkin and soft toor dal cooked with pepper and a cumin–coconut paste, then crowned with coconut fried in coconut oil until deep brown — a festive Onam favourite.",
+      "cuisine": "kerala",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "side",
+      "servings": 4,
+      "prepMin": 15,
+      "cookMin": 30,
+      "difficulty": "medium",
+      "equipment": [
+        "pressure_cooker|saucepan",
+        "kadai",
+        "mixer_grinder"
+      ],
+      "ingredients": [
+        {
+          "ref": "toor_dal",
+          "g": 50,
+          "measure": "¼ cup",
+          "prep": "rinsed"
+        },
+        {
+          "ref": "pumpkin",
+          "g": 400,
+          "prep": "peeled, 1-inch cubes"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "black_pepper",
+          "g": 2,
+          "measure": "¾ tsp",
+          "prep": "crushed"
+        },
+        {
+          "ref": "water",
+          "g": 400
+        },
+        {
+          "ref": "coconut_grated",
+          "g": 50,
+          "measure": "⅔ cup",
+          "group": "ground"
+        },
+        {
+          "ref": "cumin_seeds",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "measure": "1–2"
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "mustard_seeds",
+          "g": 2,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "dried_red_chilli",
+          "g": 1.2,
+          "measure": "2"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 3,
+          "measure": "2 sprigs"
+        },
+        {
+          "ref": "coconut_grated",
+          "g": 30,
+          "measure": "6 tbsp",
+          "group": "roasted"
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Cook the dal",
+          "kind": "cook",
+          "text": "Pressure cook the toor dal with 1 cup of the water for 3 whistles, about 10 minutes, until soft. In a saucepan this takes 25 minutes. Mash lightly.",
+          "uses": [
+            "toor_dal",
+            "water"
+          ],
+          "visual": "Soft, mashed pale yellow toor dal in an open pressure cooker",
+          "timerMin": 10,
+          "heat": "medium",
+          "equipment": [
+            "pressure_cooker|saucepan"
+          ]
+        },
+        {
+          "title": "Cook the pumpkin",
+          "kind": "cook",
+          "text": "In a kadai, cook the pumpkin cubes with the rest of the water, turmeric, crushed pepper and salt on medium heat for 8 minutes until soft.",
+          "uses": [
+            "pumpkin",
+            "turmeric",
+            "black_pepper",
+            "salt"
+          ],
+          "visual": "Bright orange pumpkin cubes simmering with turmeric and black pepper specks in a black kadai",
+          "timerMin": 8,
+          "heat": "medium"
+        },
+        {
+          "title": "Grind the coconut",
+          "kind": "prep",
+          "text": "Grind the 'ground' coconut with cumin seeds and green chilli and 2 to 3 tablespoons of water to a smooth paste.",
+          "uses": [
+            "coconut_grated",
+            "cumin_seeds",
+            "green_chilli"
+          ],
+          "visual": "Smooth pale coconut paste with green flecks in a mixer jar",
+          "equipment": [
+            "mixer_grinder"
+          ]
+        },
+        {
+          "title": "Combine",
+          "kind": "cook",
+          "text": "Add the cooked dal to the pumpkin and mash a few pieces against the side. Stir in the coconut paste and simmer for 4 minutes until thick.",
+          "uses": [],
+          "visual": "Thick orange-yellow erissery with some pumpkin cubes intact and a creamy coconut base in the kadai",
+          "timerMin": 4,
+          "heat": "low"
+        },
+        {
+          "title": "Roast the coconut topping",
+          "kind": "cook",
+          "text": "In a separate small pan, heat the coconut oil, splutter the mustard seeds, then add dried red chillies, curry leaves and the 'roasted' coconut. Stir constantly on medium-low heat for 4 to 5 minutes until the coconut is deep golden brown.",
+          "uses": [
+            "coconut_oil",
+            "mustard_seeds",
+            "dried_red_chilli",
+            "curry_leaves"
+          ],
+          "visual": "Deep golden-brown roasted coconut with curry leaves, mustard seeds and red chillies in coconut oil in a small pan",
+          "timerMin": 5,
+          "heat": "low"
+        },
+        {
+          "title": "Top and serve",
+          "kind": "serve",
+          "text": "Pour the roasted coconut tempering over the erissery and mix half of it in, leaving the rest on top. Serve with rice and a sour curry like pulissery.",
+          "uses": [],
+          "visual": "Orange pumpkin erissery in a bowl topped with dark brown roasted coconut, curry leaves and red chillies"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "toor_dal",
+          "with": "moong_dal",
+          "ratio": 1,
+          "note": "Moong dal is a common alternative and cooks faster."
+        },
+        {
+          "ref": "pumpkin",
+          "with": "raw_banana",
+          "ratio": 1,
+          "note": "Kaya erissery uses raw banana in the same way — heavier in carbs."
+        }
+      ],
+      "storage": "Refrigerate for up to 2 days.",
+      "reheating": "Warm with a splash of water on low heat.",
+      "tags": [
+        "festive",
+        "family"
+      ]
+    },
+    {
+      "id": "kerala-kaalan",
+      "title": "Kaalan (Yam and Raw Banana in Thick Curd)",
+      "description": "A thick, tangy sadya curry of yam and raw banana cooked with black pepper, reduced with sour curd and coconut, and tempered with fenugreek. It keeps for days.",
+      "cuisine": "kerala",
+      "region": "Palakkad",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 4,
+      "prepMin": 15,
+      "cookMin": 30,
+      "difficulty": "medium",
+      "equipment": [
+        "kadai",
+        "mixer_grinder"
+      ],
+      "ingredients": [
+        {
+          "ref": "elephant_yam",
+          "g": 150,
+          "prep": "peeled, 1-inch cubes"
+        },
+        {
+          "ref": "raw_banana",
+          "g": 150,
+          "measure": "1 medium",
+          "prep": "peeled, 1-inch cubes"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 3,
+          "measure": "1 tsp",
+          "prep": "crushed"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "water",
+          "g": 200
+        },
+        {
+          "ref": "curd",
+          "g": 400,
+          "measure": "1⅔ cups",
+          "prep": "sour, whisked smooth"
+        },
+        {
+          "ref": "coconut_grated",
+          "g": 60,
+          "measure": "¾ cup"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "measure": "1–2"
+        },
+        {
+          "ref": "cumin_seeds",
+          "g": 1,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "mustard_seeds",
+          "g": 2,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "fenugreek_seeds",
+          "g": 1,
+          "measure": "¼ tsp"
+        },
+        {
+          "ref": "dried_red_chilli",
+          "g": 1.2,
+          "measure": "2"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 3,
+          "measure": "2 sprigs"
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Cut the vegetables",
+          "kind": "prep",
+          "text": "Peel and cube the yam and raw banana into 1-inch pieces. Rinse the yam well; oil your hands first if yam makes them itch.",
+          "uses": [
+            "elephant_yam",
+            "raw_banana"
+          ],
+          "visual": "Cubes of pale yam and raw banana on a wooden board"
+        },
+        {
+          "title": "Cook with pepper",
+          "kind": "cook",
+          "text": "Cook the yam and banana in a kadai with the water, crushed pepper, turmeric and salt, covered, on medium heat for 12 minutes until soft and almost dry.",
+          "uses": [
+            "black_pepper",
+            "turmeric",
+            "salt",
+            "water"
+          ],
+          "visual": "Soft yellow yam and banana cubes speckled with black pepper in a heavy kadai, very little liquid left",
+          "timerMin": 12,
+          "heat": "medium"
+        },
+        {
+          "title": "Grind the coconut",
+          "kind": "prep",
+          "text": "Grind the coconut, green chilli and cumin with a few spoons of water to a very smooth paste.",
+          "uses": [
+            "coconut_grated",
+            "green_chilli",
+            "cumin_seeds"
+          ],
+          "visual": "Smooth, creamy white coconut paste in a mixer jar",
+          "equipment": [
+            "mixer_grinder"
+          ]
+        },
+        {
+          "title": "Reduce the curd",
+          "kind": "cook",
+          "text": "Pour in the whisked curd and cook on low heat, stirring constantly, for 10 minutes until it thickens and reduces by a third. Constant stirring stops it splitting.",
+          "uses": [
+            "curd"
+          ],
+          "visual": "Thick, pale yellow curd sauce clinging to the yam cubes in the kadai, a ladle mid-stir",
+          "timerMin": 10,
+          "heat": "low"
+        },
+        {
+          "title": "Add the coconut paste",
+          "kind": "cook",
+          "text": "Stir in the coconut paste and simmer for 3 to 4 minutes until the kaalan is very thick and coats the back of a spoon.",
+          "uses": [],
+          "visual": "Very thick, glossy yellow kaalan in the kadai with cubes of yam and banana",
+          "timerMin": 4,
+          "heat": "low"
+        },
+        {
+          "title": "Temper",
+          "kind": "cook",
+          "text": "In a small pan heat the coconut oil, splutter mustard seeds, then add fenugreek, dried red chillies and curry leaves until the fenugreek turns golden. Pour over the kaalan.",
+          "uses": [
+            "coconut_oil",
+            "mustard_seeds",
+            "fenugreek_seeds",
+            "dried_red_chilli",
+            "curry_leaves"
+          ],
+          "visual": "Sizzling coconut-oil tempering of mustard seeds, fenugreek, red chillies and curry leaves being poured over thick kaalan",
+          "heat": "medium"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve warm or at room temperature with rice. A tablespoon or two is enough alongside other dishes; as a main, about ¾ cup.",
+          "uses": [],
+          "visual": "Thick yellow kaalan in a clay bowl with yam cubes, topped with red chillies and curry leaves, rice beside it on a banana leaf"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "raw_banana",
+          "with": "ash_gourd",
+          "ratio": 1,
+          "note": "Ash gourd makes a much lighter, lower-carb kaalan; cook it for only 6 minutes."
+        }
+      ],
+      "storage": "Keeps 4 days in the fridge — the thick curd base keeps well.",
+      "reheating": "Warm on low heat, stirring; do not boil.",
+      "tags": [
+        "festive",
+        "meal_prep"
+      ]
+    },
+    {
+      "id": "vellarikka-pulissery",
+      "title": "Vellarikka Pulissery (Cucumber Moru Curry)",
+      "description": "A soothing yellow buttermilk curry with cucumber, coconut, ginger and green chilli, tempered with fenugreek and dried chillies. Everyday Kerala comfort with rice.",
+      "cuisine": "kerala",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 3,
+      "prepMin": 10,
+      "cookMin": 15,
+      "difficulty": "easy",
+      "equipment": [
+        "saucepan",
+        "mixer_grinder"
+      ],
+      "ingredients": [
+        {
+          "ref": "cucumber",
+          "g": 250,
+          "measure": "1 large",
+          "prep": "peeled, deseeded, 1-inch cubes"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "water",
+          "g": 150
+        },
+        {
+          "ref": "coconut_grated",
+          "g": 60,
+          "measure": "¾ cup"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 3,
+          "measure": "1"
+        },
+        {
+          "ref": "ginger",
+          "g": 5,
+          "measure": "½ inch"
+        },
+        {
+          "ref": "cumin_seeds",
+          "g": 1,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "curd",
+          "g": 300,
+          "measure": "1¼ cups",
+          "prep": "whisked"
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "mustard_seeds",
+          "g": 2,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "fenugreek_seeds",
+          "g": 1,
+          "measure": "¼ tsp"
+        },
+        {
+          "ref": "dried_red_chilli",
+          "g": 1.2,
+          "measure": "2"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 2,
+          "measure": "1 sprig"
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Cook the cucumber",
+          "kind": "cook",
+          "text": "Cook the cucumber cubes with turmeric, salt and the water in a saucepan, uncovered, on medium heat for 6 to 8 minutes until translucent.",
+          "uses": [
+            "cucumber",
+            "turmeric",
+            "salt",
+            "water"
+          ],
+          "visual": "Translucent pale green cucumber cubes simmering in yellow turmeric water in a steel saucepan",
+          "timerMin": 8,
+          "heat": "medium"
+        },
+        {
+          "title": "Grind the coconut",
+          "kind": "prep",
+          "text": "Grind the coconut, green chilli, ginger and cumin with a little water to a very smooth paste.",
+          "uses": [
+            "coconut_grated",
+            "green_chilli",
+            "ginger",
+            "cumin_seeds"
+          ],
+          "visual": "Smooth white coconut paste in an open mixer jar",
+          "equipment": [
+            "mixer_grinder"
+          ]
+        },
+        {
+          "title": "Add the coconut paste",
+          "kind": "cook",
+          "text": "Add the coconut paste to the cucumber and simmer for 3 minutes until the raw smell goes.",
+          "uses": [],
+          "visual": "Creamy yellow coconut gravy with cucumber cubes bubbling gently in the saucepan",
+          "timerMin": 3,
+          "heat": "low"
+        },
+        {
+          "title": "Stir in the curd",
+          "kind": "cook",
+          "text": "Turn the heat to the lowest, add the whisked curd and stir continuously for 1 to 2 minutes until it is just hot and starts to froth at the edges. Do not let it boil. Turn off the heat.",
+          "uses": [
+            "curd"
+          ],
+          "visual": "Smooth, pale yellow moru curry in the saucepan, slightly frothy at the edges, cucumber pieces visible",
+          "timerMin": 2,
+          "heat": "low"
+        },
+        {
+          "title": "Temper",
+          "kind": "cook",
+          "text": "Heat the coconut oil in a small pan, splutter mustard seeds, add fenugreek, dried red chillies and curry leaves and fry until the fenugreek is golden. Pour over the curry.",
+          "uses": [
+            "coconut_oil",
+            "mustard_seeds",
+            "fenugreek_seeds",
+            "dried_red_chilli",
+            "curry_leaves"
+          ],
+          "visual": "Crackling tempering of mustard, fenugreek, red chillies and curry leaves landing on the yellow curry",
+          "heat": "medium"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve warm with matta rice and a thoran.",
+          "uses": [],
+          "visual": "Yellow pulissery in a clay bowl with cucumber pieces, a red chilli and curry leaves floating on top, beside matta rice"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "cucumber",
+          "with": "ash_gourd",
+          "ratio": 1,
+          "note": "Ash gourd (kumbalanga) is the other classic choice and cooks the same way."
+        },
+        {
+          "ref": "curd",
+          "with": "hung_curd",
+          "ratio": 0.5,
+          "note": "Thin half the amount of hung curd with water for a slightly higher-protein version."
+        }
+      ],
+      "storage": "Refrigerate for up to 2 days.",
+      "reheating": "Warm gently, stirring, on low heat — never boil.",
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "varutharacha-sambar",
+      "title": "Varutharacha Sambar (Roasted Coconut Sambar)",
+      "description": "Central Kerala's sambar, thickened with coconut, coriander seeds and dried chillies roasted until deep brown, and loaded with drumstick, brinjal, okra and shallots.",
+      "cuisine": "kerala",
+      "region": "Thrissur",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 5,
+      "prepMin": 20,
+      "cookMin": 40,
+      "difficulty": "medium",
+      "equipment": [
+        "pressure_cooker|saucepan",
+        "kadai",
+        "mixer_grinder"
+      ],
+      "ingredients": [
+        {
+          "ref": "toor_dal",
+          "g": 120,
+          "measure": "½ cup + 1 tbsp",
+          "prep": "rinsed"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "water",
+          "g": 900
+        },
+        {
+          "ref": "drumstick",
+          "g": 80,
+          "measure": "2",
+          "prep": "2-inch pieces"
+        },
+        {
+          "ref": "brinjal",
+          "g": 80,
+          "measure": "1",
+          "prep": "cubed"
+        },
+        {
+          "ref": "carrot",
+          "g": 60,
+          "measure": "1 small",
+          "prep": "cubed"
+        },
+        {
+          "ref": "okra",
+          "g": 60,
+          "measure": "5 pods",
+          "prep": "2-inch pieces"
+        },
+        {
+          "ref": "shallots",
+          "g": 60,
+          "measure": "8",
+          "prep": "peeled, whole"
+        },
+        {
+          "ref": "tomato",
+          "g": 80,
+          "measure": "1 small",
+          "prep": "quartered"
+        },
+        {
+          "ref": "tamarind",
+          "g": 15,
+          "measure": "1 small lime-sized ball",
+          "prep": "soaked in ½ cup warm water"
+        },
+        {
+          "ref": "coconut_grated",
+          "g": 60,
+          "measure": "¾ cup"
+        },
+        {
+          "ref": "coriander_seeds",
+          "g": 10,
+          "measure": "2 tbsp"
+        },
+        {
+          "ref": "dried_red_chilli",
+          "g": 4,
+          "measure": "6–7"
+        },
+        {
+          "ref": "fenugreek_seeds",
+          "g": 1,
+          "measure": "¼ tsp"
+        },
+        {
+          "ref": "hing",
+          "g": 0.5,
+          "measure": "a pinch"
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "mustard_seeds",
+          "g": 2,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 4,
+          "measure": "3 sprigs"
+        },
+        {
+          "ref": "salt",
+          "g": 6,
+          "toTaste": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Pressure cook the dal",
+          "kind": "cook",
+          "text": "Pressure cook the toor dal with turmeric and 2 cups of the water for 4 whistles, about 12 minutes, until completely soft. Mash well.",
+          "uses": [
+            "toor_dal",
+            "turmeric",
+            "water"
+          ],
+          "visual": "Soft, mashed yellow toor dal in an open pressure cooker",
+          "timerMin": 12,
+          "heat": "medium",
+          "equipment": [
+            "pressure_cooker|saucepan"
+          ]
+        },
+        {
+          "title": "Roast the coconut masala",
+          "kind": "cook",
+          "text": "In a kadai with 1 teaspoon of the coconut oil, roast the coriander seeds, dried red chillies and fenugreek for 1 minute. Add the coconut and a few curry leaves and roast on medium-low heat, stirring constantly, for 7 to 8 minutes until the coconut is an even deep brown.",
+          "uses": [
+            "coconut_oil",
+            "coriander_seeds",
+            "dried_red_chilli",
+            "fenugreek_seeds",
+            "coconut_grated",
+            "curry_leaves"
+          ],
+          "visual": "Evenly roasted dark brown coconut with coriander seeds, red chillies and a few curry leaves in a black kadai",
+          "timerMin": 8,
+          "heat": "low"
+        },
+        {
+          "title": "Grind smooth",
+          "kind": "prep",
+          "text": "Cool the roasted mixture slightly and grind it with ½ cup water to a very smooth, dark brown paste.",
+          "uses": [],
+          "visual": "Smooth chocolate-brown roasted coconut paste in a mixer jar",
+          "equipment": [
+            "mixer_grinder"
+          ]
+        },
+        {
+          "title": "Cook the vegetables",
+          "kind": "cook",
+          "text": "In a large pot, cook the drumstick, carrot, brinjal and shallots with 2 cups water and salt for 8 minutes. Add the okra and tomato and cook 4 minutes more.",
+          "uses": [
+            "drumstick",
+            "brinjal",
+            "carrot",
+            "shallots",
+            "okra",
+            "tomato",
+            "salt"
+          ],
+          "visual": "Drumstick pieces, brinjal, carrot, okra, whole shallots and tomato simmering in a large pot",
+          "timerMin": 12,
+          "heat": "medium"
+        },
+        {
+          "title": "Add tamarind and dal",
+          "kind": "cook",
+          "text": "Squeeze the soaked tamarind and strain the water into the pot. Boil for 3 minutes, then stir in the mashed dal and the remaining water.",
+          "uses": [
+            "tamarind"
+          ],
+          "visual": "Vegetables in a thick yellow dal and tamarind broth bubbling in the pot",
+          "timerMin": 3,
+          "heat": "medium"
+        },
+        {
+          "title": "Add the roasted paste",
+          "kind": "cook",
+          "text": "Stir in the roasted coconut paste and simmer on low for 6 to 8 minutes until the sambar turns a rich reddish-brown and thickens slightly.",
+          "uses": [],
+          "visual": "Rich reddish-brown sambar simmering in the pot, drumsticks poking out of the surface",
+          "timerMin": 8,
+          "heat": "low"
+        },
+        {
+          "title": "Temper",
+          "kind": "cook",
+          "text": "Heat the remaining coconut oil, splutter mustard seeds, add the rest of the curry leaves and the hing, and pour over the sambar. Cover for 5 minutes.",
+          "uses": [
+            "mustard_seeds",
+            "hing"
+          ],
+          "visual": "Mustard seeds and curry leaves sizzling in coconut oil in a tadka pan, poised over the sambar",
+          "heat": "medium"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve hot with matta rice, or with idli or dosa for breakfast.",
+          "uses": [],
+          "visual": "Brown varutharacha sambar in a clay bowl, drumstick and okra visible, curry leaves on top, rice beside it on a banana leaf"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "hing",
+          "note": "Most hing contains wheat; use a gluten-free hing or leave it out."
+        },
+        {
+          "ref": "drumstick",
+          "with": "ash_gourd",
+          "ratio": 1,
+          "note": "Any sambar vegetables work — ash gourd, pumpkin or yam are common in Kerala."
+        }
+      ],
+      "storage": "Refrigerate for up to 3 days.",
+      "reheating": "Bring to a simmer with a splash of water.",
+      "tags": [
+        "family",
+        "meal_prep"
+      ]
+    },
+    {
+      "id": "kerala-egg-roast",
+      "title": "Kerala Egg Roast (Mutta Roast)",
+      "description": "Boiled eggs nestled in a thick, dark masala of slow-cooked onions, tomato, Kashmiri chilli and fennel, roasted in coconut oil. The classic partner for appam and Kerala parotta.",
+      "cuisine": "kerala",
+      "mealTypes": [
+        "breakfast",
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 3,
+      "prepMin": 15,
+      "cookMin": 30,
+      "difficulty": "easy",
+      "equipment": [
+        "saucepan",
+        "kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "egg",
+          "g": 300,
+          "measure": "6 eggs"
+        },
+        {
+          "ref": "water",
+          "g": 60
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 20,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "fennel_seeds",
+          "g": 1.5,
+          "measure": "½ tsp",
+          "prep": "powdered"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 3,
+          "measure": "2 sprigs"
+        },
+        {
+          "ref": "onion",
+          "g": 300,
+          "measure": "3 medium",
+          "prep": "thinly sliced"
+        },
+        {
+          "ref": "ginger",
+          "g": 10,
+          "measure": "1 inch",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "garlic",
+          "g": 12,
+          "measure": "4 cloves",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 6,
+          "measure": "2",
+          "prep": "slit"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 8,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "coriander_powder",
+          "g": 6,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "black_pepper",
+          "g": 2,
+          "measure": "¾ tsp",
+          "prep": "freshly ground"
+        },
+        {
+          "ref": "tomato",
+          "g": 100,
+          "measure": "1 medium",
+          "prep": "chopped"
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Boil the eggs",
+          "kind": "cook",
+          "text": "Cover the eggs with water in a saucepan, bring to a boil and cook for 10 minutes. Cool in cold water, peel and make 3 or 4 shallow slits on each egg so the masala gets in.",
+          "uses": [
+            "egg"
+          ],
+          "visual": "Six peeled hard-boiled eggs with shallow slits on a steel plate, a saucepan of water behind",
+          "timerMin": 10,
+          "heat": "high"
+        },
+        {
+          "title": "Slice the aromatics",
+          "kind": "prep",
+          "text": "Thinly slice the onions and finely chop the ginger and garlic. Slit the green chillies and chop the tomato.",
+          "uses": [
+            "onion",
+            "ginger",
+            "garlic",
+            "green_chilli",
+            "tomato"
+          ],
+          "visual": "A large heap of thinly sliced onions with chopped ginger, garlic, slit green chillies and chopped tomato on a wooden board"
+        },
+        {
+          "title": "Caramelise the onions",
+          "kind": "cook",
+          "text": "Heat the coconut oil in a heavy kadai. Add the curry leaves, then the onions with a pinch of salt. Cook on medium heat, stirring often, for 12 to 15 minutes until soft and golden brown. Add the ginger, garlic and green chillies for the last 2 minutes.",
+          "uses": [
+            "coconut_oil",
+            "curry_leaves",
+            "salt"
+          ],
+          "visual": "Deep golden-brown, soft onions with curry leaves, ginger, garlic and green chillies in a black iron kadai",
+          "timerMin": 15,
+          "heat": "medium"
+        },
+        {
+          "title": "Add the spice powders",
+          "kind": "cook",
+          "text": "Lower the heat and add the Kashmiri chilli, coriander powder, turmeric, black pepper and fennel powder. Stir for 1 minute until fragrant, adding a splash of water if they stick.",
+          "uses": [
+            "kashmiri_chilli",
+            "coriander_powder",
+            "turmeric",
+            "black_pepper",
+            "fennel_seeds"
+          ],
+          "visual": "Onions coated in a deep red spice paste in the iron kadai, coconut oil turning red at the edges",
+          "timerMin": 1,
+          "heat": "low"
+        },
+        {
+          "title": "Cook the tomato",
+          "kind": "cook",
+          "text": "Add the tomato and the water and cook for 5 to 6 minutes, mashing, until the tomato melts and the masala is thick with oil separating.",
+          "uses": [
+            "water"
+          ],
+          "visual": "Thick, glossy brick-red masala in the iron kadai with oil pooling at the sides",
+          "timerMin": 6,
+          "heat": "medium"
+        },
+        {
+          "title": "Roast the eggs",
+          "kind": "cook",
+          "text": "Add the eggs and turn them gently in the masala. Cook on low heat for 4 to 5 minutes, spooning the masala over, until the eggs take on a red coating.",
+          "uses": [],
+          "visual": "Whole boiled eggs coated in dark red onion masala in the iron kadai, curry leaves visible",
+          "timerMin": 5,
+          "heat": "low"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve hot with appam, puttu or chapati. For a low-carb plate, serve with cabbage thoran.",
+          "uses": [],
+          "visual": "Kerala egg roast in a clay bowl, eggs halved to show yellow yolks against the dark red masala, curry leaves on top, appam beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "onion",
+          "with": "shallots",
+          "ratio": 0.8,
+          "note": "Shallots give a sweeter, more traditional roast; use slightly less."
+        },
+        {
+          "ref": "coconut_oil",
+          "with": "sunflower_oil",
+          "ratio": 1,
+          "note": "Any oil works, but coconut oil gives the Kerala flavour."
+        }
+      ],
+      "storage": "Refrigerate for up to 2 days.",
+      "reheating": "Warm in a pan with a spoon of water on low heat.",
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "mutta-thoran",
+      "title": "Mutta Thoran (Egg and Coconut Scramble)",
+      "description": "Eggs scrambled into small, dry crumbs with shallots, green chilli, black pepper and grated coconut — a five-minute Kerala side for rice or a quick protein add-on.",
+      "cuisine": "kerala",
+      "mealTypes": [
+        "breakfast",
+        "lunch",
+        "dinner"
+      ],
+      "course": "side",
+      "servings": 3,
+      "prepMin": 5,
+      "cookMin": 8,
+      "difficulty": "easy",
+      "equipment": [
+        "kadai",
+        "mixing_bowl"
+      ],
+      "ingredients": [
+        {
+          "ref": "egg",
+          "g": 200,
+          "measure": "4 eggs"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 1,
+          "measure": "½ tsp",
+          "prep": "crushed"
+        },
+        {
+          "ref": "turmeric",
+          "g": 0.5,
+          "measure": "a pinch"
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "mustard_seeds",
+          "g": 2,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 2,
+          "measure": "1 sprig"
+        },
+        {
+          "ref": "shallots",
+          "g": 50,
+          "measure": "6",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "measure": "1–2",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "ginger",
+          "g": 4,
+          "measure": "½ inch",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "coconut_grated",
+          "g": 30,
+          "measure": "6 tbsp"
+        },
+        {
+          "ref": "salt",
+          "g": 2,
+          "toTaste": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Beat the eggs",
+          "kind": "prep",
+          "text": "Break the eggs into a bowl with the pepper, turmeric and salt and beat lightly with a fork.",
+          "uses": [
+            "egg",
+            "black_pepper",
+            "turmeric",
+            "salt"
+          ],
+          "visual": "Four beaten eggs, pale yellow with black pepper specks, in a steel bowl with a fork"
+        },
+        {
+          "title": "Sauté the shallots",
+          "kind": "cook",
+          "text": "Heat the coconut oil in a kadai on medium heat. Splutter mustard seeds, add curry leaves, then the shallots, green chilli and ginger. Sauté for 3 minutes until the shallots are soft and light golden.",
+          "uses": [
+            "coconut_oil",
+            "mustard_seeds",
+            "curry_leaves",
+            "shallots",
+            "green_chilli",
+            "ginger"
+          ],
+          "visual": "Light golden chopped shallots, green chilli and ginger with curry leaves and mustard seeds in coconut oil in a black kadai",
+          "timerMin": 3,
+          "heat": "medium"
+        },
+        {
+          "title": "Add coconut",
+          "kind": "cook",
+          "text": "Stir in the grated coconut and toast it for 1 minute.",
+          "uses": [
+            "coconut_grated"
+          ],
+          "visual": "Fresh white grated coconut mixed into the shallots in the kadai",
+          "timerMin": 1,
+          "heat": "medium"
+        },
+        {
+          "title": "Scramble",
+          "kind": "cook",
+          "text": "Pour in the eggs, leave for 20 seconds, then stir and break them up continuously with a spatula for 2 to 3 minutes until they set into small, dry crumbs.",
+          "uses": [],
+          "visual": "Small, dry yellow egg crumbs mixed with coconut and shallots in the kadai, a spatula breaking them up",
+          "timerMin": 3,
+          "heat": "medium"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve hot with rice and moru curry, or with chapati. It also works as a filling for a lunchbox wrap.",
+          "uses": [],
+          "visual": "Fluffy yellow mutta thoran with coconut flecks and curry leaves in a small steel bowl"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "egg",
+          "with": "egg_white",
+          "ratio": 1.2,
+          "note": "Use mostly egg whites for a leaner scramble with even more protein per calorie."
+        },
+        {
+          "ref": "coconut_grated",
+          "note": "Leave out the coconut for a lighter version with fewer calories."
+        }
+      ],
+      "storage": "Best eaten fresh; refrigerate up to 1 day.",
+      "reheating": "Warm briefly in a pan.",
+      "tags": [
+        "kid_friendly"
+      ]
+    },
+    {
+      "id": "nadan-mutta-curry",
+      "title": "Nadan Mutta Curry (Egg Curry with Coconut Milk)",
+      "description": "Home-style Kerala egg curry: halved boiled eggs in an onion–tomato gravy spiced with Kashmiri chilli and garam masala, mellowed with coconut milk.",
+      "cuisine": "kerala",
+      "mealTypes": [
+        "breakfast",
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 3,
+      "prepMin": 15,
+      "cookMin": 30,
+      "difficulty": "easy",
+      "equipment": [
+        "saucepan",
+        "kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "egg",
+          "g": 300,
+          "measure": "6 eggs"
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 3,
+          "measure": "2 sprigs"
+        },
+        {
+          "ref": "onion",
+          "g": 200,
+          "measure": "2 medium",
+          "prep": "sliced"
+        },
+        {
+          "ref": "ginger_garlic_paste",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "measure": "2",
+          "prep": "slit"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 8,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "coriander_powder",
+          "g": 8,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "garam_masala",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "tomato",
+          "g": 120,
+          "measure": "1 large",
+          "prep": "chopped"
+        },
+        {
+          "ref": "water",
+          "g": 100
+        },
+        {
+          "ref": "coconut_milk",
+          "g": 200,
+          "measure": "¾ cup + 1 tbsp"
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Boil the eggs",
+          "kind": "cook",
+          "text": "Boil the eggs for 10 minutes, cool in cold water, peel and halve them lengthwise.",
+          "uses": [
+            "egg"
+          ],
+          "visual": "Halved hard-boiled eggs with bright yellow yolks on a steel plate",
+          "timerMin": 10,
+          "heat": "high"
+        },
+        {
+          "title": "Sauté onions",
+          "kind": "cook",
+          "text": "Heat the coconut oil in a kadai, add curry leaves and the onions with a pinch of salt. Sauté on medium heat for 8 to 10 minutes until golden. Add ginger-garlic paste and green chillies and cook for 1 minute.",
+          "uses": [
+            "coconut_oil",
+            "curry_leaves",
+            "onion",
+            "ginger_garlic_paste",
+            "green_chilli",
+            "salt"
+          ],
+          "visual": "Golden sliced onions with green chillies and curry leaves in a kadai, ginger-garlic paste just stirred in",
+          "timerMin": 10,
+          "heat": "medium"
+        },
+        {
+          "title": "Add spices and tomato",
+          "kind": "cook",
+          "text": "Lower the heat, add Kashmiri chilli, coriander powder, turmeric and garam masala and stir for 1 minute. Add the tomato and cook for 5 minutes until soft and pulpy.",
+          "uses": [
+            "kashmiri_chilli",
+            "coriander_powder",
+            "turmeric",
+            "garam_masala",
+            "tomato"
+          ],
+          "visual": "Thick red onion-tomato masala in the kadai, tomato pieces breaking down",
+          "timerMin": 6,
+          "heat": "medium"
+        },
+        {
+          "title": "Simmer with water",
+          "kind": "cook",
+          "text": "Add the water and simmer for 3 minutes to make a thick gravy.",
+          "uses": [
+            "water"
+          ],
+          "visual": "Bubbling thick red gravy in the kadai",
+          "timerMin": 3,
+          "heat": "medium"
+        },
+        {
+          "title": "Add coconut milk and eggs",
+          "kind": "cook",
+          "text": "Lower the heat, stir in the coconut milk and slide in the eggs, yolk side up. Warm through for 3 to 4 minutes without boiling hard, spooning gravy over the eggs.",
+          "uses": [
+            "coconut_milk"
+          ],
+          "visual": "Halved eggs, yolks up, sitting in an orange coconut-milk gravy in the kadai, curry leaves floating",
+          "timerMin": 4,
+          "heat": "low"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve with appam, idiyappam, chapati or rice.",
+          "uses": [],
+          "visual": "Orange nadan mutta curry in a clay bowl with halved eggs and curry leaves, a lacy appam beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "coconut_milk",
+          "with": "milk",
+          "ratio": 1,
+          "note": "Toned milk added off the heat gives a lighter curry; it's less traditional."
+        }
+      ],
+      "storage": "Refrigerate for up to 2 days.",
+      "reheating": "Warm gently on low heat.",
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "kerala-chicken-stew",
+      "title": "Kerala Chicken Stew (Chicken Ishtu)",
+      "description": "A mild, fragrant Kerala stew of chicken, potato and carrot simmered in coconut milk with whole spices, ginger and green chilli. The Christmas-morning partner for appam.",
+      "cuisine": "kerala",
+      "region": "Central Travancore",
+      "mealTypes": [
+        "breakfast",
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 4,
+      "prepMin": 15,
+      "cookMin": 35,
+      "difficulty": "easy",
+      "equipment": [
+        "kadai|saucepan"
+      ],
+      "ingredients": [
+        {
+          "ref": "chicken_curry_cut",
+          "g": 600
+        },
+        {
+          "ref": "potato",
+          "g": 150,
+          "measure": "1 medium",
+          "prep": "1-inch cubes"
+        },
+        {
+          "ref": "carrot",
+          "g": 70,
+          "measure": "1",
+          "prep": "1-inch pieces"
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "cinnamon",
+          "g": 1,
+          "measure": "1-inch stick"
+        },
+        {
+          "ref": "cloves",
+          "g": 0.4,
+          "measure": "4"
+        },
+        {
+          "ref": "cardamom",
+          "g": 0.9,
+          "measure": "3 pods",
+          "prep": "lightly crushed"
+        },
+        {
+          "ref": "bay_leaf",
+          "g": 0.2,
+          "measure": "1"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 2,
+          "measure": "1 tsp",
+          "prep": "whole, lightly crushed"
+        },
+        {
+          "ref": "onion",
+          "g": 150,
+          "measure": "1 large",
+          "prep": "thinly sliced"
+        },
+        {
+          "ref": "ginger",
+          "g": 15,
+          "measure": "1½ inch",
+          "prep": "julienned"
+        },
+        {
+          "ref": "garlic",
+          "g": 6,
+          "measure": "2 cloves",
+          "prep": "sliced"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 6,
+          "measure": "3",
+          "prep": "slit"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 3,
+          "measure": "2 sprigs"
+        },
+        {
+          "ref": "coconut_milk",
+          "g": 300,
+          "measure": "1¼ cups"
+        },
+        {
+          "ref": "water",
+          "g": 250
+        },
+        {
+          "ref": "salt",
+          "g": 5,
+          "toTaste": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Prepare chicken and vegetables",
+          "kind": "prep",
+          "text": "Wash and drain the chicken. Cube the potato and carrot. Slice the onion, julienne the ginger, slice the garlic and slit the chillies.",
+          "uses": [
+            "chicken_curry_cut",
+            "potato",
+            "carrot",
+            "onion",
+            "ginger",
+            "garlic",
+            "green_chilli"
+          ],
+          "visual": "Raw chicken pieces in a bowl next to cubed potato, carrot, sliced onion, ginger matchsticks and slit green chillies on a board"
+        },
+        {
+          "title": "Make thin coconut milk",
+          "kind": "prep",
+          "text": "Mix 100 g of the coconut milk with the water for thin milk. Keep the remaining 200 g thick.",
+          "uses": [
+            "coconut_milk",
+            "water"
+          ],
+          "visual": "A jug of thin coconut milk beside a small bowl of thick coconut milk"
+        },
+        {
+          "title": "Bloom the whole spices",
+          "kind": "cook",
+          "text": "Heat the coconut oil in a wide pan over medium heat. Add cinnamon, cloves, cardamom, bay leaf and crushed pepper and stir for 30 seconds until fragrant.",
+          "uses": [
+            "coconut_oil",
+            "cinnamon",
+            "cloves",
+            "cardamom",
+            "bay_leaf",
+            "black_pepper"
+          ],
+          "visual": "Cinnamon stick, cloves, cardamom pods, a bay leaf and cracked pepper sizzling in coconut oil in a wide pan",
+          "heat": "medium"
+        },
+        {
+          "title": "Soften the aromatics",
+          "kind": "cook",
+          "text": "Add the onion, ginger, garlic, green chillies and curry leaves. Sauté for 4 minutes until the onion is soft but not browned — stew should stay pale.",
+          "uses": [
+            "curry_leaves"
+          ],
+          "visual": "Soft, pale translucent onions with ginger, green chillies and curry leaves among the whole spices",
+          "timerMin": 4,
+          "heat": "medium"
+        },
+        {
+          "title": "Simmer the chicken",
+          "kind": "cook",
+          "text": "Add the chicken, potato, carrot, salt and thin coconut milk. Cover and simmer on low heat for 20 minutes until the chicken is cooked through and the potato is tender.",
+          "uses": [
+            "salt"
+          ],
+          "visual": "Chicken pieces, potato and carrot cubes simmering in thin, milky broth in the covered pan, lid slightly ajar",
+          "timerMin": 20,
+          "heat": "low"
+        },
+        {
+          "title": "Add thick coconut milk",
+          "kind": "cook",
+          "text": "Pour in the thick coconut milk and warm for 2 to 3 minutes on the lowest heat, just until steaming. Don't boil or the milk will split.",
+          "uses": [],
+          "visual": "Creamy white stew with chicken, potato and orange carrot pieces in the pan, whole spices visible",
+          "timerMin": 3,
+          "heat": "low"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve warm with appam or idiyappam. Mash a potato piece into the gravy if you like it thicker.",
+          "uses": [],
+          "visual": "Ivory chicken stew in a white bowl with chicken, potato, carrot, green chillies and curry leaves, two lacy appams beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "potato",
+          "with": "cauliflower",
+          "ratio": 1,
+          "note": "Cauliflower florets instead of potato make the stew much lower in carbs; add them for the last 8 minutes."
+        },
+        {
+          "ref": "chicken_curry_cut",
+          "with": "chicken_thigh",
+          "ratio": 0.8,
+          "note": "Boneless thigh cooks in 12 minutes."
+        }
+      ],
+      "storage": "Refrigerate for up to 2 days.",
+      "reheating": "Warm gently on low heat; stir in a splash of water if thick.",
+      "tags": [
+        "festive",
+        "family"
+      ]
+    },
+    {
+      "id": "nadan-kozhi-curry",
+      "title": "Nadan Kozhi Curry (Kerala Home-Style Chicken Curry)",
+      "description": "Everyday Kerala chicken curry with onions browned in coconut oil, plenty of ginger and garlic, Kashmiri chilli, coriander and a finish of black pepper and garam masala.",
+      "cuisine": "kerala",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 4,
+      "prepMin": 15,
+      "cookMin": 40,
+      "difficulty": "easy",
+      "equipment": [
+        "kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "chicken_curry_cut",
+          "g": 750
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 25,
+          "measure": "2 tbsp"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 4,
+          "measure": "3 sprigs"
+        },
+        {
+          "ref": "onion",
+          "g": 250,
+          "measure": "2 large",
+          "prep": "thinly sliced"
+        },
+        {
+          "ref": "ginger",
+          "g": 15,
+          "measure": "1½ inch",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "garlic",
+          "g": 15,
+          "measure": "5 cloves",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 6,
+          "measure": "2",
+          "prep": "slit"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 10,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "coriander_powder",
+          "g": 12,
+          "measure": "2 tbsp"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "tomato",
+          "g": 150,
+          "measure": "1 large",
+          "prep": "chopped"
+        },
+        {
+          "ref": "water",
+          "g": 200
+        },
+        {
+          "ref": "garam_masala",
+          "g": 3,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 2,
+          "measure": "¾ tsp",
+          "prep": "freshly ground"
+        },
+        {
+          "ref": "coconut_milk",
+          "g": 100,
+          "measure": "6 tbsp",
+          "optional": true
+        },
+        {
+          "ref": "salt",
+          "g": 6,
+          "toTaste": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Prepare",
+          "kind": "prep",
+          "text": "Wash and drain the chicken. Slice the onions, chop the ginger and garlic, slit the chillies and chop the tomato.",
+          "uses": [
+            "chicken_curry_cut",
+            "onion",
+            "ginger",
+            "garlic",
+            "green_chilli",
+            "tomato"
+          ],
+          "visual": "Raw chicken curry-cut pieces in a steel bowl next to sliced onions, chopped tomato, ginger, garlic and green chillies on a board"
+        },
+        {
+          "title": "Brown the onions",
+          "kind": "cook",
+          "text": "Heat the coconut oil in a heavy kadai, add the curry leaves and the onions with a pinch of salt. Cook on medium heat for 10 to 12 minutes until deep golden. Add ginger, garlic and green chillies and sauté 2 minutes.",
+          "uses": [
+            "coconut_oil",
+            "curry_leaves",
+            "salt"
+          ],
+          "visual": "Deep golden onions with ginger, garlic, green chillies and curry leaves in coconut oil in a black iron kadai",
+          "timerMin": 12,
+          "heat": "medium"
+        },
+        {
+          "title": "Cook the spices",
+          "kind": "cook",
+          "text": "On low heat, add the Kashmiri chilli, coriander powder and turmeric with a splash of water and stir for 2 minutes until the raw smell goes. Add the tomato and cook until it melts, about 4 minutes.",
+          "uses": [
+            "kashmiri_chilli",
+            "coriander_powder",
+            "turmeric"
+          ],
+          "visual": "Thick, dark red masala with melted tomato in the iron kadai, oil separating at the edges",
+          "timerMin": 6,
+          "heat": "low"
+        },
+        {
+          "title": "Add the chicken",
+          "kind": "cook",
+          "text": "Add the chicken and the rest of the salt and stir on high heat for 3 to 4 minutes to coat and seal the pieces.",
+          "uses": [],
+          "visual": "Chicken pieces coated in red masala being stirred in the iron kadai",
+          "timerMin": 4,
+          "heat": "high"
+        },
+        {
+          "title": "Simmer",
+          "kind": "cook",
+          "text": "Add the water, cover and simmer on low heat for 20 minutes, stirring once or twice, until the chicken is tender and the gravy thick.",
+          "uses": [
+            "water"
+          ],
+          "visual": "Chicken simmering in thick reddish-brown gravy in the covered kadai, lid tilted",
+          "timerMin": 20,
+          "heat": "low"
+        },
+        {
+          "title": "Finish",
+          "kind": "cook",
+          "text": "Stir in the garam masala and black pepper. If using, add the coconut milk and warm for 2 minutes without boiling.",
+          "uses": [
+            "garam_masala",
+            "black_pepper",
+            "coconut_milk"
+          ],
+          "visual": "Glossy dark red chicken curry in the kadai with a swirl of coconut milk being stirred through",
+          "timerMin": 2,
+          "heat": "low"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve with matta rice, appam or chapati, and a vegetable thoran on the side.",
+          "uses": [],
+          "visual": "Nadan chicken curry in a clay pot, dark red gravy with chicken pieces and curry leaves, a plate of matta rice and cabbage thoran beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "chicken_curry_cut",
+          "with": "chicken_thigh",
+          "ratio": 0.8,
+          "note": "Boneless thigh needs only 12 minutes of simmering."
+        },
+        {
+          "ref": "garam_masala",
+          "with": "meat_masala",
+          "ratio": 1,
+          "note": "Kerala chicken masala blends work well in place of garam masala."
+        }
+      ],
+      "storage": "Keeps 3 days in the fridge and tastes better the next day.",
+      "reheating": "Reheat until simmering, adding a splash of water if needed.",
+      "tags": [
+        "family",
+        "meal_prep"
+      ]
+    },
+    {
+      "id": "varutharacha-kozhi-curry",
+      "title": "Varutharacha Kozhi Curry (Roasted Coconut Chicken Curry)",
+      "description": "Chicken simmered in a rich, dark gravy of coconut and shallots roasted with coriander, fennel, pepper and whole spices until deep brown, then ground smooth.",
+      "cuisine": "kerala",
+      "region": "Malabar",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 4,
+      "prepMin": 20,
+      "cookMin": 45,
+      "difficulty": "medium",
+      "equipment": [
+        "kadai",
+        "mixer_grinder"
+      ],
+      "ingredients": [
+        {
+          "ref": "chicken_curry_cut",
+          "g": 700
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 20,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "coconut_grated",
+          "g": 80,
+          "measure": "1 cup"
+        },
+        {
+          "ref": "shallots",
+          "g": 30,
+          "measure": "4"
+        },
+        {
+          "ref": "fennel_seeds",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 2,
+          "measure": "¾ tsp"
+        },
+        {
+          "ref": "cinnamon",
+          "g": 0.5,
+          "measure": "½-inch stick"
+        },
+        {
+          "ref": "cloves",
+          "g": 0.2,
+          "measure": "2"
+        },
+        {
+          "ref": "coriander_powder",
+          "g": 10,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 8,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "water",
+          "g": 400
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 4,
+          "measure": "3 sprigs"
+        },
+        {
+          "ref": "onion",
+          "g": 150,
+          "measure": "1 large",
+          "prep": "sliced"
+        },
+        {
+          "ref": "ginger_garlic_paste",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "measure": "2",
+          "prep": "slit"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "tomato",
+          "g": 100,
+          "measure": "1 medium",
+          "prep": "chopped"
+        },
+        {
+          "ref": "salt",
+          "g": 6,
+          "toTaste": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Roast the coconut",
+          "kind": "cook",
+          "text": "Heat 1 teaspoon of the coconut oil in a kadai. Add the coconut, shallots, fennel, pepper, cinnamon and cloves and roast on medium-low heat, stirring constantly, for 8 to 10 minutes until evenly deep brown.",
+          "uses": [
+            "coconut_oil",
+            "coconut_grated",
+            "shallots",
+            "fennel_seeds",
+            "black_pepper",
+            "cinnamon",
+            "cloves"
+          ],
+          "visual": "Grated coconut with shallots, fennel and whole spices roasted to an even deep brown in a black iron kadai",
+          "timerMin": 10,
+          "heat": "low"
+        },
+        {
+          "title": "Add the powders and grind",
+          "kind": "prep",
+          "text": "Turn off the heat, stir in the coriander powder and Kashmiri chilli for 30 seconds in the residual heat. Cool, then grind with ¾ cup of the water to a very smooth paste.",
+          "uses": [
+            "coriander_powder",
+            "kashmiri_chilli"
+          ],
+          "visual": "A smooth, dark reddish-brown roasted coconut paste in a mixer jar",
+          "equipment": [
+            "mixer_grinder"
+          ]
+        },
+        {
+          "title": "Sauté the onion",
+          "kind": "cook",
+          "text": "Heat the remaining coconut oil in the same kadai. Add curry leaves and onion and sauté for 6 to 8 minutes until golden. Add ginger-garlic paste, green chillies and turmeric and cook 1 minute.",
+          "uses": [
+            "curry_leaves",
+            "onion",
+            "ginger_garlic_paste",
+            "green_chilli",
+            "turmeric"
+          ],
+          "visual": "Golden onions, green chillies and curry leaves with a dab of ginger-garlic paste in the iron kadai",
+          "timerMin": 8,
+          "heat": "medium"
+        },
+        {
+          "title": "Add tomato and chicken",
+          "kind": "cook",
+          "text": "Add the tomato and cook for 3 minutes until soft, then add the chicken and salt and stir on high heat for 3 minutes.",
+          "uses": [
+            "tomato",
+            "chicken_curry_cut",
+            "salt"
+          ],
+          "visual": "Chicken pieces turning opaque in an onion-tomato base in the iron kadai",
+          "timerMin": 6,
+          "heat": "high"
+        },
+        {
+          "title": "Simmer with the paste",
+          "kind": "cook",
+          "text": "Stir in the roasted coconut paste and the remaining water. Cover and simmer on low heat for 20 to 25 minutes until the chicken is tender and oil rises to the top.",
+          "uses": [
+            "water"
+          ],
+          "visual": "Chicken in a thick, dark brown coconut gravy in the kadai, oil glistening on the surface",
+          "timerMin": 25,
+          "heat": "low"
+        },
+        {
+          "title": "Rest and serve",
+          "kind": "serve",
+          "text": "Let it rest 10 minutes, then serve with matta rice, ghee rice or chapati.",
+          "uses": [],
+          "visual": "Dark brown varutharacha chicken curry in a clay pot with curry leaves on top, matta rice on a banana leaf beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "chicken_curry_cut",
+          "with": "mutton",
+          "ratio": 1,
+          "note": "Mutton works beautifully; pressure cook it for 20 minutes in step 5 instead of simmering."
+        },
+        {
+          "ref": "coconut_grated",
+          "with": "desiccated_coconut",
+          "ratio": 0.5,
+          "note": "Desiccated coconut roasts faster — watch it closely."
+        }
+      ],
+      "storage": "Refrigerate for up to 3 days.",
+      "reheating": "Reheat until simmering with a splash of water.",
+      "tags": [
+        "family",
+        "festive"
+      ]
+    },
+    {
+      "id": "kerala-chicken-ularthiyathu",
+      "title": "Kerala Chicken Ularthiyathu (Dry Chicken Roast)",
+      "description": "Chicken marinated in chilli, pepper and lemon, then slow-roasted with heaps of shallots, ginger, garlic and curry leaves in coconut oil until dark and dry.",
+      "cuisine": "kerala",
+      "region": "Kottayam",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 4,
+      "prepMin": 20,
+      "cookMin": 40,
+      "restMin": 20,
+      "difficulty": "medium",
+      "equipment": [
+        "kadai",
+        "mixing_bowl"
+      ],
+      "ingredients": [
+        {
+          "ref": "chicken_curry_cut",
+          "g": 700,
+          "prep": "small pieces"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 8,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "black_pepper",
+          "g": 4,
+          "measure": "1½ tsp",
+          "prep": "freshly crushed"
+        },
+        {
+          "ref": "garam_masala",
+          "g": 3,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 6,
+          "toTaste": true
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 25,
+          "measure": "2 tbsp"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 5,
+          "measure": "4 sprigs"
+        },
+        {
+          "ref": "shallots",
+          "g": 120,
+          "measure": "15",
+          "prep": "sliced"
+        },
+        {
+          "ref": "ginger",
+          "g": 12,
+          "measure": "1 inch",
+          "prep": "julienned"
+        },
+        {
+          "ref": "garlic",
+          "g": 15,
+          "measure": "5 cloves",
+          "prep": "sliced"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 6,
+          "measure": "2",
+          "prep": "slit"
+        },
+        {
+          "ref": "coriander_powder",
+          "g": 8,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "water",
+          "g": 60
+        }
+      ],
+      "steps": [
+        {
+          "title": "Marinate",
+          "kind": "prep",
+          "text": "Rub the chicken with the Kashmiri chilli, turmeric, half the black pepper, garam masala, lemon juice and salt. Leave for 20 minutes.",
+          "uses": [
+            "chicken_curry_cut",
+            "kashmiri_chilli",
+            "turmeric",
+            "black_pepper",
+            "garam_masala",
+            "lemon_juice",
+            "salt"
+          ],
+          "visual": "Small chicken pieces coated in a red chilli-pepper marinade in a steel bowl",
+          "timerMin": 20
+        },
+        {
+          "title": "Sauté the shallots",
+          "kind": "cook",
+          "text": "Heat the coconut oil in a heavy kadai. Add curry leaves, then the shallots, ginger, garlic and green chillies. Sauté on medium heat for 6 to 7 minutes until golden.",
+          "uses": [
+            "coconut_oil",
+            "curry_leaves",
+            "shallots",
+            "ginger",
+            "garlic",
+            "green_chilli"
+          ],
+          "visual": "Golden sliced shallots, ginger and garlic with crackling curry leaves and green chillies in a black iron kadai",
+          "timerMin": 7,
+          "heat": "medium"
+        },
+        {
+          "title": "Add coriander",
+          "kind": "cook",
+          "text": "Add the coriander powder and stir for 1 minute on low heat.",
+          "uses": [
+            "coriander_powder"
+          ],
+          "visual": "Shallots coated with brown coriander powder in the iron kadai",
+          "timerMin": 1,
+          "heat": "low"
+        },
+        {
+          "title": "Cook the chicken covered",
+          "kind": "cook",
+          "text": "Add the marinated chicken and the water. Stir, cover and cook on low heat for 15 minutes until the chicken is almost done.",
+          "uses": [
+            "water"
+          ],
+          "visual": "Red-coated chicken pieces among shallots in the covered iron kadai, juices bubbling",
+          "timerMin": 15,
+          "heat": "low"
+        },
+        {
+          "title": "Roast it dry",
+          "kind": "cook",
+          "text": "Uncover, add the remaining pepper and roast on medium heat for 12 to 15 minutes, stirring and scraping the bottom, until the chicken is dark brown, dry and coated with crisp shallots.",
+          "uses": [],
+          "visual": "Dark brown, dry roasted chicken pieces with crispy shallots and curry leaves in the iron kadai, no gravy left",
+          "timerMin": 15,
+          "heat": "medium"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve hot with rice and a moru curry or with chapati. For a low-carb plate, pair with beans thoran.",
+          "uses": [],
+          "visual": "Dark, glossy chicken ularthiyathu on a banana leaf with fried curry leaves and shallots, a lemon wedge beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "chicken_curry_cut",
+          "with": "chicken_thigh",
+          "ratio": 0.8,
+          "note": "Boneless thigh roasts faster and stays juicy."
+        },
+        {
+          "ref": "lemon_juice",
+          "with": "vinegar",
+          "ratio": 1,
+          "note": "A splash of vinegar is common in Syrian Christian homes."
+        }
+      ],
+      "storage": "Refrigerate for up to 3 days.",
+      "reheating": "Reheat in a hot pan for 3 to 4 minutes, stirring.",
+      "tags": [
+        "meal_prep"
+      ]
+    },
+    {
+      "id": "kerala-beef-ularthiyathu",
+      "title": "Kerala Beef Ularthiyathu (Beef Fry)",
+      "description": "Tender spiced beef pressure-cooked, then roasted in coconut oil with shallots, coconut slivers (thenga kothu), fennel and curry leaves until dark and crusty.",
+      "cuisine": "kerala",
+      "region": "Central Travancore",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 4,
+      "prepMin": 20,
+      "cookMin": 50,
+      "difficulty": "medium",
+      "equipment": [
+        "pressure_cooker|saucepan",
+        "kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "beef",
+          "g": 600,
+          "prep": "1-inch cubes"
+        },
+        {
+          "ref": "ginger",
+          "g": 10,
+          "measure": "1 inch",
+          "prep": "crushed"
+        },
+        {
+          "ref": "garlic",
+          "g": 10,
+          "measure": "3–4 cloves",
+          "prep": "crushed"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 6,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "coriander_powder",
+          "g": 6,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "meat_masala",
+          "g": 6,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 4,
+          "measure": "1½ tsp",
+          "prep": "crushed"
+        },
+        {
+          "ref": "water",
+          "g": 120
+        },
+        {
+          "ref": "salt",
+          "g": 6,
+          "toTaste": true
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 25,
+          "measure": "2 tbsp"
+        },
+        {
+          "ref": "coconut_grated",
+          "g": 50,
+          "measure": "½ cup",
+          "prep": "thin slivers (thenga kothu)"
+        },
+        {
+          "ref": "fennel_seeds",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "shallots",
+          "g": 100,
+          "measure": "12",
+          "prep": "sliced"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "measure": "2",
+          "prep": "slit"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 6,
+          "measure": "4 sprigs"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Season the beef",
+          "kind": "prep",
+          "text": "Wash and drain the beef. Mix it with the ginger, garlic, turmeric, Kashmiri chilli, coriander powder, meat masala, half the pepper and salt.",
+          "uses": [
+            "beef",
+            "ginger",
+            "garlic",
+            "turmeric",
+            "kashmiri_chilli",
+            "coriander_powder",
+            "meat_masala",
+            "black_pepper",
+            "salt"
+          ],
+          "visual": "Cubes of beef coated in a red-brown spice mix with crushed ginger and garlic in a steel bowl"
+        },
+        {
+          "title": "Pressure cook",
+          "kind": "cook",
+          "text": "Pressure cook the beef with the water for 5 to 6 whistles, about 25 minutes, until tender. In a pot, simmer covered for 1½ hours. Open and cook off most of the liquid.",
+          "uses": [
+            "water"
+          ],
+          "visual": "Tender, dark spiced beef cubes in a little thick gravy in an open pressure cooker",
+          "timerMin": 25,
+          "heat": "medium",
+          "equipment": [
+            "pressure_cooker|saucepan"
+          ]
+        },
+        {
+          "title": "Fry the coconut slivers",
+          "kind": "cook",
+          "text": "Heat the coconut oil in a heavy kadai. Add the coconut slivers and fry on medium-low heat for 3 to 4 minutes until golden, then add the fennel seeds for a few seconds.",
+          "uses": [
+            "coconut_oil",
+            "coconut_grated",
+            "fennel_seeds"
+          ],
+          "visual": "Golden coconut slivers and fennel seeds frying in coconut oil in a black iron kadai",
+          "timerMin": 4,
+          "heat": "low"
+        },
+        {
+          "title": "Add shallots",
+          "kind": "cook",
+          "text": "Add the shallots, green chillies and curry leaves and fry for 5 minutes until the shallots are golden brown.",
+          "uses": [
+            "shallots",
+            "green_chilli",
+            "curry_leaves"
+          ],
+          "visual": "Golden-brown shallots, coconut slivers and curry leaves sizzling in the iron kadai",
+          "timerMin": 5,
+          "heat": "medium"
+        },
+        {
+          "title": "Roast the beef",
+          "kind": "cook",
+          "text": "Add the cooked beef with any remaining gravy and the rest of the pepper. Roast on medium-low heat for 15 to 20 minutes, stirring every couple of minutes, until the beef is very dark, dry and crusted.",
+          "uses": [],
+          "visual": "Very dark, dry roasted beef cubes with crisp coconut slivers and blackened curry leaves in the iron kadai",
+          "timerMin": 20,
+          "heat": "low"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve hot with Kerala parotta, appam or matta rice and a moru curry.",
+          "uses": [],
+          "visual": "A heap of dark beef ularthiyathu with coconut slivers and curry leaves on a steel plate, appam on the side"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "beef",
+          "with": "mutton",
+          "ratio": 1.2,
+          "note": "Mutton ularthiyathu is made the same way; bone-in pieces need a little more weight."
+        },
+        {
+          "ref": "coconut_grated",
+          "note": "Skip the coconut slivers for a leaner fry with less fat."
+        }
+      ],
+      "storage": "Keeps 4 days in the fridge; it freezes well for a month.",
+      "reheating": "Reheat in a dry pan, stirring, for 4 to 5 minutes until sizzling.",
+      "tags": [
+        "meal_prep",
+        "festive"
+      ]
+    },
+    {
+      "id": "kerala-paneer-roast",
+      "title": "Kerala-Style Paneer Roast",
+      "description": "Paneer cubes tossed in a thick Kerala roast masala of browned onions, tomato, Kashmiri chilli, pepper and curry leaves cooked in coconut oil.",
+      "cuisine": "kerala",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 3,
+      "prepMin": 15,
+      "cookMin": 25,
+      "difficulty": "easy",
+      "equipment": [
+        "kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "paneer",
+          "g": 250,
+          "prep": "1-inch cubes"
+        },
+        {
+          "ref": "turmeric",
+          "g": 0.5,
+          "measure": "a pinch"
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 3,
+          "measure": "2 sprigs"
+        },
+        {
+          "ref": "onion",
+          "g": 200,
+          "measure": "2 medium",
+          "prep": "thinly sliced"
+        },
+        {
+          "ref": "ginger",
+          "g": 8,
+          "measure": "¾ inch",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "garlic",
+          "g": 8,
+          "measure": "3 cloves",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "measure": "1–2",
+          "prep": "slit"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 6,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "coriander_powder",
+          "g": 6,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 2,
+          "measure": "¾ tsp"
+        },
+        {
+          "ref": "garam_masala",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "tomato",
+          "g": 100,
+          "measure": "1 medium",
+          "prep": "chopped"
+        },
+        {
+          "ref": "water",
+          "g": 40
+        },
+        {
+          "ref": "salt",
+          "g": 3,
+          "toTaste": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Sear the paneer",
+          "kind": "cook",
+          "text": "Toss the paneer cubes with turmeric and a pinch of salt. Heat 1 teaspoon of the coconut oil in a kadai and sear the paneer on medium heat for 3 minutes, turning, until lightly golden. Set aside.",
+          "uses": [
+            "paneer",
+            "turmeric",
+            "salt",
+            "coconut_oil"
+          ],
+          "visual": "Golden-edged paneer cubes searing in a black kadai",
+          "timerMin": 3,
+          "heat": "medium"
+        },
+        {
+          "title": "Brown the onions",
+          "kind": "cook",
+          "text": "Add the remaining coconut oil, curry leaves and onions. Cook on medium heat for 10 minutes until golden brown, then add ginger, garlic and green chilli for 2 minutes.",
+          "uses": [
+            "curry_leaves",
+            "onion",
+            "ginger",
+            "garlic",
+            "green_chilli"
+          ],
+          "visual": "Golden-brown onions with ginger, garlic, green chilli and curry leaves in the same black kadai",
+          "timerMin": 12,
+          "heat": "medium"
+        },
+        {
+          "title": "Add the spices",
+          "kind": "cook",
+          "text": "Lower the heat and add Kashmiri chilli, coriander powder, pepper and garam masala. Stir for 1 minute.",
+          "uses": [
+            "kashmiri_chilli",
+            "coriander_powder",
+            "black_pepper",
+            "garam_masala"
+          ],
+          "visual": "Onions coated in deep red spice powders in the kadai",
+          "timerMin": 1,
+          "heat": "low"
+        },
+        {
+          "title": "Cook the tomato",
+          "kind": "cook",
+          "text": "Add the tomato and water and cook for 5 minutes, mashing, until thick with oil separating.",
+          "uses": [
+            "tomato",
+            "water"
+          ],
+          "visual": "Thick, glossy red roast masala in the kadai, oil at the edges",
+          "timerMin": 5,
+          "heat": "medium"
+        },
+        {
+          "title": "Toss the paneer",
+          "kind": "cook",
+          "text": "Return the paneer and toss gently for 2 minutes until coated. Don't overcook or the paneer turns rubbery.",
+          "uses": [],
+          "visual": "Golden paneer cubes coated in red roast masala in the kadai",
+          "timerMin": 2,
+          "heat": "low"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve hot with appam, chapati or matta rice and a thoran.",
+          "uses": [],
+          "visual": "Paneer roast in a clay bowl, cubes coated in dark red masala with curry leaves, chapati beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "paneer",
+          "with": "tofu",
+          "ratio": 1,
+          "note": "Firm tofu, pressed and seared, makes it vegan."
+        }
+      ],
+      "storage": "Refrigerate for up to 2 days.",
+      "reheating": "Warm in a pan with a splash of water.",
+      "tags": [
+        "kid_friendly"
+      ]
+    },
+    {
+      "id": "kerala-mushroom-roast",
+      "title": "Kerala Mushroom Roast (Koon Ularthiyathu)",
+      "description": "Button mushrooms roasted dry with shallots, ginger-garlic, Kashmiri chilli, pepper and fennel in coconut oil — a meaty-tasting vegetarian roast.",
+      "cuisine": "kerala",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 2,
+      "prepMin": 15,
+      "cookMin": 20,
+      "difficulty": "easy",
+      "equipment": [
+        "kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "mushroom",
+          "g": 400,
+          "measure": "2 packs",
+          "prep": "halved or quartered"
+        },
+        {
+          "ref": "coconut_oil",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "fennel_seeds",
+          "g": 1,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "curry_leaves",
+          "g": 3,
+          "measure": "2 sprigs"
+        },
+        {
+          "ref": "shallots",
+          "g": 100,
+          "measure": "12",
+          "prep": "sliced"
+        },
+        {
+          "ref": "ginger_garlic_paste",
+          "g": 12,
+          "measure": "2½ tsp"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "measure": "1–2",
+          "prep": "slit"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 6,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "coriander_powder",
+          "g": 6,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "turmeric",
+          "g": 0.5,
+          "measure": "a pinch"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 3,
+          "measure": "1 tsp",
+          "prep": "crushed"
+        },
+        {
+          "ref": "tomato",
+          "g": 80,
+          "measure": "1 small",
+          "prep": "chopped"
+        },
+        {
+          "ref": "salt",
+          "g": 3,
+          "toTaste": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Clean the mushrooms",
+          "kind": "prep",
+          "text": "Wipe the mushrooms with a damp cloth (don't soak them) and cut into halves or quarters.",
+          "uses": [
+            "mushroom"
+          ],
+          "visual": "Halved and quartered white button mushrooms on a wooden board"
+        },
+        {
+          "title": "Sauté the shallots",
+          "kind": "cook",
+          "text": "Heat the coconut oil in a kadai. Add fennel and curry leaves, then the shallots and sauté on medium heat for 5 minutes until golden. Add ginger-garlic paste and green chilli and cook 1 minute.",
+          "uses": [
+            "coconut_oil",
+            "fennel_seeds",
+            "curry_leaves",
+            "shallots",
+            "ginger_garlic_paste",
+            "green_chilli"
+          ],
+          "visual": "Golden shallots with curry leaves, fennel seeds and green chilli in coconut oil in a black kadai",
+          "timerMin": 6,
+          "heat": "medium"
+        },
+        {
+          "title": "Add spices and tomato",
+          "kind": "cook",
+          "text": "Lower the heat, add Kashmiri chilli, coriander powder and turmeric and stir 1 minute. Add the tomato and cook 3 minutes until soft.",
+          "uses": [
+            "kashmiri_chilli",
+            "coriander_powder",
+            "turmeric",
+            "tomato"
+          ],
+          "visual": "Thick red masala with soft tomato and shallots in the kadai",
+          "timerMin": 4,
+          "heat": "low"
+        },
+        {
+          "title": "Cook the mushrooms",
+          "kind": "cook",
+          "text": "Add the mushrooms and salt and cook on high heat for 5 minutes. They will release water — keep stirring until it evaporates.",
+          "uses": [
+            "salt"
+          ],
+          "visual": "Mushrooms releasing liquid into the red masala in the kadai, steam rising",
+          "timerMin": 5,
+          "heat": "high"
+        },
+        {
+          "title": "Roast with pepper",
+          "kind": "cook",
+          "text": "Add the crushed pepper and roast on medium heat for 4 to 5 minutes until the mushrooms are dark and dry.",
+          "uses": [
+            "black_pepper"
+          ],
+          "visual": "Dark, dry mushroom roast with black pepper flecks and curry leaves in the kadai",
+          "timerMin": 5,
+          "heat": "medium"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve hot with chapati, appam or rice.",
+          "uses": [],
+          "visual": "Kerala mushroom roast in a clay bowl, dark glossy mushrooms with curry leaves, chapati beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "mushroom",
+          "with": "soy_chunks",
+          "ratio": 0.3,
+          "note": "Boiled, squeezed soya chunks roasted the same way give a higher-protein version."
+        }
+      ],
+      "storage": "Refrigerate for up to 2 days.",
+      "reheating": "Reheat in a hot pan for 2 minutes.",
+      "tags": []
+    }
+  ]
+}

@@ -1,0 +1,3511 @@
+{
+  "batch": "106-international-soups-salads",
+  "source": "original",
+  "author": "In-house recipe development",
+  "license": "Proprietary — original recipes written for this app",
+  "recipes": [
+    {
+      "id": "greek-salad-grilled-paneer",
+      "title": "Greek Salad with Grilled Paneer",
+      "description": "Crunchy cucumber, tomato, capsicum and olives in a lemon–oregano dressing, topped with golden pan-seared paneer slabs in place of feta. A filling one-bowl lunch.",
+      "cuisine": "mediterranean",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "complete",
+      "servings": 2,
+      "prepMin": 15,
+      "cookMin": 6,
+      "difficulty": "easy",
+      "equipment": [
+        "knife_board",
+        "mixing_bowl",
+        "non_stick_pan|grill"
+      ],
+      "ingredients": [
+        {
+          "ref": "paneer",
+          "g": 200,
+          "prep": "cut into ½-inch slabs"
+        },
+        {
+          "ref": "cucumber",
+          "g": 200,
+          "measure": "1 cucumber",
+          "prep": "cut into chunks"
+        },
+        {
+          "ref": "tomato",
+          "g": 200,
+          "measure": "2 medium",
+          "prep": "cut into wedges"
+        },
+        {
+          "ref": "capsicum",
+          "g": 100,
+          "prep": "sliced into thin rings"
+        },
+        {
+          "ref": "onion",
+          "g": 50,
+          "prep": "thinly sliced"
+        },
+        {
+          "ref": "olives",
+          "g": 30,
+          "measure": "about 8 olives",
+          "prep": "black, pitted"
+        },
+        {
+          "ref": "olive_oil",
+          "g": 20,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 20,
+          "measure": "4 tsp"
+        },
+        {
+          "ref": "oregano",
+          "g": 2,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 1
+        },
+        {
+          "ref": "salt",
+          "g": 2,
+          "toTaste": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Cut the vegetables",
+          "kind": "prep",
+          "text": "Cut the cucumber into thick half-moon chunks, the tomatoes into wedges, the capsicum into thin rings and the onion into fine slices. Keep the pieces chunky so the salad stays crunchy.",
+          "uses": [
+            "cucumber",
+            "tomato",
+            "capsicum",
+            "onion"
+          ],
+          "visual": "A wooden board with four neat piles: thick cucumber chunks, red tomato wedges, green capsicum rings and fine onion slices, a knife resting alongside"
+        },
+        {
+          "title": "Season the paneer",
+          "kind": "prep",
+          "text": "Lay the paneer slabs on a plate and sprinkle both sides with half the oregano, a pinch of black pepper and a little salt.",
+          "uses": [
+            "paneer",
+            "oregano",
+            "black_pepper",
+            "salt"
+          ],
+          "visual": "White paneer slabs on a steel plate, speckled with green flecks of dried oregano and cracked black pepper"
+        },
+        {
+          "title": "Sear the paneer",
+          "kind": "cook",
+          "text": "Heat 1 teaspoon of the olive oil in a non-stick pan or grill pan over medium-high heat. Sear the paneer for about 2 minutes per side until golden in patches. Take it off the heat so it stays soft.",
+          "uses": [
+            "olive_oil"
+          ],
+          "visual": "Paneer slabs in a black non-stick pan, the flipped sides showing golden-brown sear marks, a thin sheen of oil around them",
+          "timerMin": 4,
+          "heat": "high",
+          "equipment": [
+            "non_stick_pan|grill"
+          ]
+        },
+        {
+          "title": "Whisk the dressing",
+          "kind": "prep",
+          "text": "In a large mixing bowl whisk the remaining olive oil with the lemon juice, the rest of the oregano, a pinch of salt and pepper.",
+          "uses": [
+            "lemon_juice"
+          ],
+          "visual": "A wide steel mixing bowl with a small pool of golden lemon–olive oil dressing flecked with oregano, a fork resting in it"
+        },
+        {
+          "title": "Toss the salad",
+          "kind": "assemble",
+          "text": "Add the cut vegetables and the olives to the bowl and toss gently with the dressing until everything glistens.",
+          "uses": [
+            "olives"
+          ],
+          "visual": "Cucumber, tomato wedges, capsicum rings, onion and shiny black olives tossed together in the steel bowl, coated in dressing"
+        },
+        {
+          "title": "Top and serve",
+          "kind": "serve",
+          "text": "Pile the salad onto two plates, cut the seared paneer into cubes and scatter it over the top. Serve straight away while the vegetables are crisp.",
+          "uses": [],
+          "visual": "Two shallow bowls of Greek salad heaped with tomato, cucumber, capsicum and black olives, golden seared paneer cubes on top and a final crack of black pepper"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "paneer",
+          "with": "feta",
+          "ratio": 0.5,
+          "note": "For the classic version use 100 g crumbled feta; skip searing and the salt, as feta is already salty."
+        },
+        {
+          "ref": "paneer",
+          "with": "tofu",
+          "ratio": 1,
+          "note": "Press firm tofu dry and sear it the same way for a vegan salad."
+        },
+        {
+          "ref": "capsicum",
+          "with": "bell_pepper_red",
+          "ratio": 1,
+          "note": "Red or yellow peppers are sweeter and add colour."
+        }
+      ],
+      "storage": "Best eaten fresh. Cut, undressed vegetables keep 1 day in the fridge; add dressing and paneer just before serving.",
+      "tags": []
+    },
+    {
+      "id": "chicken-caesar-salad-yogurt-dressing",
+      "title": "Chicken Caesar-Style Salad with Yogurt Dressing",
+      "description": "Pan-grilled garlic-pepper chicken over crisp lettuce with whole-wheat croutons and a tangy hung-curd, parmesan and mustard dressing instead of the usual egg-and-oil version.",
+      "cuisine": "continental",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "complete",
+      "servings": 2,
+      "prepMin": 15,
+      "cookMin": 18,
+      "difficulty": "easy",
+      "equipment": [
+        "non_stick_pan|grill",
+        "mixing_bowl",
+        "whisk",
+        "knife_board"
+      ],
+      "ingredients": [
+        {
+          "ref": "chicken_breast",
+          "g": 300,
+          "measure": "2 small fillets",
+          "prep": "pounded to even thickness"
+        },
+        {
+          "ref": "garlic",
+          "g": 8,
+          "measure": "2 cloves",
+          "prep": "grated"
+        },
+        {
+          "ref": "olive_oil",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 2
+        },
+        {
+          "ref": "salt",
+          "g": 3,
+          "toTaste": true
+        },
+        {
+          "ref": "whole_wheat_bread",
+          "g": 60,
+          "measure": "2 slices",
+          "prep": "cut into small cubes"
+        },
+        {
+          "ref": "hung_curd",
+          "g": 100
+        },
+        {
+          "ref": "parmesan",
+          "g": 20,
+          "measure": "4 tbsp",
+          "prep": "finely grated"
+        },
+        {
+          "ref": "mustard_sauce",
+          "g": 8,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 20,
+          "measure": "4 tsp"
+        },
+        {
+          "ref": "lettuce",
+          "g": 200,
+          "prep": "romaine or iceberg, torn, washed and dried"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Season the chicken",
+          "kind": "prep",
+          "text": "Rub the chicken with 1 teaspoon of olive oil, half the grated garlic, a generous pinch of black pepper and salt. Leave it for 10 minutes while you prepare the rest.",
+          "uses": [
+            "chicken_breast",
+            "garlic",
+            "olive_oil",
+            "black_pepper",
+            "salt"
+          ],
+          "visual": "Two flattened chicken breast fillets on a steel plate, glossy with oil and speckled with grated garlic and cracked black pepper",
+          "timerMin": 10
+        },
+        {
+          "title": "Pan-grill the chicken",
+          "kind": "cook",
+          "text": "Heat a non-stick or grill pan over medium heat. Cook the chicken for 5 to 6 minutes per side until golden and no longer pink in the centre (74°C if you have a thermometer).",
+          "uses": [],
+          "visual": "Chicken fillets in a black grill pan with golden-brown char lines across the top, juices just running clear",
+          "timerMin": 12,
+          "heat": "medium",
+          "equipment": [
+            "non_stick_pan|grill"
+          ]
+        },
+        {
+          "title": "Rest the chicken",
+          "kind": "rest",
+          "text": "Move the chicken to a board and rest it for 5 minutes so the juices settle, then slice it across the grain.",
+          "uses": [],
+          "visual": "Grilled chicken fillets resting on a wooden board, one already cut into thick slices showing a juicy white interior",
+          "timerMin": 5
+        },
+        {
+          "title": "Toast the croutons",
+          "kind": "cook",
+          "text": "In the same pan, toss the bread cubes with 1 teaspoon of olive oil over medium heat for 3 to 4 minutes, stirring, until crisp and golden.",
+          "uses": [
+            "whole_wheat_bread"
+          ],
+          "visual": "Small brown bread cubes turning crisp and toasty in the grill pan, a few darker golden edges",
+          "timerMin": 4,
+          "heat": "medium"
+        },
+        {
+          "title": "Whisk the yogurt dressing",
+          "kind": "prep",
+          "text": "In a large mixing bowl whisk the hung curd with half the parmesan, the mustard sauce, lemon juice, the remaining garlic and olive oil, and plenty of pepper. Thin with 1 to 2 tablespoons of water until it coats a spoon.",
+          "uses": [
+            "hung_curd",
+            "parmesan",
+            "mustard_sauce",
+            "lemon_juice"
+          ],
+          "visual": "A thick, creamy off-white dressing in a large steel bowl, flecked with black pepper and grated parmesan, a whisk resting against the rim",
+          "equipment": [
+            "whisk"
+          ]
+        },
+        {
+          "title": "Toss the lettuce",
+          "kind": "assemble",
+          "text": "Add the dry lettuce to the bowl and toss until every leaf is lightly coated. Wet leaves dilute the dressing, so dry them well first.",
+          "uses": [
+            "lettuce"
+          ],
+          "visual": "Torn green lettuce leaves coated in creamy dressing being tossed in the steel bowl with two salad spoons"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Divide the dressed lettuce between two plates, top with sliced chicken and croutons, and finish with the remaining parmesan and a crack of pepper.",
+          "uses": [],
+          "visual": "A plate of dressed lettuce topped with fanned slices of grilled chicken, golden croutons and a snowfall of grated parmesan"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "chicken_breast",
+          "with": "paneer",
+          "ratio": 0.7,
+          "note": "Sear 200 g paneer slabs for a vegetarian version."
+        },
+        {
+          "ref": "whole_wheat_bread",
+          "with": "pumpkin_seeds",
+          "ratio": 0.25,
+          "note": "Skip the croutons and add 1 tbsp toasted pumpkin seeds for crunch with fewer carbs."
+        },
+        {
+          "ref": "parmesan",
+          "with": "cheese_cheddar",
+          "ratio": 1,
+          "note": "A sharp cheddar, finely grated, works if parmesan is hard to find."
+        }
+      ],
+      "storage": "Store chicken, croutons and dressing separately in the fridge for up to 2 days; dress the leaves just before eating.",
+      "reheating": "Serve the chicken cold or warm it briefly in a pan; keep croutons in an airtight jar.",
+      "tags": [
+        "meal_prep"
+      ]
+    },
+    {
+      "id": "quinoa-tabbouleh",
+      "title": "Quinoa Tabbouleh",
+      "description": "A Lebanese-style herb salad made with quinoa instead of bulgur — heaps of parsley and mint, diced tomato and cucumber, and a sharp lemon and olive oil dressing.",
+      "cuisine": "middle_eastern",
+      "region": "Levant",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "side",
+      "servings": 3,
+      "prepMin": 20,
+      "cookMin": 15,
+      "restMin": 15,
+      "difficulty": "easy",
+      "equipment": [
+        "saucepan",
+        "knife_board",
+        "mixing_bowl"
+      ],
+      "ingredients": [
+        {
+          "ref": "quinoa",
+          "g": 100,
+          "measure": "½ cup + 1 tbsp"
+        },
+        {
+          "ref": "water",
+          "g": 250
+        },
+        {
+          "ref": "salt",
+          "g": 3,
+          "toTaste": true
+        },
+        {
+          "ref": "parsley",
+          "g": 60,
+          "measure": "1 large bunch",
+          "prep": "leaves finely chopped"
+        },
+        {
+          "ref": "mint",
+          "g": 15,
+          "prep": "leaves finely chopped"
+        },
+        {
+          "ref": "tomato",
+          "g": 150,
+          "prep": "finely diced"
+        },
+        {
+          "ref": "cucumber",
+          "g": 150,
+          "prep": "finely diced"
+        },
+        {
+          "ref": "spring_onion",
+          "g": 30,
+          "measure": "2 stalks",
+          "prep": "thinly sliced"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 40,
+          "measure": "about 1 lemon"
+        },
+        {
+          "ref": "olive_oil",
+          "g": 20,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 1
+        }
+      ],
+      "steps": [
+        {
+          "title": "Rinse the quinoa",
+          "kind": "prep",
+          "text": "Put the quinoa in a fine sieve and rinse under running water for about a minute, rubbing the grains, to wash off the bitter coating.",
+          "uses": [
+            "quinoa"
+          ],
+          "visual": "Pale beige quinoa grains in a fine steel sieve under a running tap, water draining through"
+        },
+        {
+          "title": "Cook the quinoa",
+          "kind": "cook",
+          "text": "Bring the water and a pinch of salt to a boil in a saucepan, add the quinoa, cover and cook on low heat for 12 to 15 minutes until the water is absorbed and little white tails appear. Rest covered for 5 minutes, then fluff with a fork.",
+          "uses": [
+            "water",
+            "salt"
+          ],
+          "visual": "Fluffy cooked quinoa in a steel saucepan, grains showing tiny white spiral tails, a fork lifting some",
+          "timerMin": 15,
+          "heat": "low",
+          "equipment": [
+            "saucepan"
+          ]
+        },
+        {
+          "title": "Cool the quinoa",
+          "kind": "rest",
+          "text": "Spread the quinoa on a plate and let it cool for 10 minutes. Warm quinoa wilts the herbs.",
+          "uses": [],
+          "visual": "Cooked quinoa spread thinly across a wide steel plate, steam no longer rising",
+          "timerMin": 10
+        },
+        {
+          "title": "Chop herbs and vegetables",
+          "kind": "prep",
+          "text": "Finely chop the parsley and mint leaves with a sharp knife (don't mince them to a paste). Dice the tomato and cucumber small and slice the spring onion.",
+          "uses": [
+            "parsley",
+            "mint",
+            "tomato",
+            "cucumber",
+            "spring_onion"
+          ],
+          "visual": "A wooden board with a large mound of finely chopped bright green parsley, a smaller pile of mint, tiny red tomato dice, pale green cucumber dice and sliced spring onion"
+        },
+        {
+          "title": "Make the dressing",
+          "kind": "prep",
+          "text": "In a large mixing bowl whisk the lemon juice, olive oil, black pepper and a pinch of salt.",
+          "uses": [
+            "lemon_juice",
+            "olive_oil",
+            "black_pepper"
+          ],
+          "visual": "A small pool of cloudy yellow lemon and olive oil dressing at the bottom of a large steel mixing bowl, pepper flecks floating"
+        },
+        {
+          "title": "Combine and rest",
+          "kind": "assemble",
+          "text": "Add the cooled quinoa, herbs, tomato, cucumber and spring onion to the dressing and toss well. Leave for 10 minutes so the quinoa soaks up the lemon. Taste and add more salt or lemon if needed.",
+          "uses": [],
+          "visual": "The steel bowl filled with a bright green herb-heavy salad, quinoa grains and red tomato dice dotted throughout, glistening with dressing",
+          "timerMin": 10
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve at room temperature as a side with grilled chicken, falafel or kebabs, or with hummus and vegetable sticks.",
+          "uses": [],
+          "visual": "Quinoa tabbouleh heaped in a shallow white bowl, mostly green with flecks of red tomato and pale quinoa, a lemon wedge on the side"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "quinoa",
+          "with": "foxtail_millet",
+          "ratio": 1,
+          "note": "Foxtail millet (thinai) is cheaper and cooks in a similar time with a little more water."
+        },
+        {
+          "ref": "parsley",
+          "with": "coriander_leaves",
+          "ratio": 1,
+          "note": "Coriander gives a different but equally fresh flavour if parsley isn't available."
+        }
+      ],
+      "storage": "Keeps 2 days in the fridge; the herbs darken slightly. Add the tomato just before serving if making ahead.",
+      "tags": [
+        "meal_prep"
+      ]
+    },
+    {
+      "id": "hummus-dry-chickpeas-vegetable-sticks",
+      "title": "Hummus from Dry Chickpeas with Vegetable Sticks",
+      "description": "Silky, garlicky hummus made from scratch with soaked kabuli chana, tahini and lemon, served with carrot, cucumber and capsicum sticks for dipping.",
+      "cuisine": "middle_eastern",
+      "mealTypes": [
+        "snack"
+      ],
+      "course": "snack",
+      "servings": 6,
+      "prepMin": 15,
+      "cookMin": 25,
+      "restMin": 480,
+      "difficulty": "easy",
+      "equipment": [
+        "pressure_cooker",
+        "mixer_grinder|blender",
+        "knife_board"
+      ],
+      "ingredients": [
+        {
+          "ref": "kabuli_chana",
+          "g": 150,
+          "measure": "¾ cup dry"
+        },
+        {
+          "ref": "water",
+          "g": 1000
+        },
+        {
+          "ref": "baking_soda",
+          "g": 1,
+          "measure": "¼ tsp"
+        },
+        {
+          "ref": "tahini",
+          "g": 40,
+          "measure": "2½ tbsp"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 40,
+          "measure": "about 1 lemon"
+        },
+        {
+          "ref": "garlic",
+          "g": 8,
+          "measure": "2 cloves"
+        },
+        {
+          "ref": "salt",
+          "g": 3,
+          "toTaste": true
+        },
+        {
+          "ref": "cumin_powder",
+          "g": 1,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "olive_oil",
+          "g": 20,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 1,
+          "measure": "a pinch"
+        },
+        {
+          "ref": "carrot",
+          "g": 150,
+          "measure": "2 medium",
+          "prep": "cut into sticks"
+        },
+        {
+          "ref": "cucumber",
+          "g": 200,
+          "measure": "1 cucumber",
+          "prep": "cut into sticks"
+        },
+        {
+          "ref": "capsicum",
+          "g": 100,
+          "prep": "cut into strips"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Soak the chickpeas",
+          "kind": "rest",
+          "text": "Rinse the chickpeas and soak them in 3 cups of water for 8 hours or overnight. They should double in size.",
+          "uses": [
+            "kabuli_chana",
+            "water"
+          ],
+          "visual": "Plump beige chickpeas submerged in water in a large steel bowl, swollen to double their dry size",
+          "timerMin": 480
+        },
+        {
+          "title": "Cook until very soft",
+          "kind": "cook",
+          "text": "Drain, add the chickpeas to a pressure cooker with 2 cups of fresh water and the baking soda. Cook on medium heat for 20 minutes (5 to 6 whistles) until they mash easily between your fingers — softer than for a curry.",
+          "uses": [
+            "baking_soda"
+          ],
+          "visual": "Very soft cooked chickpeas in an open pressure cooker, some skins floating loose in the cloudy cooking liquid",
+          "timerMin": 20,
+          "heat": "medium",
+          "equipment": [
+            "pressure_cooker"
+          ]
+        },
+        {
+          "title": "Drain and cool",
+          "kind": "rest",
+          "text": "Drain the chickpeas, keeping half a cup of the cooking liquid, and let both cool for 10 minutes. Chill the liquid with an ice cube if you can — cold liquid makes the hummus fluffier.",
+          "uses": [],
+          "visual": "Drained soft chickpeas in a steel colander beside a small cup of pale cooking liquid with an ice cube floating in it",
+          "timerMin": 10
+        },
+        {
+          "title": "Whip the tahini",
+          "kind": "prep",
+          "text": "In a mixer jar blend the tahini, lemon juice, garlic and salt for 30 seconds until pale and thick.",
+          "uses": [
+            "tahini",
+            "lemon_juice",
+            "garlic",
+            "salt"
+          ],
+          "visual": "A pale, thick, creamy tahini and lemon mixture coating the inside of a steel mixer jar",
+          "equipment": [
+            "mixer_grinder|blender"
+          ]
+        },
+        {
+          "title": "Blend the hummus",
+          "kind": "prep",
+          "text": "Add the chickpeas, cumin and 1 tablespoon of the olive oil. Blend for 2 to 3 minutes, scraping down the sides and adding the cold cooking liquid a tablespoon at a time, until very smooth and spoonable.",
+          "uses": [
+            "cumin_powder",
+            "olive_oil"
+          ],
+          "visual": "Smooth, creamy beige hummus swirled in the mixer jar, a spatula scraping it from the sides",
+          "equipment": [
+            "mixer_grinder|blender"
+          ]
+        },
+        {
+          "title": "Cut the vegetable sticks",
+          "kind": "prep",
+          "text": "Peel the carrots and cut them, the cucumber and the capsicum into finger-length sticks.",
+          "uses": [
+            "carrot",
+            "cucumber",
+            "capsicum"
+          ],
+          "visual": "Orange carrot sticks, pale green cucumber sticks and dark green capsicum strips lined up on a wooden board"
+        },
+        {
+          "title": "Swirl and serve",
+          "kind": "serve",
+          "text": "Spread the hummus in a shallow bowl, make a swirl with the back of a spoon, drizzle with the remaining olive oil and dust with Kashmiri chilli. Serve with the vegetable sticks.",
+          "uses": [
+            "kashmiri_chilli"
+          ],
+          "visual": "A shallow bowl of smooth hummus with a deep swirl filled with golden olive oil and a dusting of red chilli, surrounded by carrot, cucumber and capsicum sticks"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "tahini",
+          "with": "sesame_seeds",
+          "ratio": 1,
+          "note": "Toast white sesame until pale gold, then grind with 1 tbsp oil into a quick homemade tahini."
+        },
+        {
+          "ref": "olive_oil",
+          "with": "sunflower_oil",
+          "ratio": 1,
+          "note": "Any neutral oil works inside the hummus; save olive oil for the drizzle."
+        },
+        {
+          "ref": "kabuli_chana",
+          "with": "kala_chana",
+          "ratio": 1,
+          "note": "Black chickpeas make a nuttier, darker, slightly grainier hummus."
+        }
+      ],
+      "storage": "Hummus keeps 4 days in an airtight box in the fridge with a thin film of oil on top. Store vegetable sticks in a box lined with damp kitchen paper for 2 days.",
+      "tags": [
+        "meal_prep",
+        "family"
+      ]
+    },
+    {
+      "id": "air-fryer-falafel-tahini-yogurt",
+      "title": "Air-Fryer Falafel with Tahini Yogurt Dip",
+      "description": "Herb-packed falafel made from soaked (not boiled) chickpeas, crisped in the air fryer with a brush of oil instead of deep-frying, with a lemony tahini and hung-curd dip.",
+      "cuisine": "middle_eastern",
+      "mealTypes": [
+        "snack",
+        "dinner"
+      ],
+      "course": "snack",
+      "servings": 4,
+      "prepMin": 20,
+      "cookMin": 18,
+      "restMin": 510,
+      "difficulty": "medium",
+      "equipment": [
+        "mixer_grinder",
+        "mixing_bowl",
+        "air_fryer|oven",
+        "baking_tray"
+      ],
+      "ingredients": [
+        {
+          "ref": "kabuli_chana",
+          "g": 150,
+          "measure": "¾ cup dry",
+          "prep": "soaked, not cooked"
+        },
+        {
+          "ref": "onion",
+          "g": 50,
+          "prep": "roughly chopped"
+        },
+        {
+          "ref": "garlic",
+          "g": 10,
+          "measure": "3 cloves"
+        },
+        {
+          "ref": "parsley",
+          "g": 20,
+          "prep": "leaves and tender stems"
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 15
+        },
+        {
+          "ref": "green_chilli",
+          "g": 3,
+          "measure": "1 chilli"
+        },
+        {
+          "ref": "cumin_powder",
+          "g": 3,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "coriander_powder",
+          "g": 3,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "besan",
+          "g": 15,
+          "measure": "2 tbsp"
+        },
+        {
+          "ref": "baking_soda",
+          "g": 1,
+          "measure": "¼ tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 3,
+          "toTaste": true
+        },
+        {
+          "ref": "olive_oil",
+          "g": 10,
+          "measure": "2 tsp",
+          "prep": "for brushing"
+        },
+        {
+          "ref": "hung_curd",
+          "g": 100
+        },
+        {
+          "ref": "tahini",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 15,
+          "measure": "1 tbsp"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Soak the chickpeas",
+          "kind": "rest",
+          "text": "Soak the chickpeas in plenty of water for 8 to 12 hours. Do not boil them — raw soaked chickpeas are what hold falafel together.",
+          "uses": [
+            "kabuli_chana"
+          ],
+          "visual": "Swollen raw chickpeas in a large steel bowl of water after an overnight soak",
+          "timerMin": 480
+        },
+        {
+          "title": "Grind to a coarse crumb",
+          "kind": "prep",
+          "text": "Drain the chickpeas and pat them very dry. Pulse them in a mixer jar with the onion, garlic, parsley, coriander and green chilli in short bursts until the mixture looks like coarse sand and clumps when pressed. Do not grind to a paste.",
+          "uses": [
+            "onion",
+            "garlic",
+            "parsley",
+            "coriander_leaves",
+            "green_chilli"
+          ],
+          "visual": "A coarse, speckled green and beige chickpea-and-herb crumb in an open mixer jar, a pinch pressed into a clump on a spoon",
+          "equipment": [
+            "mixer_grinder"
+          ]
+        },
+        {
+          "title": "Season and bind",
+          "kind": "prep",
+          "text": "Tip the mixture into a bowl and mix in the cumin, coriander powder, besan, baking soda and salt.",
+          "uses": [
+            "cumin_powder",
+            "coriander_powder",
+            "besan",
+            "baking_soda",
+            "salt"
+          ],
+          "visual": "Green-flecked falafel mixture in a steel mixing bowl with a dusting of besan and brown spice powders being folded in"
+        },
+        {
+          "title": "Chill the mixture",
+          "kind": "rest",
+          "text": "Cover and refrigerate for 30 minutes so the besan hydrates and the mixture firms up for shaping.",
+          "uses": [],
+          "visual": "The steel bowl of falafel mixture covered with a plate on a fridge shelf",
+          "timerMin": 30
+        },
+        {
+          "title": "Shape the patties",
+          "kind": "assemble",
+          "text": "With damp hands, press the mixture into 16 small patties about 4 cm wide and 2 cm thick. Lay them on a plate or baking tray.",
+          "uses": [],
+          "visual": "Sixteen small, flat green-speckled falafel patties lined up on a baking tray, the empty bowl behind"
+        },
+        {
+          "title": "Air fry until crisp",
+          "kind": "cook",
+          "text": "Brush the patties lightly with olive oil and air fry at 190°C for 15 to 18 minutes, turning halfway, until deep golden and crisp. In an oven, bake on a tray at 200°C for 20 to 25 minutes, turning once.",
+          "uses": [
+            "olive_oil"
+          ],
+          "visual": "Deep golden, crisp-edged falafel patties in an open air-fryer basket, the herb-green inside just visible at one broken edge",
+          "timerMin": 16,
+          "tempC": 190,
+          "equipment": [
+            "air_fryer|oven"
+          ]
+        },
+        {
+          "title": "Mix the dip",
+          "kind": "prep",
+          "text": "Whisk the hung curd, tahini and lemon juice with a pinch of salt and a tablespoon of water until smooth.",
+          "uses": [
+            "hung_curd",
+            "tahini",
+            "lemon_juice"
+          ],
+          "visual": "A small bowl of smooth, pale cream tahini–yogurt dip with a spoon resting in it"
+        },
+        {
+          "title": "Serve hot",
+          "kind": "serve",
+          "text": "Serve four falafel per person with the tahini yogurt dip, alongside a cucumber–tomato salad or tabbouleh.",
+          "uses": [],
+          "visual": "Golden falafel piled on a white plate beside a bowl of creamy tahini yogurt dip, a few parsley leaves scattered"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "parsley",
+          "with": "coriander_leaves",
+          "ratio": 1,
+          "note": "Use all coriander if parsley isn't available — the flavour shifts but it works well."
+        },
+        {
+          "ref": "besan",
+          "with": "atta",
+          "ratio": 1,
+          "note": "Whole-wheat flour binds just as well but adds gluten."
+        },
+        {
+          "ref": "hung_curd",
+          "with": "curd",
+          "ratio": 1,
+          "note": "Regular curd gives a thinner dip; skip the extra water."
+        }
+      ],
+      "storage": "Shaped raw patties freeze well for 1 month. Cooked falafel keep 2 days in the fridge; the dip keeps 3 days.",
+      "reheating": "Air fry at 180°C for 4 to 5 minutes to re-crisp; microwaving makes them soft.",
+      "tags": [
+        "kid_friendly"
+      ]
+    },
+    {
+      "id": "shakshuka-eggs-spiced-tomato",
+      "title": "Shakshuka (Eggs in Spiced Tomato Sauce)",
+      "description": "Eggs gently poached in a thick, smoky tomato, capsicum and onion sauce spiced with cumin and Kashmiri chilli. A one-pan meal for breakfast or dinner.",
+      "cuisine": "middle_eastern",
+      "mealTypes": [
+        "breakfast",
+        "lunch",
+        "dinner"
+      ],
+      "course": "complete",
+      "servings": 2,
+      "prepMin": 10,
+      "cookMin": 25,
+      "difficulty": "easy",
+      "equipment": [
+        "non_stick_pan|kadai",
+        "knife_board"
+      ],
+      "ingredients": [
+        {
+          "ref": "onion",
+          "g": 80,
+          "measure": "1 small",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "capsicum",
+          "g": 100,
+          "measure": "1 small",
+          "prep": "diced"
+        },
+        {
+          "ref": "garlic",
+          "g": 10,
+          "measure": "3 cloves",
+          "prep": "minced"
+        },
+        {
+          "ref": "tomato",
+          "g": 400,
+          "measure": "4 medium",
+          "prep": "finely chopped or grated"
+        },
+        {
+          "ref": "olive_oil",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "cumin_powder",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 3,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 3,
+          "toTaste": true
+        },
+        {
+          "ref": "black_pepper",
+          "g": 1
+        },
+        {
+          "ref": "egg",
+          "g": 200,
+          "measure": "4 eggs"
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 8,
+          "prep": "chopped"
+        },
+        {
+          "ref": "feta",
+          "g": 30,
+          "optional": true,
+          "prep": "crumbled"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Prepare the vegetables",
+          "kind": "prep",
+          "text": "Finely chop the onion, dice the capsicum, mince the garlic and chop or grate the tomatoes.",
+          "uses": [
+            "onion",
+            "capsicum",
+            "garlic",
+            "tomato"
+          ],
+          "visual": "Chopped onion, diced green capsicum, minced garlic and a bowl of finely chopped red tomato arranged on a wooden board"
+        },
+        {
+          "title": "Soften onion and capsicum",
+          "kind": "cook",
+          "text": "Heat the olive oil in a wide pan with a lid over medium heat. Add the onion and capsicum and cook for 6 to 7 minutes, stirring now and then, until soft and lightly golden.",
+          "uses": [
+            "olive_oil",
+            "onion",
+            "capsicum"
+          ],
+          "visual": "Softened, lightly golden onion and green capsicum pieces glistening with oil in a wide black pan",
+          "timerMin": 7,
+          "heat": "medium"
+        },
+        {
+          "title": "Bloom garlic and spices",
+          "kind": "cook",
+          "text": "Add the garlic, cumin and Kashmiri chilli and stir for 1 minute until fragrant — don't let the garlic brown.",
+          "uses": [
+            "garlic",
+            "cumin_powder",
+            "kashmiri_chilli"
+          ],
+          "visual": "Onion and capsicum in the pan now tinged red-orange from chilli and cumin, garlic just turning fragrant",
+          "timerMin": 1,
+          "heat": "medium"
+        },
+        {
+          "title": "Simmer the sauce",
+          "kind": "cook",
+          "text": "Add the tomatoes, salt and black pepper. Simmer uncovered for 10 to 12 minutes, stirring occasionally, until thick enough that a spoon leaves a trail.",
+          "uses": [
+            "tomato",
+            "salt",
+            "black_pepper"
+          ],
+          "visual": "A thick, bubbling, deep red tomato and capsicum sauce filling the wide pan, a spoon-drawn trail visible across it",
+          "timerMin": 12,
+          "heat": "medium"
+        },
+        {
+          "title": "Poach the eggs",
+          "kind": "cook",
+          "text": "Make four wells in the sauce with a spoon and crack an egg into each. Cover and cook on low heat for 6 to 8 minutes until the whites are set but the yolks are still soft.",
+          "uses": [
+            "egg"
+          ],
+          "visual": "Four eggs nestled in wells of red tomato sauce in the pan, whites set opaque and yolks still glossy orange",
+          "timerMin": 7,
+          "heat": "low"
+        },
+        {
+          "title": "Garnish and serve",
+          "kind": "serve",
+          "text": "Scatter over the coriander and crumbled feta, if using. Serve straight from the pan with whole-wheat toast, or on its own.",
+          "uses": [
+            "coriander_leaves",
+            "feta"
+          ],
+          "visual": "Shakshuka in the pan with four soft-yolked eggs in thick red sauce, sprinkled with green coriander and white crumbs of feta"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "capsicum",
+          "with": "bell_pepper_red",
+          "ratio": 1,
+          "note": "Red peppers make a sweeter, redder sauce."
+        },
+        {
+          "ref": "feta",
+          "with": "paneer",
+          "ratio": 1,
+          "note": "Crumble a little paneer with a pinch of salt in place of feta."
+        },
+        {
+          "ref": "coriander_leaves",
+          "with": "parsley",
+          "ratio": 1,
+          "note": "Parsley gives a more traditional finish."
+        }
+      ],
+      "storage": "The tomato sauce keeps 3 days in the fridge; always cook the eggs fresh.",
+      "reheating": "Bring the sauce back to a bubble in the pan before cracking in fresh eggs.",
+      "tags": [
+        "one_pot"
+      ]
+    },
+    {
+      "id": "mediterranean-baked-fish-vegetables",
+      "title": "Mediterranean Baked Fish with Vegetables",
+      "description": "White fish fillets baked on a bed of roasted zucchini, peppers, tomato and onion with olives, garlic, oregano and lemon — a whole dinner from one tray.",
+      "cuisine": "mediterranean",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "complete",
+      "servings": 2,
+      "prepMin": 15,
+      "cookMin": 25,
+      "difficulty": "easy",
+      "equipment": [
+        "oven|air_fryer",
+        "baking_tray",
+        "mixing_bowl",
+        "knife_board"
+      ],
+      "ingredients": [
+        {
+          "ref": "zucchini",
+          "g": 150,
+          "measure": "1 small",
+          "prep": "thick half-moons"
+        },
+        {
+          "ref": "bell_pepper_red",
+          "g": 100,
+          "prep": "cut into strips"
+        },
+        {
+          "ref": "tomato",
+          "g": 150,
+          "prep": "cut into wedges"
+        },
+        {
+          "ref": "onion",
+          "g": 60,
+          "prep": "thick slices"
+        },
+        {
+          "ref": "garlic",
+          "g": 10,
+          "measure": "3 cloves",
+          "prep": "sliced"
+        },
+        {
+          "ref": "olive_oil",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "oregano",
+          "g": 2,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 3,
+          "toTaste": true
+        },
+        {
+          "ref": "black_pepper",
+          "g": 1
+        },
+        {
+          "ref": "basa",
+          "g": 400,
+          "measure": "2 fillets"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 20,
+          "measure": "4 tsp"
+        },
+        {
+          "ref": "olives",
+          "g": 25,
+          "measure": "about 6 olives",
+          "prep": "halved"
+        },
+        {
+          "ref": "parsley",
+          "g": 8,
+          "prep": "chopped"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Preheat and cut vegetables",
+          "kind": "prep",
+          "text": "Preheat the oven to 200°C. Cut the zucchini into thick half-moons, the pepper into strips, the tomato into wedges and the onion into thick slices. Slice the garlic.",
+          "uses": [
+            "zucchini",
+            "bell_pepper_red",
+            "tomato",
+            "onion",
+            "garlic"
+          ],
+          "visual": "Zucchini half-moons, red pepper strips, tomato wedges, thick onion slices and sliced garlic piled on a wooden board",
+          "tempC": 200,
+          "equipment": [
+            "oven|air_fryer"
+          ]
+        },
+        {
+          "title": "Season the vegetables",
+          "kind": "prep",
+          "text": "Toss the vegetables in a mixing bowl with two-thirds of the olive oil, the oregano, salt and pepper, then spread them on a baking tray in a single layer.",
+          "uses": [
+            "olive_oil",
+            "oregano",
+            "salt",
+            "black_pepper"
+          ],
+          "visual": "Glossy oiled vegetables flecked with oregano spread in a single layer across a metal baking tray",
+          "equipment": [
+            "baking_tray"
+          ]
+        },
+        {
+          "title": "Roast the vegetables",
+          "kind": "cook",
+          "text": "Roast at 200°C for 10 minutes so the vegetables get a head start. In an air fryer, use 190°C for 8 minutes.",
+          "uses": [],
+          "visual": "Vegetables on the baking tray just beginning to soften and brown at the edges, tomato wedges slightly wrinkled",
+          "timerMin": 10,
+          "tempC": 200,
+          "equipment": [
+            "oven|air_fryer"
+          ]
+        },
+        {
+          "title": "Season the fish",
+          "kind": "prep",
+          "text": "Pat the fish fillets dry. Rub with the remaining olive oil, half the lemon juice and a pinch of salt and pepper.",
+          "uses": [
+            "basa",
+            "lemon_juice"
+          ],
+          "visual": "Two pale white fish fillets on a plate, glistening with oil and lemon juice, specks of black pepper on top"
+        },
+        {
+          "title": "Bake fish on the vegetables",
+          "kind": "cook",
+          "text": "Nestle the fillets on top of the vegetables and scatter over the olives. Bake for another 12 to 15 minutes until the fish turns opaque and flakes easily with a fork.",
+          "uses": [
+            "olives"
+          ],
+          "visual": "Opaque white fish fillets resting on roasted vegetables on the tray, olives scattered around, edges of the peppers charred",
+          "timerMin": 13,
+          "tempC": 200,
+          "equipment": [
+            "oven|air_fryer"
+          ]
+        },
+        {
+          "title": "Finish and serve",
+          "kind": "serve",
+          "text": "Squeeze over the remaining lemon juice and sprinkle with parsley. Serve straight from the tray.",
+          "uses": [
+            "parsley"
+          ],
+          "visual": "Baked fish fillets on a colourful bed of roasted zucchini, red pepper, tomato and olives, sprinkled with green parsley, a lemon wedge on the tray"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "basa",
+          "with": "seer_fish",
+          "ratio": 1,
+          "note": "Seer fish steaks are thicker — bake 18 to 20 minutes."
+        },
+        {
+          "ref": "zucchini",
+          "with": "brinjal",
+          "ratio": 1,
+          "note": "Use small brinjals cut into wedges if zucchini is unavailable."
+        },
+        {
+          "ref": "parsley",
+          "with": "coriander_leaves",
+          "ratio": 1,
+          "note": "Coriander works as a garnish."
+        }
+      ],
+      "storage": "Best eaten fresh; leftovers keep 1 day in the fridge.",
+      "reheating": "Warm in the oven or air fryer at 160°C for 5 minutes.",
+      "tags": [
+        "one_pot"
+      ]
+    },
+    {
+      "id": "chicken-shawarma-bowl-garlic-yogurt",
+      "title": "Chicken Shawarma Bowl with Garlic Yogurt",
+      "description": "Warm-spiced, tawa-charred chicken thigh strips over brown rice with a crunchy lettuce, tomato and cucumber salad and a cool garlic yogurt drizzle.",
+      "cuisine": "middle_eastern",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "complete",
+      "servings": 3,
+      "prepMin": 20,
+      "cookMin": 35,
+      "restMin": 60,
+      "difficulty": "medium",
+      "equipment": [
+        "mixing_bowl",
+        "saucepan|pressure_cooker",
+        "tawa|non_stick_pan",
+        "knife_board"
+      ],
+      "ingredients": [
+        {
+          "ref": "chicken_thigh",
+          "g": 450,
+          "prep": "cut into thin strips",
+          "group": "Marinade"
+        },
+        {
+          "ref": "hung_curd",
+          "g": 50,
+          "group": "Marinade"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 15,
+          "measure": "1 tbsp",
+          "group": "Marinade"
+        },
+        {
+          "ref": "garlic",
+          "g": 8,
+          "measure": "2 cloves",
+          "prep": "grated",
+          "group": "Marinade"
+        },
+        {
+          "ref": "cumin_powder",
+          "g": 3,
+          "measure": "1½ tsp",
+          "group": "Marinade"
+        },
+        {
+          "ref": "coriander_powder",
+          "g": 3,
+          "measure": "1½ tsp",
+          "group": "Marinade"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 4,
+          "measure": "1½ tsp",
+          "group": "Marinade"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1,
+          "group": "Marinade"
+        },
+        {
+          "ref": "cinnamon",
+          "g": 0.5,
+          "measure": "a pinch",
+          "group": "Marinade"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 1,
+          "group": "Marinade"
+        },
+        {
+          "ref": "olive_oil",
+          "g": 10,
+          "measure": "2 tsp",
+          "group": "Marinade"
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true,
+          "group": "Marinade"
+        },
+        {
+          "ref": "brown_rice",
+          "g": 150,
+          "measure": "¾ cup",
+          "prep": "rinsed and soaked 20 minutes",
+          "group": "Bowl"
+        },
+        {
+          "ref": "water",
+          "g": 400,
+          "group": "Bowl"
+        },
+        {
+          "ref": "lettuce",
+          "g": 90,
+          "prep": "shredded",
+          "group": "Bowl"
+        },
+        {
+          "ref": "tomato",
+          "g": 120,
+          "prep": "diced",
+          "group": "Bowl"
+        },
+        {
+          "ref": "cucumber",
+          "g": 120,
+          "prep": "diced",
+          "group": "Bowl"
+        },
+        {
+          "ref": "onion",
+          "g": 40,
+          "prep": "thinly sliced",
+          "group": "Bowl"
+        },
+        {
+          "ref": "parsley",
+          "g": 10,
+          "prep": "chopped",
+          "group": "Bowl"
+        },
+        {
+          "ref": "hung_curd",
+          "g": 120,
+          "group": "Garlic yogurt"
+        },
+        {
+          "ref": "garlic",
+          "g": 3,
+          "measure": "1 small clove",
+          "prep": "grated",
+          "group": "Garlic yogurt"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 10,
+          "measure": "2 tsp",
+          "group": "Garlic yogurt"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Marinate the chicken",
+          "kind": "prep",
+          "text": "In a mixing bowl combine the marinade hung curd, lemon juice, garlic, cumin, coriander powder, Kashmiri chilli, turmeric, cinnamon, pepper, olive oil and salt. Add the chicken strips and mix until coated.",
+          "uses": [
+            "chicken_thigh",
+            "hung_curd",
+            "lemon_juice",
+            "garlic",
+            "cumin_powder",
+            "coriander_powder",
+            "kashmiri_chilli",
+            "turmeric",
+            "cinnamon",
+            "black_pepper",
+            "olive_oil",
+            "salt"
+          ],
+          "visual": "Thin chicken thigh strips coated in a thick orange-red spiced yogurt marinade in a steel mixing bowl"
+        },
+        {
+          "title": "Rest to marinate",
+          "kind": "rest",
+          "text": "Cover and refrigerate for at least 1 hour, or up to overnight.",
+          "uses": [],
+          "visual": "The steel bowl of marinated chicken covered with a plate on a fridge shelf",
+          "timerMin": 60
+        },
+        {
+          "title": "Cook the brown rice",
+          "kind": "cook",
+          "text": "Drain the soaked rice and add to a saucepan with the water and a pinch of salt. Bring to a boil, cover and cook on low heat for 30 minutes until tender, then rest covered 5 minutes. In a pressure cooker, cook for 3 whistles.",
+          "uses": [
+            "brown_rice",
+            "water"
+          ],
+          "visual": "Cooked brown rice, grains separate and plump, in a steel saucepan with the lid just lifted and steam rising",
+          "timerMin": 30,
+          "heat": "low",
+          "equipment": [
+            "saucepan|pressure_cooker"
+          ]
+        },
+        {
+          "title": "Char the chicken",
+          "kind": "cook",
+          "text": "Heat a tawa or wide non-stick pan over high heat. Spread the chicken in a single layer and cook for 10 to 12 minutes, turning occasionally, until cooked through and charred at the edges. Work in two batches if needed.",
+          "uses": [],
+          "visual": "Chicken strips on a hot black tawa, deep orange with dark charred edges, a little smoke rising",
+          "timerMin": 12,
+          "heat": "high",
+          "equipment": [
+            "tawa|non_stick_pan"
+          ]
+        },
+        {
+          "title": "Make the garlic yogurt",
+          "kind": "prep",
+          "text": "Whisk the remaining hung curd with the grated garlic, lemon juice, a pinch of salt and 1 to 2 tablespoons of water into a pourable sauce.",
+          "uses": [
+            "hung_curd",
+            "garlic",
+            "lemon_juice"
+          ],
+          "visual": "A small bowl of smooth white garlic yogurt sauce with a spoon, thin enough to drizzle"
+        },
+        {
+          "title": "Chop the salad",
+          "kind": "prep",
+          "text": "Shred the lettuce, dice the tomato and cucumber, slice the onion thinly and chop the parsley.",
+          "uses": [
+            "lettuce",
+            "tomato",
+            "cucumber",
+            "onion",
+            "parsley"
+          ],
+          "visual": "Shredded lettuce, diced tomato, diced cucumber, thin onion slices and chopped parsley in separate piles on a wooden board"
+        },
+        {
+          "title": "Build the bowls",
+          "kind": "assemble",
+          "text": "Divide the rice between three bowls. Arrange the salad vegetables and charred chicken on top.",
+          "uses": [],
+          "visual": "Three bowls each with a base of brown rice, sections of lettuce, tomato and cucumber, and a heap of charred orange chicken strips"
+        },
+        {
+          "title": "Drizzle and serve",
+          "kind": "serve",
+          "text": "Drizzle the garlic yogurt over each bowl and scatter with parsley and onion. Serve warm.",
+          "uses": [],
+          "visual": "A finished shawarma bowl: brown rice, charred chicken, crisp salad, ribbons of white garlic yogurt and green parsley on top"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "chicken_thigh",
+          "with": "chicken_breast",
+          "ratio": 1,
+          "note": "Breast is leaner; cook 2 minutes less so it stays juicy."
+        },
+        {
+          "ref": "brown_rice",
+          "with": "quinoa",
+          "ratio": 0.8,
+          "note": "Quinoa cooks in 15 minutes and adds more protein."
+        },
+        {
+          "ref": "chicken_thigh",
+          "with": "paneer",
+          "ratio": 0.6,
+          "note": "Marinate paneer strips the same way and char for 4 minutes for a vegetarian bowl."
+        }
+      ],
+      "storage": "Keep chicken, rice, salad and sauce in separate boxes in the fridge for up to 3 days.",
+      "reheating": "Reheat chicken and rice in a pan or microwave until piping hot; add salad and yogurt cold.",
+      "tags": [
+        "meal_prep"
+      ]
+    },
+    {
+      "id": "lemon-herb-grilled-chicken",
+      "title": "Lemon–Herb Grilled Chicken",
+      "description": "Flattened chicken breasts marinated in lemon, garlic, olive oil, oregano and parsley, then grilled until golden. Pair it with a salad, soup or roasted vegetables.",
+      "cuisine": "mediterranean",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 3,
+      "prepMin": 10,
+      "cookMin": 14,
+      "restMin": 30,
+      "difficulty": "easy",
+      "equipment": [
+        "mixing_bowl",
+        "grill|non_stick_pan|air_fryer"
+      ],
+      "ingredients": [
+        {
+          "ref": "chicken_breast",
+          "g": 500,
+          "measure": "3 fillets"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 30,
+          "measure": "2 tbsp"
+        },
+        {
+          "ref": "garlic",
+          "g": 12,
+          "measure": "4 cloves",
+          "prep": "grated"
+        },
+        {
+          "ref": "olive_oil",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "oregano",
+          "g": 2,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "parsley",
+          "g": 15,
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 2
+        },
+        {
+          "ref": "chilli_flakes",
+          "g": 1,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Flatten the chicken",
+          "kind": "prep",
+          "text": "Place each breast between two sheets of cling film or inside a plastic bag and pound with a rolling pin to an even 1.5 cm thickness so it cooks evenly.",
+          "uses": [
+            "chicken_breast"
+          ],
+          "visual": "A chicken breast fillet between sheets of cling film on a wooden board, a rolling pin beside it, the fillet flattened evenly"
+        },
+        {
+          "title": "Mix the marinade",
+          "kind": "prep",
+          "text": "In a mixing bowl stir together the lemon juice, garlic, olive oil, oregano, half the parsley, black pepper, chilli flakes and salt.",
+          "uses": [
+            "lemon_juice",
+            "garlic",
+            "olive_oil",
+            "oregano",
+            "parsley",
+            "black_pepper",
+            "chilli_flakes",
+            "salt"
+          ],
+          "visual": "A loose, golden marinade in a steel mixing bowl speckled with chopped green parsley, oregano, red chilli flakes and grated garlic"
+        },
+        {
+          "title": "Marinate",
+          "kind": "rest",
+          "text": "Turn the chicken in the marinade, cover and refrigerate for 30 minutes. Don't go beyond 4 hours — the lemon starts to turn the texture mushy.",
+          "uses": [],
+          "visual": "Flattened chicken fillets coated in herby lemon marinade in the covered steel bowl",
+          "timerMin": 30
+        },
+        {
+          "title": "Grill the chicken",
+          "kind": "cook",
+          "text": "Heat a grill pan or non-stick pan over medium-high heat and cook the chicken for 5 to 6 minutes per side until golden and cooked through. In an air fryer, cook at 200°C for 12 to 14 minutes, turning halfway.",
+          "uses": [],
+          "visual": "Chicken fillets with deep golden grill marks in a ridged grill pan, flecks of herbs caught on the surface",
+          "timerMin": 12,
+          "tempC": 200,
+          "heat": "high",
+          "equipment": [
+            "grill|non_stick_pan|air_fryer"
+          ]
+        },
+        {
+          "title": "Rest before slicing",
+          "kind": "rest",
+          "text": "Rest the chicken on a board for 5 minutes so the juices settle back into the meat.",
+          "uses": [],
+          "visual": "Golden grilled chicken fillets resting on a wooden board, glistening with juices",
+          "timerMin": 5
+        },
+        {
+          "title": "Slice and serve",
+          "kind": "serve",
+          "text": "Slice the chicken, sprinkle with the remaining parsley and serve with a Greek salad, tabbouleh or soup.",
+          "uses": [],
+          "visual": "Sliced lemon–herb chicken fanned out on a white plate showing a juicy interior, sprinkled with fresh parsley, lemon wedges and a green salad alongside"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "chicken_breast",
+          "with": "chicken_thigh",
+          "ratio": 1,
+          "note": "Boneless thighs stay juicier and need no pounding; cook 6 to 7 minutes per side."
+        },
+        {
+          "ref": "parsley",
+          "with": "coriander_leaves",
+          "ratio": 1,
+          "note": "Coriander and a little mint give a fresh, Indian-leaning flavour."
+        }
+      ],
+      "storage": "Refrigerate cooked chicken in an airtight box for up to 3 days.",
+      "reheating": "Warm slices in a pan with a splash of water, or eat cold in salads and wraps.",
+      "tags": [
+        "meal_prep",
+        "family",
+        "kid_friendly"
+      ]
+    },
+    {
+      "id": "zucchini-noodles-tomato-garlic-paneer",
+      "title": "Zucchini Noodles in Tomato–Garlic Sauce with Paneer",
+      "description": "Ribbons of zucchini tossed for just two minutes in a garlicky, chilli-flecked fresh tomato sauce with seared paneer cubes, basil and parmesan — pasta-style comfort without the pasta.",
+      "cuisine": "mediterranean",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "complete",
+      "servings": 2,
+      "prepMin": 20,
+      "cookMin": 18,
+      "difficulty": "easy",
+      "equipment": [
+        "knife_board",
+        "non_stick_pan|kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "zucchini",
+          "g": 400,
+          "measure": "2 medium",
+          "prep": "spiralised or cut into thin noodles with a julienne peeler"
+        },
+        {
+          "ref": "salt",
+          "g": 3,
+          "toTaste": true
+        },
+        {
+          "ref": "olive_oil",
+          "g": 20,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "paneer",
+          "g": 150,
+          "prep": "cut into ¾-inch cubes"
+        },
+        {
+          "ref": "garlic",
+          "g": 15,
+          "measure": "5 cloves",
+          "prep": "thinly sliced"
+        },
+        {
+          "ref": "chilli_flakes",
+          "g": 1,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "tomato",
+          "g": 350,
+          "measure": "3–4 medium",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "oregano",
+          "g": 1,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 1
+        },
+        {
+          "ref": "basil",
+          "g": 8,
+          "measure": "a handful of leaves",
+          "prep": "torn"
+        },
+        {
+          "ref": "parmesan",
+          "g": 15,
+          "measure": "3 tbsp",
+          "prep": "grated"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Make the zucchini noodles",
+          "kind": "prep",
+          "text": "Spiralise the zucchini, or cut long thin strips with a julienne peeler. Toss with a pinch of salt in a colander and leave for 10 minutes, then pat dry with a kitchen towel so the sauce doesn't turn watery.",
+          "uses": [
+            "zucchini",
+            "salt"
+          ],
+          "visual": "A tangle of pale green zucchini noodles in a steel colander, beads of moisture on the strands, a kitchen towel beside",
+          "timerMin": 10
+        },
+        {
+          "title": "Sear the paneer",
+          "kind": "cook",
+          "text": "Heat 1 teaspoon of olive oil in a wide non-stick pan over medium-high heat. Sear the paneer cubes for 3 to 4 minutes, turning, until golden on most sides. Lift out onto a plate.",
+          "uses": [
+            "olive_oil",
+            "paneer"
+          ],
+          "visual": "Golden-edged paneer cubes sizzling in a little oil in a wide black non-stick pan",
+          "timerMin": 4,
+          "heat": "high"
+        },
+        {
+          "title": "Gently fry the garlic",
+          "kind": "cook",
+          "text": "Lower the heat, add the remaining oil, the sliced garlic and chilli flakes. Cook for 1 minute until the garlic is pale gold — not brown.",
+          "uses": [
+            "garlic",
+            "chilli_flakes"
+          ],
+          "visual": "Pale golden garlic slices and red chilli flakes shimmering in olive oil in the empty pan",
+          "timerMin": 1,
+          "heat": "low"
+        },
+        {
+          "title": "Cook the tomato sauce",
+          "kind": "cook",
+          "text": "Add the tomatoes, oregano, pepper and a pinch of salt. Cook on medium heat for 10 minutes, stirring, until the tomatoes collapse into a thick, jammy sauce.",
+          "uses": [
+            "tomato",
+            "oregano",
+            "black_pepper"
+          ],
+          "visual": "A thick, glossy red tomato sauce bubbling in the pan with slivers of garlic and flecks of oregano",
+          "timerMin": 10,
+          "heat": "medium"
+        },
+        {
+          "title": "Toss the noodles",
+          "kind": "cook",
+          "text": "Add the zucchini noodles and seared paneer and toss over high heat for 2 minutes only, just until the noodles are hot but still have a bite.",
+          "uses": [],
+          "visual": "Zucchini noodles and golden paneer cubes being tossed through the red tomato sauce in the pan with tongs",
+          "timerMin": 2,
+          "heat": "high"
+        },
+        {
+          "title": "Finish and serve",
+          "kind": "serve",
+          "text": "Twirl into two bowls, scatter with torn basil and grated parmesan and serve at once.",
+          "uses": [
+            "basil",
+            "parmesan"
+          ],
+          "visual": "A twirled nest of zucchini noodles in red tomato sauce with paneer cubes, topped with green basil leaves and a dusting of parmesan in a white bowl"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "paneer",
+          "with": "tofu",
+          "ratio": 1,
+          "note": "Use pressed firm tofu and skip the parmesan for a vegan bowl."
+        },
+        {
+          "ref": "basil",
+          "with": "oregano",
+          "ratio": 0.2,
+          "note": "No fresh basil? Add an extra pinch of dried oregano to the sauce."
+        },
+        {
+          "ref": "parmesan",
+          "with": "cheese_cheddar",
+          "ratio": 1,
+          "note": "Finely grated cheddar melts in nicely too."
+        }
+      ],
+      "storage": "Best eaten straight away — zucchini noodles release water as they sit. The tomato sauce keeps 3 days in the fridge.",
+      "reheating": "Reheat only the sauce until bubbling, then toss in freshly cut noodles.",
+      "tags": []
+    },
+    {
+      "id": "chicken-broccoli-stir-fry",
+      "title": "Chicken and Broccoli Stir-Fry",
+      "description": "Tender velveted chicken slices and bright green broccoli tossed on high heat with garlic, ginger and a light soy–vinegar glaze. Ready in under 30 minutes.",
+      "cuisine": "east_asian",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 2,
+      "prepMin": 15,
+      "cookMin": 12,
+      "restMin": 15,
+      "difficulty": "easy",
+      "equipment": [
+        "kadai|non_stick_pan",
+        "knife_board",
+        "mixing_bowl"
+      ],
+      "ingredients": [
+        {
+          "ref": "chicken_breast",
+          "g": 300,
+          "prep": "thinly sliced across the grain"
+        },
+        {
+          "ref": "soy_sauce",
+          "g": 20,
+          "measure": "1 tbsp + 1 tsp"
+        },
+        {
+          "ref": "cornflour",
+          "g": 6,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 1
+        },
+        {
+          "ref": "vinegar",
+          "g": 5,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "water",
+          "g": 90
+        },
+        {
+          "ref": "sunflower_oil",
+          "g": 12,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "garlic",
+          "g": 12,
+          "measure": "4 cloves",
+          "prep": "chopped"
+        },
+        {
+          "ref": "ginger",
+          "g": 8,
+          "measure": "1-inch piece",
+          "prep": "julienned"
+        },
+        {
+          "ref": "spring_onion",
+          "g": 30,
+          "measure": "2 stalks",
+          "prep": "whites and greens sliced separately"
+        },
+        {
+          "ref": "broccoli",
+          "g": 250,
+          "measure": "1 small head",
+          "prep": "small florets, stalk peeled and sliced"
+        },
+        {
+          "ref": "chilli_flakes",
+          "g": 1,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "sesame_seeds",
+          "g": 3,
+          "measure": "1 tsp"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Velvet the chicken",
+          "kind": "prep",
+          "text": "Toss the sliced chicken with 1 teaspoon of the soy sauce, half the cornflour and the black pepper. Leave for 15 minutes — the light coating keeps it juicy on high heat.",
+          "uses": [
+            "chicken_breast",
+            "soy_sauce",
+            "cornflour",
+            "black_pepper"
+          ],
+          "visual": "Thin chicken slices lightly coated in a translucent soy and cornflour glaze in a steel mixing bowl",
+          "timerMin": 15
+        },
+        {
+          "title": "Mix the sauce",
+          "kind": "prep",
+          "text": "In a small bowl stir the remaining soy sauce and cornflour with the vinegar and 4 tablespoons of the water until smooth.",
+          "uses": [
+            "vinegar",
+            "water"
+          ],
+          "visual": "A small cup of thin brown soy–vinegar sauce with a spoon, cornflour fully dissolved"
+        },
+        {
+          "title": "Sear the chicken",
+          "kind": "cook",
+          "text": "Heat two-thirds of the oil in a kadai over high heat until shimmering. Spread the chicken in a single layer and cook for 4 to 5 minutes, turning once, until lightly browned and cooked through. Lift out onto a plate.",
+          "uses": [
+            "sunflower_oil"
+          ],
+          "visual": "Chicken slices browning in a single layer in a black iron kadai, edges turning golden",
+          "timerMin": 5,
+          "heat": "high"
+        },
+        {
+          "title": "Stir-fry the broccoli",
+          "kind": "cook",
+          "text": "Add the remaining oil, the garlic, ginger and spring onion whites and stir for 30 seconds. Add the broccoli and the rest of the water and toss for 3 minutes until bright green and just tender.",
+          "uses": [
+            "garlic",
+            "ginger",
+            "spring_onion",
+            "broccoli"
+          ],
+          "visual": "Bright green broccoli florets tossed with chopped garlic, ginger strips and white spring onion rings in the steaming kadai",
+          "timerMin": 3,
+          "heat": "high"
+        },
+        {
+          "title": "Glaze everything",
+          "kind": "cook",
+          "text": "Return the chicken, add the chilli flakes, stir the sauce and pour it in. Toss for 1 to 2 minutes until the sauce thickens and coats everything in a glossy layer.",
+          "uses": [
+            "chilli_flakes"
+          ],
+          "visual": "Chicken slices and broccoli coated in a glossy brown sauce in the kadai, red chilli flakes scattered through",
+          "timerMin": 2,
+          "heat": "high"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Scatter over the spring onion greens and sesame seeds. Serve hot with brown rice or egg fried cauliflower rice.",
+          "uses": [
+            "sesame_seeds"
+          ],
+          "visual": "Chicken and broccoli stir-fry in a white bowl, glossy and green, sprinkled with sesame seeds and spring onion greens, a bowl of rice beside"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "chicken_breast",
+          "with": "tofu",
+          "ratio": 1,
+          "note": "Press and cube firm tofu and sear it until golden before adding the broccoli."
+        },
+        {
+          "ref": "broccoli",
+          "with": "capsicum",
+          "ratio": 1,
+          "note": "Capsicum, french beans or cabbage make a cheaper mix of vegetables."
+        }
+      ],
+      "storage": "Keeps 2 days in the fridge in an airtight box.",
+      "reheating": "Reheat in a hot pan for 2 minutes with a splash of water so the broccoli stays crisp.",
+      "tags": [
+        "kid_friendly"
+      ]
+    },
+    {
+      "id": "crispy-tofu-vegetable-stir-fry",
+      "title": "Crispy Tofu and Vegetable Stir-Fry",
+      "description": "Pan-crisped tofu cubes tossed with crunchy capsicum, carrot, beans and cabbage in a sweet–savoury soy and ginger sauce. A colourful vegan main for rice or noodles.",
+      "cuisine": "east_asian",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 2,
+      "prepMin": 25,
+      "cookMin": 15,
+      "difficulty": "easy",
+      "equipment": [
+        "non_stick_pan|kadai",
+        "knife_board",
+        "mixing_bowl"
+      ],
+      "ingredients": [
+        {
+          "ref": "tofu",
+          "g": 250,
+          "measure": "1 block"
+        },
+        {
+          "ref": "onion",
+          "g": 60,
+          "prep": "cut into petals"
+        },
+        {
+          "ref": "capsicum",
+          "g": 80,
+          "prep": "cut into squares"
+        },
+        {
+          "ref": "carrot",
+          "g": 60,
+          "measure": "1 small",
+          "prep": "thinly sliced on the diagonal"
+        },
+        {
+          "ref": "french_beans",
+          "g": 60,
+          "prep": "cut into 2-inch lengths"
+        },
+        {
+          "ref": "cabbage",
+          "g": 80,
+          "prep": "roughly shredded"
+        },
+        {
+          "ref": "cornflour",
+          "g": 8,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "sunflower_oil",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "soy_sauce",
+          "g": 20,
+          "measure": "1 tbsp + 1 tsp"
+        },
+        {
+          "ref": "vinegar",
+          "g": 5,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "honey",
+          "g": 5,
+          "measure": "¾ tsp"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 1
+        },
+        {
+          "ref": "water",
+          "g": 40
+        },
+        {
+          "ref": "garlic",
+          "g": 10,
+          "measure": "3 cloves",
+          "prep": "chopped"
+        },
+        {
+          "ref": "ginger",
+          "g": 8,
+          "measure": "1-inch piece",
+          "prep": "chopped"
+        },
+        {
+          "ref": "spring_onion",
+          "g": 15,
+          "measure": "1 stalk",
+          "prep": "sliced"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Press the tofu",
+          "kind": "prep",
+          "text": "Wrap the tofu in a clean kitchen towel, set a heavy pan on top and press for 15 minutes to squeeze out water. Then cut into 1-inch cubes.",
+          "uses": [
+            "tofu"
+          ],
+          "visual": "A block of tofu wrapped in a white kitchen towel under a heavy iron pan, and beside it a few pressed tofu cubes on a board",
+          "timerMin": 15
+        },
+        {
+          "title": "Cut the vegetables",
+          "kind": "prep",
+          "text": "While the tofu presses, cut the onion into petals, the capsicum into squares, slice the carrot on the diagonal, cut the beans and shred the cabbage.",
+          "uses": [
+            "onion",
+            "capsicum",
+            "carrot",
+            "french_beans",
+            "cabbage"
+          ],
+          "visual": "Onion petals, green capsicum squares, orange carrot ovals, cut french beans and pale shredded cabbage in neat piles on a wooden board"
+        },
+        {
+          "title": "Coat the tofu",
+          "kind": "prep",
+          "text": "Toss the tofu cubes in a bowl with the cornflour until evenly dusted.",
+          "uses": [
+            "cornflour"
+          ],
+          "visual": "White tofu cubes dusted in a thin, powdery coat of cornflour in a steel mixing bowl"
+        },
+        {
+          "title": "Pan-fry the tofu",
+          "kind": "cook",
+          "text": "Heat two-thirds of the oil in a non-stick pan over medium-high heat. Fry the tofu for 6 to 8 minutes, turning every couple of minutes, until golden and crisp on all sides. Lift out.",
+          "uses": [
+            "sunflower_oil"
+          ],
+          "visual": "Golden, crisp-edged tofu cubes in a wide black non-stick pan, a few turned to show different browned faces",
+          "timerMin": 7,
+          "heat": "high"
+        },
+        {
+          "title": "Mix the sauce",
+          "kind": "prep",
+          "text": "Stir the soy sauce, vinegar, honey, black pepper and water together in a small cup.",
+          "uses": [
+            "soy_sauce",
+            "vinegar",
+            "honey",
+            "black_pepper",
+            "water"
+          ],
+          "visual": "A small cup of thin, dark brown soy–honey sauce with a spoon resting in it"
+        },
+        {
+          "title": "Stir-fry the vegetables",
+          "kind": "cook",
+          "text": "Add the remaining oil to the pan, then the garlic and ginger for 30 seconds. Add all the vegetables and toss on high heat for 3 to 4 minutes until just tender but still crunchy.",
+          "uses": [
+            "garlic",
+            "ginger"
+          ],
+          "visual": "Colourful onion, capsicum, carrot, beans and cabbage being tossed on high heat in the pan with chopped garlic and ginger, a little steam rising",
+          "timerMin": 4,
+          "heat": "high"
+        },
+        {
+          "title": "Toss with sauce and tofu",
+          "kind": "cook",
+          "text": "Pour in the sauce, return the tofu and toss for 1 minute until everything is glazed.",
+          "uses": [],
+          "visual": "Crisp tofu cubes and vegetables shining with a dark soy glaze in the pan",
+          "timerMin": 1,
+          "heat": "high"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Sprinkle with sliced spring onion and serve hot with brown rice or cauliflower rice.",
+          "uses": [
+            "spring_onion"
+          ],
+          "visual": "Crispy tofu and vegetable stir-fry heaped in a white bowl, flecked with spring onion greens, a small bowl of rice alongside"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "honey",
+          "with": "sugar",
+          "ratio": 1,
+          "note": "Use a pinch of sugar to keep the dish fully vegan."
+        },
+        {
+          "ref": "tofu",
+          "with": "paneer",
+          "ratio": 1,
+          "note": "Paneer needs no pressing; sear it 3 to 4 minutes."
+        },
+        {
+          "ref": "french_beans",
+          "with": "broccoli",
+          "ratio": 1,
+          "note": "Broccoli florets work well in place of the beans."
+        }
+      ],
+      "storage": "Keeps 2 days in the fridge; the tofu softens a little.",
+      "reheating": "Reheat in a hot pan for 2 minutes rather than the microwave to keep the tofu crisp.",
+      "tags": []
+    },
+    {
+      "id": "egg-fried-cauliflower-rice",
+      "title": "Egg Fried Cauliflower Rice",
+      "description": "Indo-Chinese-style egg fried 'rice' made with riced cauliflower, soft-scrambled eggs, crunchy vegetables, garlic, soy and plenty of pepper. Pair it with chilli paneer or gobi manchurian.",
+      "cuisine": "indo_chinese",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "base",
+      "servings": 2,
+      "prepMin": 15,
+      "cookMin": 12,
+      "difficulty": "easy",
+      "equipment": [
+        "kadai|non_stick_pan",
+        "mixer_grinder|knife_board"
+      ],
+      "ingredients": [
+        {
+          "ref": "cauliflower",
+          "g": 400,
+          "measure": "1 small head",
+          "prep": "florets"
+        },
+        {
+          "ref": "garlic",
+          "g": 10,
+          "measure": "3 cloves",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "carrot",
+          "g": 50,
+          "prep": "finely diced"
+        },
+        {
+          "ref": "french_beans",
+          "g": 50,
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "capsicum",
+          "g": 40,
+          "prep": "finely diced"
+        },
+        {
+          "ref": "spring_onion",
+          "g": 30,
+          "measure": "2 stalks",
+          "prep": "whites and greens chopped separately"
+        },
+        {
+          "ref": "sunflower_oil",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "egg",
+          "g": 150,
+          "measure": "3 eggs",
+          "prep": "beaten"
+        },
+        {
+          "ref": "salt",
+          "g": 2,
+          "toTaste": true
+        },
+        {
+          "ref": "soy_sauce",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "vinegar",
+          "g": 5,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 2,
+          "measure": "1 tsp"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Rice the cauliflower",
+          "kind": "prep",
+          "text": "Pulse the florets in a mixer jar in short bursts until they look like rice grains, or grate them on a box grater. Spread on a towel to dry the surface.",
+          "uses": [
+            "cauliflower"
+          ],
+          "visual": "Freshly riced cauliflower spread on a kitchen towel, looking like small white rice grains, a few florets still whole beside it",
+          "equipment": [
+            "mixer_grinder|knife_board"
+          ]
+        },
+        {
+          "title": "Chop the vegetables",
+          "kind": "prep",
+          "text": "Finely chop the garlic, dice the carrot and capsicum small, chop the beans and spring onion, keeping the whites and greens apart.",
+          "uses": [
+            "garlic",
+            "carrot",
+            "french_beans",
+            "capsicum",
+            "spring_onion"
+          ],
+          "visual": "Tiny dice of orange carrot, green capsicum and beans, chopped garlic and spring onion whites and greens in small heaps on a wooden board"
+        },
+        {
+          "title": "Scramble the eggs",
+          "kind": "cook",
+          "text": "Heat 1 teaspoon of oil in a kadai over medium heat. Pour in the beaten eggs with a pinch of salt and stir gently until just set in soft curds. Tip onto a plate.",
+          "uses": [
+            "sunflower_oil",
+            "egg",
+            "salt"
+          ],
+          "visual": "Soft, yellow scrambled egg curds in a black kadai being pushed together with a spatula",
+          "timerMin": 2,
+          "heat": "medium"
+        },
+        {
+          "title": "Stir-fry the vegetables",
+          "kind": "cook",
+          "text": "Add the remaining oil to the kadai on high heat. Stir-fry the garlic and spring onion whites for 20 seconds, then the carrot, beans and capsicum for 2 minutes.",
+          "uses": [],
+          "visual": "Diced carrot, beans and capsicum with chopped garlic sizzling on high heat in the kadai, edges just blistering",
+          "timerMin": 2,
+          "heat": "high"
+        },
+        {
+          "title": "Fry the cauliflower rice",
+          "kind": "cook",
+          "text": "Add the riced cauliflower and stir-fry uncovered on high heat for 4 to 5 minutes until hot and slightly toasted but not mushy.",
+          "uses": [],
+          "visual": "Riced cauliflower tossed with the colourful diced vegetables in the kadai, a few grains lightly golden",
+          "timerMin": 5,
+          "heat": "high"
+        },
+        {
+          "title": "Season and add egg",
+          "kind": "cook",
+          "text": "Add the soy sauce, vinegar and black pepper around the edge of the kadai so they sizzle, then return the scrambled egg and toss for 1 minute. Taste for salt.",
+          "uses": [
+            "soy_sauce",
+            "vinegar",
+            "black_pepper"
+          ],
+          "visual": "Light brown, soy-tinted cauliflower rice in the kadai with yellow scrambled egg pieces and diced vegetables throughout, specks of black pepper",
+          "timerMin": 1,
+          "heat": "high"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Toss in the spring onion greens and serve hot with chilli paneer, chilli chicken or gobi manchurian.",
+          "uses": [],
+          "visual": "Egg fried cauliflower rice mounded in a bowl, studded with egg, carrot and beans, topped with spring onion greens, a plate of chilli paneer beside"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "egg",
+          "with": "tofu",
+          "ratio": 1,
+          "note": "Crumble and scramble firm tofu with a pinch of turmeric for an egg-free version."
+        },
+        {
+          "ref": "cauliflower",
+          "with": "rice",
+          "ratio": 0.4,
+          "note": "For classic egg fried rice use day-old cooked rice (about 160 g raw for two) — carbs rise sharply."
+        }
+      ],
+      "storage": "Best fresh. Raw riced cauliflower keeps 2 days in the fridge.",
+      "reheating": "Stir-fry for 1 to 2 minutes in a hot pan.",
+      "tags": [
+        "kid_friendly"
+      ]
+    },
+    {
+      "id": "chilli-paneer-pan-seared",
+      "title": "Chilli Paneer (Pan-Seared, Less Oil)",
+      "description": "Restaurant-style Indo-Chinese chilli paneer made at home with a light cornflour dusting and a quick pan-sear instead of deep-frying, tossed with crunchy onion, capsicum and a tangy soy–chilli glaze.",
+      "cuisine": "indo_chinese",
+      "mealTypes": [
+        "dinner",
+        "snack"
+      ],
+      "course": "main",
+      "servings": 2,
+      "prepMin": 15,
+      "cookMin": 15,
+      "difficulty": "easy",
+      "equipment": [
+        "non_stick_pan|kadai",
+        "knife_board",
+        "mixing_bowl"
+      ],
+      "ingredients": [
+        {
+          "ref": "paneer",
+          "g": 200,
+          "prep": "1-inch cubes"
+        },
+        {
+          "ref": "cornflour",
+          "g": 10,
+          "measure": "1 heaped tbsp"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 2,
+          "measure": "¾ tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 1,
+          "toTaste": true
+        },
+        {
+          "ref": "sunflower_oil",
+          "g": 12,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "soy_sauce",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "vinegar",
+          "g": 8,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "ketchup",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 1
+        },
+        {
+          "ref": "water",
+          "g": 60
+        },
+        {
+          "ref": "garlic",
+          "g": 12,
+          "measure": "4 cloves",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "ginger",
+          "g": 8,
+          "measure": "1-inch piece",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 6,
+          "measure": "2 chillies",
+          "prep": "slit"
+        },
+        {
+          "ref": "onion",
+          "g": 80,
+          "measure": "1 small",
+          "prep": "cut into petals"
+        },
+        {
+          "ref": "capsicum",
+          "g": 120,
+          "measure": "1 medium",
+          "prep": "1-inch squares"
+        },
+        {
+          "ref": "spring_onion",
+          "g": 20,
+          "measure": "1 stalk",
+          "prep": "sliced"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Dust the paneer",
+          "kind": "prep",
+          "text": "Toss the paneer cubes with two-thirds of the cornflour, the Kashmiri chilli and a pinch of salt until lightly coated.",
+          "uses": [
+            "paneer",
+            "cornflour",
+            "kashmiri_chilli",
+            "salt"
+          ],
+          "visual": "Paneer cubes lightly dusted with a pinkish coat of cornflour and red chilli powder in a steel mixing bowl"
+        },
+        {
+          "title": "Sear the paneer",
+          "kind": "cook",
+          "text": "Heat 2 teaspoons of oil in a non-stick pan over medium-high heat. Sear the paneer for about 4 minutes, turning, until crisp and golden on most sides. Lift out onto a plate.",
+          "uses": [
+            "sunflower_oil"
+          ],
+          "visual": "Crisp, golden-red paneer cubes in a wide black non-stick pan with only a thin film of oil",
+          "timerMin": 4,
+          "heat": "high"
+        },
+        {
+          "title": "Mix the sauce",
+          "kind": "prep",
+          "text": "Whisk the soy sauce, vinegar, ketchup, black pepper, the remaining cornflour and the water in a small cup.",
+          "uses": [
+            "soy_sauce",
+            "vinegar",
+            "ketchup",
+            "black_pepper",
+            "water"
+          ],
+          "visual": "A small cup of reddish-brown chilli–soy sauce, smooth with dissolved cornflour, a spoon resting in it"
+        },
+        {
+          "title": "Fry the aromatics",
+          "kind": "cook",
+          "text": "Add the remaining oil to the pan on high heat. Fry the garlic, ginger and green chillies for 30 to 40 seconds until fragrant.",
+          "uses": [
+            "garlic",
+            "ginger",
+            "green_chilli"
+          ],
+          "visual": "Finely chopped garlic, ginger and slit green chillies sizzling in a little oil in the hot pan",
+          "timerMin": 1,
+          "heat": "high"
+        },
+        {
+          "title": "Toss the vegetables",
+          "kind": "cook",
+          "text": "Add the onion petals and capsicum and toss on high heat for 2 minutes so they stay crunchy with a light char.",
+          "uses": [
+            "onion",
+            "capsicum"
+          ],
+          "visual": "Onion petals and green capsicum squares with charred spots being tossed in the pan with the aromatics",
+          "timerMin": 2,
+          "heat": "high"
+        },
+        {
+          "title": "Glaze with sauce",
+          "kind": "cook",
+          "text": "Stir the sauce and pour it in. Let it bubble for about 1 minute until glossy, then add the paneer and toss to coat.",
+          "uses": [],
+          "visual": "Golden paneer cubes, onion and capsicum coated in a glossy reddish-brown glaze in the pan",
+          "timerMin": 1,
+          "heat": "high"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Sprinkle with spring onion and serve hot as a starter, or as a main with egg fried cauliflower rice or brown rice.",
+          "uses": [
+            "spring_onion"
+          ],
+          "visual": "Chilli paneer heaped on a white plate, glossy and studded with capsicum and onion, topped with fresh spring onion greens"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "paneer",
+          "with": "tofu",
+          "ratio": 1,
+          "note": "Pressed firm tofu makes a vegan chilli tofu."
+        },
+        {
+          "ref": "ketchup",
+          "with": "tomato",
+          "ratio": 3,
+          "note": "Skip ketchup and add 30 g finely chopped tomato with the onions for less sugar."
+        }
+      ],
+      "storage": "Keeps 2 days in the fridge; the paneer softens as it sits.",
+      "reheating": "Reheat in a hot pan for 2 minutes with a splash of water.",
+      "tags": [
+        "kid_friendly"
+      ]
+    },
+    {
+      "id": "air-fryer-chilli-chicken-dry",
+      "title": "Air-Fryer Chilli Chicken (Dry)",
+      "description": "Indo-Chinese dry chilli chicken with a crisp coating made in the air fryer, then tossed in a hot kadai with garlic, green chillies, onion and capsicum.",
+      "cuisine": "indo_chinese",
+      "mealTypes": [
+        "snack",
+        "dinner"
+      ],
+      "course": "snack",
+      "servings": 3,
+      "prepMin": 15,
+      "cookMin": 22,
+      "restMin": 30,
+      "difficulty": "medium",
+      "equipment": [
+        "mixing_bowl",
+        "air_fryer|oven",
+        "kadai|non_stick_pan",
+        "knife_board"
+      ],
+      "ingredients": [
+        {
+          "ref": "chicken_thigh",
+          "g": 400,
+          "prep": "bite-sized pieces"
+        },
+        {
+          "ref": "egg_white",
+          "g": 33,
+          "measure": "1 egg white"
+        },
+        {
+          "ref": "cornflour",
+          "g": 15,
+          "measure": "2 tbsp"
+        },
+        {
+          "ref": "ginger_garlic_paste",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "soy_sauce",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 4,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 1
+        },
+        {
+          "ref": "salt",
+          "g": 2,
+          "toTaste": true
+        },
+        {
+          "ref": "sunflower_oil",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "garlic",
+          "g": 8,
+          "measure": "3 cloves",
+          "prep": "chopped"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 6,
+          "measure": "2 chillies",
+          "prep": "slit"
+        },
+        {
+          "ref": "onion",
+          "g": 60,
+          "prep": "cut into petals"
+        },
+        {
+          "ref": "capsicum",
+          "g": 80,
+          "prep": "1-inch squares"
+        },
+        {
+          "ref": "vinegar",
+          "g": 8,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "spring_onion",
+          "g": 15,
+          "measure": "1 stalk",
+          "prep": "sliced"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Marinate the chicken",
+          "kind": "prep",
+          "text": "In a mixing bowl combine the chicken with the egg white, cornflour, ginger–garlic paste, 2 teaspoons of the soy sauce, Kashmiri chilli, black pepper and salt. Mix until each piece is coated in a thin batter.",
+          "uses": [
+            "chicken_thigh",
+            "egg_white",
+            "cornflour",
+            "ginger_garlic_paste",
+            "soy_sauce",
+            "kashmiri_chilli",
+            "black_pepper",
+            "salt"
+          ],
+          "visual": "Chicken pieces coated in a thin red-orange batter of egg white, cornflour and chilli in a steel mixing bowl"
+        },
+        {
+          "title": "Rest the marinade",
+          "kind": "rest",
+          "text": "Cover and refrigerate for 30 minutes.",
+          "uses": [],
+          "visual": "The steel bowl of coated chicken covered with a plate on a fridge shelf",
+          "timerMin": 30
+        },
+        {
+          "title": "Air fry the chicken",
+          "kind": "cook",
+          "text": "Brush the air-fryer basket with 1 teaspoon of oil. Spread the chicken in a single layer and air fry at 200°C for 14 to 16 minutes, shaking halfway, until crisp and cooked through. In an oven, bake on a tray at 220°C for about 20 minutes.",
+          "uses": [
+            "sunflower_oil"
+          ],
+          "visual": "Crisp, deep red-brown chicken pieces in an open air-fryer basket, edges slightly charred",
+          "timerMin": 15,
+          "tempC": 200,
+          "equipment": [
+            "air_fryer|oven"
+          ]
+        },
+        {
+          "title": "Cut the vegetables",
+          "kind": "prep",
+          "text": "While the chicken cooks, chop the garlic, slit the green chillies and cut the onion into petals and the capsicum into squares.",
+          "uses": [
+            "garlic",
+            "green_chilli",
+            "onion",
+            "capsicum"
+          ],
+          "visual": "Chopped garlic, slit green chillies, onion petals and green capsicum squares on a wooden board"
+        },
+        {
+          "title": "Toss the vegetables",
+          "kind": "cook",
+          "text": "Heat the remaining oil in a kadai on high heat. Fry the garlic and green chillies for 30 seconds, then add the onion and capsicum and toss for 1 to 2 minutes so they stay crunchy.",
+          "uses": [],
+          "visual": "Onion petals and capsicum squares with slit green chillies and garlic being tossed on high heat in a black kadai",
+          "timerMin": 2,
+          "heat": "high"
+        },
+        {
+          "title": "Toss the chicken",
+          "kind": "cook",
+          "text": "Add the crisp chicken, the remaining soy sauce and the vinegar. Toss on high heat for 1 minute until the pieces are coated and the pan is dry.",
+          "uses": [
+            "vinegar"
+          ],
+          "visual": "Crisp chilli chicken pieces tossed with charred onion, capsicum and green chillies in the kadai, coated in a dark glaze with no gravy",
+          "timerMin": 1,
+          "heat": "high"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Scatter over the spring onion and serve hot as a starter.",
+          "uses": [
+            "spring_onion"
+          ],
+          "visual": "Dry chilli chicken piled on a plate with capsicum, onion and green chillies, scattered with spring onion greens"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "chicken_thigh",
+          "with": "chicken_breast",
+          "ratio": 1,
+          "note": "Breast is leaner; reduce air-frying to about 12 minutes so it doesn't dry out."
+        },
+        {
+          "ref": "egg_white",
+          "with": "curd",
+          "ratio": 1,
+          "note": "Use 2 tbsp thick curd instead of egg white for an egg-free coating."
+        }
+      ],
+      "storage": "Refrigerate up to 2 days.",
+      "reheating": "Re-crisp in the air fryer at 180°C for 4 minutes.",
+      "tags": []
+    },
+    {
+      "id": "air-fryer-gobi-manchurian-dry",
+      "title": "Air-Fryer Gobi Manchurian (Dry)",
+      "description": "Battered cauliflower florets crisped in the air fryer instead of deep-fried, then tossed in a garlicky Indo-Chinese soy, vinegar and chilli sauce.",
+      "cuisine": "indo_chinese",
+      "mealTypes": [
+        "snack",
+        "dinner"
+      ],
+      "course": "snack",
+      "servings": 3,
+      "prepMin": 15,
+      "cookMin": 22,
+      "difficulty": "easy",
+      "equipment": [
+        "mixing_bowl",
+        "air_fryer|oven",
+        "kadai|non_stick_pan",
+        "knife_board"
+      ],
+      "ingredients": [
+        {
+          "ref": "cauliflower",
+          "g": 400,
+          "measure": "1 small head",
+          "prep": "medium florets"
+        },
+        {
+          "ref": "cornflour",
+          "g": 25,
+          "measure": "3 tbsp"
+        },
+        {
+          "ref": "atta",
+          "g": 20,
+          "measure": "2½ tbsp"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 3,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "ginger_garlic_paste",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 3,
+          "toTaste": true
+        },
+        {
+          "ref": "water",
+          "g": 70
+        },
+        {
+          "ref": "sunflower_oil",
+          "g": 12,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "garlic",
+          "g": 10,
+          "measure": "3 cloves",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "ginger",
+          "g": 6,
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "measure": "1–2 chillies",
+          "prep": "chopped"
+        },
+        {
+          "ref": "spring_onion",
+          "g": 30,
+          "measure": "2 stalks",
+          "prep": "whites and greens sliced separately"
+        },
+        {
+          "ref": "soy_sauce",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "vinegar",
+          "g": 8,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "ketchup",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 1
+        }
+      ],
+      "steps": [
+        {
+          "title": "Clean the florets",
+          "kind": "prep",
+          "text": "Cut the cauliflower into even, medium florets. Rinse them in warm salted water and drain well, then pat dry.",
+          "uses": [
+            "cauliflower"
+          ],
+          "visual": "Even-sized white cauliflower florets drying on a kitchen towel"
+        },
+        {
+          "title": "Coat in batter",
+          "kind": "prep",
+          "text": "In a bowl mix the cornflour, atta, Kashmiri chilli, ginger–garlic paste and salt with about 4 tablespoons of water into a thick batter. Add the florets and toss until each one is coated.",
+          "uses": [
+            "cornflour",
+            "atta",
+            "kashmiri_chilli",
+            "ginger_garlic_paste",
+            "salt",
+            "water"
+          ],
+          "visual": "Cauliflower florets coated in a thick orange-red batter in a steel mixing bowl"
+        },
+        {
+          "title": "Air fry until crisp",
+          "kind": "cook",
+          "text": "Brush the basket with 1 teaspoon of oil and spread the florets in a single layer. Air fry at 200°C for 15 to 18 minutes, shaking twice, until crisp and golden. In an oven, bake on a tray at 220°C for 20 to 25 minutes.",
+          "uses": [
+            "sunflower_oil"
+          ],
+          "visual": "Crisp, golden-red battered cauliflower florets in an open air-fryer basket",
+          "timerMin": 16,
+          "tempC": 200,
+          "equipment": [
+            "air_fryer|oven"
+          ]
+        },
+        {
+          "title": "Chop the aromatics",
+          "kind": "prep",
+          "text": "While the florets cook, finely chop the garlic, ginger and green chilli and slice the spring onion.",
+          "uses": [
+            "garlic",
+            "ginger",
+            "green_chilli",
+            "spring_onion"
+          ],
+          "visual": "Small heaps of finely chopped garlic, ginger, green chilli and sliced spring onion whites and greens on a wooden board"
+        },
+        {
+          "title": "Make the Manchurian sauce",
+          "kind": "cook",
+          "text": "Heat the remaining oil in a kadai on high heat. Fry the garlic, ginger, green chilli and spring onion whites for 30 seconds. Add the soy sauce, vinegar, ketchup, pepper and 2 tablespoons of water and bubble for 1 minute.",
+          "uses": [
+            "soy_sauce",
+            "vinegar",
+            "ketchup",
+            "black_pepper"
+          ],
+          "visual": "A thin, bubbling dark reddish-brown sauce with flecks of garlic, ginger and spring onion in a black kadai",
+          "timerMin": 1,
+          "heat": "high"
+        },
+        {
+          "title": "Toss the florets",
+          "kind": "cook",
+          "text": "Add the crisp florets and toss for 30 seconds until coated. Don't keep cooking or the coating softens.",
+          "uses": [],
+          "visual": "Crisp cauliflower florets glazed in the dark Manchurian sauce being tossed in the kadai",
+          "timerMin": 1,
+          "heat": "high"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Top with spring onion greens and serve immediately as a starter.",
+          "uses": [],
+          "visual": "Glossy gobi manchurian heaped on a white plate, scattered with bright spring onion greens"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "atta",
+          "with": "besan",
+          "ratio": 1,
+          "note": "Use besan with the cornflour for a gluten-free batter."
+        },
+        {
+          "ref": "cauliflower",
+          "with": "broccoli",
+          "ratio": 1,
+          "note": "Broccoli florets crisp up the same way in 12 to 14 minutes."
+        },
+        {
+          "ref": "ketchup",
+          "with": "tomato",
+          "ratio": 2,
+          "note": "Use 30 g finely grated tomato instead of ketchup for less sugar; cook the sauce 1 minute longer."
+        }
+      ],
+      "storage": "Best eaten fresh; un-sauced air-fried florets keep 1 day in the fridge.",
+      "reheating": "Re-crisp un-sauced florets in the air fryer at 180°C for 4 minutes, then toss in freshly made sauce.",
+      "tags": [
+        "kid_friendly"
+      ]
+    },
+    {
+      "id": "hot-and-sour-vegetable-soup",
+      "title": "Hot and Sour Vegetable Soup",
+      "description": "A peppery, tangy Indo-Chinese soup loaded with finely chopped cabbage, carrot, beans, capsicum and mushrooms, lightly thickened and sharpened with vinegar.",
+      "cuisine": "indo_chinese",
+      "mealTypes": [
+        "dinner",
+        "snack"
+      ],
+      "course": "side",
+      "servings": 3,
+      "prepMin": 15,
+      "cookMin": 15,
+      "difficulty": "easy",
+      "equipment": [
+        "saucepan|kadai",
+        "knife_board"
+      ],
+      "ingredients": [
+        {
+          "ref": "garlic",
+          "g": 10,
+          "measure": "3 cloves",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "ginger",
+          "g": 8,
+          "measure": "1-inch piece",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "measure": "1–2 chillies",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "cabbage",
+          "g": 60,
+          "prep": "finely shredded"
+        },
+        {
+          "ref": "carrot",
+          "g": 50,
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "french_beans",
+          "g": 40,
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "capsicum",
+          "g": 40,
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "mushroom",
+          "g": 50,
+          "measure": "3 mushrooms",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "spring_onion",
+          "g": 20,
+          "measure": "1 stalk",
+          "prep": "whites and greens chopped separately"
+        },
+        {
+          "ref": "sunflower_oil",
+          "g": 8,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "water",
+          "g": 800
+        },
+        {
+          "ref": "soy_sauce",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "chilli_flakes",
+          "g": 1,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 2,
+          "toTaste": true
+        },
+        {
+          "ref": "cornflour",
+          "g": 12,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "vinegar",
+          "g": 20,
+          "measure": "4 tsp"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 2,
+          "measure": "1 tsp",
+          "prep": "freshly crushed"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Chop everything finely",
+          "kind": "prep",
+          "text": "Chop the garlic, ginger and green chilli very finely. Shred the cabbage and finely chop the carrot, beans, capsicum, mushrooms and spring onion — small pieces cook quickly and fit on a soup spoon.",
+          "uses": [
+            "garlic",
+            "ginger",
+            "green_chilli",
+            "cabbage",
+            "carrot",
+            "french_beans",
+            "capsicum",
+            "mushroom",
+            "spring_onion"
+          ],
+          "visual": "Finely chopped piles of cabbage, carrot, beans, capsicum, mushrooms, spring onion, garlic, ginger and green chilli arranged on a wooden board"
+        },
+        {
+          "title": "Fry the aromatics",
+          "kind": "cook",
+          "text": "Heat the oil in a saucepan over high heat. Fry the garlic, ginger, green chilli and spring onion whites for 30 seconds.",
+          "uses": [
+            "sunflower_oil"
+          ],
+          "visual": "Chopped garlic, ginger, green chilli and spring onion whites sizzling in a little oil at the bottom of a steel saucepan",
+          "timerMin": 1,
+          "heat": "high"
+        },
+        {
+          "title": "Stir-fry the vegetables",
+          "kind": "cook",
+          "text": "Add the cabbage, carrot, beans, capsicum and mushrooms and stir-fry on high heat for 2 minutes.",
+          "uses": [],
+          "visual": "Colourful finely chopped vegetables being stir-fried with the aromatics in the saucepan, mushrooms just starting to soften",
+          "timerMin": 2,
+          "heat": "high"
+        },
+        {
+          "title": "Add water and simmer",
+          "kind": "cook",
+          "text": "Pour in the water, soy sauce, chilli flakes and salt. Bring to a boil and simmer for 5 minutes.",
+          "uses": [
+            "water",
+            "soy_sauce",
+            "chilli_flakes",
+            "salt"
+          ],
+          "visual": "A light brown broth bubbling in the saucepan with flecks of carrot, cabbage, beans and mushrooms floating",
+          "timerMin": 5,
+          "heat": "medium"
+        },
+        {
+          "title": "Thicken the soup",
+          "kind": "cook",
+          "text": "Mix the cornflour with 3 tablespoons of cold water. Stir it into the simmering soup and cook for 2 minutes, stirring, until slightly thick and glossy.",
+          "uses": [
+            "cornflour"
+          ],
+          "visual": "The soup turned slightly thick and glossy in the saucepan, a ladle lifting it to show a silky texture",
+          "timerMin": 2,
+          "heat": "medium"
+        },
+        {
+          "title": "Add the sour and the heat",
+          "kind": "cook",
+          "text": "Turn off the heat and stir in the vinegar and crushed black pepper. Taste and adjust — it should be clearly sour and peppery.",
+          "uses": [
+            "vinegar",
+            "black_pepper"
+          ],
+          "visual": "Black pepper specks swirling on the surface of the thickened vegetable soup in the saucepan, steam rising"
+        },
+        {
+          "title": "Serve hot",
+          "kind": "serve",
+          "text": "Ladle into bowls, top with spring onion greens and serve piping hot.",
+          "uses": [],
+          "visual": "Hot and sour vegetable soup in a ceramic bowl, glossy brown with colourful vegetable flecks and a scattering of spring onion greens, steam rising"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "mushroom",
+          "with": "cabbage",
+          "ratio": 1,
+          "note": "Skip mushrooms and add extra cabbage if you avoid them."
+        },
+        {
+          "ref": "vinegar",
+          "with": "lemon_juice",
+          "ratio": 1,
+          "note": "Lemon juice gives a fresher sourness; add it off the heat."
+        }
+      ],
+      "storage": "Keeps 2 days in the fridge; it thickens as it stands.",
+      "reheating": "Reheat until bubbling, adding a splash of water if it's too thick.",
+      "tags": [
+        "one_pot"
+      ]
+    },
+    {
+      "id": "chicken-clear-soup-vegetables",
+      "title": "Chicken Clear Soup with Vegetables",
+      "description": "A light, gingery broth made by pressure-cooking bone-in chicken with garlic and pepper, then simmered with shredded chicken and tender-crisp vegetables.",
+      "cuisine": "indo_chinese",
+      "mealTypes": [
+        "dinner",
+        "lunch"
+      ],
+      "course": "side",
+      "servings": 3,
+      "prepMin": 10,
+      "cookMin": 30,
+      "difficulty": "easy",
+      "equipment": [
+        "pressure_cooker|saucepan",
+        "knife_board"
+      ],
+      "ingredients": [
+        {
+          "ref": "chicken_curry_cut",
+          "g": 300,
+          "prep": "bone-in pieces, rinsed"
+        },
+        {
+          "ref": "garlic",
+          "g": 10,
+          "measure": "3 cloves",
+          "prep": "crushed"
+        },
+        {
+          "ref": "ginger",
+          "g": 10,
+          "measure": "1-inch piece",
+          "prep": "sliced"
+        },
+        {
+          "ref": "onion",
+          "g": 50,
+          "prep": "quartered"
+        },
+        {
+          "ref": "black_pepper",
+          "g": 3,
+          "measure": "1 tsp",
+          "prep": "half whole, half freshly crushed"
+        },
+        {
+          "ref": "bay_leaf",
+          "g": 0.5,
+          "measure": "1 leaf"
+        },
+        {
+          "ref": "water",
+          "g": 1000
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true
+        },
+        {
+          "ref": "carrot",
+          "g": 60,
+          "prep": "small dice"
+        },
+        {
+          "ref": "cabbage",
+          "g": 60,
+          "prep": "shredded"
+        },
+        {
+          "ref": "french_beans",
+          "g": 40,
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "celery",
+          "g": 30,
+          "optional": true,
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "spring_onion",
+          "g": 20,
+          "measure": "1 stalk",
+          "prep": "sliced"
+        },
+        {
+          "ref": "soy_sauce",
+          "g": 5,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 10,
+          "measure": "2 tsp"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Set up the broth",
+          "kind": "prep",
+          "text": "Put the rinsed chicken, crushed garlic, sliced ginger, quartered onion, the whole peppercorns and bay leaf into a pressure cooker.",
+          "uses": [
+            "chicken_curry_cut",
+            "garlic",
+            "ginger",
+            "onion",
+            "black_pepper",
+            "bay_leaf"
+          ],
+          "visual": "Raw bone-in chicken pieces with crushed garlic, ginger slices, onion quarters, whole black peppercorns and a bay leaf in an open pressure cooker"
+        },
+        {
+          "title": "Pressure-cook the broth",
+          "kind": "cook",
+          "text": "Add the water and salt, close and cook on medium heat for 15 minutes (about 4 whistles). Let the pressure drop naturally. In a saucepan, simmer gently for 35 minutes, skimming off any foam.",
+          "uses": [
+            "water",
+            "salt"
+          ],
+          "visual": "A clear, pale golden broth with chicken pieces and floating aromatics in the opened pressure cooker, a little steam rising",
+          "timerMin": 15,
+          "heat": "medium",
+          "equipment": [
+            "pressure_cooker|saucepan"
+          ]
+        },
+        {
+          "title": "Strain and shred",
+          "kind": "prep",
+          "text": "Lift out the chicken and shred the meat off the bones with two forks. Strain the broth through a sieve and discard the onion, ginger, garlic and bay leaf.",
+          "uses": [],
+          "visual": "Shredded chicken on a plate beside the bones, and a bowl of strained clear golden broth with a steel sieve resting on top"
+        },
+        {
+          "title": "Chop the vegetables",
+          "kind": "prep",
+          "text": "Dice the carrot, shred the cabbage, chop the beans and celery, and slice the spring onion.",
+          "uses": [
+            "carrot",
+            "cabbage",
+            "french_beans",
+            "celery",
+            "spring_onion"
+          ],
+          "visual": "Small orange carrot dice, shredded cabbage, chopped beans, chopped celery and sliced spring onion in piles on a wooden board"
+        },
+        {
+          "title": "Simmer the vegetables",
+          "kind": "cook",
+          "text": "Bring the strained broth back to a boil, add the vegetables and simmer for 4 to 5 minutes until just tender. Add the shredded chicken to warm through.",
+          "uses": [],
+          "visual": "Clear golden broth simmering in the pressure cooker pan with bright carrot, cabbage, beans and shreds of chicken",
+          "timerMin": 5,
+          "heat": "medium"
+        },
+        {
+          "title": "Season",
+          "kind": "cook",
+          "text": "Turn off the heat and stir in the soy sauce, lemon juice and freshly crushed black pepper. Taste for salt.",
+          "uses": [
+            "soy_sauce",
+            "lemon_juice"
+          ],
+          "visual": "Crushed black pepper specks on the surface of the clear chicken and vegetable soup, a spoon stirring through"
+        },
+        {
+          "title": "Serve hot",
+          "kind": "serve",
+          "text": "Ladle into bowls and top with spring onion greens. Serve hot.",
+          "uses": [],
+          "visual": "A bowl of clear chicken soup with shredded chicken, carrot, cabbage and beans in golden broth, topped with spring onion, steam rising"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "chicken_curry_cut",
+          "with": "chicken_breast",
+          "ratio": 0.7,
+          "note": "Boneless breast cooks in 10 minutes but gives a lighter-flavoured broth."
+        },
+        {
+          "ref": "soy_sauce",
+          "with": "salt",
+          "ratio": 0.3,
+          "note": "Skip soy sauce for a gluten-free soup and season with salt alone."
+        }
+      ],
+      "storage": "Keeps 3 days in the fridge; the broth freezes well for 1 month.",
+      "reheating": "Bring to a gentle boil before serving.",
+      "tags": [
+        "family",
+        "meal_prep"
+      ]
+    }
+  ]
+}

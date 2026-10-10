@@ -75,7 +75,7 @@ export function computeTargets(input: HealthInput): Targets {
   // Protein is anchored to a reference weight so that higher body weights
   // don't produce excessive targets.
   const refWeight = bmi > 25 ? weightForBmi(25, input.heightCm) : input.weightKg;
-  let proteinPerKg = style === "high_protein" ? 1.8 : 1.3;
+  let proteinPerKg = style === "high_protein" ? 1.8 : style === "low_carb" || style === "keto" ? 1.5 : 1.3;
   if (input.ageYears >= 65) proteinPerKg = Math.max(proteinPerKg, 1.2);
   if (input.conditions.includes("kidney")) proteinPerKg = 0.8;
   if (!screening.isAdult) proteinPerKg = 1.0;

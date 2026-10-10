@@ -165,6 +165,9 @@ export const recipes = sqliteTable(
     cuisine: text("cuisine").notNull(),
     region: text("region"),
     mealTypes: json<string[]>("meal_types").notNull(),
+    course: text("course", {
+      enum: ["complete", "main", "side", "base", "accompaniment", "snack", "dessert", "drink"],
+    }).notNull(),
     dietType: text("diet_type", {
       enum: ["vegan", "vegetarian", "eggitarian", "non_vegetarian"],
     }).notNull(),

@@ -92,6 +92,14 @@ export type Nutrients = {
   fatG: number;
 };
 
+/**
+ * How a recipe fits into a meal. Indian meals are usually combinations — a
+ * base (rice, roti, idli, cauliflower rice), a main (sambar, curry) and a
+ * side (poriyal, thoran) — so the planner composes meals from these parts.
+ */
+export const COURSES = ["complete", "main", "side", "base", "accompaniment", "snack", "dessert", "drink"] as const;
+export type Course = (typeof COURSES)[number];
+
 export const MEAL_TYPES = ["breakfast", "lunch", "dinner", "snack", "dessert"] as const;
 export type MealType = (typeof MEAL_TYPES)[number];
 

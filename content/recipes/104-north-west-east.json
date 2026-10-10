@@ -1,0 +1,4842 @@
+{
+  "batch": "104-north-west-east",
+  "source": "original",
+  "author": "In-house recipe development",
+  "license": "Proprietary — original recipes written for this app",
+  "recipes": [
+    {
+      "id": "punjabi-palak-paneer",
+      "title": "Palak Paneer",
+      "description": "Soft paneer cubes in a bright green, garlicky spinach gravy. Blanching the spinach briefly and cooling it quickly keeps the colour vivid; a spoon of cream finishes it instead of the usual knob of butter.",
+      "cuisine": "north_indian",
+      "region": "Punjab",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 3,
+      "prepMin": 15,
+      "cookMin": 25,
+      "difficulty": "easy",
+      "equipment": [
+        "saucepan",
+        "kadai",
+        "mixer_grinder|blender"
+      ],
+      "ingredients": [
+        {
+          "ref": "spinach",
+          "g": 500,
+          "measure": "2 large bunches",
+          "prep": "stems trimmed, washed well"
+        },
+        {
+          "ref": "paneer",
+          "g": 200,
+          "prep": "cut into 1-inch cubes"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 6,
+          "measure": "2",
+          "prep": "roughly chopped"
+        },
+        {
+          "ref": "sunflower_oil",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "cumin_seeds",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "onion",
+          "g": 100,
+          "measure": "1 medium",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "ginger_garlic_paste",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "tomato",
+          "g": 100,
+          "measure": "1 medium",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "coriander_powder",
+          "g": 3,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "garam_masala",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "kasuri_methi",
+          "g": 1,
+          "measure": "½ tbsp",
+          "prep": "crushed"
+        },
+        {
+          "ref": "cream_fresh",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "water",
+          "g": 120
+        },
+        {
+          "ref": "salt",
+          "g": 5,
+          "toTaste": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Blanch the spinach",
+          "kind": "cook",
+          "text": "Bring a large saucepan of water to a rolling boil. Push in the spinach and blanch for 2 minutes, just until wilted, then lift it straight into a bowl of cold water. This stops the cooking and keeps it bright green.",
+          "uses": [
+            "spinach"
+          ],
+          "visual": "A steel saucepan of boiling water packed with just-wilted, vivid green spinach leaves, a bowl of cold water waiting beside it on the counter",
+          "timerMin": 2,
+          "heat": "high"
+        },
+        {
+          "title": "Purée the spinach",
+          "kind": "prep",
+          "text": "Squeeze the cooled spinach lightly and blend it with the green chillies and 3 to 4 tablespoons of the cold water into a smooth purée.",
+          "uses": [
+            "green_chilli"
+          ],
+          "visual": "A mixer jar full of smooth, glossy emerald-green spinach purée, a few flecks of green chilli visible",
+          "equipment": [
+            "mixer_grinder|blender"
+          ]
+        },
+        {
+          "title": "Temper cumin and onion",
+          "kind": "cook",
+          "text": "Heat the oil in a kadai over medium heat. Add the cumin seeds and let them sizzle for a few seconds, then add the onion and cook for 5 to 6 minutes until soft and light golden.",
+          "uses": [
+            "sunflower_oil",
+            "cumin_seeds",
+            "onion"
+          ],
+          "visual": "Light golden chopped onion and toasted cumin seeds glistening in oil in a black iron kadai",
+          "timerMin": 6,
+          "heat": "medium"
+        },
+        {
+          "title": "Build the masala",
+          "kind": "cook",
+          "text": "Stir in the ginger-garlic paste for 1 minute until the raw smell goes. Add the tomato, turmeric, coriander powder and salt and cook for 4 minutes until the tomato is soft and the masala looks thick.",
+          "uses": [
+            "ginger_garlic_paste",
+            "tomato",
+            "turmeric",
+            "coriander_powder",
+            "salt"
+          ],
+          "visual": "A thick, soft orange-brown onion-tomato masala in the iron kadai with oil starting to show at the edges",
+          "timerMin": 5,
+          "heat": "medium"
+        },
+        {
+          "title": "Simmer the spinach",
+          "kind": "cook",
+          "text": "Pour in the spinach purée and the remaining water. Stir well and simmer uncovered on low heat for 4 to 5 minutes. Don't cook it longer or the colour will dull.",
+          "uses": [
+            "water"
+          ],
+          "visual": "Smooth deep-green spinach gravy gently bubbling in the iron kadai, small specks of masala through it",
+          "timerMin": 5,
+          "heat": "low"
+        },
+        {
+          "title": "Add the paneer",
+          "kind": "cook",
+          "text": "Slide in the paneer cubes and sprinkle over the garam masala and crushed kasuri methi. Simmer for 2 minutes so the paneer warms through and softens.",
+          "uses": [
+            "paneer",
+            "garam_masala",
+            "kasuri_methi"
+          ],
+          "visual": "White paneer cubes nestled in the green spinach gravy in the iron kadai, dusted with brown garam masala and dried methi",
+          "timerMin": 2,
+          "heat": "low"
+        },
+        {
+          "title": "Finish and serve",
+          "kind": "serve",
+          "text": "Turn off the heat and swirl in the cream. Serve hot with phulka or jeera rice.",
+          "uses": [
+            "cream_fresh"
+          ],
+          "visual": "Palak paneer in a copper-rimmed serving bowl, glossy green gravy with paneer cubes and a white swirl of cream on top, two phulkas beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "paneer",
+          "with": "tofu",
+          "ratio": 1,
+          "note": "Use firm tofu and skip the cream for a vegan palak tofu."
+        },
+        {
+          "ref": "cream_fresh",
+          "with": "cashews",
+          "ratio": 0.7,
+          "note": "Blend a few soaked cashews with the spinach instead of cream for a dairy-light finish."
+        }
+      ],
+      "storage": "Refrigerate up to 2 days; the green darkens slightly overnight but the flavour holds.",
+      "reheating": "Warm on low heat with a splash of water, stirring gently so the paneer stays whole.",
+      "tags": [
+        "family",
+        "kid_friendly"
+      ]
+    },
+    {
+      "id": "dhaba-dal-tadka",
+      "title": "Dhaba-Style Dal Tadka",
+      "description": "Everyday Punjabi toor dal, cooked soft and finished with a smoking ghee tadka of cumin, garlic, dried red chilli and onion-tomato masala — the dal you get at a highway dhaba, made at home.",
+      "cuisine": "north_indian",
+      "region": "Punjab",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 4,
+      "prepMin": 10,
+      "cookMin": 30,
+      "difficulty": "easy",
+      "equipment": [
+        "pressure_cooker|saucepan",
+        "kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "toor_dal",
+          "g": 150,
+          "measure": "¾ cup",
+          "prep": "rinsed 3 times"
+        },
+        {
+          "ref": "water",
+          "g": 650
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "salt",
+          "g": 5,
+          "toTaste": true
+        },
+        {
+          "ref": "ghee",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "cumin_seeds",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "hing",
+          "g": 0.3,
+          "measure": "1 pinch"
+        },
+        {
+          "ref": "garlic",
+          "g": 12,
+          "measure": "3 cloves",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "dried_red_chilli",
+          "g": 2,
+          "measure": "3"
+        },
+        {
+          "ref": "onion",
+          "g": 80,
+          "measure": "1 small",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "ginger",
+          "g": 8,
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "prep": "slit"
+        },
+        {
+          "ref": "tomato",
+          "g": 120,
+          "measure": "1 large",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "garam_masala",
+          "g": 1,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 6,
+          "prep": "chopped"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Pressure-cook the dal",
+          "kind": "cook",
+          "text": "Put the rinsed toor dal in a pressure cooker with 550 ml of the water, the turmeric and a little salt. Cook on medium heat for 3 to 4 whistles (about 12 minutes). In a saucepan, simmer covered for 35 to 40 minutes until completely soft.",
+          "uses": [
+            "toor_dal",
+            "water",
+            "turmeric",
+            "salt"
+          ],
+          "visual": "Rinsed yellow toor dal in water with a pinch of turmeric inside an open steel pressure cooker on the stove, before the lid goes on",
+          "timerMin": 12,
+          "heat": "medium",
+          "equipment": [
+            "pressure_cooker|saucepan"
+          ]
+        },
+        {
+          "title": "Whisk the dal smooth",
+          "kind": "prep",
+          "text": "Once the pressure drops naturally, open the cooker and whisk the dal until creamy. Add the remaining 100 ml of water to loosen it to a pourable consistency.",
+          "uses": [],
+          "visual": "Creamy, pale yellow cooked dal being whisked smooth in the open steel pressure cooker"
+        },
+        {
+          "title": "Start the tadka",
+          "kind": "cook",
+          "text": "Heat the ghee in a kadai over medium heat. Add the cumin seeds, then the hing, garlic and dried red chillies. Fry for 30 to 40 seconds until the garlic turns light golden — don't let it burn.",
+          "uses": [
+            "ghee",
+            "cumin_seeds",
+            "hing",
+            "garlic",
+            "dried_red_chilli"
+          ],
+          "visual": "Sizzling cumin seeds, golden chopped garlic and whole dried red chillies in shimmering ghee in a small iron kadai",
+          "heat": "medium"
+        },
+        {
+          "title": "Cook onion and tomato",
+          "kind": "cook",
+          "text": "Add the onion, ginger and green chilli and sauté for 4 minutes until the onion is golden. Add the tomato and Kashmiri chilli and cook for 3 to 4 minutes until the tomato breaks down.",
+          "uses": [
+            "onion",
+            "ginger",
+            "green_chilli",
+            "tomato",
+            "kashmiri_chilli"
+          ],
+          "visual": "Golden onion, ginger and softened tomato turned red with Kashmiri chilli in the iron kadai, ghee glistening at the edges",
+          "timerMin": 8,
+          "heat": "medium"
+        },
+        {
+          "title": "Combine and simmer",
+          "kind": "cook",
+          "text": "Pour the whisked dal into the kadai with the masala. Taste for salt and simmer for 5 minutes on low heat, stirring now and then, so the flavours come together.",
+          "uses": [],
+          "visual": "Golden-yellow dal streaked with red tadka masala gently bubbling in the iron kadai",
+          "timerMin": 5,
+          "heat": "low"
+        },
+        {
+          "title": "Garnish and serve",
+          "kind": "serve",
+          "text": "Sprinkle over the garam masala and chopped coriander. Serve hot with phulka or steamed rice and a side of kachumber.",
+          "uses": [
+            "garam_masala",
+            "coriander_leaves"
+          ],
+          "visual": "Dal tadka in a steel bowl, red chillies and garlic visible on the golden surface, scattered with fresh coriander, rice and onion rings beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "toor_dal",
+          "with": "moong_dal",
+          "ratio": 1,
+          "note": "Moong dal cooks faster (2 whistles) and is lighter on the stomach."
+        },
+        {
+          "ref": "ghee",
+          "with": "sunflower_oil",
+          "ratio": 1,
+          "note": "Use oil for a vegan dal; the ghee adds the dhaba aroma."
+        }
+      ],
+      "storage": "Keeps 3 days refrigerated; it thickens as it cools.",
+      "reheating": "Reheat with a splash of hot water, whisking until smooth.",
+      "tags": [
+        "family",
+        "meal_prep"
+      ]
+    },
+    {
+      "id": "lighter-dal-makhani",
+      "title": "Lighter Dal Makhani",
+      "description": "Slow-simmered whole black urad and a little rajma in a buttery tomato gravy. Simmering with milk gives the classic creaminess, so it needs only a tablespoon of butter and a spoon of cream.",
+      "cuisine": "north_indian",
+      "region": "Punjab",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 4,
+      "prepMin": 10,
+      "cookMin": 60,
+      "restMin": 480,
+      "difficulty": "medium",
+      "equipment": [
+        "mixing_bowl",
+        "pressure_cooker|saucepan",
+        "kadai",
+        "mixer_grinder|blender"
+      ],
+      "ingredients": [
+        {
+          "ref": "whole_urad",
+          "g": 150,
+          "measure": "¾ cup"
+        },
+        {
+          "ref": "rajma",
+          "g": 30,
+          "measure": "2 tbsp"
+        },
+        {
+          "ref": "water",
+          "g": 900
+        },
+        {
+          "ref": "salt",
+          "g": 6,
+          "toTaste": true
+        },
+        {
+          "ref": "butter",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "cumin_seeds",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "ginger_garlic_paste",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "tomato",
+          "g": 250,
+          "measure": "3 medium",
+          "prep": "puréed"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 4,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "garam_masala",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "milk",
+          "g": 120,
+          "measure": "½ cup"
+        },
+        {
+          "ref": "kasuri_methi",
+          "g": 2,
+          "measure": "1 tbsp",
+          "prep": "crushed"
+        },
+        {
+          "ref": "cream_fresh",
+          "g": 30,
+          "measure": "2 tbsp"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Soak overnight",
+          "kind": "rest",
+          "text": "Rinse the whole urad and rajma together until the water runs clear, then soak them in plenty of water for 8 hours or overnight. Drain before cooking.",
+          "uses": [
+            "whole_urad",
+            "rajma"
+          ],
+          "visual": "Glossy black whole urad and a few maroon kidney beans soaking in a deep steel mixing bowl of water",
+          "timerMin": 480
+        },
+        {
+          "title": "Pressure-cook until very soft",
+          "kind": "cook",
+          "text": "Cook the drained lentils with 750 ml of the water and salt for 25 minutes after the first whistle on low heat (roughly 6 to 7 whistles). The urad should squash completely between your fingers. In a saucepan this takes about 1½ hours.",
+          "uses": [
+            "water",
+            "salt"
+          ],
+          "visual": "Soaked black urad and rajma covered with water in an open steel pressure cooker, ready for the lid",
+          "timerMin": 25,
+          "heat": "low",
+          "equipment": [
+            "pressure_cooker|saucepan"
+          ]
+        },
+        {
+          "title": "Mash lightly",
+          "kind": "prep",
+          "text": "When the pressure has dropped, open the cooker and mash about a third of the lentils against the side with a ladle. This gives the dal its creamy body.",
+          "uses": [],
+          "visual": "Soft, dark brown cooked urad and rajma in the open pressure cooker, some mashed against the side with a steel ladle"
+        },
+        {
+          "title": "Cook the tomato masala",
+          "kind": "cook",
+          "text": "Melt the butter in a kadai over medium heat. Add the cumin seeds, then the ginger-garlic paste and fry for 1 minute. Pour in the tomato purée and Kashmiri chilli and cook for 8 to 10 minutes until thick and the butter separates.",
+          "uses": [
+            "butter",
+            "cumin_seeds",
+            "ginger_garlic_paste",
+            "tomato",
+            "kashmiri_chilli"
+          ],
+          "visual": "A thick, deep red tomato masala with butter pooling at the edges in a black iron kadai",
+          "timerMin": 10,
+          "heat": "medium"
+        },
+        {
+          "title": "Simmer with milk",
+          "kind": "cook",
+          "text": "Tip the lentils into the kadai with the masala, add the milk, garam masala and the remaining water. Simmer uncovered on the lowest heat for 20 minutes, stirring every few minutes so it doesn't catch, until thick and creamy.",
+          "uses": [
+            "milk",
+            "garam_masala"
+          ],
+          "visual": "Thick, creamy dark-maroon dal makhani slowly bubbling in the iron kadai, a steel ladle resting across the rim",
+          "timerMin": 20,
+          "heat": "low"
+        },
+        {
+          "title": "Finish with methi and cream",
+          "kind": "cook",
+          "text": "Stir in the crushed kasuri methi and most of the cream, keeping a little for the top. Simmer 2 more minutes and check the salt.",
+          "uses": [
+            "kasuri_methi",
+            "cream_fresh"
+          ],
+          "visual": "Cream being swirled into the dark, glossy dal in the iron kadai with flecks of dried methi on the surface",
+          "timerMin": 2,
+          "heat": "low"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve hot with the reserved cream drizzled on top, alongside phulka or jeera rice and an onion salad.",
+          "uses": [],
+          "visual": "Dal makhani in a brass handi with a white swirl of cream and a pinch of kasuri methi on top, phulkas and sliced onion beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "cream_fresh",
+          "with": "hung_curd",
+          "ratio": 1,
+          "note": "Whisk in hung curd off the heat for a tangier, lower-fat finish."
+        },
+        {
+          "ref": "butter",
+          "with": "ghee",
+          "ratio": 0.9,
+          "note": "Ghee gives a nuttier flavour and keeps longer."
+        }
+      ],
+      "storage": "Refrigerate up to 4 days — like most dal makhani, it tastes even better the next day.",
+      "reheating": "Warm on low heat with a splash of milk or water, stirring often.",
+      "tags": [
+        "family",
+        "meal_prep",
+        "festive"
+      ]
+    },
+    {
+      "id": "punjabi-rajma-masala",
+      "title": "Rajma Masala",
+      "description": "Kidney beans simmered in a thick onion-tomato gravy until creamy — the Sunday rajma-chawal of North Indian homes, made with just a tablespoon and a half of oil.",
+      "cuisine": "north_indian",
+      "region": "Punjab",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 4,
+      "prepMin": 10,
+      "cookMin": 45,
+      "restMin": 480,
+      "difficulty": "easy",
+      "equipment": [
+        "mixing_bowl",
+        "pressure_cooker|saucepan",
+        "kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "rajma",
+          "g": 200,
+          "measure": "1 cup"
+        },
+        {
+          "ref": "water",
+          "g": 900
+        },
+        {
+          "ref": "salt",
+          "g": 6,
+          "toTaste": true
+        },
+        {
+          "ref": "sunflower_oil",
+          "g": 20,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "cumin_seeds",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "bay_leaf",
+          "g": 0.4,
+          "measure": "2 leaves"
+        },
+        {
+          "ref": "onion",
+          "g": 150,
+          "measure": "1 large",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "ginger_garlic_paste",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "tomato",
+          "g": 250,
+          "measure": "3 medium",
+          "prep": "puréed"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 4,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "coriander_powder",
+          "g": 5,
+          "measure": "2½ tsp"
+        },
+        {
+          "ref": "garam_masala",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 6,
+          "prep": "chopped"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Soak the rajma",
+          "kind": "rest",
+          "text": "Rinse the rajma and soak it in plenty of water for 8 hours or overnight. The beans should double in size. Drain and rinse.",
+          "uses": [
+            "rajma"
+          ],
+          "visual": "Plump maroon kidney beans soaking in a steel mixing bowl of water, swollen to twice their size",
+          "timerMin": 480
+        },
+        {
+          "title": "Pressure-cook the beans",
+          "kind": "cook",
+          "text": "Pressure-cook the drained rajma with 700 ml of the water and a little salt: one whistle on high, then 20 minutes on low (about 5 to 6 whistles in all). A bean should mash easily against the roof of your mouth.",
+          "uses": [
+            "water",
+            "salt"
+          ],
+          "visual": "Drained kidney beans covered with water in an open steel pressure cooker on the stove",
+          "timerMin": 25,
+          "heat": "medium",
+          "equipment": [
+            "pressure_cooker|saucepan"
+          ]
+        },
+        {
+          "title": "Brown the onions",
+          "kind": "cook",
+          "text": "Heat the oil in a kadai over medium heat. Add the cumin and bay leaves, then the onion. Cook for 8 to 10 minutes, stirring, until the onion is deep golden brown — this gives rajma its colour.",
+          "uses": [
+            "sunflower_oil",
+            "cumin_seeds",
+            "bay_leaf",
+            "onion"
+          ],
+          "visual": "Deep golden-brown chopped onion with bay leaves and cumin seeds in oil in a black iron kadai",
+          "timerMin": 10,
+          "heat": "medium"
+        },
+        {
+          "title": "Cook the masala",
+          "kind": "cook",
+          "text": "Add the ginger-garlic paste and green chilli and fry for 1 minute. Add the tomato purée, turmeric, Kashmiri chilli and coriander powder and cook for 8 minutes until the masala is thick and oil shows at the edges.",
+          "uses": [
+            "ginger_garlic_paste",
+            "green_chilli",
+            "tomato",
+            "turmeric",
+            "kashmiri_chilli",
+            "coriander_powder"
+          ],
+          "visual": "Thick, glossy brick-red onion-tomato masala in the iron kadai with oil separating at the edges",
+          "timerMin": 9,
+          "heat": "medium"
+        },
+        {
+          "title": "Simmer the rajma",
+          "kind": "cook",
+          "text": "Add the cooked rajma with its cooking liquid and the remaining water. Mash a ladleful of beans against the side of the kadai and simmer on low for 15 minutes until the gravy turns thick and creamy.",
+          "uses": [],
+          "visual": "Kidney beans in a thick, creamy reddish-brown gravy bubbling gently in the iron kadai, a few beans mashed at the side",
+          "timerMin": 15,
+          "heat": "low"
+        },
+        {
+          "title": "Finish and serve",
+          "kind": "serve",
+          "text": "Stir in the garam masala, check the salt, and scatter with coriander. Serve hot with steamed rice or phulka.",
+          "uses": [
+            "garam_masala",
+            "coriander_leaves"
+          ],
+          "visual": "Rajma masala in a steel bowl topped with fresh coriander, beside a plate of steamed rice and sliced onion with lemon"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "rajma",
+          "with": "kabuli_chana",
+          "ratio": 1,
+          "note": "Chickpeas work in the same gravy if you run out of rajma."
+        },
+        {
+          "ref": "sunflower_oil",
+          "with": "ghee",
+          "ratio": 1,
+          "note": "A spoon of ghee gives a richer, festive taste."
+        }
+      ],
+      "storage": "Refrigerate up to 4 days or freeze for a month.",
+      "reheating": "Reheat on the stove with a splash of water until bubbling.",
+      "tags": [
+        "family",
+        "meal_prep"
+      ]
+    },
+    {
+      "id": "punjabi-chole-masala",
+      "title": "Punjabi Chole (Chana Masala)",
+      "description": "Chickpeas cooked with whole spices, then simmered in a dark, tangy onion-tomato masala sharpened with amchur and finished with ginger juliennes — Punjabi chole the way it's made at home.",
+      "cuisine": "north_indian",
+      "region": "Punjab",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 4,
+      "prepMin": 15,
+      "cookMin": 45,
+      "restMin": 480,
+      "difficulty": "medium",
+      "equipment": [
+        "mixing_bowl",
+        "pressure_cooker|saucepan",
+        "kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "kabuli_chana",
+          "g": 200,
+          "measure": "1 cup"
+        },
+        {
+          "ref": "water",
+          "g": 900
+        },
+        {
+          "ref": "bay_leaf",
+          "g": 0.4,
+          "measure": "2 leaves"
+        },
+        {
+          "ref": "cinnamon",
+          "g": 1,
+          "measure": "1-inch stick"
+        },
+        {
+          "ref": "cardamom",
+          "g": 0.6,
+          "measure": "2 pods"
+        },
+        {
+          "ref": "salt",
+          "g": 6,
+          "toTaste": true
+        },
+        {
+          "ref": "sunflower_oil",
+          "g": 20,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "cumin_seeds",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "onion",
+          "g": 150,
+          "measure": "1 large",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "ginger_garlic_paste",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "prep": "slit"
+        },
+        {
+          "ref": "tomato",
+          "g": 200,
+          "measure": "2 large",
+          "prep": "puréed"
+        },
+        {
+          "ref": "coriander_powder",
+          "g": 6,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 3,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "chilli_powder",
+          "g": 1,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "amchur",
+          "g": 3,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "garam_masala",
+          "g": 3,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "ginger",
+          "g": 8,
+          "prep": "cut into fine juliennes"
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 6,
+          "prep": "chopped"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Soak the chickpeas",
+          "kind": "rest",
+          "text": "Rinse the chickpeas and soak them in plenty of water for 8 hours or overnight. Drain and rinse.",
+          "uses": [
+            "kabuli_chana"
+          ],
+          "visual": "Swollen cream-coloured chickpeas soaking in a large steel mixing bowl of water",
+          "timerMin": 480
+        },
+        {
+          "title": "Cook with whole spices",
+          "kind": "cook",
+          "text": "Put the chickpeas in a pressure cooker with 700 ml of the water, the bay leaves, cinnamon, cardamom and a little salt. Cook for 1 whistle on high, then 15 minutes on low (about 5 whistles) until soft but holding their shape.",
+          "uses": [
+            "water",
+            "bay_leaf",
+            "cinnamon",
+            "cardamom",
+            "salt"
+          ],
+          "visual": "Soaked chickpeas with bay leaves, a cinnamon stick and cardamom pods in water in an open steel pressure cooker",
+          "timerMin": 20,
+          "heat": "medium",
+          "equipment": [
+            "pressure_cooker|saucepan"
+          ]
+        },
+        {
+          "title": "Brown the onion",
+          "kind": "cook",
+          "text": "Heat the oil in a kadai over medium heat, add the cumin seeds, then the onion. Cook for 10 minutes, stirring often, until the onion is a deep brown.",
+          "uses": [
+            "sunflower_oil",
+            "cumin_seeds",
+            "onion"
+          ],
+          "visual": "Deep brown, caramelised chopped onion with cumin seeds in a black iron kadai",
+          "timerMin": 10,
+          "heat": "medium"
+        },
+        {
+          "title": "Cook the masala",
+          "kind": "cook",
+          "text": "Add the ginger-garlic paste and green chillies and fry for 1 minute. Add the tomato purée, coriander powder, Kashmiri chilli and chilli powder. Cook for 8 to 10 minutes until the masala darkens and oil separates.",
+          "uses": [
+            "ginger_garlic_paste",
+            "green_chilli",
+            "tomato",
+            "coriander_powder",
+            "kashmiri_chilli",
+            "chilli_powder"
+          ],
+          "visual": "Dark reddish-brown, jammy masala in the iron kadai with oil separating at the edges and slit green chillies on top",
+          "timerMin": 10,
+          "heat": "medium"
+        },
+        {
+          "title": "Simmer the chole",
+          "kind": "cook",
+          "text": "Remove the whole spices from the chickpeas. Add the chickpeas and their cooking liquid to the masala with the remaining water. Mash a few chickpeas to thicken, add the amchur and simmer on low for 12 minutes.",
+          "uses": [
+            "amchur"
+          ],
+          "visual": "Chickpeas in a thick, dark brown gravy simmering in the iron kadai, a few mashed chickpeas at the side",
+          "timerMin": 12,
+          "heat": "low"
+        },
+        {
+          "title": "Finish with garam masala",
+          "kind": "cook",
+          "text": "Stir in the garam masala and half the ginger juliennes. Cook 2 minutes more and check the salt and sourness.",
+          "uses": [
+            "garam_masala",
+            "ginger"
+          ],
+          "visual": "Thick, dark chole in the iron kadai with thin golden ginger strips stirred through",
+          "timerMin": 2,
+          "heat": "low"
+        },
+        {
+          "title": "Garnish and serve",
+          "kind": "serve",
+          "text": "Top with the remaining ginger and the coriander. Serve hot with phulka, kulcha or jeera rice, plus sliced onion and lemon.",
+          "uses": [
+            "coriander_leaves"
+          ],
+          "visual": "Punjabi chole in a brass kadai topped with fine ginger juliennes, coriander and a green chilli, sliced onion rings and lemon wedges on the side"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "amchur",
+          "with": "lemon_juice",
+          "ratio": 4,
+          "note": "Add a tablespoon of lemon juice at the end if you don't have amchur."
+        },
+        {
+          "ref": "kabuli_chana",
+          "with": "kala_chana",
+          "ratio": 1,
+          "note": "Black chickpeas give a nuttier, more fibre-rich chole."
+        }
+      ],
+      "storage": "Refrigerate up to 4 days or freeze up to a month.",
+      "reheating": "Reheat on the stove with a little water until bubbling.",
+      "tags": [
+        "family",
+        "meal_prep",
+        "festive"
+      ]
+    },
+    {
+      "id": "punjabi-kadhi-pakora",
+      "title": "Punjabi Kadhi Pakora",
+      "description": "Tangy curd-and-besan kadhi simmered slowly until silky, with soft onion pakoras shallow-fried in a little oil instead of deep-fried, and a red chilli ghee tadka on top.",
+      "cuisine": "north_indian",
+      "region": "Punjab",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 4,
+      "prepMin": 15,
+      "cookMin": 40,
+      "difficulty": "medium",
+      "equipment": [
+        "mixing_bowl",
+        "whisk",
+        "kadai",
+        "non_stick_pan"
+      ],
+      "ingredients": [
+        {
+          "ref": "curd",
+          "g": 400,
+          "measure": "1⅔ cups",
+          "prep": "a day old, slightly sour",
+          "group": "kadhi"
+        },
+        {
+          "ref": "besan",
+          "g": 35,
+          "measure": "4½ tbsp",
+          "group": "kadhi"
+        },
+        {
+          "ref": "water",
+          "g": 550
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "ginger",
+          "g": 6,
+          "prep": "grated"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "prep": "slit"
+        },
+        {
+          "ref": "salt",
+          "g": 6,
+          "toTaste": true
+        },
+        {
+          "ref": "besan",
+          "g": 60,
+          "measure": "½ cup + 1 tbsp",
+          "group": "pakoras"
+        },
+        {
+          "ref": "onion",
+          "g": 80,
+          "measure": "1 small",
+          "prep": "thinly sliced",
+          "group": "pakoras"
+        },
+        {
+          "ref": "ajwain_seeds",
+          "g": 1,
+          "measure": "½ tsp",
+          "group": "pakoras"
+        },
+        {
+          "ref": "chilli_powder",
+          "g": 1,
+          "group": "pakoras"
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 4,
+          "prep": "chopped",
+          "group": "pakoras"
+        },
+        {
+          "ref": "sunflower_oil",
+          "g": 20,
+          "measure": "1½ tbsp",
+          "group": "pakoras"
+        },
+        {
+          "ref": "ghee",
+          "g": 10,
+          "measure": "2 tsp",
+          "group": "tadka"
+        },
+        {
+          "ref": "cumin_seeds",
+          "g": 1,
+          "group": "tadka"
+        },
+        {
+          "ref": "fenugreek_seeds",
+          "g": 1,
+          "measure": "¼ tsp",
+          "group": "tadka"
+        },
+        {
+          "ref": "dried_red_chilli",
+          "g": 1.5,
+          "measure": "2",
+          "group": "tadka"
+        },
+        {
+          "ref": "hing",
+          "g": 0.3,
+          "group": "tadka"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 2,
+          "measure": "1 tsp",
+          "group": "tadka"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Whisk the kadhi base",
+          "kind": "prep",
+          "text": "In a large bowl whisk the curd with 35 g besan, the turmeric and 2 cups of the water until there are no lumps at all.",
+          "uses": [
+            "curd",
+            "besan",
+            "turmeric",
+            "water"
+          ],
+          "visual": "A smooth, thin pale-yellow curd and besan mixture in a large steel mixing bowl with a whisk resting inside",
+          "equipment": [
+            "whisk"
+          ]
+        },
+        {
+          "title": "Simmer the kadhi slowly",
+          "kind": "cook",
+          "text": "Pour into a kadai with the remaining water, ginger and green chilli. Bring to a boil on medium heat, stirring constantly so it doesn't split. Then lower the heat and simmer for 25 to 30 minutes, stirring every few minutes, until it thickens and loses the raw besan taste. Add salt near the end.",
+          "uses": [
+            "ginger",
+            "green_chilli",
+            "salt"
+          ],
+          "visual": "Pale yellow kadhi gently bubbling in a deep iron kadai with slit green chillies floating on top",
+          "timerMin": 30,
+          "heat": "low"
+        },
+        {
+          "title": "Mix the pakora batter",
+          "kind": "prep",
+          "text": "While the kadhi simmers, mix 60 g besan with the sliced onion, ajwain, chilli powder, coriander and a pinch of salt. Sprinkle in about 3 tablespoons of water to make a thick batter that just coats the onion.",
+          "uses": [
+            "onion",
+            "ajwain_seeds",
+            "chilli_powder",
+            "coriander_leaves"
+          ],
+          "visual": "Thinly sliced onion coated in a thick, orange-flecked besan batter with green coriander in a small steel bowl"
+        },
+        {
+          "title": "Shallow-fry the pakoras",
+          "kind": "cook",
+          "text": "Heat the oil in a non-stick pan over medium heat. Drop in small spoonfuls of batter, flatten slightly and cook for 3 to 4 minutes per side until golden and cooked through.",
+          "uses": [
+            "sunflower_oil"
+          ],
+          "visual": "Small, flat golden-brown onion pakoras sizzling in a thin layer of oil in a non-stick pan",
+          "timerMin": 8,
+          "heat": "medium",
+          "equipment": [
+            "non_stick_pan"
+          ]
+        },
+        {
+          "title": "Add pakoras to the kadhi",
+          "kind": "cook",
+          "text": "Slip the pakoras into the simmering kadhi and cook for 5 minutes so they soak up the kadhi and turn soft.",
+          "uses": [],
+          "visual": "Golden pakoras floating in the thick yellow kadhi in the iron kadai, starting to soften",
+          "timerMin": 5,
+          "heat": "low"
+        },
+        {
+          "title": "Make the tadka",
+          "kind": "cook",
+          "text": "Heat the ghee in a small pan. Add cumin, fenugreek seeds, dried red chillies and hing. When they sizzle, turn off the heat and stir in the Kashmiri chilli — it should turn the ghee bright red without burning.",
+          "uses": [
+            "ghee",
+            "cumin_seeds",
+            "fenugreek_seeds",
+            "dried_red_chilli",
+            "hing",
+            "kashmiri_chilli"
+          ],
+          "visual": "Bright red ghee with crackling cumin, fenugreek seeds and whole dried red chillies in a small tadka pan",
+          "heat": "medium"
+        },
+        {
+          "title": "Pour and serve",
+          "kind": "serve",
+          "text": "Pour the sizzling tadka over the kadhi and serve straight away with steamed rice.",
+          "uses": [],
+          "visual": "Kadhi pakora in a steel bowl with a pool of red chilli ghee and whole dried chillies on the yellow surface, a mound of steamed rice beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "sunflower_oil",
+          "with": "mustard_oil",
+          "ratio": 1,
+          "note": "Mustard oil gives the pakoras a sharper Punjabi flavour."
+        },
+        {
+          "ref": "onion",
+          "with": "spinach",
+          "ratio": 1,
+          "note": "Use shredded spinach in the pakoras for palak pakora kadhi."
+        }
+      ],
+      "storage": "Refrigerate up to 2 days; store pakoras separately if making ahead so they don't break up.",
+      "reheating": "Reheat on low heat, stirring constantly and adding a little water — boiling hard can make it split.",
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "punjabi-sarson-ka-saag",
+      "title": "Sarson ka Saag",
+      "description": "Winter mustard greens and spinach cooked down slowly, coarsely churned and thickened with a little makki atta, then finished with a garlic-onion ghee tadka and a small knob of white butter.",
+      "cuisine": "north_indian",
+      "region": "Punjab",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 3,
+      "prepMin": 20,
+      "cookMin": 45,
+      "difficulty": "medium",
+      "equipment": [
+        "knife_board",
+        "pressure_cooker|saucepan",
+        "mixer_grinder|blender",
+        "kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "mustard_greens",
+          "g": 500,
+          "measure": "1 large bunch",
+          "prep": "tough stems removed, chopped"
+        },
+        {
+          "ref": "spinach",
+          "g": 200,
+          "measure": "1 bunch",
+          "prep": "chopped"
+        },
+        {
+          "ref": "ginger",
+          "g": 15,
+          "measure": "1½-inch piece",
+          "prep": "chopped"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 6,
+          "measure": "2"
+        },
+        {
+          "ref": "water",
+          "g": 250
+        },
+        {
+          "ref": "salt",
+          "g": 5,
+          "toTaste": true
+        },
+        {
+          "ref": "makki_atta",
+          "g": 25,
+          "measure": "3 tbsp"
+        },
+        {
+          "ref": "ghee",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "garlic",
+          "g": 15,
+          "measure": "4 cloves",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "onion",
+          "g": 60,
+          "measure": "½ medium",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "dried_red_chilli",
+          "g": 1,
+          "measure": "1"
+        },
+        {
+          "ref": "butter",
+          "g": 10,
+          "measure": "2 tsp"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Wash and chop the greens",
+          "kind": "prep",
+          "text": "Wash the mustard greens and spinach in several changes of water to remove grit. Strip off thick stems and chop the leaves roughly.",
+          "uses": [
+            "mustard_greens",
+            "spinach"
+          ],
+          "visual": "Two heaps of roughly chopped dark-green mustard leaves and lighter spinach on a large wooden board, a knife beside them"
+        },
+        {
+          "title": "Cook the greens",
+          "kind": "cook",
+          "text": "Put the greens in a pressure cooker with the ginger, green chillies, salt and 200 ml of the water. Cook for 2 whistles, then on low for 10 minutes. In a saucepan, simmer covered for 35 to 40 minutes until completely soft.",
+          "uses": [
+            "ginger",
+            "green_chilli",
+            "water",
+            "salt"
+          ],
+          "visual": "A steel pressure cooker heaped with raw chopped mustard greens and spinach, with pieces of ginger and whole green chillies on top",
+          "timerMin": 15,
+          "heat": "medium",
+          "equipment": [
+            "pressure_cooker|saucepan"
+          ]
+        },
+        {
+          "title": "Churn coarsely",
+          "kind": "prep",
+          "text": "Let the greens cool a little, then pulse them in a mixer 3 or 4 times to a coarse purée. Saag should have some texture, not be smooth like palak.",
+          "uses": [],
+          "visual": "Coarsely blended, dark olive-green saag in a mixer jar, still slightly textured",
+          "equipment": [
+            "mixer_grinder|blender"
+          ]
+        },
+        {
+          "title": "Thicken with makki atta",
+          "kind": "cook",
+          "text": "Return the saag to the cooker or a kadai. Whisk the makki atta with the remaining water and stir it in. Simmer on low for 15 minutes, stirring often, until thick and the raw flour taste is gone.",
+          "uses": [
+            "makki_atta"
+          ],
+          "visual": "Thick, dark green saag slowly bubbling in a heavy iron kadai, a wooden spoon standing in it",
+          "timerMin": 15,
+          "heat": "low"
+        },
+        {
+          "title": "Make the garlic tadka",
+          "kind": "cook",
+          "text": "Heat the ghee in a small pan. Fry the garlic until golden, add the onion and dried red chilli and cook for 4 minutes until the onion is golden brown.",
+          "uses": [
+            "ghee",
+            "garlic",
+            "onion",
+            "dried_red_chilli"
+          ],
+          "visual": "Golden chopped garlic, browned onion and a dried red chilli sizzling in ghee in a small iron tadka pan",
+          "timerMin": 4,
+          "heat": "medium"
+        },
+        {
+          "title": "Combine",
+          "kind": "cook",
+          "text": "Pour the tadka into the saag, stir well and simmer for 2 minutes. Check the salt.",
+          "uses": [],
+          "visual": "Golden flecks of fried garlic and onion stirred through the thick green saag in the iron kadai",
+          "timerMin": 2,
+          "heat": "low"
+        },
+        {
+          "title": "Top with butter and serve",
+          "kind": "serve",
+          "text": "Serve hot with a small knob of white butter melting on top, alongside makki di roti or phulka and a little jaggery and sliced radish.",
+          "uses": [
+            "butter"
+          ],
+          "visual": "Sarson ka saag in a clay bowl with a pat of butter melting on the dark green surface, a yellow makki roti and radish slices beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "makki_atta",
+          "with": "besan",
+          "ratio": 0.8,
+          "note": "Besan thickens just as well if you don't have maize flour."
+        },
+        {
+          "ref": "butter",
+          "with": "ghee",
+          "ratio": 1,
+          "note": "Skip the butter and use a little extra ghee in the tadka for a lighter finish."
+        }
+      ],
+      "storage": "Saag keeps 4 days refrigerated and freezes well for 2 months.",
+      "reheating": "Reheat in a pan with a splash of water and a fresh garlic tadka if you like.",
+      "tags": [
+        "meal_prep",
+        "festive"
+      ]
+    },
+    {
+      "id": "punjabi-baingan-bharta",
+      "title": "Baingan Bharta",
+      "description": "Fire-roasted brinjal mashed and cooked with onion, tomato, garlic and green chilli in mustard oil. The smoky char from the open flame is the whole point.",
+      "cuisine": "north_indian",
+      "region": "Punjab",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "side",
+      "servings": 3,
+      "prepMin": 10,
+      "cookMin": 30,
+      "difficulty": "easy",
+      "equipment": [
+        "stove",
+        "knife_board",
+        "mixing_bowl",
+        "kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "brinjal",
+          "g": 600,
+          "measure": "1 large bharta brinjal",
+          "prep": "rubbed with a few drops of oil"
+        },
+        {
+          "ref": "garlic",
+          "g": 10,
+          "measure": "3 cloves",
+          "prep": "2 slivered, rest chopped"
+        },
+        {
+          "ref": "mustard_oil",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "cumin_seeds",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "onion",
+          "g": 100,
+          "measure": "1 medium",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "ginger",
+          "g": 6,
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 6,
+          "measure": "2",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "tomato",
+          "g": 150,
+          "measure": "2 small",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "chilli_powder",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 8,
+          "prep": "chopped"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Stud and roast the brinjal",
+          "kind": "cook",
+          "text": "Make 3 or 4 small slits in the brinjal and push in garlic slivers. Roast directly on a gas flame for 12 to 15 minutes, turning with tongs, until the skin is charred all over and the flesh collapses. Or roast at 220°C in an oven for 30 to 35 minutes.",
+          "uses": [
+            "brinjal",
+            "garlic"
+          ],
+          "visual": "A large purple brinjal sitting directly on a gas flame, its skin blackened and blistered, wisps of smoke rising",
+          "timerMin": 15,
+          "heat": "medium",
+          "equipment": [
+            "stove"
+          ]
+        },
+        {
+          "title": "Peel and mash",
+          "kind": "prep",
+          "text": "Put the brinjal in a bowl and cover it for 5 minutes so the skin loosens. Peel off the charred skin, discard the stem and mash the flesh with a fork.",
+          "uses": [],
+          "visual": "Soft, smoky, pale-brown mashed brinjal flesh in a steel mixing bowl, charred skin pieces on a plate beside it, roasted garlic visible"
+        },
+        {
+          "title": "Sauté onion and aromatics",
+          "kind": "cook",
+          "text": "Heat the mustard oil in a kadai until it just smokes, then lower the heat. Add cumin, then the onion, ginger and green chilli. Sauté for 5 minutes until the onion is soft and golden.",
+          "uses": [
+            "mustard_oil",
+            "cumin_seeds",
+            "onion",
+            "ginger",
+            "green_chilli"
+          ],
+          "visual": "Golden chopped onion, ginger and green chilli with cumin seeds in mustard oil in a black iron kadai",
+          "timerMin": 5,
+          "heat": "medium"
+        },
+        {
+          "title": "Cook the tomatoes",
+          "kind": "cook",
+          "text": "Add the tomatoes, turmeric, chilli powder and salt. Cook for 4 to 5 minutes until the tomatoes are soft and pulpy.",
+          "uses": [
+            "tomato",
+            "turmeric",
+            "chilli_powder",
+            "salt"
+          ],
+          "visual": "Soft, pulpy red tomato and onion masala in the iron kadai, oil glistening",
+          "timerMin": 5,
+          "heat": "medium"
+        },
+        {
+          "title": "Add the brinjal",
+          "kind": "cook",
+          "text": "Add the mashed brinjal and cook, stirring and mashing, for 6 to 8 minutes until everything comes together and the mixture looks glossy.",
+          "uses": [],
+          "visual": "Smoky mashed brinjal mixed into the tomato masala in the iron kadai, glossy and thick with flecks of green chilli",
+          "timerMin": 7,
+          "heat": "medium"
+        },
+        {
+          "title": "Garnish and serve",
+          "kind": "serve",
+          "text": "Fold in the chopped coriander and serve warm with phulka or bajra roti.",
+          "uses": [
+            "coriander_leaves"
+          ],
+          "visual": "Baingan bharta in a steel bowl scattered with fresh coriander, two phulkas and sliced onion on the side"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "mustard_oil",
+          "with": "sunflower_oil",
+          "ratio": 1,
+          "note": "Neutral oil works; mustard oil adds the classic Punjabi bite."
+        }
+      ],
+      "storage": "Refrigerate up to 2 days.",
+      "reheating": "Warm in a pan for 2 to 3 minutes; it also tastes good at room temperature.",
+      "tags": []
+    },
+    {
+      "id": "aloo-gobi-sukhi",
+      "title": "Aloo Gobi",
+      "description": "Dry-style cauliflower and potato cooked with ginger, cumin and a little tomato until tender and golden at the edges, finished with amchur for a light tang.",
+      "cuisine": "north_indian",
+      "region": "Punjab",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "side",
+      "servings": 4,
+      "prepMin": 15,
+      "cookMin": 25,
+      "difficulty": "easy",
+      "equipment": [
+        "knife_board",
+        "kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "cauliflower",
+          "g": 400,
+          "measure": "1 small head",
+          "prep": "medium florets"
+        },
+        {
+          "ref": "potato",
+          "g": 200,
+          "measure": "1 large",
+          "prep": "peeled, cut into 1-inch cubes"
+        },
+        {
+          "ref": "sunflower_oil",
+          "g": 20,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "cumin_seeds",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "onion",
+          "g": 60,
+          "measure": "½ medium",
+          "prep": "chopped"
+        },
+        {
+          "ref": "ginger",
+          "g": 10,
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "prep": "chopped"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1.5
+        },
+        {
+          "ref": "coriander_powder",
+          "g": 4,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "chilli_powder",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 5,
+          "toTaste": true
+        },
+        {
+          "ref": "tomato",
+          "g": 80,
+          "measure": "1 small",
+          "prep": "chopped"
+        },
+        {
+          "ref": "amchur",
+          "g": 2,
+          "measure": "¾ tsp"
+        },
+        {
+          "ref": "garam_masala",
+          "g": 1,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 6,
+          "prep": "chopped"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Cut the vegetables",
+          "kind": "prep",
+          "text": "Cut the cauliflower into medium florets and the potato into 1-inch cubes so they cook in the same time. Soak the florets in warm salted water for 5 minutes, then drain well.",
+          "uses": [
+            "cauliflower",
+            "potato"
+          ],
+          "visual": "White cauliflower florets and pale yellow potato cubes in two piles on a wooden board, a knife resting beside them"
+        },
+        {
+          "title": "Temper and soften onion",
+          "kind": "cook",
+          "text": "Heat the oil in a wide kadai over medium heat. Add cumin seeds, then the onion, ginger and green chilli and sauté for 3 minutes until the onion softens.",
+          "uses": [
+            "sunflower_oil",
+            "cumin_seeds",
+            "onion",
+            "ginger",
+            "green_chilli"
+          ],
+          "visual": "Softened chopped onion with ginger, green chilli and cumin seeds in oil in a wide black iron kadai",
+          "timerMin": 3,
+          "heat": "medium"
+        },
+        {
+          "title": "Add potatoes and spices",
+          "kind": "cook",
+          "text": "Add the potato cubes with the turmeric, coriander powder, chilli powder and salt. Toss and cook for 4 minutes so the potatoes get a head start.",
+          "uses": [
+            "turmeric",
+            "coriander_powder",
+            "chilli_powder",
+            "salt"
+          ],
+          "visual": "Potato cubes coated in yellow turmeric and spices in the iron kadai with the onions",
+          "timerMin": 4,
+          "heat": "medium"
+        },
+        {
+          "title": "Cook covered with cauliflower",
+          "kind": "cook",
+          "text": "Add the cauliflower florets and tomato and toss gently. Cover and cook on low heat for 12 to 14 minutes, stirring carefully every few minutes, until both are tender. Don't add water — the steam is enough.",
+          "uses": [
+            "tomato"
+          ],
+          "visual": "Cauliflower florets and potato cubes coated in yellow masala with soft tomato pieces in the covered iron kadai, lid slightly lifted to show steam",
+          "timerMin": 14,
+          "heat": "low"
+        },
+        {
+          "title": "Crisp the edges",
+          "kind": "cook",
+          "text": "Uncover, sprinkle in the amchur and garam masala, and cook on medium heat for 3 minutes, tossing gently, until the edges turn golden.",
+          "uses": [
+            "amchur",
+            "garam_masala"
+          ],
+          "visual": "Golden-edged cauliflower and potato in the open iron kadai, dry and lightly roasted, dusted with spice",
+          "timerMin": 3,
+          "heat": "medium"
+        },
+        {
+          "title": "Garnish and serve",
+          "kind": "serve",
+          "text": "Scatter over the coriander and serve with phulka and dal.",
+          "uses": [
+            "coriander_leaves"
+          ],
+          "visual": "Aloo gobi heaped in a steel bowl with fresh coriander on top, a phulka and a bowl of yellow dal beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "potato",
+          "with": "cauliflower",
+          "ratio": 1,
+          "note": "Replace the potato with extra cauliflower for a lower-carb gobi masala."
+        }
+      ],
+      "storage": "Refrigerate up to 2 days.",
+      "reheating": "Reheat in a hot pan without water so it stays dry.",
+      "tags": [
+        "family",
+        "kid_friendly"
+      ]
+    },
+    {
+      "id": "punjabi-bhindi-masala",
+      "title": "Bhindi Masala",
+      "description": "Okra pan-roasted until crisp at the edges, then tossed with soft onion, tomato and dry spices with a hint of amchur. Drying the okra well keeps it from turning slimy.",
+      "cuisine": "north_indian",
+      "region": "Punjab",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "side",
+      "servings": 3,
+      "prepMin": 15,
+      "cookMin": 20,
+      "difficulty": "easy",
+      "equipment": [
+        "knife_board",
+        "kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "okra",
+          "g": 300,
+          "measure": "about 25 pods",
+          "prep": "washed, dried, cut into 1-inch pieces"
+        },
+        {
+          "ref": "sunflower_oil",
+          "g": 20,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "cumin_seeds",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "onion",
+          "g": 120,
+          "measure": "1 large",
+          "prep": "sliced"
+        },
+        {
+          "ref": "ginger_garlic_paste",
+          "g": 6,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "tomato",
+          "g": 80,
+          "measure": "1 small",
+          "prep": "chopped"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "coriander_powder",
+          "g": 4,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "chilli_powder",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "amchur",
+          "g": 2,
+          "measure": "¾ tsp"
+        },
+        {
+          "ref": "garam_masala",
+          "g": 1,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Dry and cut the okra",
+          "kind": "prep",
+          "text": "Wash the okra and dry it completely with a kitchen towel — any moisture makes it slimy. Trim the ends and cut into 1-inch pieces.",
+          "uses": [
+            "okra"
+          ],
+          "visual": "Fresh green okra cut into 1-inch pieces on a wooden board, a cotton kitchen towel beside them"
+        },
+        {
+          "title": "Pan-roast the okra",
+          "kind": "cook",
+          "text": "Heat 1 tablespoon of the oil in a wide kadai. Add the okra in a single layer and cook uncovered on medium heat for 8 to 10 minutes, stirring occasionally, until it is lightly browned and no longer sticky. Lift out onto a plate.",
+          "uses": [
+            "sunflower_oil"
+          ],
+          "visual": "Okra pieces spread out in a wide black iron kadai, lightly browned and blistered at the edges",
+          "timerMin": 10,
+          "heat": "medium"
+        },
+        {
+          "title": "Cook onion and masala",
+          "kind": "cook",
+          "text": "In the same kadai, heat the remaining oil, add cumin seeds, then the onion. Sauté for 4 minutes until translucent. Stir in the ginger-garlic paste for 1 minute, then add the tomato, turmeric, coriander powder and chilli powder and cook for 3 minutes until soft.",
+          "uses": [
+            "cumin_seeds",
+            "onion",
+            "ginger_garlic_paste",
+            "tomato",
+            "turmeric",
+            "coriander_powder",
+            "chilli_powder"
+          ],
+          "visual": "Soft sliced onion and pulpy tomato in a reddish spice masala in the iron kadai",
+          "timerMin": 8,
+          "heat": "medium"
+        },
+        {
+          "title": "Toss the okra back in",
+          "kind": "cook",
+          "text": "Return the okra to the kadai with the salt, amchur and garam masala. Toss gently on medium heat for 2 to 3 minutes so the masala coats every piece.",
+          "uses": [
+            "salt",
+            "amchur",
+            "garam_masala"
+          ],
+          "visual": "Browned okra pieces coated with onion-tomato masala in the iron kadai, dry and glossy",
+          "timerMin": 3,
+          "heat": "medium"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve hot with phulka and dal or raita.",
+          "uses": [],
+          "visual": "Bhindi masala in a steel bowl, okra pieces and soft onion coated in red-brown spice, phulkas and a bowl of raita beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "amchur",
+          "with": "lemon_juice",
+          "ratio": 3,
+          "note": "Squeeze in lemon juice at the end instead of amchur."
+        }
+      ],
+      "storage": "Best eaten fresh; refrigerate up to 1 day.",
+      "reheating": "Warm in a dry pan for 2 minutes.",
+      "tags": []
+    },
+    {
+      "id": "masala-egg-bhurji",
+      "title": "Egg Bhurji",
+      "description": "Street-style Indian scrambled eggs cooked soft with onion, tomato, green chilli and a pinch of garam masala. Ready in 15 minutes for breakfast or a quick dinner with roti.",
+      "cuisine": "north_indian",
+      "mealTypes": [
+        "breakfast",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 2,
+      "prepMin": 5,
+      "cookMin": 10,
+      "difficulty": "easy",
+      "equipment": [
+        "mixing_bowl",
+        "whisk",
+        "kadai|non_stick_pan"
+      ],
+      "ingredients": [
+        {
+          "ref": "egg",
+          "g": 250,
+          "measure": "5 eggs"
+        },
+        {
+          "ref": "salt",
+          "g": 3,
+          "toTaste": true
+        },
+        {
+          "ref": "sunflower_oil",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "onion",
+          "g": 60,
+          "measure": "½ medium",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "ginger",
+          "g": 4,
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 3,
+          "measure": "1",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "tomato",
+          "g": 60,
+          "measure": "1 small",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "turmeric",
+          "g": 0.5
+        },
+        {
+          "ref": "chilli_powder",
+          "g": 1,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "garam_masala",
+          "g": 0.5,
+          "measure": "¼ tsp"
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 5,
+          "prep": "chopped"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Beat the eggs",
+          "kind": "prep",
+          "text": "Crack the eggs into a bowl, add a pinch of salt and beat with a fork or whisk until just combined.",
+          "uses": [
+            "egg",
+            "salt"
+          ],
+          "visual": "Five eggs beaten to a bright yellow liquid in a steel mixing bowl with a whisk, eggshells on the side",
+          "equipment": [
+            "whisk"
+          ]
+        },
+        {
+          "title": "Soften onion and chilli",
+          "kind": "cook",
+          "text": "Heat the oil in a kadai or non-stick pan over medium heat. Add the onion, ginger and green chilli and sauté for 3 minutes until the onion is soft and translucent.",
+          "uses": [
+            "sunflower_oil",
+            "onion",
+            "ginger",
+            "green_chilli"
+          ],
+          "visual": "Translucent chopped onion, ginger and green chilli sizzling in oil in a black non-stick pan",
+          "timerMin": 3,
+          "heat": "medium"
+        },
+        {
+          "title": "Add tomato and spices",
+          "kind": "cook",
+          "text": "Add the tomato, turmeric and chilli powder and cook for 2 minutes until the tomato softens.",
+          "uses": [
+            "tomato",
+            "turmeric",
+            "chilli_powder"
+          ],
+          "visual": "Soft chopped tomato and onion turned orange with turmeric and chilli powder in the non-stick pan",
+          "timerMin": 2,
+          "heat": "medium"
+        },
+        {
+          "title": "Scramble the eggs",
+          "kind": "cook",
+          "text": "Lower the heat and pour in the eggs. Let them set for 20 seconds, then stir and scrape slowly with a spatula for 2 to 3 minutes until softly scrambled. Take off the heat while still slightly moist — they keep cooking.",
+          "uses": [],
+          "visual": "Soft, moist yellow curds of scrambled egg flecked with tomato, onion and green chilli in the non-stick pan, a spatula pushing them together",
+          "timerMin": 3,
+          "heat": "low"
+        },
+        {
+          "title": "Finish and serve",
+          "kind": "serve",
+          "text": "Sprinkle over the garam masala and coriander, toss once and serve hot with phulka or toasted bread.",
+          "uses": [
+            "garam_masala",
+            "coriander_leaves"
+          ],
+          "visual": "Egg bhurji on a steel plate topped with fresh coriander, a phulka folded beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "egg",
+          "with": "egg_white",
+          "ratio": 1,
+          "note": "Use half egg whites for a lower-fat, higher-protein bhurji."
+        },
+        {
+          "ref": "sunflower_oil",
+          "with": "butter",
+          "ratio": 1,
+          "note": "Butter gives the Mumbai street-stall flavour."
+        }
+      ],
+      "storage": "Best eaten fresh; refrigerate up to 1 day.",
+      "reheating": "Warm briefly in a pan on low heat.",
+      "tags": [
+        "kid_friendly"
+      ]
+    },
+    {
+      "id": "air-fryer-tandoori-chicken",
+      "title": "Tandoori Chicken (Air Fryer or Oven)",
+      "description": "Bone-in chicken marinated twice — first in lemon and chilli, then in a thick hung-curd tandoori masala — and roasted until charred at the edges. No tandoor needed.",
+      "cuisine": "north_indian",
+      "region": "Punjab",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 4,
+      "prepMin": 20,
+      "cookMin": 25,
+      "restMin": 240,
+      "difficulty": "medium",
+      "equipment": [
+        "knife_board",
+        "mixing_bowl",
+        "air_fryer|oven",
+        "baking_tray"
+      ],
+      "ingredients": [
+        {
+          "ref": "chicken_curry_cut",
+          "g": 800,
+          "measure": "4 legs, skinless",
+          "prep": "leg and thigh pieces, deeply slashed"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 20,
+          "measure": "4 tsp"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 8,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "salt",
+          "g": 7,
+          "toTaste": true
+        },
+        {
+          "ref": "hung_curd",
+          "g": 120,
+          "measure": "½ cup"
+        },
+        {
+          "ref": "ginger_garlic_paste",
+          "g": 20,
+          "measure": "4 tsp"
+        },
+        {
+          "ref": "tandoori_masala",
+          "g": 8,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "garam_masala",
+          "g": 1,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "kasuri_methi",
+          "g": 2,
+          "measure": "1 tbsp",
+          "prep": "crushed"
+        },
+        {
+          "ref": "mustard_oil",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "chaat_masala",
+          "g": 2,
+          "measure": "¾ tsp"
+        },
+        {
+          "ref": "onion",
+          "g": 60,
+          "prep": "cut into rings",
+          "optional": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Slash the chicken",
+          "kind": "prep",
+          "text": "Pat the skinless chicken legs dry and make 2 or 3 deep cuts in each piece, right to the bone, so the marinade can soak in.",
+          "uses": [
+            "chicken_curry_cut"
+          ],
+          "visual": "Skinless chicken legs with deep diagonal slashes laid on a wooden board, a sharp knife beside them"
+        },
+        {
+          "title": "First marinade",
+          "kind": "prep",
+          "text": "In a bowl, rub the chicken all over with the lemon juice, half the Kashmiri chilli and half the salt. Set aside for 20 minutes.",
+          "uses": [
+            "lemon_juice",
+            "kashmiri_chilli",
+            "salt"
+          ],
+          "visual": "Slashed chicken legs glistening with lemon juice and a light red dusting of chilli in a steel mixing bowl",
+          "timerMin": 20
+        },
+        {
+          "title": "Second marinade",
+          "kind": "prep",
+          "text": "Whisk the hung curd with the ginger-garlic paste, tandoori masala, turmeric, garam masala, crushed kasuri methi, mustard oil and the remaining chilli and salt. Coat the chicken thickly, working it into the cuts.",
+          "uses": [
+            "hung_curd",
+            "ginger_garlic_paste",
+            "tandoori_masala",
+            "turmeric",
+            "garam_masala",
+            "kasuri_methi",
+            "mustard_oil"
+          ],
+          "visual": "Chicken legs thickly coated in a deep orange-red yoghurt marinade, pushed into every cut, in the steel mixing bowl"
+        },
+        {
+          "title": "Marinate in the fridge",
+          "kind": "rest",
+          "text": "Cover and refrigerate for at least 4 hours, or overnight for the best flavour. Take it out 20 minutes before cooking.",
+          "uses": [],
+          "visual": "The steel bowl of red-marinated chicken covered with a plate on a fridge shelf",
+          "timerMin": 240
+        },
+        {
+          "title": "Roast until charred",
+          "kind": "cook",
+          "text": "Air fry at 200°C for 22 to 25 minutes, turning once halfway, until the edges char and the juices run clear (75°C inside). In an oven, roast on a rack over a baking tray at 220°C for 30 to 35 minutes, then grill for 3 minutes to char.",
+          "uses": [],
+          "visual": "Tandoori chicken legs in an open air-fryer basket, deep red with blackened charred edges and juices sizzling",
+          "timerMin": 25,
+          "tempC": 200,
+          "equipment": [
+            "air_fryer|oven"
+          ]
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Sprinkle chaat masala over the hot chicken and serve with onion rings, lemon wedges and mint chutney or a cucumber salad.",
+          "uses": [
+            "chaat_masala"
+          ],
+          "visual": "Charred tandoori chicken legs on a white platter dusted with chaat masala, raw onion rings and lemon wedges around them"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "chicken_curry_cut",
+          "with": "chicken_breast",
+          "ratio": 0.75,
+          "note": "Boneless breast chunks cook in 14 to 15 minutes; thread on skewers for tikka."
+        },
+        {
+          "ref": "mustard_oil",
+          "with": "sunflower_oil",
+          "ratio": 1,
+          "note": "Any oil works; mustard oil gives the classic tandoori taste."
+        }
+      ],
+      "storage": "Refrigerate cooked chicken up to 3 days. Raw marinated chicken keeps 24 hours.",
+      "reheating": "Reheat in the air fryer at 180°C for 5 minutes.",
+      "tags": [
+        "meal_prep",
+        "family"
+      ]
+    },
+    {
+      "id": "lighter-butter-chicken",
+      "title": "Lighter Butter Chicken (Murgh Makhani)",
+      "description": "Charred tikka-marinated chicken thighs in a smooth, mildly spiced tomato-cashew gravy. A modest amount of butter and two spoons of cream keep it recognisably makhani without the restaurant richness.",
+      "cuisine": "north_indian",
+      "region": "Delhi",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 4,
+      "prepMin": 20,
+      "cookMin": 40,
+      "restMin": 60,
+      "difficulty": "medium",
+      "equipment": [
+        "mixing_bowl",
+        "air_fryer|oven|non_stick_pan",
+        "kadai",
+        "blender|mixer_grinder"
+      ],
+      "ingredients": [
+        {
+          "ref": "chicken_thigh",
+          "g": 500,
+          "prep": "cut into 1½-inch pieces"
+        },
+        {
+          "ref": "hung_curd",
+          "g": 60,
+          "measure": "¼ cup"
+        },
+        {
+          "ref": "ginger_garlic_paste",
+          "g": 20,
+          "measure": "4 tsp",
+          "prep": "divided"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 8,
+          "measure": "1 tbsp",
+          "prep": "divided"
+        },
+        {
+          "ref": "garam_masala",
+          "g": 2,
+          "measure": "1 tsp",
+          "prep": "divided"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 6,
+          "toTaste": true
+        },
+        {
+          "ref": "butter",
+          "g": 20,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "cardamom",
+          "g": 0.6,
+          "measure": "2 pods"
+        },
+        {
+          "ref": "cinnamon",
+          "g": 1,
+          "measure": "1-inch stick"
+        },
+        {
+          "ref": "tomato",
+          "g": 400,
+          "measure": "5 medium",
+          "prep": "roughly chopped"
+        },
+        {
+          "ref": "cashews",
+          "g": 20,
+          "measure": "12 cashews",
+          "prep": "soaked 15 minutes"
+        },
+        {
+          "ref": "water",
+          "g": 150
+        },
+        {
+          "ref": "kasuri_methi",
+          "g": 2,
+          "measure": "1 tbsp",
+          "prep": "crushed"
+        },
+        {
+          "ref": "honey",
+          "g": 5,
+          "measure": "¾ tsp"
+        },
+        {
+          "ref": "cream_fresh",
+          "g": 30,
+          "measure": "2 tbsp"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Marinate the chicken",
+          "kind": "prep",
+          "text": "Mix the chicken with the hung curd, half the ginger-garlic paste, half the Kashmiri chilli, half the garam masala, the lemon juice and a little salt. Cover and refrigerate for 1 hour.",
+          "uses": [
+            "chicken_thigh",
+            "hung_curd",
+            "ginger_garlic_paste",
+            "kashmiri_chilli",
+            "garam_masala",
+            "lemon_juice",
+            "salt"
+          ],
+          "visual": "Boneless chicken thigh pieces coated in a thick orange-red yoghurt marinade in a steel mixing bowl",
+          "timerMin": 60
+        },
+        {
+          "title": "Char the chicken",
+          "kind": "cook",
+          "text": "Air fry the chicken at 200°C for 12 minutes, shaking halfway, until charred at the edges. Or grill in the oven at 230°C for 15 minutes, or sear in a hot non-stick pan for 3 minutes per side.",
+          "uses": [],
+          "visual": "Marinated chicken pieces with blackened, charred edges in an open air-fryer basket",
+          "timerMin": 12,
+          "tempC": 200,
+          "equipment": [
+            "air_fryer|oven|non_stick_pan"
+          ]
+        },
+        {
+          "title": "Cook tomatoes and cashews",
+          "kind": "cook",
+          "text": "Melt half the butter in a kadai. Add the cardamom and cinnamon, then the remaining ginger-garlic paste for 30 seconds. Add the tomatoes, drained cashews and 100 ml of the water. Cover and cook on medium for 12 minutes until the tomatoes are completely soft.",
+          "uses": [
+            "butter",
+            "cardamom",
+            "cinnamon",
+            "tomato",
+            "cashews",
+            "water"
+          ],
+          "visual": "Soft, collapsed tomato pieces and pale cashews simmering with whole cardamom and a cinnamon stick in melted butter in a black iron kadai",
+          "timerMin": 12,
+          "heat": "medium"
+        },
+        {
+          "title": "Blend and strain",
+          "kind": "prep",
+          "text": "Pick out the whole spices, cool slightly and blend the tomato mixture until very smooth. For a silky restaurant texture, press it through a sieve back into the kadai.",
+          "uses": [],
+          "visual": "A blender jar of smooth, bright orange-red tomato and cashew purée",
+          "equipment": [
+            "blender|mixer_grinder"
+          ]
+        },
+        {
+          "title": "Simmer the makhani gravy",
+          "kind": "cook",
+          "text": "Return the purée to the kadai with the remaining butter, Kashmiri chilli and water. Simmer on low for 8 minutes until thickened and glossy. Stir in the kasuri methi, honey and remaining salt.",
+          "uses": [
+            "kasuri_methi",
+            "honey"
+          ],
+          "visual": "Smooth, glossy orange makhani gravy bubbling gently in the iron kadai with flecks of dried methi",
+          "timerMin": 8,
+          "heat": "low"
+        },
+        {
+          "title": "Add chicken and cream",
+          "kind": "cook",
+          "text": "Add the charred chicken and simmer for 5 minutes so it absorbs the gravy. Stir in most of the cream and the remaining garam masala and turn off the heat.",
+          "uses": [
+            "cream_fresh"
+          ],
+          "visual": "Charred chicken pieces in creamy orange gravy in the iron kadai, a ribbon of cream being stirred in",
+          "timerMin": 5,
+          "heat": "low"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Drizzle with the reserved cream and serve hot with phulka, naan or jeera rice.",
+          "uses": [],
+          "visual": "Butter chicken in a copper handi with a swirl of cream and a sprinkle of kasuri methi on top, phulkas stacked beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "honey",
+          "with": "stevia",
+          "ratio": 0.05,
+          "note": "A pinch of stevia balances the tomato acidity with no added sugar."
+        },
+        {
+          "ref": "chicken_thigh",
+          "with": "chicken_breast",
+          "ratio": 1,
+          "note": "Breast is leaner but can dry out — char for only 10 minutes."
+        },
+        {
+          "ref": "cashews",
+          "with": "almonds",
+          "ratio": 1,
+          "note": "Blanched almonds give a similar creamy body."
+        }
+      ],
+      "storage": "Refrigerate up to 3 days or freeze the gravy for a month.",
+      "reheating": "Warm on low heat with a splash of water; avoid boiling once the cream is in.",
+      "tags": [
+        "family",
+        "kid_friendly",
+        "festive"
+      ]
+    },
+    {
+      "id": "lighter-chicken-tikka-masala",
+      "title": "Chicken Tikka Masala (Lighter)",
+      "description": "Smoky chicken breast tikka simmered in a chunky onion-tomato-capsicum masala. Bolder and more rustic than butter chicken, with a single spoon of cream to round it off.",
+      "cuisine": "north_indian",
+      "region": "Punjab",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 4,
+      "prepMin": 20,
+      "cookMin": 35,
+      "restMin": 60,
+      "difficulty": "medium",
+      "equipment": [
+        "mixing_bowl",
+        "skewers",
+        "air_fryer|oven|grill",
+        "kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "chicken_breast",
+          "g": 500,
+          "measure": "2½ breast fillets",
+          "prep": "cut into 1½-inch cubes"
+        },
+        {
+          "ref": "curd",
+          "g": 80,
+          "measure": "⅓ cup"
+        },
+        {
+          "ref": "ginger_garlic_paste",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "tandoori_masala",
+          "g": 5,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 6,
+          "measure": "1 tbsp",
+          "prep": "divided"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 6,
+          "toTaste": true
+        },
+        {
+          "ref": "sunflower_oil",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "cumin_seeds",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "onion",
+          "g": 150,
+          "measure": "1 large",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "ginger",
+          "g": 8,
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "prep": "chopped"
+        },
+        {
+          "ref": "tomato",
+          "g": 300,
+          "measure": "4 medium",
+          "prep": "puréed"
+        },
+        {
+          "ref": "coriander_powder",
+          "g": 5,
+          "measure": "2½ tsp"
+        },
+        {
+          "ref": "capsicum",
+          "g": 100,
+          "measure": "1 small",
+          "prep": "cut into 1-inch squares"
+        },
+        {
+          "ref": "water",
+          "g": 100
+        },
+        {
+          "ref": "garam_masala",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "kasuri_methi",
+          "g": 1,
+          "measure": "½ tbsp",
+          "prep": "crushed"
+        },
+        {
+          "ref": "cream_fresh",
+          "g": 25,
+          "measure": "1½ tbsp"
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 6,
+          "prep": "chopped"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Marinate the tikka",
+          "kind": "prep",
+          "text": "Mix the chicken with the curd, ginger-garlic paste, tandoori masala, half the Kashmiri chilli, lemon juice and a little salt. Cover and refrigerate for 1 hour.",
+          "uses": [
+            "chicken_breast",
+            "curd",
+            "ginger_garlic_paste",
+            "tandoori_masala",
+            "kashmiri_chilli",
+            "lemon_juice",
+            "salt"
+          ],
+          "visual": "Cubes of chicken breast coated in a pinkish-red yoghurt marinade in a steel mixing bowl",
+          "timerMin": 60
+        },
+        {
+          "title": "Grill the tikka",
+          "kind": "cook",
+          "text": "Thread the chicken onto skewers. Air fry at 200°C for 12 to 14 minutes, or grill in an oven at 230°C for 15 minutes, turning once, until charred at the edges and just cooked through.",
+          "uses": [],
+          "visual": "Skewers of chicken tikka with charred edges resting in an open air-fryer basket",
+          "timerMin": 13,
+          "tempC": 200,
+          "equipment": [
+            "skewers",
+            "air_fryer|oven|grill"
+          ]
+        },
+        {
+          "title": "Brown the onions",
+          "kind": "cook",
+          "text": "Heat the oil in a kadai, add the cumin seeds, then the onion, ginger and green chilli. Cook for 7 to 8 minutes until the onion is golden brown.",
+          "uses": [
+            "sunflower_oil",
+            "cumin_seeds",
+            "onion",
+            "ginger",
+            "green_chilli"
+          ],
+          "visual": "Golden-brown chopped onion with ginger, green chilli and cumin seeds in oil in a black iron kadai",
+          "timerMin": 8,
+          "heat": "medium"
+        },
+        {
+          "title": "Cook the tomato masala",
+          "kind": "cook",
+          "text": "Add the tomato purée, coriander powder, the remaining Kashmiri chilli and salt. Cook for 8 minutes until thick and the oil separates.",
+          "uses": [
+            "tomato",
+            "coriander_powder"
+          ],
+          "visual": "Thick, deep red tomato-onion masala with oil gleaming at the edges in the iron kadai",
+          "timerMin": 8,
+          "heat": "medium"
+        },
+        {
+          "title": "Add capsicum and tikka",
+          "kind": "cook",
+          "text": "Add the capsicum and cook for 2 minutes so it stays crunchy. Slide the tikka off the skewers into the masala, add the water and simmer for 5 minutes.",
+          "uses": [
+            "capsicum",
+            "water"
+          ],
+          "visual": "Charred chicken tikka pieces and green capsicum squares in a thick red masala simmering in the iron kadai",
+          "timerMin": 7,
+          "heat": "low"
+        },
+        {
+          "title": "Finish the masala",
+          "kind": "cook",
+          "text": "Stir in the garam masala, kasuri methi and cream and simmer for 1 minute more.",
+          "uses": [
+            "garam_masala",
+            "kasuri_methi",
+            "cream_fresh"
+          ],
+          "visual": "Chicken tikka masala turned a richer orange-red with cream streaks in the iron kadai",
+          "timerMin": 1,
+          "heat": "low"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Scatter over the coriander and serve with phulka or jeera rice and a kachumber salad.",
+          "uses": [
+            "coriander_leaves"
+          ],
+          "visual": "Chicken tikka masala in a steel kadai topped with fresh coriander, charred chicken and green capsicum visible, phulkas on the side"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "chicken_breast",
+          "with": "paneer",
+          "ratio": 0.8,
+          "note": "Use paneer cubes for a vegetarian paneer tikka masala; grill for 8 minutes only."
+        },
+        {
+          "ref": "cream_fresh",
+          "with": "hung_curd",
+          "ratio": 1,
+          "note": "Whisked hung curd stirred in off the heat makes it lighter and tangier."
+        }
+      ],
+      "storage": "Refrigerate up to 3 days.",
+      "reheating": "Reheat on low heat with a splash of water.",
+      "tags": [
+        "family",
+        "meal_prep"
+      ]
+    },
+    {
+      "id": "mutton-keema-matar",
+      "title": "Keema Matar",
+      "description": "Minced mutton and green peas cooked dry with browned onion, tomato and whole spices, finished with a spoon of curd. A North Indian home favourite with phulka or pav.",
+      "cuisine": "north_indian",
+      "region": "Punjab",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 4,
+      "prepMin": 10,
+      "cookMin": 40,
+      "difficulty": "easy",
+      "equipment": [
+        "kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "sunflower_oil",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "cumin_seeds",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "bay_leaf",
+          "g": 0.4,
+          "measure": "2 leaves"
+        },
+        {
+          "ref": "onion",
+          "g": 150,
+          "measure": "1 large",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "ginger_garlic_paste",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "prep": "chopped"
+        },
+        {
+          "ref": "mutton_mince",
+          "g": 400
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "chilli_powder",
+          "g": 3,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "coriander_powder",
+          "g": 5,
+          "measure": "2½ tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 5,
+          "toTaste": true
+        },
+        {
+          "ref": "tomato",
+          "g": 150,
+          "measure": "2 medium",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "curd",
+          "g": 40,
+          "measure": "2½ tbsp",
+          "prep": "whisked"
+        },
+        {
+          "ref": "green_peas",
+          "g": 150,
+          "measure": "1 cup"
+        },
+        {
+          "ref": "water",
+          "g": 120
+        },
+        {
+          "ref": "garam_masala",
+          "g": 3,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 8,
+          "prep": "chopped"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Brown the onion",
+          "kind": "cook",
+          "text": "Heat the oil in a heavy kadai. Add the cumin and bay leaves, then the onion, and cook for 8 minutes until golden brown.",
+          "uses": [
+            "sunflower_oil",
+            "cumin_seeds",
+            "bay_leaf",
+            "onion"
+          ],
+          "visual": "Golden-brown chopped onion with bay leaves and cumin seeds in a heavy black iron kadai",
+          "timerMin": 8,
+          "heat": "medium"
+        },
+        {
+          "title": "Add aromatics",
+          "kind": "cook",
+          "text": "Stir in the ginger-garlic paste and green chilli and fry for 1 minute until the raw smell disappears.",
+          "uses": [
+            "ginger_garlic_paste",
+            "green_chilli"
+          ],
+          "visual": "Browned onion coated with ginger-garlic paste and green chilli in the iron kadai",
+          "timerMin": 1,
+          "heat": "medium"
+        },
+        {
+          "title": "Brown the mince",
+          "kind": "cook",
+          "text": "Add the mutton mince and break it up with the back of a spatula. Cook on high heat for 6 to 8 minutes until it loses its pink colour and the moisture dries off. Stir in the turmeric, chilli powder, coriander powder and salt.",
+          "uses": [
+            "mutton_mince",
+            "turmeric",
+            "chilli_powder",
+            "coriander_powder",
+            "salt"
+          ],
+          "visual": "Crumbly browned mutton keema coated in spices with onion in the iron kadai, no pink left",
+          "timerMin": 8,
+          "heat": "high"
+        },
+        {
+          "title": "Cook tomato and curd",
+          "kind": "cook",
+          "text": "Add the tomato and cook for 5 minutes until it melts into the keema. Lower the heat, stir in the whisked curd and cook for 2 minutes.",
+          "uses": [
+            "tomato",
+            "curd"
+          ],
+          "visual": "Keema with melted tomato and a creamy streak of curd being stirred in, reddish-brown and moist in the iron kadai",
+          "timerMin": 7,
+          "heat": "medium"
+        },
+        {
+          "title": "Simmer with peas",
+          "kind": "cook",
+          "text": "Add the peas and water, cover and simmer on low for 15 minutes, stirring occasionally, until the mince is tender and the peas are soft. Uncover and cook off any extra liquid — keema matar should be moist but not soupy.",
+          "uses": [
+            "green_peas",
+            "water"
+          ],
+          "visual": "Bright green peas scattered through moist, reddish-brown mutton keema in the open iron kadai",
+          "timerMin": 15,
+          "heat": "low"
+        },
+        {
+          "title": "Finish and serve",
+          "kind": "serve",
+          "text": "Stir in the garam masala and coriander. Serve hot with phulka or pav, onion rings and lemon.",
+          "uses": [
+            "garam_masala",
+            "coriander_leaves"
+          ],
+          "visual": "Keema matar in a steel bowl topped with coriander, green peas visible through the mince, phulka and lemon wedges beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "mutton_mince",
+          "with": "chicken_mince",
+          "ratio": 1,
+          "note": "Chicken keema is leaner and cheaper; reduce the covered simmer to 8 minutes."
+        },
+        {
+          "ref": "green_peas",
+          "with": "capsicum",
+          "ratio": 1,
+          "note": "Swap peas for chopped capsicum to lower the carbs."
+        }
+      ],
+      "storage": "Refrigerate up to 3 days or freeze for a month.",
+      "reheating": "Reheat in a pan with a splash of water until piping hot.",
+      "tags": [
+        "family",
+        "meal_prep"
+      ]
+    },
+    {
+      "id": "kashmiri-mutton-rogan-josh",
+      "title": "Kashmiri Mutton Rogan Josh",
+      "description": "Kashmiri Pandit-style rogan josh: mutton slow-cooked in yoghurt with Kashmiri chilli, fennel and ginger, no onion, tomato or garlic, for a deep red, aromatic curry.",
+      "cuisine": "north_indian",
+      "region": "Kashmir",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 4,
+      "prepMin": 15,
+      "cookMin": 60,
+      "difficulty": "medium",
+      "equipment": [
+        "mixing_bowl",
+        "whisk",
+        "pressure_cooker|kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "mutton",
+          "g": 750,
+          "prep": "curry cut, washed and drained"
+        },
+        {
+          "ref": "mustard_oil",
+          "g": 25,
+          "measure": "2 tbsp"
+        },
+        {
+          "ref": "cardamom",
+          "g": 1,
+          "measure": "3 pods"
+        },
+        {
+          "ref": "cloves",
+          "g": 0.4,
+          "measure": "4"
+        },
+        {
+          "ref": "cinnamon",
+          "g": 1,
+          "measure": "1-inch stick"
+        },
+        {
+          "ref": "bay_leaf",
+          "g": 0.4,
+          "measure": "2 leaves"
+        },
+        {
+          "ref": "hing",
+          "g": 0.3,
+          "measure": "1 pinch"
+        },
+        {
+          "ref": "salt",
+          "g": 6,
+          "toTaste": true
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 10,
+          "measure": "4 tsp"
+        },
+        {
+          "ref": "curd",
+          "g": 150,
+          "measure": "⅔ cup",
+          "prep": "whisked smooth"
+        },
+        {
+          "ref": "fennel_seeds",
+          "g": 5,
+          "measure": "2½ tsp",
+          "prep": "ground"
+        },
+        {
+          "ref": "ginger",
+          "g": 10,
+          "prep": "finely grated"
+        },
+        {
+          "ref": "water",
+          "g": 400
+        },
+        {
+          "ref": "garam_masala",
+          "g": 2,
+          "measure": "1 tsp"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Prepare the spices and curd",
+          "kind": "prep",
+          "text": "Whisk the curd until completely smooth so it won't split. Mix the Kashmiri chilli with 3 tablespoons of water into a paste, and keep the ground fennel and grated ginger ready.",
+          "uses": [
+            "curd",
+            "kashmiri_chilli",
+            "fennel_seeds",
+            "ginger"
+          ],
+          "visual": "A steel bowl of smooth whisked curd, a small bowl of bright red Kashmiri chilli paste, and katoris of ground fennel and grated ginger on the counter",
+          "equipment": [
+            "whisk"
+          ]
+        },
+        {
+          "title": "Heat the mustard oil",
+          "kind": "cook",
+          "text": "Heat the mustard oil in a pressure cooker or heavy kadai until it smokes lightly, then lower the heat and let it cool for 30 seconds. Add the cardamom, cloves, cinnamon, bay leaves and hing.",
+          "uses": [
+            "mustard_oil",
+            "cardamom",
+            "cloves",
+            "cinnamon",
+            "bay_leaf",
+            "hing"
+          ],
+          "visual": "Whole cardamom, cloves, cinnamon and bay leaves sizzling in golden mustard oil in a heavy steel pressure cooker base",
+          "heat": "medium"
+        },
+        {
+          "title": "Sear the mutton",
+          "kind": "cook",
+          "text": "Add the mutton and salt and sear on high heat for 8 to 10 minutes, turning often, until the pieces are browned and the juices have mostly evaporated.",
+          "uses": [
+            "mutton",
+            "salt"
+          ],
+          "visual": "Bone-in mutton pieces browned all over among the whole spices in the open pressure cooker",
+          "timerMin": 10,
+          "heat": "high"
+        },
+        {
+          "title": "Add chilli and curd",
+          "kind": "cook",
+          "text": "Lower the heat. Stir in the chilli paste and cook for 1 minute, then add the curd a spoonful at a time, stirring constantly, until it is absorbed and the oil turns red — about 5 minutes.",
+          "uses": [],
+          "visual": "Mutton coated in a deep red yoghurt and chilli masala with red oil rising to the edges in the pressure cooker",
+          "timerMin": 6,
+          "heat": "low"
+        },
+        {
+          "title": "Add fennel and ginger",
+          "kind": "cook",
+          "text": "Sprinkle in the ground fennel and grated ginger and stir for 1 minute. Pour in the water and bring to a boil.",
+          "uses": [
+            "water"
+          ],
+          "visual": "Deep red rogan josh gravy coming to a boil around mutton pieces in the pressure cooker",
+          "timerMin": 2,
+          "heat": "medium"
+        },
+        {
+          "title": "Cook until tender",
+          "kind": "cook",
+          "text": "Close the cooker and cook for 1 whistle on high, then 20 minutes on low (about 5 to 6 whistles). In a kadai, cover and simmer for 60 to 70 minutes, adding water if needed, until the mutton is falling off the bone.",
+          "uses": [],
+          "visual": "The steel pressure cooker closed with its weight on, steam escaping, on a low flame",
+          "timerMin": 25,
+          "heat": "low",
+          "equipment": [
+            "pressure_cooker|kadai"
+          ]
+        },
+        {
+          "title": "Reduce and finish",
+          "kind": "cook",
+          "text": "Open once the pressure drops. Simmer uncovered for 5 minutes to thicken the gravy so a layer of red oil floats on top. Stir in the garam masala.",
+          "uses": [
+            "garam_masala"
+          ],
+          "visual": "Tender mutton in a thick, glossy, deep red gravy with red oil pooling on the surface in the open pressure cooker",
+          "timerMin": 5,
+          "heat": "medium"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve hot with steamed rice, as it's eaten in Kashmir.",
+          "uses": [],
+          "visual": "Rogan josh in a copper bowl, deep red gravy glistening with oil around tender mutton pieces, a plate of steamed rice beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "mutton",
+          "with": "chicken_curry_cut",
+          "ratio": 1,
+          "note": "Chicken rogan josh needs only 20 minutes of covered simmering, no pressure cooking."
+        },
+        {
+          "ref": "mustard_oil",
+          "with": "ghee",
+          "ratio": 1,
+          "note": "Ghee is also traditional in Pandit homes."
+        }
+      ],
+      "storage": "Refrigerate up to 3 days; the flavour improves overnight.",
+      "reheating": "Reheat gently on low heat with a splash of water.",
+      "tags": [
+        "festive",
+        "meal_prep"
+      ]
+    },
+    {
+      "id": "air-fryer-amritsari-fish",
+      "title": "Amritsari Fish (Air Fryer)",
+      "description": "Punjab's famous fried fish, made in the air fryer: firm white fish in a spiced besan and ajwain coating, crisped with a brush of mustard oil and finished with chaat masala and lemon.",
+      "cuisine": "north_indian",
+      "region": "Amritsar",
+      "mealTypes": [
+        "snack",
+        "dinner"
+      ],
+      "course": "snack",
+      "servings": 3,
+      "prepMin": 15,
+      "cookMin": 12,
+      "restMin": 20,
+      "difficulty": "easy",
+      "equipment": [
+        "knife_board",
+        "mixing_bowl",
+        "air_fryer|oven"
+      ],
+      "ingredients": [
+        {
+          "ref": "basa",
+          "g": 450,
+          "measure": "3 fillets",
+          "prep": "cut into 2-inch fingers"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "salt",
+          "g": 5,
+          "toTaste": true
+        },
+        {
+          "ref": "ginger_garlic_paste",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 5,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "turmeric",
+          "g": 0.5
+        },
+        {
+          "ref": "ajwain_seeds",
+          "g": 2,
+          "measure": "¾ tsp",
+          "prep": "crushed"
+        },
+        {
+          "ref": "besan",
+          "g": 35,
+          "measure": "4½ tbsp"
+        },
+        {
+          "ref": "water",
+          "g": 20
+        },
+        {
+          "ref": "mustard_oil",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "chaat_masala",
+          "g": 2,
+          "measure": "¾ tsp"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Cut and season the fish",
+          "kind": "prep",
+          "text": "Pat the fish dry and cut into 2-inch fingers. Toss with the lemon juice and half the salt and set aside for 10 minutes.",
+          "uses": [
+            "basa",
+            "lemon_juice",
+            "salt"
+          ],
+          "visual": "White fish fingers glistening with lemon juice in a steel mixing bowl, a squeezed lemon half beside it",
+          "timerMin": 10
+        },
+        {
+          "title": "Make the besan coating",
+          "kind": "prep",
+          "text": "Mix the ginger-garlic paste, Kashmiri chilli, turmeric, crushed ajwain, besan, the remaining salt and half the mustard oil with just enough water to make a thick paste — it should cling, not drip.",
+          "uses": [
+            "ginger_garlic_paste",
+            "kashmiri_chilli",
+            "turmeric",
+            "ajwain_seeds",
+            "besan",
+            "water",
+            "mustard_oil"
+          ],
+          "visual": "A thick, deep orange besan paste speckled with ajwain seeds in a small steel bowl, a spoon standing upright in it"
+        },
+        {
+          "title": "Coat and rest",
+          "kind": "rest",
+          "text": "Drain any liquid from the fish, add the besan paste and coat each piece evenly. Rest for 20 minutes so the coating sets.",
+          "uses": [],
+          "visual": "Fish fingers thickly coated in orange besan masala resting in the steel mixing bowl",
+          "timerMin": 20
+        },
+        {
+          "title": "Air fry until crisp",
+          "kind": "cook",
+          "text": "Line the air-fryer basket with lightly oiled parchment. Arrange the fish in one layer and brush with the remaining mustard oil. Air fry at 200°C for 10 to 12 minutes, turning carefully halfway, until golden and crisp. In an oven, bake at 220°C for 15 minutes on a rack.",
+          "uses": [],
+          "visual": "Golden, crisp orange-coated fish fingers in a single layer in an open air-fryer basket, edges lightly browned",
+          "timerMin": 12,
+          "tempC": 200,
+          "equipment": [
+            "air_fryer|oven"
+          ]
+        },
+        {
+          "title": "Serve hot",
+          "kind": "serve",
+          "text": "Dust with chaat masala and serve straight away with lemon wedges, sliced onion and mint chutney.",
+          "uses": [
+            "chaat_masala"
+          ],
+          "visual": "Crisp Amritsari fish fingers piled on a white plate, dusted with chaat masala, lemon wedges, onion rings and a bowl of green chutney beside them"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "basa",
+          "with": "seer_fish",
+          "ratio": 1,
+          "note": "Any firm white fish works; seer fish or pomfret are excellent."
+        },
+        {
+          "ref": "besan",
+          "with": "almond_flour",
+          "ratio": 1,
+          "note": "Almond flour makes a lower-carb coating, though less traditional."
+        }
+      ],
+      "storage": "Best eaten fresh. Coated raw fish can be refrigerated for up to 6 hours before cooking.",
+      "reheating": "Re-crisp in the air fryer at 180°C for 3 minutes.",
+      "tags": [
+        "kid_friendly"
+      ]
+    },
+    {
+      "id": "gujarati-methi-thepla",
+      "title": "Methi Thepla",
+      "description": "Soft, spiced Gujarati flatbreads made with whole-wheat flour, a little besan, fresh fenugreek leaves and curd. They keep for days, which is why every Gujarati family packs them for travel.",
+      "cuisine": "west_indian",
+      "region": "Gujarat",
+      "mealTypes": [
+        "breakfast",
+        "lunch",
+        "dinner"
+      ],
+      "course": "base",
+      "servings": 4,
+      "prepMin": 20,
+      "cookMin": 20,
+      "restMin": 15,
+      "difficulty": "medium",
+      "equipment": [
+        "mixing_bowl",
+        "tawa"
+      ],
+      "ingredients": [
+        {
+          "ref": "methi_leaves",
+          "g": 60,
+          "measure": "2 cups",
+          "prep": "picked, washed, finely chopped"
+        },
+        {
+          "ref": "atta",
+          "g": 160,
+          "measure": "1⅓ cups"
+        },
+        {
+          "ref": "besan",
+          "g": 30,
+          "measure": "4 tbsp"
+        },
+        {
+          "ref": "ginger",
+          "g": 5,
+          "prep": "grated"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "chilli_powder",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "ajwain_seeds",
+          "g": 1,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "sesame_seeds",
+          "g": 4,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true
+        },
+        {
+          "ref": "curd",
+          "g": 50,
+          "measure": "3 tbsp"
+        },
+        {
+          "ref": "sunflower_oil",
+          "g": 20,
+          "measure": "1½ tbsp",
+          "prep": "2 tsp for the dough, rest for cooking"
+        },
+        {
+          "ref": "water",
+          "g": 40
+        }
+      ],
+      "steps": [
+        {
+          "title": "Prepare the methi",
+          "kind": "prep",
+          "text": "Pick the methi leaves off the stems, wash them well in a few changes of water and chop finely. Squeeze out excess water.",
+          "uses": [
+            "methi_leaves"
+          ],
+          "visual": "A heap of finely chopped fresh green fenugreek leaves on a wooden board beside a pile of discarded stems"
+        },
+        {
+          "title": "Mix the dry ingredients",
+          "kind": "prep",
+          "text": "In a large bowl, combine the atta, besan, chopped methi, ginger, green chilli, turmeric, chilli powder, ajwain, sesame seeds and salt.",
+          "uses": [
+            "atta",
+            "besan",
+            "ginger",
+            "green_chilli",
+            "turmeric",
+            "chilli_powder",
+            "ajwain_seeds",
+            "sesame_seeds",
+            "salt"
+          ],
+          "visual": "Whole-wheat flour and besan mixed with bright green methi, sesame seeds and yellow-red spices in a wide steel mixing bowl"
+        },
+        {
+          "title": "Knead a soft dough",
+          "kind": "prep",
+          "text": "Add the curd and 2 teaspoons of the oil and knead, adding water a spoon at a time, into a soft, smooth dough. Cover and rest for 15 minutes.",
+          "uses": [
+            "curd",
+            "sunflower_oil",
+            "water"
+          ],
+          "visual": "A smooth, soft, green-flecked dough ball in the steel mixing bowl, lightly glossy with oil",
+          "timerMin": 15
+        },
+        {
+          "title": "Roll out thin",
+          "kind": "prep",
+          "text": "Divide the dough into 8 balls. Dust lightly with flour and roll each into a thin 6-inch circle.",
+          "uses": [],
+          "visual": "A thin, round green-speckled thepla rolled out on a wooden board with a rolling pin, dough balls waiting nearby"
+        },
+        {
+          "title": "Cook on the tawa",
+          "kind": "cook",
+          "text": "Heat a tawa on medium heat. Cook each thepla for about 30 seconds until small bubbles appear, flip, then brush lightly with oil. Flip again and press with a spatula until golden spots appear on both sides, about 1 minute per side.",
+          "uses": [],
+          "visual": "A thepla on a hot black iron tawa with golden-brown spots and a light sheen of oil, a spatula pressing the edge",
+          "heat": "medium",
+          "equipment": [
+            "tawa"
+          ]
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Stack the theplas in a cloth-lined box to keep them soft. Serve warm or at room temperature with curd, pickle or a dry sabzi.",
+          "uses": [],
+          "visual": "A stack of golden-spotted methi theplas on a steel plate with a bowl of curd and a spoon of mango pickle beside them"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "curd",
+          "with": "water",
+          "ratio": 1,
+          "note": "Use water and a squeeze of lemon instead of curd for vegan theplas."
+        },
+        {
+          "ref": "atta",
+          "with": "bajra_flour",
+          "ratio": 0.5,
+          "note": "Replace half the atta with bajra flour for a traditional winter thepla."
+        }
+      ],
+      "storage": "Keeps 2 days at room temperature and up to 5 days refrigerated in an airtight box.",
+      "reheating": "Warm on a tawa for 20 seconds per side; they're also good cold.",
+      "tags": [
+        "meal_prep",
+        "family"
+      ]
+    },
+    {
+      "id": "moong-dal-chilla",
+      "title": "Moong Dal Chilla",
+      "description": "Thin, savoury pancakes made from soaked yellow moong dal ground with ginger and green chilli, topped with onion, capsicum and coriander. A protein-rich North Indian breakfast with mint chutney.",
+      "cuisine": "north_indian",
+      "region": "Rajasthan",
+      "mealTypes": [
+        "breakfast",
+        "dinner"
+      ],
+      "course": "complete",
+      "servings": 2,
+      "prepMin": 15,
+      "cookMin": 20,
+      "restMin": 180,
+      "difficulty": "easy",
+      "equipment": [
+        "mixing_bowl",
+        "mixer_grinder",
+        "tawa|non_stick_pan"
+      ],
+      "ingredients": [
+        {
+          "ref": "moong_dal",
+          "g": 120,
+          "measure": "⅔ cup"
+        },
+        {
+          "ref": "water",
+          "g": 120
+        },
+        {
+          "ref": "ginger",
+          "g": 6,
+          "prep": "chopped"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "measure": "1–2"
+        },
+        {
+          "ref": "cumin_seeds",
+          "g": 1,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "hing",
+          "g": 0.2,
+          "measure": "1 pinch"
+        },
+        {
+          "ref": "salt",
+          "g": 3,
+          "toTaste": true
+        },
+        {
+          "ref": "onion",
+          "g": 40,
+          "measure": "½ small",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "capsicum",
+          "g": 40,
+          "measure": "⅓",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 6,
+          "prep": "chopped"
+        },
+        {
+          "ref": "sunflower_oil",
+          "g": 10,
+          "measure": "2 tsp"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Soak the dal",
+          "kind": "rest",
+          "text": "Rinse the moong dal well and soak it in plenty of water for 3 hours, or overnight in the fridge. Drain.",
+          "uses": [
+            "moong_dal"
+          ],
+          "visual": "Pale yellow split moong dal soaking in water in a steel mixing bowl",
+          "timerMin": 180
+        },
+        {
+          "title": "Grind the batter",
+          "kind": "prep",
+          "text": "Grind the drained dal with the ginger, green chilli, cumin, hing, salt and about 120 ml water into a smooth, pourable batter, like dosa batter.",
+          "uses": [
+            "water",
+            "ginger",
+            "green_chilli",
+            "cumin_seeds",
+            "hing",
+            "salt"
+          ],
+          "visual": "A mixer jar full of smooth, pale yellow moong dal batter with tiny flecks of green chilli",
+          "equipment": [
+            "mixer_grinder"
+          ]
+        },
+        {
+          "title": "Prepare the topping",
+          "kind": "prep",
+          "text": "Mix the chopped onion, capsicum and coriander in a small bowl.",
+          "uses": [
+            "onion",
+            "capsicum",
+            "coriander_leaves"
+          ],
+          "visual": "A small steel bowl of finely chopped onion, green capsicum and coriander leaves mixed together"
+        },
+        {
+          "title": "Spread and top",
+          "kind": "cook",
+          "text": "Heat a tawa on medium heat and brush with a little oil. Pour a ladle of batter in the centre and spread it quickly into a thin circle. Scatter a spoonful of topping over and press it in lightly.",
+          "uses": [
+            "sunflower_oil"
+          ],
+          "visual": "A thin round of yellow moong batter on a hot black tawa, scattered with chopped onion, capsicum and coriander",
+          "heat": "medium",
+          "equipment": [
+            "tawa|non_stick_pan"
+          ]
+        },
+        {
+          "title": "Cook both sides",
+          "kind": "cook",
+          "text": "Drizzle a few drops of oil around the edge and cook for 2 minutes until the base is golden. Flip and cook 1 minute more. Repeat with the rest of the batter to make 6 chillas.",
+          "uses": [],
+          "visual": "A golden-brown chilla flipped on the tawa, crisp lacy edges and lightly browned onion and capsicum on top",
+          "timerMin": 3,
+          "heat": "medium"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve hot with mint-coriander chutney or a bowl of curd.",
+          "uses": [],
+          "visual": "Two golden moong dal chillas folded on a steel plate with a small bowl of green mint chutney"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "moong_dal",
+          "with": "green_moong",
+          "ratio": 1,
+          "note": "Whole green moong (soaked 6 hours) gives a more rustic, higher-fibre chilla."
+        },
+        {
+          "ref": "capsicum",
+          "with": "spinach",
+          "ratio": 1,
+          "note": "Finely chopped spinach or grated carrot also works as a topping."
+        }
+      ],
+      "storage": "Batter keeps 1 day refrigerated; cooked chillas are best fresh.",
+      "reheating": "Warm on a tawa for 30 seconds per side.",
+      "tags": [
+        "kid_friendly"
+      ]
+    },
+    {
+      "id": "besan-chilla-tomato-onion",
+      "title": "Besan Chilla",
+      "description": "Quick savoury gram-flour pancakes with onion, tomato, green chilli and ajwain — no soaking or grinding, just whisk and pour. A ten-minute North Indian breakfast.",
+      "cuisine": "north_indian",
+      "mealTypes": [
+        "breakfast",
+        "snack"
+      ],
+      "course": "complete",
+      "servings": 2,
+      "prepMin": 10,
+      "cookMin": 15,
+      "difficulty": "easy",
+      "equipment": [
+        "mixing_bowl",
+        "whisk",
+        "tawa|non_stick_pan"
+      ],
+      "ingredients": [
+        {
+          "ref": "besan",
+          "g": 100,
+          "measure": "1 cup + 2 tbsp"
+        },
+        {
+          "ref": "turmeric",
+          "g": 0.5
+        },
+        {
+          "ref": "chilli_powder",
+          "g": 1,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "ajwain_seeds",
+          "g": 0.5,
+          "measure": "¼ tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 3,
+          "toTaste": true
+        },
+        {
+          "ref": "water",
+          "g": 130
+        },
+        {
+          "ref": "onion",
+          "g": 50,
+          "measure": "½ small",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "tomato",
+          "g": 50,
+          "measure": "½",
+          "prep": "deseeded, finely chopped"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 4,
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 6,
+          "prep": "chopped"
+        },
+        {
+          "ref": "sunflower_oil",
+          "g": 10,
+          "measure": "2 tsp"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Whisk the batter",
+          "kind": "prep",
+          "text": "Whisk the besan with the turmeric, chilli powder, crushed ajwain and salt. Add the water gradually, whisking out lumps, until you have a smooth batter like thin pancake batter. Rest 5 minutes.",
+          "uses": [
+            "besan",
+            "turmeric",
+            "chilli_powder",
+            "ajwain_seeds",
+            "salt",
+            "water"
+          ],
+          "visual": "A smooth, pale yellow besan batter in a steel mixing bowl with a whisk, small flecks of red chilli visible",
+          "timerMin": 5,
+          "equipment": [
+            "whisk"
+          ]
+        },
+        {
+          "title": "Add the vegetables",
+          "kind": "prep",
+          "text": "Stir the chopped onion, tomato, green chilli and coriander into the batter.",
+          "uses": [
+            "onion",
+            "tomato",
+            "green_chilli",
+            "coriander_leaves"
+          ],
+          "visual": "Yellow besan batter dotted with chopped red tomato, onion, green chilli and coriander in the steel mixing bowl"
+        },
+        {
+          "title": "Spread on the tawa",
+          "kind": "cook",
+          "text": "Heat a tawa or non-stick pan on medium heat and grease lightly with oil. Pour a ladle of batter and spread gently into a 6-inch circle. Drizzle a few drops of oil around the edge.",
+          "uses": [
+            "sunflower_oil"
+          ],
+          "visual": "A round of vegetable-studded besan batter spread on a hot black tawa, oil sizzling at the edges",
+          "heat": "medium",
+          "equipment": [
+            "tawa|non_stick_pan"
+          ]
+        },
+        {
+          "title": "Cook until golden",
+          "kind": "cook",
+          "text": "Cook for 2 minutes until the top looks set and the base is golden, then flip and cook 1 to 2 minutes more. Repeat to make 5 or 6 chillas.",
+          "uses": [],
+          "visual": "A flipped besan chilla on the tawa showing a golden-brown surface with browned bits of onion and tomato",
+          "timerMin": 4,
+          "heat": "medium"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve hot with green chutney, curd or tomato ketchup for the kids.",
+          "uses": [],
+          "visual": "Golden besan chillas stacked on a steel plate with a bowl of green chutney and a spoon of curd"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "onion",
+          "with": "methi_leaves",
+          "ratio": 0.6,
+          "note": "Add chopped fresh methi for a classic methi chilla."
+        },
+        {
+          "ref": "sunflower_oil",
+          "with": "ghee",
+          "ratio": 1,
+          "note": "A little ghee gives a richer flavour."
+        }
+      ],
+      "storage": "Best eaten fresh. Batter without vegetables keeps 1 day refrigerated.",
+      "reheating": "Warm on a tawa for 30 seconds per side.",
+      "tags": [
+        "kid_friendly"
+      ]
+    },
+    {
+      "id": "moong-dal-khichdi-ghee",
+      "title": "Moong Dal Khichdi",
+      "description": "Soft, comforting rice and yellow moong dal khichdi tempered with ghee, cumin, hing and ginger. The one-pot meal North Indian homes turn to on a tired evening.",
+      "cuisine": "north_indian",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "complete",
+      "servings": 3,
+      "prepMin": 10,
+      "cookMin": 20,
+      "restMin": 20,
+      "difficulty": "easy",
+      "equipment": [
+        "mixing_bowl",
+        "pressure_cooker|saucepan"
+      ],
+      "ingredients": [
+        {
+          "ref": "rice",
+          "g": 90,
+          "measure": "½ cup"
+        },
+        {
+          "ref": "moong_dal",
+          "g": 90,
+          "measure": "½ cup"
+        },
+        {
+          "ref": "ghee",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "cumin_seeds",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "hing",
+          "g": 0.3,
+          "measure": "1 pinch"
+        },
+        {
+          "ref": "ginger",
+          "g": 6,
+          "prep": "grated"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 3,
+          "measure": "1",
+          "prep": "slit"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "water",
+          "g": 750
+        },
+        {
+          "ref": "salt",
+          "g": 5,
+          "toTaste": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Rinse and soak",
+          "kind": "rest",
+          "text": "Rinse the rice and moong dal together 3 or 4 times until the water runs clear, then soak for 20 minutes. Drain.",
+          "uses": [
+            "rice",
+            "moong_dal"
+          ],
+          "visual": "White rice and yellow moong dal soaking together in a steel mixing bowl of water",
+          "timerMin": 20
+        },
+        {
+          "title": "Temper in ghee",
+          "kind": "cook",
+          "text": "Heat the ghee in a pressure cooker over medium heat. Add the cumin seeds and let them crackle, then the hing, ginger and green chilli for 30 seconds.",
+          "uses": [
+            "ghee",
+            "cumin_seeds",
+            "hing",
+            "ginger",
+            "green_chilli"
+          ],
+          "visual": "Crackling cumin seeds, grated ginger and a slit green chilli in melted ghee at the base of a steel pressure cooker",
+          "heat": "medium"
+        },
+        {
+          "title": "Add rice, dal and water",
+          "kind": "cook",
+          "text": "Add the drained rice and dal with the turmeric and stir for 1 minute. Pour in the water and add salt.",
+          "uses": [
+            "turmeric",
+            "water",
+            "salt"
+          ],
+          "visual": "Rice and moong dal tinted yellow with turmeric under water in the open pressure cooker",
+          "heat": "medium"
+        },
+        {
+          "title": "Pressure-cook",
+          "kind": "cook",
+          "text": "Close the lid and cook for 3 to 4 whistles on medium heat, about 12 minutes. Let the pressure drop naturally. In a saucepan, simmer covered for 25 to 30 minutes, stirring now and then.",
+          "uses": [],
+          "visual": "The closed steel pressure cooker with steam whistling from the weight on a medium flame",
+          "timerMin": 12,
+          "heat": "medium",
+          "equipment": [
+            "pressure_cooker|saucepan"
+          ]
+        },
+        {
+          "title": "Mash and loosen",
+          "kind": "prep",
+          "text": "Open the cooker and stir the khichdi well, mashing lightly. Add a splash of hot water if you like it looser — it thickens as it stands.",
+          "uses": [],
+          "visual": "Soft, porridge-like pale yellow khichdi being stirred with a ladle in the open pressure cooker"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve hot with a little extra ghee on top, curd, papad or pickle, and a kachumber salad.",
+          "uses": [],
+          "visual": "Moong dal khichdi in a steel bowl with a small pool of ghee on top, a bowl of curd, a roasted papad and pickle beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "rice",
+          "with": "foxtail_millet",
+          "ratio": 1,
+          "note": "Use foxtail millet for a millet khichdi with more fibre."
+        },
+        {
+          "ref": "ghee",
+          "with": "sunflower_oil",
+          "ratio": 1,
+          "note": "Use oil for a vegan khichdi."
+        }
+      ],
+      "storage": "Refrigerate up to 2 days.",
+      "reheating": "Add hot water and stir on low heat until loose and warm.",
+      "tags": [
+        "one_pot",
+        "kid_friendly"
+      ]
+    },
+    {
+      "id": "lauki-chana-dal",
+      "title": "Lauki Chana Dal",
+      "description": "Chana dal cooked with soft cubes of bottle gourd in a light onion-tomato masala. The lauki melts into the dal and stretches it into a hearty, everyday North Indian dish.",
+      "cuisine": "north_indian",
+      "region": "Uttar Pradesh",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 4,
+      "prepMin": 15,
+      "cookMin": 30,
+      "restMin": 60,
+      "difficulty": "easy",
+      "equipment": [
+        "mixing_bowl",
+        "knife_board",
+        "pressure_cooker|saucepan"
+      ],
+      "ingredients": [
+        {
+          "ref": "chana_dal",
+          "g": 120,
+          "measure": "⅔ cup"
+        },
+        {
+          "ref": "bottle_gourd",
+          "g": 300,
+          "measure": "½ medium",
+          "prep": "peeled, cut into 1-inch cubes"
+        },
+        {
+          "ref": "ghee",
+          "g": 12,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "cumin_seeds",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "hing",
+          "g": 0.3,
+          "measure": "1 pinch"
+        },
+        {
+          "ref": "onion",
+          "g": 60,
+          "measure": "½ medium",
+          "prep": "chopped"
+        },
+        {
+          "ref": "ginger",
+          "g": 6,
+          "prep": "grated"
+        },
+        {
+          "ref": "garlic",
+          "g": 6,
+          "measure": "2 cloves",
+          "prep": "chopped"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 3,
+          "prep": "chopped"
+        },
+        {
+          "ref": "tomato",
+          "g": 100,
+          "measure": "1 medium",
+          "prep": "chopped"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "chilli_powder",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "coriander_powder",
+          "g": 3,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 5,
+          "toTaste": true
+        },
+        {
+          "ref": "water",
+          "g": 600
+        },
+        {
+          "ref": "garam_masala",
+          "g": 1,
+          "measure": "½ tsp"
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 5,
+          "prep": "chopped"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Soak the chana dal",
+          "kind": "rest",
+          "text": "Rinse the chana dal and soak it for 1 hour. Meanwhile peel the lauki, remove any seedy core and cut it into 1-inch cubes.",
+          "uses": [
+            "chana_dal",
+            "bottle_gourd"
+          ],
+          "visual": "Golden chana dal soaking in a steel bowl beside pale green cubes of peeled bottle gourd on a wooden board",
+          "timerMin": 60
+        },
+        {
+          "title": "Temper and sauté",
+          "kind": "cook",
+          "text": "Heat the ghee in a pressure cooker. Add cumin and hing, then the onion, ginger, garlic and green chilli. Sauté for 4 minutes until the onion is golden.",
+          "uses": [
+            "ghee",
+            "cumin_seeds",
+            "hing",
+            "onion",
+            "ginger",
+            "garlic",
+            "green_chilli"
+          ],
+          "visual": "Golden onion, ginger, garlic and green chilli with cumin seeds in ghee in an open steel pressure cooker",
+          "timerMin": 4,
+          "heat": "medium"
+        },
+        {
+          "title": "Add tomato and spices",
+          "kind": "cook",
+          "text": "Add the tomato, turmeric, chilli powder, coriander powder and salt and cook for 3 minutes until the tomato softens.",
+          "uses": [
+            "tomato",
+            "turmeric",
+            "chilli_powder",
+            "coriander_powder",
+            "salt"
+          ],
+          "visual": "Soft tomato and onion in a reddish-yellow masala in the open pressure cooker",
+          "timerMin": 3,
+          "heat": "medium"
+        },
+        {
+          "title": "Pressure-cook dal and lauki",
+          "kind": "cook",
+          "text": "Add the drained chana dal, lauki cubes and water. Close and cook for 3 whistles on medium heat (about 12 minutes). Chana dal should be soft but hold its shape. In a saucepan, simmer covered for 40 minutes.",
+          "uses": [
+            "water"
+          ],
+          "visual": "Chana dal and pale lauki cubes covered with water over the masala in the open pressure cooker, just before the lid goes on",
+          "timerMin": 12,
+          "heat": "medium",
+          "equipment": [
+            "pressure_cooker|saucepan"
+          ]
+        },
+        {
+          "title": "Simmer to thicken",
+          "kind": "cook",
+          "text": "Open once the pressure drops and simmer for 3 minutes, mashing a few lauki pieces into the dal. Stir in the garam masala.",
+          "uses": [
+            "garam_masala"
+          ],
+          "visual": "Thick golden-yellow dal with soft translucent lauki pieces bubbling gently in the open pressure cooker",
+          "timerMin": 3,
+          "heat": "low"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Garnish with coriander and serve hot with phulka or rice.",
+          "uses": [
+            "coriander_leaves"
+          ],
+          "visual": "Lauki chana dal in a steel bowl topped with chopped coriander, translucent lauki cubes visible, a phulka beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "bottle_gourd",
+          "with": "ridge_gourd",
+          "ratio": 1,
+          "note": "Ridge gourd or zucchini cook the same way."
+        },
+        {
+          "ref": "ghee",
+          "with": "mustard_oil",
+          "ratio": 1,
+          "note": "Mustard oil makes it vegan and gives a UP-style flavour."
+        }
+      ],
+      "storage": "Refrigerate up to 3 days.",
+      "reheating": "Reheat with a splash of water until bubbling.",
+      "tags": [
+        "family",
+        "meal_prep"
+      ]
+    },
+    {
+      "id": "kala-chana-masala-sookha",
+      "title": "Kala Chana Masala",
+      "description": "Black chickpeas cooked in a thick, tangy onion-tomato masala with mustard oil and amchur. Nutty, filling and fibre-rich — a Punjabi everyday dish and a Navratri ashtami favourite.",
+      "cuisine": "north_indian",
+      "region": "Punjab",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 4,
+      "prepMin": 10,
+      "cookMin": 40,
+      "restMin": 480,
+      "difficulty": "easy",
+      "equipment": [
+        "mixing_bowl",
+        "pressure_cooker|saucepan",
+        "kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "kala_chana",
+          "g": 180,
+          "measure": "1 cup"
+        },
+        {
+          "ref": "water",
+          "g": 700
+        },
+        {
+          "ref": "salt",
+          "g": 6,
+          "toTaste": true
+        },
+        {
+          "ref": "mustard_oil",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "cumin_seeds",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "onion",
+          "g": 120,
+          "measure": "1 medium",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "ginger_garlic_paste",
+          "g": 12,
+          "measure": "2½ tsp"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 3,
+          "prep": "chopped"
+        },
+        {
+          "ref": "tomato",
+          "g": 150,
+          "measure": "2 medium",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "chilli_powder",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "coriander_powder",
+          "g": 5,
+          "measure": "2½ tsp"
+        },
+        {
+          "ref": "amchur",
+          "g": 2,
+          "measure": "¾ tsp"
+        },
+        {
+          "ref": "garam_masala",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 5,
+          "prep": "chopped"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Soak the kala chana",
+          "kind": "rest",
+          "text": "Rinse the black chickpeas and soak them in plenty of water for 8 hours or overnight. Drain.",
+          "uses": [
+            "kala_chana"
+          ],
+          "visual": "Small dark brown kala chana swollen after soaking in a steel mixing bowl of water",
+          "timerMin": 480
+        },
+        {
+          "title": "Pressure-cook",
+          "kind": "cook",
+          "text": "Pressure-cook the chana with 600 ml of the water and a little salt for 6 to 7 whistles (about 25 minutes) until a chickpea squashes easily. Keep the cooking water.",
+          "uses": [
+            "water",
+            "salt"
+          ],
+          "visual": "Soaked black chickpeas covered with water in an open steel pressure cooker",
+          "timerMin": 25,
+          "heat": "medium",
+          "equipment": [
+            "pressure_cooker|saucepan"
+          ]
+        },
+        {
+          "title": "Brown the onion",
+          "kind": "cook",
+          "text": "Heat the mustard oil in a kadai until it just smokes, then lower the heat. Add cumin, then the onion, and cook for 7 minutes until golden brown. Add the ginger-garlic paste and green chilli for 1 minute.",
+          "uses": [
+            "mustard_oil",
+            "cumin_seeds",
+            "onion",
+            "ginger_garlic_paste",
+            "green_chilli"
+          ],
+          "visual": "Golden-brown onion with ginger-garlic paste and cumin seeds in mustard oil in a black iron kadai",
+          "timerMin": 8,
+          "heat": "medium"
+        },
+        {
+          "title": "Cook the masala",
+          "kind": "cook",
+          "text": "Add the tomato, turmeric, chilli powder and coriander powder. Cook for 6 minutes until the tomato breaks down completely and the masala turns thick and dark.",
+          "uses": [
+            "tomato",
+            "turmeric",
+            "chilli_powder",
+            "coriander_powder"
+          ],
+          "visual": "Thick, dark red-brown jammy masala with oil separating in the iron kadai",
+          "timerMin": 6,
+          "heat": "medium"
+        },
+        {
+          "title": "Simmer with the chana",
+          "kind": "cook",
+          "text": "Add the cooked chana with about 100 ml of the cooking water. Simmer on low for 10 minutes, stirring, until the masala clings to the chickpeas. Stir in the amchur and garam masala.",
+          "uses": [
+            "amchur",
+            "garam_masala"
+          ],
+          "visual": "Dark kala chana coated in a thick, clinging brown masala in the iron kadai, almost dry",
+          "timerMin": 10,
+          "heat": "low"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Scatter over the coriander and serve with phulka or rice, or with sooji halwa and puri on ashtami.",
+          "uses": [
+            "coriander_leaves"
+          ],
+          "visual": "Kala chana masala in a steel bowl topped with coriander, beside a phulka and lemon wedge"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "kala_chana",
+          "with": "kabuli_chana",
+          "ratio": 1,
+          "note": "White chickpeas work the same way but cook a little faster."
+        },
+        {
+          "ref": "mustard_oil",
+          "with": "sunflower_oil",
+          "ratio": 1,
+          "note": "Use any neutral oil if you don't like mustard oil's pungency."
+        }
+      ],
+      "storage": "Refrigerate up to 4 days.",
+      "reheating": "Reheat in a pan with a splash of water.",
+      "tags": [
+        "meal_prep",
+        "festive"
+      ]
+    },
+    {
+      "id": "pudina-kheera-raita",
+      "title": "Cucumber Mint Raita",
+      "description": "Cool, thick curd with grated cucumber, fresh mint, roasted cumin and black salt. The everyday raita that tames a spicy North Indian meal.",
+      "cuisine": "north_indian",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "accompaniment",
+      "servings": 4,
+      "prepMin": 10,
+      "cookMin": 2,
+      "difficulty": "easy",
+      "equipment": [
+        "knife_board",
+        "mixing_bowl",
+        "whisk"
+      ],
+      "ingredients": [
+        {
+          "ref": "cumin_seeds",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "cucumber",
+          "g": 150,
+          "measure": "1 small"
+        },
+        {
+          "ref": "curd",
+          "g": 300,
+          "measure": "1¼ cups",
+          "prep": "chilled"
+        },
+        {
+          "ref": "black_salt",
+          "g": 1,
+          "measure": "¼ tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 1,
+          "toTaste": true
+        },
+        {
+          "ref": "mint",
+          "g": 4,
+          "measure": "2 tbsp",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "chilli_powder",
+          "g": 0.5,
+          "measure": "1 pinch"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Roast the cumin",
+          "kind": "cook",
+          "text": "Dry-roast the cumin seeds in a small pan on low heat for 1 to 2 minutes until a shade darker and fragrant. Crush them coarsely.",
+          "uses": [
+            "cumin_seeds"
+          ],
+          "visual": "Toasted brown cumin seeds in a small dry pan, a few already crushed on a board beside it",
+          "timerMin": 2,
+          "heat": "low"
+        },
+        {
+          "title": "Grate the cucumber",
+          "kind": "prep",
+          "text": "Peel the cucumber if the skin is bitter, grate it coarsely and squeeze out some of the water so the raita doesn't turn thin.",
+          "uses": [
+            "cucumber"
+          ],
+          "visual": "A small mound of coarsely grated pale green cucumber on a wooden board, a grater beside it"
+        },
+        {
+          "title": "Whisk the curd",
+          "kind": "prep",
+          "text": "Whisk the curd in a bowl until smooth and creamy. Add the black salt and salt.",
+          "uses": [
+            "curd",
+            "black_salt",
+            "salt"
+          ],
+          "visual": "Smooth, creamy white whisked curd in a steel mixing bowl with a whisk",
+          "equipment": [
+            "whisk"
+          ]
+        },
+        {
+          "title": "Fold everything together",
+          "kind": "assemble",
+          "text": "Fold in the cucumber, chopped mint and most of the roasted cumin. Chill for 10 minutes if you have time.",
+          "uses": [
+            "mint"
+          ],
+          "visual": "Creamy curd streaked with pale green cucumber and flecks of mint and cumin in the steel mixing bowl"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Spoon into a bowl and top with the remaining cumin and a pinch of chilli powder. Serve chilled.",
+          "uses": [
+            "chilli_powder"
+          ],
+          "visual": "Cucumber raita in a small glass bowl, dusted with red chilli and crushed cumin, a mint sprig on top"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "curd",
+          "with": "hung_curd",
+          "ratio": 1,
+          "note": "Thin hung curd with a little water for a thicker, higher-protein raita."
+        }
+      ],
+      "storage": "Refrigerate up to 1 day; stir before serving.",
+      "tags": [
+        "no_cook"
+      ]
+    },
+    {
+      "id": "kachumber-salad",
+      "title": "Kachumber Salad",
+      "description": "A crunchy chopped salad of cucumber, tomato and onion with green chilli, coriander, lemon and chaat masala — the fresh side on every North Indian plate.",
+      "cuisine": "north_indian",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "accompaniment",
+      "servings": 3,
+      "prepMin": 10,
+      "cookMin": 0,
+      "difficulty": "easy",
+      "equipment": [
+        "knife_board",
+        "mixing_bowl"
+      ],
+      "ingredients": [
+        {
+          "ref": "cucumber",
+          "g": 150,
+          "measure": "1 small",
+          "prep": "diced small"
+        },
+        {
+          "ref": "tomato",
+          "g": 150,
+          "measure": "2 small",
+          "prep": "deseeded, diced"
+        },
+        {
+          "ref": "onion",
+          "g": 80,
+          "measure": "1 small",
+          "prep": "finely diced"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 3,
+          "measure": "1",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 8,
+          "prep": "chopped"
+        },
+        {
+          "ref": "lemon_juice",
+          "g": 15,
+          "measure": "1 tbsp"
+        },
+        {
+          "ref": "chaat_masala",
+          "g": 2,
+          "measure": "¾ tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 1,
+          "toTaste": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Dice the vegetables",
+          "kind": "prep",
+          "text": "Dice the cucumber, tomato and onion into small, even pieces. Scoop out the tomato seeds first so the salad stays crisp.",
+          "uses": [
+            "cucumber",
+            "tomato",
+            "onion"
+          ],
+          "visual": "Small even dice of green cucumber, red tomato and white onion in three neat piles on a wooden board"
+        },
+        {
+          "title": "Toss together",
+          "kind": "assemble",
+          "text": "Put the vegetables in a bowl with the green chilli and coriander.",
+          "uses": [
+            "green_chilli",
+            "coriander_leaves"
+          ],
+          "visual": "Diced cucumber, tomato and onion with chopped green chilli and coriander in a steel mixing bowl"
+        },
+        {
+          "title": "Dress just before serving",
+          "kind": "assemble",
+          "text": "Right before serving, add the lemon juice, chaat masala and salt and toss well. Dressing it too early draws out water.",
+          "uses": [
+            "lemon_juice",
+            "chaat_masala",
+            "salt"
+          ],
+          "visual": "The chopped salad glistening with lemon juice and dusted with brown chaat masala in the steel mixing bowl"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Serve straight away alongside dal, curry or tandoori dishes.",
+          "uses": [],
+          "visual": "Kachumber salad in a small ceramic bowl, bright red, green and white dice with coriander leaves on top"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "onion",
+          "with": "radish",
+          "ratio": 1,
+          "note": "Use grated radish instead of onion for a no-onion version."
+        }
+      ],
+      "storage": "Best eaten within an hour of dressing; undressed chopped vegetables keep 1 day refrigerated.",
+      "tags": [
+        "no_cook"
+      ]
+    },
+    {
+      "id": "mushroom-do-pyaza",
+      "title": "Mushroom Do Pyaza",
+      "description": "Mushrooms in a thick onion-tomato masala with onion added twice — browned into the gravy and tossed in as crisp-tender petals at the end. A quick restaurant-style curry for roti.",
+      "cuisine": "north_indian",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "course": "main",
+      "servings": 3,
+      "prepMin": 15,
+      "cookMin": 25,
+      "difficulty": "easy",
+      "equipment": [
+        "knife_board",
+        "kadai"
+      ],
+      "ingredients": [
+        {
+          "ref": "mushroom",
+          "g": 400,
+          "measure": "2 packs",
+          "prep": "wiped clean, halved or quartered"
+        },
+        {
+          "ref": "onion",
+          "g": 250,
+          "measure": "2 large",
+          "prep": "1 finely chopped, 1 cut into petals"
+        },
+        {
+          "ref": "sunflower_oil",
+          "g": 25,
+          "measure": "2 tbsp"
+        },
+        {
+          "ref": "cumin_seeds",
+          "g": 2,
+          "measure": "1 tsp"
+        },
+        {
+          "ref": "bay_leaf",
+          "g": 0.4,
+          "measure": "2 leaves"
+        },
+        {
+          "ref": "ginger_garlic_paste",
+          "g": 10,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "green_chilli",
+          "g": 3,
+          "prep": "slit"
+        },
+        {
+          "ref": "tomato",
+          "g": 120,
+          "measure": "1 large",
+          "prep": "finely chopped"
+        },
+        {
+          "ref": "turmeric",
+          "g": 1
+        },
+        {
+          "ref": "kashmiri_chilli",
+          "g": 3,
+          "measure": "1½ tsp"
+        },
+        {
+          "ref": "coriander_powder",
+          "g": 4,
+          "measure": "2 tsp"
+        },
+        {
+          "ref": "salt",
+          "g": 4,
+          "toTaste": true
+        },
+        {
+          "ref": "garam_masala",
+          "g": 1.5,
+          "measure": "¾ tsp"
+        },
+        {
+          "ref": "kasuri_methi",
+          "g": 1,
+          "measure": "½ tbsp",
+          "prep": "crushed"
+        },
+        {
+          "ref": "coriander_leaves",
+          "g": 5,
+          "prep": "chopped"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Prepare mushrooms and onions",
+          "kind": "prep",
+          "text": "Wipe the mushrooms clean and halve or quarter them. Finely chop one onion and cut the other into 1-inch petals.",
+          "uses": [
+            "mushroom",
+            "onion"
+          ],
+          "visual": "Halved button mushrooms, a pile of finely chopped onion and a pile of separated onion petals on a wooden board"
+        },
+        {
+          "title": "Sear the onion petals",
+          "kind": "cook",
+          "text": "Heat 1 teaspoon of the oil in a kadai on high heat and toss the onion petals for 2 minutes until charred at the edges but still crunchy. Lift out onto a plate.",
+          "uses": [
+            "sunflower_oil"
+          ],
+          "visual": "Onion petals with charred edges being tossed in a hot black iron kadai",
+          "timerMin": 2,
+          "heat": "high"
+        },
+        {
+          "title": "Sear the mushrooms",
+          "kind": "cook",
+          "text": "Add another 2 teaspoons of oil and the mushrooms. Cook on high heat for 5 minutes without stirring too often, until their water evaporates and they turn golden. Lift out.",
+          "uses": [],
+          "visual": "Golden-brown seared mushroom halves in the hot iron kadai, no liquid left in the pan",
+          "timerMin": 5,
+          "heat": "high"
+        },
+        {
+          "title": "Brown the chopped onion",
+          "kind": "cook",
+          "text": "Heat the remaining oil, add cumin and bay leaves, then the chopped onion. Cook on medium heat for 7 minutes until golden brown. Add the ginger-garlic paste and green chilli for 1 minute.",
+          "uses": [
+            "cumin_seeds",
+            "bay_leaf",
+            "ginger_garlic_paste",
+            "green_chilli"
+          ],
+          "visual": "Golden-brown chopped onion with bay leaves, cumin and slit green chilli in the iron kadai",
+          "timerMin": 8,
+          "heat": "medium"
+        },
+        {
+          "title": "Cook the tomato masala",
+          "kind": "cook",
+          "text": "Add the tomato, turmeric, Kashmiri chilli, coriander powder and salt. Cook for 5 minutes until thick and the oil separates.",
+          "uses": [
+            "tomato",
+            "turmeric",
+            "kashmiri_chilli",
+            "coriander_powder",
+            "salt"
+          ],
+          "visual": "Thick, glossy red onion-tomato masala in the iron kadai with oil at the edges",
+          "timerMin": 5,
+          "heat": "medium"
+        },
+        {
+          "title": "Combine and finish",
+          "kind": "cook",
+          "text": "Return the mushrooms with 3 tablespoons of water and simmer for 3 minutes. Add the seared onion petals, garam masala and kasuri methi and toss for 1 minute so the petals stay crunchy.",
+          "uses": [
+            "garam_masala",
+            "kasuri_methi"
+          ],
+          "visual": "Golden mushrooms and charred onion petals coated in thick red masala in the iron kadai",
+          "timerMin": 4,
+          "heat": "medium"
+        },
+        {
+          "title": "Serve",
+          "kind": "serve",
+          "text": "Garnish with coriander and serve hot with phulka or paratha.",
+          "uses": [
+            "coriander_leaves"
+          ],
+          "visual": "Mushroom do pyaza in a steel bowl with visible onion petals and coriander on top, phulkas beside it"
+        }
+      ],
+      "substitutions": [
+        {
+          "ref": "mushroom",
+          "with": "paneer",
+          "ratio": 0.6,
+          "note": "Make paneer do pyaza with 250 g paneer cubes, added at the end."
+        },
+        {
+          "ref": "kasuri_methi",
+          "with": "coriander_leaves",
+          "ratio": 2,
+          "note": "Skip kasuri methi and add extra fresh coriander if you don't have it."
+        }
+      ],
+      "storage": "Refrigerate up to 2 days.",
+      "reheating": "Warm in a pan with a splash of water.",
+      "tags": []
+    }
+  ]
+}
