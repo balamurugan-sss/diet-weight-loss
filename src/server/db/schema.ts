@@ -622,6 +622,21 @@ export const cardioLogs = sqliteTable(
   (t) => [index("cardio_user_date_idx").on(t.userId, t.date), uniqueIndex("cardio_external_uq").on(t.userId, t.source, t.externalId)],
 );
 
+// Public read-only links to a plan summary. The page never shows profile or body data.
+export const shareLinks = sqliteTable(
+  "share_links",
+  {
+    token: text("token").primaryKey(),
+    userId: text("user_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    views: integer("views").notNull().default(0),
+    createdAt: createdAt(),
+    revokedAt: integer("revoked_at", { mode: "timestamp_ms" }),
+  },
+  (t) => [index("share_links_user_idx").on(t.userId)],
+);
+
 // ─── Quotas, rate limits, billing ────────────────────────────────────────────
 
 export const usageCounters = sqliteTable(

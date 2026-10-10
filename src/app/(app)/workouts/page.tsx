@@ -9,6 +9,8 @@ import { WeekCalendar } from "@/components/workouts/WeekCalendar";
 import { CardioLogButton } from "@/components/workouts/CardioLogButton";
 import { moderateEquivalentMinutes, WHO_WEEKLY_MODERATE_MIN } from "@/lib/workouts/cardio";
 import { cardioBetween } from "@/server/services/cardio";
+import { activeShareLink } from "@/server/services/share";
+import { ShareCard } from "@/components/workouts/ShareCard";
 import { cn } from "@/lib/cn";
 import type { MessageKey } from "@/lib/i18n/messages/en";
 import type { TFunc } from "@/lib/i18n/t";
@@ -53,10 +55,11 @@ export default async function WorkoutsPage() {
 
   const today = todayISO();
   const monday = weekStart(today);
-  const [prog, weight, weekCardio] = await Promise.all([
+  const [prog, weight, weekCardio, share] = await Promise.all([
     programProgress(program, [monday, addDays(monday, 6)], today),
     latestWeight(user.id),
     cardioBetween(user.id, monday, addDays(monday, 6)),
+    activeShareLink(user.id),
   ]);
   const activeMinutes = moderateEquivalentMinutes(weekCardio);
   const kg = weight?.weightKg ?? profile.weightKg ?? 70;
@@ -298,6 +301,8 @@ export default async function WorkoutsPage() {
       )}
 
       <LibraryTile t={t} />
+
+      <ShareCard token={share?.token ?? null} views={share?.views ?? 0} />
 
       <p className="flex items-start gap-2 rounded-2xl border border-amber/30 bg-amber-100 px-4 py-3 text-sm leading-relaxed text-amber-ink">
         <Stethoscope className="mt-0.5 size-4 shrink-0" aria-hidden />
