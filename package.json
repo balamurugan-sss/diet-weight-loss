@@ -6,6 +6,7 @@
     "dev": "next dev",
     "predev": "tsx scripts/seed.ts --quiet",
     "build": "next build",
+    "vercel-build": "tsx scripts/predeploy.ts && next build",
     "start": "next start",
     "lint": "eslint src scripts tests",
     "typecheck": "next typegen && tsc --noEmit",

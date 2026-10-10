@@ -11,7 +11,19 @@ export function databaseUrl() {
   return process.env.DATABASE_URL || "file:./.data/app.db";
 }
 
-function makeClient() {
+const MISCONFIGURED =
+  "DATABASE_URL is missing or points to a local file. On Vercel set DATABASE_URL (libsql://…turso.io) and DATABASE_AUTH_TOKEN in Project → Settings → Environment Variables, then redeploy. See docs/DEPLOYMENT.md.";
+
+function makeClient(): Client {
+  // Serverless hosts (Vercel) have a read-only filesystem, so the SQLite fallback can't work there.
+  // Fail on first use rather than at import, so error pages still render and the logs say why.
+  if (process.env.VERCEL && databaseUrl().startsWith("file:")) {
+    const fail = () => {
+      throw new Error(MISCONFIGURED);
+    };
+    // Drizzle reads properties while wiring up; only calling a method fails.
+    return new Proxy({} as Client, { get: (_, prop) => (prop === "then" ? undefined : fail) });
+  }
   if (databaseUrl().startsWith("file:./.data")) mkdirSync(".data", { recursive: true });
   const client = createClient({
     url: databaseUrl(),

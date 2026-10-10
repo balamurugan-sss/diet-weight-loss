@@ -24,12 +24,32 @@ docker run -p 3000:3000 -v thali-data:/app/.data --env-file .env thali
 The container applies migrations and imports the catalogue on start (idempotent).
 Back up the `.data` volume (e.g. `sqlite3 app.db ".backup backup.db"` or volume snapshots).
 
-## Option B — Vercel (or any serverless host) + Turso
-1. `turso db create thali && turso db tokens create thali` → set `DATABASE_URL` / `DATABASE_AUTH_TOKEN`.
-2. From your machine/CI with those variables: `npm run db:seed` (migrations + catalogue).
-3. Deploy the Next.js app with the same variables. Image generation needs up to 120 s
-   (`maxDuration` is set on the AI routes; use a plan that allows it).
-4. Re-run `npm run recipes:import` whenever the catalogue changes (e.g. as a CI step).
+## Option B — Vercel + Turso
+
+Vercel functions have a **read-only filesystem**, so the local SQLite fallback
+(`file:./.data/app.db`) cannot work there: without `DATABASE_URL` every page fails with
+"This page couldn't load / A server error occurred". Use a hosted libSQL database (Turso):
+
+1. Create the database (free tier is fine):
+   ```bash
+   turso db create thali
+   turso db show thali --url          # → libsql://thali-<org>.turso.io
+   turso db tokens create thali       # → auth token
+   ```
+2. In **Vercel → Project → Settings → Environment Variables**, add for Production (and Preview):
+   `DATABASE_URL` = the `libsql://…` URL, `DATABASE_AUTH_TOKEN` = the token,
+   `APP_URL` = your site URL (e.g. `https://thali.vercel.app`). Optional keys as in the table above.
+3. **Redeploy** (Deployments → ⋯ → Redeploy). Vercel runs the `vercel-build` script, which runs
+   `scripts/predeploy.ts` first: it checks the variables, applies migrations and imports the recipe
+   catalogue (idempotent — later deploys only apply what changed), then runs `next build`.
+   If the variables are missing or wrong, the **build fails with an explanation** instead of
+   deploying a broken site. The first import takes a minute or two over the network.
+4. Image generation needs up to 120 s (`maxDuration` is set on the AI routes; use a plan that allows it).
+
+Troubleshooting: open **Vercel → Project → Logs** (or the deployment's *Functions* log) and
+find the error with the "Reference" code shown on the error page. A message starting
+`DATABASE_URL is missing` means step 2 wasn't applied to that environment; `no such table`
+means migrations didn't run (redeploy, or run `npm run db:seed` locally with the same variables).
 
 ## Stripe
 Create a recurring INR price, set `STRIPE_PRICE_ID`, and add a webhook endpoint
