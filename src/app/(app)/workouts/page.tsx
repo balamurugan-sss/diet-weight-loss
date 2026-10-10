@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle2, Flame, Footprints, Moon, Settings2, Stethoscope, Trophy } from "lucide-react";
+import { ArrowRight, CheckCircle2, Flame, Footprints, ListChecks, Moon, Settings2, Stethoscope, Trophy } from "lucide-react";
 import Link from "next/link";
 import { ArrowCircle, Squiggle, TwoTone } from "@/components/brand/Brand";
 import { buttonClass, LinkButton } from "@/components/ui/Button";
@@ -125,11 +125,17 @@ export default async function WorkoutsPage() {
               ))}
             </dl>
             <div className="mt-4 flex gap-2 sm:mt-auto">
-              <Link href={`/workouts/session/${pos}`} className="inline-flex h-14 flex-1 items-center justify-center gap-2 rounded-2xl bg-[#0c0c0b] px-6 text-[17px] font-bold text-[#d4f23f] hover:opacity-90">
+              <Link href={`/workouts/session/${pos}`} className="inline-flex h-14 flex-1 items-center justify-center gap-2 rounded-2xl bg-[#0c0c0b] whitespace-nowrap px-6 text-[17px] font-bold text-[#d4f23f] hover:opacity-90">
                 {session?.status === "in_progress" ? t("wk.continue") : t("wk.start")} <ArrowRight className="size-5" aria-hidden />
               </Link>
-              <Link href={`/workouts/day/${pos}`} className="inline-flex h-14 items-center justify-center rounded-2xl border-2 border-[#0c0c0b]/25 px-4 text-[15px] font-bold hover:bg-[#0c0c0b]/5">
-                {t("wk.preview")}
+              <Link
+                href={`/workouts/day/${pos}`}
+                aria-label={t("wk.preview")}
+                title={t("wk.preview")}
+                className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border-2 border-[#0c0c0b]/25 hover:bg-[#0c0c0b]/5 sm:w-auto sm:gap-2 sm:px-4"
+              >
+                <ListChecks className="size-5" aria-hidden />
+                <span className="hidden text-[15px] font-bold sm:inline">{t("wk.preview")}</span>
               </Link>
             </div>
           </div>

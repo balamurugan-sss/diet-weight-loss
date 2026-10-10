@@ -1,4 +1,4 @@
-import { CalendarDays, ShoppingBasket } from "lucide-react";
+import { ArrowRight, CalendarDays, Dumbbell, ShoppingBasket } from "lucide-react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { DayTotals } from "@/components/planner/DayTotals";
@@ -12,6 +12,7 @@ import { getI18n } from "@/server/i18n";
 import { dayView } from "@/server/services/dayView";
 import { currentDayIndex, getActivePlan, planDate } from "@/server/services/plans";
 import { remaining } from "@/server/services/usage";
+import { trainingContext } from "@/server/services/workouts";
 
 export const metadata = { title: "Meal plan" };
 
@@ -24,7 +25,12 @@ export default async function PlannerPage({ searchParams }: PageProps<"/planner"
   const today = currentDayIndex(plan);
   const requested = Number(sp.day);
   const day = Number.isInteger(requested) && requested >= 0 && requested < plan.days ? requested : today;
-  const [view, regenLeft, swapsLeft] = await Promise.all([dayView(plan, profile, day), remaining(user, "dayRegen"), remaining(user, "swap")]);
+  const [view, regenLeft, swapsLeft, training] = await Promise.all([
+    dayView(plan, profile, day),
+    remaining(user, "dayRegen"),
+    remaining(user, "swap"),
+    day === today ? trainingContext(user.id, profile) : null,
+  ]);
   const locale = lang === "ta" ? "ta-IN" : lang === "ml" ? "ml-IN" : "en-IN";
   const fmt = (iso: string, opts: Intl.DateTimeFormatOptions) => new Intl.DateTimeFormat(locale, { ...opts, timeZone: "UTC" }).format(new Date(iso + "T00:00:00Z"));
 
@@ -79,6 +85,19 @@ export default async function PlannerPage({ searchParams }: PageProps<"/planner"
             <CalendarDays className="size-4" aria-hidden />
             {t("planner.day", { n: day + 1 })} · {fmt(view.date, { weekday: "long", day: "numeric", month: "long" })}
           </div>
+          {training?.trainingDay && training.adjusted && (
+            <Link href="/workouts" className="flex items-center gap-3 rounded-2xl border border-forest/25 bg-forest-50 px-4 py-3 hover:border-forest/50">
+              <Dumbbell className="size-5 shrink-0 text-forest" aria-hidden />
+              <span className="min-w-0 flex-1 text-[15px]">
+                <span className="block font-semibold text-forest">
+                  {t("wk.trainingDay")}
+                  {training.adjusted.addBackKcal > 0 && <> · {t("wk.bonus", { n: training.adjusted.addBackKcal })}</>}
+                </span>
+                <span className="block text-sm text-ink-2">{t("wk.trainingDayProtein", { g: training.adjusted.proteinG })}</span>
+              </span>
+              <ArrowRight className="size-4 shrink-0 text-muted" aria-hidden />
+            </Link>
+          )}
           {view.slots.map((s) => (
             <MealSlot key={s.slot} planId={plan.id} dayIndex={day} slot={s.slot} items={s.items} kcal={s.kcal} swapsLeft={swapsLeft} />
           ))}

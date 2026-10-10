@@ -1,5 +1,9 @@
 import { Lock, Scale, Target, TrendingDown } from "lucide-react";
-import { CaloriesChart, WeightChart } from "@/components/charts/ProgressCharts";
+import { CaloriesChart, StrengthChart, WeightChart, WorkoutsChart } from "@/components/charts/ProgressCharts";
+import Link from "next/link";
+import { cn } from "@/lib/cn";
+import { getExercise } from "@/lib/workouts/exercises";
+import { getActiveProgram, strengthHistory, weeklyWorkoutCounts } from "@/server/services/workouts";
 import { WaterTracker, WeightQuickLog } from "@/components/home/Trackers";
 import { LinkButton } from "@/components/ui/Button";
 import { Card, PageHeader } from "@/components/ui/Card";
@@ -10,17 +14,24 @@ import { targetsForProfile } from "@/server/services/targets";
 
 export const metadata = { title: "Progress" };
 
-export default async function ProgressPage() {
+export default async function ProgressPage({ searchParams }: PageProps<"/progress">) {
   const { user, profile } = await requireOnboarded();
   const { t } = await getI18n();
   const targets = targetsForProfile(profile)!;
-  const [history, first, latest, week, water] = await Promise.all([
+  const sp = await searchParams;
+  const [history, first, latest, week, water, workouts, strength, program] = await Promise.all([
     weightHistory(user.id, user.isPremium ? 365 : 60),
     firstWeight(user.id),
     latestWeight(user.id),
     dailySeries(user.id, 7),
     waterFor(user.id),
+    weeklyWorkoutCounts(user.id, 8),
+    strengthHistory(user.id),
+    getActiveProgram(user.id),
   ]);
+  const lifts = strength.slice(0, 5);
+  const lift = lifts.find((l) => l.exerciseId === sp.lift) ?? lifts[0];
+  const fmtWeek = (iso: string) => new Date(iso + "T00:00:00Z").toLocaleDateString("en-IN", { day: "numeric", month: "short", timeZone: "UTC" });
   const goal = targets.effectiveTargetKg;
   const change = first && latest ? Math.round((latest.weightKg - first.weightKg) * 10) / 10 : 0;
   const toGo = goal && latest ? Math.max(0, Math.round((latest.weightKg - goal) * 10) / 10) : null;
@@ -107,6 +118,68 @@ export default async function ProgressPage() {
             </div>
           </dl>
           <p className="mt-3 text-sm text-ink-2">{t("progress.kind")}</p>
+        </Card>
+      </div>
+
+      <div className="grid gap-5 lg:grid-cols-2">
+        <Card className="min-w-0">
+          <h2 className="mb-1 text-lg font-semibold">{t("progress.workouts")}</h2>
+          {program && <p className="mb-3 text-sm text-muted">{t("progress.workoutsTarget", { n: program.daysPerWeek })}</p>}
+          {workouts.some((w) => w.workouts > 0) ? (
+            <>
+              <WorkoutsChart data={workouts} target={program?.daysPerWeek ?? null} label={t("progress.workouts")} />
+              <details className="mt-3 text-sm">
+                <summary className="cursor-pointer font-semibold text-forest">Table</summary>
+                <table className="mt-2 w-full text-left tabular">
+                  <tbody>
+                    {[...workouts].reverse().map((w) => (
+                      <tr key={w.week} className="border-t border-line">
+                        <td className="py-1.5">{t("progress.weekOf", { d: fmtWeek(w.week) })}</td>
+                        <td className="py-1.5 text-right">{w.workouts}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </details>
+            </>
+          ) : (
+            <p className="card-sand py-10 text-center text-muted">{t("progress.noWorkouts")}</p>
+          )}
+        </Card>
+        <Card className="min-w-0">
+          <h2 className="mb-1 text-lg font-semibold">{t("progress.strength")}</h2>
+          {lift ? (
+            <>
+              <p className="mb-2 text-sm text-muted">
+                {t("progress.e1rm")} · {getExercise(lift.exerciseId).name}
+              </p>
+              {lifts.length > 1 && (
+                <div className="no-scrollbar -mx-1 mb-3 flex gap-1.5 overflow-x-auto px-1">
+                  {lifts.map((l) => (
+                    <Link
+                      key={l.exerciseId}
+                      href={`/progress?lift=${l.exerciseId}`}
+                      scroll={false}
+                      aria-current={l === lift ? "true" : undefined}
+                      className={cn(
+                        "inline-flex h-8 shrink-0 items-center rounded-full border px-3 text-xs font-semibold",
+                        l === lift ? "border-forest bg-forest text-on-accent" : "border-line bg-surface text-ink-2",
+                      )}
+                    >
+                      {getExercise(l.exerciseId).name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+              {lift.points.length >= 2 ? (
+                <StrengthChart data={lift.points} label={`${t("progress.strength")}: ${getExercise(lift.exerciseId).name}`} />
+              ) : (
+                <p className="card-sand py-8 text-center text-2xl font-semibold tabular">{lift.points[0].e1rm} kg</p>
+              )}
+            </>
+          ) : (
+            <p className="card-sand py-10 text-center text-muted">{t("progress.noStrength")}</p>
+          )}
         </Card>
       </div>
 

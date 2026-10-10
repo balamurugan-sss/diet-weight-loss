@@ -10,6 +10,9 @@ import { hashPassword } from "@/server/auth/password";
 import { computeTargets } from "@/lib/nutrition/targets";
 import { generatePlan } from "@/lib/planner/engine";
 import { CALORIE_FLOOR } from "@/lib/nutrition/targets";
+import { generateProgram } from "@/lib/workouts/generator";
+import { estimateDay } from "@/lib/workouts/load";
+import { getExercise } from "@/lib/workouts/exercises";
 import { importCatalogue } from "./import-recipes";
 
 const DEMO_EMAIL = "demo@example.com";
@@ -18,6 +21,7 @@ async function seedDemo() {
   const [existing] = await db.select().from(schema.users).where(eq(schema.users.email, DEMO_EMAIL));
   if (existing) {
     console.log(`demo account already exists (${DEMO_EMAIL})`);
+    await seedDemoWorkouts(existing.id);
     return;
   }
   const password = process.env.DEMO_PASSWORD || randomBytes(9).toString("base64url");
@@ -98,7 +102,63 @@ async function seedDemo() {
         });
       }
   }
+  await seedDemoWorkouts(id);
   console.log(`✓ demo account: ${DEMO_EMAIL} / ${password}`);
+}
+
+/**
+ * A gym full-body program started 17 days ago: workouts done in order with
+ * weights creeping up, one missed day (the plan waits rather than skipping),
+ * and one active-recovery walk. Safe to re-run.
+ */
+async function seedDemoWorkouts(userId: string) {
+  const [has] = await db.select().from(schema.workoutProfiles).where(eq(schema.workoutProfiles.userId, userId));
+  if (has) return;
+  const wp = { location: "gym" as const, level: "beginner" as const, goal: "lose" as const, daysPerWeek: 3, equipment: [] };
+  await db.insert(schema.workoutProfiles).values({ userId, ...wp, doctorAckAt: new Date() });
+  // Hypertension in the demo profile → low-impact selection, as the app would do.
+  const program = generateProgram({ ...wp, daysPerWeek: 3, sex: "female", weightKg: 74, lowImpact: true });
+  const iso = (d: Date) => d.toISOString().slice(0, 10);
+  const today = new Date();
+  const start = new Date(today.getTime() - 17 * 86400000);
+  const programId = randomUUID();
+  await db.insert(schema.workoutPrograms).values({
+    id: programId, userId, name: program.name, split: program.split, location: program.location, level: program.level, goal: program.goal,
+    daysPerWeek: program.daysPerWeek, startDate: iso(start), days: program.days, status: "active",
+  });
+  let pos = 0;
+  let sessionNo = 0;
+  for (let offset = 0; offset < 17; offset++) {
+    const date = iso(new Date(start.getTime() + offset * 86400000));
+    const day = program.days[pos];
+    if (day.kind === "rest" || (day.kind === "recovery" && offset !== 1)) {
+      pos++;
+      continue;
+    }
+    if (day.kind === "workout" && offset === 9) continue; // missed — the same workout waits for the next day
+    const est = estimateDay(day, 74);
+    const sessionId = randomUUID();
+    const startedAt = new Date(Date.parse(date + "T12:30:00Z"));
+    await db.insert(schema.workoutSessions).values({
+      id: sessionId, userId, programId, dayIndex: pos, date, kind: day.kind === "recovery" ? "recovery" : "workout", status: "completed",
+      startedAt, finishedAt: new Date(startedAt.getTime() + est.minutes * 60000), durationSec: est.minutes * 60, kcal: est.kcal, netKcal: est.netKcal,
+      exercisesDone: day.main.length,
+    });
+    if (day.kind === "workout") {
+      for (const m of day.main)
+        for (let k = 0; k < m.sets; k++) {
+          const ex = getExercise(m.exerciseId);
+          const reps = m.reps ? Math.min(m.reps[1], m.reps[0] + ((sessionNo + k) % 3)) : null;
+          const weightKg = m.loadKg != null ? m.loadKg + Math.floor(sessionNo / 2) * (ex.load?.implement === "dumbbell" ? 1 : 2.5) : null;
+          await db.insert(schema.workoutSets).values({
+            sessionId, slot: m.slot, setIndex: k, exerciseId: m.exerciseId, reps, seconds: m.seconds ?? null, weightKg, done: true, completedAt: startedAt,
+          });
+        }
+      sessionNo++;
+    }
+    pos++;
+  }
+  console.log(`✓ demo workouts: ${sessionNo} sessions`);
 }
 
 async function main() {

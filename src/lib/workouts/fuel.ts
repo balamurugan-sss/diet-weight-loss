@@ -25,7 +25,7 @@ export type BaseTargets = {
   style: PlanStyle;
 };
 
-export type DayTargets = BaseTargets & {
+export type DayTargets<T extends BaseTargets = BaseTargets> = T & {
   addBackKcal: number;
   surplusKcal: number;
   extraProteinG: number;
@@ -49,8 +49,8 @@ export function workoutAddBack(netKcal: number, goal: WorkoutGoal) {
  * `allowExtraProtein` must be false when the base protein was capped for
  * medical reasons (e.g. kidney disease) or for under-18s.
  */
-export function trainingDayTargets(
-  base: BaseTargets,
+export function trainingDayTargets<T extends BaseTargets>(
+  base: T,
   opts: {
     workoutGoal: WorkoutGoal;
     trainingDay: boolean;
@@ -58,7 +58,7 @@ export function trainingDayTargets(
     referenceWeightKg: number;
     allowExtraProtein: boolean;
   },
-): DayTargets {
+): DayTargets<T> {
   const addBackKcal = opts.trainingDay ? workoutAddBack(opts.burnedNetKcal, opts.workoutGoal) : 0;
   const surplusKcal = opts.workoutGoal === "gain" && opts.trainingDay && base.goal !== "lose" ? GAIN_SURPLUS_KCAL : 0;
 

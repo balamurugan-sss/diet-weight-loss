@@ -1,4 +1,4 @@
-import { ArrowRight, ShoppingBasket } from "lucide-react";
+import { ArrowRight, Dumbbell, ShoppingBasket } from "lucide-react";
 import { StatStrip, StickerPill, TwoTone } from "@/components/brand/Brand";
 import Link from "next/link";
 import { WaterTracker, WeightQuickLog } from "@/components/home/Trackers";
@@ -16,6 +16,8 @@ import { currentDayIndex, getActivePlan } from "@/server/services/plans";
 import { intakeForDate, latestWeight, waterFor } from "@/server/services/progress";
 import { favouriteRecipes } from "@/server/services/recipes";
 import { targetsForProfile } from "@/server/services/targets";
+import { trainingContext } from "@/server/services/workouts";
+import { TodayWorkoutCard } from "@/components/workouts/TodayWorkoutCard";
 import { hourNow, todayISO } from "@/server/time";
 
 export const metadata = { title: "Home" };
@@ -25,15 +27,19 @@ const SLOT_HOUR: Record<string, number> = { breakfast: 10, mid_morning: 12, lunc
 export default async function HomePage() {
   const { user, profile } = await requireOnboarded();
   const { t } = await getI18n();
-  const targets = targetsForProfile(profile)!;
+  const baseTargets = targetsForProfile(profile)!;
   const today = todayISO();
-  const [plan, intake, water, weight, favs] = await Promise.all([
+  const [plan, intake, water, weight, favs, training] = await Promise.all([
     getActivePlan(user.id),
     intakeForDate(user.id, today),
     waterFor(user.id, today),
     latestWeight(user.id),
     favouriteRecipes(user.id, 6),
+    trainingContext(user.id, profile, today),
   ]);
+  // Training days adjust the budget: part of the workout burn comes back and protein rises.
+  const targets = training?.adjusted ?? baseTargets;
+  const bonus = training?.adjusted?.addBackKcal ?? 0;
   const view = plan ? await dayView(plan, profile, currentDayIndex(plan)) : null;
   const hour = hourNow();
   const greet = hour < 12 ? "home.greeting.morning" : hour < 17 ? "home.greeting.afternoon" : "home.greeting.evening";
@@ -86,6 +92,8 @@ export default async function HomePage() {
         </Card>
       ) : null}
 
+      <TodayWorkoutCard userId={user.id} profile={profile} t={t} keto={targets.style === "keto"} />
+
       <div className="grid gap-5 lg:grid-cols-[1.2fr_1fr]">
         <Card>
           <div className="flex items-center gap-5">
@@ -97,6 +105,11 @@ export default async function HomePage() {
               <p className={cn("text-sm font-semibold", left >= 0 ? "text-forest" : "text-amber")}>
                 {left >= 0 ? t("home.caloriesLeft", { n: left }) : t("home.caloriesOver", { n: -left })}
               </p>
+              {bonus > 0 && (
+                <p className="inline-flex items-center gap-1 rounded-full bg-lime-100 px-2.5 py-0.5 text-xs font-bold text-forest-700">
+                  <Dumbbell className="size-3.5" aria-hidden /> {t("wk.bonus", { n: bonus })}
+                </p>
+              )}
               <MacroBar label={t("macro.protein")} value={intake.proteinG} target={targets.proteinG} color="var(--color-protein)" />
               {targets.netCarbLimitG ? (
                 <MacroBar label={t("macro.netCarbs")} value={intake.netCarbsG} target={targets.netCarbLimitG} color="var(--color-carbs)" />

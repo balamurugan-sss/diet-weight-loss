@@ -6,11 +6,15 @@ import { applySwaps, availableEquipment, generateProgram, type ProgramInput, typ
 import { estimatePrescriptions, type LoggedSet } from "@/lib/workouts/load";
 import { replayProgram, type Completion, type ProgramProgress } from "@/lib/workouts/progress";
 import type { DaysPerWeek, Prescription, ProgramDay, WorkoutGoal, WorkoutProfileInput } from "@/lib/workouts/types";
-import { workoutAddBack } from "@/lib/workouts/fuel";
+import { trainingDayTargets, workoutAddBack } from "@/lib/workouts/fuel";
+import { estimatedOneRepMax } from "@/lib/workouts/load";
+import { weightForBmi } from "@/lib/nutrition/bmi";
+import { addDays, weekStart } from "@/lib/workouts/progress";
 import type { Profile } from "@/server/auth/dal";
 import { db, schema } from "@/server/db/client";
 import { todayISO } from "@/server/time";
 import { latestWeight } from "./progress";
+import { targetsForProfile } from "./targets";
 
 export type WorkoutProfile = typeof schema.workoutProfiles.$inferSelect;
 export type WorkoutProgram = typeof schema.workoutPrograms.$inferSelect;
@@ -279,3 +283,77 @@ export async function finishSession(session: WorkoutSession, summary: SessionSum
 }
 
 export { bodyWeight };
+
+// ─── Food-planner link ──────────────────────────────────────────────────────
+
+/**
+ * Today's food targets after training: the base targets from the food plan,
+ * adjusted for a planned or completed workout (see lib/workouts/fuel.ts).
+ */
+export async function trainingContext(userId: string, profile: Profile, date = todayISO()) {
+  const base = targetsForProfile(profile);
+  if (!base) return null;
+  const program = await getActiveProgram(userId);
+  if (!program) return { base, adjusted: null, program: null, trainingDay: false, plannedKind: null, burnedKcal: 0, burnedNetKcal: 0, sessionsToday: 0 };
+  const [done, prog, weightKg] = await Promise.all([
+    db
+      .select()
+      .from(schema.workoutSessions)
+      .where(and(eq(schema.workoutSessions.userId, userId), eq(schema.workoutSessions.date, date), eq(schema.workoutSessions.status, "completed"))),
+    programProgress(program, [date, date], date),
+    bodyWeight(userId, profile),
+  ]);
+  const plannedKind = prog.cells[0]?.kind ?? null;
+  const burnedKcal = done.reduce((n, x) => n + (x.kcal ?? 0), 0);
+  const burnedNetKcal = done.reduce((n, x) => n + (x.netKcal ?? 0), 0);
+  const trainingDay = done.length > 0 || plannedKind === "workout";
+  const age = profileAge(profile) ?? 30;
+  const referenceWeightKg = base.bmi > 25 && profile.heightCm ? weightForBmi(25, profile.heightCm) : weightKg;
+  const adjusted = trainingDayTargets(base, {
+    workoutGoal: program.goal,
+    trainingDay,
+    burnedNetKcal,
+    referenceWeightKg,
+    allowExtraProtein: age >= 18 && !(profile.conditions ?? []).includes("kidney"),
+  });
+  return { base, adjusted, program, trainingDay, plannedKind, burnedKcal, burnedNetKcal, sessionsToday: done.length };
+}
+
+// ─── Progress charts ────────────────────────────────────────────────────────
+
+/** Completed workouts per ISO week (Mon start), oldest first, including empty weeks. */
+export async function weeklyWorkoutCounts(userId: string, weeks = 8, today = todayISO()) {
+  const first = addDays(weekStart(today), -7 * (weeks - 1));
+  const rows = await db
+    .select({ date: schema.workoutSessions.date, kind: schema.workoutSessions.kind })
+    .from(schema.workoutSessions)
+    .where(and(eq(schema.workoutSessions.userId, userId), eq(schema.workoutSessions.status, "completed")));
+  const counts = new Map<string, number>();
+  for (let w = 0; w < weeks; w++) counts.set(addDays(first, w * 7), 0);
+  for (const r of rows) {
+    if (r.kind !== "workout" || r.date < first) continue;
+    const k = weekStart(r.date);
+    if (counts.has(k)) counts.set(k, counts.get(k)! + 1);
+  }
+  return [...counts].map(([week, workouts]) => ({ week, workouts }));
+}
+
+/** Best estimated 1RM per session date for each loaded lift; lifts ordered by how often they were logged. */
+export async function strengthHistory(userId: string) {
+  const rows = await db
+    .select({ exerciseId: schema.workoutSets.exerciseId, reps: schema.workoutSets.reps, weightKg: schema.workoutSets.weightKg, date: schema.workoutSessions.date })
+    .from(schema.workoutSets)
+    .innerJoin(schema.workoutSessions, eq(schema.workoutSessions.id, schema.workoutSets.sessionId))
+    .where(and(eq(schema.workoutSessions.userId, userId), eq(schema.workoutSessions.status, "completed"), eq(schema.workoutSets.done, true)));
+  const best = new Map<string, Map<string, number>>();
+  for (const r of rows) {
+    if (r.weightKg == null || !r.reps) continue;
+    const e1rm = estimatedOneRepMax(r.weightKg, r.reps);
+    const byDate = best.get(r.exerciseId) ?? new Map<string, number>();
+    byDate.set(r.date, Math.max(byDate.get(r.date) ?? 0, e1rm));
+    best.set(r.exerciseId, byDate);
+  }
+  return [...best]
+    .map(([exerciseId, byDate]) => ({ exerciseId, points: [...byDate].map(([date, e1rm]) => ({ date, e1rm })).sort((a, b) => a.date.localeCompare(b.date)) }))
+    .sort((a, b) => b.points.length - a.points.length);
+}

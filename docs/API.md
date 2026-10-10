@@ -37,6 +37,9 @@ Request: `{ "recipeId": "...", "lang": "ta" | "ml" }` → `{ "ok": true, "cached
 Public, immutable-cached binary media (catalogue content, not user data).
 
 ### `GET /api/account/export`
+
+Includes workout profile, programs, sessions and sets.
+
 Downloads all of the user's data as JSON.
 
 ### `POST /api/stripe/webhook`
@@ -53,6 +56,7 @@ Stripe-signed. Handles `checkout.session.completed`, `customer.subscription.crea
 | `actions/cooking.ts` | `saveCookingProgress`, `finishCooking` | Cooking mode resume and logging |
 | `actions/progress.ts` | `addWaterAction`, `logWeightAction` | Tracking |
 | `actions/shopping.ts` | `setShoppingState`, `setHouseholdSize` | Shopping list |
+| `actions/workouts.ts` | `saveWorkoutSetupAction(WorkoutProfileInput)`, `getSwapOptionsAction`, `swapExerciseAction(slot, { exerciseId, scope: "day" \| "all" })`, `startSessionAction(dayIndex)`, `logSetAction`, `finishSessionAction(sessionId, activeSec)` | Workout setup, swaps and sessions; days must be done in order |
 | `actions/account.ts` | `deleteAccountAction`, `startCheckoutAction`, `billingPortalAction`, `toggleDevPremiumAction` | Privacy and billing |
 
 Plan mutations return `{ ok: true } | { ok: false, error: "<message key>" }`; quota failures return

@@ -18,6 +18,8 @@ function rng(seed: number) {
  * colours, with the app's lime brush stroke. Shown until a real or AI image
  * exists, and always labelled as an illustration.
  */
+const q = (n: number) => Math.round(n * 100) / 100;
+
 export function RecipeArt({
   id,
   palette,
@@ -34,13 +36,14 @@ export function RecipeArt({
   const rand = rng(hash(id + (stepIndex ?? "")));
   const colours = palette.length ? palette : ["#D9B77A", "#5E8C3A", "#C9541E"];
   const blobs = Array.from({ length: 5 + Math.floor(rand() * 4) }, (_, i) => ({
-    cx: 200 + Math.cos(rand() * Math.PI * 2) * (20 + rand() * 60),
-    cy: 150 + Math.sin(rand() * Math.PI * 2) * (14 + rand() * 40),
-    r: 22 + rand() * 34,
+    // Rounded: Math.cos/sin can differ in the last digit between server and browser engines (hydration).
+    cx: q(200 + Math.cos(rand() * Math.PI * 2) * (20 + rand() * 60)),
+    cy: q(150 + Math.sin(rand() * Math.PI * 2) * (14 + rand() * 40)),
+    r: q(22 + rand() * 34),
     fill: colours[i % colours.length],
-    o: 0.8 + rand() * 0.2,
+    o: q(0.8 + rand() * 0.2),
   }));
-  const garnish = Array.from({ length: 14 }, () => ({ x: 200 + (rand() - 0.5) * 170, y: 150 + (rand() - 0.5) * 110, r: 2 + rand() * 3.5 }));
+  const garnish = Array.from({ length: 14 }, () => ({ x: q(200 + (rand() - 0.5) * 170), y: q(150 + (rand() - 0.5) * 110), r: q(2 + rand() * 3.5) }));
   const bowl = rand() > 0.55;
   const sideX = rand() > 0.5 ? 330 : 70;
   const sy = 40 + rand() * 40;
@@ -66,7 +69,7 @@ export function RecipeArt({
       <circle cx="200" cy="150" r={bowl ? 96 : 104} fill="var(--color-art-plate-inner)" stroke="var(--color-art-rim)" strokeWidth="2" />
       <g filter={`url(#${uid})`}>
         {blobs.map((b, i) => (
-          <circle key={i} cx={b.cx} cy={b.cy} r={b.r * (bowl ? 0.9 : 1)} fill={b.fill} opacity={b.o} />
+          <circle key={i} cx={b.cx} cy={b.cy} r={q(b.r * (bowl ? 0.9 : 1))} fill={b.fill} opacity={b.o} />
         ))}
       </g>
       {garnish.map((g, i) => (

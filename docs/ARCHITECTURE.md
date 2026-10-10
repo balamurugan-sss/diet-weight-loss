@@ -19,12 +19,13 @@ content/                      Catalogue source data (version-controlled)
   ingredients-extra/*.ts      Batch-contributed ingredients
   recipes/*.json              Recipe batches (authoring format — see RECIPE_PIPELINE.md)
   translations/*.json         Recipe translations (status: reviewed | draft | machine)
-scripts/                      migrate, seed, import-recipes, validate-recipes, prune
+scripts/                      migrate, seed, import-recipes, validate-recipes, prune, workout-samples
 src/
   lib/                        Pure, framework-free logic (unit-tested)
     nutrition/                BMI, energy equations, safety screening, targets, projection
     recipes/                  Source schema + compiler, nutrition, classification, measures/scaling
     planner/engine.ts         Meal composition, portion fitting, day balancing, validation
+    workouts/                 Exercise library, 4-week program generator, progress replay, energy, food link (see WORKOUTS.md)
     shopping/aggregate.ts     Ingredient aggregation and practical quantities
     media/prompts.ts          Continuity-aware image prompts
     i18n/                     Language registry, messages (en/ta/ml), narration templates, transliteration
@@ -33,7 +34,7 @@ src/
     auth/                     Password hashing, DB sessions, data access layer
     services/                 Recipes, plans, day views, shopping, progress, usage quotas, media
     providers/                OpenAI images, Sarvam/Google TTS, Sarvam translation
-    actions/                  Server Actions (auth, profile, plans, recipes, cooking, shopping, account)
+    actions/                  Server Actions (auth, profile, plans, recipes, cooking, shopping, workouts, account)
   app/                        Routes: (app) with navigation, (focus) full-screen, api/ route handlers
   components/                 UI
 ```
@@ -48,6 +49,7 @@ src/
   `audio_assets` (keyed by hash of provider/voice/language/text)
 - `meal_plans`, `meal_plan_items` (slot, position, portion, ingredient swaps, completed)
 - `meal_logs`, `weight_logs`, `water_logs`, `cooking_sessions`, `favourites`, `recent_views`, `shopping_state`
+- `workout_profiles`, `workout_programs` (28-day snapshot + swaps), `workout_sessions` (one per program day), `workout_sets`
 - `usage_counters` (daily quotas), `rate_limits`, `stripe_events` (webhook idempotency)
 
 ## Request flow

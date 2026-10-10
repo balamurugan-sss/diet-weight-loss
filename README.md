@@ -1,10 +1,11 @@
 # Thali — AI Indian Diet Planner, Keto Coach & Visual Cooking Assistant
 
-A mobile-first web app for Indian users who want to lose weight on familiar food:
+A mobile-first web app for Indian users who want to lose weight on familiar food — and train alongside it:
 personalised calorie and macro targets with safety screening, 7/14/30-day meal plans
 built from a validated catalogue of Indian and international recipes, keto and
 low-carb options checked carb-by-carb, a hands-free visual cooking mode with
-narration in English, Tamil and Malayalam, shopping lists, and progress tracking.
+narration in English, Tamil and Malayalam, shopping lists, progress tracking, and a home / gym
+workout planner whose calories feed back into the food plan.
 
 > General wellness guidance and estimates — not medical advice or diagnosis.
 
@@ -21,8 +22,8 @@ voices, machine translation and payments are shown as unavailable (never faked);
 cooking assistant uses the device's built-in voices instead.
 
 ```bash
-npm test                 # unit tests: nutrition, safety, scaling, planner, shopping, prompts
-npm run test:e2e         # Playwright golden path (onboard → plan → swap → cook → log)
+npm test                 # unit tests: nutrition, safety, scaling, planner, shopping, prompts, workouts
+npm run test:e2e         # Playwright: food golden path + workout setup → session → done
 npm run lint && npm run typecheck && npm run build
 npm run recipes:validate -- --table   # validate the catalogue and print per-serving nutrition
 ```
@@ -44,7 +45,11 @@ npm run recipes:validate -- --table   # validate the catalogue and print per-ser
 | Natural-voice narration (Tamil, Malayalam, Indian English) | ✅ needs `SARVAM_API_KEY` or `GOOGLE_TTS_API_KEY`; device voices work without |
 | UI in English, Tamil, Malayalam (+ optional Latin transliteration) | ✅ translations are AI-drafted — native-speaker review recommended |
 | Shopping list: merged, scaled, practical quantities, ₹ cost, pantry, hidden-carb warnings | ✅ |
-| Progress dashboard, water, weight, adherence (no streaks or shaming) | ✅ |
+| Progress dashboard, water, weight, adherence (no shaming) | ✅ |
+| Workout planner: home / gym / mix, 3–6 days, 4-week programs (full body, upper/lower, PPL), gentle Day 1, rest and active recovery, missed days continue without reset | ✅ see [Workouts](docs/WORKOUTS.md) |
+| 85-exercise library with filters, steps, common mistakes, animated demos, swaps | ✅ |
+| Session player: timer, rest countdown, set/rep/weight logging, overload suggestions, summary | ✅ |
+| Food link: workout calories added back (50% weight loss / 100% otherwise, ≤600 kcal), training-day protein, Indian pre/post-workout food | ✅ |
 | Auth (guest-first, email/password), privacy export, account deletion | ✅ |
 | Free/Premium tiers with visible quotas; Stripe checkout, portal, webhook | ✅ needs Stripe keys; dev-only toggle otherwise |
 
@@ -62,6 +67,7 @@ colour-blind safety in both themes.
 - [API contracts](docs/API.md) — route handlers and server actions
 - [Nutrition methods](docs/NUTRITION_METHODS.md) — equations, net carbs, keto rules, safety rules
 - [Recipe pipeline](docs/RECIPE_PIPELINE.md) — authoring format, validation, import, translations, growing to 1,000+
+- [Workouts](docs/WORKOUTS.md) — program rules, missed days, energy, food link · [sample plans](docs/WORKOUT_SAMPLES.md)
 - [Deployment](docs/DEPLOYMENT.md) — environment variables, Docker, Vercel + Turso, cron jobs
 
 ## Honest limitations
@@ -77,5 +83,8 @@ colour-blind safety in both themes.
   labelled as machine-translated.
 - **AI images** are clearly labelled as AI illustrations. Until a key is configured, recipes
   show a labelled, generated placeholder illustration rather than a photo.
+- **Workout estimates:** calories use MET values and are approximate; starting weights are
+  conservative suggestions, not a substitute for a coach. Exercise demos are drawn figures
+  until real photos or videos are added to each exercise's media slot.
 - The catalogue ships with 329 recipes; reaching 1,000+ means adding more batches through
   the same validated pipeline (see the recipe pipeline doc) — the app does not pad the count.
