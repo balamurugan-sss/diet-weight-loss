@@ -1,5 +1,5 @@
 import type { CardioActivity, CardioIntensity } from "@/lib/workouts/cardio";
-import type { HealthDay, HealthImport, ImportedWorkout } from "./types";
+import { emptyDay, hourlyAverages, newHourBuckets, type HealthDay, type HealthImport, type ImportedWorkout } from "./types";
 
 /**
  * Streaming parser for Apple Health's export.xml (Health app → profile →
@@ -8,7 +8,8 @@ import type { HealthDay, HealthImport, ImportedWorkout } from "./types";
  *
  * Steps and sleep are recorded by several sources at once (iPhone and Watch);
  * per day we sum each source separately and keep the largest, which is how to
- * avoid double counting without Apple's own merge logic.
+ * avoid double counting without Apple's own merge logic. Heart rate is kept
+ * as a daily average, maximum and 24 hourly averages — never the raw samples.
  */
 
 const ASLEEP = new Set([
@@ -38,6 +39,14 @@ const WORKOUT_TYPES: Record<string, CardioActivity> = {
   HKWorkoutActivityTypeSoccer: "sport",
   HKWorkoutActivityTypeBasketball: "sport",
 };
+const DEEP = "HKCategoryValueSleepAnalysisAsleepDeep";
+const REM = "HKCategoryValueSleepAnalysisAsleepREM";
+const IN_BED = "HKCategoryValueSleepAnalysisInBed";
+const AWAKE = "HKCategoryValueSleepAnalysisAwake";
+
+type Night = { asleep: number; deep: number; rem: number; inBed: number; start: number; end: number; startClock: string; endClock: string };
+type HrDay = { sum: number; count: number; max: number; hours: [number, number][] };
+
 const VIGOROUS: Set<CardioActivity> = new Set(["run", "skipping", "swim"]);
 const LIGHT: Set<CardioActivity> = new Set(["yoga"]);
 
@@ -55,6 +64,8 @@ function attrs(tag: string) {
 }
 
 const dateOf = (s: string | undefined) => (s && /^\d{4}-\d{2}-\d{2}/.test(s) ? s.slice(0, 10) : null);
+// "2026-10-01 07:30:00 +0530" → local "07:30" (the export writes local time with its offset)
+const clockOf = (s: string) => s.slice(11, 16);
 // "2026-10-01 07:30:00 +0530" → epoch ms
 const timeOf = (s: string) => Date.parse(s.replace(" ", "T").replace(" ", "").replace(/([+-]\d{2})(\d{2})$/, "$1:$2"));
 
@@ -72,7 +83,8 @@ const best = (map: SourceSums, date: string) => {
 export function createAppleHealthParser(since: string): AppleParser {
   const steps: SourceSums = new Map();
   const exercise: SourceSums = new Map();
-  const sleep: SourceSums = new Map();
+  const nights = new Map<string, Map<string, Night>>(); // wake date → source → night
+  const hr = new Map<string, HrDay>();
   const rhr = new Map<string, number[]>();
   const workouts: ImportedWorkout[] = [];
   let tail = "";
@@ -94,9 +106,40 @@ export function createAppleHealthParser(since: string): AppleParser {
     if (type === "HKCategoryTypeIdentifierSleepAnalysis") {
       // Sleep counts towards the morning you wake up.
       const date = dateOf(a.endDate);
-      if (!date || date < since || !ASLEEP.has(a.value ?? "")) return;
-      const minutes = (timeOf(a.endDate) - timeOf(a.startDate)) / 60000;
-      if (minutes > 0 && minutes < 1440) add(sleep, date, source, minutes);
+      const value = a.value ?? "";
+      if (!date || date < since || !(ASLEEP.has(value) || value === IN_BED || value === AWAKE)) return;
+      const start = timeOf(a.startDate);
+      const end = timeOf(a.endDate);
+      const minutes = (end - start) / 60000;
+      if (!(minutes > 0 && minutes < 1440)) return;
+      const bySource = nights.get(date) ?? new Map<string, Night>();
+      const n = bySource.get(source) ?? { asleep: 0, deep: 0, rem: 0, inBed: 0, start: Infinity, end: -Infinity, startClock: "", endClock: "" };
+      if (value === IN_BED) n.inBed += minutes;
+      else {
+        if (ASLEEP.has(value)) n.asleep += minutes;
+        if (value === DEEP) n.deep += minutes;
+        if (value === REM) n.rem += minutes;
+        if (start < n.start) [n.start, n.startClock] = [start, clockOf(a.startDate)];
+        if (end > n.end) [n.end, n.endClock] = [end, clockOf(a.endDate)];
+      }
+      bySource.set(source, n);
+      nights.set(date, bySource);
+      return;
+    }
+    if (type === "HKQuantityTypeIdentifierHeartRate") {
+      const date = dateOf(a.startDate);
+      const bpm = Number(a.value);
+      if (!date || date < since || !(bpm > 20 && bpm < 250)) return;
+      const d = hr.get(date) ?? { sum: 0, count: 0, max: 0, hours: newHourBuckets() };
+      d.sum += bpm;
+      d.count++;
+      d.max = Math.max(d.max, bpm);
+      const h = Number(a.startDate.slice(11, 13));
+      if (h >= 0 && h < 24) {
+        d.hours[h][0] += bpm;
+        d.hours[h][1]++;
+      }
+      hr.set(date, d);
       return;
     }
     const date = dateOf(a.startDate);
@@ -117,18 +160,30 @@ export function createAppleHealthParser(since: string): AppleParser {
       for (const m of chunk.slice(0, cut).matchAll(/<(Record|Workout)\s([^>]*?)\/?>/g)) handle(m[1], attrs(m[2]));
     },
     finish(): HealthImport {
-      const dates = new Set([...steps.keys(), ...exercise.keys(), ...sleep.keys(), ...rhr.keys()]);
+      const dates = new Set([...steps.keys(), ...exercise.keys(), ...nights.keys(), ...rhr.keys(), ...hr.keys()]);
       const days: HealthDay[] = [...dates].sort().map((date) => {
         const s = best(steps, date);
         const e = best(exercise, date);
-        const sl = best(sleep, date);
         const r = rhr.get(date);
+        const h = hr.get(date);
+        // The night from the source that recorded the most sleep.
+        const night = [...(nights.get(date)?.values() ?? [])].filter((n) => n.asleep > 0).sort((a, b) => b.asleep - a.asleep)[0];
+        const span = night ? (night.end - night.start) / 60000 : 0;
         return {
-          date,
+          ...emptyDay(date),
           steps: s == null ? null : Math.round(s),
           activeMinutes: e == null ? null : Math.round(e),
-          sleepMinutes: sl == null ? null : Math.round(Math.min(sl, 1440)),
           restingHr: r ? Math.round(r.reduce((x, y) => x + y, 0) / r.length) : null,
+          sleepMinutes: night ? Math.round(Math.min(night.asleep, 1440)) : null,
+          inBedMinutes: night ? Math.round(Math.min(Math.max(night.inBed, span, night.asleep), 1440)) : null,
+          // Stage minutes only exist on Apple Watch nights with sleep stages (watchOS 9+).
+          deepMinutes: night && night.deep + night.rem > 0 ? Math.round(night.deep) : null,
+          remMinutes: night && night.deep + night.rem > 0 ? Math.round(night.rem) : null,
+          sleepStart: night?.startClock || null,
+          wakeTime: night?.endClock || null,
+          avgHr: h?.count ? Math.round(h.sum / h.count) : null,
+          maxHr: h?.count ? Math.round(h.max) : null,
+          hrHourly: h ? hourlyAverages(h.hours) : null,
         };
       });
       return { days, workouts };

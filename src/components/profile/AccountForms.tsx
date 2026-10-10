@@ -6,24 +6,7 @@ import { useI18n } from "@/components/i18n/I18nProvider";
 import { Button } from "@/components/ui/Button";
 import type { MessageKey } from "@/lib/i18n/messages/en";
 import { deleteAccountAction, billingPortalAction, startCheckoutAction, toggleDevPremiumAction } from "@/server/actions/account";
-import { logOut, secureAccount } from "@/server/actions/auth";
-
-export function SecureAccountForm() {
-  const { t } = useI18n();
-  const [state, action, pending] = useActionState(secureAccount, undefined);
-  if (state?.ok) return <p className="rounded-2xl bg-forest-50 px-3 py-2 text-sm font-semibold text-forest">{t("auth.secured")}</p>;
-  return (
-    <form action={action} className="space-y-3">
-      <p className="text-sm text-muted">{t("auth.secureBody")}</p>
-      <input name="email" type="email" autoComplete="email" required placeholder={t("auth.email")} aria-label={t("auth.email")} className={inputClass} />
-      <input name="password" type="password" autoComplete="new-password" required minLength={10} placeholder={t("auth.passwordHint")} aria-label={t("auth.password")} className={inputClass} />
-      {state?.error && <p role="alert" className="text-sm text-terracotta">{t(state.error as MessageKey)}</p>}
-      <Button type="submit" disabled={pending}>
-        {t("auth.secureCta")}
-      </Button>
-    </form>
-  );
-}
+import { logOut } from "@/server/actions/auth";
 
 export function LogoutButton() {
   const { t } = useI18n();

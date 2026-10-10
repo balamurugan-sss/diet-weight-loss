@@ -8,7 +8,7 @@ export function proxy(req: NextRequest) {
   const path = req.nextUrl.pathname;
   const needsAuth = PROTECTED.some((p) => path === p || path.startsWith(p + "/"));
   if (needsAuth && !req.cookies.get("thali_session")?.value) {
-    return NextResponse.redirect(new URL("/", req.nextUrl));
+    return NextResponse.redirect(new URL("/login", req.nextUrl));
   }
   return NextResponse.next();
 }

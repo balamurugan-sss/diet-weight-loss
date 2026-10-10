@@ -1,9 +1,19 @@
 import "server-only";
-import { dailyRollUpBody, GOOGLE_HEALTH, listFilter, parseDailyRollUp, parseExercise, parseSleep } from "@/lib/health/google";
-import type { HealthDay, HealthImport } from "@/lib/health/types";
+import {
+  dailyRollUpBody,
+  GOOGLE_HEALTH,
+  listFilter,
+  parseDailyRollUp,
+  parseExercise,
+  parseHeartRollup,
+  parseHourlyHeart,
+  parseRestingHr,
+  parseSleepNights,
+} from "@/lib/health/google";
+import { emptyDay, type HealthDay, type HealthImport } from "@/lib/health/types";
 import { config, ProviderError } from "@/server/config";
 import { hasEncryptionKey } from "@/server/crypto";
-import { addDaysISO, todayISO } from "@/server/time";
+import { addDaysISO, clockAt, todayISO } from "@/server/time";
 
 /**
  * Google Health API client (Fitbit, Fitbit Air, Pixel Watch).
@@ -72,7 +82,7 @@ async function call(token: string, path: string, init?: { method?: string; body?
 }
 
 /** All pages of a list call (the last page can be `{}`). */
-async function listAll(token: string, dataType: "sleep" | "exercise", from: string, toEx: string) {
+async function listAll(token: string, dataType: "sleep" | "exercise" | "daily-resting-heart-rate", from: string, toEx: string) {
   const points: unknown[] = [];
   let pageToken: string | undefined;
   for (let page = 0; page < 20; page++) {
@@ -86,26 +96,53 @@ async function listAll(token: string, dataType: "sleep" | "exercise", from: stri
   return { dataPoints: points };
 }
 
-/** The last `days` days (≤14: the roll-up limit for active minutes). */
+/** Today's heart rate in 1-hour windows from local midnight, placed by local hour. Best effort. */
+async function hourlyHeartToday(token: string) {
+  const [h, m] = clockAt().split(":").map(Number);
+  const midnight = new Date(Date.now() - (h * 60 + m) * 60000);
+  midnight.setUTCSeconds(0, 0);
+  const body = { range: { startTime: midnight.toISOString(), endTime: new Date().toISOString() }, windowSize: "3600s" };
+  const hourOf = (instant: string) => {
+    const ms = Date.parse(instant);
+    return Number.isNaN(ms) ? null : Number(clockAt(new Date(ms)).slice(0, 2));
+  };
+  return call(token, "/users/me/dataTypes/heart-rate/dataPoints:rollUp", { method: "POST", body }).then((b) => parseHourlyHeart(b, hourOf));
+}
+
+/** The last `days` days (≤14: the roll-up limit for active minutes and heart rate). */
 export async function fetchRecent(token: string, days = 14): Promise<HealthImport> {
-  const toEx = addDaysISO(todayISO(), 1);
+  const today = todayISO();
+  const toEx = addDaysISO(today, 1);
   const from = addDaysISO(toEx, -days);
   const body = dailyRollUpBody(from, toEx);
-  const [steps, active, sleep, exercise] = await Promise.all([
+  const optional = <T>(p: Promise<T>, empty: T) => p.catch(() => empty);
+  const [steps, active, sleep, exercise, rhr, heart, hourly] = await Promise.all([
     call(token, "/users/me/dataTypes/steps/dataPoints:dailyRollUp", { method: "POST", body }).then((b) => parseDailyRollUp(b, "steps")),
-    call(token, "/users/me/dataTypes/active-minutes/dataPoints:dailyRollUp", { method: "POST", body })
-      .then((b) => parseDailyRollUp(b, "activeMinutes"))
-      .catch(() => new Map<string, number>()),
-    listAll(token, "sleep", from, toEx).then(parseSleep),
+    optional(call(token, "/users/me/dataTypes/active-minutes/dataPoints:dailyRollUp", { method: "POST", body }).then((b) => parseDailyRollUp(b, "activeMinutes")), new Map<string, number>()),
+    listAll(token, "sleep", from, toEx).then(parseSleepNights),
     listAll(token, "exercise", from, toEx).then(parseExercise),
+    optional(listAll(token, "daily-resting-heart-rate", from, toEx).then(parseRestingHr), new Map<string, number>()),
+    optional(call(token, "/users/me/dataTypes/heart-rate/dataPoints:dailyRollUp", { method: "POST", body }).then(parseHeartRollup), new Map<string, { avg: number | null; max: number | null }>()),
+    optional(hourlyHeartToday(token), null),
   ]);
-  const dates = new Set([...steps.keys(), ...active.keys(), ...sleep.keys()]);
-  const out: HealthDay[] = [...dates].sort().map((date) => ({
-    date,
-    steps: steps.has(date) ? Math.round(steps.get(date)!) : null,
-    activeMinutes: active.has(date) ? Math.round(active.get(date)!) : null,
-    restingHr: null,
-    sleepMinutes: sleep.get(date) ?? null,
-  }));
+  const dates = new Set([...steps.keys(), ...active.keys(), ...sleep.keys(), ...rhr.keys(), ...heart.keys(), ...(hourly ? [today] : [])]);
+  const out: HealthDay[] = [...dates].sort().map((date) => {
+    const night = sleep.get(date);
+    return {
+      ...emptyDay(date),
+      steps: steps.has(date) ? Math.round(steps.get(date)!) : null,
+      activeMinutes: active.has(date) ? Math.round(active.get(date)!) : null,
+      restingHr: rhr.get(date) ?? null,
+      sleepMinutes: night?.minutes ?? null,
+      inBedMinutes: night?.inBed ?? null,
+      deepMinutes: night?.deep ?? null,
+      remMinutes: night?.rem ?? null,
+      sleepStart: night?.start ?? null,
+      wakeTime: night?.wake ?? null,
+      avgHr: heart.get(date)?.avg ?? null,
+      maxHr: heart.get(date)?.max ?? null,
+      hrHourly: date === today ? hourly : null,
+    };
+  });
   return { days: out, workouts: exercise };
 }

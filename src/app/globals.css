@@ -8,22 +8,22 @@
  * The dark theme (default) re-points them; utilities pick the change up via CSS variables.
  */
 @theme {
-  --color-ivory: #fbf7ef;
-  --color-sand: #f4eee2;
-  --color-sand-2: #ece4d4;
+  --color-ivory: #f2f4f6;
+  --color-sand: #e8ebef;
+  --color-sand-2: #dce0e5;
   --color-surface: #ffffff;
-  --color-line: #e7dfd0;
-  --color-forest: #1e4d3b;
-  --color-forest-700: #163a2c;
-  --color-forest-600: #245c47;
-  --color-forest-100: #dce9e1;
-  --color-forest-50: #edf4ef;
-  --color-lime: #b9db4a;
-  --color-lime-600: #93b52a;
-  --color-lime-100: #eef6d2;
-  --color-charcoal: #23262a;
-  --color-ink-2: #4a4d52;
-  --color-muted: #6f6a62;
+  --color-line: #d5dae0;
+  --color-forest: #14181c;
+  --color-forest-700: #0b0d0f;
+  --color-forest-600: #262c33;
+  --color-forest-100: #d9dee4;
+  --color-forest-50: #e6e9ed;
+  --color-lime: #c6f135;
+  --color-lime-600: #6f8f00;
+  --color-lime-100: #eefbc4;
+  --color-charcoal: #111418;
+  --color-ink-2: #3a4148;
+  --color-muted: #5d6670;
   --color-on-accent: #ffffff;
   --color-amber: #c98a1b;
   --color-amber-100: #fbefd6;
@@ -33,11 +33,11 @@
   --color-water: #3a86c4;
   --color-water-100: #e2eff9;
   --color-scrim: rgb(12 12 11 / 0.65);
-  --color-art-bg: #f2ebdd;
-  --color-art-grain: #e2d6bf;
+  --color-art-bg: #e4e8ec;
+  --color-art-grain: #d3d9df;
   --color-art-plate: #ffffff;
-  --color-art-plate-inner: #fcfaf5;
-  --color-art-rim: #efe7d8;
+  --color-art-plate-inner: #f7f8fa;
+  --color-art-rim: #e3e7eb;
 
   --color-protein: #16855a;
   --color-carbs: #c7860f;
@@ -48,9 +48,14 @@
   --font-display: var(--font-heading), var(--font-body), ui-sans-serif, sans-serif;
   --font-hand: var(--font-script), "Comic Sans MS", cursive;
 
-  --radius-card: 1.5rem;
-  --shadow-soft: 0 1px 2px rgb(35 38 42 / 0.04), 0 4px 16px -4px rgb(35 38 42 / 0.08);
-  --shadow-lift: 0 2px 4px rgb(35 38 42 / 0.05), 0 12px 32px -8px rgb(30 77 59 / 0.18);
+  --radius-card: 0.875rem;
+  /* Tighter corners than Tailwind's defaults: a harder, more athletic silhouette. */
+  --radius-lg: 0.375rem;
+  --radius-xl: 0.5rem;
+  --radius-2xl: 0.625rem;
+  --radius-3xl: 0.875rem;
+  --shadow-soft: 0 1px 2px rgb(17 20 24 / 0.05), 0 4px 16px -4px rgb(17 20 24 / 0.1);
+  --shadow-lift: 0 2px 4px rgb(17 20 24 / 0.06), 0 12px 32px -8px rgb(17 20 24 / 0.25);
 
   --animate-fade-up: fade-up 0.35s cubic-bezier(0.2, 0.7, 0.2, 1) both;
   @keyframes fade-up {
@@ -67,23 +72,23 @@
 
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --color-ivory: #0c0c0b;
-  --color-surface: #171715;
-  --color-sand: #1f1f1c;
-  --color-sand-2: #2c2c28;
-  --color-line: #2b2b27;
-  --color-charcoal: #f4f4ee;
-  --color-ink-2: #cacac1;
-  --color-muted: #94948b;
-  --color-forest: #d4f23f;
-  --color-forest-600: #c3e22f;
-  --color-forest-700: #0c0c0b;
-  --color-forest-100: #3a461b;
-  --color-forest-50: #222910;
-  --color-lime: #d4f23f;
-  --color-lime-600: #bede2c;
+  --color-ivory: #0a0c0e;
+  --color-surface: #13171a;
+  --color-sand: #1a1f23;
+  --color-sand-2: #252b30;
+  --color-line: #272d33;
+  --color-charcoal: #f3f5f7;
+  --color-ink-2: #c2c9d0;
+  --color-muted: #8b949d;
+  --color-forest: #c6f135;
+  --color-forest-600: #b5e01f;
+  --color-forest-700: #0a0c0e;
+  --color-forest-100: #34431a;
+  --color-forest-50: #1d2611;
+  --color-lime: #c6f135;
+  --color-lime-600: #b5e01f;
   --color-lime-100: #e6f5a8;
-  --color-on-accent: #0c0c0b;
+  --color-on-accent: #0a0c0e;
   --color-amber: #f0b43c;
   --color-amber-100: #322710;
   --color-amber-ink: #f6d083;
@@ -91,11 +96,11 @@
   --color-terracotta-100: #3a1d16;
   --color-water: #5aa7f2;
   --color-water-100: #14283a;
-  --color-art-bg: #1b1c19;
-  --color-art-grain: #262723;
-  --color-art-plate: #2b2c28;
-  --color-art-plate-inner: #20211e;
-  --color-art-rim: #34352f;
+  --color-art-bg: #171b1f;
+  --color-art-grain: #20262b;
+  --color-art-plate: #262c31;
+  --color-art-plate-inner: #1c2125;
+  --color-art-rim: #2f363c;
   --color-protein: #1f9e69;
   --color-carbs: #c4851a;
   --color-fat: #d062a4;
@@ -125,21 +130,29 @@ body {
   font-family: var(--font-malayalam), var(--font-sans);
 }
 
+/* In the base layer so utilities (font-black, normal-case, tracking-*) can override per element. */
+@layer base {
 h1,
 h2,
 h3,
 .font-display {
   font-family: var(--font-display);
   font-weight: 700;
-  letter-spacing: -0.025em;
+  letter-spacing: 0.005em;
 }
-h1 {
+/* Condensed, heavy, upper-case headlines: the Movewell voice. */
+h1,
+h2 {
   font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.02;
 }
 :lang(ta) :is(h1, h2, h3, .font-display),
 :lang(ml) :is(h1, h2, h3, .font-display) {
   font-family: inherit;
   letter-spacing: 0;
+  text-transform: none;
+}
 }
 
 .font-hand {
@@ -157,7 +170,7 @@ h1 {
 
 ::selection {
   background: var(--color-lime);
-  color: #0c0c0b;
+  color: #0a0c0e;
 }
 
 @layer components {
@@ -174,24 +187,24 @@ h1 {
   /* Raised feature panel: forest gradient in light, charcoal with a lime glow in dark. */
   .hero-gradient {
     background:
-      radial-gradient(120% 140% at 100% 0%, rgb(185 219 74 / 0.32), transparent 55%),
-      linear-gradient(150deg, #1e4d3b 0%, #163a2c 100%);
+      radial-gradient(120% 140% at 100% 0%, rgb(198 241 53 / 0.28), transparent 55%),
+      linear-gradient(150deg, #1d2329 0%, #0f1215 100%);
   }
   :root[data-theme="dark"] .hero-gradient {
     background:
-      radial-gradient(90% 120% at 100% 0%, rgb(212 242 63 / 0.16), transparent 60%),
-      linear-gradient(160deg, #1d1e1a 0%, #121311 100%);
-    border: 1px solid #2b2b27;
+      radial-gradient(90% 120% at 100% 0%, rgb(198 241 53 / 0.16), transparent 60%),
+      linear-gradient(160deg, #1a1f24 0%, #0e1114 100%);
+    border: 1px solid #272d33;
   }
   /* Pale-lime feature card (as in the reference's highlighted tiles). Always dark ink. */
   .card-lime {
-    background: #e3f59c;
-    color: #0c0c0b;
+    background: #dcf78a;
+    color: #0a0c0e;
     border-radius: var(--radius-card);
   }
   .card-lime-strong {
-    background: #d4f23f;
-    color: #0c0c0b;
+    background: #c6f135;
+    color: #0a0c0e;
     border-radius: var(--radius-card);
   }
   .highlight {

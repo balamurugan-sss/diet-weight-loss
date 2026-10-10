@@ -1,25 +1,25 @@
 import type { Metadata, Viewport } from "next";
-import { Caveat, Noto_Sans_Malayalam, Noto_Sans_Tamil, Outfit, Plus_Jakarta_Sans } from "next/font/google";
+import { Barlow, Barlow_Condensed, Caveat, Noto_Sans_Malayalam, Noto_Sans_Tamil } from "next/font/google";
 import { getLocale } from "@/server/i18n";
 import { getTheme } from "@/server/theme";
 import "./globals.css";
 
-const body = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-body", display: "swap" });
-const heading = Outfit({ subsets: ["latin"], variable: "--font-heading", weight: ["600", "700", "800"], display: "swap" });
+const body = Barlow({ subsets: ["latin"], variable: "--font-body", weight: ["400", "500", "600", "700"], display: "swap" });
+const heading = Barlow_Condensed({ subsets: ["latin"], variable: "--font-heading", weight: ["600", "700", "800"], display: "swap" });
 const script = Caveat({ subsets: ["latin"], variable: "--font-script", weight: ["500", "600", "700"], display: "swap" });
 const tamil = Noto_Sans_Tamil({ subsets: ["tamil"], variable: "--font-tamil", weight: ["400", "500", "600", "700"], display: "swap" });
 const malayalam = Noto_Sans_Malayalam({ subsets: ["malayalam"], variable: "--font-malayalam", weight: ["400", "500", "600", "700"], display: "swap" });
 
 export const metadata: Metadata = {
-  title: { default: "Thali — Indian Diet Planner & Cooking Coach", template: "%s · Thali" },
+  title: { default: "Movewell — Workouts, Indian Meal Plans & Health Data", template: "%s · Movewell" },
   description:
-    "Personalised Indian meal plans, keto and low-carb options, a validated recipe catalogue, and a hands-free visual cooking assistant in English, Tamil and Malayalam.",
-  applicationName: "Thali",
+    "Home and gym workout plans, Indian meal plans that fuel them, and heart rate, steps and sleep from Fitbit, Google or Apple Health on one daily timeline.",
+  applicationName: "Movewell",
 };
 
 export async function generateViewport(): Promise<Viewport> {
   const theme = await getTheme();
-  return { width: "device-width", initialScale: 1, viewportFit: "cover", themeColor: theme === "dark" ? "#0c0c0b" : "#fbf7ef" };
+  return { width: "device-width", initialScale: 1, viewportFit: "cover", themeColor: theme === "dark" ? "#0a0c0e" : "#f2f4f6" };
 }
 
 export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

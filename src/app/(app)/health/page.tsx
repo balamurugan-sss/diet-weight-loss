@@ -5,7 +5,7 @@ import { GoogleHealthCard } from "@/components/health/GoogleHealthCard";
 import { HealthImport } from "@/components/health/HealthImport";
 import { Card, PageHeader } from "@/components/ui/Card";
 import { cn } from "@/lib/cn";
-import { analyseDay, formatVars, STEP_GOAL } from "@/lib/health/analysis";
+import { analyseDay, formatVars, sleepScore, STEP_GOAL } from "@/lib/health/analysis";
 import type { MessageKey } from "@/lib/i18n/messages/en";
 import { addDays } from "@/lib/workouts/progress";
 import { requireOnboarded } from "@/server/auth/dal";
@@ -31,6 +31,7 @@ export default async function HealthPage({ searchParams }: PageProps<"/health">)
   const status = typeof sp.google === "string" ? sp.google : null;
   const last14 = days.filter((d) => d.date > addDays(today, -14) && d.steps != null).map((d) => ({ date: d.date, steps: d.steps! }));
 
+  const score = analysis?.today ? sleepScore(analysis.today, analysis.baseline.restingHr) : null;
   const tiles = analysis?.today
     ? [
         { icon: Footprints, label: t("health.steps"), value: analysis.today.steps?.toLocaleString("en-IN"), usual: analysis.baseline.steps?.toLocaleString("en-IN") },
@@ -41,6 +42,19 @@ export default async function HealthPage({ searchParams }: PageProps<"/health">)
           label: t("health.rhr"),
           value: analysis.today.restingHr != null ? `${analysis.today.restingHr} ${t("health.bpm")}` : null,
           usual: analysis.baseline.restingHr ? `${analysis.baseline.restingHr}` : null,
+        },
+        {
+          icon: HeartPulse,
+          label: `${t("today.body.avg")} / ${t("today.body.max")}`,
+          value: analysis.today.avgHr != null ? `${analysis.today.avgHr} / ${analysis.today.maxHr ?? "—"}` : null,
+          usual: null,
+        },
+        {
+          icon: Moon,
+          label: t("today.body.score"),
+          value: score ? `${score.score}/100` : null,
+          usual: null,
+          note: score ? (score.source === "device" ? t("today.body.fromDevice") : t("today.body.estimate")) : undefined,
         },
       ]
     : [];
@@ -56,14 +70,15 @@ export default async function HealthPage({ searchParams }: PageProps<"/health">)
               <h2 className="text-lg font-semibold">{t("health.today")}</h2>
               {latest!.date !== today && <span className="text-sm text-muted">{t("health.latest", { date: fmtDate(latest!.date) })}</span>}
             </div>
-            <dl className="grid grid-cols-2 gap-2.5 sm:grid-cols-4">
-              {tiles.map(({ icon: Icon, label, value, usual }) => (
+            <dl className="grid grid-cols-2 gap-2.5 sm:grid-cols-3">
+              {tiles.map(({ icon: Icon, label, value, usual, note }: (typeof tiles)[number] & { note?: string }) => (
                 <div key={label} className="rounded-2xl bg-sand/70 p-3">
                   <dt className="flex items-center gap-1.5 text-xs font-semibold text-muted">
                     <Icon className="size-3.5" aria-hidden /> {label}
                   </dt>
                   <dd className="mt-1 font-display text-xl font-bold tabular">{value ?? "—"}</dd>
                   {usual && <dd className="text-xs text-muted tabular">{t("health.usual", { v: usual })}</dd>}
+                  {note && <dd className="text-xs text-muted">{note}</dd>}
                 </div>
               ))}
             </dl>
@@ -126,7 +141,7 @@ export default async function HealthPage({ searchParams }: PageProps<"/health">)
         <p className="card-sand p-5 text-[15px] text-ink-2">{t("health.noData")}</p>
       )}
 
-      <Card className="space-y-5">
+      <Card id="import" className="scroll-mt-6 space-y-5">
         <h2 className="text-lg font-semibold">{t("health.connect")}</h2>
         <GoogleHealthCard
           configured={googleHealthConfigured()}

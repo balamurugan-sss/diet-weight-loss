@@ -4,7 +4,6 @@ import { ArrowCircle, Squiggle, TwoTone } from "@/components/brand/Brand";
 import { buttonClass, LinkButton } from "@/components/ui/Button";
 import { Card, SectionTitle } from "@/components/ui/Card";
 import { ExerciseMedia } from "@/components/workouts/ExerciseMedia";
-import { PlanSwitch } from "@/components/workouts/PlanSwitch";
 import { WeekCalendar } from "@/components/workouts/WeekCalendar";
 import { CardioLogButton } from "@/components/workouts/CardioLogButton";
 import { moderateEquivalentMinutes, WHO_WEEKLY_MODERATE_MIN } from "@/lib/workouts/cardio";
@@ -31,13 +30,11 @@ export default async function WorkoutsPage() {
   const { user, profile } = await requireOnboarded();
   const { t, lang } = await getI18n();
   const locale = lang === "ta" ? "ta-IN" : lang === "ml" ? "ml-IN" : "en-IN";
-  const switchLabels = { meals: t("plan.meals"), workouts: t("plan.workouts"), switch: t("plan.switch") };
   const program = await getActiveProgram(user.id);
 
   if (!program) {
     return (
       <div className="space-y-5">
-        <PlanSwitch active="workouts" labels={switchLabels} />
         <section className="hero-gradient relative overflow-hidden rounded-[var(--radius-card)] p-6 text-white sm:p-8">
           <Squiggle className="absolute -right-10 -bottom-6 h-28 w-72 opacity-90" />
           <div className="relative max-w-md">
@@ -77,8 +74,7 @@ export default async function WorkoutsPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between gap-3">
-        <PlanSwitch active="workouts" labels={switchLabels} />
+      <div className="flex items-center justify-end gap-3">
         <Link href="/workouts/setup" className={buttonClass("outline", "sm")} aria-label={t("wk.editSetup")}>
           <Settings2 className="size-4" aria-hidden /> <span className="hidden sm:inline">{t("wk.editSetup")}</span>
         </Link>
@@ -106,7 +102,7 @@ export default async function WorkoutsPage() {
           <CheckCircle2 className="size-10 shrink-0" aria-hidden />
           <div className="flex-1">
             <h2 className="text-xl">{t("wk.doneToday")}</h2>
-            <p className="text-[15px] text-[#0c0c0b]/75">{t("wk.doneTodayBody", { n: pos + 1 })}</p>
+            <p className="text-[15px] text-[#0a0c0e]/75">{t("wk.doneTodayBody", { n: pos + 1 })}</p>
           </div>
           <Link href={`/workouts/day/${pos}`} aria-label={t("wk.preview")}>
             <ArrowCircle dark className="size-12" />
@@ -119,11 +115,11 @@ export default async function WorkoutsPage() {
               {t("wk.today")} · {t("wk.dayOf", { n: pos + 1, total: program.days.length })}
             </p>
             <h2 className="mt-1 text-[1.9rem] leading-[1.05]">{focus(day)}</h2>
-            <p className="mt-1 text-sm font-medium text-[#0c0c0b]/70">
+            <p className="mt-1 text-sm font-medium text-[#0a0c0e]/70">
               {t(`wk.setting.${day.setting}`)}
               {day.isIntro && <> · {t("wk.intro")}</>}
             </p>
-            <dl className="mt-4 grid grid-cols-3 divide-x divide-[#0c0c0b]/15 rounded-2xl bg-[#0c0c0b]/[0.07]">
+            <dl className="mt-4 grid grid-cols-3 divide-x divide-[#0a0c0e]/15 rounded-2xl bg-[#0a0c0e]/[0.07]">
               {[
                 { v: `~${est!.minutes}`, l: t("common.min") },
                 { v: `~${est!.kcal}`, l: t("common.kcal") },
@@ -131,26 +127,26 @@ export default async function WorkoutsPage() {
               ].map((s) => (
                 <div key={s.l} className="px-2 py-2.5 text-center">
                   <dd className="text-[15px] font-bold tabular">{s.v}</dd>
-                  <dt className="text-[11px] text-[#0c0c0b]/65">{s.l}</dt>
+                  <dt className="text-[11px] text-[#0a0c0e]/65">{s.l}</dt>
                 </div>
               ))}
             </dl>
             <div className="mt-4 flex gap-2 sm:mt-auto">
-              <Link href={`/workouts/session/${pos}`} className="inline-flex h-14 flex-1 items-center justify-center gap-2 rounded-2xl bg-[#0c0c0b] whitespace-nowrap px-6 text-[17px] font-bold text-[#d4f23f] hover:opacity-90">
+              <Link href={`/workouts/session/${pos}`} className="inline-flex h-14 flex-1 items-center justify-center gap-2 rounded-2xl bg-[#0a0c0e] whitespace-nowrap px-6 text-[17px] font-bold text-[#c6f135] hover:opacity-90">
                 {session?.status === "in_progress" ? t("wk.continue") : t("wk.start")} <ArrowRight className="size-5" aria-hidden />
               </Link>
               <Link
                 href={`/workouts/day/${pos}`}
                 aria-label={t("wk.preview")}
                 title={t("wk.preview")}
-                className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border-2 border-[#0c0c0b]/25 hover:bg-[#0c0c0b]/5 sm:w-auto sm:gap-2 sm:px-4"
+                className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border-2 border-[#0a0c0e]/25 hover:bg-[#0a0c0e]/5 sm:w-auto sm:gap-2 sm:px-4"
               >
                 <ListChecks className="size-5" aria-hidden />
                 <span className="hidden text-[15px] font-bold sm:inline">{t("wk.preview")}</span>
               </Link>
             </div>
           </div>
-          {lead && <ExerciseMedia exercise={lead} className="hidden rounded-[1.15rem] bg-[#0c0c0b] text-white sm:block" />}
+          {lead && <ExerciseMedia exercise={lead} className="hidden rounded-[1.15rem] bg-[#0a0c0e] text-white sm:block" />}
         </section>
       ) : day ? (
         <section className="card relative overflow-hidden p-5">
@@ -202,7 +198,7 @@ export default async function WorkoutsPage() {
             <p className="text-sm font-semibold text-muted">{t("wk.dayOf", { n: Math.min(prog.daysDone + (prog.finished ? 0 : 1), program.days.length), total: program.days.length })}</p>
             <p className="font-display text-3xl font-bold tabular">{t("wk.progress", { done: prog.workoutsDone, total: prog.workoutsTotal })}</p>
           </div>
-          <span className={cn("inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-bold", prog.streak > 0 ? "bg-lime text-[#0c0c0b]" : "bg-sand text-muted")}>
+          <span className={cn("inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-bold", prog.streak > 0 ? "bg-lime text-[#0a0c0e]" : "bg-sand text-muted")}>
             <Flame className="size-4" aria-hidden /> {t("wk.streak", { n: prog.streak })}
           </span>
         </div>
@@ -319,7 +315,7 @@ function LibraryTile({ t }: { t: TFunc }) {
     <Link href="/workouts/library" className="card-lime flex items-center gap-4 p-5 transition-transform hover:-translate-y-0.5">
       <div className="flex-1">
         <h2 className="text-xl">{t("wk.library")}</h2>
-        <p className="text-[15px] text-[#0c0c0b]/70">{t("wk.libraryBody", { n: EXERCISES.length })}</p>
+        <p className="text-[15px] text-[#0a0c0e]/70">{t("wk.libraryBody", { n: EXERCISES.length })}</p>
       </div>
       <ArrowCircle dark className="size-12" />
     </Link>

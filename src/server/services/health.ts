@@ -1,6 +1,6 @@
 import "server-only";
-import { and, eq, gte, lte } from "drizzle-orm";
-import type { HealthDay, HealthImport, HealthSource } from "@/lib/health/types";
+import { and, eq, gte, lte, sql } from "drizzle-orm";
+import { emptyDay, HEALTH_FIELDS, type HealthDay, type HealthImport, type HealthSource } from "@/lib/health/types";
 import { ProviderError } from "@/server/config";
 import { decryptSecret, encryptSecret } from "@/server/crypto";
 import { db, schema } from "@/server/db/client";
@@ -8,7 +8,13 @@ import { exchangeCode, fetchRecent, refreshAccess } from "@/server/providers/goo
 import { addCardio } from "./cardio";
 
 /** When several sources report the same day, the first non-empty value in this order wins. */
-const PRIORITY: HealthSource[] = ["google_health", "apple_health", "fitbit_export", "manual"];
+const PRIORITY: HealthSource[] = ["google_health", "apple_health", "fitbit_export", "google_fit_export", "manual"];
+
+/** Fields that only make sense together come from one source, so a night's stages never mix devices. */
+const GROUPS: (keyof HealthDay)[][] = [
+  ["sleepMinutes", "inBedMinutes", "deepMinutes", "remMinutes", "sleepStart", "wakeTime", "sleepScore"],
+  ["avgHr", "maxHr", "hrHourly"],
+];
 
 export async function healthDaysBetween(userId: string, from: string, to: string): Promise<HealthDay[]> {
   const rows = await db
@@ -21,19 +27,31 @@ export async function healthDaysBetween(userId: string, from: string, to: string
     .sort(([a], [b]) => a.localeCompare(b))
     .map(([date, list]) => {
       const ordered = [...list].sort((a, b) => PRIORITY.indexOf(a.source) - PRIORITY.indexOf(b.source));
-      const pick = (k: "steps" | "activeMinutes" | "restingHr" | "sleepMinutes") => ordered.find((r) => r[k] != null)?.[k] ?? null;
-      return { date, steps: pick("steps"), activeMinutes: pick("activeMinutes"), restingHr: pick("restingHr"), sleepMinutes: pick("sleepMinutes") };
+      const day = emptyDay(date) as Record<keyof HealthDay, unknown>;
+      for (const k of HEALTH_FIELDS) {
+        const group = GROUPS.find((g) => g.includes(k));
+        const row = group ? ordered.find((r) => r[group[0] as (typeof HEALTH_FIELDS)[number]] != null) : ordered.find((r) => r[k] != null);
+        day[k] = row?.[k] ?? null;
+      }
+      return day as HealthDay;
     });
 }
 
 export async function saveHealthImport(userId: string, source: Exclude<HealthSource, "manual">, data: HealthImport, weightKg: number) {
   const now = new Date();
   for (const d of data.days) {
-    const values = { steps: d.steps, activeMinutes: d.activeMinutes, restingHr: d.restingHr, sleepMinutes: d.sleepMinutes, updatedAt: now };
+    const values = Object.fromEntries(HEALTH_FIELDS.map((k) => [k, d[k] ?? null]));
+    // A later sync that lacks a value (e.g. yesterday's hourly heart rate) keeps the stored one.
+    const set = Object.fromEntries(
+      HEALTH_FIELDS.map((k) => {
+        const col = schema.healthDays[k];
+        return [k, sql`coalesce(excluded.${sql.identifier(col.name)}, ${col})`];
+      }),
+    );
     await db
       .insert(schema.healthDays)
-      .values({ userId, date: d.date, source, ...values })
-      .onConflictDoUpdate({ target: [schema.healthDays.userId, schema.healthDays.date, schema.healthDays.source], set: values });
+      .values({ userId, date: d.date, source, ...values, updatedAt: now })
+      .onConflictDoUpdate({ target: [schema.healthDays.userId, schema.healthDays.date, schema.healthDays.source], set: { ...set, updatedAt: now } });
   }
   for (const w of data.workouts) await addCardio(userId, { ...w, source, externalId: w.externalId }, weightKg);
   return { days: data.days.length, workouts: data.workouts.length };

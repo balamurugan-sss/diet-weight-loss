@@ -13,10 +13,10 @@ const VARIANTS: Record<Variant, string> = {
   outline: "border border-line bg-surface text-charcoal hover:border-forest/50",
 };
 const SIZES: Record<Size, string> = {
-  sm: "h-9 px-3.5 text-sm rounded-full gap-1.5",
-  md: "h-11 px-5 text-[15px] rounded-xl gap-2",
-  lg: "h-13 px-6 text-base rounded-xl gap-2",
-  xl: "h-15 px-7 text-[17px] rounded-2xl gap-3",
+  sm: "h-9 px-3.5 text-sm rounded-lg gap-1.5",
+  md: "h-11 px-5 text-[15px] rounded-lg gap-2",
+  lg: "h-13 px-6 font-display text-[17px] tracking-wide uppercase rounded-lg gap-2",
+  xl: "h-15 px-7 font-display text-[19px] tracking-wide uppercase rounded-xl gap-3",
 };
 
 export function buttonClass(variant: Variant = "primary", size: Size = "md", className?: string) {

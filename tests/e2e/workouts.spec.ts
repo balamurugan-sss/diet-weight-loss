@@ -1,9 +1,8 @@
 import { expect, test, type Page } from "@playwright/test";
+import { signUp } from "./helpers";
 
 async function onboard(page: Page) {
-  await page.goto("/");
-  await page.getByRole("button", { name: /get started/i }).click();
-  await page.waitForURL("**/onboarding");
+  await signUp(page);
   await page.getByRole("button", { name: "Continue" }).click();
   await page.getByRole("spinbutton").first().fill("30");
   await page.getByRole("button", { name: "Male", exact: true }).click();

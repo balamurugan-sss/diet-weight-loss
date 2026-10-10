@@ -70,6 +70,35 @@ export function analyseDay(days: HealthDay[], date: string): Analysis {
   return { today, baseline: { steps: baseline.steps && Math.round(baseline.steps), sleepMinutes: baseline.sleepMinutes && Math.round(baseline.sleepMinutes), restingHr: baseline.restingHr && Math.round(baseline.restingHr) }, insights, suggestRecovery };
 }
 
+export type SleepScore = { score: number; source: "device" | "estimate"; label: "excellent" | "good" | "fair" | "poor" };
+
+const sleepLabel = (score: number): SleepScore["label"] => (score >= 90 ? "excellent" : score >= 80 ? "good" : score >= 60 ? "fair" : "poor");
+
+/**
+ * The device's sleep score when it gives one (Fitbit), otherwise Movewell's
+ * estimate on the same 0–100 scale. The estimate follows the shape of
+ * Fitbit's score — duration, sleep quality and restoration — using only what
+ * any tracker records:
+ *   duration    50 pts: 7.5 h or more is full marks, falling to 0 at 3.5 h
+ *   stages      25 pts: deep + REM at 40% of sleep or more is full marks
+ *   restoration 25 pts: efficiency (asleep ÷ in bed) 90%+ = 15, and resting
+ *                       heart rate at or below the person's usual = 10
+ * Missing parts are left out and the rest scaled up, so a phone that only
+ * knows duration still gets a fair number. It is an estimate, labelled so.
+ */
+export function sleepScore(d: HealthDay, baselineRhr: number | null = null): SleepScore | null {
+  if (d.sleepScore != null) return { score: Math.round(d.sleepScore), source: "device", label: sleepLabel(d.sleepScore) };
+  if (d.sleepMinutes == null || d.sleepMinutes <= 0) return null;
+  const clamp = (x: number) => Math.max(0, Math.min(1, x));
+  const parts: [number, number][] = [[50, clamp((d.sleepMinutes - 210) / (450 - 210))]];
+  if (d.deepMinutes != null && d.remMinutes != null && d.deepMinutes + d.remMinutes > 0) parts.push([25, clamp((d.deepMinutes + d.remMinutes) / d.sleepMinutes / 0.4)]);
+  if (d.inBedMinutes != null && d.inBedMinutes >= d.sleepMinutes) parts.push([15, clamp((d.sleepMinutes / d.inBedMinutes - 0.7) / 0.2)]);
+  if (d.restingHr != null && baselineRhr != null) parts.push([10, clamp(1 - (d.restingHr - baselineRhr) / 6)]);
+  const max = parts.reduce((a, [w]) => a + w, 0);
+  const score = Math.round((parts.reduce((a, [w, v]) => a + w * v, 0) / max) * 100);
+  return { score, source: "estimate", label: sleepLabel(score) };
+}
+
 /** Thousands separators for step counts in messages ("4,300"). */
 export function formatVars(vars: Record<string, number>) {
   return Object.fromEntries(Object.entries(vars).map(([k, v]) => [k, k === "steps" || k === "goal" ? v.toLocaleString("en-IN") : v]));

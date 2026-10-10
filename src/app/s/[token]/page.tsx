@@ -13,7 +13,7 @@ import { todayISO } from "@/server/time";
 
 // Shared links are private by nature: never indexed, and the token isn't leaked via Referer.
 export const metadata: Metadata = {
-  title: "A Thali plan",
+  title: "A Movewell plan",
   robots: { index: false, follow: false },
   referrer: "no-referrer",
 };
@@ -139,9 +139,9 @@ export default async function SharedPlanPage({ params }: PageProps<"/s/[token]">
       <Link href="/" className="card-lime flex items-center gap-4 p-5 transition-transform hover:-translate-y-0.5">
         <div className="flex-1">
           <h2 className="text-xl">{t("share.cta")}</h2>
-          <p className="text-[15px] text-[#0c0c0b]/70">{t("share.ctaBody")}</p>
+          <p className="text-[15px] text-[#0a0c0e]/70">{t("share.ctaBody")}</p>
         </div>
-        <span className="grid size-12 shrink-0 place-items-center rounded-full bg-[#0c0c0b] text-lime">
+        <span className="grid size-12 shrink-0 place-items-center rounded-full bg-[#0a0c0e] text-lime">
           <ArrowRight className="size-5" aria-hidden />
         </span>
       </Link>

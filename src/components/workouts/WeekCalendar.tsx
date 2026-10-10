@@ -31,7 +31,7 @@ export function WeekCalendar({ cells, today, locale, labels }: { cells: Calendar
           const label = statusLabel(c);
           const glyph =
             c.status === "completed" ? (
-              <span className="grid size-8 place-items-center rounded-full bg-lime text-[#0c0c0b]">
+              <span className="grid size-8 place-items-center rounded-full bg-lime text-[#0a0c0e]">
                 <Check className="size-4.5" strokeWidth={3} aria-hidden />
               </span>
             ) : c.status === "missed" ? (
@@ -79,7 +79,7 @@ export function WeekCalendar({ cells, today, locale, labels }: { cells: Calendar
       </ol>
       <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-1.5 text-xs text-muted" aria-hidden>
         <li className="flex items-center gap-1.5">
-          <span className="grid size-4 place-items-center rounded-full bg-lime text-[#0c0c0b]">
+          <span className="grid size-4 place-items-center rounded-full bg-lime text-[#0a0c0e]">
             <Check className="size-2.5" strokeWidth={4} />
           </span>
           {labels.completed}

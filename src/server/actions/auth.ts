@@ -6,7 +6,7 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { z } from "zod";
 import { isLangCode } from "@/lib/i18n/languages";
-import { getCurrentUser, requireUser } from "@/server/auth/dal";
+import { getCurrentUser } from "@/server/auth/dal";
 import { hashPassword, verifyPassword } from "@/server/auth/password";
 import { createSession, destroyAllSessions, destroySession } from "@/server/auth/session";
 import { db, schema } from "@/server/db/client";
@@ -14,19 +14,6 @@ import { LANG_COOKIE } from "@/server/i18n";
 import { clientIp, rateLimit, resetRateLimit } from "@/server/rateLimit";
 
 export type FormState = { error?: string; ok?: boolean; email?: string } | undefined;
-
-export async function startAsGuest() {
-  const existing = await getCurrentUser();
-  if (existing) redirect(existing.profile?.onboardingCompletedAt ? "/home" : "/onboarding");
-  const ip = await clientIp();
-  if (!(await rateLimit(`guest:${ip}`, 30, 3600))) redirect("/?error=rate");
-  const id = randomUUID();
-  await db.insert(schema.users).values({ id, isGuest: true, lastActiveAt: new Date() });
-  const lang = (await cookies()).get(LANG_COOKIE)?.value;
-  await db.insert(schema.profiles).values({ userId: id, language: isLangCode(lang) ? lang : "en" });
-  await createSession(id);
-  redirect("/onboarding");
-}
 
 const Credentials = z.object({
   email: z.string().trim().toLowerCase().email().max(200),
@@ -53,36 +40,53 @@ export async function logIn(_prev: FormState, form: FormData): Promise<FormState
   redirect("/home");
 }
 
-const SecureInput = z.object({
-  email: z.string().trim().toLowerCase().email("auth.invalidEmail").max(200),
-  password: z.string().min(10, "auth.weakPassword").max(200),
-  displayName: z.string().trim().max(60).optional(),
-});
+const SignUpInput = z
+  .object({
+    displayName: z.string().trim().min(1, "auth.nameRequired").max(60),
+    email: z.string().trim().toLowerCase().email("auth.invalidEmail").max(200),
+    password: z.string().min(10, "auth.weakPassword").max(200),
+    confirm: z.string().max(200),
+    terms: z.literal("on", { message: "auth.termsRequired" }),
+  })
+  .refine((v) => v.password === v.confirm, { message: "auth.passwordMismatch" });
 
-export async function secureAccount(_prev: FormState, form: FormData): Promise<FormState> {
-  const { user } = await requireUser();
-  const parsed = SecureInput.safeParse({
+/**
+ * Accounts always have an email and password; there is no guest mode. A
+ * legacy guest session (from before guest mode was removed) is upgraded in
+ * place so its plan and logs are kept.
+ */
+export async function signUp(_prev: FormState, form: FormData): Promise<FormState> {
+  const email = String(form.get("email") ?? "").slice(0, 200);
+  const parsed = SignUpInput.safeParse({
+    displayName: form.get("displayName"),
     email: form.get("email"),
     password: form.get("password"),
-    displayName: form.get("displayName") || undefined,
+    confirm: form.get("confirm"),
+    terms: form.get("terms"),
   });
-  if (!parsed.success) return { error: parsed.error.issues[0]?.message ?? "common.error" };
-  if (!(await rateLimit(`secure:${user.id}`, 10, 3600))) return { error: "auth.rateLimited" };
+  if (!parsed.success) return { error: parsed.error.issues[0]?.message ?? "common.error", email };
+  const ip = await clientIp();
+  if (!(await rateLimit(`signup:${ip}`, 10, 3600))) return { error: "auth.rateLimited", email };
+  const { displayName, password } = parsed.data;
   const [taken] = await db.select({ id: schema.users.id }).from(schema.users).where(eq(schema.users.email, parsed.data.email)).limit(1);
-  if (taken && taken.id !== user.id) return { error: "auth.emailTaken" };
-  await db
-    .update(schema.users)
-    .set({
-      email: parsed.data.email,
-      passwordHash: await hashPassword(parsed.data.password),
-      isGuest: false,
-      ...(parsed.data.displayName ? { displayName: parsed.data.displayName } : {}),
-    })
-    .where(eq(schema.users.id, user.id));
-  // Changing credentials signs out other devices.
-  await destroyAllSessions(user.id);
-  await createSession(user.id);
-  return { ok: true };
+  const current = await getCurrentUser();
+  const legacyGuest = current?.user.isGuest ? current.user.id : null;
+  if (taken && taken.id !== legacyGuest) return { error: "auth.emailTaken", email };
+  const passwordHash = await hashPassword(password);
+
+  if (legacyGuest) {
+    await db.update(schema.users).set({ email: parsed.data.email, passwordHash, displayName, isGuest: false, lastActiveAt: new Date() }).where(eq(schema.users.id, legacyGuest));
+    await destroyAllSessions(legacyGuest);
+    await createSession(legacyGuest);
+    redirect(current?.profile?.onboardingCompletedAt ? "/home" : "/onboarding");
+  }
+
+  const id = randomUUID();
+  await db.insert(schema.users).values({ id, email: parsed.data.email, passwordHash, displayName, isGuest: false, lastActiveAt: new Date() });
+  const lang = (await cookies()).get(LANG_COOKIE)?.value;
+  await db.insert(schema.profiles).values({ userId: id, language: isLangCode(lang) ? lang : "en" });
+  await createSession(id);
+  redirect("/onboarding");
 }
 
 export async function logOut() {

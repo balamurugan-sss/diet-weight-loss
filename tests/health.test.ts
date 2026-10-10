@@ -1,8 +1,20 @@
 import { describe, expect, it } from "vitest";
-import { analyseDay } from "@/lib/health/analysis";
+import { analyseDay, sleepScore } from "@/lib/health/analysis";
 import { createAppleHealthParser } from "@/lib/health/apple";
 import { createFitbitParser, fitbitDate } from "@/lib/health/fitbit";
-import { dailyRollUpBody, listFilter, localDate, parseDailyRollUp, parseExercise, parseSleep } from "@/lib/health/google";
+import {
+  dailyRollUpBody,
+  listFilter,
+  localDate,
+  parseDailyRollUp,
+  parseExercise,
+  parseHeartRollup,
+  parseHourlyHeart,
+  parseRestingHr,
+  parseSleep,
+  parseSleepNights,
+} from "@/lib/health/google";
+import { emptyDay } from "@/lib/health/types";
 
 const APPLE = `<?xml version="1.0" encoding="UTF-8"?>
 <HealthData locale="en_IN">
@@ -11,6 +23,9 @@ const APPLE = `<?xml version="1.0" encoding="UTF-8"?>
  <Record type="HKQuantityTypeIdentifierStepCount" sourceName="Apple Watch" unit="count" startDate="2026-10-01 08:00:00 +0530" endDate="2026-10-01 08:10:00 +0530" value="1100"/>
  <Record type="HKQuantityTypeIdentifierStepCount" sourceName="iPhone" unit="count" startDate="2026-06-01 08:00:00 +0530" endDate="2026-06-01 08:10:00 +0530" value="999"/>
  <Record type="HKQuantityTypeIdentifierRestingHeartRate" sourceName="Apple Watch" unit="count/min" startDate="2026-10-01 00:00:00 +0530" endDate="2026-10-01 23:59:00 +0530" value="62"/>
+ <Record type="HKQuantityTypeIdentifierHeartRate" sourceName="Apple Watch" unit="count/min" startDate="2026-10-01 07:05:00 +0530" endDate="2026-10-01 07:05:00 +0530" value="70"/>
+ <Record type="HKQuantityTypeIdentifierHeartRate" sourceName="Apple Watch" unit="count/min" startDate="2026-10-01 07:40:00 +0530" endDate="2026-10-01 07:40:00 +0530" value="80"/>
+ <Record type="HKQuantityTypeIdentifierHeartRate" sourceName="Apple Watch" unit="count/min" startDate="2026-10-01 18:10:00 +0530" endDate="2026-10-01 18:10:00 +0530" value="150"/>
  <Record type="HKQuantityTypeIdentifierAppleExerciseTime" sourceName="Apple Watch" unit="min" startDate="2026-10-01 18:00:00 +0530" endDate="2026-10-01 18:01:00 +0530" value="25"/>
  <Record type="HKCategoryTypeIdentifierSleepAnalysis" sourceName="Apple Watch" startDate="2026-09-30 23:30:00 +0530" endDate="2026-10-01 03:30:00 +0530" value="HKCategoryValueSleepAnalysisAsleepCore">
   <MetadataEntry key="HKTimeZone" value="Asia/Kolkata"/>
@@ -34,6 +49,14 @@ describe("Apple Health export", () => {
     expect(oct1.restingHr).toBe(62);
     expect(oct1.activeMinutes).toBe(25);
     expect(oct1.sleepMinutes).toBe(390); // 4 h + 2.5 h asleep, awake excluded
+    expect(oct1.remMinutes).toBe(150);
+    expect(oct1.deepMinutes).toBe(0);
+    expect(oct1.inBedMinutes).toBe(410); // 23:30 → 06:20 including the awake part
+    expect([oct1.sleepStart, oct1.wakeTime]).toEqual(["23:30", "06:20"]);
+    expect([oct1.avgHr, oct1.maxHr]).toEqual([100, 150]);
+    expect(oct1.hrHourly?.[7]).toBe(75);
+    expect(oct1.hrHourly?.[18]).toBe(150);
+    expect(oct1.hrHourly?.[3]).toBeNull();
     expect(days.some((d) => d.date === "2026-06-01")).toBe(false); // before `since`
     expect(workouts).toEqual([{ externalId: "HKWorkoutActivityTypeRunning@2026-10-01 18:00:00 +0530", date: "2026-10-01", activity: "run", intensity: "vigorous", minutes: 33 }]);
   });
@@ -51,7 +74,15 @@ describe("Fitbit export", () => {
     p.addJson("very_active_minutes-2026-09-25.json", [{ dateTime: "09/25/26 00:00:00", value: "20" }]);
     p.addJson("moderately_active_minutes-2026-09-25.json", [{ dateTime: "09/25/26 00:00:00", value: "15" }]);
     p.addJson("sleep-2026-09-25.json", [
-      { dateOfSleep: "2026-09-25", minutesAsleep: 412, isMainSleep: true },
+      {
+        dateOfSleep: "2026-09-25",
+        minutesAsleep: 412,
+        timeInBed: 450,
+        isMainSleep: true,
+        startTime: "2026-09-24T23:10:30.000",
+        endTime: "2026-09-25T06:40:30.000",
+        levels: { summary: { deep: { minutes: 70 }, rem: { minutes: 95 }, light: { minutes: 247 }, wake: { minutes: 38 } } },
+      },
       { dateOfSleep: "2026-09-25", minutesAsleep: 30, isMainSleep: false },
     ]);
     p.addJson("resting_heart_rate-2026-09-25.json", [{ dateTime: "09/25/26 00:00:00", value: { date: "09/25/26", value: 58.7, error: 6 } }]);
@@ -60,7 +91,20 @@ describe("Fitbit export", () => {
       { logId: 112, activityName: "Weights", startTime: "09/25/26 19:00:00", activeDuration: 2400000 },
     ]);
     const { days, workouts } = p.finish();
-    expect(days).toEqual([{ date: "2026-09-25", steps: 7500, activeMinutes: 35, restingHr: 59, sleepMinutes: 412 }]);
+    expect(days).toEqual([
+      {
+        ...emptyDay("2026-09-25"),
+        steps: 7500,
+        activeMinutes: 35,
+        restingHr: 59,
+        sleepMinutes: 412,
+        inBedMinutes: 450,
+        deepMinutes: 70,
+        remMinutes: 95,
+        sleepStart: "23:10",
+        wakeTime: "06:40",
+      },
+    ]);
     expect(workouts).toEqual([{ externalId: "111", date: "2026-09-25", activity: "walk", intensity: "moderate", minutes: 30 }]);
   });
 
@@ -68,9 +112,38 @@ describe("Fitbit export", () => {
     const p = createFitbitParser("2026-01-01");
     p.addCsv("date,steps,active_minutes,resting_hr,sleep_minutes\n2026-09-24,9100,42,60,450\n2026-09-25,,10,,");
     expect(p.finish().days).toEqual([
-      { date: "2026-09-24", steps: 9100, activeMinutes: 42, restingHr: 60, sleepMinutes: 450 },
-      { date: "2026-09-25", steps: null, activeMinutes: 10, restingHr: null, sleepMinutes: null },
+      { ...emptyDay("2026-09-24"), steps: 9100, activeMinutes: 42, restingHr: 60, sleepMinutes: 450 },
+      { ...emptyDay("2026-09-25"), activeMinutes: 10 },
     ]);
+  });
+
+  it("reads intraday heart rate in local time and the sleep score file", () => {
+    const p = createFitbitParser("2026-09-01", 330); // IST
+    p.addJson("heart_rate-2026-09-25.json", [
+      { dateTime: "09/25/26 01:30:05", value: { bpm: 60, confidence: 3 } }, // 07:00 IST
+      { dateTime: "09/25/26 01:45:00", value: { bpm: 80, confidence: 3 } }, // 07:15 IST
+      { dateTime: "09/25/26 12:40:00", value: { bpm: 160, confidence: 2 } }, // 18:10 IST
+    ]);
+    p.addCsv("sleep_log_entry_id,timestamp,overall_score,composition_score\n1,2026-09-25T01:10:30Z,84,20", "Sleep Score/sleep_score.csv");
+    const [d] = p.finish().days;
+    expect(d.date).toBe("2026-09-25");
+    expect([d.avgHr, d.maxHr, d.sleepScore]).toEqual([100, 160, 84]);
+    expect(d.hrHourly?.[7]).toBe(70);
+    expect(d.hrHourly?.[18]).toBe(160);
+    expect(p.source()).toBe("fitbit_export");
+  });
+
+  it("reads Google Fit Takeout daily metrics", () => {
+    const p = createFitbitParser("2026-09-01");
+    p.addCsv(
+      'Date,Move Minutes count,Calories (kcal),Average heart rate (bpm),Max heart rate (bpm),Min heart rate (bpm),Step count\n2026-09-25,48,2100.5,"78.4",142,55,9321',
+      "Takeout/Fit/Daily activity metrics/Daily activity metrics.csv",
+    );
+    p.addCsv("Start time,End time,Average heart rate (bpm),Max heart rate (bpm)\n07:00:00.000+05:30,07:15:00.000+05:30,90,110\n07:15:00.000+05:30,07:30:00.000+05:30,100,120", "Daily activity metrics/2026-09-25.csv");
+    const [d] = p.finish().days;
+    expect([d.steps, d.activeMinutes, d.avgHr, d.maxHr]).toEqual([9321, 48, 78, 142]);
+    expect(d.hrHourly?.[7]).toBe(95);
+    expect(p.source()).toBe("google_fit_export");
   });
 });
 
@@ -111,6 +184,36 @@ describe("Google Health API mapping", () => {
     expect([...parseSleep(body)]).toEqual([["2026-09-26", 418]]);
   });
 
+  it("reads sleep stages, bed and wake times", () => {
+    const body = {
+      dataPoints: [
+        {
+          sleep: {
+            interval: { startTime: "2026-09-25T17:40:00Z", startUtcOffset: "19800s", endTime: "2026-09-26T01:20:00Z", endUtcOffset: "19800s" },
+            summary: { minutesAsleep: "420" },
+            stages: [
+              { startTime: "2026-09-25T18:00:00Z", endTime: "2026-09-25T19:10:00Z", type: "DEEP" },
+              { startTime: "2026-09-25T19:10:00Z", endTime: "2026-09-25T22:00:00Z", type: "LIGHT" },
+              { startTime: "2026-09-25T22:00:00Z", endTime: "2026-09-25T23:30:00Z", type: "REM" },
+            ],
+          },
+        },
+      ],
+    };
+    expect(parseSleepNights(body).get("2026-09-26")).toEqual({ minutes: 420, inBed: 460, deep: 70, rem: 90, start: "23:10", wake: "06:50" });
+  });
+
+  it("reads resting and daily / hourly heart rate", () => {
+    expect([...parseRestingHr({ dataPoints: [{ dailyRestingHeartRate: { date: { year: 2026, month: 9, day: 25 }, beatsPerMinute: "61" } }] })]).toEqual([["2026-09-25", 61]]);
+    const daily = { rollupDataPoints: [{ civilStartTime: { date: { year: 2026, month: 9, day: 25 } }, heartRate: { beatsPerMinuteAvg: 74.6, beatsPerMinuteMax: "151" } }] };
+    expect(parseHeartRollup(daily).get("2026-09-25")).toEqual({ avg: 75, max: 151 });
+    const hourly = { rollupDataPoints: [{ startTime: "2026-09-25T01:30:00Z", heartRate: { beatsPerMinuteAvg: 66 } }] };
+    const hours = parseHourlyHeart(hourly, (i) => new Date(Date.parse(i) + 330 * 60000).getUTCHours());
+    expect(hours?.[7]).toBe(66);
+    expect(parseHourlyHeart({}, () => 0)).toBeNull();
+    expect(listFilter("daily-resting-heart-rate", "2026-09-19", "2026-09-26")).toContain("daily_resting_heart_rate.date >=");
+  });
+
   it("maps exercise sessions to cardio and skips strength", () => {
     const body = {
       dataPoints: [
@@ -132,7 +235,7 @@ describe("Google Health API mapping", () => {
 
 describe("daily analysis", () => {
   const base = (date: string, over: Partial<{ steps: number; sleepMinutes: number; restingHr: number; activeMinutes: number }> = {}) => ({
-    date,
+    ...emptyDay(date),
     steps: 8000,
     sleepMinutes: 450,
     restingHr: 60,
@@ -155,5 +258,23 @@ describe("daily analysis", () => {
     expect(a.insights.map((i) => i.tone)).toEqual(["good", "good", "good", "good"]);
     expect(a.suggestRecovery).toBe(false);
     expect(analyseDay([], "2026-10-10").insights).toEqual([]);
+  });
+});
+
+describe("sleep score", () => {
+  it("uses the device score when there is one", () => {
+    expect(sleepScore({ ...emptyDay("2026-10-10"), sleepMinutes: 300, sleepScore: 84 })).toEqual({ score: 84, source: "device", label: "good" });
+  });
+
+  it("estimates from duration, stages, efficiency and resting heart rate", () => {
+    const night = { ...emptyDay("2026-10-10"), sleepMinutes: 450, inBedMinutes: 480, deepMinutes: 80, remMinutes: 100, restingHr: 58 };
+    expect(sleepScore(night, 60)).toEqual({ score: 100, source: "estimate", label: "excellent" });
+    // Short, restless night with few deep/REM minutes.
+    const poor = sleepScore({ ...night, sleepMinutes: 300, inBedMinutes: 400, deepMinutes: 20, remMinutes: 30, restingHr: 66 }, 60)!;
+    expect(poor.score).toBeLessThan(60);
+    expect(poor.label).toBe("poor");
+    // Duration only (a phone): scaled to the parts it has.
+    expect(sleepScore({ ...emptyDay("2026-10-10"), sleepMinutes: 330 })?.score).toBe(50);
+    expect(sleepScore(emptyDay("2026-10-10"))).toBeNull();
   });
 });

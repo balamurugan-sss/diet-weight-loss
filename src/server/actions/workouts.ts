@@ -2,10 +2,12 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import { eq } from "drizzle-orm";
 import { z } from "zod";
 import { swapOptions } from "@/lib/workouts/generator";
 import { WorkoutProfileInput } from "@/lib/workouts/types";
 import { requireOnboarded } from "@/server/auth/dal";
+import { db, schema } from "@/server/db/client";
 import { getExercise } from "@/lib/workouts/exercises";
 import {
   bodyWeight,
@@ -149,6 +151,52 @@ export async function finishSessionAction(sessionId: unknown, activeSec: unknown
   }
   const summary = summarise(day, await sessionSets(session.id), Math.max(60, sec.data), await bodyWeight(user.id, profile), program.goal);
   await finishSession(session, summary);
+  revalidatePath("/", "layout");
+  return { ok: true, summary };
+}
+
+const EditInput = z.object({
+  sessionId: z.string().uuid(),
+  durationMin: z.number().int().min(1).max(360),
+  sets: z
+    .array(
+      z.object({
+        slot: z.number().int().min(0).max(300),
+        setIndex: z.number().int().min(0).max(20),
+        reps: z.number().int().min(0).max(500).nullable(),
+        seconds: z.number().int().min(0).max(7200).nullable(),
+        weightKg: z.number().min(0).max(500).nullable(),
+        done: z.boolean(),
+      }),
+    )
+    .max(200),
+});
+
+/**
+ * "Edit what I did": replaces a finished session's sets and duration with
+ * what the person actually did, then recomputes its energy (and so the
+ * day's food add-back). Only sets for exercises in that day's plan are kept.
+ */
+export async function editSessionAction(input: unknown): Promise<{ ok: true; summary: SessionSummary } | { ok: false; error: string }> {
+  const parsed = EditInput.safeParse(input);
+  if (!parsed.success) return { ok: false, error: "common.error" };
+  const { user, profile } = await requireOnboarded();
+  const session = await getOwnedSession(user.id, parsed.data.sessionId);
+  const program = session && (await getOwnedProgram(user.id, session.programId));
+  const day = program && programDay(program, session.dayIndex);
+  if (!session || !program || !day || session.status !== "completed") return { ok: false, error: "common.error" };
+  const bySlot = new Map(day.main.map((m) => [m.slot, m]));
+  const sets = parsed.data.sets.filter((st) => bySlot.has(st.slot) && st.setIndex < bySlot.get(st.slot)!.sets + 3);
+  await db.delete(schema.workoutSets).where(eq(schema.workoutSets.sessionId, session.id));
+  for (const st of sets) {
+    const exerciseId = bySlot.get(st.slot)!.exerciseId;
+    await logSet(session.id, { ...st, exerciseId, weightKg: getExercise(exerciseId).load ? st.weightKg : null });
+  }
+  const summary = summarise(day, sets, parsed.data.durationMin * 60, await bodyWeight(user.id, profile), program.goal);
+  await db
+    .update(schema.workoutSessions)
+    .set({ durationSec: summary.durationSec, kcal: summary.kcal, netKcal: summary.netKcal, exercisesDone: summary.exercisesDone })
+    .where(eq(schema.workoutSessions.id, session.id));
   revalidatePath("/", "layout");
   return { ok: true, summary };
 }

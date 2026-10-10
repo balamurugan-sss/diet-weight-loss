@@ -21,3 +21,8 @@ export function daysBetween(a: string, b: string) {
 export function hourNow() {
   return Number(new Intl.DateTimeFormat("en-GB", { timeZone: TZ, hour: "numeric", hourCycle: "h23" }).format(new Date()));
 }
+
+/** Local "HH:MM" (24 h) for an instant. */
+export function clockAt(d = new Date()) {
+  return new Intl.DateTimeFormat("en-GB", { timeZone: TZ, hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(d);
+}

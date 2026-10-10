@@ -43,7 +43,7 @@ export default async function RecipePage({ params }: PageProps<"/recipes/[slug]"
       <div className="grid gap-5 lg:grid-cols-[1.1fr_1fr] lg:items-start">
         <div className="relative -mx-4 sm:mx-0">
           <RecipeVisual recipeId={recipe.id} palette={recipe.palette} image={detail.heroImage} alt={recipe.title} labels={labels} className="aspect-[4/3.6] sm:rounded-[1.75rem]" />
-          <Link href="/recipes" aria-label={t("common.back")} className="absolute top-3 left-3 grid size-11 place-items-center rounded-full bg-[#f4f4ee] text-[#0c0c0b] shadow-lg">
+          <Link href="/recipes" aria-label={t("common.back")} className="absolute top-3 left-3 grid size-11 place-items-center rounded-full bg-[#f4f4ee] text-[#0a0c0e] shadow-lg">
             <ChevronLeft className="size-5" strokeWidth={2.5} />
           </Link>
           <div className="absolute top-3 right-3">

@@ -5,8 +5,10 @@ import type { ImportedWorkout } from "./types";
  * Google Health API (v4) — the cloud API for Fitbit devices (including
  * Fitbit Air) and Pixel Watch since the legacy Fitbit Web API was retired on
  * 2026-09-30. Request/response shapes follow the v4 reference and observed
- * responses: daily roll-ups for steps and active minutes, list + filter for
- * sleep (keyed to the wake-up date) and exercise sessions.
+ * responses: daily roll-ups for steps, active minutes and heart rate
+ * (average / max), an hourly heart-rate roll-up for today, list + filter for
+ * sleep (keyed to the wake-up date, with stages), daily resting heart rate and
+ * exercise sessions. Parsers are lenient: a missing field means "no data".
  */
 export const GOOGLE_HEALTH = {
   apiBase: "https://health.googleapis.com/v4",
@@ -33,9 +35,10 @@ export function dailyRollUpBody(from: string, toExclusive: string) {
   return { range: { start: toCivil(from), end: toCivil(toExclusive) }, windowSizeDays: 1 };
 }
 
-/** AIP-160 filter for list calls. Sleep only filters by end (wake) date; exercise by civil start date. */
-export function listFilter(dataType: "sleep" | "exercise", from: string, toExclusive: string) {
-  const member = dataType === "sleep" ? "sleep.interval.civil_end_time" : "exercise.interval.civil_start_time";
+/** AIP-160 filter for list calls. Sleep only filters by end (wake) date; exercise by civil start date; resting HR by its date. */
+export function listFilter(dataType: "sleep" | "exercise" | "daily-resting-heart-rate", from: string, toExclusive: string) {
+  const member =
+    dataType === "sleep" ? "sleep.interval.civil_end_time" : dataType === "exercise" ? "exercise.interval.civil_start_time" : "daily_resting_heart_rate.date";
   return `${member} >= "${from}" AND ${member} < "${toExclusive}"`;
 }
 
@@ -65,25 +68,106 @@ export function localDate(instant: string | undefined, offset: string | undefine
   return new Date(ms + off * 1000).toISOString().slice(0, 10);
 }
 
+type Interval = { startTime?: string; startUtcOffset?: string; endTime?: string; endUtcOffset?: string };
+type SleepStage = Interval & { type?: string; interval?: Interval };
 type SleepPoint = {
   sleep?: {
-    interval?: { endTime?: string; endUtcOffset?: string };
+    interval?: Interval;
     metadata?: { mainSleep?: boolean };
-    summary?: { minutesAsleep?: string | number };
+    summary?: { minutesAsleep?: string | number; minutesInSleepPeriod?: string | number };
+    stages?: SleepStage[];
+    sleepStages?: SleepStage[];
   };
 };
 
-/** Main-sleep minutes per wake-up date. */
-export function parseSleep(body: unknown): Map<string, number> {
-  const out = new Map<string, number>();
+/** Local "HH:MM" of an RFC3339 instant plus a "19800s"-style UTC offset. */
+export function localClock(instant: string | undefined, offset: string | undefined) {
+  if (!instant) return null;
+  const ms = Date.parse(instant);
+  if (Number.isNaN(ms)) return null;
+  const off = Number((offset ?? "0s").replace("s", "")) || 0;
+  return new Date(ms + off * 1000).toISOString().slice(11, 16);
+}
+
+export type Night = { minutes: number; inBed: number | null; deep: number | null; rem: number | null; start: string | null; wake: string | null };
+
+/** Main sleep per wake-up date: minutes asleep, time in bed, deep / REM stage minutes, bed and wake times. */
+export function parseSleepNights(body: unknown): Map<string, Night> {
+  const out = new Map<string, Night>();
   for (const p of ((body as { dataPoints?: SleepPoint[] })?.dataPoints ?? [])) {
     const s = p.sleep;
     if (!s || s.metadata?.mainSleep === false) continue;
-    const date = localDate(s.interval?.endTime, s.interval?.endUtcOffset);
+    const iv = s.interval ?? {};
+    const date = localDate(iv.endTime, iv.endUtcOffset);
     const minutes = Number(s.summary?.minutesAsleep);
-    if (date && minutes > 0) out.set(date, Math.max(out.get(date) ?? 0, minutes));
+    if (!date || !(minutes > 0) || minutes <= (out.get(date)?.minutes ?? 0)) continue;
+    const span = (Date.parse(iv.endTime ?? "") - Date.parse(iv.startTime ?? "")) / 60000;
+    const inBed = Number(s.summary?.minutesInSleepPeriod) || (span > 0 ? Math.round(span) : null);
+    const stages = s.stages ?? s.sleepStages ?? [];
+    const stageMin = (kind: string) =>
+      stages
+        .filter((st) => (st.type ?? "").toUpperCase().includes(kind))
+        .reduce((a, st) => {
+          const i = st.interval ?? st;
+          const m = (Date.parse(i.endTime ?? "") - Date.parse(i.startTime ?? "")) / 60000;
+          return a + (m > 0 ? m : 0);
+        }, 0);
+    const staged = stages.some((st) => /DEEP|REM/i.test(st.type ?? ""));
+    out.set(date, {
+      minutes,
+      inBed,
+      deep: staged ? Math.round(stageMin("DEEP")) : null,
+      rem: staged ? Math.round(stageMin("REM")) : null,
+      start: localClock(iv.startTime, iv.startUtcOffset),
+      wake: localClock(iv.endTime, iv.endUtcOffset),
+    });
   }
   return out;
+}
+
+/** Main-sleep minutes per wake-up date. */
+export function parseSleep(body: unknown): Map<string, number> {
+  return new Map([...parseSleepNights(body)].map(([d, n]) => [d, n.minutes]));
+}
+
+type RhrPoint = { dailyRestingHeartRate?: { date?: { year?: number; month?: number; day?: number }; beatsPerMinute?: string | number } };
+
+/** `daily-resting-heart-rate` list → bpm per date. */
+export function parseRestingHr(body: unknown): Map<string, number> {
+  const out = new Map<string, number>();
+  for (const p of ((body as { dataPoints?: RhrPoint[] })?.dataPoints ?? [])) {
+    const r = p.dailyRestingHeartRate;
+    const date = fromCivil(r?.date ? { date: r.date } : undefined);
+    const bpm = Number(r?.beatsPerMinute);
+    if (date && bpm > 0) out.set(date, Math.round(bpm));
+  }
+  return out;
+}
+
+type HrValue = { beatsPerMinuteAvg?: string | number; beatsPerMinuteMax?: string | number };
+type HrRollupPoint = { civilStartTime?: Parameters<typeof fromCivil>[0]; startTime?: string; heartRate?: HrValue };
+
+/** heart-rate dailyRollUp → { avg, max } per date. */
+export function parseHeartRollup(body: unknown): Map<string, { avg: number | null; max: number | null }> {
+  const out = new Map<string, { avg: number | null; max: number | null }>();
+  for (const p of ((body as { rollupDataPoints?: HrRollupPoint[] })?.rollupDataPoints ?? [])) {
+    const date = fromCivil(p.civilStartTime);
+    const avg = Number(p.heartRate?.beatsPerMinuteAvg);
+    const max = Number(p.heartRate?.beatsPerMinuteMax);
+    if (date && (avg > 0 || max > 0)) out.set(date, { avg: avg > 0 ? Math.round(avg) : null, max: max > 0 ? Math.round(max) : null });
+  }
+  return out;
+}
+
+/** heart-rate rollUp in 1-hour windows → 24 hourly averages, using `hourOf` to place each window in local time. */
+export function parseHourlyHeart(body: unknown, hourOf: (instant: string) => number | null): (number | null)[] | null {
+  const hours: (number | null)[] = Array(24).fill(null);
+  for (const p of ((body as { rollupDataPoints?: HrRollupPoint[] })?.rollupDataPoints ?? [])) {
+    const h = p.startTime ? hourOf(p.startTime) : null;
+    const avg = Number(p.heartRate?.beatsPerMinuteAvg);
+    if (h != null && h >= 0 && h < 24 && avg > 0) hours[h] = Math.round(avg);
+  }
+  return hours.some((v) => v != null) ? hours : null;
 }
 
 const EXERCISE_TYPES: [RegExp, CardioActivity][] = [

@@ -13,6 +13,7 @@ import { CALORIE_FLOOR } from "@/lib/nutrition/targets";
 import { generateProgram } from "@/lib/workouts/generator";
 import { estimateDay } from "@/lib/workouts/load";
 import { getExercise } from "@/lib/workouts/exercises";
+import { clockAt, todayISO } from "@/server/time";
 import { importCatalogue } from "./import-recipes";
 
 const DEMO_EMAIL = "demo@example.com";
@@ -22,6 +23,7 @@ async function seedDemo() {
   if (existing) {
     console.log(`demo account already exists (${DEMO_EMAIL})`);
     await seedDemoWorkouts(existing.id);
+    await seedDemoHealth(existing.id);
     return;
   }
   const password = process.env.DEMO_PASSWORD || randomBytes(9).toString("base64url");
@@ -103,6 +105,7 @@ async function seedDemo() {
       }
   }
   await seedDemoWorkouts(id);
+  await seedDemoHealth(id);
   console.log(`✓ demo account: ${DEMO_EMAIL} / ${password}`);
 }
 
@@ -159,6 +162,53 @@ async function seedDemoWorkouts(userId: string) {
     pos++;
   }
   console.log(`✓ demo workouts: ${sessionNo} sessions`);
+}
+
+/**
+ * Two weeks of watch data as if imported from a Fitbit export: steps, resting
+ * and hourly heart rate, and sleep with stages. Today's heart-rate line stops
+ * at the current hour. Safe to re-run (skipped when health data exists).
+ */
+async function seedDemoHealth(userId: string) {
+  const [has] = await db.select().from(schema.healthDays).where(eq(schema.healthDays.userId, userId)).limit(1);
+  if (has) return;
+  const today = todayISO();
+  const hourNow = Number(clockAt().slice(0, 2));
+  for (let back = 13; back >= 0; back--) {
+    const d = new Date(today + "T00:00:00Z");
+    d.setUTCDate(d.getUTCDate() - back);
+    const date = d.toISOString().slice(0, 10);
+    const wobble = (n: number) => ((back * 37 + n * 11) % 9) - 4;
+    const trained = back % 2 === 1;
+    // Low while asleep, a morning rise, a training peak around 18:00 on workout days.
+    const hrHourly = Array.from({ length: 24 }, (_, h) => {
+      if (back === 0 && h > hourNow) return null;
+      const base = h < 6 ? 58 : h < 8 ? 68 : h < 22 ? 76 : 64;
+      return base + wobble(h) + (trained && (h === 18 || h === 19) ? 52 - (h - 18) * 20 : 0);
+    });
+    const vals = hrHourly.filter((v): v is number => v != null);
+    const sleepMinutes = 400 + wobble(1) * 12;
+    await db.insert(schema.healthDays).values({
+      userId,
+      date,
+      source: "fitbit_export",
+      steps: back === 0 ? 3200 + hourNow * 250 : 7600 + wobble(2) * 700,
+      activeMinutes: trained ? 48 : 22,
+      restingHr: 61 + (wobble(3) > 2 ? 1 : 0),
+      sleepMinutes,
+      inBedMinutes: sleepMinutes + 28,
+      deepMinutes: 66 + wobble(4) * 3,
+      remMinutes: 92 + wobble(5) * 4,
+      sleepStart: `23:${String(5 + ((back * 7) % 40)).padStart(2, "0")}`,
+      wakeTime: `06:${String(20 + ((back * 5) % 30)).padStart(2, "0")}`,
+      avgHr: Math.round(vals.reduce((a, b) => a + b, 0) / vals.length),
+      maxHr: Math.max(...vals) + 8,
+      hrHourly,
+      sleepScore: null,
+      updatedAt: new Date(),
+    });
+  }
+  console.log("✓ demo health data: 14 days");
 }
 
 async function main() {

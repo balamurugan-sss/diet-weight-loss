@@ -615,7 +615,7 @@ export const cardioLogs = sqliteTable(
     kcal: integer("kcal").notNull(),
     netKcal: integer("net_kcal").notNull(),
     // Where the entry came from; imported entries carry the source's id so re-imports don't duplicate.
-    source: text("source", { enum: ["manual", "apple_health", "fitbit_export", "google_health"] }).notNull().default("manual"),
+    source: text("source", { enum: ["manual", "apple_health", "fitbit_export", "google_fit_export", "google_health"] }).notNull().default("manual"),
     externalId: text("external_id"),
     createdAt: createdAt(),
   },
@@ -646,11 +646,20 @@ export const healthDays = sqliteTable(
       .notNull()
       .references(() => users.id, { onDelete: "cascade" }),
     date: text("date").notNull(),
-    source: text("source", { enum: ["apple_health", "fitbit_export", "google_health", "manual"] }).notNull(),
+    source: text("source", { enum: ["apple_health", "fitbit_export", "google_fit_export", "google_health", "manual"] }).notNull(),
     steps: integer("steps"),
     activeMinutes: integer("active_minutes"),
     restingHr: integer("resting_hr"),
     sleepMinutes: integer("sleep_minutes"),
+    avgHr: integer("avg_hr"),
+    maxHr: integer("max_hr"),
+    hrHourly: json<(number | null)[]>("hr_hourly"),
+    inBedMinutes: integer("in_bed_minutes"),
+    deepMinutes: integer("deep_minutes"),
+    remMinutes: integer("rem_minutes"),
+    sleepStart: text("sleep_start"),
+    wakeTime: text("wake_time"),
+    sleepScore: integer("sleep_score"),
     updatedAt: integer("updated_at", { mode: "timestamp_ms" }).notNull(),
   },
   (t) => [primaryKey({ columns: [t.userId, t.date, t.source] })],
@@ -722,3 +731,24 @@ export const stripeEvents = sqliteTable("stripe_events", {
   type: text("type").notNull(),
   createdAt: createdAt(),
 });
+
+/**
+ * Things the person tells the Today screen that aren't food: when they woke
+ * up and when they plan to train. Food and drinks (morning water, pre-workout
+ * snack, whey) go to meal_logs so they count towards the day's intake.
+ */
+export const dayEvents = sqliteTable(
+  "day_events",
+  {
+    id: text("id").primaryKey(),
+    userId: text("user_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    date: text("date").notNull(),
+    kind: text("kind", { enum: ["wake", "workout_plan", "ate"] }).notNull(),
+    /** Local "HH:MM". */
+    time: text("time").notNull(),
+    createdAt: createdAt(),
+  },
+  (t) => [uniqueIndex("day_events_user_date_kind_uq").on(t.userId, t.date, t.kind)],
+);

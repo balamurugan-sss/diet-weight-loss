@@ -19,7 +19,7 @@ export function HealthImport() {
   const router = useRouter();
   const input = useRef<HTMLInputElement>(null);
   const [pct, setPct] = useState<number | null>(null);
-  const [result, setResult] = useState<{ source: "apple_health" | "fitbit_export"; data: Parsed } | null>(null);
+  const [result, setResult] = useState<{ source: "apple_health" | "fitbit_export" | "google_fit_export"; data: Parsed } | null>(null);
   const [message, setMessage] = useState<string | null>(null);
   const [pending, start] = useTransition();
 
@@ -48,18 +48,19 @@ export function HealthImport() {
         if (!data.days.length && !data.workouts.length) return setMessage(t("health.import.nothing"));
         return setResult({ source: "apple_health", data });
       }
-      const parser = createFitbitParser(since);
+      // Fitbit intraday timestamps are UTC; shift them to this phone's time zone.
+      const parser = createFitbitParser(since, -new Date().getTimezoneOffset());
       setPct(0);
       for (const [i, f] of list.entries()) {
         const text = await f.text();
-        if (f.name.toLowerCase().endsWith(".csv")) parser.addCsv(text);
+        if (f.name.toLowerCase().endsWith(".csv")) parser.addCsv(text, f.webkitRelativePath || f.name);
         else parser.addJson(f.name, JSON.parse(text));
         setPct(Math.round(((i + 1) / list.length) * 100));
       }
       const data = parser.finish();
       setPct(null);
       if (!data.days.length && !data.workouts.length) return setMessage(t("health.import.nothing"));
-      setResult({ source: "fitbit_export", data });
+      setResult({ source: parser.source(), data });
     } catch {
       setPct(null);
       setMessage(t("health.importInvalid"));
@@ -83,6 +84,7 @@ export function HealthImport() {
       <ul className="space-y-1.5 text-sm leading-relaxed text-ink-2">
         <li>• {t("health.import.apple")}</li>
         <li>• {t("health.import.fitbit")}</li>
+        <li>• {t("health.import.googleFit")}</li>
         <li>• {t("health.import.csv")}</li>
       </ul>
       <input

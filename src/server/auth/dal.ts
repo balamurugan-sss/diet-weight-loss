@@ -35,7 +35,9 @@ export const getCurrentUser = cache(async (): Promise<{ user: CurrentUser; profi
 
 export async function requireUser() {
   const current = await getCurrentUser();
-  if (!current) redirect("/");
+  if (!current) redirect("/login");
+  // Guest mode was removed: a leftover guest session must add credentials first (its data is kept).
+  if (current.user.isGuest) redirect("/signup");
   return current;
 }
 

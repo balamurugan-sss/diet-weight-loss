@@ -33,7 +33,7 @@ export function FavouriteButton({ recipeId, initial, compact = false }: { recipe
         disabled={pending}
         aria-pressed={fav}
         aria-label={fav ? t("recipe.favourited") : t("recipe.favourite")}
-        className={cn("grid size-11 place-items-center rounded-full shadow-lg", fav ? "bg-lime text-[#0c0c0b]" : "bg-[#0c0c0b] text-[#f4f4ee]")}
+        className={cn("grid size-11 place-items-center rounded-full shadow-lg", fav ? "bg-lime text-[#0a0c0e]" : "bg-[#0a0c0e] text-[#f4f4ee]")}
       >
         <Bookmark className={cn("size-5", fav && "fill-current")} />
       </button>

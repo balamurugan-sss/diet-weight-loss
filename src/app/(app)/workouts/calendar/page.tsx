@@ -133,7 +133,7 @@ export default async function CalendarPage({ searchParams }: PageProps<"/workout
                   <span className="flex items-start justify-between">
                     <span className={cn("text-[13px] leading-none font-bold tabular", isToday ? "text-charcoal" : "")}>{fmt(d, { day: "numeric" })}</span>
                     {status === "completed" && (
-                      <span className="grid size-4 place-items-center rounded-full bg-lime text-[#0c0c0b]">
+                      <span className="grid size-4 place-items-center rounded-full bg-lime text-[#0a0c0e]">
                         <Check className="size-3" strokeWidth={3.5} aria-hidden />
                       </span>
                     )}
@@ -162,7 +162,7 @@ export default async function CalendarPage({ searchParams }: PageProps<"/workout
             );
           })}
           <li className="flex items-center gap-1.5">
-            <span className="grid size-4 place-items-center rounded-full bg-lime text-[#0c0c0b]">
+            <span className="grid size-4 place-items-center rounded-full bg-lime text-[#0a0c0e]">
               <Check className="size-2.5" strokeWidth={4} />
             </span>
             {t("wk.cal.completed")}

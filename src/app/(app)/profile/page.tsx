@@ -1,6 +1,6 @@
 import { ChevronRight, Crown, Download, Settings, Target } from "lucide-react";
 import Link from "next/link";
-import { DeleteAccountForm, LogoutButton, SecureAccountForm } from "@/components/profile/AccountForms";
+import { DeleteAccountForm, LogoutButton } from "@/components/profile/AccountForms";
 import { Card, PageHeader } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Chip";
 import type { MessageKey } from "@/lib/i18n/messages/en";
@@ -33,7 +33,7 @@ export default async function ProfilePage({ searchParams }: PageProps<"/profile"
         <span className="grid size-14 place-items-center rounded-full bg-lime font-display text-2xl text-forest-700">{(user.displayName ?? "T").slice(0, 1).toUpperCase()}</span>
         <div className="flex-1">
           <p className="text-lg font-semibold">{user.displayName ?? t("app.name")}</p>
-          <p className="text-sm text-muted">{user.email ?? t("auth.guestBadge")}</p>
+          <p className="text-sm text-muted">{user.email}</p>
         </div>
         <Badge tone={user.isPremium ? "lime" : "neutral"}>{user.isPremium ? t("common.premium") : t("common.free")}</Badge>
       </Card>
@@ -65,7 +65,7 @@ export default async function ProfilePage({ searchParams }: PageProps<"/profile"
 
       <Card>
         <h2 className="mb-3 text-lg font-semibold">{t("profile.account")}</h2>
-        {user.isGuest ? <SecureAccountForm /> : <p className="mb-3 text-sm text-muted">{user.email}</p>}
+        <p className="mb-3 text-sm text-muted">{user.email}</p>
         <div className="mt-4">
           <LogoutButton />
         </div>
