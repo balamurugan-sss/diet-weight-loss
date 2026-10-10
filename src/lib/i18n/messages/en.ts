@@ -497,6 +497,9 @@ export const en = {
   "settings.voiceCommands": "Voice commands in cooking mode",
   "settings.waterGoal": "Daily water goal",
   "settings.waterAuto": "Use guideline",
+  "settings.theme": "Appearance",
+  "settings.theme.dark": "Dark",
+  "settings.theme.light": "Light",
 
   "sub.title": "Plans",
   "sub.current": "Your plan: {plan}",

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { LogoMark } from "@/components/brand/Brand";
 import { redirect } from "next/navigation";
 import { LoginForm } from "@/components/auth/LoginForm";
 import { I18nProvider } from "@/components/i18n/I18nProvider";
@@ -16,8 +17,8 @@ export default async function LoginPage() {
     <I18nProvider lang={lang} messages={messages} transliteration={transliteration}>
       <div className="mx-auto flex min-h-dvh max-w-md flex-col justify-center px-5 py-10">
         <Link href="/" className="mb-8 flex items-center gap-2.5">
-          <span className="grid size-9 place-items-center rounded-2xl bg-forest text-lg text-lime" aria-hidden>◐</span>
-          <span className="font-display text-2xl font-semibold text-forest">{t("app.name")}</span>
+          <LogoMark />
+          <span className="font-display text-2xl font-extrabold tracking-tight">{t("app.name")}</span>
         </Link>
         <div className="card p-6">
           <h1 className="mb-6 text-2xl font-semibold">{t("auth.loginTitle")}</h1>

@@ -1,4 +1,5 @@
-import { ArrowRight, ChefHat, Clock, ShoppingBasket } from "lucide-react";
+import { ArrowRight, ShoppingBasket } from "lucide-react";
+import { StatStrip, StickerPill, TwoTone } from "@/components/brand/Brand";
 import Link from "next/link";
 import { WaterTracker, WeightQuickLog } from "@/components/home/Trackers";
 import { RecipeVisual } from "@/components/recipes/RecipeVisual";
@@ -47,29 +48,31 @@ export default async function HomePage() {
     <div className="space-y-6">
       <header>
         <p className="text-sm font-medium text-muted">{new Intl.DateTimeFormat("en-IN", { weekday: "long", day: "numeric", month: "long", timeZone: "Asia/Kolkata" }).format(new Date())}</p>
-        <h1 className="mt-0.5 text-[1.75rem] leading-tight font-semibold sm:text-3xl">
-          {t(greet)}
-          {user.displayName ? `, ${user.displayName}` : ""}
-        </h1>
+        <TwoTone text={`${t(greet)}${user.displayName ? `, ${user.displayName}` : ""}`} className="mt-0.5 text-[2rem] leading-tight sm:text-4xl" />
       </header>
 
       {nextLead && next ? (
-        <section className="hero-gradient grid overflow-hidden rounded-[1.75rem] text-white sm:grid-cols-[1fr_1.1fr]">
-          <RecipeVisual recipeId={nextLead.recipeId} palette={nextLead.palette} image={nextLead.image} alt={nextLead.title} labels={labels} className="aspect-[16/10] sm:aspect-auto sm:h-full" />
-          <div className="p-5 sm:p-6">
-            <Badge tone="lime">
-              {t("home.nextMeal")} · {t(`slot.${next.slot}` as MessageKey)}
-            </Badge>
-            <h2 className="mt-3 text-2xl leading-tight font-semibold">{next.items.map((i) => i.title).join(" + ")}</h2>
-            <p className="mt-2 flex flex-wrap gap-x-3 text-sm text-white/80 tabular">
+        <section className="card overflow-hidden p-1.5 sm:grid sm:grid-cols-[1.15fr_1fr]">
+          <div className="relative">
+            <RecipeVisual recipeId={nextLead.recipeId} palette={nextLead.palette} image={nextLead.image} alt={nextLead.title} labels={labels} className="aspect-[16/11] rounded-[1.15rem] sm:aspect-auto sm:h-full" />
+            <StickerPill className="absolute right-3 -bottom-5 sm:right-auto sm:-bottom-4 sm:-left-3">
+              <span>{t(`slot.${next.slot}` as MessageKey)}</span>
               <span>{next.kcal} kcal</span>
-              <span>P {next.items.reduce((s, i) => s + i.proteinG, 0)} g</span>
-              <span className="inline-flex items-center gap-1">
-                <Clock className="size-3.5" aria-hidden /> {nextLead.totalMin} {t("common.min")}
-              </span>
-            </p>
-            <Link href={`/cook/${nextLead.slug}?item=${nextLead.id}`} className={buttonClass("lime", "xl", "mt-5 w-full")}>
-              <ChefHat className="size-6" aria-hidden /> {t("home.startCooking")}
+            </StickerPill>
+          </div>
+          <div className="relative flex flex-col p-4 pt-6 sm:p-6">
+            <p className="text-xs font-bold tracking-wide text-forest uppercase">{t("home.nextMeal")}</p>
+            <h2 className="mt-1 text-[1.6rem] leading-[1.1]">{next.items.map((i) => i.title).join(" + ")}</h2>
+            <StatStrip
+              className="mt-4"
+              items={[
+                { value: `${next.kcal}`, label: t("macro.calories") },
+                { value: `${next.items.reduce((s, i) => s + i.proteinG, 0)} g`, label: t("macro.protein") },
+                { value: `~${nextLead.totalMin} ${t("common.min")}`, label: t("recipe.cook") },
+              ]}
+            />
+            <Link href={`/cook/${nextLead.slug}?item=${nextLead.id}`} className={buttonClass("lime", "xl", "mt-4 w-full sm:mt-auto")}>
+              {t("home.startCooking")} <ArrowRight className="size-5" aria-hidden />
             </Link>
           </div>
         </section>
@@ -143,7 +146,7 @@ export default async function HomePage() {
       <div className="grid gap-5 sm:grid-cols-2">
         <WeightQuickLog current={weight?.weightKg ?? profile.weightKg} />
         <Link href="/shopping" className="card flex items-center gap-3 p-4 transition-shadow hover:shadow-[var(--shadow-lift)]">
-          <span className="grid size-12 place-items-center rounded-2xl bg-lime-100 text-forest">
+          <span className="grid size-12 place-items-center rounded-2xl bg-lime-100 text-forest-700">
             <ShoppingBasket className="size-6" aria-hidden />
           </span>
           <span className="flex-1">

@@ -522,4 +522,7 @@ export const ml: Partial<Messages> = {
   "feat.heroImage": "AI വിഭവ ചിത്രങ്ങൾ",
   "feat.cloudTts": "സ്വാഭാവിക ശബ്ദ നിർദ്ദേശങ്ങൾ (അക്ഷരങ്ങൾ)",
   "feat.translate": "റെസിപ്പി വിവർത്തനങ്ങൾ",
+  "settings.theme": "രൂപം",
+  "settings.theme.dark": "ഡാർക്ക്",
+  "settings.theme.light": "ലൈറ്റ്",
 };

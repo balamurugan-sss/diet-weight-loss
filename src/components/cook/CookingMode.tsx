@@ -307,7 +307,7 @@ export function CookingMode(p: CookingModeProps) {
               className="aspect-[4/3] rounded-[1.5rem] lg:aspect-[3/2]"
             />
             {imgState === "pending" && (
-              <div className="absolute inset-0 grid place-items-center rounded-[1.5rem] bg-charcoal/40 text-white backdrop-blur-[1px]">
+              <div className="absolute inset-0 grid place-items-center rounded-[1.5rem] bg-black/45 text-white backdrop-blur-[1px]">
                 <p className="flex items-center gap-2 font-semibold">
                   <RefreshCw className="size-5 animate-spin" aria-hidden /> {t("cook.imagePending")}
                 </p>
@@ -355,7 +355,7 @@ export function CookingMode(p: CookingModeProps) {
             )}
 
             {!narrKey && (
-              <div className="mt-4 rounded-2xl border border-amber/40 bg-amber-100 p-4 text-[#6d4704]">
+              <div className="mt-4 rounded-2xl border border-amber/40 bg-amber-100 p-4 text-amber-ink">
                 <p className="font-semibold">{t("cook.audio.noTranslation", { lang: prefLangName })}</p>
                 <div className="mt-3 flex flex-wrap gap-2">
                   <Button size="sm" variant="secondary" onClick={() => setNarrKey("en")}>
@@ -449,7 +449,7 @@ export function CookingMode(p: CookingModeProps) {
                     onClick={() => setVoiceCmd((v) => (savePref({ voiceCommands: !v }), !v))}
                     aria-pressed={voiceCmd}
                     aria-label={t("cook.voiceCommands")}
-                    className={cn("ml-auto grid size-13 place-items-center rounded-2xl border", voiceCmd && voice.listening ? "border-forest bg-forest text-white" : "border-line")}
+                    className={cn("ml-auto grid size-13 place-items-center rounded-2xl border", voiceCmd && voice.listening ? "border-forest bg-forest text-on-accent" : "border-line")}
                   >
                     {voiceCmd ? <Mic className="size-5" /> : <MicOff className="size-5" />}
                   </button>
@@ -460,7 +460,7 @@ export function CookingMode(p: CookingModeProps) {
                   {voiceCmd && (voice.supported ? (voice.listening ? ` · ${t("cook.listening")}` : "") : ` · ${t("cook.voiceUnsupported")}`)}
                 </p>
                 {audioError && (
-                  <div className="mt-2 rounded-xl bg-amber-100 px-3 py-2 text-sm text-[#6d4704]">
+                  <div className="mt-2 rounded-xl bg-amber-100 px-3 py-2 text-sm text-amber-ink">
                     <p>{t(audioError as MessageKey, { lang: languageInfo(narrKey).nativeName })}</p>
                     {audioError === "cook.audio.noVoice" && (
                       <div className="mt-2 flex flex-wrap gap-2">
@@ -574,7 +574,7 @@ export function CookingMode(p: CookingModeProps) {
                   type="button"
                   onClick={() => (setNarrKey(k), setSpeechTagOverride(null), stopAudio())}
                   aria-pressed={narrKey === k}
-                  className={cn("rounded-full border px-3.5 py-2 text-sm font-semibold", narrKey === k ? "border-forest bg-forest text-white" : "border-line")}
+                  className={cn("rounded-full border px-3.5 py-2 text-sm font-semibold", narrKey === k ? "border-forest bg-forest text-on-accent" : "border-line")}
                 >
                   {languageInfo(k === "en" && preferred === "en-IN" ? "en-IN" : k).nativeName}
                 </button>
@@ -593,7 +593,7 @@ export function CookingMode(p: CookingModeProps) {
           <div>
             <p className="mb-2 text-sm font-semibold">{t("cook.audio.device")} / {t("cook.audio.cloud")}</p>
             <div className="flex flex-wrap gap-2">
-              <button type="button" aria-pressed={audioMode === "device"} onClick={() => setAudioMode("device")} className={cn("rounded-full border px-3.5 py-2 text-sm font-semibold", audioMode === "device" ? "border-forest bg-forest text-white" : "border-line")}>
+              <button type="button" aria-pressed={audioMode === "device"} onClick={() => setAudioMode("device")} className={cn("rounded-full border px-3.5 py-2 text-sm font-semibold", audioMode === "device" ? "border-forest bg-forest text-on-accent" : "border-line")}>
                 {t("cook.audio.device")}
               </button>
               <button
@@ -601,7 +601,7 @@ export function CookingMode(p: CookingModeProps) {
                 aria-pressed={audioMode === "cloud"}
                 disabled={!p.premium || !p.configured.tts}
                 onClick={() => setAudioMode("cloud")}
-                className={cn("rounded-full border px-3.5 py-2 text-sm font-semibold disabled:opacity-40", audioMode === "cloud" ? "border-forest bg-forest text-white" : "border-line")}
+                className={cn("rounded-full border px-3.5 py-2 text-sm font-semibold disabled:opacity-40", audioMode === "cloud" ? "border-forest bg-forest text-on-accent" : "border-line")}
               >
                 {t("cook.audio.cloud")}
               </button>

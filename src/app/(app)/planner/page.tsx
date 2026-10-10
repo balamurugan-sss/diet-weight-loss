@@ -60,12 +60,12 @@ export default async function PlannerPage({ searchParams }: PageProps<"/planner"
               aria-current={active ? "date" : undefined}
               className={cn(
                 "flex min-w-[3.6rem] shrink-0 flex-col items-center rounded-2xl border px-2 py-2 transition-colors",
-                active ? "border-forest bg-forest text-white" : "border-line bg-surface hover:border-forest/40",
+                active ? "border-forest bg-forest text-on-accent" : "border-line bg-surface hover:border-forest/40",
               )}
             >
-              <span className={cn("text-[11px] font-semibold uppercase", active ? "text-lime" : "text-muted")}>{fmt(date, { weekday: "short" })}</span>
+              <span className={cn("text-[11px] font-semibold uppercase", active ? "text-on-accent/70" : "text-muted")}>{fmt(date, { weekday: "short" })}</span>
               <span className="text-lg font-semibold tabular">{fmt(date, { day: "numeric" })}</span>
-              {i === today && <span className={cn("mt-0.5 size-1.5 rounded-full", active ? "bg-lime" : "bg-forest")} aria-label={t("common.today")} />}
+              {i === today && <span className={cn("mt-0.5 size-1.5 rounded-full", active ? "bg-on-accent" : "bg-forest")} aria-label={t("common.today")} />}
             </Link>
           );
         })}

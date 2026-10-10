@@ -30,7 +30,7 @@ export default async function ProfilePage({ searchParams }: PageProps<"/profile"
       <PageHeader title={t("profile.title")} />
       {updated && <p className="rounded-2xl bg-forest-50 px-4 py-2 text-sm font-semibold text-forest">{t("profile.updated")}</p>}
       <Card className="flex items-center gap-4">
-        <span className="grid size-14 place-items-center rounded-full bg-forest font-display text-2xl text-lime">{(user.displayName ?? "T").slice(0, 1).toUpperCase()}</span>
+        <span className="grid size-14 place-items-center rounded-full bg-lime font-display text-2xl text-forest-700">{(user.displayName ?? "T").slice(0, 1).toUpperCase()}</span>
         <div className="flex-1">
           <p className="text-lg font-semibold">{user.displayName ?? t("app.name")}</p>
           <p className="text-sm text-muted">{user.email ?? t("auth.guestBadge")}</p>

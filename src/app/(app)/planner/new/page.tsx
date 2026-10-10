@@ -15,7 +15,7 @@ export default async function NewPlanPage() {
   return (
     <div className="mx-auto max-w-xl">
       <PageHeader title={t("planner.new")} subtitle={`${t(`style.${targets.style}`)} · ${targets.kcal} kcal · P ${targets.proteinG} g${targets.netCarbLimitG ? ` · ≤${targets.netCarbLimitG} g net carbs` : ""}`} />
-      {targets.styleNote && <p className="mb-4 rounded-2xl bg-amber-100 px-4 py-3 text-sm text-[#6d4704]">{targets.styleNote}</p>}
+      {targets.styleNote && <p className="mb-4 rounded-2xl bg-amber-100 px-4 py-3 text-sm text-amber-ink">{targets.styleNote}</p>}
       <Card>
         <NewPlanForm allowed={PLAN_DAYS[user.isPremium ? "premium" : "free"]} left={left} isPremium={user.isPremium} />
       </Card>

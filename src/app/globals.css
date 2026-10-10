@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+/*
+ * Token names are role-based aliases kept from the original light design:
+ *   ivory = page background, surface = card, sand/sand-2 = muted surfaces,
+ *   line = borders, charcoal/ink-2/muted = text tiers, forest = primary accent,
+ *   forest-700 = ink used ON the accent, lime = highlight accent.
+ * The dark theme (default) re-points them; utilities pick the change up via CSS variables.
+ */
 @theme {
   --color-ivory: #fbf7ef;
   --color-sand: #f4eee2;
@@ -17,12 +24,20 @@
   --color-charcoal: #23262a;
   --color-ink-2: #4a4d52;
   --color-muted: #6f6a62;
+  --color-on-accent: #ffffff;
   --color-amber: #c98a1b;
   --color-amber-100: #fbefd6;
+  --color-amber-ink: #6d4704;
   --color-terracotta: #b8492f;
   --color-terracotta-100: #f8e3dc;
   --color-water: #3a86c4;
   --color-water-100: #e2eff9;
+  --color-scrim: rgb(12 12 11 / 0.65);
+  --color-art-bg: #f2ebdd;
+  --color-art-grain: #e2d6bf;
+  --color-art-plate: #ffffff;
+  --color-art-plate-inner: #fcfaf5;
+  --color-art-rim: #efe7d8;
 
   --color-protein: #16855a;
   --color-carbs: #c7860f;
@@ -30,9 +45,10 @@
   --color-fibre: #3a7fc4;
 
   --font-sans: var(--font-body), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-display: var(--font-heading), ui-serif, Georgia, serif;
+  --font-display: var(--font-heading), var(--font-body), ui-sans-serif, sans-serif;
+  --font-hand: var(--font-script), "Comic Sans MS", cursive;
 
-  --radius-card: 1.25rem;
+  --radius-card: 1.5rem;
   --shadow-soft: 0 1px 2px rgb(35 38 42 / 0.04), 0 4px 16px -4px rgb(35 38 42 / 0.08);
   --shadow-lift: 0 2px 4px rgb(35 38 42 / 0.05), 0 12px 32px -8px rgb(30 77 59 / 0.18);
 
@@ -47,6 +63,45 @@
       transform: none;
     }
   }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-ivory: #0c0c0b;
+  --color-surface: #171715;
+  --color-sand: #1f1f1c;
+  --color-sand-2: #2c2c28;
+  --color-line: #2b2b27;
+  --color-charcoal: #f4f4ee;
+  --color-ink-2: #cacac1;
+  --color-muted: #94948b;
+  --color-forest: #d4f23f;
+  --color-forest-600: #c3e22f;
+  --color-forest-700: #0c0c0b;
+  --color-forest-100: #3a461b;
+  --color-forest-50: #222910;
+  --color-lime: #d4f23f;
+  --color-lime-600: #bede2c;
+  --color-lime-100: #e6f5a8;
+  --color-on-accent: #0c0c0b;
+  --color-amber: #f0b43c;
+  --color-amber-100: #322710;
+  --color-amber-ink: #f6d083;
+  --color-terracotta: #ff8a6c;
+  --color-terracotta-100: #3a1d16;
+  --color-water: #5aa7f2;
+  --color-water-100: #14283a;
+  --color-art-bg: #1b1c19;
+  --color-art-grain: #262723;
+  --color-art-plate: #2b2c28;
+  --color-art-plate-inner: #20211e;
+  --color-art-rim: #34352f;
+  --color-protein: #1f9e69;
+  --color-carbs: #c4851a;
+  --color-fat: #d062a4;
+  --color-fibre: #4b93de;
+  --shadow-soft: 0 1px 0 rgb(255 255 255 / 0.03) inset, 0 8px 24px -12px rgb(0 0 0 / 0.6);
+  --shadow-lift: 0 1px 0 rgb(255 255 255 / 0.05) inset, 0 18px 40px -16px rgb(0 0 0 / 0.8);
 }
 
 html {
@@ -75,7 +130,11 @@ h2,
 h3,
 .font-display {
   font-family: var(--font-display);
-  letter-spacing: -0.01em;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+h1 {
+  font-weight: 800;
 }
 :lang(ta) :is(h1, h2, h3, .font-display),
 :lang(ml) :is(h1, h2, h3, .font-display) {
@@ -83,10 +142,22 @@ h3,
   letter-spacing: 0;
 }
 
+.font-hand {
+  font-family: var(--font-hand);
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.05;
+}
+
 :focus-visible {
   outline: 2.5px solid var(--color-forest);
   outline-offset: 2px;
   border-radius: 6px;
+}
+
+::selection {
+  background: var(--color-lime);
+  color: #0c0c0b;
 }
 
 @layer components {
@@ -100,10 +171,34 @@ h3,
     background: var(--color-sand);
     border-radius: var(--radius-card);
   }
+  /* Raised feature panel: forest gradient in light, charcoal with a lime glow in dark. */
   .hero-gradient {
     background:
       radial-gradient(120% 140% at 100% 0%, rgb(185 219 74 / 0.32), transparent 55%),
-      linear-gradient(150deg, var(--color-forest) 0%, var(--color-forest-700) 100%);
+      linear-gradient(150deg, #1e4d3b 0%, #163a2c 100%);
+  }
+  :root[data-theme="dark"] .hero-gradient {
+    background:
+      radial-gradient(90% 120% at 100% 0%, rgb(212 242 63 / 0.16), transparent 60%),
+      linear-gradient(160deg, #1d1e1a 0%, #121311 100%);
+    border: 1px solid #2b2b27;
+  }
+  /* Pale-lime feature card (as in the reference's highlighted tiles). Always dark ink. */
+  .card-lime {
+    background: #e3f59c;
+    color: #0c0c0b;
+    border-radius: var(--radius-card);
+  }
+  .card-lime-strong {
+    background: #d4f23f;
+    color: #0c0c0b;
+    border-radius: var(--radius-card);
+  }
+  .highlight {
+    color: var(--color-lime);
+  }
+  :root:not([data-theme="dark"]) .highlight {
+    color: var(--color-lime-600);
   }
   .no-scrollbar {
     scrollbar-width: none;
@@ -129,8 +224,13 @@ h3,
   .no-print {
     display: none !important;
   }
-  body {
-    background: white;
+  :root[data-theme="dark"] {
+    --color-ivory: #ffffff;
+    --color-surface: #ffffff;
+    --color-charcoal: #111111;
+    --color-ink-2: #333333;
+    --color-muted: #555555;
+    --color-line: #dddddd;
   }
   .card {
     box-shadow: none;

@@ -36,7 +36,7 @@ export default async function TargetsPage() {
       <PageHeader title={t("targets.title")} subtitle={t(`style.${targets.style}`)} />
 
       {(targets.screening.requiresProfessional || targets.styleNote) && (
-        <div className="flex gap-3 rounded-[var(--radius-card)] border border-amber/30 bg-amber-100 p-4 text-[#6d4704]">
+        <div className="flex gap-3 rounded-[var(--radius-card)] border border-amber/30 bg-amber-100 p-4 text-amber-ink">
           <Stethoscope className="mt-0.5 size-5 shrink-0" aria-hidden />
           <div className="text-[15px] leading-relaxed">
             {targets.screening.requiresProfessional && <p className="font-semibold">{t("targets.professional")}</p>}
@@ -183,7 +183,7 @@ export default async function TargetsPage() {
           <h2 className="mb-3 text-lg font-semibold">{t("targets.flags")}</h2>
           <ul className="space-y-2">
             {targets.screening.flags.map((f) => (
-              <li key={f.code} className={cn("flex gap-3 rounded-2xl p-3 text-[15px]", f.level === "professional" ? "bg-amber-100 text-[#6d4704]" : "bg-sand text-ink-2")}>
+              <li key={f.code} className={cn("flex gap-3 rounded-2xl p-3 text-[15px]", f.level === "professional" ? "bg-amber-100 text-amber-ink" : "bg-sand text-ink-2")}>
                 {f.level === "info" ? <Info className="mt-0.5 size-5 shrink-0" aria-hidden /> : <AlertTriangle className="mt-0.5 size-5 shrink-0" aria-hidden />}
                 <span>
                   <span className="font-semibold">{f.title}.</span> {f.message}

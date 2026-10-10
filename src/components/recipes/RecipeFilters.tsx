@@ -70,7 +70,7 @@ export function RecipeFilters() {
     <>
       <Button variant="outline" onClick={openSheet} aria-haspopup="dialog">
         <SlidersHorizontal className="size-4" aria-hidden /> {t("recipes.filters")}
-        {active > 0 && <span className="grid size-5 place-items-center rounded-full bg-forest text-[11px] text-white">{active}</span>}
+        {active > 0 && <span className="grid size-5 place-items-center rounded-full bg-forest text-[11px] text-on-accent">{active}</span>}
       </Button>
       <Sheet open={open} onClose={() => setOpen(false)} title={t("recipes.filters")} closeLabel={t("common.close")}>
         {group("sort", "recipes.sort")}

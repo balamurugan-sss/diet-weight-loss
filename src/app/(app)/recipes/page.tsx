@@ -90,7 +90,7 @@ export default async function RecipesPage({ searchParams }: PageProps<"/recipes"
         {CATEGORIES.map((c) => {
           const on = filters.cat === c;
           return (
-            <Link key={c} href={href({ cat: on ? undefined : c })} className={cn("shrink-0 rounded-full border px-3.5 py-2 text-sm font-medium", on ? "border-forest bg-forest text-white" : "border-line bg-surface hover:border-forest/40")}>
+            <Link key={c} href={href({ cat: on ? undefined : c })} className={cn("shrink-0 rounded-full border px-3.5 py-2 text-sm font-medium", on ? "border-forest bg-forest text-on-accent" : "border-line bg-surface hover:border-forest/40")}>
               {t(`cat.${c}` as MessageKey)}
             </Link>
           );
@@ -101,9 +101,9 @@ export default async function RecipesPage({ searchParams }: PageProps<"/recipes"
         <p className="card-sand py-14 text-center text-muted">{t("recipes.noResults")}</p>
       ) : (
         <ul className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 xl:grid-cols-4">
-          {res.recipes.map((r) => (
+          {res.recipes.map((r, i) => (
             <li key={r.id}>
-              <RecipeCard r={r} t={t} />
+              <RecipeCard r={r} t={t} featured={i % 4 === 0 || i % 4 === 3} />
             </li>
           ))}
         </ul>

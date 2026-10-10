@@ -3,6 +3,7 @@ import { PageHeader } from "@/components/ui/Card";
 import { requireOnboarded } from "@/server/auth/dal";
 import { getI18n } from "@/server/i18n";
 import { targetsForProfile } from "@/server/services/targets";
+import { getTheme } from "@/server/theme";
 
 export const metadata = { title: "Settings" };
 
@@ -24,6 +25,7 @@ export default async function SettingsPage() {
           waterGoalMl: profile.waterGoalMl,
         }}
         guidelineMl={guideline}
+        theme={await getTheme()}
       />
     </div>
   );

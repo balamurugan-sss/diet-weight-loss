@@ -1,6 +1,6 @@
 "use client";
 
-import { Heart } from "lucide-react";
+import { Bookmark, Heart } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState, useTransition } from "react";
 import { useI18n } from "@/components/i18n/I18nProvider";
@@ -11,7 +11,7 @@ import { savePreferences } from "@/server/actions/profile";
 import { recordViewAction, toggleFavouriteAction } from "@/server/actions/recipes";
 import { IngredientList, type IngredientLineView } from "./IngredientList";
 
-export function FavouriteButton({ recipeId, initial }: { recipeId: string; initial: boolean }) {
+export function FavouriteButton({ recipeId, initial, compact = false }: { recipeId: string; initial: boolean; compact?: boolean }) {
   const { t } = useI18n();
   const router = useRouter();
   const [fav, setFav] = useState(initial);
@@ -19,6 +19,25 @@ export function FavouriteButton({ recipeId, initial }: { recipeId: string; initi
   useEffect(() => {
     void recordViewAction(recipeId);
   }, [recipeId]);
+  const toggle = () =>
+    start(async () => {
+      const r = await toggleFavouriteAction(recipeId);
+      if (r.ok) setFav(r.favourite);
+      router.refresh();
+    });
+  if (compact)
+    return (
+      <button
+        type="button"
+        onClick={toggle}
+        disabled={pending}
+        aria-pressed={fav}
+        aria-label={fav ? t("recipe.favourited") : t("recipe.favourite")}
+        className={cn("grid size-11 place-items-center rounded-full shadow-lg", fav ? "bg-lime text-[#0c0c0b]" : "bg-[#0c0c0b] text-[#f4f4ee]")}
+      >
+        <Bookmark className={cn("size-5", fav && "fill-current")} />
+      </button>
+    );
   return (
     <Button
       variant={fav ? "secondary" : "outline"}

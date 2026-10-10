@@ -112,7 +112,7 @@ export function IngredientList({
         })}
       </ul>
       {hidden.length > 0 && (
-        <div className="mt-4 rounded-2xl bg-amber-100 p-3 text-sm text-[#6d4704]">
+        <div className="mt-4 rounded-2xl bg-amber-100 p-3 text-sm text-amber-ink">
           <p className="mb-1 flex items-center gap-1.5 font-semibold">
             <AlertTriangle className="size-4" aria-hidden /> {t("recipe.hiddenCarbs")}
           </p>

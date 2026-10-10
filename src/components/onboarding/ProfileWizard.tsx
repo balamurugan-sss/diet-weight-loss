@@ -133,7 +133,7 @@ export function ProfileWizard({
         disabled && "cursor-not-allowed opacity-50",
       )}
     >
-      <span className={cn("mt-0.5 grid size-6 shrink-0 place-items-center rounded-full border-2", selected ? "border-forest bg-forest text-white" : "border-line")}>
+      <span className={cn("mt-0.5 grid size-6 shrink-0 place-items-center rounded-full border-2", selected ? "border-forest bg-forest text-on-accent" : "border-line")}>
         {selected && <Check className="size-3.5" strokeWidth={3} />}
       </span>
       <span>
@@ -452,7 +452,7 @@ export function ProfileWizard({
             {screening && screening.flags.length > 0 && (
               <ul className="space-y-2">
                 {screening.flags.map((f) => (
-                  <li key={f.code} className={cn("rounded-2xl px-4 py-3 text-sm", f.level === "professional" ? "bg-amber-100 text-[#6d4704]" : "bg-sand text-ink-2")}>
+                  <li key={f.code} className={cn("rounded-2xl px-4 py-3 text-sm", f.level === "professional" ? "bg-amber-100 text-amber-ink" : "bg-sand text-ink-2")}>
                     <span className="font-semibold">{f.title}.</span> {f.message}
                   </li>
                 ))}
@@ -463,7 +463,7 @@ export function ProfileWizard({
 
         {step === "review" && (
           <div className="text-center">
-            <div className="mx-auto mb-6 grid size-20 place-items-center rounded-full bg-lime-100 text-forest">
+            <div className="mx-auto mb-6 grid size-20 place-items-center rounded-full bg-lime-100 text-forest-700">
               <Check className="size-9" strokeWidth={2.5} />
             </div>
             {heading("ob.review.title", "ob.review.body")}

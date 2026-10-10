@@ -37,7 +37,7 @@ export function DayTotals({ view, targets, t }: { view: DayView; targets: Target
                 key={i.code + i.message}
                 className={cn(
                   "flex gap-2 rounded-2xl px-3 py-2 text-sm",
-                  i.severity === "error" ? "bg-terracotta-100 text-terracotta" : i.severity === "warning" ? "bg-amber-100 text-[#6d4704]" : "bg-sand text-ink-2",
+                  i.severity === "error" ? "bg-terracotta-100 text-terracotta" : i.severity === "warning" ? "bg-amber-100 text-amber-ink" : "bg-sand text-ink-2",
                 )}
               >
                 {i.severity === "info" ? <Info className="mt-0.5 size-4 shrink-0" aria-hidden /> : <AlertTriangle className="mt-0.5 size-4 shrink-0" aria-hidden />}

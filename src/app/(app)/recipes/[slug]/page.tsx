@@ -1,4 +1,5 @@
-import { ChefHat, Clock, Flame, IndianRupee, ShieldCheck, Timer, Users, Utensils } from "lucide-react";
+import { ArrowRight, ChevronLeft, ShieldCheck, Timer, Users, Utensils } from "lucide-react";
+import { StatStrip, StickerPill } from "@/components/brand/Brand";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Tx } from "@/components/i18n/I18nProvider";
@@ -40,45 +41,57 @@ export default async function RecipePage({ params }: PageProps<"/recipes/[slug]"
   return (
     <article className="space-y-6">
       <div className="grid gap-5 lg:grid-cols-[1.1fr_1fr] lg:items-start">
-        <RecipeVisual recipeId={recipe.id} palette={recipe.palette} image={detail.heroImage} alt={recipe.title} labels={labels} className="-mx-4 aspect-[4/3] sm:mx-0 sm:rounded-[1.75rem]" />
-        <div>
-          <div className="mb-2 flex flex-wrap gap-1.5">
+        <div className="relative -mx-4 sm:mx-0">
+          <RecipeVisual recipeId={recipe.id} palette={recipe.palette} image={detail.heroImage} alt={recipe.title} labels={labels} className="aspect-[4/3.6] sm:rounded-[1.75rem]" />
+          <Link href="/recipes" aria-label={t("common.back")} className="absolute top-3 left-3 grid size-11 place-items-center rounded-full bg-[#f4f4ee] text-[#0c0c0b] shadow-lg">
+            <ChevronLeft className="size-5" strokeWidth={2.5} />
+          </Link>
+          <div className="absolute top-3 right-3">
+            <FavouriteButton recipeId={recipe.id} initial={detail.isFavourite} compact />
+          </div>
+        </div>
+        <div className="relative">
+          <StickerPill className="absolute -top-9 right-1 lg:top-0">
+            <span>{recipe.prepMin + recipe.cookMin} {t("common.min")}</span>
+            <span>₹{Math.round(recipe.costPerServingInr)} / {t("common.serving")}</span>
+          </StickerPill>
+          <div className="mb-2 flex flex-wrap gap-1.5 pr-32">
             <Badge tone="forest">{t(`cuisine.${recipe.cuisine}` as MessageKey)}</Badge>
             <Badge>{t(`diet.${recipe.dietType}` as MessageKey)}</Badge>
             {recipe.isKeto && <Badge tone="lime">{t("cat.keto")}</Badge>}
             {!recipe.isKeto && recipe.isLowCarb && <Badge tone="lime">{t("cat.low_carb")}</Badge>}
             {recipe.isHighProtein && <Badge tone="forest">{t("cat.high_protein")}</Badge>}
           </div>
-          <h1 className="text-[1.85rem] leading-tight font-semibold sm:text-4xl">
+          <h1 className="text-[2rem] leading-[1.05] sm:text-[2.6rem]">
             <Tx>{loc.title}</Tx>
           </h1>
-          {loc.title !== recipe.title && <p className="mt-1 text-sm text-muted">{recipe.title}</p>}
-          <p className="mt-3 text-[15px] leading-relaxed text-ink-2">{recipe.description}</p>
-          <dl className="mt-5 grid grid-cols-4 gap-2 text-center">
-            {[
-              { icon: Clock, label: t("recipe.prep"), v: `${recipe.prepMin}′` },
-              { icon: Flame, label: t("recipe.cook"), v: `${recipe.cookMin}′` },
-              { icon: Users, label: t("common.servings"), v: recipe.servings },
-              { icon: IndianRupee, label: t("common.serving"), v: `₹${Math.round(recipe.costPerServingInr)}` },
-            ].map(({ icon: Icon, label, v }) => (
-              <div key={label} className="rounded-2xl bg-sand/70 px-1 py-2.5">
-                <Icon className="mx-auto size-4 text-forest" aria-hidden />
-                <dd className="mt-1 font-semibold tabular">{v}</dd>
-                <dt className="text-[11px] text-muted">{label}</dt>
-              </div>
-            ))}
-          </dl>
-          {recipe.restMin > 0 && (
-            <p className="mt-2 flex items-center gap-1.5 text-sm text-muted">
-              <Timer className="size-4" aria-hidden /> {t("recipe.rest")}: {recipe.restMin} {t("common.min")}
-            </p>
-          )}
-          <div className="mt-5 flex gap-2">
-            <Link href={`/cook/${recipe.slug}`} className={buttonClass("lime", "lg", "flex-1")}>
-              <ChefHat className="size-5" aria-hidden /> {t("recipe.startCooking")}
-            </Link>
-            <FavouriteButton recipeId={recipe.id} initial={detail.isFavourite} />
-          </div>
+          <p className="mt-1 text-sm text-muted">
+            {loc.title !== recipe.title ? `${recipe.title} · ` : ""}
+            {recipe.region ?? t(`cuisine.${recipe.cuisine}` as MessageKey)}
+          </p>
+          <StatStrip
+            className="mt-5"
+            items={[
+              { value: Math.round(recipe.kcal), label: t("macro.calories") },
+              { value: `${recipe.proteinG} g`, label: t("macro.protein") },
+              { value: `${recipe.netCarbsG} g`, label: t("macro.netCarbs") },
+              { value: `${recipe.prepMin + recipe.cookMin}′`, label: `${t("recipe.prep")} + ${t("recipe.cook")}` },
+            ]}
+          />
+          <p className="mt-4 text-[15px] leading-relaxed text-ink-2">{recipe.description}</p>
+          <p className="mt-2 flex flex-wrap items-center gap-x-3 text-sm text-muted">
+            <span className="inline-flex items-center gap-1">
+              <Users className="size-4" aria-hidden /> {recipe.servings} {t("common.servings")}
+            </span>
+            {recipe.restMin > 0 && (
+              <span className="inline-flex items-center gap-1">
+                <Timer className="size-4" aria-hidden /> {t("recipe.rest")}: {recipe.restMin} {t("common.min")}
+              </span>
+            )}
+          </p>
+          <Link href={`/cook/${recipe.slug}`} className={buttonClass("lime", "xl", "mt-5 w-full")}>
+            {t("recipe.startCooking")} <ArrowRight className="size-5" aria-hidden />
+          </Link>
         </div>
       </div>
 

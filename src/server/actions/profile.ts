@@ -9,6 +9,7 @@ import { ProfileInput } from "@/lib/profile/schema";
 import { requireUser } from "@/server/auth/dal";
 import { db, schema } from "@/server/db/client";
 import { LANG_COOKIE } from "@/server/i18n";
+import { THEME_COOKIE } from "@/server/theme";
 import { todayISO } from "@/server/time";
 
 export async function saveProfile(raw: unknown): Promise<{ ok: true } | { ok: false; error: string }> {
@@ -85,4 +86,9 @@ export async function savePreferences(raw: unknown) {
     (await cookies()).set(LANG_COOKIE, parsed.data.language, { path: "/", maxAge: 60 * 60 * 24 * 365, sameSite: "lax" });
   revalidatePath("/", "layout");
   return { ok: true as const };
+}
+
+export async function setThemeAction(theme: "dark" | "light") {
+  (await cookies()).set(THEME_COOKIE, theme === "light" ? "light" : "dark", { path: "/", maxAge: 60 * 60 * 24 * 365, sameSite: "lax" });
+  revalidatePath("/", "layout");
 }

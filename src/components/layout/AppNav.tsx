@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { LogoMark } from "@/components/brand/Brand";
 import { usePathname } from "next/navigation";
 import { useI18n } from "@/components/i18n/I18nProvider";
 import { cn } from "@/lib/cn";
@@ -53,8 +54,8 @@ export function SideNav({ footer }: { footer?: React.ReactNode }) {
   return (
     <aside className="no-print sticky top-0 hidden h-dvh w-64 shrink-0 flex-col border-r border-line bg-surface/60 px-4 py-6 lg:flex">
       <Link href="/home" className="mb-8 flex items-center gap-2.5 px-2">
-        <span className="grid size-9 place-items-center rounded-2xl bg-forest text-lg text-lime">◐</span>
-        <span className="font-display text-2xl font-semibold text-forest">{t("app.name")}</span>
+        <LogoMark />
+        <span className="font-display text-2xl font-extrabold tracking-tight">{t("app.name")}</span>
       </Link>
       <ul className="space-y-1">
         {NAV_ITEMS.map(({ href, key, icon: Icon }) => {
@@ -66,7 +67,7 @@ export function SideNav({ footer }: { footer?: React.ReactNode }) {
                 aria-current={active ? "page" : undefined}
                 className={cn(
                   "flex h-11 items-center gap-3 rounded-2xl px-3 text-[15px] font-semibold transition-colors",
-                  active ? "bg-forest text-white" : "text-ink-2 hover:bg-sand",
+                  active ? "bg-forest text-on-accent" : "text-ink-2 hover:bg-sand",
                 )}
               >
                 <Icon className="size-5" aria-hidden />

@@ -5,11 +5,11 @@ import { useState, useTransition } from "react";
 import { useI18n } from "@/components/i18n/I18nProvider";
 import { Segmented } from "@/components/ui/Stepper";
 import { AVAILABLE_LANGUAGES } from "@/lib/i18n/languages";
-import { savePreferences } from "@/server/actions/profile";
+import { savePreferences, setThemeAction } from "@/server/actions/profile";
 
 type Prefs = { language: string; transliteration: boolean; units: "metric" | "kitchen"; narrationRate: number; keepAwake: boolean; voiceCommands: boolean; waterGoalMl: number | null };
 
-export function SettingsForm({ initial, guidelineMl }: { initial: Prefs; guidelineMl: number }) {
+export function SettingsForm({ initial, guidelineMl, theme }: { initial: Prefs; guidelineMl: number; theme: "dark" | "light" }) {
   const { t } = useI18n();
   const router = useRouter();
   const [p, setP] = useState(initial);
@@ -38,6 +38,18 @@ export function SettingsForm({ initial, guidelineMl }: { initial: Prefs; guideli
   );
   return (
     <div className="card px-4">
+      {row(
+        t("settings.theme"),
+        <Segmented
+          label={t("settings.theme")}
+          value={theme}
+          onChange={(v) => start(async () => (await setThemeAction(v), router.refresh()))}
+          options={[
+            { value: "dark", label: t("settings.theme.dark") },
+            { value: "light", label: t("settings.theme.light") },
+          ]}
+        />,
+      )}
       {row(
         t("settings.language"),
         <select value={p.language} onChange={(e) => save({ language: e.target.value })} className="h-11 rounded-2xl border border-line bg-surface px-3" aria-label={t("settings.language")}>

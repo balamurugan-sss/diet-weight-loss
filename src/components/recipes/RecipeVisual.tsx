@@ -35,7 +35,7 @@ export function RecipeVisual({
         <RecipeArt id={recipeId} palette={palette} stepIndex={stepIndex} className="h-full w-full" />
       )}
       {showLabel && (
-        <span className="absolute bottom-2 left-2 inline-flex items-center gap-1 rounded-full bg-charcoal/70 px-2 py-0.5 text-[10.5px] font-semibold text-white backdrop-blur">
+        <span className="absolute bottom-2 left-2 inline-flex items-center gap-1 rounded-full bg-scrim px-2 py-0.5 text-[10.5px] font-semibold text-white backdrop-blur">
           {image?.kind === "verified_photo" ? <Camera className="size-3" aria-hidden /> : <Sparkles className="size-3" aria-hidden />}
           {image ? (image.kind === "verified_photo" ? labels.photo : labels.ai) : labels.placeholder}
         </span>

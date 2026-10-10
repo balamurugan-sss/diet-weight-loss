@@ -33,7 +33,7 @@ export function Sheet({
       onClose={onClose}
       onClick={(e) => e.target === ref.current && onClose()}
       className={cn(
-        "m-0 mt-auto max-h-[88dvh] w-full max-w-none overflow-hidden rounded-t-[1.75rem] bg-surface p-0 text-charcoal shadow-2xl backdrop:bg-charcoal/40 backdrop:backdrop-blur-[2px]",
+        "m-0 mt-auto max-h-[88dvh] w-full max-w-none overflow-hidden rounded-t-[1.75rem] bg-surface p-0 text-charcoal shadow-2xl backdrop:bg-black/60 backdrop:backdrop-blur-[2px]",
         "sm:m-auto sm:max-w-lg sm:rounded-[1.75rem]",
         "open:animate-fade-up",
         className,

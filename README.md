@@ -48,6 +48,14 @@ npm run recipes:validate -- --table   # validate the catalogue and print per-ser
 | Auth (guest-first, email/password), privacy export, account deletion | ✅ |
 | Free/Premium tiers with visible quotas; Stripe checkout, portal, webhook | ✅ needs Stripe keys; dev-only toggle otherwise |
 
+## Design
+
+Dark, high-contrast look with a neon-lime accent (geometric display type, handwritten
+notes, lime brush ribbons, pill chips, lime feature cards with ↗ buttons). An ivory /
+forest-green light theme is available under Settings → Appearance. All colours are
+role-based tokens in `src/app/globals.css`; chart colours are validated for
+colour-blind safety in both themes.
+
 ## Documentation
 
 - [Architecture](docs/ARCHITECTURE.md) — stack, data model, request flow, security

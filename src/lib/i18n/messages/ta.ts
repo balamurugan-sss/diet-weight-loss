@@ -522,4 +522,7 @@ export const ta: Partial<Messages> = {
   "feat.heroImage": "AI உணவுப் படங்கள்",
   "feat.cloudTts": "இயல்பான குரல் விளக்கம் (எழுத்துகள்)",
   "feat.translate": "ரெசிபி மொழிபெயர்ப்புகள்",
+  "settings.theme": "தோற்றம்",
+  "settings.theme.dark": "இருள்",
+  "settings.theme.light": "வெளிச்சம்",
 };
