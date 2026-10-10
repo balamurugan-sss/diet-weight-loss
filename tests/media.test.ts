@@ -51,3 +51,28 @@ describe("narration", () => {
     expect(stepNarration("ml", { text: "എണ്ണ ചൂടാക്കുക.", timerSec: null, tempC: null }, 1, 5)).toBe("ഘട്ടം 1, ആകെ 5. എണ്ണ ചൂടാക്കുക.");
   });
 });
+
+describe("Veo exercise clips", () => {
+  it("builds a consistent, safety-minded prompt per exercise", async () => {
+    const { exerciseVideoPrompt, startRequestBody, NEGATIVE_PROMPT } = await import("@/lib/media/veo");
+    const { getExercise } = await import("@/lib/workouts/exercises");
+    const p = exerciseVideoPrompt(getExercise("goblet_squat"));
+    expect(p).toContain("Goblet squat using dumbbells");
+    expect(p).toContain("loops seamlessly");
+    expect(p).toContain("whole body in frame");
+    expect(exerciseVideoPrompt(getExercise("plank"))).toContain("holding");
+    expect(startRequestBody("x")).toEqual({
+      instances: [{ prompt: "x" }],
+      parameters: { aspectRatio: "16:9", resolution: "720p", durationSeconds: "4", negativePrompt: NEGATIVE_PROMPT },
+    });
+  });
+
+  it("parses long-running operation states", async () => {
+    const { parseOperation, estimateCostUsd } = await import("@/lib/media/veo");
+    expect(parseOperation({ name: "models/x/operations/1" })).toEqual({ done: false });
+    expect(parseOperation({ done: true, response: { generateVideoResponse: { generatedSamples: [{ video: { uri: "https://g/v.mp4" } }] } } })).toEqual({ done: true, uri: "https://g/v.mp4" });
+    expect(parseOperation({ done: true, error: { message: "quota" } })).toEqual({ done: true, error: "quota" });
+    expect(parseOperation({ done: true, response: { generateVideoResponse: { raiMediaFilteredReasons: ["safety"] } } })).toEqual({ done: true, error: "safety" });
+    expect(estimateCostUsd("veo-3.1-fast-generate-preview", 85)).toBe(27.2);
+  });
+});

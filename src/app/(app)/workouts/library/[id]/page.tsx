@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/Chip";
 import type { MessageKey } from "@/lib/i18n/messages/en";
 import { EXERCISE_BY_ID } from "@/lib/workouts/exercises";
 import { getI18n } from "@/server/i18n";
+import { approvedVideos } from "@/server/services/exerciseMedia";
 
 export async function generateMetadata({ params }: PageProps<"/workouts/library/[id]">) {
   const { id } = await params;
@@ -18,6 +19,7 @@ export default async function ExercisePage({ params }: PageProps<"/workouts/libr
   const ex = EXERCISE_BY_ID.get(id);
   if (!ex) notFound();
   const { t } = await getI18n();
+  const videos = await approvedVideos([ex.id]);
   const harder = ex.harder ? EXERCISE_BY_ID.get(ex.harder) : undefined;
   const easier = ex.easier ? EXERCISE_BY_ID.get(ex.easier) : undefined;
   const muscles = (ms: string[]) => ms.map((m) => t(`wk.muscle.${m}` as MessageKey)).join(", ");
@@ -30,7 +32,12 @@ export default async function ExercisePage({ params }: PageProps<"/workouts/libr
 
       <div className="grid gap-5 lg:grid-cols-[1fr_1.1fr] lg:items-start">
         <div className="card p-1.5">
-          <ExerciseMedia exercise={ex} className="aspect-square rounded-[1.15rem]" label={ex.media ? t("wk.media.photo") : t("wk.media.animation")} />
+          <ExerciseMedia
+            exercise={ex}
+            videoSrc={videos[ex.id]}
+            className="aspect-square rounded-[1.15rem]"
+            label={videos[ex.id] ? t("media.aiLabel") : ex.media ? t("wk.media.photo") : t("wk.media.animation")}
+          />
         </div>
 
         <div className="space-y-4">

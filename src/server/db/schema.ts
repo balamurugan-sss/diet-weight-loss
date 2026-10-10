@@ -675,6 +675,27 @@ export const healthConnections = sqliteTable(
   (t) => [primaryKey({ columns: [t.userId, t.provider] })],
 );
 
+/** AI exercise demo clips. Only `approved` clips are shown to users; the drawn figure is the fallback. */
+export const exerciseMedia = sqliteTable(
+  "exercise_media",
+  {
+    id: text("id").primaryKey(),
+    exerciseId: text("exercise_id").notNull(),
+    status: text("status", { enum: ["generating", "ready", "approved", "rejected", "failed"] }).notNull(),
+    provider: text("provider").notNull(),
+    model: text("model").notNull(),
+    prompt: text("prompt").notNull(),
+    operation: text("operation"),
+    data: blob("data", { mode: "buffer" }),
+    mime: text("mime"),
+    bytes: integer("bytes"),
+    error: text("error"),
+    createdAt: createdAt(),
+    reviewedAt: integer("reviewed_at", { mode: "timestamp_ms" }),
+  },
+  (t) => [index("exercise_media_exercise_idx").on(t.exerciseId, t.status)],
+);
+
 // ─── Quotas, rate limits, billing ────────────────────────────────────────────
 
 export const usageCounters = sqliteTable(

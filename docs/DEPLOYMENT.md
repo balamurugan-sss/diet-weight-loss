@@ -13,6 +13,7 @@ every AI and payment integration is optional and switches on when its key is pre
 | `SARVAM_API_KEY` (+ `SARVAM_TTS_MODEL`, `SARVAM_TTS_SPEAKER`, `SARVAM_TRANSLATE_MODEL`) | Natural Tamil/Malayalam/Indian-English voices and recipe translation |
 | `GOOGLE_TTS_API_KEY` | Alternative TTS provider |
 | `STRIPE_SECRET_KEY`, `STRIPE_PRICE_ID`, `STRIPE_WEBHOOK_SECRET`, `PREMIUM_PRICE_INR` | Subscriptions |
+| `GEMINI_API_KEY` (+ `VEO_MODEL`, `VEO_DAILY_LIMIT`), `ADMIN_EMAILS` | AI exercise demo clips (Veo 3.1) generated and reviewed at `/admin/media` |
 | `GOOGLE_HEALTH_CLIENT_ID`, `GOOGLE_HEALTH_CLIENT_SECRET`, `HEALTH_TOKEN_KEY` | Google Health (Fitbit / Fitbit Air / Pixel Watch) sync — see docs/HEALTH.md |
 
 Never set `ALLOW_DEV_PREMIUM` in production.

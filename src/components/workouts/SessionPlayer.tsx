@@ -34,7 +34,9 @@ export function SessionPlayer({
   completed,
   goal,
   fuel,
+  videos = {},
 }: {
+  videos?: Record<string, string>;
   dayIndex: number;
   totalDays: number;
   day: ProgramDay;
@@ -248,7 +250,12 @@ export function SessionPlayer({
         </p>
         <div className="mt-2 grid gap-4 sm:grid-cols-[15rem_1fr] sm:items-start">
           <div className="card p-1.5">
-            <ExerciseMedia exercise={ex} className="aspect-[4/3] rounded-[1.1rem] sm:aspect-square" />
+            <ExerciseMedia
+              exercise={ex}
+              videoSrc={videos[ex.id]}
+              label={videos[ex.id] ? t("media.aiLabel") : undefined}
+              className="aspect-[4/3] rounded-[1.1rem] sm:aspect-square"
+            />
           </div>
           <div>
             <h1 className="text-[1.75rem] leading-tight">{ex.name}</h1>

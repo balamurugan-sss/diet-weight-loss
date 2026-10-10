@@ -11,6 +11,7 @@ import type { Exercise } from "@/lib/workouts/types";
 import { requireOnboarded } from "@/server/auth/dal";
 import { getI18n } from "@/server/i18n";
 import { targetsForProfile } from "@/server/services/targets";
+import { approvedVideos } from "@/server/services/exerciseMedia";
 import {
   bodyWeight,
   canStartDay,
@@ -69,6 +70,7 @@ export default async function SessionPage({ params }: PageProps<"/workouts/sessi
   for (const p of [...day.warmup, ...day.main, ...day.cooldown]) exercises[p.exerciseId] = getExercise(p.exerciseId);
   for (const h of Object.values(hints)) if (h.overload.kind === "harder") exercises[h.overload.exerciseId] = getExercise(h.overload.exerciseId);
 
+  const videos = await approvedVideos(Object.keys(exercises));
   const targets = targetsForProfile(profile);
   const keto = targets?.style === "keto";
   const fuel = fuelIdeas(profile.dietPreference ?? "vegetarian", { keto, when: "post" }).slice(0, 3);
@@ -95,6 +97,7 @@ export default async function SessionPage({ params }: PageProps<"/workouts/sessi
       completed={completed}
       goal={program.goal}
       fuel={fuel.map((f) => ({ id: f.id, title: f.title, detail: f.detail }))}
+      videos={videos}
     />
   );
 }

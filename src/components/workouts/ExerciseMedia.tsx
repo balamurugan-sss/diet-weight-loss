@@ -6,8 +6,21 @@ import { ExerciseFigure } from "./ExerciseFigure";
  * The exercise's media slot: a supplied photo/video/GIF when the exercise has
  * one, otherwise the built-in animated figure.
  */
-export function ExerciseMedia({ exercise, className, animate = true, label }: { exercise: Exercise; className?: string; animate?: boolean; label?: string }) {
-  const media = exercise.media;
+export function ExerciseMedia({
+  exercise,
+  className,
+  animate = true,
+  label,
+  videoSrc,
+}: {
+  exercise: Exercise;
+  className?: string;
+  animate?: boolean;
+  label?: string;
+  /** An approved AI demo clip; takes priority over the drawn figure. */
+  videoSrc?: string;
+}) {
+  const media = videoSrc ? ({ kind: "video", src: videoSrc } as const) : exercise.media;
   return (
     <div className={cn("relative overflow-hidden bg-sand", className)}>
       {media?.kind === "video" ? (

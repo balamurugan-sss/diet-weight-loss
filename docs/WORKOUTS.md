@@ -123,6 +123,28 @@ the app draws an animated SVG figure for the exercise's movement pattern (20 pat
 poses morphed with SMIL). With `prefers-reduced-motion`, the figure shows the key position
 without moving.
 
+## AI demo clips (Veo 3.1)
+
+Realistic, GIF-like loops per exercise, generated with Google Veo 3.1 through the
+Gemini API (`GEMINI_API_KEY`; default model `veo-3.1-fast-generate-preview`):
+
+- `/admin/media` (accounts in `ADMIN_EMAILS`) lists all exercises with their
+  clip status and the estimated cost (≈ $0.32 per 4-second clip on Veo 3.1 Fast;
+  ≈ $27 for the whole library — check Google's current pricing).
+- One consistent prompt per exercise (`src/lib/media/veo.ts`): the same athlete
+  style, dark studio, lime rim light, static three-quarter view, two slow reps,
+  start/end in the same position so it loops; a negative prompt rules out text,
+  extra limbs and unsafe form.
+- Generation is a long-running operation; the page polls it, downloads the clip
+  and stores it (`exercise_media`). Status: generating → **needs review** →
+  approved (live) / rejected. **Users only ever see approved clips**; AI video
+  can get form wrong, so every clip needs a human check. Unapproved clips are
+  served only to admins.
+- Approved clips replace the drawn figure on the exercise page and in the
+  session player, labelled "AI demo", muted and looping (Veo always adds audio).
+  Clips are served with Range support (needed by Safari).
+- Limits: `VEO_DAILY_LIMIT` generations per day (default 20), at most 4 running.
+
 ## Data model
 
 - `workout_profiles` — the setup answers and when the doctor note was acknowledged.
