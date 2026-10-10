@@ -26,15 +26,15 @@ export function RecipeCard({ r, t, featured = false }: { r: RecipeCardData; t: T
           labels={{ ai: t("recipe.illustration"), photo: t("recipe.verifiedPhoto"), placeholder: t("recipe.illustrationPlaceholder") }}
         />
         <div className="absolute top-2 right-2 flex gap-1">
-          {r.isKeto && <span className="rounded-full bg-lime px-2 py-0.5 text-[11px] font-bold text-[#0a0c0e]">{t("cat.keto")}</span>}
+          {r.isKeto && <span className="rounded-full bg-lime px-2 py-0.5 text-[11px] font-bold text-white">{t("cat.keto")}</span>}
           {r.isHighProtein && <span className="rounded-full bg-[#0a0c0e] px-2 py-0.5 text-[11px] font-bold text-lime">{t("cat.high_protein")}</span>}
         </div>
       </div>
       <div className="flex flex-1 items-end gap-2 px-2 pt-2.5 pb-2">
         <div className="min-w-0 flex-1">
           <h3 className="font-display line-clamp-2 text-[15px] leading-snug font-bold">{r.title}</h3>
-          <p className={cn("mt-1 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-[12px] tabular", featured ? "text-[#0a0c0e]/70" : "text-muted")}>
-            <span className={cn("inline-flex items-center gap-0.5 font-semibold", featured ? "text-[#0a0c0e]" : "text-charcoal")}>
+          <p className={cn("mt-1 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-[12px] tabular", featured ? "text-white/70" : "text-muted")}>
+            <span className={cn("inline-flex items-center gap-0.5 font-semibold", featured ? "text-white" : "text-charcoal")}>
               <Flame className="size-3.5" aria-hidden /> {Math.round(r.kcal)}
             </span>
             <span>P {Math.round(r.proteinG)}g</span>

@@ -9,7 +9,7 @@ import { authorizationUrl, googleHealthConfigured, STATE_COOKIE } from "@/server
 export async function GET() {
   const current = await getCurrentUser();
   if (!current) return NextResponse.redirect(new URL("/", config.appUrl));
-  if (!googleHealthConfigured()) return NextResponse.redirect(new URL("/health?google=not_configured", config.appUrl));
+  if (!googleHealthConfigured()) return NextResponse.redirect(new URL("/me/sync/google?google=not_configured", config.appUrl));
   const state = randomBytes(24).toString("base64url");
   (await cookies()).set(STATE_COOKIE, `${state}.${current.user.id}`, {
     httpOnly: true,

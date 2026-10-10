@@ -6,7 +6,6 @@ import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Chip";
 import { ExerciseMedia } from "@/components/workouts/ExerciseMedia";
 import { SwapButton } from "@/components/workouts/SwapButton";
-import type { MessageKey } from "@/lib/i18n/messages/en";
 import { getExercise } from "@/lib/workouts/exercises";
 import { formatDose, perHand } from "@/lib/workouts/format";
 import { estimateDay } from "@/lib/workouts/load";
@@ -16,6 +15,7 @@ import { getI18n } from "@/server/i18n";
 import { latestWeight } from "@/server/services/progress";
 import { canStartDay, getActiveProgram, getSession, programDay, programProgress } from "@/server/services/workouts";
 import { buttonClass } from "@/components/ui/Button";
+import { dayTitle } from "@/lib/workouts/label";
 
 export const metadata = { title: "Workout day" };
 
@@ -34,7 +34,7 @@ export default async function WorkoutDayPage({ params }: PageProps<"/workouts/da
   const original = program.days[index];
   const isSwapped = (p: Prescription) => [...original.warmup, ...original.main, ...original.cooldown].find((o) => o.slot === p.slot)?.exerciseId !== p.exerciseId;
   const hasLoads = day.main.some((m) => m.loadKg != null);
-  const title = day.kind === "rest" ? t("wk.restDay") : day.kind === "recovery" ? t("wk.recoveryDay") : t(`wk.focus.${day.focus}` as MessageKey);
+  const title = dayTitle(day, t);
 
   const row = (p: Prescription, compact: boolean) => {
     const ex = getExercise(p.exerciseId);

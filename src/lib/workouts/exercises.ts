@@ -1,3 +1,4 @@
+import { GUIDE_EXERCISES } from "./exercises-guides";
 import type { Exercise } from "./types";
 
 /**
@@ -1429,6 +1430,8 @@ export const EXERCISES: Exercise[] = [
     steps: ["Move slowly through cat–cow, hip circles, gentle lunges and a forward fold.", "Breathe slowly through the nose.", "Nothing should hurt."],
     mistakes: ["Forcing a stretch."],
   },
+  // Moves used only by guide programs (tai chi, chair work, military drills).
+  ...GUIDE_EXERCISES,
 ];
 
 export const EXERCISE_BY_ID = new Map(EXERCISES.map((e) => [e.id, e]));

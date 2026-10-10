@@ -61,6 +61,7 @@ export async function sharedPlan(token: string) {
       program && progress
         ? {
             split: program.split,
+            name: program.name,
             level: program.level,
             goal: program.goal,
             daysPerWeek: program.daysPerWeek,

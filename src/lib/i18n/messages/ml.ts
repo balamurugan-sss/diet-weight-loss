@@ -3,7 +3,7 @@ import type { Messages } from "./en";
 export const ml: Partial<Messages> = {
   "app.name": "Movewell",
 
-  "nav.home": "ഇന്ന്",
+  "nav.home": "എന്റെ പ്രോഗ്രാം",
   "nav.planner": "പ്ലാൻ",
   "nav.recipes": "റെസിപ്പികൾ",
   "nav.cook": "പാചകം",

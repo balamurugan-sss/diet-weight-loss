@@ -34,12 +34,15 @@ test("onboard → targets → plan → swap → cook → log", async ({ page }) 
   await page.waitForURL(/\/planner$/);
   await expect(page.getByRole("heading", { name: "Breakfast" })).toBeVisible();
 
-  await page.getByRole("button", { name: /Swap meal/ }).first().click();
+  await page.getByRole("button", { name: "Swap", exact: true }).first().click();
   const option = page.getByRole("dialog").getByRole("button").filter({ hasText: "kcal" }).first();
   await option.click();
   await expect(page.getByRole("dialog")).toBeHidden();
 
-  await page.getByRole("link", { name: /Start cooking/ }).first().click();
+  // Open the first meal card, then cook it.
+  await page.locator('a[href^="/recipes/"]').first().click();
+  await page.waitForURL(/\/recipes\//);
+  await page.getByRole("link", { name: /Start cooking/ }).click();
   await page.waitForURL(/\/cook\//);
   for (let i = 0; i < 20; i++) {
     const finish = page.getByRole("button", { name: /^Finish/ });
@@ -51,6 +54,6 @@ test("onboard → targets → plan → swap → cook → log", async ({ page }) 
   }
   await page.getByRole("button", { name: /Log 1 serving/ }).click();
   await expect(page.getByRole("button", { name: /Logged to today/ })).toBeVisible();
-  await page.goto("/home");
-  await expect(page.getByText(/kcal left|kcal over/)).toBeVisible();
+  await page.goto("/me");
+  await expect(page.getByText("Daily calorie norm")).toBeVisible();
 });

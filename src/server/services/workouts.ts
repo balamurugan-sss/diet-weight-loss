@@ -1,8 +1,9 @@
 import "server-only";
 import { randomUUID } from "node:crypto";
-import { and, desc, eq, inArray, ne } from "drizzle-orm";
+import { and, desc, eq, inArray, ne, sql } from "drizzle-orm";
 import { profileAge } from "@/lib/profile/health";
-import { applySwaps, availableEquipment, generateProgram, type ProgramInput, type SelectionContext } from "@/lib/workouts/generator";
+import { applySwaps, availableEquipment, generateProgram, rhythmForWeekdays, type ProgramInput, type SelectionContext } from "@/lib/workouts/generator";
+import { getProgramTemplate, templateDays } from "@/lib/guides";
 import { estimatePrescriptions, type LoggedSet } from "@/lib/workouts/load";
 import { replayProgram, type Completion, type ProgramProgress } from "@/lib/workouts/progress";
 import type { DaysPerWeek, Prescription, ProgramDay, WorkoutGoal, WorkoutProfileInput } from "@/lib/workouts/types";
@@ -84,25 +85,13 @@ export async function programInputFor(userId: string, profile: Profile, wp: Pick
   };
 }
 
-/** Saves the answers and starts a fresh 4-week program today (the old one is archived, history kept). */
-export async function saveWorkoutSetup(userId: string, profile: Profile, input: WorkoutProfileInput) {
-  const now = new Date();
-  const values = {
-    location: input.location,
-    level: input.level,
-    goal: input.goal,
-    daysPerWeek: input.daysPerWeek,
-    equipment: input.location === "gym" ? [] : input.equipment,
-    doctorAckAt: now,
-    updatedAt: now,
-  };
-  const program = generateProgram(await programInputFor(userId, profile, values));
+/** Starts a fresh 4-week program today from these settings (the old one is archived, history kept). */
+async function startProgram(userId: string, profile: Profile, values: Pick<WorkoutProfile, "location" | "level" | "goal" | "daysPerWeek" | "equipment" | "weekdays">) {
+  const start = todayISO();
+  const rhythm = values.weekdays?.length ? rhythmForWeekdays(values.weekdays, new Date(start + "T00:00:00Z").getUTCDay()) : undefined;
+  const program = generateProgram({ ...(await programInputFor(userId, profile, values)), rhythm });
   const id = randomUUID();
   await db.batch([
-    db
-      .insert(schema.workoutProfiles)
-      .values({ userId, ...values })
-      .onConflictDoUpdate({ target: schema.workoutProfiles.userId, set: values }),
     db
       .update(schema.workoutPrograms)
       .set({ status: "archived" })
@@ -116,12 +105,44 @@ export async function saveWorkoutSetup(userId: string, profile: Profile, input: 
       level: program.level,
       goal: program.goal,
       daysPerWeek: program.daysPerWeek,
-      startDate: todayISO(),
+      startDate: start,
       days: program.days,
       status: "active",
     }),
   ]);
   return id;
+}
+
+/** Saves the answers and starts a fresh program. Chosen weekdays are kept when the day count still matches. */
+export async function saveWorkoutSetup(userId: string, profile: Profile, input: WorkoutProfileInput) {
+  const now = new Date();
+  const existing = await getWorkoutProfile(userId);
+  const values = {
+    location: input.location,
+    level: input.level,
+    goal: input.goal,
+    daysPerWeek: input.daysPerWeek,
+    equipment: input.location === "gym" ? [] : input.equipment,
+    weekdays: existing?.weekdays?.length === input.daysPerWeek ? existing.weekdays : null,
+    doctorAckAt: now,
+    updatedAt: now,
+  };
+  await db
+    .insert(schema.workoutProfiles)
+    .values({ userId, ...values })
+    .onConflictDoUpdate({ target: schema.workoutProfiles.userId, set: values });
+  return startProgram(userId, profile, values);
+}
+
+/** "Tap the days you want to train": 3–6 weekdays; restarts the 4-week plan from today on those days. */
+export async function saveWorkoutSchedule(userId: string, profile: Profile, weekdays: number[]) {
+  const existing = await getWorkoutProfile(userId);
+  if (!existing) return null;
+  const days = [...new Set(weekdays)].filter((d) => Number.isInteger(d) && d >= 0 && d <= 6).sort();
+  if (days.length < 3 || days.length > 6) return null;
+  const values = { ...existing, daysPerWeek: days.length, weekdays: days, updatedAt: new Date() };
+  await db.update(schema.workoutProfiles).set({ daysPerWeek: days.length, weekdays: days, updatedAt: values.updatedAt }).where(eq(schema.workoutProfiles.userId, userId));
+  return startProgram(userId, profile, values);
 }
 
 export async function completions(programId: string): Promise<Completion[]> {
@@ -364,4 +385,42 @@ export async function strengthHistory(userId: string) {
   return [...best]
     .map(([exerciseId, byDate]) => ({ exerciseId, points: [...byDate].map(([date, e1rm]) => ({ date, e1rm })).sort((a, b) => a.date.localeCompare(b.date)) }))
     .sort((a, b) => b.points.length - a.points.length);
+}
+
+/** All-time totals for the Me tab: completed workouts and minutes trained. */
+export async function workoutTotals(userId: string) {
+  const [row] = await db
+    .select({ workouts: sql<number>`count(*)`, seconds: sql<number>`coalesce(sum(${schema.workoutSessions.durationSec}), 0)` })
+    .from(schema.workoutSessions)
+    .where(and(eq(schema.workoutSessions.userId, userId), eq(schema.workoutSessions.status, "completed"), eq(schema.workoutSessions.kind, "workout")));
+  return { workouts: Number(row?.workouts ?? 0), minutes: Math.round(Number(row?.seconds ?? 0) / 60) };
+}
+
+/** Follow an Explore guide's program: it becomes the active program from today (the current one is archived). */
+export async function startGuideProgram(userId: string, profile: Profile, programId: string) {
+  const tpl = getProgramTemplate(programId);
+  if (!tpl) return null;
+  const [wp, kg] = await Promise.all([getWorkoutProfile(userId), bodyWeight(userId, profile)]);
+  const days = templateDays(tpl, kg);
+  const id = randomUUID();
+  await db.batch([
+    db
+      .update(schema.workoutPrograms)
+      .set({ status: "archived" })
+      .where(and(eq(schema.workoutPrograms.userId, userId), eq(schema.workoutPrograms.status, "active"))),
+    db.insert(schema.workoutPrograms).values({
+      id,
+      userId,
+      name: tpl.name,
+      split: "guide",
+      location: "home",
+      level: tpl.level,
+      goal: wp?.goal ?? "fit",
+      daysPerWeek: Math.max(1, days.slice(0, 7).filter((d) => d.kind === "workout").length),
+      startDate: todayISO(),
+      days,
+      status: "active",
+    }),
+  ]);
+  return id;
 }

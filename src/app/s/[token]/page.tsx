@@ -61,7 +61,7 @@ export default async function SharedPlanPage({ params }: PageProps<"/s/[token]">
           <Squiggle className="absolute -top-6 -right-20 h-24 w-64 opacity-50" />
           <div className="relative">
             <p className="text-xs font-bold tracking-wide text-lime uppercase">{t("share.heading")}</p>
-            <TwoTone as="h1" text={t(`wk.split.${w.split}` as MessageKey)} className="mt-1 text-[2rem] leading-tight" />
+            <TwoTone as="h1" text={w.split === "guide" ? w.name : t(`wk.split.${w.split}` as MessageKey)} className="mt-1 text-[2rem] leading-tight" />
             <p className="mt-1 text-white/75">
               {t(`wk.level.${w.level}` as MessageKey)} · {t(`wk.goal.${w.goal}` as MessageKey)} · {t("wk.daysPerWeek", { n: w.daysPerWeek })}
             </p>
@@ -139,7 +139,7 @@ export default async function SharedPlanPage({ params }: PageProps<"/s/[token]">
       <Link href="/" className="card-lime flex items-center gap-4 p-5 transition-transform hover:-translate-y-0.5">
         <div className="flex-1">
           <h2 className="text-xl">{t("share.cta")}</h2>
-          <p className="text-[15px] text-[#0a0c0e]/70">{t("share.ctaBody")}</p>
+          <p className="text-[15px] text-white/70">{t("share.ctaBody")}</p>
         </div>
         <span className="grid size-12 shrink-0 place-items-center rounded-full bg-[#0a0c0e] text-lime">
           <ArrowRight className="size-5" aria-hidden />

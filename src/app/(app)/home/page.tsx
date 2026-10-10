@@ -1,166 +1,165 @@
-import { ArrowRight, Dumbbell } from "lucide-react";
+import { ArrowRight, Headset, SlidersHorizontal } from "lucide-react";
 import Link from "next/link";
-import { StatStrip, TwoTone } from "@/components/brand/Brand";
-import { WaterTracker, WeightQuickLog } from "@/components/home/Trackers";
-import { RecipeVisual } from "@/components/recipes/RecipeVisual";
-import { BodyPanel } from "@/components/today/BodyPanel";
+import { WeekStrip, type StripDay } from "@/components/program/WeekStrip";
+import { WorkoutHero, type HeroAction } from "@/components/program/WorkoutHero";
 import { CheckIns } from "@/components/today/CheckIns";
 import { DayTimeline } from "@/components/today/DayTimeline";
-import { TrainTodayCard } from "@/components/today/TrainTodayCard";
-import { buttonClass, LinkButton } from "@/components/ui/Button";
-import { Card } from "@/components/ui/Card";
-import { MacroBar, ProgressRing } from "@/components/ui/ProgressRing";
-import { cn } from "@/lib/cn";
-import type { MessageKey } from "@/lib/i18n/messages/en";
+import { WorkoutTimeControl } from "@/components/today/WorkoutTimeControl";
 import { profileAge } from "@/lib/profile/health";
 import { quickFoods } from "@/lib/today/quickFoods";
+import { getExercise } from "@/lib/workouts/exercises";
+import { dayTitle } from "@/lib/workouts/label";
+import { estimateDay } from "@/lib/workouts/load";
+import { addDays } from "@/lib/workouts/progress";
+import type { ProgramDay } from "@/lib/workouts/types";
 import { requireOnboarded } from "@/server/auth/dal";
 import { getI18n } from "@/server/i18n";
-import { dayView } from "@/server/services/dayView";
-import { currentDayIndex, getActivePlan } from "@/server/services/plans";
-import { intakeForDate, latestWeight, waterFor } from "@/server/services/progress";
+import { approvedVideos } from "@/server/services/exerciseMedia";
+import { intakeForDate } from "@/server/services/progress";
 import { targetsForProfile } from "@/server/services/targets";
 import { todayOverview } from "@/server/services/today";
-import { trainingContext } from "@/server/services/workouts";
-import { hourNow, todayISO } from "@/server/time";
+import { bodyWeight, getActiveProgram, programDay, programProgress, trainingContext } from "@/server/services/workouts";
+import { todayISO } from "@/server/time";
 
-export const metadata = { title: "Today" };
+export const metadata = { title: "My program" };
 
-const SLOT_HOUR: Record<string, number> = { breakfast: 10, mid_morning: 12, lunch: 15, evening: 18, dinner: 23 };
+/** Sunday-start week containing `iso`, as in the reference calendar strip. */
+const weekOf = (iso: string) => addDays(iso, -new Date(iso + "T00:00:00Z").getUTCDay());
 
 /**
- * Today: the day's activity line first, then the questions worth asking right
- * now (wake-up, morning drink, workout time, pre-workout food, protein), body
- * data from the watch, training, and the food budget. Meal planning lives in
- * the Meals tab.
+ * My program: the week strip, today's (or the picked day's) workout as one big
+ * card, then a single check-in and the day so far. Everything else lives in
+ * Explore, Meals and Me.
  */
-export default async function TodayPage({ searchParams }: PageProps<"/home">) {
+export default async function MyProgramPage({ searchParams }: PageProps<"/home">) {
   const { user, profile } = await requireOnboarded();
-  const { t } = await getI18n();
+  const { t, lang } = await getI18n();
+  const locale = lang === "ta" ? "ta-IN" : lang === "ml" ? "ml-IN" : "en-IN";
   const sp = await searchParams;
-  const baseTargets = targetsForProfile(profile)!;
   const today = todayISO();
-  const [plan, intake, water, weight, training] = await Promise.all([
-    getActivePlan(user.id),
-    intakeForDate(user.id, today),
-    waterFor(user.id, today),
-    latestWeight(user.id),
-    trainingContext(user.id, profile, today),
-  ]);
-  const targets = training?.adjusted ?? baseTargets;
-  const bonus = training?.adjusted?.addBackKcal ?? 0;
-  const proteinLeft = Math.max(0, targets.proteinG - intake.proteinG);
-  const o = await todayOverview(user.id, profile, proteinLeft);
-  const view = plan ? await dayView(plan, profile, currentDayIndex(plan)) : null;
+  const picked = typeof sp.d === "string" && /^\d{4}-\d{2}-\d{2}$/.test(sp.d) ? sp.d : today;
+  const sunday = weekOf(today);
 
-  const hour = hourNow();
-  const greet = hour < 12 ? "home.greeting.morning" : hour < 17 ? "home.greeting.afternoon" : "home.greeting.evening";
-  const next =
-    view?.slots.find((s) => !s.items.every((i) => i.completed) && hour < (SLOT_HOUR[s.slot] ?? 24)) ??
-    view?.slots.find((s) => !s.items.every((i) => i.completed));
-  const nextLead = next?.items.find((i) => i.course !== "base" && i.course !== "accompaniment") ?? next?.items[0];
-  const left = targets.kcal - intake.kcal;
-  const labels = { ai: t("recipe.illustration"), photo: t("recipe.verifiedPhoto"), placeholder: t("recipe.illustrationPlaceholder") };
+  const [program, intake, training, kg] = await Promise.all([
+    getActiveProgram(user.id),
+    intakeForDate(user.id, today),
+    trainingContext(user.id, profile, today),
+    bodyWeight(user.id, profile),
+  ]);
+  const targets = training?.adjusted ?? targetsForProfile(profile)!;
+  const proteinLeft = Math.max(0, targets.proteinG - intake.proteinG);
+  const [o, prog] = await Promise.all([todayOverview(user.id, profile, proteinLeft), program ? programProgress(program, [sunday, addDays(sunday, 6)]) : null]);
+
+  const dow = new Intl.DateTimeFormat(locale, { weekday: "narrow", timeZone: "UTC" });
+  const strip: StripDay[] = Array.from({ length: 7 }, (_, i) => {
+    const date = addDays(sunday, i);
+    const cell = prog?.cells.find((c) => c.date === date);
+    return {
+      date,
+      dow: dow.format(new Date(date + "T00:00:00Z")),
+      num: Number(date.slice(8)),
+      today: date === today,
+      selected: date === picked,
+      workout: cell?.kind === "workout",
+      done: cell?.status === "completed",
+    };
+  });
+
+  // The day to show: today's live state, or the program day planned for another date this week.
+  const isToday = picked === today;
+  const cell = prog?.cells.find((c) => c.date === picked);
+  const session = isToday ? o.workout.session : null;
+  const day: ProgramDay | null = isToday ? (session?.day ?? o.workout.plannedDay) : program && cell?.dayIndex != null ? programDay(program, cell.dayIndex) : null;
+  const dayIndex = isToday ? (session?.dayIndex ?? o.workout.position) : (cell?.dayIndex ?? null);
+  const lead = day?.kind === "workout" || day?.kind === "recovery" ? getExercise(day.main[0]?.exerciseId ?? day.warmup[0].exerciseId) : null;
+  const videos = lead ? await approvedVideos([lead.id]) : {};
+  const est = day && day.kind !== "rest" ? estimateDay(day, kg) : null;
+  const noEquipment = day ? [...day.warmup, ...day.main, ...day.cooldown].every((p) => getExercise(p.exerciseId).equipment.length === 0) : false;
+  const tags = day && program && day.kind !== "rest"
+    ? [
+        dayTitle(day, t),
+        noEquipment ? t("tag.noEquipment") : t("tag.equipment"),
+        t(`wk.level.${program.level}`),
+        t(`wk.goal.${program.goal}`),
+        t(`wk.loc.${day.setting}`),
+        est ? (est.minutes <= 25 ? t("tag.short") : est.minutes <= 45 ? t("tag.medium") : t("tag.long")) : null,
+      ].filter((x): x is string => !!x)
+    : [];
+
+  let action: HeroAction | null = null;
+  if (!program) action = { href: "/workouts/setup", label: t("wk.home.setupTitle"), kind: "start" };
+  else if (day && day.kind !== "rest" && dayIndex != null) {
+    if (session?.status === "completed") action = day.kind === "workout" ? { href: `/workouts/session/${dayIndex}/edit`, label: t("today.edit.cta"), kind: "edit" } : null;
+    else if (session?.status === "in_progress") action = { href: `/workouts/session/${dayIndex}`, label: t("today.tl.resume"), kind: "resume" };
+    else if (isToday) action = { href: `/workouts/session/${dayIndex}`, label: day.kind === "recovery" ? t("today.startRecovery") : t("today.startWorkout"), kind: "start" };
+    else action = { href: `/workouts/day/${dayIndex}`, label: t("program.preview"), kind: "view" };
+  }
 
   const diet = profile.dietPreference ?? "vegetarian";
   const keto = targets.style === "keto";
-  // No protein powders when extra protein isn't safe (kidney disease, under 18).
   const allowSupplements = (profileAge(profile) ?? 30) >= 18 && !(profile.conditions ?? []).includes("kidney");
   const foods = {
     morning: quickFoods("morning", { diet, keto }),
     pre: quickFoods("pre", { diet, keto }),
     protein: quickFoods("protein", { diet, keto, allowSupplements }),
   };
-  const pos = o.workout.position;
-  const startHref = pos != null && o.workout.plannedDay && o.workout.plannedDay.kind !== "rest" ? `/workouts/session/${pos}` : null;
-  const kg = weight?.weightKg ?? profile.weightKg ?? 70;
+  const startHref = o.workout.position != null && o.workout.plannedDay && o.workout.plannedDay.kind !== "rest" ? `/workouts/session/${o.workout.position}` : null;
+  const icon = "grid size-11 place-items-center rounded-md text-lime hover:bg-sand";
 
   return (
     <div className="space-y-5">
-      <header>
-        <p className="text-sm font-semibold tracking-wide text-muted uppercase">
-          {new Intl.DateTimeFormat("en-IN", { weekday: "long", day: "numeric", month: "long", timeZone: "UTC" }).format(new Date(today + "T00:00:00Z"))}
-        </p>
-        <TwoTone text={`${t(greet)}${user.displayName ? `, ${user.displayName}` : ""}`} className="mt-0.5 text-[2.3rem] sm:text-5xl" />
+      <header className="-mx-4 -mt-5 flex items-center justify-between bg-surface px-4 pt-4 sm:mx-0 sm:mt-0 sm:rounded-t-md">
+        <span className="size-11" aria-hidden />
+        <h1 className="text-[1.35rem] font-bold">{t("nav.home")}</h1>
+        <span className="flex">
+          <Link href="/settings#help" className={icon} aria-label={t("settings.help")}>
+            <Headset className="size-6" aria-hidden />
+          </Link>
+          <Link href="/workouts/settings" className={icon} aria-label={t("program.settings")}>
+            <SlidersHorizontal className="size-6" aria-hidden />
+          </Link>
+        </span>
       </header>
-
-      {sp.edited === "1" && <p className="rounded-lg bg-forest-50 px-4 py-3 text-[15px] font-semibold text-forest">{t("today.edit.saved")}</p>}
-
-      <DayTimeline items={o.timeline} now={o.now} t={t} />
-
-      <CheckIns prompts={o.prompts} now={o.now} deviceWake={o.deviceWake} workoutPlan={o.events.workout_plan ?? null} startHref={startHref} foods={foods} proteinLeftG={proteinLeft} />
-
-      <div className="grid gap-5 lg:grid-cols-2">
-        <BodyPanel health={o.health} t={t} />
-        <TrainTodayCard o={o} kg={kg} t={t} />
+      <div className="-mt-5">
+        <WeekStrip days={strip} label={t("program.week")} />
       </div>
 
-      <div className="grid gap-5 lg:grid-cols-[1.2fr_1fr]">
-        <Card>
-          <div className="flex items-center gap-5">
-            <ProgressRing value={intake.kcal} max={targets.kcal} label={t("macro.calories")}>
-              <span className="block font-display text-3xl font-extrabold tabular">{intake.kcal}</span>
-              <span className="block text-xs text-muted">{t("home.ofTarget", { n: targets.kcal })}</span>
-            </ProgressRing>
-            <div className="flex-1 space-y-2.5">
-              <p className={cn("text-sm font-semibold", left >= 0 ? "text-forest" : "text-amber")}>
-                {left >= 0 ? t("home.caloriesLeft", { n: left }) : t("home.caloriesOver", { n: -left })}
-              </p>
-              {bonus > 0 && (
-                <p className="inline-flex items-center gap-1 rounded-md bg-lime-100 px-2.5 py-0.5 text-xs font-bold text-forest-700">
-                  <Dumbbell className="size-3.5" aria-hidden /> {t("wk.bonus", { n: bonus })}
-                </p>
-              )}
-              <MacroBar label={t("macro.protein")} value={intake.proteinG} target={targets.proteinG} color="var(--color-protein)" />
-              {targets.netCarbLimitG ? (
-                <MacroBar label={t("macro.netCarbs")} value={intake.netCarbsG} target={targets.netCarbLimitG} color="var(--color-carbs)" />
-              ) : (
-                <MacroBar label={t("macro.carbs")} value={intake.carbsG} target={targets.carbsG} color="var(--color-carbs)" />
-              )}
-              <MacroBar label={t("macro.fat")} value={intake.fatG} target={targets.fatG} color="var(--color-fat)" />
-            </div>
-          </div>
-        </Card>
-        <WaterTracker ml={water} goalMl={targets.waterMl} />
-      </div>
+      <section className="space-y-3">
+        <h2 className="text-[1.75rem] leading-tight font-extrabold">
+          {!program ? t("program.none") : day ? (day.kind === "rest" ? t("wk.restDay") : dayTitle(day, t)) : prog?.finished ? t("wk.finished") : t("wk.restDay")}
+        </h2>
+        <WorkoutHero
+          lead={lead}
+          video={lead ? videos[lead.id] : undefined}
+          tags={tags}
+          action={action}
+          done={session?.status === "completed" ? t("program.done") : undefined}
+          rest={!day || day.kind === "rest"}
+          restLabel={program && (!day || day.kind === "rest") ? t("program.restBody") : undefined}
+        />
+      </section>
 
-      {nextLead && next ? (
-        <section className="card overflow-hidden p-1.5 sm:grid sm:grid-cols-[1fr_1.2fr]">
-          <RecipeVisual recipeId={nextLead.recipeId} palette={nextLead.palette} image={nextLead.image} alt={nextLead.title} labels={labels} className="aspect-[16/10] rounded-lg sm:aspect-auto sm:h-full" />
-          <div className="flex flex-col p-4 sm:p-5">
-            <p className="text-xs font-bold tracking-wider text-forest uppercase">
-              {t("home.nextMeal")} · {t(`slot.${next.slot}` as MessageKey)}
-            </p>
-            <h2 className="mt-1 text-[1.5rem] normal-case">{next.items.map((i) => i.title).join(" + ")}</h2>
-            <StatStrip
-              className="mt-3"
-              items={[
-                { value: `${next.kcal}`, label: t("macro.calories") },
-                { value: `${next.items.reduce((s, i) => s + i.proteinG, 0)} g`, label: t("macro.protein") },
-                { value: `~${nextLead.totalMin} ${t("common.min")}`, label: t("recipe.cook") },
-              ]}
-            />
-            <div className="mt-3 flex gap-2 sm:mt-auto sm:pt-3">
-              <Link href={`/cook/${nextLead.slug}?item=${nextLead.id}`} className={buttonClass("lime", "lg", "flex-1")}>
-                {t("home.startCooking")} <ArrowRight className="size-5" aria-hidden />
-              </Link>
-              <Link href="/planner" className={buttonClass("outline", "lg")}>
-                {t("nav.meals")}
-              </Link>
-            </div>
-          </div>
-        </section>
-      ) : !plan ? (
-        <Card className="hero-gradient border-0 p-6 text-white">
-          <h2 className="text-xl">{t("home.noPlan")}</h2>
-          <p className="mt-1 text-white/80">{t("home.noPlanBody")}</p>
-          <LinkButton href="/planner/new" variant="lime" size="lg" className="mt-4">
-            {t("home.createPlan")}
-          </LinkButton>
-        </Card>
-      ) : null}
+      {isToday && (
+        <>
+          {!session && day?.kind === "workout" && <WorkoutTimeControl plan={o.events.workout_plan ?? null} now={o.now} />}
+          <CheckIns prompts={o.prompts.slice(0, 1)} now={o.now} deviceWake={o.deviceWake} workoutPlan={o.events.workout_plan ?? null} startHref={startHref} foods={foods} proteinLeftG={proteinLeft} />
+          {o.timeline.length > 0 && <DayTimeline items={o.timeline} now={o.now} t={t} />}
+        </>
+      )}
 
-      <WeightQuickLog current={weight?.weightKg ?? profile.weightKg} />
+      <section>
+        <h2 className="mb-3 text-[1.5rem] font-extrabold">{t("program.perks")}</h2>
+        <Link
+          href="/explore"
+          className="relative flex min-h-28 items-center justify-between overflow-hidden border border-line bg-surface px-5 [clip-path:polygon(0_0,92%_0,100%_22%,100%_100%,8%_100%,0_78%)] hover:border-lime/60"
+        >
+          <span className="pointer-events-none absolute -left-6 h-40 w-24 -skew-x-[20deg] bg-lime/80" aria-hidden />
+          <span className="pointer-events-none absolute left-16 h-40 w-3 -skew-x-[20deg] bg-lime/50" aria-hidden />
+          <span className="relative ml-auto flex items-center gap-2 text-right text-[1.35rem] font-bold text-lime">
+            {t("program.guides")} <ArrowRight className="size-6" aria-hidden />
+          </span>
+        </Link>
+      </section>
     </div>
   );
 }

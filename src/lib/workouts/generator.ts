@@ -28,6 +28,8 @@ export type ProgramInput = {
   lowImpact?: boolean;
   /** No exercises lying on the back (later pregnancy). */
   noSupine?: boolean;
+  /** A 7-letter W/A/R week starting on the program's first day (from `rhythmForWeekdays`). Defaults to the standard rhythm. */
+  rhythm?: string;
 };
 
 export const PROGRAM_WEEKS = 4;
@@ -41,6 +43,20 @@ const RHYTHM: Record<DaysPerWeek, string> = {
   5: "WWWAWWR",
   6: "WWWWWWR",
 };
+
+/**
+ * The week's rhythm when the person picks their training weekdays (0 = Sunday).
+ * Non-training days between two training days become active recovery, the
+ * rest are rest days. The string starts on `startWeekday` (the program's first day).
+ */
+export function rhythmForWeekdays(weekdays: number[], startWeekday: number): string {
+  const on = new Set(weekdays);
+  return Array.from({ length: 7 }, (_, d) => {
+    const wd = (startWeekday + d) % 7;
+    if (on.has(wd)) return "W";
+    return on.has((wd + 6) % 7) && on.has((wd + 1) % 7) ? "A" : "R";
+  }).join("");
+}
 
 // ─── Session templates ──────────────────────────────────────────────────────
 
@@ -180,6 +196,7 @@ export type SelectionContext = {
 
 export function isAllowed(ex: Exercise, ctx: SelectionContext, maxDifficulty = MAX_DIFFICULTY[ctx.level]) {
   return (
+    !ex.guideOnly &&
     ex.settings.includes(ctx.setting) &&
     ex.equipment.every((e) => ctx.equipment.has(e)) &&
     ex.difficulty <= maxDifficulty &&
@@ -362,7 +379,7 @@ function fitToTime(day: ProgramDay, kinds: SlotKind[], input: ProgramInput) {
  */
 export function generateProgram(input: ProgramInput): Program {
   const { key, days: plans } = split(input);
-  const rhythm = RHYTHM[input.daysPerWeek];
+  const rhythm = input.rhythm && /^[WAR]{7}$/.test(input.rhythm) ? input.rhythm : RHYTHM[input.daysPerWeek];
   const days: ProgramDay[] = [];
   let firstWorkoutSeen = false;
 

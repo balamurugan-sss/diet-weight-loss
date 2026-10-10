@@ -197,13 +197,14 @@ export function createFitbitParser(since: string, utcOffsetMinutes = 0) {
       avg: idx("avg_hr", "average heart rate (bpm)"),
       max: idx("max_hr", "max heart rate (bpm)"),
       score: idx("sleep_score"),
+      energy: idx("active_kcal"),
     };
     for (const line of rows) {
       const row = cells(line);
       const d = fitbitDate(row[c.date]);
       if (!ok(d)) continue;
       const r = day(d);
-      const set = (k: "steps" | "activeMinutes" | "restingHr" | "sleepMinutes" | "avgHr" | "maxHr" | "sleepScore", i: number) => {
+      const set = (k: "steps" | "activeMinutes" | "restingHr" | "sleepMinutes" | "avgHr" | "maxHr" | "sleepScore" | "activeKcal", i: number) => {
         const v = num(row, i);
         if (Number.isFinite(v)) r[k] = Math.round(v);
       };
@@ -214,6 +215,7 @@ export function createFitbitParser(since: string, utcOffsetMinutes = 0) {
       set("avgHr", c.avg);
       set("maxHr", c.max);
       set("sleepScore", c.score);
+      set("activeKcal", c.energy);
     }
   }
 

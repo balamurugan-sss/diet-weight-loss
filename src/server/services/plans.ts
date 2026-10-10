@@ -27,7 +27,16 @@ export type Plan = typeof schema.mealPlans.$inferSelect;
 export async function plannerContextFor(profile: Profile) {
   const targets = targetsForProfile(profile);
   if (!targets) throw new Error("Profile incomplete");
-  return { targets, pp: plannerProfile(profile, targets), recipes: await plannerRecipes() };
+  // Thumbs-down recipes from the meal-plan feedback sheet stay out of new plans and swaps.
+  const [all, disliked] = await Promise.all([
+    plannerRecipes(),
+    db
+      .select({ id: schema.recipeFeedback.recipeId })
+      .from(schema.recipeFeedback)
+      .where(and(eq(schema.recipeFeedback.userId, profile.userId), eq(schema.recipeFeedback.liked, false))),
+  ]);
+  const skip = new Set(disliked.map((d) => d.id));
+  return { targets, pp: plannerProfile(profile, targets), recipes: skip.size ? all.filter((r) => !skip.has(r.id)) : all };
 }
 
 function itemsFromDays(planId: string, days: DayPlan[]) {

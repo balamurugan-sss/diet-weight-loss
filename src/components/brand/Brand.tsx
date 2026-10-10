@@ -30,7 +30,7 @@ export function Scribble({ lines, className, tone = "light" }: { lines: string[]
       aria-hidden
       className={cn(
         "font-display inline-block border-l-4 pl-2 text-[1.15rem] leading-[1.05] font-extrabold tracking-wide uppercase italic",
-        tone === "dark" ? "border-[#0a0c0e] text-[#0a0c0e]" : "border-lime text-lime",
+        tone === "dark" ? "border-[#0a0c0e] text-white" : "border-lime text-lime",
         className,
       )}
     >
@@ -56,7 +56,7 @@ export function TwoTone({ text, className, as: Tag = "h1" }: { text: string; cla
 
 export function ArrowCircle({ className, dark = false }: { className?: string; dark?: boolean }) {
   return (
-    <span aria-hidden className={cn("grid size-10 shrink-0 place-items-center rounded-full", dark ? "bg-[#0a0c0e] text-lime" : "bg-lime text-[#0a0c0e]", className)}>
+    <span aria-hidden className={cn("grid size-10 shrink-0 place-items-center rounded-full", dark ? "bg-[#0a0c0e] text-lime" : "bg-lime text-white", className)}>
       <ArrowUpRight className="size-5" strokeWidth={2.5} />
     </span>
   );
@@ -65,7 +65,7 @@ export function ArrowCircle({ className, dark = false }: { className?: string; d
 /** Slanted lime tag, e.g. "Snack · 197 kcal". */
 export function StickerPill({ children, className }: { children: React.ReactNode; className?: string }) {
   return (
-    <span className={cn("font-display inline-flex -skew-x-6 flex-col items-center rounded-md bg-lime px-4 py-2 text-center text-[14px] leading-tight font-extrabold tracking-wide text-[#0a0c0e] uppercase shadow-[0_8px_24px_-8px_rgb(198_241_53/0.6)]", className)}>
+    <span className={cn("font-display inline-flex -skew-x-6 flex-col items-center rounded-md bg-lime px-4 py-2 text-center text-[14px] leading-tight font-extrabold tracking-wide text-white uppercase shadow-[0_8px_24px_-8px_rgb(255_90_31/0.6)]", className)}>
       {children}
     </span>
   );
@@ -88,10 +88,23 @@ export function StatStrip({ items, className }: { items: { value: React.ReactNod
 /** Movewell mark: a heavy "M" that doubles as a rising heartbeat. */
 export function LogoMark({ className }: { className?: string }) {
   return (
-    <span className={cn("grid size-9 place-items-center rounded-lg bg-lime text-[#0a0c0e]", className)} aria-hidden>
+    <span className={cn("grid size-9 place-items-center rounded-lg bg-lime text-white", className)} aria-hidden>
       <svg viewBox="0 0 24 24" className="size-6" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="square" strokeLinejoin="miter">
         <path d="M3 18 L7 6 L12 15 L17 6 L21 18" />
       </svg>
     </span>
+  );
+}
+
+/** Blue uppercase tags on workout and guide cards, e.g. FULL BODY · BEGINNER · HOME. */
+export function Tags({ items, className }: { items: string[]; className?: string }) {
+  return (
+    <ul className={cn("flex flex-wrap gap-1.5", className)}>
+      {items.map((x) => (
+        <li key={x} className="bg-[var(--color-tag)] px-2 py-0.5 text-[11px] leading-5 font-bold tracking-[0.08em] text-white uppercase">
+          {x}
+        </li>
+      ))}
+    </ul>
   );
 }

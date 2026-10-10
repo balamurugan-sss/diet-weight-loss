@@ -83,6 +83,7 @@ const best = (map: SourceSums, date: string) => {
 export function createAppleHealthParser(since: string): AppleParser {
   const steps: SourceSums = new Map();
   const exercise: SourceSums = new Map();
+  const energy: SourceSums = new Map();
   const nights = new Map<string, Map<string, Night>>(); // wake date → source → night
   const hr = new Map<string, HrDay>();
   const rhr = new Map<string, number[]>();
@@ -148,6 +149,7 @@ export function createAppleHealthParser(since: string): AppleParser {
     if (!Number.isFinite(value)) return;
     if (type === "HKQuantityTypeIdentifierStepCount") add(steps, date, source, value);
     else if (type === "HKQuantityTypeIdentifierAppleExerciseTime") add(exercise, date, source, value);
+    else if (type === "HKQuantityTypeIdentifierActiveEnergyBurned") add(energy, date, source, a.unit === "kJ" ? value / 4.184 : value);
     else if (type === "HKQuantityTypeIdentifierRestingHeartRate") rhr.set(date, [...(rhr.get(date) ?? []), value]);
   };
 
@@ -160,7 +162,7 @@ export function createAppleHealthParser(since: string): AppleParser {
       for (const m of chunk.slice(0, cut).matchAll(/<(Record|Workout)\s([^>]*?)\/?>/g)) handle(m[1], attrs(m[2]));
     },
     finish(): HealthImport {
-      const dates = new Set([...steps.keys(), ...exercise.keys(), ...nights.keys(), ...rhr.keys(), ...hr.keys()]);
+      const dates = new Set([...steps.keys(), ...exercise.keys(), ...nights.keys(), ...rhr.keys(), ...hr.keys(), ...energy.keys()]);
       const days: HealthDay[] = [...dates].sort().map((date) => {
         const s = best(steps, date);
         const e = best(exercise, date);
@@ -184,6 +186,7 @@ export function createAppleHealthParser(since: string): AppleParser {
           avgHr: h?.count ? Math.round(h.sum / h.count) : null,
           maxHr: h?.count ? Math.round(h.max) : null,
           hrHourly: h ? hourlyAverages(h.hours) : null,
+          activeKcal: best(energy, date) == null ? null : Math.round(best(energy, date)!),
         };
       });
       return { days, workouts };

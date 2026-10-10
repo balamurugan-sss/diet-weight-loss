@@ -21,6 +21,8 @@ import {
   logSet,
   programDay,
   programProgress,
+  saveWorkoutSchedule,
+  startGuideProgram,
   saveWorkoutSetup,
   selectionContext,
   sessionSets,
@@ -199,4 +201,25 @@ export async function editSessionAction(input: unknown): Promise<{ ok: true; sum
     .where(eq(schema.workoutSessions.id, session.id));
   revalidatePath("/", "layout");
   return { ok: true, summary };
+}
+
+/** Program settings → Schedule: the weekdays to train on (restarts the plan from today). */
+export async function saveScheduleAction(weekdays: unknown): Promise<ActionResult> {
+  const days = z.array(z.number().int().min(0).max(6)).min(3).max(6).safeParse(weekdays);
+  if (!days.success) return { ok: false, error: "program.schedule.count" };
+  const { user, profile } = await requireOnboarded();
+  const id = await saveWorkoutSchedule(user.id, profile, days.data);
+  if (!id) return { ok: false, error: "program.schedule.setupFirst" };
+  revalidatePath("/", "layout");
+  return { ok: true };
+}
+
+/** Explore → a program guide → "Start this program". */
+export async function startGuideProgramAction(programId: unknown): Promise<ActionResult> {
+  const id = z.string().min(1).max(80).safeParse(programId);
+  if (!id.success) return { ok: false, error: "common.error" };
+  const { user, profile } = await requireOnboarded();
+  if (!(await startGuideProgram(user.id, profile, id.data))) return { ok: false, error: "common.error" };
+  revalidatePath("/", "layout");
+  return { ok: true };
 }

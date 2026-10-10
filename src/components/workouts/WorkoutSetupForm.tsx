@@ -89,12 +89,12 @@ export function WorkoutSetupForm({
                   selected ? "card-lime-strong border-transparent" : "border-line bg-surface hover:border-forest/40",
                 )}
               >
-                <span className={cn("grid size-11 shrink-0 place-items-center rounded-full", selected ? "bg-[#0a0c0e] text-[#c6f135]" : "bg-sand text-forest")}>
+                <span className={cn("grid size-11 shrink-0 place-items-center rounded-full", selected ? "bg-[#0a0c0e] text-[#ff5a1f]" : "bg-sand text-forest")}>
                   <Icon className="size-5" aria-hidden />
                 </span>
                 <span>
                   <span className="block font-display text-lg font-bold">{t(`wk.loc.${loc}`)}</span>
-                  <span className={cn("block text-sm leading-snug", selected ? "text-[#0a0c0e]/70" : "text-muted")}>{t(`wk.loc.${loc}.help`)}</span>
+                  <span className={cn("block text-sm leading-snug", selected ? "text-white/70" : "text-muted")}>{t(`wk.loc.${loc}.help`)}</span>
                 </span>
               </button>
             );

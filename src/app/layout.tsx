@@ -1,11 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Barlow, Barlow_Condensed, Caveat, Noto_Sans_Malayalam, Noto_Sans_Tamil } from "next/font/google";
+import { Caveat, Inter, Noto_Sans_Malayalam, Noto_Sans_Tamil } from "next/font/google";
 import { getLocale } from "@/server/i18n";
 import { getTheme } from "@/server/theme";
 import "./globals.css";
 
-const body = Barlow({ subsets: ["latin"], variable: "--font-body", weight: ["400", "500", "600", "700"], display: "swap" });
-const heading = Barlow_Condensed({ subsets: ["latin"], variable: "--font-heading", weight: ["600", "700", "800"], display: "swap" });
+const body = Inter({ subsets: ["latin"], variable: "--font-body", display: "swap" });
+const heading = Inter({ subsets: ["latin"], variable: "--font-heading", weight: ["600", "700", "800"], display: "swap" });
 const script = Caveat({ subsets: ["latin"], variable: "--font-script", weight: ["500", "600", "700"], display: "swap" });
 const tamil = Noto_Sans_Tamil({ subsets: ["tamil"], variable: "--font-tamil", weight: ["400", "500", "600", "700"], display: "swap" });
 const malayalam = Noto_Sans_Malayalam({ subsets: ["malayalam"], variable: "--font-malayalam", weight: ["400", "500", "600", "700"], display: "swap" });
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 export async function generateViewport(): Promise<Viewport> {
   const theme = await getTheme();
-  return { width: "device-width", initialScale: 1, viewportFit: "cover", themeColor: theme === "dark" ? "#0a0c0e" : "#f2f4f6" };
+  return { width: "device-width", initialScale: 1, viewportFit: "cover", themeColor: theme === "dark" ? "#121212" : "#f4f4f5" };
 }
 
 export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

@@ -1,6 +1,13 @@
-# Thali — AI Indian Diet Planner, Keto Coach & Visual Cooking Assistant
+# Movewell — Workouts, Indian Meal Plans & Health Data
 
-A mobile-first web app for Indian users who want to lose weight on familiar food — and train alongside it:
+A mobile-first web app for Indian users who want to train and eat well. Four tabs:
+
+- **My program** — the week strip, today's workout as one big card (tags, start, resume, "edit what I did"), one check-in at a time (wake-up, morning drink, training time, pre-workout snack, post-workout protein) and the day's activity line. Program settings set place, goal, difficulty, equipment and the training weekdays.
+- **Explore** — 9 followable programs (calisthenics, 21-day military calisthenics, chair tai chi, tai chi, tai chi walking, military conditioning, tai chi for golfers, basic workouts, tai chi challenge) and 9 evidence-based guides (sleep, supplements, progress, fasting, cardio, metabolism, fat loss, libido, celebrity transformations). All printable.
+- **Meals** — one day at a time: a card per meal with its time, "Mark as cooked", "Swap", a month calendar, thumbs up/down feedback, and the shopping list.
+- **Me** — workouts, minutes and streak; weight; daily calorie norm and water; a tracker for steps, active calories and sleep against your own goals; heart rate and sleep score from Apple Health, Google Fit, Fitbit or Pixel Watch.
+
+Accounts need a name, email and password (there is no guest mode). Under the hood:
 personalised calorie and macro targets with safety screening, 7/14/30-day meal plans
 built from a validated catalogue of Indian and international recipes, keto and
 low-carb options checked carb-by-carb, a hands-free visual cooking mode with

@@ -122,6 +122,8 @@ export type Exercise = {
   load?: { ratio: number; implement: "barbell" | "dumbbell" | "machine" | "cable" | "kettlebell"; upper: boolean; minKg?: number; single?: true };
   steps: string[];
   mistakes: string[];
+  /** Only used by guide programs (tai chi, chair work…); never picked by the program generator or swaps. */
+  guideOnly?: true;
   /** Optional photo/video/GIF; when absent the animated figure is shown. */
   media?: { kind: "image" | "video"; src: string; credit?: string } | null;
 };
@@ -146,6 +148,8 @@ export type ProgramDay = {
   kind: DayKind;
   /** Short focus label key, e.g. "lower", "push", "full". */
   focus: string;
+  /** Guide programs name their days ("Push-up ladder"); generated programs use `focus`. */
+  title?: string;
   setting: Setting;
   isIntro: boolean;
   warmup: Prescription[];

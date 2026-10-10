@@ -1,20 +1,24 @@
-import { ArrowRight, CalendarDays, Dumbbell, ShoppingBasket } from "lucide-react";
+import { eq, sql } from "drizzle-orm";
+import { Dumbbell } from "lucide-react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { DayTotals } from "@/components/planner/DayTotals";
-import { MealSlot } from "@/components/planner/MealSlot";
-import { FavouritePlanButton, RegenerateDayButton } from "@/components/planner/PlanControls";
-import { buttonClass } from "@/components/ui/Button";
-import { cn } from "@/lib/cn";
+import { MealCard } from "@/components/planner/MealCard";
+import { PlanDateNav, type PlanDay } from "@/components/planner/PlanDateNav";
+import { RegenerateDayButton } from "@/components/planner/PlanControls";
+import { slotTime } from "@/lib/planner/mealTimes";
 import { requireOnboarded } from "@/server/auth/dal";
+import { db, schema } from "@/server/db/client";
 import { getI18n } from "@/server/i18n";
 import { dayView } from "@/server/services/dayView";
 import { currentDayIndex, getActivePlan, planDate } from "@/server/services/plans";
+import { dayEventsFor } from "@/server/services/today";
 import { remaining } from "@/server/services/usage";
+import { healthDaysBetween } from "@/server/services/health";
 import { trainingContext } from "@/server/services/workouts";
 
 export const metadata = { title: "Meal plan" };
 
+/** Meal plan: one day at a time — a big card per meal with its time, Mark as cooked and Swap. */
 export default async function PlannerPage({ searchParams }: PageProps<"/planner">) {
   const { user, profile } = await requireOnboarded();
   const plan = await getActivePlan(user.id);
@@ -24,90 +28,63 @@ export default async function PlannerPage({ searchParams }: PageProps<"/planner"
   const today = currentDayIndex(plan);
   const requested = Number(sp.day);
   const day = Number.isInteger(requested) && requested >= 0 && requested < plan.days ? requested : today;
-  const [view, regenLeft, swapsLeft, training] = await Promise.all([
+  const date = planDate(plan, day);
+  const [view, regenLeft, swapsLeft, training, events, health, progress] = await Promise.all([
     dayView(plan, profile, day),
     remaining(user, "dayRegen"),
     remaining(user, "swap"),
     day === today ? trainingContext(user.id, profile) : null,
+    dayEventsFor(user.id, date),
+    healthDaysBetween(user.id, date, date),
+    // Days where every meal was marked cooked get a tick in the calendar.
+    db
+      .select({ day: schema.mealPlanItems.dayIndex, total: sql<number>`count(*)`, done: sql<number>`count(${schema.mealPlanItems.completedAt})` })
+      .from(schema.mealPlanItems)
+      .where(eq(schema.mealPlanItems.planId, plan.id))
+      .groupBy(schema.mealPlanItems.dayIndex),
   ]);
   const locale = lang === "ta" ? "ta-IN" : lang === "ml" ? "ml-IN" : "en-IN";
-  const fmt = (iso: string, opts: Intl.DateTimeFormatOptions) => new Intl.DateTimeFormat(locale, { ...opts, timeZone: "UTC" }).format(new Date(iso + "T00:00:00Z"));
+  const doneDays = new Set(progress.filter((p) => Number(p.total) > 0 && Number(p.done) === Number(p.total)).map((p) => p.day));
+  const days: PlanDay[] = Array.from({ length: plan.days }, (_, i) => ({ index: i, date: planDate(plan, i), done: doneDays.has(i) }));
+  // Meal times follow the day's wake-up (logged or from the watch); 07:00 otherwise.
+  const wake = events.wake ?? health[0]?.wakeTime ?? null;
 
   return (
     <div className="space-y-5">
-      <header className="flex flex-wrap items-start justify-between gap-3">
-        <div>
-          <h1 className="text-[1.7rem] leading-tight font-semibold sm:text-3xl">{t("planner.title")}</h1>
-          <p className="mt-1 text-[15px] text-muted">
-            {t("planner.days", { n: plan.days })} · {t(`style.${plan.planStyle}` as never)}
-          </p>
-        </div>
+      <PlanDateNav days={days} current={day} today={today} locale={locale} />
+
+      {training?.trainingDay && training.adjusted && (
+        <Link href="/home" className="flex items-center gap-3 rounded-md bg-forest-50 px-4 py-3 text-[15px]">
+          <Dumbbell className="size-5 shrink-0 text-lime" aria-hidden />
+          <span>
+            <span className="font-semibold text-lime">{t("wk.trainingDay")}</span>
+            {training.adjusted.addBackKcal > 0 && <span className="text-ink-2"> · {t("wk.bonus", { n: training.adjusted.addBackKcal })}</span>}
+          </span>
+        </Link>
+      )}
+
+      {view.slots.map((s) => (
+        <MealCard key={s.slot} planId={plan.id} dayIndex={day} slot={s.slot} time={slotTime(s.slot, wake)} items={s.items} editable swapsLeft={swapsLeft} />
+      ))}
+
+      <footer className="space-y-3 rounded-md bg-surface p-4">
+        <p className="text-[15px] text-ink-2 tabular">
+          <span className="font-bold text-charcoal">{view.totals.kcal} kcal</span> · P {Math.round(view.totals.proteinG)} g · C {Math.round(view.totals.carbsG)} g · F {Math.round(view.totals.fatG)} g
+          <span className="text-muted"> / {plan.targets.kcal} kcal</span>
+        </p>
         <div className="flex flex-wrap gap-2">
-          <Link href="/shopping" className={buttonClass("outline", "sm")}>
-            <ShoppingBasket className="size-4" aria-hidden /> {t("nav.shopping")}
+          <RegenerateDayButton planId={plan.id} dayIndex={day} left={regenLeft} />
+          <Link href="/recipes" className="inline-flex h-11 items-center rounded-md bg-sand px-4 text-[15px] font-semibold hover:bg-sand-2">
+            {t("nav.recipes")}
           </Link>
-          <Link href="/planner/saved" className={buttonClass("outline", "sm")}>
-            {t("planner.saved")}
-          </Link>
-          <Link href="/planner/new" className={buttonClass("primary", "sm")}>
+          <Link href="/planner/new" className="inline-flex h-11 items-center rounded-md bg-sand px-4 text-[15px] font-semibold hover:bg-sand-2">
             {t("planner.new")}
           </Link>
+          <Link href="/planner/saved" className="inline-flex h-11 items-center rounded-md bg-sand px-4 text-[15px] font-semibold hover:bg-sand-2">
+            {t("planner.saved")}
+          </Link>
         </div>
-      </header>
-
-      <nav aria-label={t("planner.title")} className="no-scrollbar -mx-4 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:px-0">
-        {Array.from({ length: plan.days }, (_, i) => {
-          const date = planDate(plan, i);
-          const active = i === day;
-          return (
-            <Link
-              key={i}
-              href={`/planner?day=${i}`}
-              aria-current={active ? "date" : undefined}
-              className={cn(
-                "flex min-w-[3.6rem] shrink-0 flex-col items-center rounded-2xl border px-2 py-2 transition-colors",
-                active ? "border-forest bg-forest text-on-accent" : "border-line bg-surface hover:border-forest/40",
-              )}
-            >
-              <span className={cn("text-[11px] font-semibold uppercase", active ? "text-on-accent/70" : "text-muted")}>{fmt(date, { weekday: "short" })}</span>
-              <span className="text-lg font-semibold tabular">{fmt(date, { day: "numeric" })}</span>
-              {i === today && <span className={cn("mt-0.5 size-1.5 rounded-full", active ? "bg-on-accent" : "bg-forest")} aria-label={t("common.today")} />}
-            </Link>
-          );
-        })}
-      </nav>
-
-      <div className="grid gap-5 lg:grid-cols-[1fr_20rem] lg:items-start">
-        <div className="space-y-4">
-          <div className="flex items-center gap-2 text-sm font-semibold text-muted">
-            <CalendarDays className="size-4" aria-hidden />
-            {t("planner.day", { n: day + 1 })} · {fmt(view.date, { weekday: "long", day: "numeric", month: "long" })}
-          </div>
-          {training?.trainingDay && training.adjusted && (
-            <Link href="/workouts" className="flex items-center gap-3 rounded-2xl border border-forest/25 bg-forest-50 px-4 py-3 hover:border-forest/50">
-              <Dumbbell className="size-5 shrink-0 text-forest" aria-hidden />
-              <span className="min-w-0 flex-1 text-[15px]">
-                <span className="block font-semibold text-forest">
-                  {t("wk.trainingDay")}
-                  {training.adjusted.addBackKcal > 0 && <> · {t("wk.bonus", { n: training.adjusted.addBackKcal })}</>}
-                </span>
-                <span className="block text-sm text-ink-2">{t("wk.trainingDayProtein", { g: training.adjusted.proteinG })}</span>
-              </span>
-              <ArrowRight className="size-4 shrink-0 text-muted" aria-hidden />
-            </Link>
-          )}
-          {view.slots.map((s) => (
-            <MealSlot key={s.slot} planId={plan.id} dayIndex={day} slot={s.slot} items={s.items} kcal={s.kcal} swapsLeft={swapsLeft} />
-          ))}
-        </div>
-        <aside className="space-y-4 lg:sticky lg:top-6">
-          <DayTotals view={view} targets={plan.targets} t={t} />
-          <div className="flex flex-wrap items-start gap-3">
-            <RegenerateDayButton planId={plan.id} dayIndex={day} left={regenLeft} />
-            <FavouritePlanButton planId={plan.id} favourite={plan.isFavourite} />
-          </div>
-        </aside>
-      </div>
+      </footer>
     </div>
   );
 }

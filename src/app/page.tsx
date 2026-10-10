@@ -69,7 +69,7 @@ export default async function Landing({ searchParams }: PageProps<"/">) {
                 <Icon className="size-5" aria-hidden />
               </span>
               <h2 className="text-xl">{title}</h2>
-              <p className={cn("mt-2 flex-1 text-[15px] leading-relaxed", i === 0 ? "text-[#0a0c0e]/75" : "text-muted")}>{body}</p>
+              <p className={cn("mt-2 flex-1 text-[15px] leading-relaxed", i === 0 ? "text-white/75" : "text-muted")}>{body}</p>
               <ArrowCircle dark={i === 0} className="mt-5 self-end" />
             </div>
           ))}

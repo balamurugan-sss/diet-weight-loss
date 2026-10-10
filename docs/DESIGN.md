@@ -1,4 +1,13 @@
-# Design file
+# Design
+
+The app follows the reference screens supplied for Movewell: near-black flat panels
+(`#121212` page, `#1e1e1e` cards), one orange accent (`#ff5a1f`, white text on it), blue
+uppercase tags (`--color-tag`), Inter bold headings in title case, near-square corners,
+and four tabs (My program · Explore · Meals · Me). Tokens live in `src/app/globals.css`;
+the role names (`lime`, `forest`, …) are kept from earlier themes and now point at the
+orange palette.
+
+## Figma file (earlier Thali theme)
 
 Figma: **Thali — Diet & Workout App Design**
 https://www.figma.com/design/knHL3stEVbdnTEQvLFv2II

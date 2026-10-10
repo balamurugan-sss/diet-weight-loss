@@ -7,7 +7,7 @@ import { STATE_COOKIE } from "@/server/providers/googleHealth";
 import { connectGoogle, syncGoogle } from "@/server/services/health";
 import { bodyWeight } from "@/server/services/workouts";
 
-const back = (status: string) => NextResponse.redirect(new URL(`/health?google=${status}`, config.appUrl));
+const back = (status: string) => NextResponse.redirect(new URL(`/me/sync/google?google=${status}`, config.appUrl));
 
 /** OAuth redirect target: checks state, stores encrypted tokens, runs a first sync. */
 export async function GET(req: NextRequest) {
@@ -33,5 +33,6 @@ export async function GET(req: NextRequest) {
   } catch {
     return back("connected_sync_failed");
   }
-  return back("connected");
+  // Connected: next, the daily goals the Me tab tracks.
+  return NextResponse.redirect(new URL("/me/goals?connected=google", config.appUrl));
 }

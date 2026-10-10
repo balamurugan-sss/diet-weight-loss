@@ -64,6 +64,7 @@ test("workout setup → hub → swap → session with logged sets → completed 
   await expect(page.getByText(/added to today's food budget/)).toBeVisible();
 
   await page.getByRole("link", { name: "Back to workouts" }).click();
+  await page.waitForURL(/\/workouts$/);
   await expect(page.getByText("Done for today")).toBeVisible();
   await expect(page.getByText("1 of 16 workouts")).toBeVisible();
 });

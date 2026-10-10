@@ -25,6 +25,8 @@ export type HealthDay = {
   wakeTime: string | null;
   /** The device's own sleep score (Fitbit), 0–100. Movewell's estimate is computed separately. */
   sleepScore: number | null;
+  /** Active energy burned (kcal), when the device records it (Apple Health). */
+  activeKcal: number | null;
 };
 
 export const HEALTH_FIELDS = [
@@ -41,6 +43,7 @@ export const HEALTH_FIELDS = [
   "sleepStart",
   "wakeTime",
   "sleepScore",
+  "activeKcal",
 ] as const satisfies readonly (keyof HealthDay)[];
 
 export const emptyDay = (date: string): HealthDay => ({
@@ -58,6 +61,7 @@ export const emptyDay = (date: string): HealthDay => ({
   sleepStart: null,
   wakeTime: null,
   sleepScore: null,
+  activeKcal: null,
 });
 
 /** "HH:MM" from minutes after midnight. */
@@ -107,6 +111,7 @@ export const HealthImportInput = z.object({
         sleepStart: clock.nullable(),
         wakeTime: clock.nullable(),
         sleepScore: n(100),
+        activeKcal: n(10_000),
       }),
     )
     .max(200),

@@ -59,12 +59,12 @@ function Shell({ icon: Icon, title, body, children, onDismiss, accent }: { icon:
   return (
     <div className={cn("relative overflow-hidden p-4", accent ? "card-lime-strong" : "card border-l-4 border-l-lime")}>
       <div className="flex items-start gap-3">
-        <span className={cn("grid size-10 shrink-0 -skew-x-6 place-items-center rounded-lg", accent ? "bg-[#0a0c0e] text-[#c6f135]" : "bg-lime text-[#0a0c0e]")}>
+        <span className={cn("grid size-10 shrink-0 -skew-x-6 place-items-center rounded-lg", accent ? "bg-[#0a0c0e] text-[#ff5a1f]" : "bg-lime text-white")}>
           <Icon className="size-5 skew-x-6" aria-hidden />
         </span>
         <div className="min-w-0 flex-1">
           <h2 className="pr-8 text-[1.3rem] leading-tight">{title}</h2>
-          {body && <p className={cn("mt-0.5 text-[15px]", accent ? "text-[#0a0c0e]/75" : "text-muted")}>{body}</p>}
+          {body && <p className={cn("mt-0.5 text-[15px]", accent ? "text-white/75" : "text-muted")}>{body}</p>}
         </div>
       </div>
       {onDismiss && (
@@ -175,7 +175,7 @@ function Prompt({ id, now, deviceWake, workoutPlan, startHref, foods, proteinLef
                 <Play className="size-5" aria-hidden /> {t("today.startNow")}
               </Link>
             )}
-            <button type="button" disabled={pending} onClick={() => run(() => setWorkoutTimeAction(addMin(now, 30)))} className={buttonClass("outline", "xl", "border-[#0a0c0e]/25 bg-transparent text-[#0a0c0e]")}>
+            <button type="button" disabled={pending} onClick={() => run(() => setWorkoutTimeAction(addMin(now, 30)))} className={buttonClass("outline", "xl", "border-[#0a0c0e]/25 bg-transparent text-white")}>
               {t("today.later30")}
             </button>
           </div>

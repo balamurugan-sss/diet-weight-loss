@@ -23,6 +23,7 @@ import { getI18n } from "@/server/i18n";
 import { latestWeight } from "@/server/services/progress";
 import { getActiveProgram, programDay, programProgress, sessionsFor } from "@/server/services/workouts";
 import { todayISO } from "@/server/time";
+import { dayTitle } from "@/lib/workouts/label";
 
 export const metadata = { title: "Workouts" };
 
@@ -69,7 +70,7 @@ export default async function WorkoutsPage() {
   const missedRecently = lastWeek.length > 0 && lastWeek[lastWeek.length - 1].status === "missed";
   const upcoming = program.days.filter((d, i) => i > pos && d.kind === "workout").slice(0, 3);
   const week = day?.week ?? program.days[program.days.length - 1].week;
-  const focus = (d: ProgramDay) => t(`wk.focus.${d.focus}` as MessageKey);
+  const focus = (d: ProgramDay) => dayTitle(d, t);
   const lead = day?.main[0] ? getExercise(day.main[0].exerciseId) : null;
 
   return (
@@ -81,7 +82,7 @@ export default async function WorkoutsPage() {
       </div>
 
       <header>
-        <TwoTone text={t(`wk.split.${program.split}` as MessageKey)} className="text-[2rem] leading-tight sm:text-4xl" />
+        <TwoTone text={program.split === "guide" ? program.name : t(`wk.split.${program.split}` as MessageKey)} className="text-[2rem] leading-tight sm:text-4xl" />
         <p className="mt-1 text-[15px] text-muted">
           {t(`wk.level.${program.level}`)} · {t("wk.daysPerWeek", { n: program.daysPerWeek })} · {t("wk.weekN", { n: week })} / {program.days[program.days.length - 1].week}
         </p>
@@ -102,7 +103,7 @@ export default async function WorkoutsPage() {
           <CheckCircle2 className="size-10 shrink-0" aria-hidden />
           <div className="flex-1">
             <h2 className="text-xl">{t("wk.doneToday")}</h2>
-            <p className="text-[15px] text-[#0a0c0e]/75">{t("wk.doneTodayBody", { n: pos + 1 })}</p>
+            <p className="text-[15px] text-white/75">{t("wk.doneTodayBody", { n: pos + 1 })}</p>
           </div>
           <Link href={`/workouts/day/${pos}`} aria-label={t("wk.preview")}>
             <ArrowCircle dark className="size-12" />
@@ -115,11 +116,11 @@ export default async function WorkoutsPage() {
               {t("wk.today")} · {t("wk.dayOf", { n: pos + 1, total: program.days.length })}
             </p>
             <h2 className="mt-1 text-[1.9rem] leading-[1.05]">{focus(day)}</h2>
-            <p className="mt-1 text-sm font-medium text-[#0a0c0e]/70">
+            <p className="mt-1 text-sm font-medium text-white/70">
               {t(`wk.setting.${day.setting}`)}
               {day.isIntro && <> · {t("wk.intro")}</>}
             </p>
-            <dl className="mt-4 grid grid-cols-3 divide-x divide-[#0a0c0e]/15 rounded-2xl bg-[#0a0c0e]/[0.07]">
+            <dl className="mt-4 grid grid-cols-3 divide-x divide-white/20 rounded-2xl bg-[#0a0c0e]/[0.07]">
               {[
                 { v: `~${est!.minutes}`, l: t("common.min") },
                 { v: `~${est!.kcal}`, l: t("common.kcal") },
@@ -127,12 +128,12 @@ export default async function WorkoutsPage() {
               ].map((s) => (
                 <div key={s.l} className="px-2 py-2.5 text-center">
                   <dd className="text-[15px] font-bold tabular">{s.v}</dd>
-                  <dt className="text-[11px] text-[#0a0c0e]/65">{s.l}</dt>
+                  <dt className="text-[11px] text-white/65">{s.l}</dt>
                 </div>
               ))}
             </dl>
             <div className="mt-4 flex gap-2 sm:mt-auto">
-              <Link href={`/workouts/session/${pos}`} className="inline-flex h-14 flex-1 items-center justify-center gap-2 rounded-2xl bg-[#0a0c0e] whitespace-nowrap px-6 text-[17px] font-bold text-[#c6f135] hover:opacity-90">
+              <Link href={`/workouts/session/${pos}`} className="inline-flex h-14 flex-1 items-center justify-center gap-2 rounded-2xl bg-[#0a0c0e] whitespace-nowrap px-6 text-[17px] font-bold text-[#ff5a1f] hover:opacity-90">
                 {session?.status === "in_progress" ? t("wk.continue") : t("wk.start")} <ArrowRight className="size-5" aria-hidden />
               </Link>
               <Link
@@ -198,7 +199,7 @@ export default async function WorkoutsPage() {
             <p className="text-sm font-semibold text-muted">{t("wk.dayOf", { n: Math.min(prog.daysDone + (prog.finished ? 0 : 1), program.days.length), total: program.days.length })}</p>
             <p className="font-display text-3xl font-bold tabular">{t("wk.progress", { done: prog.workoutsDone, total: prog.workoutsTotal })}</p>
           </div>
-          <span className={cn("inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-bold", prog.streak > 0 ? "bg-lime text-[#0a0c0e]" : "bg-sand text-muted")}>
+          <span className={cn("inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-bold", prog.streak > 0 ? "bg-lime text-white" : "bg-sand text-muted")}>
             <Flame className="size-4" aria-hidden /> {t("wk.streak", { n: prog.streak })}
           </span>
         </div>
@@ -315,7 +316,7 @@ function LibraryTile({ t }: { t: TFunc }) {
     <Link href="/workouts/library" className="card-lime flex items-center gap-4 p-5 transition-transform hover:-translate-y-0.5">
       <div className="flex-1">
         <h2 className="text-xl">{t("wk.library")}</h2>
-        <p className="text-[15px] text-[#0a0c0e]/70">{t("wk.libraryBody", { n: EXERCISES.length })}</p>
+        <p className="text-[15px] text-white/70">{t("wk.libraryBody", { n: EXERCISES.length })}</p>
       </div>
       <ArrowCircle dark className="size-12" />
     </Link>

@@ -12,6 +12,7 @@ import { getI18n } from "@/server/i18n";
 import { cardioBetween } from "@/server/services/cardio";
 import { bodyWeight, getActiveProgram, programProgress } from "@/server/services/workouts";
 import { todayISO } from "@/server/time";
+import { dayTitle } from "@/lib/workouts/label";
 
 export const metadata = { title: "Training calendar" };
 
@@ -133,7 +134,7 @@ export default async function CalendarPage({ searchParams }: PageProps<"/workout
                   <span className="flex items-start justify-between">
                     <span className={cn("text-[13px] leading-none font-bold tabular", isToday ? "text-charcoal" : "")}>{fmt(d, { day: "numeric" })}</span>
                     {status === "completed" && (
-                      <span className="grid size-4 place-items-center rounded-full bg-lime text-[#0a0c0e]">
+                      <span className="grid size-4 place-items-center rounded-full bg-lime text-white">
                         <Check className="size-3" strokeWidth={3.5} aria-hidden />
                       </span>
                     )}
@@ -162,7 +163,7 @@ export default async function CalendarPage({ searchParams }: PageProps<"/workout
             );
           })}
           <li className="flex items-center gap-1.5">
-            <span className="grid size-4 place-items-center rounded-full bg-lime text-[#0a0c0e]">
+            <span className="grid size-4 place-items-center rounded-full bg-lime text-white">
               <Check className="size-2.5" strokeWidth={4} />
             </span>
             {t("wk.cal.completed")}
@@ -198,7 +199,7 @@ export default async function CalendarPage({ searchParams }: PageProps<"/workout
                 {t("wk.dayN", { n: sel!.dayIndex! + 1 })} · {sel!.status === "completed" ? t("wk.cal.completed") : sel!.status === "missed" ? t("wk.cal.missed") : t("cal.planned")}
               </span>
               <span className="block font-semibold">
-                {selPlanned.kind === "workout" ? t(`wk.focus.${selPlanned.focus}` as MessageKey) : selPlanned.kind === "recovery" ? t("wk.recoveryDay") : t("wk.restDay")}
+                {dayTitle(selPlanned, t)}
               </span>
             </span>
             <ChevronRight className="size-4 text-muted" aria-hidden />

@@ -297,8 +297,8 @@ export function SessionPlayer({
               const v = valueFor(step.p, k);
               const timing = work.running && timingSet === k;
               return (
-                <li key={k} className={cn("flex items-center gap-2.5 rounded-2xl border p-2.5 pl-4 transition-colors", v.done ? "border-transparent bg-lime-100 text-[#0a0c0e]" : "border-line bg-surface")}>
-                  <span className={cn("w-12 shrink-0 text-sm font-semibold", v.done ? "text-[#0a0c0e]/70" : "text-muted")}>{t("wk.s.set", { n: k + 1 })}</span>
+                <li key={k} className={cn("flex items-center gap-2.5 rounded-2xl border p-2.5 pl-4 transition-colors", v.done ? "border-transparent bg-lime-100 text-white" : "border-line bg-surface")}>
+                  <span className={cn("w-12 shrink-0 text-sm font-semibold", v.done ? "text-white/70" : "text-muted")}>{t("wk.s.set", { n: k + 1 })}</span>
                   {ex.mode === "reps" ? (
                     <label className="flex items-center gap-1.5">
                       <input
@@ -311,7 +311,7 @@ export function SessionPlayer({
                         className="h-11 w-16 rounded-xl border border-line bg-surface text-center text-lg font-bold text-charcoal tabular"
                         aria-label={`${t("wk.s.set", { n: k + 1 })} ${t("wk.s.reps")}`}
                       />
-                      <span className={cn("text-xs", v.done ? "text-[#0a0c0e]/70" : "text-muted")}>{t("wk.s.reps")}</span>
+                      <span className={cn("text-xs", v.done ? "text-white/70" : "text-muted")}>{t("wk.s.reps")}</span>
                     </label>
                   ) : (
                     <button
@@ -337,7 +337,7 @@ export function SessionPlayer({
                         className="h-11 w-18 rounded-xl border border-line bg-surface text-center text-lg font-bold text-charcoal tabular"
                         aria-label={`${t("wk.s.set", { n: k + 1 })} ${t("wk.s.kg")}`}
                       />
-                      <span className={cn("text-xs", v.done ? "text-[#0a0c0e]/70" : "text-muted")}>
+                      <span className={cn("text-xs", v.done ? "text-white/70" : "text-muted")}>
                         {t("wk.s.kg")}
                         {perHand(ex) && <span className="block">{t("wk.each")}</span>}
                       </span>
@@ -350,7 +350,7 @@ export function SessionPlayer({
                     aria-label={v.done ? t("wk.s.undoSet", { n: k + 1 }) : t("wk.s.markSet", { n: k + 1 })}
                     className={cn(
                       "ml-auto grid size-12 shrink-0 place-items-center rounded-full border-2 transition-colors",
-                      v.done ? "border-[#0a0c0e] bg-[#0a0c0e] text-[#c6f135]" : "border-line text-muted hover:border-forest hover:text-forest",
+                      v.done ? "border-[#0a0c0e] bg-[#0a0c0e] text-[#ff5a1f]" : "border-line text-muted hover:border-forest hover:text-forest",
                     )}
                   >
                     <Check className="size-6" strokeWidth={3} aria-hidden />
@@ -399,7 +399,7 @@ export function SessionPlayer({
                 <button type="button" onClick={() => rest.add(15)} className="h-10 rounded-full bg-[#0a0c0e]/10 px-3 text-sm font-bold">
                   {t("wk.s.add15")}
                 </button>
-                <button type="button" onClick={() => rest.stop()} className="h-10 rounded-full bg-[#0a0c0e] px-4 text-sm font-bold text-[#c6f135]">
+                <button type="button" onClick={() => rest.stop()} className="h-10 rounded-full bg-[#0a0c0e] px-4 text-sm font-bold text-[#ff5a1f]">
                   {t("wk.s.skipRest")}
                 </button>
               </span>
@@ -468,19 +468,19 @@ function Summary({
   return (
     <main className="mx-auto flex min-h-dvh max-w-xl flex-col gap-5 px-4 pt-8 pb-10">
       <section className="card-lime-strong relative overflow-hidden p-6 text-center">
-        <span className="mx-auto grid size-16 place-items-center rounded-full bg-[#0a0c0e] text-[#c6f135]">
+        <span className="mx-auto grid size-16 place-items-center rounded-full bg-[#0a0c0e] text-[#ff5a1f]">
           <Trophy className="size-8" aria-hidden />
         </span>
         <h1 className="mt-3 text-[2rem] leading-tight">{recovery ? t("wk.s.recoveryComplete") : t("wk.s.complete")}</h1>
-        <p className="font-medium text-[#0a0c0e]/70">{title}</p>
-        <dl className="mt-5 grid grid-cols-3 divide-x divide-[#0a0c0e]/15 rounded-2xl bg-[#0a0c0e]/[0.07]">
+        <p className="font-medium text-white/70">{title}</p>
+        <dl className="mt-5 grid grid-cols-3 divide-x divide-white/20 rounded-2xl bg-[#0a0c0e]/[0.07]">
           <div className="px-2 py-3">
             <dd className="font-display text-2xl font-bold tabular">{formatClock(summary.durationSec)}</dd>
-            <dt className="text-xs text-[#0a0c0e]/65">{t("wk.s.duration")}</dt>
+            <dt className="text-xs text-white/65">{t("wk.s.duration")}</dt>
           </div>
           <div className="px-2 py-3">
             <dd className="font-display text-2xl font-bold tabular">{summary.kcal}</dd>
-            <dt className="text-xs text-[#0a0c0e]/65">
+            <dt className="text-xs text-white/65">
               {t("common.kcal")} · {t("wk.s.burned")}
             </dt>
           </div>
@@ -488,7 +488,7 @@ function Summary({
             <dd className="font-display text-2xl font-bold tabular">
               {summary.exercisesDone}/{summary.exercisesTotal}
             </dd>
-            <dt className="text-xs text-[#0a0c0e]/65">{t("wk.s.exercisesDone")}</dt>
+            <dt className="text-xs text-white/65">{t("wk.s.exercisesDone")}</dt>
           </div>
         </dl>
       </section>

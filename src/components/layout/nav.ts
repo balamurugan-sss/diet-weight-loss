@@ -1,26 +1,23 @@
-import { CalendarDays, ChefHat, CookingPot, Dumbbell, HeartPulse, House, LineChart, ListChecks, NotebookPen, ShoppingBasket, UserRound, Utensils } from "lucide-react";
+import { CalendarDays, ChartColumn, Compass, Dumbbell, ListChecks, NotebookPen, PersonStanding, ShoppingBasket, Utensils } from "lucide-react";
 import type { MessageKey } from "@/lib/i18n/messages/en";
 
-type Icon = typeof House;
+type Icon = typeof PersonStanding;
 
-/** Bottom / side navigation. Today first, Meals second; Train is the centre action. */
-export const NAV_ITEMS: { href: string; key: MessageKey; icon: Icon; also?: string[]; primary?: boolean }[] = [
-  { href: "/home", key: "nav.home", icon: House },
+/** Bottom / side navigation: My program · Explore · Meals · Me. */
+export const NAV_ITEMS: { href: string; key: MessageKey; icon: Icon; also?: string[] }[] = [
+  { href: "/home", key: "nav.home", icon: PersonStanding, also: ["/workouts"] },
+  { href: "/explore", key: "nav.explore", icon: Compass },
   { href: "/planner", key: "nav.meals", icon: Utensils, also: ["/recipes", "/cook", "/shopping"] },
-  { href: "/workouts", key: "nav.train", icon: Dumbbell, primary: true },
-  { href: "/health", key: "nav.health", icon: HeartPulse, also: ["/progress"] },
-  { href: "/profile", key: "nav.profile", icon: UserRound, also: ["/settings", "/targets", "/subscription"] },
+  { href: "/me", key: "nav.me", icon: ChartColumn, also: ["/health", "/progress", "/profile", "/settings", "/targets", "/subscription"] },
 ];
 
-/** Tabs shown at the top of each section's main pages. */
+/** Segmented tabs shown at the top of a section's main pages. */
 export const SECTION_TABS: { key: MessageKey; items: { href: string; key: MessageKey; icon: Icon }[] }[] = [
   {
     key: "nav.meals",
     items: [
-      { href: "/planner", key: "nav.planner", icon: NotebookPen },
-      { href: "/recipes", key: "nav.recipes", icon: CookingPot },
-      { href: "/cook", key: "nav.cook", icon: ChefHat },
-      { href: "/shopping", key: "nav.shoppingShort", icon: ShoppingBasket },
+      { href: "/planner", key: "meals.plan", icon: NotebookPen },
+      { href: "/shopping", key: "meals.shopping", icon: ShoppingBasket },
     ],
   },
   {
@@ -29,13 +26,6 @@ export const SECTION_TABS: { key: MessageKey; items: { href: string; key: Messag
       { href: "/workouts", key: "nav.planner", icon: ListChecks },
       { href: "/workouts/calendar", key: "cal.short", icon: CalendarDays },
       { href: "/workouts/library", key: "nav.exercises", icon: Dumbbell },
-    ],
-  },
-  {
-    key: "nav.health",
-    items: [
-      { href: "/health", key: "nav.healthData", icon: HeartPulse },
-      { href: "/progress", key: "nav.progress", icon: LineChart },
     ],
   },
 ];

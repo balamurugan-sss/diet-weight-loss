@@ -63,3 +63,11 @@ Compares the latest day with the person's previous 7 days:
 - 30+ active minutes → counted towards the WHO 150 min/week.
 
 Insights are wellness guidance, not medical advice.
+
+## Heart rate, sleep score and goals
+
+- Stored per day: resting / average / max heart rate, 24 hourly heart-rate averages, time in bed, deep and REM minutes, bed and wake time, the device's sleep score (Fitbit) and active calories (Apple Health). Raw samples are never stored.
+- Sources: Apple Health export (`HKQuantityTypeIdentifierHeartRate`, `ActiveEnergyBurned`, sleep stages), Fitbit export (`heart_rate-*.json`, treated as UTC and shifted to the phone's time zone; `Sleep Score/sleep_score.csv`), Google Fit Takeout (`Daily activity metrics.csv` and the dated per-day CSVs) and the Google Health API (`daily-resting-heart-rate`, `heart-rate` daily and hourly roll-ups, sleep stages).
+- **Sleep score**: the device's score when there is one, otherwise a Movewell estimate on the same 0–100 scale (duration 50 · deep + REM 25 · efficiency 15 · resting heart rate vs usual 10; missing parts are left out and the rest scaled). Always labelled "Movewell estimate". See `sleepScore` in `src/lib/health/analysis.ts`.
+- **Sync screens** (`/me/sync/apple`, `/me/sync/google`): Google starts the real OAuth consent; Apple Health on the web means importing the Health app's export (live HealthKit access needs an iPhone app).
+- **Daily goals** (`/me/goals`): steps, active calories and hours of sleep, shown in the Me tab tracker. Active calories use the watch's figure when it records one, otherwise Movewell's own workout and cardio estimates.

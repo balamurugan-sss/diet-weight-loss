@@ -227,7 +227,7 @@ export function CookingMode(p: CookingModeProps) {
   if (finished) {
     return (
       <div className="hero-gradient flex min-h-dvh flex-col items-center justify-center px-6 text-center text-white">
-        <div className="mb-6 grid size-24 place-items-center rounded-full bg-lime text-forest-700">
+        <div className="mb-6 grid size-24 place-items-center rounded-full bg-lime text-on-accent">
           <ChefHat className="size-12" aria-hidden />
         </div>
         <h1 className="text-3xl font-semibold">{t("cook.done.title")}</h1>

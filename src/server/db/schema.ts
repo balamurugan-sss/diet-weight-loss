@@ -85,6 +85,10 @@ export const profiles = sqliteTable("profiles", {
   pace: text("pace", { enum: ["gentle", "steady"] }),
   householdSize: integer("household_size").notNull().default(1),
   language: text("language").notNull().default("en"),
+  /** Daily goals shown in the Me tab tracker. */
+  stepGoal: integer("step_goal"),
+  activeKcalGoal: integer("active_kcal_goal"),
+  sleepGoalMin: integer("sleep_goal_min"),
   transliteration: integer("transliteration", { mode: "boolean" })
     .notNull()
     .default(false),
@@ -527,6 +531,8 @@ export const workoutProfiles = sqliteTable("workout_profiles", {
   goal: text("goal", { enum: ["lose", "gain", "fit"] }).notNull(),
   daysPerWeek: integer("days_per_week").notNull(),
   equipment: json<HomeEquipment[]>("equipment").notNull().default([]),
+  /** Chosen training weekdays (0 = Sunday); null = the standard rhythm from the start day. */
+  weekdays: json<number[]>("weekdays"),
   doctorAckAt: integer("doctor_ack_at", { mode: "timestamp_ms" }).notNull(),
   createdAt: createdAt(),
   updatedAt: integer("updated_at", { mode: "timestamp_ms" }),
@@ -660,6 +666,7 @@ export const healthDays = sqliteTable(
     sleepStart: text("sleep_start"),
     wakeTime: text("wake_time"),
     sleepScore: integer("sleep_score"),
+    activeKcal: integer("active_kcal"),
     updatedAt: integer("updated_at", { mode: "timestamp_ms" }).notNull(),
   },
   (t) => [primaryKey({ columns: [t.userId, t.date, t.source] })],
@@ -751,4 +758,20 @@ export const dayEvents = sqliteTable(
     createdAt: createdAt(),
   },
   (t) => [uniqueIndex("day_events_user_date_kind_uq").on(t.userId, t.date, t.kind)],
+);
+
+/** Thumbs up / down on a recipe from the meal plan, used to steer future plans. */
+export const recipeFeedback = sqliteTable(
+  "recipe_feedback",
+  {
+    userId: text("user_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    recipeId: text("recipe_id")
+      .notNull()
+      .references(() => recipes.id, { onDelete: "cascade" }),
+    liked: integer("liked", { mode: "boolean" }).notNull(),
+    createdAt: createdAt(),
+  },
+  (t) => [primaryKey({ columns: [t.userId, t.recipeId] })],
 );

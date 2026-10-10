@@ -1,11 +1,11 @@
 import { notFound, redirect } from "next/navigation";
 import { SessionEditor, type EditorExercise } from "@/components/workouts/SessionEditor";
-import type { MessageKey } from "@/lib/i18n/messages/en";
 import { getExercise } from "@/lib/workouts/exercises";
 import { formatDose } from "@/lib/workouts/format";
 import { requireOnboarded } from "@/server/auth/dal";
 import { getI18n } from "@/server/i18n";
 import { getActiveProgram, getSession, programDay, sessionSets } from "@/server/services/workouts";
+import { dayTitle } from "@/lib/workouts/label";
 
 export const metadata = { title: "Edit workout" };
 
@@ -42,7 +42,7 @@ export default async function EditSessionPage({ params }: PageProps<"/workouts/s
   return (
     <SessionEditor
       sessionId={session.id}
-      title={day.kind === "recovery" ? t("wk.recoveryDay") : t(`wk.focus.${day.focus}` as MessageKey)}
+      title={dayTitle(day, t)}
       dayIndex={index}
       durationMin={Math.max(1, Math.round((session.durationSec ?? 0) / 60))}
       exercises={exercises}

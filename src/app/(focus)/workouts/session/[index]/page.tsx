@@ -1,9 +1,9 @@
 import { ArrowLeft } from "lucide-react";
+import { dayTitle } from "@/lib/workouts/label";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { SessionPlayer, type SetHint } from "@/components/workouts/SessionPlayer";
 import { buttonClass } from "@/components/ui/Button";
-import type { MessageKey } from "@/lib/i18n/messages/en";
 import { getExercise } from "@/lib/workouts/exercises";
 import { fuelIdeas, workoutAddBack } from "@/lib/workouts/fuel";
 import { suggestOverload } from "@/lib/workouts/load";
@@ -89,7 +89,7 @@ export default async function SessionPage({ params }: PageProps<"/workouts/sessi
       dayIndex={index}
       totalDays={program.days.length}
       day={day}
-      title={day.kind === "recovery" ? t("wk.recoveryDay") : t(`wk.focus.${day.focus}` as MessageKey)}
+      title={dayTitle(day, t)}
       exercises={exercises}
       initialSessionId={session?.id ?? null}
       initialSets={sets.map((s) => ({ slot: s.slot, setIndex: s.setIndex, reps: s.reps, seconds: s.seconds, weightKg: s.weightKg, done: s.done }))}

@@ -7,22 +7,16 @@ import type { TFunc } from "@/lib/i18n/t";
 import type { TodayOverview } from "@/server/services/today";
 import { HeartRateLine } from "./HeartRateLine";
 
-/** Connect buttons: Google (Fitbit, Pixel Watch) via the Google Health API; Apple Health and Google Fit via export files. */
-export function ConnectRow({ t, googleConnected, compact = false }: { t: TFunc; googleConnected: boolean; compact?: boolean }) {
-  const btn = "inline-flex min-h-11 items-center gap-2 rounded-lg border border-line bg-surface px-3 text-sm font-semibold hover:border-forest/50";
+/** Connect buttons: each opens its sync screen (Apple Health via export import; Google via the Google Health API). */
+export function ConnectRow({ t }: { t: TFunc; googleConnected?: boolean; compact?: boolean }) {
+  const btn = "inline-flex min-h-11 flex-1 items-center justify-center gap-2 rounded-md bg-sand px-3 text-sm font-semibold hover:bg-sand-2";
   return (
-    <div className={cn("flex flex-wrap gap-2", compact && "text-sm")}>
-      {!googleConnected && (
-        // A plain link: the route redirects to Google's consent screen.
-        <a href="/api/health/google/start" className={btn}>
-          <Watch className="size-4 text-forest" aria-hidden /> {t("today.connect.google")}
-        </a>
-      )}
-      <Link href="/health#import" className={btn}>
-        <Smartphone className="size-4 text-forest" aria-hidden /> {t("today.connect.apple")}
+    <div className="flex flex-wrap gap-2">
+      <Link href="/me/sync/apple" className={btn}>
+        <Smartphone className="size-4 text-lime" aria-hidden /> {t("today.connect.apple")}
       </Link>
-      <Link href="/health#import" className={btn}>
-        <Footprints className="size-4 text-forest" aria-hidden /> {t("today.connect.fit")}
+      <Link href="/me/sync/google" className={btn}>
+        <Watch className="size-4 text-lime" aria-hidden /> {t("today.connect.google")}
       </Link>
     </div>
   );

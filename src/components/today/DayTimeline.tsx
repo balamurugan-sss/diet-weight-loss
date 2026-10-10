@@ -65,7 +65,7 @@ export function DayTimeline({ items, now, t }: { items: TimelineItem[]; now: str
               </Link>
             )
           ) : (
-            <Link href={`/workouts/session/${item.dayIndex}`} className="inline-flex h-9 items-center gap-1 rounded-lg bg-lime px-2.5 text-sm font-bold text-[#0a0c0e]">
+            <Link href={`/workouts/session/${item.dayIndex}`} className="inline-flex h-9 items-center gap-1 rounded-lg bg-lime px-2.5 text-sm font-bold text-white">
               <Play className="size-4" aria-hidden /> {t("today.tl.resume")}
             </Link>
           );
@@ -103,7 +103,7 @@ export function DayTimeline({ items, now, t }: { items: TimelineItem[]; now: str
             <FragmentRow key={`${item.kind}-${i}`} showMarker={i === nowAt} marker={marker}>
               <li className={cn("relative flex items-start gap-3 py-2", future && "opacity-60")}>
                 <span className="w-12 pt-1.5 text-right font-display text-[15px] font-bold text-ink-2 tabular">{item.time ?? "—"}</span>
-                <span className={cn("relative z-10 grid size-8 shrink-0 place-items-center rounded-lg", item.kind === "workout" ? "bg-lime text-[#0a0c0e]" : "bg-sand text-forest")}>
+                <span className={cn("relative z-10 grid size-8 shrink-0 place-items-center rounded-lg", item.kind === "workout" ? "bg-lime text-white" : "bg-sand text-forest")}>
                   <Icon className="size-4" aria-hidden />
                 </span>
                 <div className="min-w-0 flex-1 pt-0.5">

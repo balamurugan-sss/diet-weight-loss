@@ -360,3 +360,14 @@ describe("cardio", () => {
     expect(dayTypeForFocus("rest", "rest")).toBe("rest");
   });
 });
+
+describe("weekday schedule", () => {
+  it("puts workouts on the chosen weekdays and recovery between two of them", async () => {
+    const { rhythmForWeekdays } = await import("@/lib/workouts/generator");
+    // Mon, Wed, Fri starting on a Sunday: S M T W T F S
+    expect(rhythmForWeekdays([1, 3, 5], 0)).toBe("RWAWAWR");
+    // Same days, program starting on Wednesday: W T F S S M T
+    expect(rhythmForWeekdays([1, 3, 5], 3)).toBe("WAWRRWA");
+    expect(rhythmForWeekdays([0, 1, 2, 3, 4, 5], 0)).toBe("WWWWWWA"); // Saturday sits between Friday and Sunday
+  });
+});

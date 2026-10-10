@@ -8,15 +8,15 @@ const VARIANTS: Record<Variant, string> = {
   primary: "bg-forest text-on-accent hover:bg-forest-600 font-bold",
   secondary: "bg-forest-50 text-forest hover:bg-forest-100",
   ghost: "text-forest hover:bg-forest-50",
-  lime: "bg-lime text-forest-700 hover:bg-lime-600 font-bold",
+  lime: "bg-lime text-on-accent hover:bg-lime-600 font-bold",
   danger: "bg-terracotta text-white hover:opacity-90",
   outline: "border border-line bg-surface text-charcoal hover:border-forest/50",
 };
 const SIZES: Record<Size, string> = {
   sm: "h-9 px-3.5 text-sm rounded-lg gap-1.5",
   md: "h-11 px-5 text-[15px] rounded-lg gap-2",
-  lg: "h-13 px-6 font-display text-[17px] tracking-wide uppercase rounded-lg gap-2",
-  xl: "h-15 px-7 font-display text-[19px] tracking-wide uppercase rounded-xl gap-3",
+  lg: "h-13 px-6 text-[17px] rounded-lg gap-2",
+  xl: "h-15 px-6 text-[19px] rounded-lg gap-3",
 };
 
 export function buttonClass(variant: Variant = "primary", size: Size = "md", className?: string) {
