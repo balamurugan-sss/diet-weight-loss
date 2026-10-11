@@ -21,8 +21,18 @@ export const config = {
     priceId: process.env.STRIPE_PRICE_ID || null,
     webhookSecret: process.env.STRIPE_WEBHOOK_SECRET || null,
   },
+  email: {
+    resendKey: process.env.RESEND_API_KEY || null,
+    from: process.env.EMAIL_FROM || "Movewell <onboarding@resend.dev>",
+  },
+  push: {
+    publicKey: process.env.VAPID_PUBLIC_KEY || null,
+    privateKey: process.env.VAPID_PRIVATE_KEY || null,
+    subject: process.env.VAPID_SUBJECT || "mailto:support@movewell.app",
+  },
   allowDevPremium: process.env.NODE_ENV !== "production" || process.env.ALLOW_DEV_PREMIUM === "true",
-  appUrl: process.env.APP_URL || "http://localhost:3000",
+  // Links in emails always use this base, never the request's Host header.
+  appUrl: process.env.APP_URL || (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "http://localhost:3000"),
 };
 
 export class ProviderError extends Error {

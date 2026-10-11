@@ -1,6 +1,7 @@
-import { Bell, ChevronRight, CircleHelp, ClipboardList, Crown, Heart, HeartPulse, LogOut, PersonStanding, Smartphone, UserRound, Utensils } from "lucide-react";
+import { Bell, ChevronRight, ShieldCheck, CircleHelp, ClipboardList, Crown, Heart, HeartPulse, LogOut, PersonStanding, Smartphone, UserRound, Utensils } from "lucide-react";
 import Link from "next/link";
 import { SettingsList, TopBar } from "@/components/ui/TopBar";
+import { isAdminEmail } from "@/server/admin";
 import { requireOnboarded } from "@/server/auth/dal";
 import { logOut } from "@/server/actions/auth";
 import { getI18n } from "@/server/i18n";
@@ -36,6 +37,7 @@ export default async function SettingsPage() {
     ],
     [{ href: "/subscription", icon: Crown, label: t("nav.subscription"), value: user.isPremium ? t("common.premium") : t("common.free") }],
   ];
+  if (isAdminEmail(user.email)) groups.push([{ href: "/admin", icon: ShieldCheck, label: t("admin.open") }]);
   const row = "flex min-h-15 items-center gap-4 px-4 hover:bg-sand/60";
 
   return (

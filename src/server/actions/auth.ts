@@ -1,14 +1,16 @@
 "use server";
 
 import { randomUUID } from "node:crypto";
-import { eq } from "drizzle-orm";
+import { and, eq } from "drizzle-orm";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { z } from "zod";
 import { isLangCode } from "@/lib/i18n/languages";
 import { getCurrentUser } from "@/server/auth/dal";
 import { hashPassword, verifyPassword } from "@/server/auth/password";
+import { consumeReset, findReset, sendResetEmail } from "@/server/auth/passwordReset";
 import { createSession, destroyAllSessions, destroySession } from "@/server/auth/session";
+import { applyPremiumInvite } from "@/server/services/admin";
 import { db, schema } from "@/server/db/client";
 import { LANG_COOKIE } from "@/server/i18n";
 import { clientIp, rateLimit, resetRateLimit } from "@/server/rateLimit";
@@ -76,6 +78,7 @@ export async function signUp(_prev: FormState, form: FormData): Promise<FormStat
 
   if (legacyGuest) {
     await db.update(schema.users).set({ email: parsed.data.email, passwordHash, displayName, isGuest: false, lastActiveAt: new Date() }).where(eq(schema.users.id, legacyGuest));
+    await applyPremiumInvite(legacyGuest, parsed.data.email);
     await destroyAllSessions(legacyGuest);
     await createSession(legacyGuest);
     redirect(current?.profile?.onboardingCompletedAt ? "/home" : "/onboarding");
@@ -83,10 +86,57 @@ export async function signUp(_prev: FormState, form: FormData): Promise<FormStat
 
   const id = randomUUID();
   await db.insert(schema.users).values({ id, email: parsed.data.email, passwordHash, displayName, isGuest: false, lastActiveAt: new Date() });
+  await applyPremiumInvite(id, parsed.data.email);
   const lang = (await cookies()).get(LANG_COOKIE)?.value;
   await db.insert(schema.profiles).values({ userId: id, language: isLangCode(lang) ? lang : "en" });
   await createSession(id);
   redirect("/onboarding");
+}
+
+// ─── Forgot password ────────────────────────────────────────────────────────
+
+/**
+ * Emails a one-time link to set a new password. The answer is the same
+ * whether or not the email has an account, and the email is sent after the
+ * response, so neither the message nor the timing reveals who signed up.
+ */
+export async function requestPasswordReset(_prev: FormState, form: FormData): Promise<FormState> {
+  const email = String(form.get("email") ?? "").trim().toLowerCase().slice(0, 200);
+  if (!z.string().email().safeParse(email).success) return { error: "auth.invalidEmail", email };
+  const ip = await clientIp();
+  const okIp = await rateLimit(`reset-ip:${ip}`, 10, 3600);
+  const okEmail = await rateLimit(`reset-email:${email}`, 3, 3600);
+  if (!okIp || !okEmail) return { error: "auth.rateLimited", email };
+  const [user] = await db
+    .select({ id: schema.users.id, passwordHash: schema.users.passwordHash })
+    .from(schema.users)
+    .where(and(eq(schema.users.email, email), eq(schema.users.isGuest, false)))
+    .limit(1);
+  if (user?.passwordHash) await sendResetEmail(user.id, email);
+  return { ok: true, email };
+}
+
+const ResetInput = z
+  .object({
+    token: z.string().min(1).max(128),
+    password: z.string().min(10, "auth.weakPassword").max(200),
+    confirm: z.string().max(200),
+  })
+  .refine((v) => v.password === v.confirm, { message: "auth.passwordMismatch" });
+
+/** Sets the new password from a reset link, signs out every other device and logs in here. */
+export async function resetPassword(_prev: FormState, form: FormData): Promise<FormState> {
+  const parsed = ResetInput.safeParse({ token: form.get("token"), password: form.get("password"), confirm: form.get("confirm") });
+  if (!parsed.success) return { error: parsed.error.issues[0]?.message ?? "common.error" };
+  if (!(await rateLimit(`reset-use:${await clientIp()}`, 20, 3600))) return { error: "auth.rateLimited" };
+  const reset = await findReset(parsed.data.token);
+  if (!reset || !(await consumeReset(reset.id))) return { error: "auth.resetExpired" };
+  const passwordHash = await hashPassword(parsed.data.password);
+  const [user] = await db.update(schema.users).set({ passwordHash, lastActiveAt: new Date() }).where(eq(schema.users.id, reset.userId)).returning({ email: schema.users.email });
+  await destroyAllSessions(reset.userId);
+  if (user?.email) await resetRateLimit(`login-email:${user.email}`);
+  await createSession(reset.userId);
+  redirect("/home");
 }
 
 export async function logOut() {

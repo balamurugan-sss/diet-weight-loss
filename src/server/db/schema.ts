@@ -30,6 +30,10 @@ export const users = sqliteTable("users", {
   premiumUntil: integer("premium_until", { mode: "timestamp_ms" }),
   stripeCustomerId: text("stripe_customer_id"),
   stripeSubscriptionId: text("stripe_subscription_id"),
+  /** Opted in to offers and news by email (off until the person turns it on). */
+  marketingEmail: integer("marketing_email", { mode: "boolean" }).notNull().default(false),
+  /** Random token for the one-click unsubscribe link in marketing emails. */
+  unsubscribeToken: text("unsubscribe_token").unique(),
   createdAt: createdAt(),
   lastActiveAt: integer("last_active_at", { mode: "timestamp_ms" }),
 });
@@ -46,6 +50,21 @@ export const sessions = sqliteTable(
     createdAt: createdAt(),
   },
   (t) => [index("sessions_user_idx").on(t.userId)],
+);
+
+/** One-time "forgot password" links. Like sessions, only a SHA-256 of the token is stored. */
+export const passwordResets = sqliteTable(
+  "password_resets",
+  {
+    id: text("id").primaryKey(),
+    userId: text("user_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    expiresAt: integer("expires_at", { mode: "timestamp_ms" }).notNull(),
+    usedAt: integer("used_at", { mode: "timestamp_ms" }),
+    createdAt: createdAt(),
+  },
+  (t) => [index("password_resets_user_idx").on(t.userId)],
 );
 
 export const profiles = sqliteTable("profiles", {
@@ -779,4 +798,77 @@ export const recipeFeedback = sqliteTable(
     createdAt: createdAt(),
   },
   (t) => [primaryKey({ columns: [t.userId, t.recipeId] })],
+);
+
+// ─── Admin ───────────────────────────────────────────────────────────────────
+
+/** Premium granted by an admin to an email that has no account yet; applied at sign-up. */
+export const premiumInvites = sqliteTable("premium_invites", {
+  email: text("email").primaryKey(),
+  /** Months of premium from sign-up; null = no end date. */
+  months: integer("months"),
+  grantedBy: text("granted_by").notNull(),
+  createdAt: createdAt(),
+});
+
+/** Browser push subscriptions (one per device that allowed notifications). */
+export const pushSubscriptions = sqliteTable(
+  "push_subscriptions",
+  {
+    /** SHA-256 of the endpoint URL. */
+    id: text("id").primaryKey(),
+    userId: text("user_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    endpoint: text("endpoint").notNull(),
+    p256dh: text("p256dh").notNull(),
+    auth: text("auth").notNull(),
+    createdAt: createdAt(),
+  },
+  (t) => [index("push_subscriptions_user_idx").on(t.userId)],
+);
+
+/** A message from the admin: shown in the app and optionally sent by push and email. */
+export const announcements = sqliteTable("announcements", {
+  id: text("id").primaryKey(),
+  title: text("title").notNull(),
+  body: text("body").notNull(),
+  /** Optional in-app path ("/explore") or https URL the message opens. */
+  link: text("link"),
+  audience: text("audience", { enum: ["all", "free", "premium"] }).notNull(),
+  inApp: integer("in_app", { mode: "boolean" }).notNull(),
+  push: integer("push", { mode: "boolean" }).notNull(),
+  email: integer("email", { mode: "boolean" }).notNull(),
+  pushSent: integer("push_sent").notNull().default(0),
+  emailSent: integer("email_sent").notNull().default(0),
+  createdBy: text("created_by").notNull(),
+  createdAt: createdAt(),
+});
+
+export const announcementDismissals = sqliteTable(
+  "announcement_dismissals",
+  {
+    userId: text("user_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    announcementId: text("announcement_id")
+      .notNull()
+      .references(() => announcements.id, { onDelete: "cascade" }),
+    createdAt: createdAt(),
+  },
+  (t) => [primaryKey({ columns: [t.userId, t.announcementId] })],
+);
+
+/** Every change an admin makes to someone's account, for accountability. */
+export const adminActions = sqliteTable(
+  "admin_actions",
+  {
+    id: text("id").primaryKey(),
+    adminEmail: text("admin_email").notNull(),
+    action: text("action").notNull(),
+    targetUserId: text("target_user_id"),
+    detail: text("detail"),
+    createdAt: createdAt(),
+  },
+  (t) => [index("admin_actions_target_idx").on(t.targetUserId)],
 );

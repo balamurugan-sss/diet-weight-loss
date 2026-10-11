@@ -7,16 +7,25 @@ every AI and payment integration is optional and switches on when its key is pre
 | Variable | Needed for |
 |---|---|
 | `DATABASE_URL`, `DATABASE_AUTH_TOKEN` | Database (`file:` path or `libsql://` Turso URL) |
-| `APP_URL` | Stripe redirect URLs |
+| `APP_URL` | Links in emails and Stripe redirects (on Vercel it falls back to the production domain) |
+| `RESEND_API_KEY`, `EMAIL_FROM` | Password-reset emails and email offers ([Resend](https://resend.com); `EMAIL_FROM` must be on a domain verified there) |
+| `VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY`, `VAPID_SUBJECT` | Push notifications. Generate the key pair once with `npx web-push generate-vapid-keys`; `VAPID_SUBJECT` is a `mailto:` contact |
 | `APP_TIMEZONE` | Calendar dates (default `Asia/Kolkata`) |
 | `OPENAI_API_KEY` (+ `OPENAI_IMAGE_MODEL`, `OPENAI_IMAGE_QUALITY`) | AI dish and step images |
 | `SARVAM_API_KEY` (+ `SARVAM_TTS_MODEL`, `SARVAM_TTS_SPEAKER`, `SARVAM_TRANSLATE_MODEL`) | Natural Tamil/Malayalam/Indian-English voices and recipe translation |
 | `GOOGLE_TTS_API_KEY` | Alternative TTS provider |
 | `STRIPE_SECRET_KEY`, `STRIPE_PRICE_ID`, `STRIPE_WEBHOOK_SECRET`, `PREMIUM_PRICE_INR` | Subscriptions |
-| `GEMINI_API_KEY` (+ `VEO_MODEL`, `VEO_DAILY_LIMIT`), `ADMIN_EMAILS` | AI exercise demo clips (Veo 3.1) generated and reviewed at `/admin/media` |
+| `ADMIN_EMAILS` | Comma-separated emails that can open the admin console at `/admin` (users, premium, messages, clips) |
+| `GEMINI_API_KEY` (+ `VEO_MODEL`, `VEO_DAILY_LIMIT`) | AI exercise demo clips (Veo 3.1) generated and reviewed at `/admin/media` |
 | `GOOGLE_HEALTH_CLIENT_ID`, `GOOGLE_HEALTH_CLIENT_SECRET`, `HEALTH_TOKEN_KEY` | Google Health (Fitbit / Fitbit Air / Pixel Watch) sync — see docs/HEALTH.md |
 
 Never set `ALLOW_DEV_PREMIUM` in production.
+
+## Admin console
+Sign in with an account listed in `ADMIN_EMAILS` and open Settings → Admin (or `/admin`).
+- **Users**: search accounts, see setup and activity, give or remove premium, email a password-reset link, sign someone out everywhere. Health readings, weights and food details are not shown. Every change is recorded in the admin history.
+- **Give premium by email** (Overview): applies at once to an existing account, or when that email signs up. Same from the command line against any `DATABASE_URL`: `npm run admin:premium -- <email> [months|none]`.
+- **Messages**: a card in the app for 14 days, plus push (devices that allowed notifications) and email (people who turned on "Offers and news by email" in Settings → App). Each email has an unsubscribe link and one-click `List-Unsubscribe` header.
 
 ## Option A — Docker (single server, SQLite on a volume)
 ```bash

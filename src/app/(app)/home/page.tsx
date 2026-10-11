@@ -5,6 +5,7 @@ import { WeekStrip, type StripDay } from "@/components/program/WeekStrip";
 import { ExerciseFigure } from "@/components/workouts/ExerciseFigure";
 import { goalsFor } from "@/lib/today/goals";
 import { WorkoutHero, type HeroAction } from "@/components/program/WorkoutHero";
+import { AnnouncementCard } from "@/components/today/AnnouncementCard";
 import { CheckIns } from "@/components/today/CheckIns";
 import { DayTimeline } from "@/components/today/DayTimeline";
 import { WorkoutTimeControl } from "@/components/today/WorkoutTimeControl";
@@ -17,6 +18,7 @@ import { addDays } from "@/lib/workouts/progress";
 import type { ProgramDay } from "@/lib/workouts/types";
 import { requireOnboarded } from "@/server/auth/dal";
 import { getI18n } from "@/server/i18n";
+import { currentAnnouncement } from "@/server/services/announcements";
 import { approvedVideos } from "@/server/services/exerciseMedia";
 import { intakeForDate, waterFor } from "@/server/services/progress";
 import { targetsForProfile } from "@/server/services/targets";
@@ -43,11 +45,12 @@ export default async function MyProgramPage({ searchParams }: PageProps<"/home">
   const picked = typeof sp.d === "string" && /^\d{4}-\d{2}-\d{2}$/.test(sp.d) ? sp.d : today;
   const sunday = weekOf(today);
 
-  const [program, intake, training, kg] = await Promise.all([
+  const [program, intake, training, kg, news] = await Promise.all([
     getActiveProgram(user.id),
     intakeForDate(user.id, today),
     trainingContext(user.id, profile, today),
     bodyWeight(user.id, profile),
+    currentAnnouncement(user.id, user.isPremium),
   ]);
   const targets = training?.adjusted ?? targetsForProfile(profile)!;
   const proteinLeft = Math.max(0, targets.proteinG - intake.proteinG);
@@ -137,6 +140,7 @@ export default async function MyProgramPage({ searchParams }: PageProps<"/home">
       <div className="-mt-5">
         <WeekStrip days={strip} label={t("program.week")} />
       </div>
+      {news && <AnnouncementCard key={news.id} id={news.id} title={news.title} body={news.body} link={news.link} />}
 
       <section className="space-y-3">
         <h2 className="text-[1.75rem] leading-tight font-extrabold">

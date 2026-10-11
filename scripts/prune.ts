@@ -1,5 +1,5 @@
 /**
- * Housekeeping (run daily via cron): removes expired sessions, stale rate-limit
+ * Housekeeping (run daily via cron): removes expired sessions and reset links, stale rate-limit
  * windows, and guest accounts with no activity for 90 days.
  */
 import { and, eq, isNull, lt, or } from "drizzle-orm";
@@ -8,6 +8,7 @@ import { db, schema } from "@/server/db/client";
 async function main() {
   const now = Date.now();
   const sessions = await db.delete(schema.sessions).where(lt(schema.sessions.expiresAt, new Date(now)));
+  const resets = await db.delete(schema.passwordResets).where(lt(schema.passwordResets.expiresAt, new Date(now)));
   const limits = await db.delete(schema.rateLimits).where(lt(schema.rateLimits.windowStart, Math.floor(now / 1000) - 86400));
   const cutoff = new Date(now - 90 * 86400000);
   const stale = await db
@@ -18,7 +19,7 @@ async function main() {
     await db.update(schema.imageAssets).set({ createdBy: null }).where(eq(schema.imageAssets.createdBy, id));
     await db.delete(schema.users).where(eq(schema.users.id, id)); // child rows cascade
   }
-  console.log(`pruned ${sessions.rowsAffected} sessions, ${limits.rowsAffected} rate-limit rows, ${stale.length} stale guests`);
+  console.log(`pruned ${sessions.rowsAffected} sessions, ${resets.rowsAffected} reset links, ${limits.rowsAffected} rate-limit rows, ${stale.length} stale guests`);
 }
 
 main().then(() => process.exit(0));

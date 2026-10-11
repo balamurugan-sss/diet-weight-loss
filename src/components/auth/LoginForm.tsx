@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useActionState } from "react";
 import { useI18n } from "@/components/i18n/I18nProvider";
 import { Button } from "@/components/ui/Button";
@@ -18,10 +19,15 @@ export function LoginForm() {
         <span className="mb-1.5 block text-sm font-semibold">{t("auth.email")}</span>
         <input name="email" type="email" autoComplete="email" required defaultValue={state?.email} key={state?.email} className={inputClass} />
       </label>
-      <label className="block">
-        <span className="mb-1.5 block text-sm font-semibold">{t("auth.password")}</span>
-        <input name="password" type="password" autoComplete="current-password" required className={inputClass} />
-      </label>
+      <div>
+        <label className="block">
+          <span className="mb-1.5 block text-sm font-semibold">{t("auth.password")}</span>
+          <input name="password" type="password" autoComplete="current-password" required className={inputClass} />
+        </label>
+        <Link href="/forgot-password" className="mt-2 inline-block text-sm font-semibold text-forest underline-offset-4 hover:underline">
+          {t("auth.forgot")}
+        </Link>
+      </div>
       {state?.error && (
         <p role="alert" className="rounded-xl bg-terracotta-100 px-3 py-2 text-sm text-terracotta">
           {t(state.error as MessageKey)}
